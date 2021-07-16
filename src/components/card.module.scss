@@ -1,0 +1,46 @@
+@use 'assets/styles/variables.scss' as *;
+
+.card {
+    font-family: $font-primary;
+    font-weight: $font-normal;
+    font-size: $size-16;
+    line-height: 1.25rem;
+    color: $color-neutral;
+    
+    .title {
+        padding: $gap-8 0;
+        border-bottom: 3px dotted $color-primary-100;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .description {
+        margin-top: $gap-8;
+
+        height: 1.25rem * 4;
+        -webkit-line-clamp: 4;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.small {
+    @extend .card;
+    line-height: 1.5rem;
+
+    .description {
+        height: 1.5rem * 2;
+        -webkit-line-clamp: 2;
+    }
+
+}

@@ -1,0 +1,46 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sitenav {
+  flex-shrink: 0;
+  background: $color-neutral-100;
+  display: flex;
+  justify-content: center;
+  padding-top: $gap-24;
+}
+
+.content {
+  padding: $gap-24;
+  max-width: $max-content-width;
+
+  a {
+    color: $color-primary-500;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.header {
+  h1 {
+    position: relative;
+    display: inline-block;
+  }
+
+  h1:after {
+    position: relative;
+    display: block;
+    content: "";
+    background: $color-primary-100;
+    z-index: -5;
+
+    height: 15px;
+    top: -20px;
+    left: 20px;
+  }
+}

@@ -1,0 +1,16 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @media (max-width: $screen-1024) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: $screen-640) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
