@@ -3,10 +3,13 @@ import styles from './main.module.scss'
 import { Sitenav } from 'components/sitenav'
 
 type Props = {
+  title?: string
   children: ReactNode
 }
 
 export function Main(props: Props) {
+  const title = props.title ?? 'Learn web3'
+
   return (
     <div className={styles.container}>
       <aside className={styles.sitenav}>
@@ -14,7 +17,7 @@ export function Main(props: Props) {
       </aside>
       <div className={styles.content}>
         <header className={styles.header}>
-          <h1>Learn web3</h1>
+          <h1>{title}</h1>
         </header>
 
         <main>{props.children}</main>
