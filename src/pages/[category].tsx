@@ -37,7 +37,6 @@ export default function Index(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  console.log('Get static paths for content categories..')
   const categories = getCategories()
 
   return {
@@ -51,9 +50,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
-  const category = context.params?.category
-  console.log('Get content items props for', category)
-  
+  const category = context.params?.category  
   if (!category) {
     return {
       props: null,
