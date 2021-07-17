@@ -13,6 +13,5 @@ export function Tag(props: Props) {
     <div className={className}>
       {props.text}
     </div>
-
   )
 }

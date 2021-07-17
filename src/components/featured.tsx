@@ -12,9 +12,9 @@ export function Featured(props: Props) {
   if (props.className) className += ` ${props.className}`
 
   return (
-    <section className={className}>
+    <article className={className}>
       {props.title && <h2>{props.title}</h2>}
       <div className={styles.grid}>{props.children}</div>
-    </section>
+    </article>
   )
 }

@@ -18,7 +18,7 @@ export function Card(props: Props) {
   if (props.small) className += ` ${styles.small}`
 
   return (
-    <div className={className}>
+    <section className={className}>
       <h3 className={styles.title}>{props.title}</h3>
       <p className={styles.description}>{props.description}</p>
       <div className={styles.footer}>
@@ -31,7 +31,7 @@ export function Card(props: Props) {
           </Link>
         }
       </div>
-    </div>
+    </section>
 
   )
 }

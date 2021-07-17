@@ -15,19 +15,19 @@ export function Main(props: Props) {
       <aside className={styles.sitenav}>
         <Sitenav />
       </aside>
-      <div className={styles.content}>
+      <main className={styles.content}>
         <header className={styles.header}>
           <h1>{title}</h1>
         </header>
 
-        <main>{props.children}</main>
+        {props.children}
         
         <footer>
           <p>
             Created by <a href="https://twitter.com/wslyvh" target="_blank" rel="noopener noreferrer">@wslyvh</a>
           </p>
         </footer>
-      </div>
+      </main>
     </div>
   )
 }
