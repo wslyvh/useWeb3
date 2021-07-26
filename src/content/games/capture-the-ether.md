@@ -1,8 +1,11 @@
 ---
 title: Capture the Ether
 description: 'Capture the Ether is a game in which you hack Ethereum smart contracts to learn about security.'
-type: coding-challenge
+authors: ['@smarx']
+year: 2018
+featured: true
 level: beginner
+tags: ['solidity', 'game']
 url: https://capturetheether.com/
 ---
 

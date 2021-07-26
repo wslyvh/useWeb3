@@ -1,8 +1,11 @@
 ---
 title: The Ethernaut
 description: 'a Web3 based wargame played in the Ethereum Virtual Machine'
-type: coding-challenge
+authors: ['OpenZeppelin', 'Ethernaut']
+year: 2017
+featured: true
 level: beginner
+tags: ['solidity', 'game']
 url: https://ethernaut.openzeppelin.com/
 ---
 

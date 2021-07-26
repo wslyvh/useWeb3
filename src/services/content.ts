@@ -30,6 +30,7 @@ export function getItemsPerCategory(category: string): Array<BaseContentType> {
             const doc = matter(content)
             return { 
                 ...doc.data,
+                type: category,
                 body: doc.content
             } as BaseContentType
         }

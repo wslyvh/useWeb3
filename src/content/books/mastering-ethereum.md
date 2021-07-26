@@ -2,7 +2,9 @@
 title: Mastering Ethereum - Building Smart Contracts and DApps
 description: Mastering Ethereum is a book for developers, offering a guide to the operation and use of the Ethereum, Ethereum Classic, RootStock (RSK) and other compatible EVM-based open blockchains.
 authors: ['Andreas M. Antonopoulos', 'Gavin Wood']
-published: 01-12-2018
+year: 2018
+featured: true
+level: beginner
 url: https://github.com/ethereumbook/ethereumbook/
 ---
 

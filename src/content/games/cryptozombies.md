@@ -1,8 +1,11 @@
 ---
 title: CryptoZombies
 description: '#1 Solidity Tutorial & Ethereum Blockchain Programming Course'
-type: coding-challenge
+authors: ['Loom Network']
+year: 2017
+featured: true
 level: beginner
+tags: ['solidity', 'game']
 url: https://cryptozombies.io/
 ---
 

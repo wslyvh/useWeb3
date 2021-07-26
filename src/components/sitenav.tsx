@@ -78,10 +78,10 @@ export function Sitenav(props: Props) {
               </Link>
             </li>
             <li>
-              <Link href='/challenges'>
+              <Link href='/games'>
                 <a>
-                  <span role="img" aria-label="challenges">🎯</span>
-                  <span className={styles.text}>Code challenges</span>
+                  <span role="img" aria-label="games">🕹️</span>
+                  <span className={styles.text}>Games</span>
                 </a>
               </Link>
             </li>
