@@ -28,7 +28,7 @@ export function Card(props: Props) {
           <Tag text={props.tag} />
         }
         {props.url && 
-          <Link href={props.url}>
+          <Link href={props.url} passHref>
             <button className="accent block">&raquo;</button>
           </Link>
         }

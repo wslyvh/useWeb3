@@ -41,15 +41,20 @@ export default function Index(props: Props) {
 
       {props.categories.map(category => {
         const items = props.items.filter(item => item.category.id === category.id)
-        return <Featured className={styles.featured} title={category.title} link={category.id}>
-          {items.map(i => {
-            return <Card small
-              title={i.title}
-              description={i.description}
-              author={i.authors.join(', ')}
-              tag={i.level}
-              url={i.url} />
-          })}
+        return <Featured 
+        key={category.id}
+          className={styles.featured} 
+          title={category.title} 
+          link={category.id}>
+            {items.map(i => {
+              return <Card small
+                key={i.id}
+                title={i.title}
+                description={i.description}
+                author={i.authors.join(', ')}
+                tag={i.level}
+                url={i.url} />
+            })}
         </Featured>
       })}
     </MainLayout>
