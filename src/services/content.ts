@@ -2,7 +2,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter';
-import { BaseContentType } from 'types/content';
+import { ContentItem } from 'types/content-item';
 
 const baseFolder = 'src/content'
 
@@ -15,7 +15,7 @@ export function getCategories(): Array<string> {
     return dirs    
 }
 
-export function getItemsPerCategory(category: string): Array<BaseContentType> {
+export function getItemsPerCategory(category: string): Array<ContentItem> {
     const categoryDirection = join(process.cwd(), baseFolder, category)
     const files = fs.readdirSync(categoryDirection, { withFileTypes: true })
         .filter(i => i.isFile() && i.name.endsWith('.md'))
@@ -32,9 +32,9 @@ export function getItemsPerCategory(category: string): Array<BaseContentType> {
                 ...doc.data,
                 type: category,
                 body: doc.content
-            } as BaseContentType
+            } as ContentItem
         }
-    }).filter(i => !!i) as Array<BaseContentType> 
+    }).filter(i => !!i) as Array<ContentItem> 
     
     return items
 }

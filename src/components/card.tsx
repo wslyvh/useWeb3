@@ -6,6 +6,7 @@ import { Tag } from './tag'
 interface Props {
   title: string
   description: string
+  author?: string
   small?: boolean
   tag?: string
   url?: string
@@ -19,8 +20,9 @@ export function Card(props: Props) {
 
   return (
     <section className={className}>
-      <h3 className={styles.title}>{props.title}</h3>
+      <h4 className={styles.title}>{props.title}</h4>
       <p className={styles.description}>{props.description}</p>
+      {props.author && <p className={styles.author}>- {props.author}</p>}
       <div className={styles.footer}>
         {props.tag && 
           <Tag text={props.tag} />

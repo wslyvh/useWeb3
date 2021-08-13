@@ -1,8 +1,10 @@
 import { ReactNode } from 'react'
 import styles from './featured.module.scss'
+import { Link } from './link'
 
 interface Props {
   title?: string
+  link?: string
   className?: string
   children: ReactNode
 }
@@ -13,7 +15,10 @@ export function Featured(props: Props) {
 
   return (
     <article className={className}>
-      {props.title && <h2>{props.title}</h2>}
+      <div className={styles.header}>
+        {props.title && <h3>{props.title}</h3>}
+        {props.link && <Link className={styles.link} href={props.link}>view all</Link>}
+      </div>
       <div className={styles.grid}>{props.children}</div>
     </article>
   )

@@ -1,45 +1,71 @@
 import React from 'react'
+import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
 import { Card } from 'components/card'
 import { Featured } from 'components/featured'
+import { ContentItem } from 'types/content-item'
+import { GetStaticProps } from 'next'
+import { AirtableItemService } from 'services/airtable'
+import { Category } from 'types/category'
+import styles from './index.module.scss'
 
-export default function Index() {
+interface Props {
+  categories: Array<Category>
+  items: Array<ContentItem>
+}
+
+interface Params extends ParsedUrlQuery {
+  category: string
+}
+
+export default function Index(props: Props) {
   return (
-    <MainLayout>
-
+    <MainLayout className={styles.container}>
       <article>
         <p>
-          We provide you with the latest resources to learn anything related to web3, Ethereum and blockchain development.
+          useWeb3 provides you a manually curated overview of the best and latest resources on Ethereum, blockchain and Web3 development. 
         </p>
-        <br/>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus, elit et tristique semper, justo magna feugiat lacus, sed tempus nisl neque et sapien. Morbi ullamcorper augue nisl, in auctor ipsum sagittis ut. Integer ullamcorper <a href="#">tellus et posuere sollicitudin</a>. Mauris nec nulla libero. Morbi dignissim nec enim non vehicula. Aliquam erat volutpat.</p>
-        <br/>
+        <p>
+          These resources help you develop your own smart contracts, DeFi project, ERC20 or NFT tokens in Solidity or Vyper. Connect with them using Web3 client libraries. Or publish them to the network or decentralized web, such as IPFS.
+        </p>
       </article>
 
-      <Featured title='Books'>
-        <Card small
-          title='Mastering Ethereum'
-          description='Andreas M. Antonopoulos, Gavin Wood' 
-          tag='Book'
-          url='https://github.com/ethereumbook/ethereumbook' />
-        <Card small
-          title='The Infinite Machine'
-          description='Camila Russo'
-          tag='Book'
-          url='https://www.goodreads.com/book/show/50175330-the-infinite-machine' />
-        <Card small
-          title='Out of the Ether' 
-          description='Matthew Leising' 
-          tag='Book'
-          url='https://www.goodreads.com/book/show/55360267-out-of-the-ether' />
-      </Featured>
+      <article>
+        <h2>
+          How would you like to get started?
+        </h2>
+        <p>
+          Get familiar with the core concepts and fundamentals, or start learning through tutorials, courses, books, videos or code challenges. 
+        </p>
+      </article>
 
-      <Featured title='Courses'>
-        <Card title='a16z Crypto Startup School' description='A great overview with hours of videos, lectures, presentations, real-world insights and fireside chats from some of the best minds in the space. Highly recommended' url='https://a16z.com/crypto-startup-school/' />
-        <Card title='ConsenSys Academy' description='World class programs from one of the leading companies in the space. They offer free, on-demand courses, webinars and (paid) certificate programs &amp; bootcamps.' />
-        <Card title='Blockchain at Berkeley' description='B@B is dedicated to become the blockchain hub of the East Bay. They debuted the world’s first undergraduate university-accredited blockchain course, Blockchain Fundamentals' />
-      </Featured>
+      {props.categories.map(category => {
+        const items = props.items.filter(item => item.category.id === category.id)
+        return <Featured className={styles.featured} title={category.title} link={category.id}>
+          {items.map(i => {
+            return <Card small
+              title={i.title}
+              description={i.description}
+              author={i.authors.join(', ')}
+              tag={i.level}
+              url={i.url} />
+          })}
+        </Featured>
+      })}
     </MainLayout>
   )
 }
+
+export const getStaticProps: GetStaticProps<Props, Params> = async () => {
+  const service = new AirtableItemService()
+  const items = await service.GetItems('', true)
+  const uniqueCategories = [...new Set(items.map(i => JSON.stringify(i.category)))].map(i => JSON.parse(i) as Category)
+
+  return {
+    props: {
+      categories: uniqueCategories.sort((a, b) => a.title.localeCompare(b.title)),
+      items: items
+    },
+  }
+}
+

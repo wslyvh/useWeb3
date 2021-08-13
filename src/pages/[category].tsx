@@ -2,14 +2,15 @@ import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
-import { getCategories, getItemsPerCategory } from 'services/content'
-import { BaseContentType } from 'types/content'
+import { ContentItem } from 'types/content-item'
 import { Featured } from 'components/featured'
 import { Card } from 'components/card'
+import { AirtableItemService } from 'services/airtable'
+import { Category } from 'types/category'
 
 interface Props {
-  category: string
-  items: Array<BaseContentType>
+  category: Category
+  items: Array<ContentItem>
 }
 
 interface Params extends ParsedUrlQuery {
@@ -18,7 +19,7 @@ interface Params extends ParsedUrlQuery {
 
 export default function Index(props: Props) {
   return (
-    <MainLayout title={props.category}>
+    <MainLayout title={props.category.title}>
       <main>
         <Featured>
           {props.items.map(i => {
@@ -37,12 +38,13 @@ export default function Index(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const categories = getCategories()
+  const service = new AirtableItemService()
+  const categories = await service.GetCategories()
 
   return {
     paths: categories.map(i => {
       return {
-        params: { category: i }
+        params: { category: i.id }
       }
     }),
     fallback: false
@@ -50,15 +52,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
-  const category = context.params?.category  
-  if (!category) {
+  const categoryId = context.params?.category
+  if (!categoryId) {
     return {
       props: null,
       notFound: true,
     }
   }
   
-  const items = getItemsPerCategory(category)
+  const service = new AirtableItemService()
+  const category = await service.GetCategory(categoryId)
+  if (!category) {
+    return {
+      props: null,
+      notFound: true,
+    }
+  }
+
+  const items = await service.GetItems(categoryId, false)
   return {
     props: {
       category: category,

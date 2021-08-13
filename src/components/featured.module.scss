@@ -1,6 +1,15 @@
 @use 'assets/styles/variables.scss' as *;
 
 .container {
+    .header {
+        display: flex;
+        align-items: center;
+    }
+
+    .link {
+        margin-left: $gap-8;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

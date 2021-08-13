@@ -27,6 +27,11 @@
         text-overflow: ellipsis;
     }
 
+    .author { 
+        color: $color-neutral-500;
+        font-size: smaller;
+    }
+
     .footer {
         display: flex;
         justify-content: space-between;
