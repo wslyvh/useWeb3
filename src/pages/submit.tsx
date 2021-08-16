@@ -19,7 +19,7 @@ export default function Index() {
               src="https://airtable.com/embed/shrOIsIgZND1MKR16?backgroundColor=red" 
               frameBorder={0}
               width="100%" 
-              height="1892">
+              height="1894">
           </iframe>
       </section>
     </MainLayout>
