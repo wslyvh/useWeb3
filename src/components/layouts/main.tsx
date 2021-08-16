@@ -32,7 +32,7 @@ export function Main(props: Props) {
 
         <footer>
           <p>
-            Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>
+            Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>. View on <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
           </p>
         </footer>
       </main>
