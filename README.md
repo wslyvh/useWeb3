@@ -1,9 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Learn Web3
+# useWeb3
 
-Learn web3 provides you with the latest resources to learn anything related to web3, Ethereum and blockchain development.
+useWeb3 provides a manually curated overview of the best and latest resources on Ethereum, blockchain and Web3 development.
 
+https://useweb3.xyz/
 
 # Development
 
