@@ -7,8 +7,10 @@ import { Featured } from 'components/featured'
 import { Card } from 'components/card'
 import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
+import { NavigationProvider } from 'context/navigation'
 
 interface Props {
+  categories: Array<Category>
   category: Category
   items: Array<ContentItem>
 }
@@ -19,21 +21,23 @@ interface Params extends ParsedUrlQuery {
 
 export default function Index(props: Props) {
   return (
-    <MainLayout title={props.category.title}>
-      <main>
-        <Featured>
-          {props.items.map(i => {
-            return (
-              <Card
-                key={i.title}
-                title={i.title}
-                description={i.description}
-                url={i.url} />
-            )
-          })}
-        </Featured>
-      </main>
-    </MainLayout>
+    <NavigationProvider categories={props.categories}>
+      <MainLayout title={props.category.title}>
+        <main>
+          <Featured>
+            {props.items.map(i => {
+              return (
+                <Card
+                  key={i.title}
+                  title={i.title}
+                  description={i.description}
+                  url={i.url} />
+              )
+            })}
+          </Featured>
+        </main>
+      </MainLayout>
+    </NavigationProvider>
   )
 }
 
@@ -69,11 +73,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     }
   }
 
+  const categories = await service.GetCategories()
   const items = await service.GetItems(categoryId, false)
   return {
     props: {
-      category: category,
-      items: items
+      categories,
+      category,
+      items
     },
   }
 }

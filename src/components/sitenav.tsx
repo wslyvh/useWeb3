@@ -1,3 +1,4 @@
+import { useNavigation } from 'hooks/useNavigation'
 import Link from 'next/link'
 import styles from './sitenav.module.scss'
 
@@ -6,9 +7,10 @@ interface Props {
 }
 
 export function Sitenav(props: Props) {
+  const categories = useNavigation()
   let className = styles.container
   if (props.className) className += ` ${props.className}`
-  
+
   return (
     <nav className={className}>
         <ul className={styles.sidenav}>
@@ -20,103 +22,20 @@ export function Sitenav(props: Props) {
                 </a>
               </Link>
             </li>
+            {categories.map(i => {
+              return (
+                <li key={i.id}>
+                  <Link href={`/${i.id}`}>
+                    <a>
+                      <span role="img" aria-label={i.id}>{i.emoji}</span>
+                      <span className={styles.text}>{i.title}</span>
+                    </a>
+                  </Link>
+                </li>
+              )
+            })}
             <li>
-              <Link href='/courses'>
-                <a>
-                  <span role="img" aria-label="courses">🎓</span>
-                  <span className={styles.text}>Courses</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/tutorials'>
-                <a>
-                  <span role="img" aria-label="tutorials">💻</span>
-                  <span className={styles.text}>Tutorials</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/videos'>
-                <a>
-                  <span role="img" aria-label="videos">🎞️</span>
-                  <span className={styles.text}>Videos</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/books'>
-                <a>
-                  <span role="img" aria-label="books">📚</span>
-                  <span className={styles.text}>Books</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/websites'>
-                <a>
-                  <span role="img" aria-label="websites">🌐</span>
-                  <span className={styles.text}>Websites</span>
-                </a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href='/podcasts'>
-                <a>
-                  <span role="img" aria-label="podcasts">🎧</span>
-                  <span className={styles.text}>Podcasts</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/events'>
-                <a>
-                  <span role="img" aria-label="events">🎫</span>
-                  <span className={styles.text}>Events</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/games'>
-                <a>
-                  <span role="img" aria-label="games">🕹️</span>
-                  <span className={styles.text}>Games</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/tools'>
-                <a>
-                  <span role="img" aria-label="tools">🛠️</span>
-                  <span className={styles.text}>Tools</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/interviews'>
-                <a>
-                  <span role="img" aria-label="interviews">📝</span>
-                  <span className={styles.text}>Interview questions</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/jobs'>
-                <a><span role="img" aria-label="jobs">💼</span>
-                <span className={styles.text}>Jobs</span></a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/newsletter'>
-                <a>
-                  <span role="img" aria-label="newsletter">📰</span>
-                  <span className={styles.text}>Newsletter</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/submit'>
+              <Link href='https://airtable.com/shrOIsIgZND1MKR16'>
                 <a>
                   <span role="img" aria-label="submit">🔗</span>
                   <span className={styles.text}>Submit</span>

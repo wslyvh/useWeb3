@@ -1,27 +1,47 @@
 import React from 'react'
 import { Main as MainLayout } from 'components/layouts/main'
 import styles from './submit.module.scss'
+import { Category } from 'types/category'
+import { NavigationProvider } from 'context/navigation'
+import { GetStaticProps } from 'next'
+import { AirtableItemService } from 'services/airtable'
 
-export default function Index() {
+interface Props {
+  categories: Array<Category>
+}
+
+export default function Index(props: Props) {
   return (
-    <MainLayout title='Submit a link' className={styles.container}>
-      <section>
-          <p>
-              useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development. Resources should be up-to-date, relevant for developers and publicly available. 
-          </p>
-          <p>
-              Please use the form below to submit a link. We will manually review each submission before deciding to publish it to the site.
-          </p>
+    <NavigationProvider categories={props.categories}>
+      <MainLayout title='Submit a link' className={styles.container}>
+        <section>
+            <p>
+                useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development. Resources should be up-to-date, relevant for developers and publicly available. 
+            </p>
+            <p>
+                Please use the form below to submit a link. We will manually review each submission before deciding to publish it to the site.
+            </p>
 
-          <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js" />
-          <iframe
-              className="airtable-embed airtable-dynamic-height" 
-              src="https://airtable.com/embed/shrOIsIgZND1MKR16?backgroundColor=red" 
-              frameBorder={0}
-              width="100%" 
-              height="1894">
-          </iframe>
-      </section>
-    </MainLayout>
+            <iframe
+                className="airtable-embed airtable-dynamic-height" 
+                src="https://airtable.com/embed/shrOIsIgZND1MKR16?backgroundColor=red" 
+                frameBorder={0}
+                width="100%" 
+                height="1894">
+            </iframe>
+        </section>
+      </MainLayout>
+    </NavigationProvider>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const service = new AirtableItemService()
+  const categories = await service.GetCategories();
+
+  return {
+    props: {
+      categories: categories
+    },
+  }
 }

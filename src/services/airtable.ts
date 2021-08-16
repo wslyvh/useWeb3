@@ -48,9 +48,10 @@ export class AirtableItemService implements ItemServiceInterface {
             return {
                 id: i.fields['Slug'],
                 title: i.fields['Title'],
-                description: i.fields['Description'] ?? ''
+                description: i.fields['Description'] ?? '',
+                emoji: i.fields['Emoji'] ?? ''
             } as Category
-          })
+          }).sort((a, b) => a.title.localeCompare(b.title))
         } catch (e) {
           console.log('GetCategories', 'Unable to fetch categories')
           console.error(e)
