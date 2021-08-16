@@ -1,0 +1,16 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+    h2 { 
+        margin-bottom: $gap-8;
+    }
+
+    p {
+        margin-bottom: $gap-16;
+    }
+
+    iframe {
+        background: transparent;
+        border: 1px solid #ccc;
+    }
+}
