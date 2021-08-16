@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import styles from './main.module.scss'
 import { Sitenav } from 'components/sitenav'
 import { Link } from 'components/link'
+import { Newsletter } from 'components/newsletter'
 
 type Props = {
   title?: string
@@ -27,6 +28,8 @@ export function Main(props: Props) {
 
         {props.children}
         
+        <Newsletter className={styles.newsletter} />
+
         <footer>
           <p>
             Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>
