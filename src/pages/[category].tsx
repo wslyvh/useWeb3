@@ -23,7 +23,7 @@ interface Params extends ParsedUrlQuery {
 export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={`${props.category.emoji} ${props.category.title}`} description={props.category.description} />
+      <SEO title={`Learn through ${props.category.emoji} ${props.category.title}`} description={props.category.description} />
 
       <MainLayout title={props.category.title}>
         {props.category.description && 
