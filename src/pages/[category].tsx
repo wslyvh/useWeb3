@@ -8,6 +8,7 @@ import { Card } from 'components/card'
 import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
+import { SEO } from 'components/SEO'
 
 interface Props {
   categories: Array<Category>
@@ -22,7 +23,15 @@ interface Params extends ParsedUrlQuery {
 export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
+      <SEO title={props.category.title} description={props.category.description} />
+
       <MainLayout title={props.category.title}>
+        {props.category.description && 
+          <article>
+            <p dangerouslySetInnerHTML={{__html: props.category.description }} />
+          </article>
+        }
+
         <main>
           <Featured>
             {props.items.map(i => {

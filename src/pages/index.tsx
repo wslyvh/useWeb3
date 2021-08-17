@@ -25,7 +25,7 @@ export default function Index(props: Props) {
       <MainLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 provides you a manually curated overview of the best and latest resources on Ethereum, blockchain and Web3 development. 
+            useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development. 
           </p>
           <p>
             These resources help you develop your own smart contracts, DeFi project, ERC20 or NFT tokens in Solidity or Vyper. Connect with them using Web3 client libraries. Or publish them to the network or decentralized web, such as IPFS.

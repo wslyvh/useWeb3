@@ -49,3 +49,7 @@ h2, .h2 {
 h3, .h3 { 
   font-size: $size-h3;
 }
+
+.p, p {
+  margin-bottom: $gap-16;
+}

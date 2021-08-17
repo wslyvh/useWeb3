@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # useWeb3
 
-useWeb3 provides a manually curated overview of the best and latest resources on Ethereum, blockchain and Web3 development.
+useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development.
 
 https://useweb3.xyz/
 

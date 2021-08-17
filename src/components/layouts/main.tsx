@@ -3,6 +3,7 @@ import styles from './main.module.scss'
 import { Sitenav } from 'components/sitenav'
 import { Link } from 'components/link'
 import { Newsletter } from 'components/newsletter'
+import { TITLE } from 'utils/constants'
 
 type Props = {
   title?: string
@@ -11,7 +12,7 @@ type Props = {
 }
 
 export function Main(props: Props) {
-  const title = props.title ?? 'useWeb3'
+  const title = props.title ?? TITLE
 
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
