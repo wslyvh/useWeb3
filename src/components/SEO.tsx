@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 export function SEO(props: SEOProps) {
-  const title = props.title ? `${props.title} · ${TITLE}` : TITLE
+  const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE} · Learn Web3 development`
   const description = props.description || DESCRIPTION
   const image = props.imageUrl || IMAGE_OG
 

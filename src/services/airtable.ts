@@ -27,7 +27,8 @@ export class AirtableItemService implements ItemServiceInterface {
             return {
                 id: i.fields['Slug'],
                 title: i.fields['Title'],
-                description: i.fields['Description'] ?? ''
+                description: i.fields['Description'] ?? '',
+                emoji: i.fields['Emoji'] ?? ''
             } as Category
           })
           return categories.find((i) => !!i)
