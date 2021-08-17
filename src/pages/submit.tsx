@@ -16,10 +16,12 @@ export default function Index(props: Props) {
       <MainLayout title='Submit a link' className={styles.container}>
         <section>
             <p>
-                useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development. Resources should be up-to-date, relevant for developers and publicly available. 
+                useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development.
             </p>
             <p>
-                Please use the form below to submit a link. We will manually review each submission before deciding to publish it to the site.
+              Please use the form below to submit a link. Resources should be up-to-date, relevant for developers and publicly available.
+
+              We will manually review each submission before deciding to publish it to the site.
             </p>
 
             <iframe

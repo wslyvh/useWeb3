@@ -35,7 +35,7 @@ export function Sitenav(props: Props) {
               )
             })}
             <li>
-              <Link href='https://airtable.com/shrOIsIgZND1MKR16'>
+              <Link href='/submit'>
                 <a>
                   <span role="img" aria-label="submit">🔗</span>
                   <span className={styles.text}>Submit</span>
