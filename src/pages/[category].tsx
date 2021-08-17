@@ -9,6 +9,7 @@ import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
+import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 
 interface Props {
   categories: Array<Category>
@@ -60,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: { category: i.id }
       }
     }),
-    fallback: false
+    fallback: true
   }
 }
 
@@ -79,6 +80,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     return {
       props: null,
       notFound: true,
+      revalidate: DEFAULT_REVALIDATE_PERIOD
     }
   }
 
@@ -90,5 +92,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       category,
       items
     },
+    revalidate: DEFAULT_REVALIDATE_PERIOD
   }
 }

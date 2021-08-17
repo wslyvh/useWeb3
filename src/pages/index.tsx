@@ -9,6 +9,7 @@ import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import styles from './index.module.scss'
 import { NavigationProvider } from 'context/navigation'
+import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 
 interface Props {
   categories: Array<Category>
@@ -74,5 +75,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async () => {
       items,
       categories
     },
+    revalidate: DEFAULT_REVALIDATE_PERIOD
   }
 }
