@@ -13,7 +13,7 @@ export function SEO(props: SEOProps) {
   const description = props.description ?? DESCRIPTION
   const image = props.imageUrl ?? IMAGE_OG
   let url = SITE_URL
-  if (typeof window !== 'undefined') {
+  if (global.window && typeof window !== 'undefined') {
     url = window.location.href.replace(location.search, '')
   }
   
