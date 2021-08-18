@@ -9,13 +9,13 @@ interface SEOProps {
 }
 
 export function SEO(props: SEOProps) {
+  const isServer = () => typeof window === 'undefined'
+  if (isServer()) return <></>
+
   const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE} · Learn Web3 development`
   const description = props.description ?? DESCRIPTION
   const image = props.imageUrl ?? IMAGE_OG
-  let url = SITE_URL
-  if (global.window && typeof window !== 'undefined') {
-    url = window.location.href.replace(location.search, '')
-  }
+  const url = window.location.href.replace(location.search, '')
   
   return (
     <Head>
