@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { DESCRIPTION, IMAGE_OG, SITE_URL, TITLE } from 'utils/constants'
+import { DESCRIPTION, IMAGE_OG, SITE_URL, SOCIAL_HANDLE, TITLE } from 'utils/constants'
 import { useRouter } from 'next/dist/client/router'
 
 interface SEOProps {
@@ -30,9 +30,13 @@ export function SEO(props: SEOProps) {
       <meta property="og:title" content={title} key="og_title" />
       <meta property="og:description" content={description} key="og_description" />
       <meta property="og:url" content={url} key="og_url" />
+      
       <meta property="og:image" content={image} key="og_image" />
+      <meta property="og:image:url" content={image} key="og_image_url" />
       <meta property="og:image:secure_url" content={image_secure} key="og_image_secure_url" />
+      <meta property="og:image:type" content='image/png' key="og_image_type" />
 
+      <meta name="twitter:site" content={SOCIAL_HANDLE} />
       <meta name="twitter:card" content="summary_large_image" key="tw_card" />
       <meta name="twitter:title" content={title} key="tw_title" />
       <meta name="twitter:description" content={description} key="tw_description" />
