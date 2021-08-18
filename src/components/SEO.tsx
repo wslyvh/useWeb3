@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { DESCRIPTION, IMAGE_OG, SITE_URL, TITLE } from 'utils/constants'
+import { useRouter } from 'next/dist/client/router'
 
 interface SEOProps {
   title?: string
@@ -9,14 +10,12 @@ interface SEOProps {
 }
 
 export function SEO(props: SEOProps) {
-  const isServer = () => typeof window === 'undefined'
-  if (isServer()) return <></>
-
+  const router = useRouter()
   const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE} · Learn Web3 development`
   const description = props.description ?? DESCRIPTION
   const image = props.imageUrl ?? IMAGE_OG
-  const url = window.location.href.replace(location.search, '')
-  
+  const url = SITE_URL.replace(/\/$/, '') + router.asPath.split('?')[0]
+
   return (
     <Head>
       <title>{title}</title>
