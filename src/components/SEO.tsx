@@ -14,7 +14,7 @@ export function SEO(props: SEOProps) {
   const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE} · Learn Web3 development`
   const description = props.description || DESCRIPTION
   const image_secure = props.imageUrl || IMAGE_OG
-  const image = image_secure //.replace('https://', 'http://')
+  const image = image_secure.replace('https://', 'http://')
   const url = router.route === '/' ? SITE_URL : SITE_URL.replace(/\/$/, '') + router.asPath.split('?')[0]
 
   return (
