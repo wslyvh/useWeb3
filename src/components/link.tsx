@@ -25,8 +25,8 @@ export function Link(props: LinkProps) {
   }
 
   return (
-    <NextLink href={props.href}>
-      <a className={className}>{props.children}</a>
+    <NextLink href={props.href} passHref>
+      <a href={props.href} className={className}>{props.children}</a>
     </NextLink>
   )
 }

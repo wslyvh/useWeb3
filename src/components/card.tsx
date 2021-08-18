@@ -1,6 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
 import styles from './card.module.scss'
+import { Link } from 'components/link'
 import { Tag } from './tag'
 
 interface Props {
@@ -28,7 +28,7 @@ export function Card(props: Props) {
           <Tag text={props.tag} />
         }
         {props.url && 
-          <Link href={props.url} passHref>
+          <Link href={props.url}>
             <button className="accent block">&raquo;</button>
           </Link>
         }
