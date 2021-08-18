@@ -12,14 +12,16 @@ interface SEOProps {
 export function SEO(props: SEOProps) {
   const router = useRouter()
   const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE} · Learn Web3 development`
-  const description = props.description ?? DESCRIPTION
-  const image_secure = props.imageUrl ?? IMAGE_OG
+  const description = props.description || DESCRIPTION
+  const image_secure = props.imageUrl || IMAGE_OG
   const image = image_secure.replace('https://', 'http://')
   const url = SITE_URL.replace(/\/$/, '') + router.asPath.split('?')[0]
 
   return (
     <Head>
       <title>{title}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="application-name" content={TITLE} />
       <meta name="description" content={description} key="description" />
       <meta name="image" content={image} key="image" />
 
