@@ -15,7 +15,7 @@ export function SEO(props: SEOProps) {
   const description = props.description || DESCRIPTION
   const image_secure = props.imageUrl || IMAGE_OG
   const image = image_secure.replace('https://', 'http://')
-  const url = SITE_URL.replace(/\/$/, '') + router.asPath.split('?')[0]
+  const url = router.route === '/' ? SITE_URL : SITE_URL.replace(/\/$/, '') + router.asPath.split('?')[0]
 
   return (
     <Head>
