@@ -3,7 +3,6 @@ import styles from './main.module.scss'
 import { Sitenav } from 'components/sitenav'
 import { Link } from 'components/link'
 import { Newsletter } from 'components/newsletter'
-import { TITLE } from 'utils/constants'
 
 type Props = {
   title?: string
