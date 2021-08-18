@@ -41,10 +41,12 @@ export default function Index(props: Props) {
           <Featured>
             {props.items.map(i => {
               return (
-                <Card
-                  key={i.title}
+                <Card small
+                  key={i.id}
                   title={i.title}
                   description={i.description}
+                  author={i.authors.join(', ')}
+                  tag={i.level}
                   url={i.url} />
               )
             })}
