@@ -22,13 +22,13 @@ export function SEO(props: SEOProps) {
       <meta name="description" content={description} key="description" />
       <meta name="image" content={image} key="image" />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={TITLE} />
-      <meta property="og:title" content={title} key="og_title" />
-      <meta property="og:description" content={description} key="og_description" />
-      <meta property="og:url" content={url} key="og_url" />
-      <meta property="og:image" content={image.replace('https://', 'http://')} key="og_image" />
-      <meta property="og:image:secure_url" content={image} key="og_image_secure_url" />
+      <meta name="og:type" content="website" key="og_type" />
+      <meta name="og:site_name" content={TITLE} key="og_site_name" />
+      <meta name="og:title" content={title} key="og_title" />
+      <meta name="og:description" content={description} key="og_description" />
+      <meta name="og:url" content={url} key="og_url" />
+      <meta name="og:image" content={image.replace('https://', 'http://')} key="og_image" />
+      <meta name="og:image:secure_url" content={image} key="og_image_secure_url" />
 
       <meta name="twitter:card" content="summary_large_image" key="tw_card" />
       <meta name="twitter:title" content={title} key="tw_title" />
