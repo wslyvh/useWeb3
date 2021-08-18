@@ -23,8 +23,8 @@ export function SEO(props: SEOProps) {
       <meta property="og:title" content={title} key="og_title" />
       <meta property="og:description" content={description} key="og_description" />
       <meta property="og:url" content={SITE_URL} key="og_url" />
-      <meta property="og:image" content={image} key="og_image" />
-      <meta property="og:image:secure_url" content={image.replace('https://', 'http://')} key="og_image_secure_url" />
+      <meta property="og:image" content={image.replace('https://', 'http://')} key="og_image" />
+      <meta property="og:image:secure_url" content={image} key="og_image_secure_url" />
 
       <meta name="twitter:card" content="summary_large_image" key="tw_card" />
       <meta name="twitter:title" content={title} key="tw_title" />
