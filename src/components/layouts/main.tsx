@@ -12,7 +12,7 @@ type Props = {
 }
 
 export function Main(props: Props) {
-  const title = props.title ?? TITLE
+  const title = props.title ?? 'useWeb3'
 
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
