@@ -30,9 +30,12 @@ export function Main(props: Props) {
         
         <Newsletter className={styles.newsletter} />
 
-        <footer>
+        <footer className={styles.footer}>
           <p>
-            Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>. View on <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
+            Follow on Twitter <Link href="https://twitter.com/useWeb3">@useWeb3</Link>. Contribute <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
+          </p>
+          <p>
+            Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>.
           </p>
         </footer>
       </main>
