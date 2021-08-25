@@ -6,7 +6,7 @@ import { DOMAIN } from 'utils/constants'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <PlausibleProvider domain={DOMAIN}>
+    <PlausibleProvider domain={DOMAIN} trackOutboundLinks>
       <SEO />
       <Component {...pageProps} />
     </PlausibleProvider>
