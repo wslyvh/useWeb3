@@ -12,6 +12,7 @@
     "airtable": "^0.11.1",
     "gray-matter": "^4.0.3",
     "next": "^11.1.0",
+    "next-plausible": "^2.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.35.2",
