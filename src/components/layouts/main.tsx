@@ -32,7 +32,7 @@ export function Main(props: Props) {
 
         <footer className={styles.footer}>
           <p>
-            Follow on Twitter <Link href="https://twitter.com/useWeb3">@useWeb3</Link>. Contribute <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
+            Follow @ <Link href="https://twitter.com/useWeb3">useWeb3</Link>. Contribute on <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
           </p>
           <p>
             Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>.
