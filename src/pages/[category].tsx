@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
@@ -10,6 +10,8 @@ import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
+import { Dropdown } from 'components/dropdown'
+import styles from './category.module.scss'
 
 interface Props {
   categories: Array<Category>
@@ -26,6 +28,24 @@ export default function Index(props: Props) {
     return <></>
   }
 
+  const [items, setItems] = useState<Array<ContentItem>>([])
+  useEffect(() => {
+    let sorted = [...props.items].sort((a, b) => a.title > b.title ? 1 : a.title === b.title ? 0 : -1)
+    setItems(sorted)
+  }, [props.items])
+
+  function onSort(value: string) {
+    let sorted = [...items]
+    if (value === 'Title') {
+      sorted = sorted.sort((a, b) => a.title > b.title ? 1 : a.title === b.title ? 0 : -1)
+    }
+    if (value === 'Expertise') {
+      sorted = sorted.sort((a, b) => a.level > b.level ? 1 : a.level === b.level ? 0 : -1)
+    }
+    
+    setItems(sorted)
+  }
+
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={`Learn through ${props.category.emoji} ${props.category.title}`} description={props.category.description} />
@@ -37,9 +57,14 @@ export default function Index(props: Props) {
           </article>
         }
 
+        <div className={styles.filter}>
+          <p>Sort by:</p>
+          <Dropdown className={styles.sort} items={['Title', 'Expertise']} onSelect={(value) => onSort(value)} />
+        </div>
+
         <main>
           <Featured>
-            {props.items.map(i => {
+            {items.map(i => {
               return (
                 <Card small
                   key={i.id}
