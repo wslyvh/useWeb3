@@ -1,15 +1,15 @@
-import { createRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useOnOutsideClick } from 'hooks/useOnOutsideClick'
 import styles from './dropdown.module.scss'
 
 interface Props {
     items: Array<string>
     className?: string
-    onSelect: (value: string) => void
+    onSelect: (value: string) => void // eslint-disable-line no-unused-vars
 }
 
 export function Dropdown(props: Props) {
-    const ref = createRef<HTMLDivElement>()
+    const ref = useRef(null)
     const [open, setOpen] = useState(false)
     const [selected, setSelected] = useState(props.items[0])
     useOnOutsideClick(ref, () => setOpen(false))

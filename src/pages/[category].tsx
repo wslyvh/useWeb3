@@ -24,15 +24,15 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
-  if (!props.category) {
-    return <></>
-  }
-
   const [items, setItems] = useState<Array<ContentItem>>([])
   useEffect(() => {
     let sorted = [...props.items].sort((a, b) => a.title > b.title ? 1 : a.title === b.title ? 0 : -1)
     setItems(sorted)
   }, [props.items])
+
+  if (!props.category) {
+    return <></>
+  }
 
   function onSort(value: string) {
     let sorted = [...items]
