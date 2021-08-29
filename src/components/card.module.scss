@@ -8,7 +8,7 @@
     color: $color-neutral;
     
     .title {
-        color: $color-neutral-500;
+        color: $color-neutral;
         padding: $gap-8 0;
         border-bottom: 3px dotted $color-primary-100;
         white-space: nowrap;
@@ -16,7 +16,7 @@
         text-overflow: ellipsis;
 
         &:hover {
-            color: $color-neutral;
+            color: $color-neutral-500;
         }
     }
 
