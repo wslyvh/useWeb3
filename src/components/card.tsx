@@ -29,7 +29,12 @@ export function Card(props: Props) {
 
   return (
     <section className={className}>
-      <h4 className={styles.title}>{props.title}</h4>
+      {props.url && 
+        <Link href={props.url}>
+          <h4 className={styles.title}>{props.title}</h4>
+        </Link>
+      }
+      {!props.url && <h4 className={styles.title}>{props.title}</h4>}
       <p className={styles.description}>{props.description}</p>
       {props.author && <p className={styles.author}>- {props.author}</p>}
       <div className={styles.footer}>

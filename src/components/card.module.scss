@@ -8,11 +8,16 @@
     color: $color-neutral;
     
     .title {
+        color: $color-neutral-500;
         padding: $gap-8 0;
         border-bottom: 3px dotted $color-primary-100;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        &:hover {
+            color: $color-neutral;
+        }
     }
 
     .description {
