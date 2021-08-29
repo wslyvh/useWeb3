@@ -73,13 +73,11 @@ export class AirtableItemService implements ItemServiceInterface {
     
             return records.map((i) => {
                 const title = i.fields['Title'] as string
-                return {
+                let item: ContentItem = {
                     id: slugify(title),
                     title: title,
                     description: i.fields['Description'],
-                    content: i.fields['Content'],
                     authors: i.fields['Authors'] ? i.fields['Authors'] as string[] : [],
-                    date: i.fields['Date'] ? new Date(i.fields['Date'] as string).getTime() : new Date(0),
                     level: i.fields['Level'],
                     tags: i.fields['Tags'] ? i.fields['Tags'] as string[] : [],
                     url: i.fields['Url'],
@@ -87,8 +85,14 @@ export class AirtableItemService implements ItemServiceInterface {
                     category: {
                       id: i.fields['Category Slug'] ? (i.fields['Category Slug'] as string[])[0]: '',
                       title: i.fields['Category Title'] ? (i.fields['Category Title'] as string[])[0]: ''
-                    }
+                    },
+                    created: new Date(i._rawJson.createdTime as string).getTime()
                 } as ContentItem
+
+                if (i.fields['Date']) item.date = new Date(i.fields['Date'] as string).getTime()
+                if (i.fields['Content']) item.content = i.fields['Content'] as string
+                
+                return item
             })
         } catch (e) {
           console.log('GetItems', 'Unable to fetch items', category, featured)

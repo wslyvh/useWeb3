@@ -6,10 +6,11 @@ export interface ContentItem {
     description: string
     content?: string
     authors: Array<string>
-    date: number
+    date?: number
     level: 'All' | 'Beginner' | 'Intermediate' | 'Advanced'
     tags: Array<string>
     url: string
     featured?: boolean
     category: Category
+    created: number
 }
