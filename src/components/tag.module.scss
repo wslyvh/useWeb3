@@ -5,3 +5,23 @@
     padding: 0 $gap-8;
     background: $color-secondary-100;
 }
+
+.info {
+    background: $color-info;
+    color: $color-info-dark;
+}
+
+.success {
+    background: $color-success;
+    color: $color-success-dark;
+}
+
+.warning {
+    background: $color-warning;
+    color: $color-warning-dark;
+}
+
+.error {
+    background: $color-error;
+    color: $color-error-dark;
+}

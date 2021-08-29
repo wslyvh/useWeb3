@@ -18,6 +18,15 @@ export function Card(props: Props) {
   if (props.className) className += ` ${props.className}`
   if (props.small) className += ` ${styles.small}`
 
+  function getType() {
+    if (props.tag === 'All') return 'info'
+    if (props.tag === 'Beginner') return 'success'
+    if (props.tag === 'Intermediate') return 'warning'
+    if (props.tag === 'Advanced') return 'error'
+
+    return undefined
+  }
+
   return (
     <section className={className}>
       <h4 className={styles.title}>{props.title}</h4>
@@ -25,7 +34,7 @@ export function Card(props: Props) {
       {props.author && <p className={styles.author}>- {props.author}</p>}
       <div className={styles.footer}>
         {props.tag && 
-          <Tag text={props.tag} />
+          <Tag text={props.tag} type={getType()} />
         }
         {props.url && 
           <Link href={props.url}>
