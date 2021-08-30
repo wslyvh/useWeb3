@@ -22,22 +22,24 @@ export function Main(props: Props) {
         <Sitenav />
       </aside>
       <main className={styles.content}>
-        <header className={styles.header}>
-          <h1>{title}</h1>
-        </header>
+        <div className={styles.inner}>
+          <header className={styles.header}>
+            <h1>{title}</h1>
+          </header>
 
-        {props.children}
-        
-        <Newsletter className={styles.newsletter} />
+          {props.children}
 
-        <footer className={styles.footer}>
-          <p>
-            Follow @ <Link href="https://twitter.com/useWeb3">useWeb3</Link>. Contribute on <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
-          </p>
-          <p>
-            Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>.
-          </p>
-        </footer>
+          <Newsletter className={styles.newsletter} />
+
+          <footer className={styles.footer}>
+            <p>
+              Follow @ <Link href="https://twitter.com/useWeb3">useWeb3</Link>. Contribute on <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
+            </p>
+            <p>
+              Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>.
+            </p>
+          </footer>
+        </div>
       </main>
     </div>
   )

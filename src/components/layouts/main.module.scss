@@ -14,11 +14,14 @@
 }
 
 .content {
-  position: relative;
   padding: $gap-24;
-  max-width: $max-content-width;
   overflow-y: scroll;
   height: 100vh;
+  width: 100%;
+
+  .inner {
+    max-width: $max-content-width;
+  }
 
   a {
     color: $color-primary-500;
