@@ -23,7 +23,7 @@ export function Sitenav(props: Props) {
             {categories.map(i => {
               return (
                 <li key={i.id}>
-                  <Link href={i.id}>
+                  <Link href={`/${i.id}`}>
                     <span role="img" aria-label={i.id}>{i.emoji}</span>
                     <span className={styles.text}>{i.title}</span>
                   </Link>
@@ -31,7 +31,7 @@ export function Sitenav(props: Props) {
               )
             })}
             <li>
-              <Link href='submit'>
+              <Link href={'/submit'}>
                 <span role="img" aria-label="submit">🔗</span>
                 <span className={styles.text}>Submit</span>
               </Link>
