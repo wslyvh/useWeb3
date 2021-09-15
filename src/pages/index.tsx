@@ -7,9 +7,9 @@ import { ContentItem } from 'types/content-item'
 import { GetStaticProps } from 'next'
 import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
-import styles from './index.module.scss'
 import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
+import styles from './pages.module.scss'
 
 interface Props {
   categories: Array<Category>

@@ -1,6 +1,7 @@
 @use 'assets/styles/variables.scss' as *;
 
 .tag {
+    display: inline-block;
     font-size: $size-12;
     padding: 0 $gap-8;
     background: $color-secondary-100;

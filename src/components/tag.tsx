@@ -11,8 +11,8 @@ export function Tag(props: Props) {
   if (props.className) className += ` ${props.className}`
 
   return (
-    <div className={className}>
+    <span className={className}>
       {props.text}
-    </div>
+    </span>
   )
 }

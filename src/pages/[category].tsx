@@ -11,7 +11,7 @@ import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import { Dropdown } from 'components/dropdown'
-import styles from './category.module.scss'
+import styles from './pages.module.scss'
 
 interface Props {
   categories: Array<Category>
@@ -50,7 +50,7 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={`Learn through ${props.category.emoji} ${props.category.title}`} description={props.category.description} />
 
-      <MainLayout title={props.category.title}>
+      <MainLayout className={styles.container} title={props.category.title}>
         {props.category.description && 
           <article>
             <p dangerouslySetInnerHTML={{__html: props.category.description }} />

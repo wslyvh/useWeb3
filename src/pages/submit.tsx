@@ -1,11 +1,11 @@
 import React from 'react'
 import { Main as MainLayout } from 'components/layouts/main'
-import styles from './submit.module.scss'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { GetStaticProps } from 'next'
 import { AirtableItemService } from 'services/airtable'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
+import styles from './pages.module.scss'
 
 interface Props {
   categories: Array<Category>

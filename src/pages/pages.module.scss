@@ -1,0 +1,46 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+    h2 { 
+        margin-bottom: $gap-8;
+    }
+
+    // Index
+    .featured {
+        margin-bottom: $gap-16;
+    }
+
+    // Submit
+    iframe {
+        background: transparent;
+        border: 1px solid #ccc;
+    }
+
+    // Resources
+    .muted { 
+        color: $color-neutral-500;
+        font-size: smaller;
+    }
+
+    .right {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    // Category page
+    .filter {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: $gap-8;
+    
+        p {
+            font-weight: $font-bold;
+            margin: 0 $gap-8 0 0;
+        }
+    
+        .sort {
+            width: 200px;
+        }
+    }
+}

@@ -1,5 +1,4 @@
-import Airtable from 'airtable';
-import slugify from 'slugify';
+import Airtable, { FieldSet } from 'airtable';
 import { Category } from 'types/category';
 import { ContentItem } from 'types/content-item';
 import { ItemServiceInterface } from 'types/services/item-service';
@@ -23,21 +22,12 @@ export class AirtableItemService implements ItemServiceInterface {
             filterByFormula: `SEARCH("${id}", {Slug})`,
           }).all()
     
-          const categories = records.map((i) => {
-            return {
-                id: i.fields['Slug'],
-                title: i.fields['Title'],
-                description: i.fields['Description'] ?? '',
-                emoji: i.fields['Emoji'] ?? ''
-            } as Category
-          })
-          return categories.find((i) => !!i)
+          return records.map((i) => this.toCategory(i)).find((i) => !!i)
         } catch (e) {
           console.log('GetCategory', 'Unable to fetch category', id)
           console.error(e)
         }
     }
-
     
     public async GetCategories(): Promise<Array<Category>> {
         try {
@@ -45,20 +35,32 @@ export class AirtableItemService implements ItemServiceInterface {
             filterByFormula: `({Items})`,
           }).all()
     
-          return records.map((i) => {
-            return {
-                id: i.fields['Slug'],
-                title: i.fields['Title'],
-                description: i.fields['Description'] ?? '',
-                emoji: i.fields['Emoji'] ?? ''
-            } as Category
-          }).sort((a, b) => a.title.localeCompare(b.title))
+          return records.map((i) => this.toCategory(i)).sort((a, b) => a.title.localeCompare(b.title))
         } catch (e) {
           console.log('GetCategories', 'Unable to fetch categories')
           console.error(e)
         }
     
         return []
+    }
+
+    public async GetItem(category: string, slug: string): Promise<ContentItem | undefined> {
+        try {
+            const records = await this.base('Items').select({
+                filterByFormula: `AND(
+                    ({Status} = 'Accepted'),
+                    ({Category Slug} = "${category}"),
+                    ({Slug} = "${slug}")
+                  )
+            `}).all()
+
+            return records.map((i) => this.toItem(i)).find((i) => !!i)
+        } catch (e) {
+          console.log('GetItem', 'Unable to fetch item', category, slug)
+          console.error(e)
+        }
+
+        return undefined
     }
 
     public async GetItems(category?: string, featured?: boolean): Promise<Array<ContentItem>> {
@@ -71,34 +73,44 @@ export class AirtableItemService implements ItemServiceInterface {
                     )
             `}).all()
     
-            return records.map((i) => {
-                const title = i.fields['Title'] as string
-                let item: ContentItem = {
-                    id: slugify(title),
-                    title: title,
-                    description: i.fields['Description'],
-                    authors: i.fields['Authors'] ? i.fields['Authors'] as string[] : [],
-                    level: i.fields['Level'],
-                    tags: i.fields['Tags'] ? i.fields['Tags'] as string[] : [],
-                    url: i.fields['Url'],
-                    featured: i.fields['Featured'] ?? false,
-                    category: {
-                      id: i.fields['Category Slug'] ? (i.fields['Category Slug'] as string[])[0]: '',
-                      title: i.fields['Category Title'] ? (i.fields['Category Title'] as string[])[0]: ''
-                    },
-                    created: new Date(i._rawJson.createdTime as string).getTime()
-                } as ContentItem
-
-                if (i.fields['Date']) item.date = new Date(i.fields['Date'] as string).getTime()
-                if (i.fields['Content']) item.content = i.fields['Content'] as string
-                
-                return item
-            })
+            return records.map((i) => this.toItem(i))
         } catch (e) {
           console.log('GetItems', 'Unable to fetch items', category, featured)
           console.error(e)
         }
     
         return []
+    }
+
+    private toCategory(source: Airtable.Record<FieldSet>): Category {
+      return {
+        id: source.fields['Slug'],
+        title: source.fields['Title'],
+        description: source.fields['Description'] ?? '',
+        emoji: source.fields['Emoji'] ?? ''
+      } as Category
+    }
+    
+    private toItem(source: Airtable.Record<FieldSet>): ContentItem {
+      let item: ContentItem = {
+          id: source.fields['Slug'],
+          title: source.fields['Title'],
+          description: source.fields['Description'],
+          authors: source.fields['Authors'] ? source.fields['Authors'] as string[] : [],
+          level: source.fields['Level'],
+          tags: source.fields['Tags'] ? source.fields['Tags'] as string[] : [],
+          url: source.fields['Url'],
+          featured: source.fields['Featured'] ?? false,
+          category: {
+            id: source.fields['Category Slug'] ? (source.fields['Category Slug'] as string[])[0]: '',
+            title: source.fields['Category Title'] ? (source.fields['Category Title'] as string[])[0]: ''
+          },
+          created: new Date(source._rawJson.createdTime as string).getTime()
+      } as ContentItem
+
+      if (source.fields['Date']) item.date = new Date(source.fields['Date'] as string).getTime()
+      if (source.fields['Content']) item.content = source.fields['Content'] as string
+      
+      return item
     }
 }
