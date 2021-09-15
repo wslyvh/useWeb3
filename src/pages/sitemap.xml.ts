@@ -8,9 +8,10 @@ export const getServerSideProps = async ({ res }: any) => {
     const items = await service.GetItems()
     const categories = await service.GetCategories()
 
-    const baseUrl = process.env.NODE_ENV === 'production' ? SITE_URL : 'http://localhost:3000/'
+    const baseUrl = SITE_URL
     const currentDate = new Date().toISOString()
     const launchDate = new Date(2021, 8).toISOString()
+
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
