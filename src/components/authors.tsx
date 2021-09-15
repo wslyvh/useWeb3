@@ -20,9 +20,7 @@ export function Authors(props: Props) {
                             {index < props.authors.length - 1 && <>,</>}
                         </>
                     )}
-                    {!i.startsWith('@') && (
-                        {i}
-                    )}
+                    {!i.startsWith('@') && i}
                 </li>
             })}
         </ul>
