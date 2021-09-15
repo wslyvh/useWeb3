@@ -110,6 +110,7 @@ export class AirtableItemService implements ItemServiceInterface {
 
       if (source.fields['Date']) item.date = new Date(source.fields['Date'] as string).getTime()
       if (source.fields['Content']) item.content = source.fields['Content'] as string
+      if (source.fields['Alternate Url']) item.alternateUrl = source.fields['Alternate Url'] as string
       
       return item
     }

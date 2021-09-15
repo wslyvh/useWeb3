@@ -17,14 +17,53 @@
     }
 
     // Resources
+    .authors { 
+        width: auto;
+        display: flex;
+        align-items: center;
+        
+        div:first-child {
+            span {
+                font-weight: $font-bold;
+                margin-right: $gap-8;
+            }
+
+            ul {
+                display: inline-flex;
+                margin-right: $gap-8;
+            }
+        }
+    }
+
+    .website {
+        display: flex;
+    }
+
+    .tags { 
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        justify-content: space-between;
+
+        >:first-child {
+            margin-right: $gap-8;
+        }
+        
+        .level {
+            flex-shrink: 0;
+            padding: $gap-8;
+        }
+    }
+
+    .content { 
+        p {
+            white-space: pre-wrap;
+        }
+    }
+
     .muted { 
         color: $color-neutral-500;
         font-size: smaller;
-    }
-
-    .right {
-        display: flex;
-        flex-wrap: wrap;
     }
 
     // Category page

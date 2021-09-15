@@ -10,6 +10,7 @@ export interface ContentItem {
     level: 'All' | 'Beginner' | 'Intermediate' | 'Advanced'
     tags: Array<string>
     url: string
+    alternateUrl?: string
     featured?: boolean
     category: Category
     created: number

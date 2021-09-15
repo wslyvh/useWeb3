@@ -42,6 +42,11 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    .details { 
+        font-size: smaller;
+        color: $color-neutral;
+    }
 }
 
 .small {

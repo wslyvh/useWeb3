@@ -10,6 +10,7 @@ interface Props {
   author?: string
   small?: boolean
   tag?: string
+  detailsUrl?: string
   url?: string
   className?: string
 }
@@ -29,10 +30,16 @@ export function Card(props: Props) {
       {!props.url && <h4 className={styles.title}>{props.title}</h4>}
       <p className={styles.description}>{props.description}</p>
       {props.author && <p className={styles.author}>- {props.author}</p>}
+      {props.tag && 
+        <Tag text={props.tag} type={getLevelStyle(props.tag)} />
+      }
       <div className={styles.footer}>
-        {props.tag && 
-          <Tag text={props.tag} type={getLevelStyle(props.tag)} />
+        {props.detailsUrl && 
+          <Link className={styles.details} href={props.detailsUrl}>
+            <span>More details &raquo;</span>
+          </Link>
         }
+        {!props.detailsUrl && <span></span>}
         {props.url && 
           <Link href={props.url}>
             <button className="accent block">&raquo;</button>

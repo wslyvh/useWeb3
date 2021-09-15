@@ -12,10 +12,13 @@ export function Authors(props: Props) {
 
     return (
         <ul className={className}>
-            {props.authors.map(i => {
+            {props.authors.map((i, index) => {
                 return <li key={i}>
                     {i.startsWith('@') && (
-                        <Link href={`https://twitter.com/${i.replace('@','')}`}>{i.replace('@','')}</Link>
+                        <>
+                            <Link href={`https://twitter.com/${i.replace('@','')}`}>{i.replace('@','')}</Link>
+                            {index < props.authors.length - 1 && <>,</>}
+                        </>
                     )}
                     {!i.startsWith('@') && (
                         {i}

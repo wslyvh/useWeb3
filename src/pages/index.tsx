@@ -56,6 +56,7 @@ export default function Index(props: Props) {
                   description={i.description}
                   author={i.authors.join(', ')}
                   tag={i.level}
+                  detailsUrl={`/${i.category.id}/${i.id}`}
                   url={i.url} />
               })}
           </Featured>

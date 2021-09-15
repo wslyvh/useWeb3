@@ -32,33 +32,34 @@ export default function Index(props: Props) {
       <SEO title={props.item.title} description={props.item.description} />
 
       <MainLayout className={styles.container} title={props.item.title}>
-        <article>
-          <Authors authors={props.item.authors} />
+        <article className={styles.authors}>
+          <div>
+            <span>By</span>
+            <Authors authors={props.item.authors} />
+          </div>
+          {props.item.date && <div className={styles.muted}>Published {moment(props.item.date).format('MMM D, YYYY')}</div>}
         </article>
-        <p><Tag text={props.item.level} type={getLevelStyle(props.item.level)} /></p>
+
+        <article className={styles.website}>
+          <Link href={props.item.url}>
+            <span className='accent block'>Visit website &raquo;</span>
+          </Link>
+        </article>
         
         <main>
           <p><strong dangerouslySetInnerHTML={{__html: props.item.description }} /></p>
         </main>
 
-        <article>
-          <Link href={props.item.url}>
-            <span className="">view item &raquo;</span>
-          </Link>
-        </article>
-
         {props.item.content && props.item.content !== props.item.description && 
-          <main>
+          <main className={styles.content}>
             <p dangerouslySetInnerHTML={{__html: props.item.content}} />
           </main>
         }
 
-        <article>
+        <article className={styles.tags}>
           <Tags tags={props.item.tags} />
+          <Tag className={styles.level} text={props.item.level} type={getLevelStyle(props.item.level)} />
         </article>
-
-        {props.item.date && <p className={styles.muted}>Published {moment(props.item.date).format('MMM D, YYYY')}</p>}
-
       </MainLayout>
     </NavigationProvider>
   )
