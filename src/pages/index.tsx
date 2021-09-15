@@ -69,7 +69,7 @@ export default function Index(props: Props) {
 export const getStaticProps: GetStaticProps<Props, Params> = async () => {
   const service = new AirtableItemService()
   const items = await service.GetItems('', true)
-  const categories = await service.GetCategories();
+  const categories = await service.GetCategories()
 
   return {
     props: {
