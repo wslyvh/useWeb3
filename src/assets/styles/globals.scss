@@ -12,6 +12,7 @@ body {
   font-size: $size-16;
   color: $color-neutral;
   --block-accent-color: #EBA134; // secondary
+  overflow: hidden;
 }
 
 * {
@@ -27,7 +28,7 @@ a {
   color: inherit;
   text-decoration: none;
 
-  &:hover { 
+  &:hover {
     color: $color-neutral-500;
   }
 }
@@ -35,18 +36,18 @@ a {
 .truncate {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;    
+  text-overflow: ellipsis;
 }
 
-h1, .h1 { 
+h1, .h1 {
   font-size: $size-h1;
 }
 
-h2, .h2 { 
+h2, .h2 {
   font-size: $size-h2;
 }
 
-h3, .h3 { 
+h3, .h3 {
   font-size: $size-h3;
 }
 
