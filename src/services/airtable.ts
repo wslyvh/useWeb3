@@ -44,6 +44,26 @@ export class AirtableItemService implements ItemServiceInterface {
         return []
     }
 
+    public async GetTags(): Promise<Array<string>> {
+        try {
+          const records = await this.base('Items').select({
+            fields: ['Tags'],
+            filterByFormula: `AND(
+                ({Status} = 'Accepted'),
+                ({Tags})
+              )
+          `}).all()
+    
+          const tags = records.map((i) => i.fields['Tags'] as string[])
+          return [...new Set(tags.flat())]
+        } catch (e) {
+          console.log('GetTags', 'Unable to fetch tags')
+          console.error(e)
+        }
+    
+        return []
+    }
+
     public async GetItem(category: string, slug: string): Promise<ContentItem | undefined> {
         try {
             const records = await this.base('Items').select({
@@ -76,6 +96,24 @@ export class AirtableItemService implements ItemServiceInterface {
             return records.map((i) => this.toItem(i))
         } catch (e) {
           console.log('GetItems', 'Unable to fetch items', category, featured)
+          console.error(e)
+        }
+    
+        return []
+    }
+
+    public async GetItemsByTag(tag: string): Promise<Array<ContentItem>> {
+        try {
+            const records = await this.base('Items').select({
+                filterByFormula: `AND(
+                    ({Status} = 'Accepted'),
+                    (FIND(", ${tag.toLowerCase()}, ", ", " & LOWER(ARRAYJOIN(Tags)) & ", ") > 0)
+                  )
+            `}).all()
+    
+            return records.map((i) => this.toItem(i))
+        } catch (e) {
+          console.log('GetItems', 'Unable to fetch items by tag', tag)
           console.error(e)
         }
     

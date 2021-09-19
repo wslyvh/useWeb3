@@ -6,5 +6,6 @@ export interface ItemServiceInterface {
   GetCategories(): Promise<Array<Category>>
   GetItem(category: string, slug: string): Promise<ContentItem | undefined>
   GetItems(category?: string, featured?: boolean): Promise<Array<ContentItem>>
+  GetItemsByTag(tag?: string): Promise<Array<ContentItem>>
 }
   

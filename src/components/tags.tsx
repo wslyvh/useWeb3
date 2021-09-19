@@ -1,3 +1,4 @@
+import { Link } from './link'
 import styles from './tags.module.scss'
 
 interface Props {
@@ -12,7 +13,9 @@ export function Tags(props: Props) {
   return (
     <ul className={className}>
         {props.tags.map(i => {
-            return <li key={i} className='block fixed'>{i}</li>
+            return <li key={i} className='block fixed'>
+              <Link href={`/tags/${i.toLowerCase()}`}>{i}</Link>
+            </li>
         })}
     </ul>
   )
