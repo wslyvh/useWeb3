@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   const service = new AirtableItemService()
   const categories = await service.GetCategories()
   const items = await service.GetItemsByTag(tag)
-  console.log('ITEMS', items)
+  
   return {
     props: {
       categories,

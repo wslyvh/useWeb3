@@ -7,6 +7,7 @@ export const getServerSideProps = async ({ res }: any) => {
     const service = new AirtableItemService()
     const items = await service.GetItems()
     const categories = await service.GetCategories()
+    const tags = await service.GetTags()
 
     const baseUrl = SITE_URL
     const currentDate = new Date().toISOString()
@@ -32,6 +33,15 @@ export const getServerSideProps = async ({ res }: any) => {
                         <lastmod>${currentDate}</lastmod>
                         <changefreq>daily</changefreq>
                         <priority>0.8</priority>
+                    </url>`
+            }).join("")}
+            ${tags.map((i) => {
+                return `
+                    <url>
+                        <loc>${baseUrl}${i}</loc>
+                        <lastmod>${currentDate}</lastmod>
+                        <changefreq>weekly</changefreq>
+                        <priority>0.7</priority>
                     </url>`
             }).join("")}
             ${items.map((i) => {
