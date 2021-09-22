@@ -7,7 +7,7 @@ export const getServerSideProps = async ({ res }: any) => {
     const service = new AirtableItemService()
     const items = await service.GetItems()
     const categories = await service.GetCategories()
-    const tags = await service.GetTags()
+    const tags = (await service.GetTags()).map(i => i.key.toLowerCase().replace(/ /g, '%20').replace(/&/g, '%26'))
 
     const baseUrl = SITE_URL
     const currentDate = new Date().toISOString()
@@ -21,11 +21,6 @@ export const getServerSideProps = async ({ res }: any) => {
                 <changefreq>daily</changefreq>
                 <priority>1.0</priority>
             </url>
-            <url>
-                <loc>${baseUrl}submit</loc>
-                <lastmod>${launchDate}</lastmod>
-                <changefreq>yearly</changefreq>
-            </url>
             ${categories.map((i) => {
                 return `
                     <url>
@@ -33,15 +28,6 @@ export const getServerSideProps = async ({ res }: any) => {
                         <lastmod>${currentDate}</lastmod>
                         <changefreq>daily</changefreq>
                         <priority>0.8</priority>
-                    </url>`
-            }).join("")}
-            ${tags.map((i) => {
-                return `
-                    <url>
-                        <loc>${baseUrl}${i}</loc>
-                        <lastmod>${currentDate}</lastmod>
-                        <changefreq>weekly</changefreq>
-                        <priority>0.7</priority>
                     </url>`
             }).join("")}
             ${items.map((i) => {
@@ -53,6 +39,26 @@ export const getServerSideProps = async ({ res }: any) => {
                         <priority>0.5</priority>
                     </url>`
             }).join("")}
+            <url>
+                <loc>${baseUrl}tags</loc>
+                <lastmod>${launchDate}</lastmod>
+                <changefreq>daily</changefreq>
+                <priority>0.6</priority>
+            </url>
+            ${tags.map((i) => {
+                return `
+                    <url>
+                        <loc>${baseUrl}tags/${i}</loc>
+                        <lastmod>${currentDate}</lastmod>
+                        <changefreq>weekly</changefreq>
+                        <priority>0.7</priority>
+                    </url>`
+            }).join("")}
+            <url>
+                <loc>${baseUrl}submit</loc>
+                <lastmod>${launchDate}</lastmod>
+                <changefreq>yearly</changefreq>
+            </url>
         </urlset>`
     
     res.setHeader("Content-Type", "text/xml")

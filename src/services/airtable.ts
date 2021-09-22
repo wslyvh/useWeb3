@@ -1,6 +1,7 @@
 import Airtable, { FieldSet } from 'airtable';
 import { Category } from 'types/category';
 import { ContentItem } from 'types/content-item';
+import { Count } from 'types/count';
 import { ItemServiceInterface } from 'types/services/item-service';
 
 export class AirtableItemService implements ItemServiceInterface {
@@ -44,7 +45,7 @@ export class AirtableItemService implements ItemServiceInterface {
         return []
     }
 
-    public async GetTags(): Promise<Array<string>> {
+    public async GetTags(): Promise<Array<Count>> {
         try {
           const records = await this.base('Items').select({
             fields: ['Tags'],
@@ -54,8 +55,19 @@ export class AirtableItemService implements ItemServiceInterface {
               )
           `}).all()
     
+          const initial: {[key: string]: number} = {}
           const tags = records.map((i) => i.fields['Tags'] as string[])
-          return [...new Set(tags.flat())]
+          const reduced = tags.flat().reduce((acc: {[key: string]: number}, tag: string) => {
+            acc[tag] ? acc[tag] += 1 : acc[tag] = 1
+            return acc
+          }, initial)
+
+          return Object.keys(reduced).map(i => {
+            return { 
+              key: i,
+              count: reduced[i]
+            } as Count
+          }).sort((a, b) => b.count - a.count)
         } catch (e) {
           console.log('GetTags', 'Unable to fetch tags')
           console.error(e)

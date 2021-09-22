@@ -61,7 +61,7 @@ export default function Index(props: Props) {
         }
 
         <article className={styles.tags}>
-          <Tags tags={props.item.tags} />
+          <Tags tags={props.item.tags.map(i => { return { key: i, count: 0 }})} />
           <Tag className={styles.level} text={props.item.level} type={getLevelStyle(props.item.level)} />
         </article>
       </MainLayout>

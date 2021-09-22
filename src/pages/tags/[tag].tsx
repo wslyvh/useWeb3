@@ -60,7 +60,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: tags.map(i => {
       return {
-        params: { tag: i }
+        params: { tag: i.key }
       }
     }),
     fallback: true
