@@ -48,6 +48,11 @@ export default function Index(props: Props) {
           <Link href={props.item.url}>
             <span className='accent block'>Visit website &raquo;</span>
           </Link>
+          {props.item.alternateUrl && 
+            <Link href={props.item.alternateUrl}>
+              <span className='block'>Alternate link &raquo;</span>
+            </Link>
+          }
         </article>
         
         <main>
@@ -64,6 +69,10 @@ export default function Index(props: Props) {
           <Tags tags={props.item.tags.map(i => { return { key: i, count: 0 }})} />
           <Tag className={styles.level} text={props.item.level} type={getLevelStyle(props.item.level)} />
         </article>
+
+        {props.item.category.title === 'Books' && <p>
+          <small>* Links in the books category may contain referral links. Any proceeds will help and support this site.</small>
+        </p>}
       </MainLayout>
     </NavigationProvider>
   )

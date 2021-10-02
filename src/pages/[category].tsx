@@ -78,6 +78,10 @@ export default function Index(props: Props) {
             })}
           </Featured>
         </main>
+
+        {props.category.title === 'Books' && <p>
+          <small>* Links in the books category may contain referral links. Any proceeds will help and support this site.</small>
+        </p>}
       </MainLayout>
     </NavigationProvider>
   )
