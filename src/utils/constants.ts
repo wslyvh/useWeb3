@@ -15,3 +15,7 @@ export const JOBS_GREENHOUSE = ['consensys', 'consensysinc', 'gnosis', 'openzepp
     'blockdaemon', 'setlabs', 'dydx', 'brave', 'dharma', 'clearmatics', 'bosonprotocol', 'cakedefi', 
     'parity', 'avalabs', 'o1labs', 'chainalysis', 'coinbase', 'near', 'solana', 'thesis', 'nft42', 
     'circle', 'cloudflare', 'moonpay', 'polychaincapital', 'blockchain', 'coindesk', 'bitgo']
+export const JOBS_LEVER = ['aragon', 'centrifuge', 'protocol', 'compound-2', 'Uniswap', 'Mycelium', 'messari', 
+    'chainlink', 'RabbitHoleStudios', 'coin-gecko', 'maple-finance', 'with-foundation', 'Rarible', 'defialliance',
+    'zerion', '3box', 'ArtBlocks', 'blocknative', 'connext-network', 'fuellabs', 'alchemy', 'offchainlabs', 'axiomzen',
+    'immutable', 'filecoin', 'clabs', 'optimism', 'harmony', 'TorusLabs', 'certik', 'trailofbits']

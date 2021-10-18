@@ -29,7 +29,7 @@ export class GreenhouseJobService implements JobServiceInterface {
       }
       
     } catch (e) {
-      console.log('GetCompany', 'Unable to fetch company', id)
+      console.log('GreenhouseJobService', 'Unable to fetch company', id)
       console.error(e)
     }
 
@@ -48,7 +48,7 @@ export class GreenhouseJobService implements JobServiceInterface {
 
       return data.jobs?.map((i: any) => {
           return {
-            id: i.internal_job_id,
+            id: String(i.internal_job_id),
             title: i.title,
             location: i.location.name,
             company: company ? company : {
@@ -61,7 +61,7 @@ export class GreenhouseJobService implements JobServiceInterface {
           } as Job
       })
     } catch (e) {
-      console.log('GetJobs', 'Unable to fetch jobs', companyId)
+      console.log('GreenhouseJobService', 'Unable to fetch jobs', companyId)
       console.error(e)
     }
 
