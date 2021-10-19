@@ -6,4 +6,4 @@ export const SOCIAL_HANDLE = '@useWeb3'
 export const DOMAIN = 'useweb3.xyz'
 
 export const GA_TRACKING_ID = 'G-FNPWLTEDV7'
-export const DEFAULT_REVALIDATE_PERIOD = 600
+export const DEFAULT_REVALIDATE_PERIOD = 14400
