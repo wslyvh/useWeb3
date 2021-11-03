@@ -1,6 +1,8 @@
+import moment from 'moment'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
+import { JOBS_FILTER, JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { isCacheExpired, removeHtml } from 'utils/helpers'
 
 const map = new Map()
@@ -36,7 +38,7 @@ export class GreenhouseJobService implements JobServiceInterface {
     return undefined
   }
 
-  public async GetJobs(companyId?: string): Promise<Array<Job>> {
+  public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
     if (!companyId) return []
 
     try {
@@ -44,22 +46,29 @@ export class GreenhouseJobService implements JobServiceInterface {
       const data = await res.json()
       
       if (!data) return []
-      const company = await this.GetCompany(companyId)
+      let company = await this.GetCompany(companyId)
+      if (!company) {
+        company = {
+          id: companyId,
+          title: companyId,
+          description: '',
+          body: ''
+        }
+      }
 
       return data.jobs?.map((i: any) => {
           return {
             id: String(i.internal_job_id),
             title: i.title,
             location: i.location.name,
-            company: company ? company : {
-                id: companyId,
-                title: companyId,
-                description: ''
-            }, 
+            company: company, 
             url: i.absolute_url,
             updated: new Date(i.updated_at).getTime()
           } as Job
-      })
+      }).filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
+        .sort((a: Job, b: Job) => b.updated - a.updated)
+        .slice(0, maxItems ?? 100)
     } catch (e) {
       console.log('GreenhouseJobService', 'Unable to fetch jobs', companyId)
       console.error(e)

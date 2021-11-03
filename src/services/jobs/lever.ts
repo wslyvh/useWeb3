@@ -1,6 +1,8 @@
+import moment from 'moment'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
+import { JOBS_FILTER, JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { isCacheExpired, removeHtml } from 'utils/helpers'
 
 const map = new Map()
@@ -17,7 +19,7 @@ export class LeverJobService implements JobServiceInterface {
     } as Company
   }
 
-  public async GetJobs(companyId?: string): Promise<Array<Job>> {
+  public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
     if (!companyId) return []
 
     try {
@@ -41,7 +43,10 @@ export class LeverJobService implements JobServiceInterface {
             url: i.applyUrl,
             updated: new Date(i.createdAt).getTime()
           } as Job
-      })
+      }).filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
+        .sort((a: Job, b: Job) => b.updated - a.updated)
+        .slice(0, maxItems ?? 100)
     } catch (e) {
       console.log('LeverJobService', 'Unable to fetch jobs', companyId)
       console.error(e)

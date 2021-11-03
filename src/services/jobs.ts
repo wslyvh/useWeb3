@@ -1,8 +1,7 @@
-import moment from 'moment'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_BREEZY, JOBS_FILTER, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_SINCE_LAST_UPDATED, JOBS_WORKABLE } from 'utils/constants'
+import { JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_WORKABLE } from 'utils/constants'
 import { BreezyJobService } from './jobs/breezy'
 import { GreenhouseJobService, LeverJobService } from './jobs/index'
 import { WorkableJobService } from './jobs/workable'
@@ -19,31 +18,40 @@ export class JobService implements JobServiceInterface {
         return undefined
     }
 
-    public async GetJobs(companyId?: string): Promise<Array<Job>> {
+    public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
+      let jobs = new Array<Job>()
+      const breezyService = new BreezyJobService()
+      const greenhouseService = new GreenhouseJobService()
+      const leverService = new LeverJobService()
+      const workableService = new WorkableJobService()
+
         try {
-          // Breezy
-          const breezyService = new BreezyJobService()
-          const breezyJobs = JOBS_BREEZY.map(item => breezyService.GetJobs(item))
+          if (companyId) {
+            const breezy = JOBS_BREEZY.some(i => i === companyId)
+            if (breezy) jobs = await breezyService.GetJobs(companyId, maxItems)
+            
+            const greenhouse = JOBS_GREENHOUSE.some(i => i === companyId)
+            if (greenhouse) jobs = await greenhouseService.GetJobs(companyId, maxItems)
 
-          // Greenhouse
-          const greenhouseService = new GreenhouseJobService()
-          const greenhouseJobs = JOBS_GREENHOUSE.map(item => greenhouseService.GetJobs(item))
+            const lever = JOBS_LEVER.some(i => i === companyId)
+            if (lever) jobs = await leverService.GetJobs(companyId, maxItems)
 
-          // // Lever
-          const leverService = new LeverJobService()
-          const leverJobs = JOBS_LEVER.map(item => leverService.GetJobs(item))
-          
-          // Breezy
-          const workableService = new WorkableJobService()
-          const workableJobs = JOBS_WORKABLE.map(item => workableService.GetJobs(item))
-          
-          // Get all jobs
-          const jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, workableJobs].flat())).flat()
+            const workable = JOBS_WORKABLE.some(i => i === companyId)
+            if (workable) jobs = await workableService.GetJobs(companyId, maxItems)
+          }
+          else {
+            const breezyJobs = JOBS_BREEZY.map(item => breezyService.GetJobs(item, maxItems))
+            const greenhouseJobs = JOBS_GREENHOUSE.map(item => greenhouseService.GetJobs(item, maxItems))
+            const leverJobs = JOBS_LEVER.map(item => leverService.GetJobs(item, maxItems))          
+            const workableJobs = JOBS_WORKABLE.map(item => workableService.GetJobs(item, maxItems))
+            
+            // Get all jobs
+            jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, workableJobs].flat())).flat()
+          }
 
-          return jobs.filter(job => {
-              return JOBS_FILTER.some(f => job.title.toLowerCase().includes(f))
-          }).filter(i => moment(i.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd'))
-          ).sort((a, b) => b.updated - a.updated)
+          return jobs
+            .filter(i => companyId ? i.company.id === companyId : true)
+            .sort((a, b) => b.updated - a.updated)
         } catch (e) {
           console.log('GetJobs', 'Unable to fetch jobs', companyId)
           console.error(e)

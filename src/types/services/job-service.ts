@@ -3,6 +3,6 @@ import { Job } from "types/job"
 
 export interface JobServiceInterface {
   GetCompany(id: string): Promise<Company | undefined>
-  GetJobs(companyId?: string): Promise<Array<Job>>
+  GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>>
 }
   

@@ -1,6 +1,8 @@
+import moment from 'moment'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
+import { JOBS_FILTER, JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 
 const map = new Map()
 
@@ -16,7 +18,7 @@ export class BreezyJobService implements JobServiceInterface {
     } as Company
   }
 
-  public async GetJobs(companyId?: string): Promise<Array<Job>> {
+  public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
     if (!companyId) return []
 
     try {
@@ -35,7 +37,10 @@ export class BreezyJobService implements JobServiceInterface {
             url: i.url,
             updated: new Date(i.published_date).getTime()
           } as Job
-      })
+      }).filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
+        .sort((a: Job, b: Job) => b.updated - a.updated)
+        .slice(0, maxItems ?? 100)
     } catch (e) {
       console.log('BreezyJobService', 'Unable to fetch jobs', companyId)
       console.error(e)
