@@ -44,8 +44,8 @@ export default function Index(props: Props) {
           <h2>
             Post a job 
           </h2>
-          <p>The useWeb3 job boards is still under active development. It's not possible to automatically post jobs yet. You can <Link href='https://airtable.com/shrIbgc0llBQFpo7G'>use this form</Link> to express your interest.</p>
-          <p>The job board is targeting at a technical audience, software engineers, builders, product developers, designers, researchers and makers. Listed companies should work on core, open-source infrastructure, products, tools, frameworks, DAO's, etc.</p>
+          <p>The useWeb3 job boards is still under active development. It&apos;s not possible to automatically post jobs yet. You can <Link href='https://airtable.com/shrIbgc0llBQFpo7G'>use this form</Link> to express your interest.</p>
+          <p>The job board is targeting at a technical audience, software engineers, builders, product developers, designers, researchers and makers. Listed companies should work on core, open-source infrastructure, products, tools, frameworks, DAO&apos;s, etc.</p>
         </article>
 
         <Pagination total={props.jobs.length} />
