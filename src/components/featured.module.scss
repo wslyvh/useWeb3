@@ -22,4 +22,9 @@
             grid-template-columns: 1fr;
         }
     }
+
+    .rows {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }

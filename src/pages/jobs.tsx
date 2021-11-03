@@ -10,7 +10,8 @@ import styles from './pages.module.scss'
 import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { Featured } from 'components/featured'
-import { Card } from 'components/card'
+import { Row } from 'components/row'
+import moment from 'moment'
 
 interface Props {
   categories: Array<Category>
@@ -32,14 +33,16 @@ export default function Index(props: Props) {
         </article>
 
         <main>
-          <Featured>
+          <Featured type='rows'>
             {props.jobs.map(i => {
               return (
-                <Card small
+                <Row
                   key={i.id}
                   title={i.title}
-                  description={i.description || ''}
+                  description={i.location}
+                  date={moment(i.updated).fromNow()}
                   author={i.company.title}
+                  authorUrl={i.company.id}
                   url={i.url} />
               )
             })}

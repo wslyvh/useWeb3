@@ -42,7 +42,8 @@ export class JobService implements JobServiceInterface {
 
           return jobs.filter(job => {
               return JOBS_FILTER.some(f => job.title.toLowerCase().includes(f))
-          }).filter(i => moment(i.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
+          }).filter(i => moment(i.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd'))
+          ).sort((a, b) => b.updated - a.updated)
         } catch (e) {
           console.log('GetJobs', 'Unable to fetch jobs', companyId)
           console.error(e)

@@ -5,6 +5,7 @@ import { Link } from './link'
 interface Props {
   title?: string
   link?: string
+  type?: 'grid' | 'rows'
   className?: string
   children: ReactNode
 }
@@ -12,6 +13,8 @@ interface Props {
 export function Featured(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
+  let type = styles.grid
+  if (props.type) type = styles[props.type]
 
   return (
     <article className={className}>
@@ -19,7 +22,7 @@ export function Featured(props: Props) {
         {props.title && <h3>{props.title}</h3>}
         {props.link && <Link className={styles.link} href={props.link}>view all</Link>}
       </div>
-      <div className={styles.grid}>{props.children}</div>
+      <div className={type}>{props.children}</div>
     </article>
   )
 }
