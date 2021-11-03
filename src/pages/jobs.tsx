@@ -59,7 +59,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async () => {
 
   const jobService = new JobService()
   const jobs = await jobService.GetJobs()
-  console.log('JOBS', jobs.length)
 
   return {
     props: {
