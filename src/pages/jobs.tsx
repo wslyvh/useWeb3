@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
 import { GetStaticProps } from 'next'
 import { AirtableItemService } from 'services/airtable'
