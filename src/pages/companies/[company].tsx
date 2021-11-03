@@ -43,7 +43,7 @@ export default function Index(props: Props) {
             {props.jobs.map(i => {
               return (
                 <Row
-                  key={i.id}
+                  key={`${i.id}_${i.location}`}
                   title={i.title}
                   description={i.location}
                   date={moment(i.updated).fromNow()}

@@ -29,9 +29,7 @@
 
     .description {
         flex-grow: 4; 
-
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
