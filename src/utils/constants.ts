@@ -5,11 +5,10 @@ export const IMAGE_OG = `${SITE_URL}images/social.png`
 export const SOCIAL_HANDLE = '@useWeb3'
 export const DOMAIN = 'useweb3.xyz'
 
-export const GA_TRACKING_ID = 'G-FNPWLTEDV7'
 export const DEFAULT_REVALIDATE_PERIOD = 600
 
 export const JOBS_SINCE_LAST_UPDATED = 30
-export const JOBS_AMOUNT_PER_COMPANY = 5
+export const JOBS_AMOUNT_PER_COMPANY = 10
 export const JOBS_FILTER = ['ethereum', 'web3', 'developer', 'engineer', 'hacker', 'evangelist', 
     'software', 'fullstack', 'full-stack', 'full stack', 'blockchain', 'solidity', 'protocol', 'engineering', 'product', 'security']
 export const JOBS_GREENHOUSE = ['consensys', 'consensysinc', 'gnosis', 'openzeppelin', 'figment', '0x', 
