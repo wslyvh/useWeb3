@@ -56,16 +56,23 @@ export class GreenhouseJobService implements JobServiceInterface {
         }
       }
 
-      return data.jobs?.map((i: any) => {
+      const jobs = await Promise.all(data.jobs?.map(async (i: any) => {
+          const response = await fetch(`https://boards-api.greenhouse.io/v1/boards/${companyId}/jobs/${i.id}`)
+          const job = await response.json()
+          
           return {
-            id: String(i.internal_job_id),
+            id: String(i.id),
             title: i.title,
+            description: removeHtml(job.content),
+            body: job.content,
             location: i.location.name,
             company: company, 
             url: i.absolute_url,
             updated: new Date(i.updated_at).getTime()
           } as Job
-      }).filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+      }) as Array<Job>)
+
+      return jobs.filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)
