@@ -1,5 +1,5 @@
 {
-  "name": "learn-web3",
+  "name": "use-web3",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,7 @@
     "slugify": "^1.6.1"
   },
   "devDependencies": {
+    "@types/he": "^1.1.2",
     "@types/react": "17.0.14",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",

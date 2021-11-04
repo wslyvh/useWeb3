@@ -14,7 +14,7 @@ import moment from 'moment'
 import { Company } from 'types/company'
 import slugify from 'slugify'
 import { Link } from 'components/link'
-var he = require('he')
+import he from 'he'
 
 interface Props {
     categories: Array<Category>
