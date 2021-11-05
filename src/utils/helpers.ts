@@ -1,3 +1,4 @@
+import { DEFAULT_REVALIDATE_PERIOD } from "./constants"
 
 export function getLevelStyle(tag: string) { 
     if (tag === 'All') return 'info'
@@ -6,4 +7,15 @@ export function getLevelStyle(tag: string) {
     if (tag === 'Advanced') return 'error'
 
     return undefined
+}
+
+export function isCacheExpired(map: Map<any, any>, key: string) {
+    const [, timestamp] = map.get(key)
+    
+    return (Date.now() - timestamp) / 1000 > DEFAULT_REVALIDATE_PERIOD
+}
+
+export function removeHtml(value: string) {
+    // removes html. breaks/newlines. replaces multiple spaces with a single space.
+    return value.replace(/<[^>]*>?/gm, '').replace(/(\r\n|\n|\r)/gm, ' ').replace(/\s\s+/g, ' ')
 }

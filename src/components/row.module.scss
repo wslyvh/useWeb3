@@ -1,0 +1,53 @@
+@use 'assets/styles/variables.scss' as *;
+
+.card {
+    font-family: $font-primary;
+    font-weight: $font-normal;
+    font-size: $size-16;
+    line-height: 1.25rem;
+    color: $color-neutral;
+    
+    .title {
+        color: $color-neutral;
+        padding: $gap-8 0;
+        border-bottom: 3px dotted $color-primary-100;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+            color: $color-neutral-500;
+        }
+    }
+
+    .body {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: $gap-8;
+    }
+
+    .description {
+        flex-grow: 4; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .date {
+        flex-shrink: 0;
+    }
+
+    .url {
+        flex-shrink: 0;
+    }
+
+    .author {
+        margin-right: $gap-8;
+    }
+
+    .muted { 
+        color: $color-neutral-500;
+        font-size: smaller;
+    }
+}

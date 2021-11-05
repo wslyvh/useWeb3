@@ -31,6 +31,12 @@ export function Sitenav(props: Props) {
               )
             })}
             <li>
+              <Link href={'/jobs'}>
+                <span role="img" aria-label="jobs">💼</span>
+                <span className={styles.text}>Jobs</span>
+              </Link>
+            </li>
+            <li>
               <Link href={'/tags'}>
                 <span role="img" aria-label="tags">🏷️</span>
                 <span className={styles.text}>Tags</span>

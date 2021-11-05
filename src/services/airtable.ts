@@ -1,8 +1,8 @@
-import Airtable, { FieldSet } from 'airtable';
-import { Category } from 'types/category';
-import { ContentItem } from 'types/content-item';
-import { Count } from 'types/count';
-import { ItemServiceInterface } from 'types/services/item-service';
+import Airtable, { FieldSet } from 'airtable'
+import { Category } from 'types/category'
+import { ContentItem } from 'types/content-item'
+import { Count } from 'types/count'
+import { ItemServiceInterface } from 'types/services/item-service'
 
 export class AirtableItemService implements ItemServiceInterface {
     private client: Airtable
