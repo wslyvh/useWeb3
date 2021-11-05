@@ -5,7 +5,6 @@ export const IMAGE_OG = `${SITE_URL}images/social.png`
 export const SOCIAL_HANDLE = '@useWeb3'
 export const DOMAIN = 'useweb3.xyz'
 
-export const GA_TRACKING_ID = 'G-FNPWLTEDV7'
 export const DEFAULT_REVALIDATE_PERIOD = 3600
 
 export const JOBS_SINCE_LAST_UPDATED = 60
