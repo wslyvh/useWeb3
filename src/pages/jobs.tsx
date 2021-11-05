@@ -14,6 +14,7 @@ import moment from 'moment'
 import { Link } from 'components/link'
 import Pagination from 'next-pagination'
 import { useRouter } from 'next/dist/client/router'
+import { SEO } from 'components/SEO'
 
 interface Props {
   categories: Array<Category>
@@ -35,6 +36,7 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
+      <SEO title='Find Web3 jobs' description='Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem.' />
       <MainLayout className={styles.container} title='Web3 Jobs'>
         <article>
           <p>Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem.</p>
