@@ -1,4 +1,5 @@
 import { Link } from 'components/link'
+import { useRouter } from 'next/router'
 import { useNavigation } from 'hooks/useNavigation'
 import styles from './sitenav.module.scss'
 
@@ -7,14 +8,16 @@ interface Props {
 }
 
 export function Sitenav(props: Props) {
+  const router = useRouter()
   const categories = useNavigation()
+  const currentPath = router.asPath
   let className = styles.container
   if (props.className) className += ` ${props.className}`
 
   return (
     <nav className={className}>
         <ul className={styles.sidenav}>
-            <li>
+            <li className={currentPath === "/" ? styles.active :""}>
               <Link href='/'>
                 <span role="img" aria-label="home">🏠</span> 
                 <span className={styles.text}>Home</span>
@@ -22,7 +25,7 @@ export function Sitenav(props: Props) {
             </li>
             {categories.map(i => {
               return (
-                <li key={i.id}>
+                <li key={i.id} className={currentPath === `/${i.id}` ? styles.active :""}>
                   <Link href={`/${i.id}`}>
                     <span role="img" aria-label={i.id}>{i.emoji}</span>
                     <span className={styles.text}>{i.title}</span>
@@ -30,19 +33,19 @@ export function Sitenav(props: Props) {
                 </li>
               )
             })}
-            <li>
+             <li className={currentPath === "/jobs" ? styles.active :""}>
               <Link href={'/jobs'}>
                 <span role="img" aria-label="jobs">💼</span>
                 <span className={styles.text}>Jobs</span>
               </Link>
             </li>
-            <li>
+             <li className={currentPath === "/tags" ? styles.active :""}>
               <Link href={'/tags'}>
                 <span role="img" aria-label="tags">🏷️</span>
                 <span className={styles.text}>Tags</span>
               </Link>
             </li>
-            <li>
+             <li className={currentPath === "/submit" ? styles.active :""}>
               <Link href={'/submit'}>
                 <span role="img" aria-label="submit">🔗</span>
                 <span className={styles.text}>Submit</span>
