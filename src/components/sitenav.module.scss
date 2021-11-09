@@ -17,4 +17,8 @@
       display: none;
     }
   }
+
+  .active {
+    background-color: $color-info;
+  }
 }
