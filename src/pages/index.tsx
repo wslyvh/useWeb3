@@ -44,6 +44,8 @@ export default function Index(props: Props) {
 
         {props.categories.map(category => {
           const items = props.items.filter(item => item.category.id === category.id)
+          if (items.length === 0) return null
+          
           return <Featured 
           key={category.id}
             className={styles.featured} 
