@@ -1,4 +1,4 @@
-@use 'assets/styles/variables.scss' as *;
+@use "assets/styles/variables.scss" as *;
 
 .container {
   .sidenav {
@@ -9,13 +9,9 @@
     font-size: $size-20;
     padding: $gap-8 $gap-16;
   }
-  
+
   .text {
     margin-left: $gap-16;
-
-    @media (max-width: $screen-1280) {
-      display: none;
-    }
   }
 
   .active {
