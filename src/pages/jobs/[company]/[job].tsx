@@ -14,6 +14,7 @@ import moment from 'moment'
 import { Company } from 'types/company'
 import slugify from 'slugify'
 import { Link } from 'components/link'
+import { marked } from 'marked'
 import he from 'he'
 
 interface Props {
@@ -50,7 +51,7 @@ export default function Index(props: Props) {
         
         <h3>Description</h3>
         {props.job.body && 
-          <main className={styles.body} dangerouslySetInnerHTML={{__html: he.decode(props.job.body) ?? '' }} />
+          <main className={styles.body} dangerouslySetInnerHTML={{__html: he.decode(marked.parse(props.job.body)) ?? '' }} />
         }
         {!props.job.body && 
           <main className={styles.body}>Apply for the role of {props.job.title} at {props.company.title}.</main>
