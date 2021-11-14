@@ -12,6 +12,13 @@
 
   .text {
     margin-left: $gap-16;
+
+    @media (max-width: $screen-1280) {
+      display: none;
+    }
+    @media (max-width: $screen-640) {
+      display: inline-block;
+    }
   }
 
   .active {
