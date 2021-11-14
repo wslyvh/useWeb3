@@ -16,6 +16,8 @@ export function isCacheExpired(map: Map<any, any>, key: string) {
 }
 
 export function removeHtml(value: string) {
+    if (!value) return value
+    
     // removes html. breaks/newlines. replaces multiple spaces with a single space.
     return value.replace(/<[^>]*>?/gm, '').replace(/(\r\n|\n|\r)/gm, ' ').replace(/\s\s+/g, ' ')
 }

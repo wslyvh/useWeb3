@@ -2,6 +2,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_WORKABLE } from 'utils/constants'
+import { AirtableJobService } from './jobs/airtable'
 import { BreezyJobService } from './jobs/breezy'
 import { GreenhouseJobService, LeverJobService } from './jobs/index'
 import { WorkableJobService } from './jobs/workable'
@@ -20,6 +21,7 @@ export class JobService implements JobServiceInterface {
 
     public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
       let jobs = new Array<Job>()
+      const airtableService = new AirtableJobService()
       const breezyService = new BreezyJobService()
       const greenhouseService = new GreenhouseJobService()
       const leverService = new LeverJobService()
@@ -38,15 +40,21 @@ export class JobService implements JobServiceInterface {
 
           const workable = JOBS_WORKABLE.some(i => i === companyId)
           if (workable) jobs = await workableService.GetJobs(companyId, maxItems)
+
+          // Check Airtable last. Doesn't have constant company list
+          if (!breezy && !greenhouse && !lever && !workable) {
+            jobs = await airtableService.GetJobs(companyId, maxItems)
+          }
         }
         else {
           const breezyJobs = JOBS_BREEZY.map(item => breezyService.GetJobs(item, maxItems))
           const greenhouseJobs = JOBS_GREENHOUSE.map(item => greenhouseService.GetJobs(item, maxItems))
           const leverJobs = JOBS_LEVER.map(item => leverService.GetJobs(item, maxItems))
           const workableJobs = JOBS_WORKABLE.map(item => workableService.GetJobs(item, maxItems))
+          const airtableJobs = airtableService.GetJobs(undefined, maxItems)
           
           // Get all jobs
-          jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, workableJobs].flat())).flat()
+          jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, workableJobs, airtableJobs].flat())).flat()
         }
 
         return jobs
