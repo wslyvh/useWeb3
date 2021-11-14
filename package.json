@@ -12,7 +12,8 @@
     "airtable": "^0.11.1",
     "dayjs": "^1.10.7",
     "he": "^1.2.0",
-    "next": "^11.1.2",
+    "marked": "^4.0.1",
+    "next": "^12.0.3",
     "next-pagination": "^3.1.0",
     "next-plausible": "^2.1.1",
     "react": "17.0.2",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@types/he": "^1.1.2",
+    "@types/marked": "^4.0.0",
     "@types/react": "17.0.14",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
