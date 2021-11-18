@@ -63,7 +63,8 @@ export default function Index(props: Props) {
                   date={moment(i.updated).fromNow(true)}
                   author={i.company.title}
                   authorUrl={i.company.id}
-                  url={i.url} />
+                  url={i.url} 
+                  featured={i.featured} />
               )
             })}
           </Featured>
