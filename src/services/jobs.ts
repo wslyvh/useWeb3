@@ -60,6 +60,7 @@ export class JobService implements JobServiceInterface {
         return jobs
           .filter(i => companyId ? i.company.id === companyId : true)
           .sort((a, b) => b.updated - a.updated)
+          .sort((a, b) => a.featured ? (b.featuredUntil ?? 0) - (a.featuredUntil ?? 0) : 1)
       } catch (e) {
         console.log('GetJobs', 'Unable to fetch jobs', companyId)
         console.error(e)
