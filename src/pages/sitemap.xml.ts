@@ -13,7 +13,7 @@ export const getServerSideProps = async ({ res }: any) => {
 
     const jobService = new JobService()
     const jobs = await jobService.GetJobs()
-    const companies = [...new Set(jobs.map(i => i.company.id))]
+    const companies = Array.from(new Set(jobs.map(i => i.company.id)))
     
     const baseUrl = SITE_URL
     const currentDate = new Date().toISOString()
