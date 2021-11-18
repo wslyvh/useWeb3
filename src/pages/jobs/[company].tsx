@@ -12,7 +12,7 @@ import styles from '../pages.module.scss'
 import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { Row } from 'components/row'
-import moment from 'moment'
+import  moment from 'dayjs'
 import { Company } from 'types/company'
 
 interface Props {
