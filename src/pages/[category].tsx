@@ -26,7 +26,7 @@ interface Params extends ParsedUrlQuery {
 export default function Index(props: Props) {
   const [items, setItems] = useState<Array<ContentItem>>([])
   useEffect(() => {
-    let sorted = [...props.items].sort((a, b) => a.title > b.title ? 1 : a.title === b.title ? 0 : -1)
+    let sorted = [...props.items].sort((a, b) => a.created > b.created ? 1 : a.created === b.created ? 0 : -1).reverse()
     setItems(sorted)
   }, [props.items])
 
@@ -36,6 +36,9 @@ export default function Index(props: Props) {
 
   function onSort(value: string) {
     let sorted = [...items]
+    if (value === 'Recently added') {
+      sorted = sorted.sort((a, b) => a.created > b.created ? 1 : a.created === b.created ? 0 : -1).reverse()
+    }
     if (value === 'Title') {
       sorted = sorted.sort((a, b) => a.title > b.title ? 1 : a.title === b.title ? 0 : -1)
     }
@@ -59,7 +62,7 @@ export default function Index(props: Props) {
 
         <div className={styles.filter}>
           <p>Sort by:</p>
-          <Dropdown className={styles.sort} items={['Title', 'Expertise']} onSelect={(value) => onSort(value)} />
+          <Dropdown className={styles.sort} items={['Recently added', 'Title', 'Expertise']} onSelect={(value) => onSort(value)} />
         </div>
 
         <main>

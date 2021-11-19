@@ -1,5 +1,5 @@
 import Airtable from 'airtable'
-import moment from 'moment'
+import  moment from 'dayjs'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
@@ -47,7 +47,7 @@ export class AirtableJobService implements JobServiceInterface {
       }).all()
 
       return records.map((source) => {
-        return {
+        let job = {
           id: source.fields['Slug'],
           title: source.fields['Title'],
           description: source.fields['Description'],
@@ -60,8 +60,16 @@ export class AirtableJobService implements JobServiceInterface {
             body: (source.fields['Company Description'] as string[])[0]
           }, 
           url: source.fields['External Url'],
-          updated: new Date(source.fields['Updated'] as string).getTime()
+          updated: new Date(source.fields['Updated'] as string).getTime(),
+          featured: false
         } as Job
+
+        if (source.fields['Featured']) {
+          job.featuredUntil = new Date(source.fields['Featured'] as string).getTime()
+          job.featured = job.featuredUntil >= new Date().getTime()
+        }
+
+        return job
       }).filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)

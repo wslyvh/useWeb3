@@ -11,11 +11,13 @@ interface Props {
   authorUrl: string
   url: string
   className?: string
+  featured?: boolean
 }
 
 export function Row(props: Props) {
   let className = `${styles.card} fixed block`
   if (props.className) className += ` ${props.className}`
+  if (props.featured) className += ` ${styles.featured}`
 
   return (
     <section className={className}>

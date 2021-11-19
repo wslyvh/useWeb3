@@ -1,7 +1,7 @@
 import { Company } from "./company";
 
 export interface Job {
-    id: string
+    id: string // slug 
     title: string
     description?: string
     body?: string
@@ -9,4 +9,6 @@ export interface Job {
     company: Company
     url: string
     updated: number
+    featured: boolean
+    featuredUntil?: number
 }

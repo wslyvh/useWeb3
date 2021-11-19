@@ -12,7 +12,7 @@ import styles from '../pages.module.scss'
 import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { Row } from 'components/row'
-import moment from 'moment'
+import  moment from 'dayjs'
 import { Company } from 'types/company'
 
 interface Props {
@@ -62,7 +62,7 @@ export default function Index(props: Props) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const service = new JobService()
   const jobs = await service.GetJobs()
-  const companies = [...new Set(jobs.map(i => i.company.id))]
+  const companies = Array.from(new Set(jobs.map(i => i.company.id)))
 
   return {
     paths: companies.map(i => {

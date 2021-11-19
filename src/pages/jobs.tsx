@@ -10,12 +10,11 @@ import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { Featured } from 'components/featured'
 import { Row } from 'components/row'
-import moment from 'moment'
+import  moment from 'dayjs'
 import { Link } from 'components/link'
 import Pagination from 'next-pagination'
 import { useRouter } from 'next/dist/client/router'
 import { SEO } from 'components/SEO'
-
 interface Props {
   categories: Array<Category>
   jobs: Array<Job>
@@ -63,7 +62,8 @@ export default function Index(props: Props) {
                   date={moment(i.updated).fromNow(true)}
                   author={i.company.title}
                   authorUrl={i.company.id}
-                  url={i.url} />
+                  url={i.url} 
+                  featured={i.featured} />
               )
             })}
           </Featured>
