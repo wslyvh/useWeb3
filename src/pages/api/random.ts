@@ -28,7 +28,7 @@ by ${item.authors.join(' ')}
 Check it out at 👇
 ${item.url}`
 
-    twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
+    const response = await twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
         console.log(err, data)
     })
 
