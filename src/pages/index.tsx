@@ -21,6 +21,8 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
+  const categories = props.categories.reverse()
+
   return (
     <NavigationProvider categories={props.categories}>
       <MainLayout className={styles.container}>
@@ -42,7 +44,7 @@ export default function Index(props: Props) {
           </p>
         </article>
 
-        {props.categories.reverse().map(category => {
+        {categories.map(category => {
           const items = props.items.filter(item => item.category.id === category.id)
           if (items.length === 0) return null
           
