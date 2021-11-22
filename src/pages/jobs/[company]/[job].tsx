@@ -33,6 +33,12 @@ export default function Index(props: Props) {
     return <></>
   }
 
+  const body = props.job.body ?? ''
+  const basicFormatting = new RegExp(/\s(__|\*\*)(?!\s)(.(?!\1))+(?!\s(?=\1))/).test(body)
+  const linkFormatting = new RegExp(/\[(.+)\]\(([^ ]+?)( "(.+)")?\)/).test(body)
+  const content = basicFormatting || linkFormatting ? marked.parse(body) : body
+  const html = he.decode(content)
+
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={props.job.title} />
@@ -51,7 +57,7 @@ export default function Index(props: Props) {
         
         <h3>Description</h3>
         {props.job.body && 
-          <main className={styles.body} dangerouslySetInnerHTML={{__html: he.decode(marked.parse(props.job.body)) ?? '' }} />
+          <main className={styles.body} dangerouslySetInnerHTML={{__html: html }} />
         }
         {!props.job.body && 
           <main className={styles.body}>Apply for the role of {props.job.title} at {props.company.title}.</main>

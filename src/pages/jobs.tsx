@@ -68,6 +68,8 @@ export default function Index(props: Props) {
             })}
           </Featured>
         </main>
+
+        <Pagination total={props.jobs.length} />
       </MainLayout>
     </NavigationProvider>
   )
