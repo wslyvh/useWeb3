@@ -42,7 +42,7 @@ export default function Index(props: Props) {
           </p>
         </article>
 
-        {props.categories.reverse().map(category => {
+        {props.categories.map(category => {
           const items = props.items.filter(item => item.category.id === category.id)
           if (items.length === 0) return null
           
@@ -76,7 +76,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async () => {
   return {
     props: {
       items,
-      categories
+      categories: categories.reverse()
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD
   }
