@@ -1,4 +1,4 @@
-@use 'assets/styles/variables.scss' as *;
+@use "assets/styles/variables.scss" as *;
 
 .container {
   display: flex;
@@ -14,11 +14,35 @@
   height: 100vh;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  overflow-y: scroll; 
+  overflow-y: scroll;
+  @media (max-width: $screen-640) {
+    display: none;
+  }
 }
 
 .sitenav::-webkit-scrollbar {
-  display: none; 
+  display: none;
+}
+
+.mobileSitenav {
+  display: none;
+  @media (max-width: $screen-640) {
+    flex-shrink: 0;
+    background: $color-neutral-100;
+    display: flex;
+    justify-content: center;
+    padding-top: $gap-24;
+    height: 100vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    z-index: 100;
+    position: absolute;
+  }
+}
+
+.mobileSitenav::-webkit-scrollbar {
+  display: none;
 }
 
 .content {
