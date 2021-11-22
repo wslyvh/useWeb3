@@ -42,7 +42,7 @@ export default function Index(props: Props) {
           </p>
         </article>
 
-        {props.categories.map(category => {
+        {props.categories.reverse().map(category => {
           const items = props.items.filter(item => item.category.id === category.id)
           if (items.length === 0) return null
           
