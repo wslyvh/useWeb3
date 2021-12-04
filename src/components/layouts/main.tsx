@@ -5,6 +5,7 @@ import { Link } from "components/link";
 import { Newsletter } from "components/newsletter";
 import Fab from "components/fab";
 import MobileNav from "components/mobileNav";
+import { Donate } from "components/donate";
 
 type Props = {
   title?: string;
@@ -36,6 +37,8 @@ export function Main(props: Props) {
           <header className={styles.header}>
             <h1>{title}</h1>
           </header>
+
+          <Donate />
 
           {props.children}
 
