@@ -29,10 +29,28 @@ Check it out at 👇
 ${item.url}`
 
     console.log(text)
-    twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
-        console.log(err, data)
-    })
+    let error = ''
+    try {
+        twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
+            if (err) {
+                error = err
+                console.log('Unable to post Twitter update..')
+                console.error(err)
+            }
+            else { 
+                console.log('Update posted to Twitter..')
+                console.log(`https://twitter.com/useWeb3/status/${data.id_str}`)
+            }
+        })
+    }
+    catch(e) {
+        error = 'Unknown error'
+        console.log('Unable to post Twitter update..')
+        console.error(e)
+    }
 
-    res.status(200).send('Ok')
+    if (error) res.status(500).send(error)
+    else res.status(200).send('Ok')
+    
     return
 }
