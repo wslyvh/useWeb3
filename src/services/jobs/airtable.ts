@@ -41,9 +41,10 @@ export class AirtableJobService implements JobServiceInterface {
 
   public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
     try {
+      console.log('GET JOBS', companyId)
       const records = await this.base('Jobs').select({
         filterByFormula: companyId ? `AND(
-          ({Active})
+          ({Active}),
           ({Company Slug} = "${companyId}")
         )` : `AND(
           ({Active})
