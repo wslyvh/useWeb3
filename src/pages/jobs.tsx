@@ -43,10 +43,24 @@ export default function Index(props: Props) {
 
         <article>
           <h2>
-            Post a job 
+            Add your company
           </h2>
-          <p>The useWeb3 job boards is still under active development. It&apos;s not possible to automatically post jobs yet. You can <Link href='https://airtable.com/shrIbgc0llBQFpo7G'>use this form</Link> to express your interest.</p>
-          <p>The job board is targeting at a technical audience, software engineers, builders, product developers, designers, researchers and makers. Listed companies should work on core, open-source infrastructure, products, tools, frameworks, DAO&apos;s, etc.</p>
+          <p>
+            You can use the <Link href='https://airtable.com/shrIbgc0llBQFpo7G'>'Company form'</Link> to submit your company profile for review.
+          </p>
+        </article>
+
+        <article>
+          <h2>
+            Add your job(s)
+          </h2>
+          <p>
+            You can use the <Link href='https://airtable.com/shrY9atkDkPKKd03Z'>'Jobs form'</Link> to submit your job(s) for review. Please make sure you're company profile is submitted and reviewed first! 
+          </p>
+        </article>
+
+        <article>
+          <p>useWeb3 has a technical audience, software engineers, builders, product developers, designers, researchers and makers. It will only list companies and jobs that are aligned with the values of Web3 and are contributing to core, open-source infrastructure, products, tools, frameworks and DAO's. </p>
         </article>
 
         <Pagination total={props.jobs.length} />
