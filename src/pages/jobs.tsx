@@ -46,7 +46,7 @@ export default function Index(props: Props) {
             Add your company
           </h2>
           <p>
-            You can use the <Link href='https://airtable.com/shrIbgc0llBQFpo7G'>'Company form'</Link> to submit your company profile for review.
+            You can use the <Link href='https://airtable.com/shrIbgc0llBQFpo7G'>Company form</Link> to submit your company profile for review.
           </p>
         </article>
 
@@ -55,12 +55,12 @@ export default function Index(props: Props) {
             Add your job(s)
           </h2>
           <p>
-            You can use the <Link href='https://airtable.com/shrY9atkDkPKKd03Z'>'Jobs form'</Link> to submit your job(s) for review. Please make sure you're company profile is submitted and reviewed first! 
+            You can use the <Link href='https://airtable.com/shrY9atkDkPKKd03Z'>Jobs form</Link> to submit your job(s) for review. Please make sure your company profile is submitted and reviewed first! 
           </p>
         </article>
 
         <article>
-          <p>useWeb3 has a technical audience, software engineers, builders, product developers, designers, researchers and makers. It will only list companies and jobs that are aligned with the values of Web3 and are contributing to core, open-source infrastructure, products, tools, frameworks and DAO's. </p>
+          <p>useWeb3 has a technical audience, software engineers, builders, product developers, designers, researchers and makers. It will only list companies and jobs that are aligned with the values of Web3 and are contributing to core, open-source infrastructure, products, tools, frameworks and DAOs. </p>
         </article>
 
         <Pagination total={props.jobs.length} />
