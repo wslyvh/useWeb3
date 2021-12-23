@@ -2,10 +2,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_WORKABLE } from 'utils/constants'
-import { AirtableJobService } from './jobs/airtable'
-import { BreezyJobService } from './jobs/breezy'
-import { GreenhouseJobService, LeverJobService } from './jobs/index'
-import { WorkableJobService } from './jobs/workable'
+import { AirtableJobService, BreezyJobService, GreenhouseJobService, LeverJobService, WorkableJobService } from './jobs/index'
 
 export class JobService implements JobServiceInterface {  
     public async GetCompany(id: string): Promise<Company | undefined> {

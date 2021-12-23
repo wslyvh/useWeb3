@@ -24,6 +24,7 @@ export class AirtableJobService implements JobServiceInterface {
         filterByFormula: `SEARCH("${id}", {Slug})`,
       }).all()
 
+      // TODO: Not used yet. Map fields correctly.. 
       return records.map((source) => {
         return {
           id: source.fields['Slug'],
@@ -42,8 +43,11 @@ export class AirtableJobService implements JobServiceInterface {
     try {
       const records = await this.base('Jobs').select({
         filterByFormula: companyId ? `AND(
-          ({Company Slug} = "${companyId}"))`
-          : ''
+          ({Active})
+          ({Company Slug} = "${companyId}")
+        )` : `AND(
+          ({Active})
+        )`
       }).all()
 
       return records.map((source) => {
