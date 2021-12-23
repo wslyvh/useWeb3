@@ -17,5 +17,5 @@ export const JOBS_LEVER = ['aragon', 'centrifuge', 'protocol', 'compound-2', 'Un
     'chainlink', 'RabbitHoleStudios', 'coin-gecko', 'with-foundation', 'Rarible', 'defialliance',
     'zerion', '3box', 'ArtBlocks', 'blocknative', 'connext-network', 'fuellabs', 'alchemy', 'offchainlabs', 'axiomzen',
     'immutable', 'filecoin', 'optimism', 'TorusLabs', 'certik', 'trailofbits', 'obol-tech', 'quicknode', 'ETHGlobal']
-export const JOBS_BREEZY = ['the-graph', 'immunefi', 'superrare', 'centrifuge', 'celer-network', 'bloxstaking', 'hal-collective-inc']
+export const JOBS_BREEZY = ['the-graph', 'immunefi', 'superrare', 'centrifuge', 'celer-network', 'bloxstaking', 'hal-collective-inc', 'spruce-systems']
 export const JOBS_WORKABLE = ['superfluid', 'walletconnect', 'doingud', 'web3labs', 'ankr', 'paraswap', 'argenthq']
