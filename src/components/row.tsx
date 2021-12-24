@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './row.module.scss'
 import { Link } from 'components/link'
 import slugify from 'slugify'
+import Image from 'next/image'
 
 interface Props {
   title: string
@@ -24,7 +25,7 @@ export function Row(props: Props) {
     <section className={className}>
       {props.featured && props.imageUrl && 
         <div className={styles.logo}>
-          <img src={props.imageUrl} alt={`${props.author} logo`} />
+          <Image src={props.imageUrl} alt={`${props.author} logo`} height={45} width={45} />
         </div>
       }
       <Link href={`/jobs/${props.authorUrl}/${slugify(props.title, { lower: true, strict: true, trim: true })}`}>
