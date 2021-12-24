@@ -3,4 +3,5 @@ export interface Company {
     title: string
     description: string
     body: string
+    logo?: string
 }

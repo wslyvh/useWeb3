@@ -41,7 +41,6 @@ export class AirtableJobService implements JobServiceInterface {
 
   public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
     try {
-      console.log('GET JOBS', companyId)
       const records = await this.base('Jobs').select({
         filterByFormula: companyId ? `AND(
           ({Active}),
@@ -52,6 +51,9 @@ export class AirtableJobService implements JobServiceInterface {
       }).all()
 
       return records.map((source) => {
+        const logo = (source.fields['Company Logo'] as any[])?.length > 0 ? 
+          (source.fields['Company Logo'] as any[])[0].url : ''
+
         let job = {
           id: source.fields['Slug'],
           title: source.fields['Title'],
@@ -62,7 +64,8 @@ export class AirtableJobService implements JobServiceInterface {
             id: (source.fields['Company Slug'] as string[])[0],
             title: (source.fields['Company Name'] as string[])[0],
             description: (source.fields['Company Description'] as string[])[0],
-            body: (source.fields['Company Description'] as string[])[0]
+            body: (source.fields['Company Description'] as string[])[0],
+            logo: logo
           }, 
           url: source.fields['External Url'],
           updated: new Date(source.fields['Updated'] as string).getTime(),

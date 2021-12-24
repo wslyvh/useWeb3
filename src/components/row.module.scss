@@ -6,6 +6,9 @@
     font-size: $size-16;
     line-height: 1.25rem;
     color: $color-neutral;
+
+    display: flex;
+    flex-direction: column;
     
     .title {
         color: $color-neutral;
@@ -17,6 +20,15 @@
 
         &:hover {
             color: $color-neutral-500;
+        }
+    }
+
+    .logo {
+        img { 
+            margin-top: 8px;
+            border-radius: 50%;
+            max-height: 45px;
+            max-width: 45px;
         }
     }
 

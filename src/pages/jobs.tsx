@@ -77,6 +77,7 @@ export default function Index(props: Props) {
                   author={i.company.title}
                   authorUrl={i.company.id}
                   url={i.url} 
+                  imageUrl={i.company.logo}
                   featured={i.featured} />
               )
             })}

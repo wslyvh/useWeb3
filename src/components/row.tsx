@@ -10,6 +10,7 @@ interface Props {
   author: string
   authorUrl: string
   url: string
+  imageUrl?: string
   className?: string
   featured?: boolean
 }
@@ -21,6 +22,11 @@ export function Row(props: Props) {
 
   return (
     <section className={className}>
+      {props.featured && props.imageUrl && 
+        <div className={styles.logo}>
+          <img src={props.imageUrl} alt={`${props.author} logo`} />
+        </div>
+      }
       <Link href={`/jobs/${props.authorUrl}/${slugify(props.title, { lower: true, strict: true, trim: true })}`}>
         <h4 className={styles.title}>{props.title}</h4>
       </Link>
