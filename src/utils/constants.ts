@@ -12,10 +12,10 @@ export const JOBS_AMOUNT_PER_COMPANY = 5
 export const JOBS_FILTER = ['ethereum', 'web3', 'developer', 'engineer', 'hacker', 'evangelist', 
     'software', 'fullstack', 'full-stack', 'full stack', 'blockchain', 'solidity', 'protocol', 'engineering', 'product', 'security']
 export const JOBS_GREENHOUSE = ['consensys', 'consensysinc', 'gnosis', 'openzeppelin', 'figment', '0x', 
-    'blockdaemon', 'setlabs', 'dydx', 'brave', 'dharma', 'thesis', 'matterlabs', 'chainsafesystems', 'textileio']
+    'blockdaemon', 'setlabs', 'dydx', 'brave', 'dharma', 'thesis', 'matterlabs', 'chainsafesystems', 'textileio', 'optimism']
 export const JOBS_LEVER = ['aragon', 'centrifuge', 'protocol', 'compound-2', 'Uniswap', 'Mycelium', 
     'chainlink', 'RabbitHoleStudios', 'coin-gecko', 'with-foundation', 'Rarible', 'defialliance',
     'zerion', '3box', 'ArtBlocks', 'blocknative', 'connext-network', 'fuellabs', 'alchemy', 'offchainlabs', 'axiomzen',
-    'immutable', 'filecoin', 'optimism', 'TorusLabs', 'certik', 'trailofbits', 'obol-tech', 'quicknode', 'ETHGlobal', 'Polygon']
+    'immutable', 'filecoin', 'TorusLabs', 'certik', 'trailofbits', 'obol-tech', 'quicknode', 'ETHGlobal', 'Polygon']
 export const JOBS_BREEZY = ['the-graph', 'immunefi', 'superrare', 'centrifuge', 'celer-network', 'bloxstaking', 'hal-collective-inc', 'spruce-systems']
 export const JOBS_WORKABLE = ['superfluid', 'walletconnect', 'doingud', 'web3labs', 'ankr', 'paraswap', 'argenthq']
