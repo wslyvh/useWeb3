@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "tools:migrate": "ts-node src/migrate"
   },
   "dependencies": {
     "airtable": "^0.11.1",
     "dayjs": "^1.10.7",
+    "gray-matter": "^4.0.3",
     "he": "^1.2.0",
     "marked": "^4.0.1",
     "next": "^12.0.3",
@@ -26,8 +28,10 @@
     "@types/he": "^1.1.2",
     "@types/marked": "^4.0.0",
     "@types/react": "17.0.14",
+    "dotenv": "^10.0.0",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
+    "ts-node": "^10.4.0",
     "typescript": "4.3.5"
   }
 }
