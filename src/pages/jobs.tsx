@@ -20,20 +20,9 @@ interface Props {
   jobs: Array<Job>
 }
 
-const map = new Map()
-
 export default function Index(props: Props) {
   const router = useRouter()
   const [jobs, setJobs] = useState(props.jobs)
-
-  const key = `API:Cache.Jobs`
-  if (map.has(key)) {
-    console.log('Cache has key', key, map.get(key)[1])
-  }
-  else {
-    console.log('NO Cache. Set Date.now()', key)
-    map.set(key, [{}, Date.now()])
-  }
 
   useEffect(() => {
     const page = !isNaN(Number(router.query['page'])) ? Number(router.query['page']) : 1
