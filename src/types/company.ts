@@ -4,4 +4,7 @@ export interface Company {
     description: string
     body: string
     logo?: string
+    website?: string
+    twitter?: string
+    github?: string
 }

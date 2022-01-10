@@ -1,5 +1,6 @@
 import 'assets/styles/globals.scss'
 import 'next-pagination/dist/index.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import type { AppProps } from 'next/app'
 import { SEO } from 'components/SEO'
 import PlausibleProvider from 'next-plausible'

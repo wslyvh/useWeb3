@@ -45,7 +45,7 @@ export class JobService implements JobServiceInterface {
 
           // Check Airtable last. Doesn't have constant company list
           if (!breezy && !greenhouse && !lever && !workable && !wrk) {
-            jobs = await airtableService.GetJobs(companyId, maxItems)
+            jobs = await airtableService.GetJobs(companyId)
           }
         }
         else {
@@ -54,7 +54,7 @@ export class JobService implements JobServiceInterface {
           const leverJobs = JOBS_LEVER.map(item => leverService.GetJobs(item, maxItems))
           const workableJobs = JOBS_WORKABLE.map(item => workableService.GetJobs(item, maxItems))
           const wrkJobs = JOBS_WRK.map(item => wrkService.GetJobs(item, maxItems))
-          const airtableJobs = airtableService.GetJobs(undefined, maxItems)
+          const airtableJobs = airtableService.GetJobs()
           
           // Get all jobs
           jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, workableJobs, wrkJobs, airtableJobs].flat())).flat()

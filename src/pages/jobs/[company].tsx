@@ -14,6 +14,7 @@ import { Job } from 'types/job'
 import { Row } from 'components/row'
 import  moment from 'dayjs'
 import { Company } from 'types/company'
+import { Link } from 'components/link'
 
 interface Props {
     categories: Array<Category>
@@ -30,11 +31,20 @@ export default function Index(props: Props) {
     return <></>
   }
 
+  const isFeatured = props.jobs.some(i => i.featured)
+
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={props.company.title} />
 
       <MainLayout className={styles.container} title={props.company.title}>
+        {isFeatured && (props.company.website || props.company.twitter || props.company.github) && 
+          <div className={styles.icons}>
+            {props.company.website && <Link href={props.company.website}><i className="bi bi-globe" /></Link>}
+            {props.company.twitter && <Link href={`https://twitter.com/${props.company.twitter}`}><i className="bi bi-twitter" /></Link>}
+            {props.company.github && <Link href={props.company.github}><i className="bi bi-github" /></Link>}
+          </div>
+        }
         <article className={styles.body} dangerouslySetInnerHTML={{__html: props.company.body }} />
         
         <h3>Jobs</h3>
@@ -49,7 +59,9 @@ export default function Index(props: Props) {
                   date={moment(i.updated).fromNow()}
                   author={i.company.title}
                   authorUrl={i.company.id}
-                  url={i.url} />
+                  url={i.url} 
+                  imageUrl={i.company.logo}
+                  featured={i.featured} />
               )
             })}
           </Featured>

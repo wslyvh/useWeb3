@@ -13,6 +13,12 @@
         }
     }
 
+    .icons { 
+        display: flex;
+        gap: $gap-8;
+        margin-bottom: $gap-16;
+    }
+
     // Index
     .featured {
         margin-bottom: $gap-16;

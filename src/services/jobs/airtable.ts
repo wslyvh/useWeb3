@@ -65,6 +65,9 @@ export class AirtableJobService implements JobServiceInterface {
             title: (source.fields['Company Name'] as string[])[0],
             description: (source.fields['Company Description'] as string[])[0],
             body: (source.fields['Company Description'] as string[])[0],
+            website: (source.fields['Company Website'] as string[])[0],
+            twitter: (source.fields['Company Twitter'] as string[])[0],
+            github: (source.fields['Company Github'] as string[])[0],
             logo: logo
           }, 
           url: source.fields['External Url'],
