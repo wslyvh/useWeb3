@@ -127,6 +127,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   const items = await service.GetItems(categoryId, false)
   return {
     props: {
+      key: categoryId,
       categories,
       category,
       items
