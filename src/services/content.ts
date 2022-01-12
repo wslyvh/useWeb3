@@ -48,7 +48,8 @@ export function GetItems(category: string, featured?: boolean): Array<ContentIte
             id: i.name.replace('.md', ''),
             featured: doc.data.featured ?? false,
             date: new Date(doc.data.date as string).getTime(),
-            content: doc.content
+            content: doc.content,
+            category: cat
         } as ContentItem
     }).filter(i => !!i) 
     

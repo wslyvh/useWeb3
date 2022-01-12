@@ -36,7 +36,7 @@ export class AirtableItemService implements ItemServiceInterface {
             filterByFormula: `({Items})`,
           }).all()
     
-          return records.map((i) => this.toCategory(i)).sort((a, b) => a.title.localeCompare(b.title)).reverse()
+          return records.map((i) => this.toCategory(i)).sort((a, b) => a.title.localeCompare(b.title))
         } catch (e) {
           console.log('GetCategories', 'Unable to fetch categories')
           console.error(e)
