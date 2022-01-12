@@ -15,6 +15,7 @@ import { Row } from 'components/row'
 import  moment from 'dayjs'
 import { Company } from 'types/company'
 import { Link } from 'components/link'
+import { marked } from 'marked'
 
 interface Props {
     categories: Array<Category>
@@ -35,7 +36,7 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={props.company.title} />
+      <SEO title={props.company.title} description={props.company.description} imageUrl={props.company.logo} />
 
       <MainLayout className={styles.container} title={props.company.title}>
         {isFeatured && (props.company.website || props.company.twitter || props.company.github) && 
@@ -45,7 +46,9 @@ export default function Index(props: Props) {
             {props.company.github && <Link href={props.company.github}><i className="bi bi-github" /></Link>}
           </div>
         }
-        <article className={styles.body} dangerouslySetInnerHTML={{__html: props.company.body }} />
+        
+        {props.company.body && <article className={styles.body} dangerouslySetInnerHTML={{__html: marked.parse(props.company.body) }} />}
+        {!props.company.body && props.company.description && <article className={styles.body} dangerouslySetInnerHTML={{__html: props.company.description }} />}
         
         <h3>Jobs</h3>
         <main>

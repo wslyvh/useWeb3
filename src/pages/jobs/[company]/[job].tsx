@@ -41,7 +41,7 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={props.job.title} />
+      <SEO title={props.job.title} description={props.job.description} imageUrl={props.company.logo} />
 
       <MainLayout className={styles.container} title={props.job.title}>
         <p>

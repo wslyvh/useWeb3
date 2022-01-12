@@ -64,13 +64,13 @@ export class AirtableJobService implements JobServiceInterface {
             id: (source.fields['Company Slug'] as string[])[0],
             title: (source.fields['Company Name'] as string[])[0],
             description: (source.fields['Company Description'] as string[])[0],
-            body: (source.fields['Company Description'] as string[])[0],
+            body: (source.fields['Company Body'] as string[])[0],
             website: (source.fields['Company Website'] as string[])[0],
             twitter: (source.fields['Company Twitter'] as string[])[0],
             github: (source.fields['Company Github'] as string[])[0],
             logo: logo
           }, 
-          url: source.fields['External Url'],
+          url: source.fields['External Url'] ?? `mailto:${source.fields['Email']}?subject=Apply for ${source.fields['Title']}`,
           updated: new Date(source.fields['Updated'] as string).getTime(),
           featured: false
         } as Job
