@@ -36,7 +36,7 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={props.company.title} description={props.company.description} imageUrl={props.company.logo} />
+      <SEO title={`Jobs at ${props.company.title}`} description={props.company.description} imageUrl={props.company.logo} />
 
       <MainLayout className={styles.container} title={props.company.title}>
         {isFeatured && (props.company.website || props.company.twitter || props.company.github) && 
