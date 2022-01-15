@@ -5,6 +5,7 @@ authors: ['@owpckcr']
 tags: ['Security','Smart Contracts']
 languages: ['Solidity']
 url: 'https://medium.com/@sblowpckcr/smtchecker-almost-practical-superpower-5a3efdb3cf19'
+dateAdded: 2021-09-01
 level: 'Advanced'
 date: 2021-08-31
 ---

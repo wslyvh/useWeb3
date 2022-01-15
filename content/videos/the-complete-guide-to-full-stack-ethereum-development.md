@@ -5,6 +5,7 @@ authors: ['@dabit3']
 tags: ['Smart Contracts','Dapp']
 languages: ['Solidity','JavaScript']
 url: 'https://youtu.be/a0osIaAOFSE'
+dateAdded: 2021-08-16
 level: 'Beginner'
 date: 2021-04-15
 ---

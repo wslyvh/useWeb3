@@ -5,6 +5,7 @@ authors: ['@austingriffith']
 tags: ['Dapp','Smart Contracts']
 languages: ['Solidity','JavaScript']
 url: 'https://medium.com/@austin_48503/%EF%B8%8Fethereum-dev-speed-run-bd72bcba6a4c'
+dateAdded: 2021-09-10
 level: 'Beginner'
 date: 2021-07-30
 ---

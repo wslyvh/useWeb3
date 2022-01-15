@@ -5,6 +5,7 @@ authors: ['@yosriady']
 tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://yos.io/2019/11/10/smart-contract-development-best-practices/'
+dateAdded: 2021-08-29
 level: 'Intermediate'
 ---
 

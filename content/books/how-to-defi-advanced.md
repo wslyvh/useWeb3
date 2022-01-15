@@ -5,6 +5,7 @@ authors: ['@coingecko','@Darrenlautf']
 tags: ['DeFi']
 languages: []
 url: 'https://amzn.to/3osVr4i'
+dateAdded: 2021-08-11
 level: 'Intermediate'
 date: 2021-07-01
 alternateUrl: 'https://www.goodreads.com/book/show/58512673-how-to-defi'

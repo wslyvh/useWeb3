@@ -5,6 +5,7 @@ authors: ['@austingriffith']
 tags: ['Smart Contracts','Cryptography']
 languages: ['Solidity']
 url: 'https://eth.build/'
+dateAdded: 2021-08-16
 level: 'Beginner'
 ---
 

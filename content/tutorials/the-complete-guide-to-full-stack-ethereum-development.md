@@ -6,6 +6,7 @@ tags: ['Smart Contracts','Dapp']
 languages: ['Solidity']
 url: 'https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13'
 featured: 'true'
+dateAdded: 2021-08-17
 level: 'Beginner'
 date: 2021-04-09
 ---

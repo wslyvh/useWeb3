@@ -5,6 +5,7 @@ authors: ['@ArtiChmaro']
 tags: ['Smart Contracts','NFT']
 languages: ['Solidity']
 url: 'https://youtu.be/19SSvs32m8I'
+dateAdded: 2021-10-24
 level: 'Intermediate'
 date: 2021-10-18
 ---

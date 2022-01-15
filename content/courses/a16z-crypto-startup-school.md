@@ -6,6 +6,7 @@ tags: ['Web3']
 languages: []
 url: 'https://a16z.com/crypto-startup-school/'
 featured: 'true'
+dateAdded: 2021-08-11
 ---
 
 Learn How to Build a Crypto Company

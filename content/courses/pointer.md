@@ -5,6 +5,7 @@ authors: ['@pointer_gg','@KennethCassel']
 tags: ['Web3']
 languages: ['Solidity']
 url: 'https://www.pointer.gg'
+dateAdded: 2022-01-03
 level: 'Beginner'
 ---
 

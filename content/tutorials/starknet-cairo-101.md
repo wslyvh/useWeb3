@@ -5,6 +5,7 @@ authors: ['@HenriLieutaud']
 tags: ['Smart Contracts','Scalability']
 languages: ['Cairo']
 url: 'https://github.com/l-henri/starknet-cairo-101'
+dateAdded: 2022-01-15
 level: 'Beginner'
 ---
 

@@ -5,6 +5,7 @@ authors: ['@kbaiiitmk']
 tags: ['EVM','Smart Contracts','Dapp']
 languages: ['Solidity']
 url: 'https://elearning.kba.ai/'
+dateAdded: 2021-12-20
 ---
 
 Blockchain Foundation Program

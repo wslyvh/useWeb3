@@ -5,6 +5,7 @@ authors: ['@CairoLang']
 tags: ['Smart Contracts','Scalability']
 languages: ['Cairo']
 url: 'https://www.cairo-lang.org/docs/hello_cairo/voting.html'
+dateAdded: 2022-01-15
 level: 'Intermediate'
 ---
 

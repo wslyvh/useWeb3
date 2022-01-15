@@ -5,6 +5,7 @@ authors: ['@optimismPBC']
 tags: ['Smart Contracts','Scalability']
 languages: []
 url: 'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat'
+dateAdded: 2022-01-15
 level: 'Beginner'
 ---
 

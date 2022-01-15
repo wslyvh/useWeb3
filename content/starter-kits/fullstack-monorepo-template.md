@@ -5,6 +5,7 @@ authors: ['@nfs__21']
 tags: ['Solidity','Smart Contracts']
 languages: ['Solidity']
 url: 'https://github.com/G3root/nextjs-dapp-starter-ts'
+dateAdded: 2021-11-09
 ---
 
 A monorepo boilerplate code for typesafe full-stack Solidity development based on template-ethereum-contracts .

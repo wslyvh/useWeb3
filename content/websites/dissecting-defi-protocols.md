@@ -5,6 +5,7 @@ authors: ['@0xkowloon']
 tags: ['DeFi','Smart Contracts']
 languages: ['Solidity']
 url: 'https://0xkowloon.substack.com/'
+dateAdded: 2021-11-15
 level: 'Advanced'
 ---
 

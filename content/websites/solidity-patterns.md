@@ -5,6 +5,7 @@ authors: ['Franz Volland']
 tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://fravoll.github.io/solidity-patterns/'
+dateAdded: 2021-08-16
 level: 'Intermediate'
 ---
 

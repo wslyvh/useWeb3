@@ -5,6 +5,7 @@ authors: ['@KaneWallmann']
 tags: ['Smart Contracts','Security','MEV']
 languages: []
 url: 'https://medium.com/@kanewallmann_71759/recovering-assets-from-a-hacked-account-with-flashbots-bfe920435fb6'
+dateAdded: 2021-11-20
 level: 'Advanced'
 date: 2021-11-13
 ---

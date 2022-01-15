@@ -5,6 +5,7 @@ authors: ['@AlchemyPlatform','@thatguyintech','@0xElan']
 tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract/'
+dateAdded: 2021-10-16
 level: 'Beginner'
 date: 2021-10-12
 ---

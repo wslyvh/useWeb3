@@ -5,6 +5,7 @@ authors: ['@OpenZeppelin']
 tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://ethernaut.openzeppelin.com/'
+dateAdded: 2021-08-11
 level: 'Beginner'
 ---
 

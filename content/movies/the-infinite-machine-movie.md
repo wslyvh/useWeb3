@@ -5,6 +5,7 @@ authors: ['@CamiRusso']
 tags: []
 languages: []
 url: 'https://www.theinfinitemachinemovie.com/'
+dateAdded: 2021-11-30
 ---
 
 The Ethereum movie will leverage Ethereum technology, more specifically, non-fungible tokens, to help finance the film and transform its audience from passive expectators, into active participants. 

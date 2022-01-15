@@ -5,6 +5,7 @@ authors: ['@TeamChainShot']
 tags: ['Dapp']
 languages: ['JavaScript']
 url: 'https://www.chainshot.com/learn/ethers'
+dateAdded: 2021-09-10
 level: 'Beginner'
 ---
 

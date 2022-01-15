@@ -5,6 +5,7 @@ authors: ['@EthereumRemix','@bunsenstraat']
 tags: ['IDE']
 languages: ['Solidity']
 url: 'https://medium.com/remix-ide/github-in-remix-ide-356de378f7da'
+dateAdded: 2021-09-25
 level: 'Intermediate'
 date: 2021-09-17
 ---

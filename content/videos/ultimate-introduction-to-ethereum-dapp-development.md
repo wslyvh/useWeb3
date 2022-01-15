@@ -5,6 +5,7 @@ authors: ['@AlwaysBCoding']
 tags: ['Smart Contracts','Dapp']
 languages: ['Solidity','JavaScript']
 url: 'https://www.youtube.com/playlist?list=PLV1JDFUtrXpFh85G-Ddyy2kLSafaB9biQ'
+dateAdded: 2021-08-16
 level: 'Beginner'
 date: 2016-11-16
 ---

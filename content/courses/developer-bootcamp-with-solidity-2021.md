@@ -5,6 +5,7 @@ authors: ['Ravinder Deol','@thinkingassets','Martin Sterlicchi']
 tags: ['Smart Contracts','Dapp']
 languages: ['Solidity','JavaScript']
 url: 'https://www.udemy.com/course/blockchain-developer/'
+dateAdded: 2021-08-17
 level: 'Beginner'
 ---
 

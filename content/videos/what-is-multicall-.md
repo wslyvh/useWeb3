@@ -5,6 +5,7 @@ authors: ['@PatrickAlphaC']
 tags: ['Smart Contracts','DevEx','Cryptography','EVM']
 languages: ['Solidity','Python']
 url: 'https://youtu.be/EXas4uBqQr8'
+dateAdded: 2021-11-15
 level: 'Intermediate'
 ---
 

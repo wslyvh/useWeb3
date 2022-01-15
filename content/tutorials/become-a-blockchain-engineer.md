@@ -6,6 +6,7 @@ tags: ['Smart Contracts','Dapp']
 languages: []
 url: 'https://betterprogramming.pub/how-to-become-a-blockchain-engineer-fa4386a0504f'
 featured: 'true'
+dateAdded: 2021-11-15
 level: 'Beginner'
 date: 2021-11-08
 ---

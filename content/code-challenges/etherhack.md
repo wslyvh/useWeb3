@@ -5,6 +5,7 @@ authors: ['Etherhack']
 tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://etherhack.positive.com/'
+dateAdded: 2021-08-11
 level: 'Beginner'
 ---
 

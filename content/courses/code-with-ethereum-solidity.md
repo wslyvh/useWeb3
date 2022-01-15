@@ -5,6 +5,7 @@ authors: ['@ste_grider']
 tags: ['Smart Contracts','Dapp']
 languages: ['Solidity','JavaScript']
 url: 'https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/'
+dateAdded: 2021-08-16
 level: 'Beginner'
 ---
 

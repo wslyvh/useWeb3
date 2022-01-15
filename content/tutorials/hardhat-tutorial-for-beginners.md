@@ -5,6 +5,7 @@ authors: ['@NomicLabs']
 tags: ['Smart Contracts']
 languages: ['Solidity','JavaScript']
 url: 'https://hardhat.org/tutorial/'
+dateAdded: 2021-08-17
 level: 'Beginner'
 date: 2020-03-25
 ---

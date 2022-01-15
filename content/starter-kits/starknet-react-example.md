@@ -5,6 +5,7 @@ authors: ['@ceccon_me']
 tags: ['Smart Contracts','Scalability']
 languages: ['Cairo','JavaScript']
 url: 'https://github.com/fracek/starknet-react-example'
+dateAdded: 2022-01-15
 ---
 
 StarkNet.js + React

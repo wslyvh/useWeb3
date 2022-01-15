@@ -5,6 +5,7 @@ authors: ['@edatweets_']
 tags: ['Smart Contracts','Dapp','NFT']
 languages: ['Solidity']
 url: 'https://eda.hashnode.dev/create-your-own-nft-collection-on-ethereum'
+dateAdded: 2021-11-15
 level: 'Beginner'
 date: 2021-11-01
 ---

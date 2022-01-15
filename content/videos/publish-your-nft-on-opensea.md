@@ -5,6 +5,7 @@ authors: ['@ArtiChmaro']
 tags: ['Smart Contracts','NFT','IPFS']
 languages: ['Solidity']
 url: 'https://youtu.be/J4p1sdo3Rz4'
+dateAdded: 2021-09-24
 level: 'Intermediate'
 date: 2021-09-19
 ---

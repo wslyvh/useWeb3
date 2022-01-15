@@ -5,6 +5,7 @@ authors: ['@znwhite_']
 tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://www.devtwins.com/blog/understanding-mapping-vs-array-in-solidity'
+dateAdded: 2021-11-30
 level: 'Intermediate'
 date: 2021-11-23
 ---

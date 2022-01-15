@@ -5,6 +5,7 @@ authors: ['@nemild']
 tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://learnxinyminutes.com/docs/solidity/'
+dateAdded: 2021-09-20
 level: 'Beginner'
 ---
 

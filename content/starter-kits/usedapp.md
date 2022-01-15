@@ -6,6 +6,7 @@ tags: ['Smart Contracts','Dapp']
 languages: ['Solidity','JavaScript']
 url: 'https://github.com/EthWorks/useDApp'
 featured: 'true'
+dateAdded: 2021-09-16
 ---
 
 Introduces great features:

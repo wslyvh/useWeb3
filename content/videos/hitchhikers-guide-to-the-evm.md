@@ -5,6 +5,7 @@ authors: ['@alexroan']
 tags: ['Smart Contracts','EVM']
 languages: ['Solidity']
 url: 'https://youtu.be/zgukojxyHKc'
+dateAdded: 2021-09-01
 level: 'Intermediate'
 date: 2021-08-19
 ---

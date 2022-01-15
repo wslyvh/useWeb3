@@ -5,6 +5,7 @@ authors: ['@trailofbits']
 tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://github.com/crytic/not-so-smart-contracts/'
+dateAdded: 2021-08-16
 level: 'Intermediate'
 ---
 

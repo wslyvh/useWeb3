@@ -5,6 +5,7 @@ authors: ['@tferriss','@naval','@cdixon']
 tags: []
 languages: []
 url: 'https://tim.blog/2021/10/28/chris-dixon-naval-ravikant/'
+dateAdded: 2021-11-02
 ---
 
 “What the smartest people do on the weekends is what everyone else will do during the week in ten years.”

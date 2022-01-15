@@ -6,6 +6,7 @@ tags: ['Smart Contracts','Dapp']
 languages: ['Solidity']
 url: 'https://amzn.to/3onZcId'
 featured: 'true'
+dateAdded: 2021-08-11
 level: 'Beginner'
 date: 2018-11-13
 alternateUrl: 'https://github.com/ethereumbook/ethereumbook'

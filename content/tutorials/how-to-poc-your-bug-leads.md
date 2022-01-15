@@ -5,6 +5,7 @@ authors: ['@immunefi']
 tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://medium.com/immunefi/how-to-poc-your-bug-leads-5ec76abdc1d8'
+dateAdded: 2021-10-24
 level: 'Advanced'
 date: 2021-10-12
 ---

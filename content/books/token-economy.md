@@ -6,6 +6,7 @@ tags: ['Web3']
 languages: []
 url: 'https://amzn.to/2WBFXiQ'
 featured: 'true'
+dateAdded: 2021-08-25
 date: 2020-06-20
 alternateUrl: 'https://github.com/sherminvo/TokenEconomyBook/wiki'
 ---

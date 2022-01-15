@@ -5,6 +5,7 @@ authors: ['@AlchemyPlatform','@thatguyintech']
 tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://youtu.be/g73EGNKatDw'
+dateAdded: 2021-10-16
 level: 'Beginner'
 date: 2021-10-12
 ---

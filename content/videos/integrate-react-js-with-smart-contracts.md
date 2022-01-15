@@ -5,6 +5,7 @@ authors: ['@ArtiChmaro']
 tags: ['Smart Contracts','Dapp']
 languages: ['Solidity']
 url: 'https://youtu.be/38WUVVoMZKM'
+dateAdded: 2021-11-22
 level: 'Intermediate'
 date: 2021-11-21
 ---

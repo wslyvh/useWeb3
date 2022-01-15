@@ -5,6 +5,7 @@ authors: ['@a16z']
 tags: ['Web3','DeFi']
 languages: ['Solidity']
 url: 'https://www.youtube.com/playlist?list=PLM4u6XbiXf5oDP6DFeEoNP5K_Epy1RAx4'
+dateAdded: 2021-08-18
 date: 2020-05-13
 ---
 

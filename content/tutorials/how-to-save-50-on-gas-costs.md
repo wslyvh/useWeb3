@@ -5,6 +5,7 @@ authors: ['@_blakewest']
 tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://medium.com/goldfinch-fi/solidity-learnings-how-to-save-50-on-gas-costs-5e598c364ab2'
+dateAdded: 2021-08-17
 level: 'Intermediate'
 date: 2021-05-18
 ---

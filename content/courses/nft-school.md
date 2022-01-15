@@ -5,6 +5,7 @@ authors: ['@protocollabs']
 tags: ['Web3']
 languages: []
 url: 'https://nftschool.dev/'
+dateAdded: 2021-10-09
 ---
 
 What does it mean to own a piece of the internet? Can you sell a meme to the highest bidder? Is the metaverse finally happening? Let's find out together!

@@ -5,6 +5,7 @@ authors: ['@james_bachini']
 tags: ['Smart Contracts','Scalability']
 languages: ['Solidity','JavaScript']
 url: 'https://youtu.be/d4EgugQLZqs'
+dateAdded: 2022-01-15
 level: 'Intermediate'
 ---
 

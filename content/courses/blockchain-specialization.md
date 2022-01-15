@@ -5,6 +5,7 @@ authors: ['@BinaUB']
 tags: ['Smart Contracts','Dapp']
 languages: ['Solidity']
 url: 'https://www.coursera.org/specializations/blockchain'
+dateAdded: 2021-08-17
 level: 'Intermediate'
 ---
 

@@ -5,6 +5,7 @@ authors: ['@naval','@tferriss','@VitalikButerin']
 tags: ['Web3']
 languages: []
 url: 'https://tim.blog/2021/03/08/vitalik-buterin-naval-ravikant/'
+dateAdded: 2021-08-16
 level: 'Intermediate'
 ---
 

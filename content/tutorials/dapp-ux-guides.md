@@ -5,6 +5,7 @@ authors: ['@ConsenSys']
 tags: ['Dapp','UX & Design']
 languages: []
 url: 'https://rimble.consensys.design/guides'
+dateAdded: 2021-08-17
 level: 'Beginner'
 date: 2018-09-13
 ---

@@ -5,6 +5,7 @@ authors: ['@arbitrum']
 tags: ['Smart Contracts','Scalability']
 languages: []
 url: 'https://github.com/OffchainLabs/arbitrum-tutorials'
+dateAdded: 2022-01-15
 level: 'Intermediate'
 ---
 

@@ -5,6 +5,7 @@ authors: ['@optimismPBC']
 tags: ['Smart Contracts','Scalability']
 languages: ['JavaScript']
 url: 'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal'
+dateAdded: 2022-01-15
 level: 'Intermediate'
 ---
 

@@ -5,6 +5,7 @@ authors: ['@james_bachini']
 tags: ['Smart Contracts','DeFi','Security']
 languages: ['Solidity']
 url: 'https://youtu.be/R91Uhw07W3U'
+dateAdded: 2022-01-15
 level: 'Intermediate'
 ---
 

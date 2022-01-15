@@ -5,6 +5,7 @@ authors: ['@wslyvh']
 tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://www.wslyvh.com/clean-contracts/'
+dateAdded: 2021-08-29
 level: 'Intermediate'
 date: 2020-07-30
 ---

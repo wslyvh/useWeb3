@@ -5,6 +5,7 @@ authors: ['@Microsoft']
 tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://docs.microsoft.com/en-us/learn/paths/ethereum-blockchain-development/'
+dateAdded: 2021-08-18
 level: 'Beginner'
 ---
 

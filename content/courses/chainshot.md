@@ -6,6 +6,7 @@ tags: ['Smart Contracts','Dapp','EVM']
 languages: ['Solidity','JavaScript']
 url: 'https://www.chainshot.com/'
 featured: 'true'
+dateAdded: 2021-08-11
 level: 'Beginner'
 ---
 

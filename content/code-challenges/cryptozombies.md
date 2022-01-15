@@ -6,6 +6,7 @@ tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://cryptozombies.io/'
 featured: 'true'
+dateAdded: 2021-08-11
 level: 'Beginner'
 ---
 

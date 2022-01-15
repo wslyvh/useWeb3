@@ -5,6 +5,7 @@ authors: ['@DefiAcademy','@EdsonAlcala']
 tags: ['Smart Contracts','EVM']
 languages: []
 url: 'https://www.defi-academy.com/courses/introduction-to-smart-contracts'
+dateAdded: 2021-10-07
 level: 'Beginner'
 ---
 

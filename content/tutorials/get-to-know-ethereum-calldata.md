@@ -5,6 +5,7 @@ authors: ['@jeantnd']
 tags: ['Dapp','Smart Contracts','EVM']
 languages: ['Solidity']
 url: 'https://medium.com/laika-lab/get-to-know-ethereum-calldata-72f65e8bffef'
+dateAdded: 2022-01-13
 level: 'Intermediate'
 date: 2022-01-14
 ---

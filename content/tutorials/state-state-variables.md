@@ -5,6 +5,7 @@ authors: ['@paul_can_code']
 tags: ['Smart Contracts']
 languages: ['Solidity']
 url: 'https://blog.paulmcaviney.ca/state-variables'
+dateAdded: 2021-11-15
 level: 'Beginner'
 date: 2021-11-06
 ---

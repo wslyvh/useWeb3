@@ -6,6 +6,7 @@ tags: ['Smart Contracts','Security','EVM']
 languages: ['Solidity']
 url: 'https://www.damnvulnerabledefi.xyz/'
 featured: 'true'
+dateAdded: 2021-08-11
 level: 'Beginner'
 ---
 

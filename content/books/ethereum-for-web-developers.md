@@ -5,6 +5,7 @@ authors: ['@smpalladino']
 tags: ['Smart Contracts','Dapp']
 languages: ['Solidity','JavaScript']
 url: 'https://amzn.to/2YbZVBG'
+dateAdded: 2021-08-11
 level: 'Beginner'
 date: 2019-09-26
 alternateUrl: 'https://www.goodreads.com/book/show/52265621-ethereum-for-web-developers'

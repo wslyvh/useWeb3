@@ -6,6 +6,7 @@ tags: ['Smart Contracts']
 languages: ['Vyper']
 url: 'https://vyper.fun/'
 featured: 'true'
+dateAdded: 2021-08-13
 level: 'Beginner'
 ---
 

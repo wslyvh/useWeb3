@@ -5,6 +5,7 @@ authors: ['MIT']
 tags: ['Web3','DeFi']
 languages: []
 url: 'https://ocw.mit.edu/courses/sloan-school-of-management/15-s12-blockchain-and-money-fall-2018/'
+dateAdded: 2021-08-11
 ---
 
 This course is for students wishing to explore blockchain technology’s potential use—by entrepreneurs & incumbents—to change the world of money and finance.

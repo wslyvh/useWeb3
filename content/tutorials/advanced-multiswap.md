@@ -5,6 +5,7 @@ authors: ['@gorgos']
 tags: ['Smart Contracts','DeFi']
 languages: ['Solidity']
 url: 'https://soliditydeveloper.com/multiswap-advanced'
+dateAdded: 2022-01-10
 level: 'Advanced'
 date: 2021-12-28
 ---

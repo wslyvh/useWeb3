@@ -6,6 +6,7 @@ tags: ['Web3']
 languages: []
 url: 'https://amzn.to/3A2YMsS'
 featured: 'true'
+dateAdded: 2021-08-11
 date: 2020-09-29
 alternateUrl: 'https://www.goodreads.com/book/show/55360267-out-of-the-ether'
 ---

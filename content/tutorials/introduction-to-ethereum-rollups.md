@@ -5,6 +5,7 @@ authors: ['@sensahil','@QuickNode']
 tags: ['Scalability']
 languages: []
 url: 'https://www.quicknode.com/guides/infrastructure/introduction-to-ethereum-rollups'
+dateAdded: 2022-01-10
 level: 'Beginner'
 date: 2021-12-29
 ---

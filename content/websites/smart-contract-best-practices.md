@@ -6,6 +6,7 @@ tags: ['Smart Contracts','Security']
 languages: ['Solidity']
 url: 'https://consensys.github.io/smart-contract-best-practices/'
 featured: 'true'
+dateAdded: 2021-08-16
 level: 'Intermediate'
 ---
 

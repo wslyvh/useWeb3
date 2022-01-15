@@ -5,6 +5,7 @@ authors: ['@PatrickAlphaC']
 tags: ['NFT']
 languages: ['Solidity','Python']
 url: 'https://youtu.be/p36tXHX1JD8'
+dateAdded: 2021-08-18
 level: 'Intermediate'
 date: 2021-04-14
 ---

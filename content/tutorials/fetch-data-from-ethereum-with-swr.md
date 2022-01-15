@@ -5,6 +5,7 @@ authors: ['@aboutlo']
 tags: ['Dapp']
 languages: ['JavaScript']
 url: 'https://consensys.net/blog/developers/how-to-fetch-and-update-data-from-ethereum-with-react-and-swr/'
+dateAdded: 2021-08-17
 level: 'Intermediate'
 date: 2020-06-18
 ---

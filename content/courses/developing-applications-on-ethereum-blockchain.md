@@ -5,6 +5,7 @@ authors: ['@mushketyk']
 tags: ['Smart Contracts','Dapp']
 languages: []
 url: 'https://www.pluralsight.com/courses/ethereum-blockchain-developing-applications'
+dateAdded: 2021-11-01
 level: 'Beginner'
 ---
 

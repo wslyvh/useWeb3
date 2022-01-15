@@ -5,6 +5,7 @@ authors: ['@cmichelio']
 tags: ['Smart Contracts','Security','EVM']
 languages: []
 url: 'https://cmichel.io/how-to-become-a-smart-contract-auditor/'
+dateAdded: 2021-11-15
 level: 'Intermediate'
 date: 2021-10-30
 ---
