@@ -146,20 +146,20 @@ export class AirtableItemService implements ItemServiceInterface {
           id: source.fields['Slug'],
           title: source.fields['Title'],
           description: source.fields['Description'],
-          authors: source.fields['Authors'] ? source.fields['Authors'] as string[] : [],
-          level: source.fields['Level'],
+          content: source.fields['Content'],
+          authors: source.fields['Authors'] ? source.fields['Authors'] as string[] : [],          
           tags: source.fields['Tags'] ? source.fields['Tags'] as string[] : [],
+          languages: source.fields['Language'] ? source.fields['Language'] as string[] : [],
           url: source.fields['Url'],
           featured: source.fields['Featured'] ?? false,
           category: {
             id: source.fields['Category Slug'] ? (source.fields['Category Slug'] as string[])[0]: '',
             title: source.fields['Category Title'] ? (source.fields['Category Title'] as string[])[0]: ''
           },
-          created: new Date(source._rawJson.createdTime as string).getTime()
       } as ContentItem
 
+      if (source.fields['Level']) item.level = source.fields['Level'] as 'Beginner' | 'Intermediate' | 'Advanced'
       if (source.fields['Date']) item.date = new Date(source.fields['Date'] as string).getTime()
-      if (source.fields['Content']) item.content = source.fields['Content'] as string
       if (source.fields['Alternate Url']) item.alternateUrl = source.fields['Alternate Url'] as string
       
       return item

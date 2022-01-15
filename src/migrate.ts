@@ -63,7 +63,7 @@ async function run() {
                 markdown += `\n${content[1]}`
             }
 
-            console.log('Create markdown file...')
+            console.log('Creating file...', `${item.id}.md`)
             fs.writeFileSync(file, markdown)
         }
     })
