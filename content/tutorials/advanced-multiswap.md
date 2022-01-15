@@ -1,12 +1,12 @@
 ---
-title: 'Advanced MultiSwap'
-description: 'How to better arbitrage with Solidity by making multiple swaps across different decentralized exchanges in a single transaction'
-authors: ['@gorgos']
-tags: ['Smart Contracts','DeFi']
-languages: ['Solidity']
-url: 'https://soliditydeveloper.com/multiswap-advanced'
+title: "Advanced MultiSwap"
+description: "How to better arbitrage with Solidity by making multiple swaps across different decentralized exchanges in a single transaction"
+authors: ["@gorgos"]
+tags: ["Smart Contracts","DeFi"]
+languages: ["Solidity"]
+url: "https://soliditydeveloper.com/multiswap-advanced"
 dateAdded: 2022-01-10
-level: 'Advanced'
+level: "Advanced"
 date: 2021-12-28
 ---
 

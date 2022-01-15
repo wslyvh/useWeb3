@@ -1,12 +1,12 @@
 ---
-title: 'A Python Guide to Ethereum, Pt. 1'
-description: 'This post will cover some blockchain basics, then get you interacting with a simulated Ethereum node using Python'
-authors: ['@wolovim']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','Python']
-url: 'https://snakecharmers.ethereum.org/a-developers-guide-to-ethereum-pt-1/'
+title: "A Python Guide to Ethereum, Pt. 1"
+description: "This post will cover some blockchain basics, then get you interacting with a simulated Ethereum node using Python"
+authors: ["@wolovim"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","Python"]
+url: "https://snakecharmers.ethereum.org/a-developers-guide-to-ethereum-pt-1/"
 dateAdded: 2021-08-17
-level: 'Beginner'
+level: "Beginner"
 date: 2020-09-08
 ---
 

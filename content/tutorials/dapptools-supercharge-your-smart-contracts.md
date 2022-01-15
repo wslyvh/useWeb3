@@ -1,12 +1,12 @@
 ---
-title: 'DappTools: Supercharge Your Smart Contracts'
-description: 'DappTools is a suite of Ethereum focused CLI tools following the Unix design philosophy, favoring composability, configurability and extensibility.'
-authors: ['@rahulravindrn']
-tags: ['Smart Contracts','DevEx']
-languages: ['Solidity']
-url: 'https://eattheblocks.com/dapptools-supercharge-your-smart-contracts/'
+title: "DappTools: Supercharge Your Smart Contracts"
+description: "DappTools is a suite of Ethereum focused CLI tools following the Unix design philosophy, favoring composability, configurability and extensibility."
+authors: ["@rahulravindrn"]
+tags: ["Smart Contracts","DevEx"]
+languages: ["Solidity"]
+url: "https://eattheblocks.com/dapptools-supercharge-your-smart-contracts/"
 dateAdded: 2021-11-15
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-11-05
 ---
 

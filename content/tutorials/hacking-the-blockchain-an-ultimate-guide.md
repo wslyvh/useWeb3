@@ -1,12 +1,12 @@
 ---
-title: 'Hacking the Blockchain: An Ultimate Guide'
-description: 'Join me, Anon, on this path that very few walk. Join me in saving Web3 and becoming a legend. We need you to prevent the next big hack.'
-authors: ['@morphean_sec']
-tags: ['Smart Contracts','Security']
+title: "Hacking the Blockchain: An Ultimate Guide"
+description: "Join me, Anon, on this path that very few walk. Join me in saving Web3 and becoming a legend. We need you to prevent the next big hack."
+authors: ["@morphean_sec"]
+tags: ["Smart Contracts","Security"]
 languages: []
-url: 'https://medium.com/immunefi/hacking-the-blockchain-an-ultimate-guide-4f34b33c6e8b'
+url: "https://medium.com/immunefi/hacking-the-blockchain-an-ultimate-guide-4f34b33c6e8b"
 dateAdded: 2022-01-09
-level: 'Beginner'
+level: "Beginner"
 date: 2021-12-28
 ---
 

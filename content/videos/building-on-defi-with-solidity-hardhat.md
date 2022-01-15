@@ -1,12 +1,12 @@
 ---
-title: 'Building On DeFi With Solidity & Hardhat'
-description: 'In this intermediate solidity tutorial I'll be building on the lego bricks of DeFi using Solidity and Hardhat.'
-authors: ['@james_bachini']
-tags: ['Smart Contracts','DeFi','Security']
-languages: ['Solidity']
-url: 'https://youtu.be/R91Uhw07W3U'
+title: "Building On DeFi With Solidity & Hardhat"
+description: "In this intermediate solidity tutorial I'll be building on the lego bricks of DeFi using Solidity and Hardhat."
+authors: ["@james_bachini"]
+tags: ["Smart Contracts","DeFi","Security"]
+languages: ["Solidity"]
+url: "https://youtu.be/R91Uhw07W3U"
 dateAdded: 2022-01-15
-level: 'Intermediate'
+level: "Intermediate"
 ---
 
 In this intermediate solidity tutorial I'll be building on the lego bricks of DeFi using Solidity and Hardhat. I'll be looking at how to interact with external contracts such as chainlink oracles and how to carry out swaps/trades on Uniswap v3. Then we will look at testing and deploying the contracts to the Ethereum kovan testnet.

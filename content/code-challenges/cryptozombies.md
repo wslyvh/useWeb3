@@ -1,13 +1,13 @@
 ---
-title: 'CryptoZombies'
-description: '#1 Solidity Tutorial & Ethereum Blockchain Programming Course'
-authors: ['@loomnetwork']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://cryptozombies.io/'
-featured: 'true'
+title: "CryptoZombies"
+description: "#1 Solidity Tutorial & Ethereum Blockchain Programming Course"
+authors: ["@loomnetwork"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://cryptozombies.io/"
+featured: "true"
 dateAdded: 2021-08-11
-level: 'Beginner'
+level: "Beginner"
 ---
 
 Learn to Code Blockchain DApps By Building Simple Games

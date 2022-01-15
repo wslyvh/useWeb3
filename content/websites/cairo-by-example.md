@@ -1,12 +1,12 @@
 ---
-title: 'Cairo by example'
-description: 'Cairo is programming language that can be used to write blockchain applications. The language is novel in that it converts program logic into STARK proofs.'
-authors: ['@eth_worm']
-tags: ['Smart Contracts','Scalability']
-languages: ['Cairo']
-url: 'https://perama-v.github.io/cairo/by-example/'
+title: "Cairo by example"
+description: "Cairo is programming language that can be used to write blockchain applications. The language is novel in that it converts program logic into STARK proofs."
+authors: ["@eth_worm"]
+tags: ["Smart Contracts","Scalability"]
+languages: ["Cairo"]
+url: "https://perama-v.github.io/cairo/by-example/"
 dateAdded: 2022-01-15
-level: 'Beginner'
+level: "Beginner"
 ---
 
 First setup using Nile which makes managing files and command line calls to StarkNet simple.

@@ -1,12 +1,12 @@
 ---
-title: 'State & State Variables'
-description: 'Solidity Basics: An Introduction To State In Solidity And How To Change It'
-authors: ['@paul_can_code']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://blog.paulmcaviney.ca/state-variables'
+title: "State & State Variables"
+description: "Solidity Basics: An Introduction To State In Solidity And How To Change It"
+authors: ["@paul_can_code"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://blog.paulmcaviney.ca/state-variables"
 dateAdded: 2021-11-15
-level: 'Beginner'
+level: "Beginner"
 date: 2021-11-06
 ---
 

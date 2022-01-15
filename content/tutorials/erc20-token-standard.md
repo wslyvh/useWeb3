@@ -1,12 +1,12 @@
 ---
-title: 'ERC20 token standard'
-description: 'Understand the ERC20 token smart contract'
-authors: ['@ethereumdevio']
-tags: ['Smart Contracts','Tokens']
+title: "ERC20 token standard"
+description: "Understand the ERC20 token smart contract"
+authors: ["@ethereumdevio"]
+tags: ["Smart Contracts","Tokens"]
 languages: []
-url: 'https://ethereumdev.io/understand-the-erc20-token-smart-contract/'
+url: "https://ethereumdev.io/understand-the-erc20-token-smart-contract/"
 dateAdded: 2021-08-17
-level: 'Beginner'
+level: "Beginner"
 date: 2020-04-05
 ---
 

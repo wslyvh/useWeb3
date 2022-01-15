@@ -1,12 +1,12 @@
 ---
-title: 'Get started with blockchain development'
-description: 'This learning path introduces you to blockchain and development on Ethereum. Discover what skills are necessary to learn to begin building your own blockchain networks at scale.'
-authors: ['@Microsoft']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://docs.microsoft.com/en-us/learn/paths/ethereum-blockchain-development/'
+title: "Get started with blockchain development"
+description: "This learning path introduces you to blockchain and development on Ethereum. Discover what skills are necessary to learn to begin building your own blockchain networks at scale."
+authors: ["@Microsoft"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://docs.microsoft.com/en-us/learn/paths/ethereum-blockchain-development/"
 dateAdded: 2021-08-18
-level: 'Beginner'
+level: "Beginner"
 ---
 
 This learning path introduces you to blockchain and development on the Ethereum platform. Discover what skills are necessary to learn to begin building your own blockchain networks at scale.

@@ -1,12 +1,12 @@
 ---
-title: 'Become a smart contract auditor'
-description: 'This guide provides a path on how to get started as a smart contract security auditor.'
-authors: ['@cmichelio']
-tags: ['Smart Contracts','Security','EVM']
+title: "Become a smart contract auditor"
+description: "This guide provides a path on how to get started as a smart contract security auditor."
+authors: ["@cmichelio"]
+tags: ["Smart Contracts","Security","EVM"]
 languages: []
-url: 'https://cmichel.io/how-to-become-a-smart-contract-auditor/'
+url: "https://cmichel.io/how-to-become-a-smart-contract-auditor/"
 dateAdded: 2021-11-15
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-10-30
 ---
 

@@ -1,12 +1,12 @@
 ---
-title: 'SMTChecker, Remix & Dapptools'
-description: 'Using SMTChecker formal verification module in Solidity compiler with  Remix & Dapptools'
-authors: ['@leonardoalt']
-tags: ['Smart Contracts','Security','EVM']
-languages: ['Solidity']
-url: 'https://fv.ethereum.org/2021/12/01/smtchecker-dapptools/'
+title: "SMTChecker, Remix & Dapptools"
+description: "Using SMTChecker formal verification module in Solidity compiler with  Remix & Dapptools"
+authors: ["@leonardoalt"]
+tags: ["Smart Contracts","Security","EVM"]
+languages: ["Solidity"]
+url: "https://fv.ethereum.org/2021/12/01/smtchecker-dapptools/"
 dateAdded: 2021-12-05
-level: 'Advanced'
+level: "Advanced"
 date: 2021-12-01
 ---
 

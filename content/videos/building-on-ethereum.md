@@ -1,12 +1,12 @@
 ---
-title: 'Building on Ethereum'
-description: 'Nader Dabit and Austin Griffith discuss building apps with Solidity and Ethereum as well as the developer ecosystem, how to get started, as well as landing jobs and contracts.'
-authors: ['@dabit3','@austingriffith']
+title: "Building on Ethereum"
+description: "Nader Dabit and Austin Griffith discuss building apps with Solidity and Ethereum as well as the developer ecosystem, how to get started, as well as landing jobs and contracts."
+authors: ["@dabit3","@austingriffith"]
 tags: []
 languages: []
-url: 'https://www.youtube.com/watch?v=ogjOjUjCVLk'
+url: "https://www.youtube.com/watch?v=ogjOjUjCVLk"
 dateAdded: 2021-08-16
-level: 'Beginner'
+level: "Beginner"
 date: 2021-05-07
 ---
 

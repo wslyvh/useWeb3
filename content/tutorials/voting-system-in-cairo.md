@@ -1,12 +1,12 @@
 ---
-title: 'Voting system in Cairo'
-description: 'In this guide we will write Cairo code for a small voting system, which can be used, for example, to run a secure (non-private) voting with a lot of voters.'
-authors: ['@CairoLang']
-tags: ['Smart Contracts','Scalability']
-languages: ['Cairo']
-url: 'https://www.cairo-lang.org/docs/hello_cairo/voting.html'
+title: "Voting system in Cairo"
+description: "In this guide we will write Cairo code for a small voting system, which can be used, for example, to run a secure (non-private) voting with a lot of voters."
+authors: ["@CairoLang"]
+tags: ["Smart Contracts","Scalability"]
+languages: ["Cairo"]
+url: "https://www.cairo-lang.org/docs/hello_cairo/voting.html"
 dateAdded: 2022-01-15
-level: 'Intermediate'
+level: "Intermediate"
 ---
 
 In this section we will write Cairo code for a small voting system. This voting system can be used, for example, to run a secure (non-private) voting with a lot of voters on a blockchain. We will assume that each voter has a pair of private and public keys (for the ECDSA signature scheme) and that the list of voters’ public keys is fixed. Each voter may vote “Yes” (1) or “No” (0). The system will not guarantee anonymity.

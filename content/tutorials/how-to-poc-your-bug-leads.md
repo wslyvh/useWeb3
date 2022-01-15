@@ -1,12 +1,12 @@
 ---
-title: 'How to PoC your Bug Leads'
-description: 'In this tutorial you’ll learn how to use a forked environment via Hardhat, to write a PoC for the Alchemix Access Control Exploit.'
-authors: ['@immunefi']
-tags: ['Smart Contracts','Security']
-languages: ['Solidity']
-url: 'https://medium.com/immunefi/how-to-poc-your-bug-leads-5ec76abdc1d8'
+title: "How to PoC your Bug Leads"
+description: "In this tutorial you’ll learn how to use a forked environment via Hardhat, to write a PoC for the Alchemix Access Control Exploit."
+authors: ["@immunefi"]
+tags: ["Smart Contracts","Security"]
+languages: ["Solidity"]
+url: "https://medium.com/immunefi/how-to-poc-your-bug-leads-5ec76abdc1d8"
 dateAdded: 2021-10-24
-level: 'Advanced'
+level: "Advanced"
 date: 2021-10-12
 ---
 

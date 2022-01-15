@@ -1,14 +1,15 @@
 ---
-title: 'Token Economy'
-description: 'How the Web3 reinvents the Internet'
-authors: ['@sherminvo']
-tags: ['Web3']
+title: "Token Economy"
+description: "How the Web3 reinvents the Internet"
+authors: ["@sherminvo"]
+tags: ["Web3"]
 languages: []
-url: 'https://amzn.to/2WBFXiQ'
-featured: 'true'
+url: "https://amzn.to/2WBFXiQ"
+featured: "true"
 dateAdded: 2021-08-25
+level: "All"
 date: 2020-06-20
-alternateUrl: 'https://github.com/sherminvo/TokenEconomyBook/wiki'
+alternateUrl: "https://github.com/sherminvo/TokenEconomyBook/wiki"
 ---
 
 Tokens - often referred to as cryptocurrencies - can represent anything from an asset to an access right, such as gold, diamonds, a fraction of a Picasso painting or an entry ticket to a concert. Tokens could also be used to reward social media contributions, incentivize the reduction of CO2 emissions, or even ones attention for watching an ad. While it has become easy to create a token, which is collectively managed by a public Web3 infrastructure like a blockchain network, the understanding of how to apply these tokens is still vague.

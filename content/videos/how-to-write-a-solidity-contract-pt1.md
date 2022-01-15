@@ -1,12 +1,12 @@
 ---
-title: 'How To Write a Solidity Contract pt1'
-description: 'This is a step-by-step introductory tutorial that will teach you how to create and deploy a smart contract on Ethereum'
-authors: ['@AlchemyPlatform','@thatguyintech']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://youtu.be/g73EGNKatDw'
+title: "How To Write a Solidity Contract pt1"
+description: "This is a step-by-step introductory tutorial that will teach you how to create and deploy a smart contract on Ethereum"
+authors: ["@AlchemyPlatform","@thatguyintech"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://youtu.be/g73EGNKatDw"
 dateAdded: 2021-10-16
-level: 'Beginner'
+level: "Beginner"
 date: 2021-10-12
 ---
 

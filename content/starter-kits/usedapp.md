@@ -1,12 +1,13 @@
 ---
-title: 'useDapp'
-description: 'Framework for rapid Dapp development. Simple. Robust. Extendable. Testable'
-authors: ['@ethworks']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://github.com/EthWorks/useDApp'
-featured: 'true'
+title: "useDapp"
+description: "Framework for rapid Dapp development. Simple. Robust. Extendable. Testable"
+authors: ["@ethworks"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://github.com/EthWorks/useDApp"
+featured: "true"
 dateAdded: 2021-09-16
+level: "All"
 ---
 
 Introduces great features:

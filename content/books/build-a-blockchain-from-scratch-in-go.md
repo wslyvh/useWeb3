@@ -1,12 +1,12 @@
 ---
-title: 'Build a Blockchain from Scratch in Go'
-description: 'Follow the story of a software developer who is looking to revolutionize his local bar by implementing blockchain technology for its payment system.'
-authors: ['@Web3Coach']
-tags: ['Cryptography']
-languages: ['Go']
-url: 'https://web3coach.gumroad.com/l/build-a-blockchain-from-scratch-in-go'
+title: "Build a Blockchain from Scratch in Go"
+description: "Follow the story of a software developer who is looking to revolutionize his local bar by implementing blockchain technology for its payment system."
+authors: ["@Web3Coach"]
+tags: ["Cryptography"]
+languages: ["Go"]
+url: "https://web3coach.gumroad.com/l/build-a-blockchain-from-scratch-in-go"
 dateAdded: 2021-08-19
-level: 'Beginner'
+level: "Beginner"
 date: 2020-06-01
 ---
 

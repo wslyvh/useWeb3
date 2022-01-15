@@ -1,12 +1,12 @@
 ---
-title: 'How to Build a Wallet Generator for Solana in React'
-description: 'Practical guide you will build a basic Wallet application with React and Web3 that will interact with Solana Network.'
-authors: ['@moviendo_me']
+title: "How to Build a Wallet Generator for Solana in React"
+description: "Practical guide you will build a basic Wallet application with React and Web3 that will interact with Solana Network."
+authors: ["@moviendo_me"]
 tags: []
-languages: ['Solana','JavaScript']
-url: 'https://www.quicknode.com/guides/web3-sdks/how-to-build-a-wallet-generator-for-solana-in-react'
+languages: ["Solana","JavaScript"]
+url: "https://www.quicknode.com/guides/web3-sdks/how-to-build-a-wallet-generator-for-solana-in-react"
 dateAdded: 2021-10-31
-level: 'Beginner'
+level: "Beginner"
 date: 2021-10-29
 ---
 

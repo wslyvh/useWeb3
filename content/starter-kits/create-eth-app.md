@@ -1,12 +1,13 @@
 ---
-title: 'Create Eth App'
-description: 'Create Ethereum-powered apps with one command'
-authors: ['@PaulRBerg','@TomFrench_eth','@0xKaden']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://github.com/paulrberg/create-eth-app'
-featured: 'true'
+title: "Create Eth App"
+description: "Create Ethereum-powered apps with one command"
+authors: ["@PaulRBerg","@TomFrench_eth","@0xKaden"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://github.com/paulrberg/create-eth-app"
+featured: "true"
 dateAdded: 2021-09-16
+level: "All"
 ---
 
 Create Eth App supports multiple frontend frameworks. It comes with a host of decentralized finance templates pre-filled with contract ABIs, addresses and subgraphs. Everything you need to build a modern Ethereum-powered single-page app.

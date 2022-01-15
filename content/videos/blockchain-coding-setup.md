@@ -1,12 +1,12 @@
 ---
-title: 'Blockchain Coding Setup'
-description: 'My setup for developing #ethereum and #solidity smart contracts.'
-authors: ['@PatrickAlphaC']
-tags: ['Smart Contracts']
-languages: ['Solidity','Python']
-url: 'https://youtu.be/4gHx-VESMMw'
+title: "Blockchain Coding Setup"
+description: "My setup for developing #ethereum and #solidity smart contracts."
+authors: ["@PatrickAlphaC"]
+tags: ["Smart Contracts"]
+languages: ["Solidity","Python"]
+url: "https://youtu.be/4gHx-VESMMw"
 dateAdded: 2021-08-18
-level: 'Beginner'
+level: "Beginner"
 date: 2021-05-12
 ---
 

@@ -1,12 +1,12 @@
 ---
-title: 'Deploy a contract with Brownie'
-description: 'How to deploy a smart contract with Brownie'
-authors: ['@sensahil','@QuickNode']
-tags: ['Smart Contracts']
-languages: ['Solidity','Python']
-url: 'https://www.quicknode.com/guides/web3-sdks/how-to-deploy-a-smart-contract-with-brownie'
+title: "Deploy a contract with Brownie"
+description: "How to deploy a smart contract with Brownie"
+authors: ["@sensahil","@QuickNode"]
+tags: ["Smart Contracts"]
+languages: ["Solidity","Python"]
+url: "https://www.quicknode.com/guides/web3-sdks/how-to-deploy-a-smart-contract-with-brownie"
 dateAdded: 2021-08-20
-level: 'Beginner'
+level: "Beginner"
 date: 2021-07-24
 ---
 

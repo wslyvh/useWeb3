@@ -1,11 +1,12 @@
 ---
-title: 'NFT School'
-description: 'Community education platform for developers in the non-fungible token space.'
-authors: ['@protocollabs']
-tags: ['Web3']
+title: "NFT School"
+description: "Community education platform for developers in the non-fungible token space."
+authors: ["@protocollabs"]
+tags: ["Web3"]
 languages: []
-url: 'https://nftschool.dev/'
+url: "https://nftschool.dev/"
 dateAdded: 2021-10-09
+level: "All"
 ---
 
 What does it mean to own a piece of the internet? Can you sell a meme to the highest bidder? Is the metaverse finally happening? Let's find out together!

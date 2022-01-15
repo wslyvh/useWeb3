@@ -1,12 +1,12 @@
 ---
-title: 'How To Save 50% on Gas Costs'
-description: 'When we built the first version of Goldfinch, we did not really pay attention to gas costs. This resulted in even basic actions being insanely expensive on our protocol.'
-authors: ['@_blakewest']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://medium.com/goldfinch-fi/solidity-learnings-how-to-save-50-on-gas-costs-5e598c364ab2'
+title: "How To Save 50% on Gas Costs"
+description: "When we built the first version of Goldfinch, we did not really pay attention to gas costs. This resulted in even basic actions being insanely expensive on our protocol."
+authors: ["@_blakewest"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://medium.com/goldfinch-fi/solidity-learnings-how-to-save-50-on-gas-costs-5e598c364ab2"
 dateAdded: 2021-08-17
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-05-18
 ---
 

@@ -1,13 +1,13 @@
 ---
-title: 'Become a Blockchain Engineer'
-description: 'Become a blockchain, solidity, and smart contract engineer by following these steps'
-authors: ['@PatrickAlphaC']
-tags: ['Smart Contracts','Dapp']
+title: "Become a Blockchain Engineer"
+description: "Become a blockchain, solidity, and smart contract engineer by following these steps"
+authors: ["@PatrickAlphaC"]
+tags: ["Smart Contracts","Dapp"]
 languages: []
-url: 'https://betterprogramming.pub/how-to-become-a-blockchain-engineer-fa4386a0504f'
-featured: 'true'
+url: "https://betterprogramming.pub/how-to-become-a-blockchain-engineer-fa4386a0504f"
+featured: "true"
 dateAdded: 2021-11-15
-level: 'Beginner'
+level: "Beginner"
 date: 2021-11-08
 ---
 

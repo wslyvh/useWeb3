@@ -1,12 +1,12 @@
 ---
-title: 'Hands-On Smart Contract Development with Solidity and Ethereum: From Fundamentals to Deployment'
-description: 'It's the perfect resource for people who want to break into the smart contract field but don't know where to start.'
-authors: ['@Kevinsolorio','@randallkanna']
-tags: ['Smart Contracts','Dapp','EVM']
+title: "Hands-On Smart Contract Development with Solidity and Ethereum: From Fundamentals to Deployment"
+description: "It's the perfect resource for people who want to break into the smart contract field but don't know where to start."
+authors: ["@Kevinsolorio","@randallkanna"]
+tags: ["Smart Contracts","Dapp","EVM"]
 languages: []
-url: 'https://amzn.to/3Fai5Tq'
+url: "https://amzn.to/3Fai5Tq"
 dateAdded: 2021-12-31
-level: 'Beginner'
+level: "Beginner"
 date: 2016-09-23
 ---
 

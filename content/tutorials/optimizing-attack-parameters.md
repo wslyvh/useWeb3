@@ -1,12 +1,12 @@
 ---
-title: 'Optimizing Attack Parameters'
-description: 'How to Get a Bigger Bounty by Optimizing Attack Parameters'
-authors: ['@bobface16','@immunefi']
-tags: ['Security','DeFi']
+title: "Optimizing Attack Parameters"
+description: "How to Get a Bigger Bounty by Optimizing Attack Parameters"
+authors: ["@bobface16","@immunefi"]
+tags: ["Security","DeFi"]
 languages: []
-url: 'https://medium.com/immunefi/how-to-get-a-bigger-bounty-by-optimizing-attack-parameters-a51b144f5cc2'
+url: "https://medium.com/immunefi/how-to-get-a-bigger-bounty-by-optimizing-attack-parameters-a51b144f5cc2"
 dateAdded: 2021-09-24
-level: 'Advanced'
+level: "Advanced"
 date: 2021-09-15
 ---
 

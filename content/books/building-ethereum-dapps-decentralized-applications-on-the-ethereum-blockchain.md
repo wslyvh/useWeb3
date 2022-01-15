@@ -1,11 +1,12 @@
 ---
-title: 'Building ethereum dapps decentralized applications on the ethereum blockchain'
-description: 'In this book, you'll learn the principles of Dapps development by rolling up your sleeves and actually building a few!'
-authors: ['@Robertinfante']
-tags: ['Dapp','Smart Contracts']
+title: "Building ethereum dapps decentralized applications on the ethereum blockchain"
+description: "In this book, you'll learn the principles of Dapps development by rolling up your sleeves and actually building a few!"
+authors: ["@Robertinfante"]
+tags: ["Dapp","Smart Contracts"]
 languages: []
-url: 'https://amzn.to/3f22DhQ'
+url: "https://amzn.to/3f22DhQ"
 dateAdded: 2021-12-31
+level: "All"
 date: 2017-02-10
 ---
 

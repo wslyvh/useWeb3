@@ -1,12 +1,12 @@
 ---
-title: 'Learn X in Y minutes'
-description: 'Where X=Solidity'
-authors: ['@nemild']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://learnxinyminutes.com/docs/solidity/'
+title: "Learn X in Y minutes"
+description: "Where X=Solidity"
+authors: ["@nemild"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://learnxinyminutes.com/docs/solidity/"
 dateAdded: 2021-09-20
-level: 'Beginner'
+level: "Beginner"
 ---
 
 Solidity lets you program on Ethereum, a blockchain-based virtual machine that allows the creation and execution of smart contracts, without requiring centralized or trusted parties.

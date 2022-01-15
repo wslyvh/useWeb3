@@ -1,12 +1,12 @@
 ---
-title: 'The Complete Guide to Full Stack Ethereum Development'
-description: 'In this video you’ll learn how to build a modern full stack dApp on the Ethereum blockchain with React, Solidity, Hardhat, and Ethers.js.'
-authors: ['@dabit3']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://youtu.be/a0osIaAOFSE'
+title: "The Complete Guide to Full Stack Ethereum Development"
+description: "In this video you’ll learn how to build a modern full stack dApp on the Ethereum blockchain with React, Solidity, Hardhat, and Ethers.js."
+authors: ["@dabit3"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://youtu.be/a0osIaAOFSE"
 dateAdded: 2021-08-16
-level: 'Beginner'
+level: "Beginner"
 date: 2021-04-15
 ---
 

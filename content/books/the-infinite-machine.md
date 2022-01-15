@@ -1,13 +1,14 @@
 ---
-title: 'The Infinite Machine'
-description: 'How an Army of Crypto-hackers Is Building the Next Internet with Ethereum'
-authors: ['@CamiRusso']
-tags: ['Web3']
+title: "The Infinite Machine"
+description: "How an Army of Crypto-hackers Is Building the Next Internet with Ethereum"
+authors: ["@CamiRusso"]
+tags: ["Web3"]
 languages: []
-url: 'https://amzn.to/3a3OfTu'
+url: "https://amzn.to/3a3OfTu"
 dateAdded: 2021-08-11
+level: "All"
 date: 2020-07-14
-alternateUrl: 'https://www.goodreads.com/book/show/50175330-the-infinite-machine'
+alternateUrl: "https://www.goodreads.com/book/show/50175330-the-infinite-machine"
 ---
 
 Written with the verve of such works as The Big Short, The History of the Future, and The Spider Network, here is the fascinating, true story of the rise of Ethereum, the second-biggest digital asset in the world, the growth of cryptocurrency, and the future of the internet as we know it.

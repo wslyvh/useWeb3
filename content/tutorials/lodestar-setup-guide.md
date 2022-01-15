@@ -1,12 +1,12 @@
 ---
-title: 'Lodestar Setup Guide'
-description: 'Lodestar Setup Guide on Ethereum Beacon Chain (Ubuntu 20.04.3 + Docker Compose)'
-authors: ['@philngo_']
-tags: ['Client','Consensus-layer']
+title: "Lodestar Setup Guide"
+description: "Lodestar Setup Guide on Ethereum Beacon Chain (Ubuntu 20.04.3 + Docker Compose)"
+authors: ["@philngo_"]
+tags: ["Client","Consensus-layer"]
 languages: []
-url: 'https://hackmd.io/@n0ble/the-merge-terminology'
+url: "https://hackmd.io/@n0ble/the-merge-terminology"
 dateAdded: 2021-09-24
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-09-20
 ---
 

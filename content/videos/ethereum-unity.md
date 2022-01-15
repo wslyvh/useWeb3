@@ -1,12 +1,12 @@
 ---
-title: 'Ethereum + Unity'
-description: 'If you wonder how to connect to the Ethereum blockchain with Unity, this video is for you!'
-authors: ['@TheCoderious']
-tags: ['Dapp']
-languages: ['Solidity','Unity']
-url: 'https://youtu.be/sy1wKhAitX4'
+title: "Ethereum + Unity"
+description: "If you wonder how to connect to the Ethereum blockchain with Unity, this video is for you!"
+authors: ["@TheCoderious"]
+tags: ["Dapp"]
+languages: ["Solidity","Unity"]
+url: "https://youtu.be/sy1wKhAitX4"
 dateAdded: 2021-10-12
-level: 'Beginner'
+level: "Beginner"
 date: 2021-10-12
 ---
 

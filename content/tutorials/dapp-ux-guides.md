@@ -1,12 +1,12 @@
 ---
-title: 'Dapp UX guides'
-description: 'Research-led guides for creating user-friendly blockchain experiences.'
-authors: ['@ConsenSys']
-tags: ['Dapp','UX & Design']
+title: "Dapp UX guides"
+description: "Research-led guides for creating user-friendly blockchain experiences."
+authors: ["@ConsenSys"]
+tags: ["Dapp","UX & Design"]
 languages: []
-url: 'https://rimble.consensys.design/guides'
+url: "https://rimble.consensys.design/guides"
 dateAdded: 2021-08-17
-level: 'Beginner'
+level: "Beginner"
 date: 2018-09-13
 ---
 

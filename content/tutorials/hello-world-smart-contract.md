@@ -1,12 +1,12 @@
 ---
-title: 'Hello World Smart Contract'
-description: 'This is a step-by-step introductory tutorial that will teach you how to create and deploy a smart contract on Ethereum'
-authors: ['@AlchemyPlatform','@thatguyintech','@0xElan']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract/'
+title: "Hello World Smart Contract"
+description: "This is a step-by-step introductory tutorial that will teach you how to create and deploy a smart contract on Ethereum"
+authors: ["@AlchemyPlatform","@thatguyintech","@0xElan"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract/"
 dateAdded: 2021-10-16
-level: 'Beginner'
+level: "Beginner"
 date: 2021-10-12
 ---
 

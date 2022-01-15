@@ -1,12 +1,12 @@
 ---
-title: 'Making DAPPs using SvelteWeb3'
-description: 'My web3 experience started from Svelte but because I didn’t know how to use the window[‘ethereum’] global had to move to React so I could use the web3-react library.'
-authors: ['@chiuzon']
-tags: ['Dapp']
-languages: ['Vyper']
-url: 'https://chiuzon.medium.com/enjoy-making-dapps-using-svelteweb3-b78dfea1d902'
+title: "Making DAPPs using SvelteWeb3"
+description: "My web3 experience started from Svelte but because I didn’t know how to use the window[‘ethereum’] global had to move to React so I could use the web3-react library."
+authors: ["@chiuzon"]
+tags: ["Dapp"]
+languages: ["Vyper"]
+url: "https://chiuzon.medium.com/enjoy-making-dapps-using-svelteweb3-b78dfea1d902"
 dateAdded: 2021-11-15
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-11-14
 ---
 

@@ -1,12 +1,12 @@
 ---
-title: 'Code with Ethereum & Solidity'
-description: 'Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain'
-authors: ['@ste_grider']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/'
+title: "Code with Ethereum & Solidity"
+description: "Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain"
+authors: ["@ste_grider"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/"
 dateAdded: 2021-08-16
-level: 'Beginner'
+level: "Beginner"
 ---
 
 Smart Contracts? They're here.  The Ethereum Blockchain?  Covered.  Solidity?  Yep!

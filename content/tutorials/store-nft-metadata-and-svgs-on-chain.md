@@ -1,12 +1,12 @@
 ---
-title: 'Store NFT Metadata and SVG’s on-chain'
-description: 'Solidity Tutorial — How to Store NFT Metadata and SVG’s on the Blockchain'
-authors: ['@AndyHartnett12']
-tags: ['Smart Contracts','NFT']
-languages: ['Solidity']
-url: 'https://andyhartnett.medium.com/solidity-tutorial-how-to-store-nft-metadata-and-svgs-on-the-blockchain-6df44314406b'
+title: "Store NFT Metadata and SVG’s on-chain"
+description: "Solidity Tutorial — How to Store NFT Metadata and SVG’s on the Blockchain"
+authors: ["@AndyHartnett12"]
+tags: ["Smart Contracts","NFT"]
+languages: ["Solidity"]
+url: "https://andyhartnett.medium.com/solidity-tutorial-how-to-store-nft-metadata-and-svgs-on-the-blockchain-6df44314406b"
 dateAdded: 2021-09-18
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-09-17
 ---
 

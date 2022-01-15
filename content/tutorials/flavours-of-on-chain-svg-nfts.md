@@ -1,12 +1,12 @@
 ---
-title: 'Flavours of On-Chain SVG NFTs'
-description: 'Store NFT visuals as SVG in the data URI, so it does not need ancillary infrastructure to support it.'
-authors: ['@simondlr']
-tags: ['Smart Contracts','NFT']
-languages: ['Solidity']
-url: 'https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum'
+title: "Flavours of On-Chain SVG NFTs"
+description: "Store NFT visuals as SVG in the data URI, so it does not need ancillary infrastructure to support it."
+authors: ["@simondlr"]
+tags: ["Smart Contracts","NFT"]
+languages: ["Solidity"]
+url: "https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum"
 dateAdded: 2021-09-24
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-08-25
 ---
 

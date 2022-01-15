@@ -1,12 +1,12 @@
 ---
-title: 'Events & Logging in solidity'
-description: 'Solidity events are integral for smart contract devs, allowing smart contracts to be tested for specific variables, frontends to be changed in an automated manner, and much more.'
-authors: ['@PatrickAlphaC']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://blog.chain.link/events-and-logging-in-solidity/'
+title: "Events & Logging in solidity"
+description: "Solidity events are integral for smart contract devs, allowing smart contracts to be tested for specific variables, frontends to be changed in an automated manner, and much more."
+authors: ["@PatrickAlphaC"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://blog.chain.link/events-and-logging-in-solidity/"
 dateAdded: 2021-11-30
-level: 'Beginner'
+level: "Beginner"
 date: 2021-11-22
 ---
 

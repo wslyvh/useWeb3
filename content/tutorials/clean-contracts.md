@@ -1,12 +1,12 @@
 ---
-title: 'Clean Contracts'
-description: 'A guide on smart contract patterns & practices'
-authors: ['@wslyvh']
-tags: ['Smart Contracts','Security']
-languages: ['Solidity']
-url: 'https://www.wslyvh.com/clean-contracts/'
+title: "Clean Contracts"
+description: "A guide on smart contract patterns & practices"
+authors: ["@wslyvh"]
+tags: ["Smart Contracts","Security"]
+languages: ["Solidity"]
+url: "https://www.wslyvh.com/clean-contracts/"
 dateAdded: 2021-08-29
-level: 'Intermediate'
+level: "Intermediate"
 date: 2020-07-30
 ---
 

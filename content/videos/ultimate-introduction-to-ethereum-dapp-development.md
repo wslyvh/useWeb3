@@ -1,12 +1,12 @@
 ---
-title: 'Ultimate Introduction to Ethereum Ðapp Development'
-description: 'A 24 part screencast series outlining everything you need to know in order to get started building Ðapps in Ethereum.'
-authors: ['@AlwaysBCoding']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://www.youtube.com/playlist?list=PLV1JDFUtrXpFh85G-Ddyy2kLSafaB9biQ'
+title: "Ultimate Introduction to Ethereum Ðapp Development"
+description: "A 24 part screencast series outlining everything you need to know in order to get started building Ðapps in Ethereum."
+authors: ["@AlwaysBCoding"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://www.youtube.com/playlist?list=PLV1JDFUtrXpFh85G-Ddyy2kLSafaB9biQ"
 dateAdded: 2021-08-16
-level: 'Beginner'
+level: "Beginner"
 date: 2016-11-16
 ---
 

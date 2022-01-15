@@ -1,12 +1,12 @@
 ---
-title: 'Introduction to Ethereum Rollups'
-description: 'In this guide, we will go over some Ethereum scaling solutions and deep dive into rollups.'
-authors: ['@sensahil','@QuickNode']
-tags: ['Scalability']
+title: "Introduction to Ethereum Rollups"
+description: "In this guide, we will go over some Ethereum scaling solutions and deep dive into rollups."
+authors: ["@sensahil","@QuickNode"]
+tags: ["Scalability"]
 languages: []
-url: 'https://www.quicknode.com/guides/infrastructure/introduction-to-ethereum-rollups'
+url: "https://www.quicknode.com/guides/infrastructure/introduction-to-ethereum-rollups"
 dateAdded: 2022-01-10
-level: 'Beginner'
+level: "Beginner"
 date: 2021-12-29
 ---
 

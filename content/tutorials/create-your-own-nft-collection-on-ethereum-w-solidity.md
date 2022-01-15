@@ -1,12 +1,12 @@
 ---
-title: 'Create your own NFT collection on Ethereum w/Solidity'
-description: 'This article introduces NFT's and guides you through creating your NFT collection on Ethereum using solidity.'
-authors: ['@edatweets_']
-tags: ['Smart Contracts','Dapp','NFT']
-languages: ['Solidity']
-url: 'https://eda.hashnode.dev/create-your-own-nft-collection-on-ethereum'
+title: "Create your own NFT collection on Ethereum w/Solidity"
+description: "This article introduces NFT's and guides you through creating your NFT collection on Ethereum using solidity."
+authors: ["@edatweets_"]
+tags: ["Smart Contracts","Dapp","NFT"]
+languages: ["Solidity"]
+url: "https://eda.hashnode.dev/create-your-own-nft-collection-on-ethereum"
 dateAdded: 2021-11-15
-level: 'Beginner'
+level: "Beginner"
 date: 2021-11-01
 ---
 

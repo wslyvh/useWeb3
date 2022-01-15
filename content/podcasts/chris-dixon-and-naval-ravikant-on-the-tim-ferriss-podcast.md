@@ -1,11 +1,12 @@
 ---
-title: 'Chris Dixon and Naval Ravikant on the Tim Ferriss Podcast'
-description: 'The Wonders of Web3, How to Pick the Right Hill to Climb, Finding the Right Amount of Crypto Regulation, Friends with Benefits, and the Untapped Potential of NFTs'
-authors: ['@tferriss','@naval','@cdixon']
+title: "Chris Dixon and Naval Ravikant on the Tim Ferriss Podcast"
+description: "The Wonders of Web3, How to Pick the Right Hill to Climb, Finding the Right Amount of Crypto Regulation, Friends with Benefits, and the Untapped Potential of NFTs"
+authors: ["@tferriss","@naval","@cdixon"]
 tags: []
 languages: []
-url: 'https://tim.blog/2021/10/28/chris-dixon-naval-ravikant/'
+url: "https://tim.blog/2021/10/28/chris-dixon-naval-ravikant/"
 dateAdded: 2021-11-02
+level: "All"
 ---
 
 “What the smartest people do on the weekends is what everyone else will do during the week in ten years.”

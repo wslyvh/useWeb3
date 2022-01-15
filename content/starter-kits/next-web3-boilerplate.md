@@ -1,11 +1,12 @@
 ---
-title: 'Next Web3 boilerplate'
-description: 'Slightly opinionated Web3 boilerplate based on Next.js and SWR'
-authors: ['@mirshko']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://github.com/mirshko/next-web3-boilerplate'
+title: "Next Web3 boilerplate"
+description: "Slightly opinionated Web3 boilerplate based on Next.js and SWR"
+authors: ["@mirshko"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://github.com/mirshko/next-web3-boilerplate"
 dateAdded: 2021-09-16
+level: "All"
 ---
 
 This is a default Next.js project bootstrapped with create-next-app, customized as the default boilerplate for new Web3 projects.

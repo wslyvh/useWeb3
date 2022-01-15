@@ -1,13 +1,13 @@
 ---
-title: 'Damn Vulnerable DeFi'
-description: 'Put your black hat on, and break some DeFi projects on Ethereum!'
-authors: ['@tinchoabbate']
-tags: ['Smart Contracts','Security','EVM']
-languages: ['Solidity']
-url: 'https://www.damnvulnerabledefi.xyz/'
-featured: 'true'
+title: "Damn Vulnerable DeFi"
+description: "Put your black hat on, and break some DeFi projects on Ethereum!"
+authors: ["@tinchoabbate"]
+tags: ["Smart Contracts","Security","EVM"]
+languages: ["Solidity"]
+url: "https://www.damnvulnerabledefi.xyz/"
+featured: "true"
 dateAdded: 2021-08-11
-level: 'Beginner'
+level: "Beginner"
 ---
 
 More and more DeFi projects on Ethereum are getting hacked. This is your chance to join the party.

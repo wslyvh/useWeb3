@@ -1,11 +1,12 @@
 ---
-title: 'Ethereum: Blockchains, Digital Assets, Smart Contracts, Decentralized Autonomous Organizations'
-description: 'The book aims to help you get your head around blockchains in general and around Ethereum specifically as it's the preeminent blockchain.'
-authors: ['@hdiedrich']
-tags: ['Smart Contracts','Dapp','DAO']
+title: "Ethereum: Blockchains, Digital Assets, Smart Contracts, Decentralized Autonomous Organizations"
+description: "The book aims to help you get your head around blockchains in general and around Ethereum specifically as it's the preeminent blockchain."
+authors: ["@hdiedrich"]
+tags: ["Smart Contracts","Dapp","DAO"]
 languages: []
-url: 'https://amzn.to/3zDnDEW'
+url: "https://amzn.to/3zDnDEW"
 dateAdded: 2022-01-09
+level: "All"
 date: 2016-09-08
 ---
 

@@ -1,12 +1,12 @@
 ---
-title: 'Fetch data from Ethereum with SWR'
-description: 'How to Fetch and Update Data From Ethereum with React and SWR'
-authors: ['@aboutlo']
-tags: ['Dapp']
-languages: ['JavaScript']
-url: 'https://consensys.net/blog/developers/how-to-fetch-and-update-data-from-ethereum-with-react-and-swr/'
+title: "Fetch data from Ethereum with SWR"
+description: "How to Fetch and Update Data From Ethereum with React and SWR"
+authors: ["@aboutlo"]
+tags: ["Dapp"]
+languages: ["JavaScript"]
+url: "https://consensys.net/blog/developers/how-to-fetch-and-update-data-from-ethereum-with-react-and-swr/"
 dateAdded: 2021-08-17
-level: 'Intermediate'
+level: "Intermediate"
 date: 2020-06-18
 ---
 

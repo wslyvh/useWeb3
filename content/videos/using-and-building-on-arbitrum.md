@@ -1,12 +1,12 @@
 ---
-title: 'Using and building on Arbitrum'
-description: 'Arbitrum is a L2 scaling solution for Ethereum. In this tutorial we will be looking at how optimistic roll ups work, deploying a contract and then carrying out a swap on L2.'
-authors: ['@james_bachini']
-tags: ['Smart Contracts','Scalability']
-languages: ['Solidity','JavaScript']
-url: 'https://youtu.be/d4EgugQLZqs'
+title: "Using and building on Arbitrum"
+description: "Arbitrum is a L2 scaling solution for Ethereum. In this tutorial we will be looking at how optimistic roll ups work, deploying a contract and then carrying out a swap on L2."
+authors: ["@james_bachini"]
+tags: ["Smart Contracts","Scalability"]
+languages: ["Solidity","JavaScript"]
+url: "https://youtu.be/d4EgugQLZqs"
 dateAdded: 2022-01-15
-level: 'Intermediate'
+level: "Intermediate"
 ---
 
 Arbitrum is  a layer 2 scaling solution for the Ethereum network. In this tutorial we will be looking at how optimistic roll ups work, deploying a smart contract to Arbitrum and then carrying out a token swap on layer 2 using Uniswap.

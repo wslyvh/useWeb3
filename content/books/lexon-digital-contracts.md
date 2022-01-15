@@ -1,11 +1,12 @@
 ---
-title: 'Lexon: Digital Contracts'
-description: 'In non-technical terms, this book explains Digital Con-tracts: legally enforceable smart contracts that anyone can read.'
-authors: ['@hdiedrich']
-tags: ['Smart Contracts']
+title: "Lexon: Digital Contracts"
+description: "In non-technical terms, this book explains Digital Con-tracts: legally enforceable smart contracts that anyone can read."
+authors: ["@hdiedrich"]
+tags: ["Smart Contracts"]
 languages: []
-url: 'https://amzn.to/34pfBUE'
+url: "https://amzn.to/34pfBUE"
 dateAdded: 2022-01-09
+level: "All"
 date: 2019-10-05
 ---
 

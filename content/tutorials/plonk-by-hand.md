@@ -1,12 +1,12 @@
 ---
-title: 'PLONK by Hand'
-description: 'This article will explain how to execute a PLONK zero-knowledge proof system completely by hand.'
-authors: ['@metastatedev']
-tags: ['Privacy','Cryptography']
+title: "PLONK by Hand"
+description: "This article will explain how to execute a PLONK zero-knowledge proof system completely by hand."
+authors: ["@metastatedev"]
+tags: ["Privacy","Cryptography"]
 languages: []
-url: 'https://research.metastate.dev/plonk-by-hand-part-1/'
+url: "https://research.metastate.dev/plonk-by-hand-part-1/"
 dateAdded: 2021-11-15
-level: 'Advanced'
+level: "Advanced"
 date: 2020-09-30
 ---
 

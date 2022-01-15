@@ -1,11 +1,12 @@
 ---
-title: 'Life After Google'
-description: 'The Fall of Big Data and the Rise of the Blockchain Economy'
-authors: ['George Gilder']
+title: "Life After Google"
+description: "The Fall of Big Data and the Rise of the Blockchain Economy"
+authors: ["George Gilder"]
 tags: []
 languages: []
-url: 'https://amzn.to/3o4ZSl2'
+url: "https://amzn.to/3o4ZSl2"
 dateAdded: 2021-11-30
+level: "All"
 date: 2018-07-17
 ---
 

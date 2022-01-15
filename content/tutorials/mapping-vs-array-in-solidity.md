@@ -1,12 +1,12 @@
 ---
-title: 'Mapping vs. Array in Solidity'
-description: 'There are some key differences between mapping and array in Solidity that are important to understand as you progress in your journey as a smart contract developer.'
-authors: ['@znwhite_']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://www.devtwins.com/blog/understanding-mapping-vs-array-in-solidity'
+title: "Mapping vs. Array in Solidity"
+description: "There are some key differences between mapping and array in Solidity that are important to understand as you progress in your journey as a smart contract developer."
+authors: ["@znwhite_"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://www.devtwins.com/blog/understanding-mapping-vs-array-in-solidity"
 dateAdded: 2021-11-30
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-11-23
 ---
 

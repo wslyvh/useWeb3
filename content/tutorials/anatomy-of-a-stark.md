@@ -1,12 +1,12 @@
 ---
-title: 'Anatomy of a STARK'
-description: 'This tutorial series explains the mechanics of the STARK proof system. It is directed towards a technically-inclined audience with knowledge of basic maths and programming.'
-authors: ['@aszepieniec']
-tags: ['Cryptography','Security','Privacy','Scalability']
+title: "Anatomy of a STARK"
+description: "This tutorial series explains the mechanics of the STARK proof system. It is directed towards a technically-inclined audience with knowledge of basic maths and programming."
+authors: ["@aszepieniec"]
+tags: ["Cryptography","Security","Privacy","Scalability"]
 languages: []
-url: 'https://aszepieniec.github.io/stark-anatomy/'
+url: "https://aszepieniec.github.io/stark-anatomy/"
 dateAdded: 2021-10-30
-level: 'Advanced'
+level: "Advanced"
 date: 2021-10-28
 ---
 

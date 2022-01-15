@@ -1,11 +1,12 @@
 ---
-title: 'Starknet Hardhat example'
-description: 'Examples of how Starknet Hardhat plugin can be used.'
-authors: ['@shard_labs']
-tags: ['Smart Contracts','Scalability']
-languages: ['Cairo']
-url: 'https://github.com/Shard-Labs/starknet-hardhat-example'
+title: "Starknet Hardhat example"
+description: "Examples of how Starknet Hardhat plugin can be used."
+authors: ["@shard_labs"]
+tags: ["Smart Contracts","Scalability"]
+languages: ["Cairo"]
+url: "https://github.com/Shard-Labs/starknet-hardhat-example"
 dateAdded: 2022-01-15
+level: "All"
 ---
 
 Basic Sample Hardhat Project - with Starknet Plugin

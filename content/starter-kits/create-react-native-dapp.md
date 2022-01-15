@@ -1,11 +1,12 @@
 ---
-title: 'create-react-native-dapp'
-description: 'create-react-native-dapp is an npx utility to help quickly bootstrap React Native applications with access to the Ethereum Blockchain.'
-authors: ['@cawfree']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript','React-Native']
-url: 'https://github.com/cawfree/create-react-native-dapp'
+title: "create-react-native-dapp"
+description: "create-react-native-dapp is an npx utility to help quickly bootstrap React Native applications with access to the Ethereum Blockchain."
+authors: ["@cawfree"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript","React-Native"]
+url: "https://github.com/cawfree/create-react-native-dapp"
 dateAdded: 2021-09-16
+level: "All"
 ---
 
 Our goal is to help create a sustainable open source ecosystem for Web3 in React Native by providing a dependable common runtime which we can buidl upon and extend together.

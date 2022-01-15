@@ -1,11 +1,12 @@
 ---
-title: 'ConsenSys Academy'
-description: 'ConsenSys Academy’s mission is to develop the global blockchain ecosystem by bridging the Ethereum knowledge gap, and revolutionizing education through blockchain technology.'
-authors: ['@ConsenSys']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://consensys.net/academy/'
+title: "ConsenSys Academy"
+description: "ConsenSys Academy’s mission is to develop the global blockchain ecosystem by bridging the Ethereum knowledge gap, and revolutionizing education through blockchain technology."
+authors: ["@ConsenSys"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://consensys.net/academy/"
 dateAdded: 2021-08-11
+level: "All"
 ---
 
 Become a certified blockchain developer

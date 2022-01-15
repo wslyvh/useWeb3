@@ -1,12 +1,12 @@
 ---
-title: 'Developer Bootcamp with Solidity (2021)'
-description: 'Become An Ethereum Blockchain Developer With One Course. Master Solidity, Web3.JS, Truffle, Metamask, Remix & More!'
-authors: ['Ravinder Deol','@thinkingassets','Martin Sterlicchi']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity','JavaScript']
-url: 'https://www.udemy.com/course/blockchain-developer/'
+title: "Developer Bootcamp with Solidity (2021)"
+description: "Become An Ethereum Blockchain Developer With One Course. Master Solidity, Web3.JS, Truffle, Metamask, Remix & More!"
+authors: ["Ravinder Deol","@thinkingassets","Martin Sterlicchi"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity","JavaScript"]
+url: "https://www.udemy.com/course/blockchain-developer/"
 dateAdded: 2021-08-17
-level: 'Beginner'
+level: "Beginner"
 ---
 
 Welcome to the Ethereum Blockchain Developer Bootcamp With Solidity. The only course you'll need to become an Ethereum blockchain developer.

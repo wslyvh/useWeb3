@@ -1,11 +1,12 @@
 ---
-title: 'Cipher Shastra'
-description: 'A Smart Contract Security Playground'
-authors: ['@razzor_tweet']
-tags: ['Smart Contracts','DeFi','Cryptography','Security','Solidity']
-languages: ['Solidity']
-url: 'https://ciphershastra.com/'
+title: "Cipher Shastra"
+description: "A Smart Contract Security Playground"
+authors: ["@razzor_tweet"]
+tags: ["Smart Contracts","DeFi","Cryptography","Security","Solidity"]
+languages: ["Solidity"]
+url: "https://ciphershastra.com/"
 dateAdded: 2021-09-18
+level: "All"
 ---
 
 Cipher Shastra is a playground where anyone can enhance their Security Skills by solving and learning from CTF like challenges. 

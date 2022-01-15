@@ -1,12 +1,12 @@
 ---
-title: 'Best Practices for Smart Contract Development'
-description: 'This guide summarizes the lessons I’ve learned from writing smart contracts, building decentralized applications, and open source projects in the Ethereum ecosystem.'
-authors: ['@yosriady']
-tags: ['Smart Contracts','Security']
-languages: ['Solidity']
-url: 'https://yos.io/2019/11/10/smart-contract-development-best-practices/'
+title: "Best Practices for Smart Contract Development"
+description: "This guide summarizes the lessons I’ve learned from writing smart contracts, building decentralized applications, and open source projects in the Ethereum ecosystem."
+authors: ["@yosriady"]
+tags: ["Smart Contracts","Security"]
+languages: ["Solidity"]
+url: "https://yos.io/2019/11/10/smart-contract-development-best-practices/"
 dateAdded: 2021-08-29
-level: 'Intermediate'
+level: "Intermediate"
 ---
 
 The history of software development spans decades. We benefit from the best practices, design patterns, and nuggets of wisdom that has accumulated over half a century.

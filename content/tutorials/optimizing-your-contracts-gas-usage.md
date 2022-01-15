@@ -1,12 +1,12 @@
 ---
-title: 'Optimizing your contract’s gas usage'
-description: 'We will look into tuning and optimizing our Solidity contract to minimize the amount of gas required.'
-authors: ['@cipherzzz']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://medium.com/coinmonks/optimizing-your-solidity-contracts-gas-usage-9d65334db6c7'
+title: "Optimizing your contract’s gas usage"
+description: "We will look into tuning and optimizing our Solidity contract to minimize the amount of gas required."
+authors: ["@cipherzzz"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://medium.com/coinmonks/optimizing-your-solidity-contracts-gas-usage-9d65334db6c7"
 dateAdded: 2021-09-01
-level: 'Intermediate'
+level: "Intermediate"
 date: 2018-04-05
 ---
 

@@ -1,14 +1,15 @@
 ---
-title: 'Out of the Ether'
-description: 'The Amazing Story of Ethereum and the $55 Million Heist that Almost Destroyed It All'
-authors: ['@mattleising']
-tags: ['Web3']
+title: "Out of the Ether"
+description: "The Amazing Story of Ethereum and the $55 Million Heist that Almost Destroyed It All"
+authors: ["@mattleising"]
+tags: ["Web3"]
 languages: []
-url: 'https://amzn.to/3A2YMsS'
-featured: 'true'
+url: "https://amzn.to/3A2YMsS"
+featured: "true"
 dateAdded: 2021-08-11
+level: "All"
 date: 2020-09-29
-alternateUrl: 'https://www.goodreads.com/book/show/55360267-out-of-the-ether'
+alternateUrl: "https://www.goodreads.com/book/show/55360267-out-of-the-ether"
 ---
 
 Discover how $55 million in cryptocurrency vanished in one of the most bizarre thefts in history

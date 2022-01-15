@@ -1,12 +1,12 @@
 ---
-title: 'How to create on-chain NFTs'
-description: 'This video will show you the process of creating NFTs purely on-chain'
-authors: ['@de_botha']
-tags: ['NFT']
-languages: ['Solidity']
-url: 'https://youtu.be/UBGXFV1TQxc'
+title: "How to create on-chain NFTs"
+description: "This video will show you the process of creating NFTs purely on-chain"
+authors: ["@de_botha"]
+tags: ["NFT"]
+languages: ["Solidity"]
+url: "https://youtu.be/UBGXFV1TQxc"
 dateAdded: 2021-10-09
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-10-06
 ---
 

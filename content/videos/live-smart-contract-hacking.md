@@ -1,12 +1,12 @@
 ---
-title: 'Live smart contract hacking'
-description: 'What Ethereum Smart Contract Hacking Looks Like'
-authors: ['@LiveOverflow']
-tags: ['Smart Contracts','Security']
-languages: ['Solidity']
-url: 'https://youtu.be/P8LXLoTUJ5g'
+title: "Live smart contract hacking"
+description: "What Ethereum Smart Contract Hacking Looks Like"
+authors: ["@LiveOverflow"]
+tags: ["Smart Contracts","Security"]
+languages: ["Solidity"]
+url: "https://youtu.be/P8LXLoTUJ5g"
 dateAdded: 2021-09-28
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-09-12
 ---
 

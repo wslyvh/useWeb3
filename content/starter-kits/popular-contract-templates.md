@@ -1,11 +1,12 @@
 ---
-title: 'Popular Contract Templates'
-description: 'Deployable templates of popular smart contracts'
-authors: ['@marcelc63']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://github.com/marcelc63/popular-contract-templates'
+title: "Popular Contract Templates"
+description: "Deployable templates of popular smart contracts"
+authors: ["@marcelc63"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://github.com/marcelc63/popular-contract-templates"
 dateAdded: 2021-10-22
+level: "All"
 date: 2021-10-12
 ---
 

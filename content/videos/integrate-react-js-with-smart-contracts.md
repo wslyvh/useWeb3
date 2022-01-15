@@ -1,12 +1,12 @@
 ---
-title: 'Integrate React.js with Smart Contracts'
-description: 'Learn how to read and display data from smart contracts, issue or sign new transactions and listen to events.'
-authors: ['@ArtiChmaro']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity']
-url: 'https://youtu.be/38WUVVoMZKM'
+title: "Integrate React.js with Smart Contracts"
+description: "Learn how to read and display data from smart contracts, issue or sign new transactions and listen to events."
+authors: ["@ArtiChmaro"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity"]
+url: "https://youtu.be/38WUVVoMZKM"
 dateAdded: 2021-11-22
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-11-21
 ---
 

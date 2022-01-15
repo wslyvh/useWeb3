@@ -1,12 +1,12 @@
 ---
-title: 'Learning Blockchain Development'
-description: 'A Guide for Developers Interested in Learning Blockchain Development'
-authors: ['@william94029369']
-tags: ['Smart Contracts','Dapp']
-languages: ['Solidity']
-url: 'https://www.linumlabs.com/articles/a-guide-for-developers-interested-in-learning-blockchain-development'
+title: "Learning Blockchain Development"
+description: "A Guide for Developers Interested in Learning Blockchain Development"
+authors: ["@william94029369"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity"]
+url: "https://www.linumlabs.com/articles/a-guide-for-developers-interested-in-learning-blockchain-development"
 dateAdded: 2021-08-17
-level: 'Beginner'
+level: "Beginner"
 date: 2020-11-24
 ---
 

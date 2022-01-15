@@ -1,12 +1,12 @@
 ---
-title: 'Set up a Solidity project'
-description: 'How to set up a Solidity project and create your first smart contract'
-authors: ['@oliverjumpertz']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://blog.oliverjumpertz.dev/how-to-set-up-a-solidity-project-and-create-your-first-smart-contract'
+title: "Set up a Solidity project"
+description: "How to set up a Solidity project and create your first smart contract"
+authors: ["@oliverjumpertz"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://blog.oliverjumpertz.dev/how-to-set-up-a-solidity-project-and-create-your-first-smart-contract"
 dateAdded: 2021-08-17
-level: 'Beginner'
+level: "Beginner"
 date: 2021-06-14
 ---
 

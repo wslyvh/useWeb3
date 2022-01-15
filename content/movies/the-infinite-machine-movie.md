@@ -1,11 +1,12 @@
 ---
-title: 'The Infinite Machine - movie'
-description: 'The Infinite Machine tells the riveting true story of the creation of Ethereum, the second-largest cryptocurrency and most active blockchain network'
-authors: ['@CamiRusso']
+title: "The Infinite Machine - movie"
+description: "The Infinite Machine tells the riveting true story of the creation of Ethereum, the second-largest cryptocurrency and most active blockchain network"
+authors: ["@CamiRusso"]
 tags: []
 languages: []
-url: 'https://www.theinfinitemachinemovie.com/'
+url: "https://www.theinfinitemachinemovie.com/"
 dateAdded: 2021-11-30
+level: "All"
 ---
 
 The Ethereum movie will leverage Ethereum technology, more specifically, non-fungible tokens, to help finance the film and transform its audience from passive expectators, into active participants. 

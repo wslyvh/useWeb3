@@ -1,12 +1,12 @@
 ---
-title: 'Learn Solidity: Events'
-description: 'How to use events for logging'
-authors: ['Wissal Haji']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://betterprogramming.pub/learn-solidity-events-2801d6a99a92'
+title: "Learn Solidity: Events"
+description: "How to use events for logging"
+authors: ["Wissal Haji"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://betterprogramming.pub/learn-solidity-events-2801d6a99a92"
 dateAdded: 2021-09-14
-level: 'Intermediate'
+level: "Intermediate"
 date: 2021-01-31
 ---
 

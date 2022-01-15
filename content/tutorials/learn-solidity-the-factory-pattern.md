@@ -1,12 +1,12 @@
 ---
-title: 'Learn Solidity: The Factory Pattern'
-description: 'How to use the factory pattern in your smart contracts'
-authors: ['Wissal Haji']
-tags: ['Smart Contracts']
-languages: ['Solidity']
-url: 'https://betterprogramming.pub/learn-solidity-the-factory-pattern-75d11c3e7d29'
+title: "Learn Solidity: The Factory Pattern"
+description: "How to use the factory pattern in your smart contracts"
+authors: ["Wissal Haji"]
+tags: ["Smart Contracts"]
+languages: ["Solidity"]
+url: "https://betterprogramming.pub/learn-solidity-the-factory-pattern-75d11c3e7d29"
 dateAdded: 2021-09-14
-level: 'Intermediate'
+level: "Intermediate"
 date: 2020-12-13
 ---
 

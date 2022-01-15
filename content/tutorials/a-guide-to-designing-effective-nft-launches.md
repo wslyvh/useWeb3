@@ -1,11 +1,12 @@
 ---
-title: 'A Guide to Designing Effective NFT Launches'
-description: 'This article starts with real-world examples of NFT launches and explores the design space for well-designed launch mechanisms for the community to use and build on.'
-authors: ['@paradigm','@hasufl','@_anishagnihotri']
-tags: ['NFT']
+title: "A Guide to Designing Effective NFT Launches"
+description: "This article starts with real-world examples of NFT launches and explores the design space for well-designed launch mechanisms for the community to use and build on."
+authors: ["@paradigm","@hasufl","@_anishagnihotri"]
+tags: ["NFT"]
 languages: []
-url: 'https://www.paradigm.xyz/2021/10/a-guide-to-designing-effective-nft-launches/'
+url: "https://www.paradigm.xyz/2021/10/a-guide-to-designing-effective-nft-launches/"
 dateAdded: 2021-10-16
+level: "All"
 date: 2021-10-13
 ---
 
