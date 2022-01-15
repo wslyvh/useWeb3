@@ -5,7 +5,7 @@ authors: ["@PatrickAlphaC"]
 tags: ["DeFi","NFT","Dapp","Cryptography","Smart Contracts","UX & Design","Storage"]
 languages: ["Solidity","Python"]
 url: "https://www.youtube.com/watch?v=M576WGiDBdQ"
-featured: "true"
+featured: true
 dateAdded: 2021-09-10
 level: "Beginner"
 date: 2021-09-09

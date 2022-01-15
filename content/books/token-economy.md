@@ -5,7 +5,7 @@ authors: ["@sherminvo"]
 tags: ["Web3"]
 languages: []
 url: "https://amzn.to/2WBFXiQ"
-featured: "true"
+featured: true
 dateAdded: 2021-08-25
 level: "All"
 date: 2020-06-20

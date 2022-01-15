@@ -1,11 +1,11 @@
 ---
 title: "How does Ethereum work, anyway?"
-description: "Many of the topics covered in this post are a breakdown of the concepts discussed in the yellow paper. I've added my own explanations and diagrams to make it easier."
+description: "Many of the topics covered in this post are a breakdown of the concepts discussed in the yellow paper. I’ve added my own explanations and diagrams to make it easier."
 authors: ["@iam_preethi"]
 tags: ["Smart Contracts","Dapp"]
 languages: []
 url: "https://www.preethikasireddy.com/post/how-does-ethereum-work-anyway"
-featured: "true"
+featured: true
 dateAdded: 2021-11-15
 level: "All"
 date: 2017-09-13

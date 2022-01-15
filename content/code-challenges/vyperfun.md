@@ -5,7 +5,7 @@ authors: ["@vasa_develop"]
 tags: ["Smart Contracts"]
 languages: ["Vyper"]
 url: "https://vyper.fun/"
-featured: "true"
+featured: true
 dateAdded: 2021-08-13
 level: "Beginner"
 ---

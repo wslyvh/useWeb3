@@ -5,7 +5,7 @@ authors: ["@_buildspace"]
 tags: ["Smart Contracts","Dapp","NFT","DAO"]
 languages: ["Solidity"]
 url: "https://buildspace.so/"
-featured: "true"
+featured: true
 dateAdded: 2021-09-16
 level: "Beginner"
 ---

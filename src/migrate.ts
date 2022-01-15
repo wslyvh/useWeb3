@@ -39,33 +39,37 @@ async function run() {
 
     items.forEach(item => {
         const file = `${baseFolder}/${item.category.id}/${item.id}.md`
-        if (!fs.existsSync(file)) {
-            const attributes = Object.entries(item)
-            let markdown = `---${attributes.reduce((acc, [key, value], index) => {
-                if (key === 'id' || key === 'category' || key === 'content' || key === 'created') return acc += ''
-                if (key === 'featured' && !value) return acc += ''
-
-                if (typeof value === 'number') {
-                    const date = new Date(value)
-                    return acc += `\n${key}: ${moment(date).format('YYYY-MM-DD')}`
+        const attributes = Object.entries(item)
+        let markdown = `---${attributes.reduce((acc, [key, value], index) => {
+            if (key === 'id' || key === 'category' || key === 'content' || key === 'created') return acc += ''
+            if (key === 'featured') {
+                if (value) { 
+                    return acc += `\n${key}: true`
+                } else {
+                    return acc += ''
                 }
-                if (typeof value === 'undefined') return acc += `\n${key}: ''`
-                if (typeof value === 'string') return acc += `\n${key}: '${value.trim()}'`
-                if (typeof value === 'object' && Array.isArray(value)) {
-                    return acc += `\n${key}: [${value.map(item => `'${item}'`)}]`
-                }
-
-                return acc += `\n${key}: '${value}'`
-            }, '')}\n---\n`
-
-            const content = attributes.find(i => i[0] === 'content')
-            if (content && content.length > 1 && content[1]) {
-                markdown += `\n${content[1]}`
             }
 
-            console.log('Creating file...', `${item.id}.md`)
-            fs.writeFileSync(file, markdown)
+            if (typeof value === 'number') {
+                const date = new Date(value)
+                return acc += `\n${key}: ${moment(date).format('YYYY-MM-DD')}`
+            }
+            if (typeof value === 'undefined') return acc += `\n${key}: ''`
+            if (typeof value === 'string') return acc += `\n${key}: "${value.trim().replace('"', "'")}"`
+            if (typeof value === 'object' && Array.isArray(value)) {
+                return acc += `\n${key}: [${value.map(item => `"${item}"`)}]`
+            }
+
+            return acc += `\n${key}: "${value}"`
+        }, '')}\n---\n`
+
+        const content = attributes.find(i => i[0] === 'content')
+        if (content && content.length > 1 && content[1]) {
+            markdown += `\n${content[1]}`
         }
+
+        console.log('Creating file...', `${item.id}.md`)
+        fs.writeFileSync(file, markdown)
     })
     console.log('Items finished!')
 }

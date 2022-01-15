@@ -5,7 +5,7 @@ authors: ["James Lockhart"]
 tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://www.youtube.com/playlist?list=PL16WqdAj66SCOdL6XIFbke-XQg2GW_Avg"
-featured: "true"
+featured: true
 dateAdded: 2021-08-16
 level: "Beginner"
 date: 2017-09-21

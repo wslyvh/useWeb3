@@ -5,7 +5,7 @@ authors: ["@austingriffith"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
 url: "https://github.com/scaffold-eth/scaffold-eth"
-featured: "true"
+featured: true
 dateAdded: 2021-09-16
 level: "All"
 ---

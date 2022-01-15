@@ -5,7 +5,7 @@ authors: ["@aantonop","@gavofyork"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity"]
 url: "https://amzn.to/3onZcId"
-featured: "true"
+featured: true
 dateAdded: 2021-08-11
 level: "Beginner"
 date: 2018-11-13
