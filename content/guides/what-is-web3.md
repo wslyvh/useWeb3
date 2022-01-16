@@ -4,6 +4,7 @@ description: 'Web3 is about the next evolution of the web. A web that is more op
 authors: ['@wslyvh']
 level: Beginner
 tags: ['Web3']
+languages: []
 featured: true
 date: 2022-01-22
 dateAdded: 2022-01-15

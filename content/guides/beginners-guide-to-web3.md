@@ -4,6 +4,7 @@ description: 'This guide provides a starting point for developers who’re keen 
 authors: ['@wslyvh']
 level: Beginner
 tags: ['Web3']
+languages: []
 featured: true
 date: 2020-07-07
 dateAdded: 2022-01-15

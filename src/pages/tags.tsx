@@ -12,6 +12,7 @@ import { MarkdownContentService } from 'services/content'
 interface Props {
   categories: Array<Category>
   tags: Array<Count>
+  languages: Array<Count>
 }
 
 export default function Index(props: Props) {
@@ -19,13 +20,21 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <MainLayout title='Tags' className={styles.container}>
         <section>
-            <p>
-              Browse resources based on their tags.
-            </p>
+          <p>
+            Browse resources based on their tags.
+          </p>
+          <main>
+            <Tags tags={props.tags} />
+          </main>
+        </section>
 
-            <main>
-              <Tags tags={props.tags} />
-            </main>
+        <section>
+          <p className={styles.second}>
+            Or by programming language.
+          </p>
+          <main>
+            <Tags tags={props.languages} />
+          </main>
         </section>
       </MainLayout>
     </NavigationProvider>
@@ -36,11 +45,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
   const tags = await service.GetTags()
+  const languages = await service.GetLanguages()
 
   return {
     props: {
       categories,
-      tags
+      tags,
+      languages
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD
   }

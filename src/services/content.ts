@@ -48,6 +48,23 @@ export class MarkdownContentService implements ItemServiceInterface {
         }).sort((a, b) => b.count - a.count)
     }
 
+    public async GetLanguages(): Promise<Array<Count>> {
+        const items = await this.GetItems()
+        const initial: {[key: string]: number} = {}
+        const languages = items.map((i) => i.languages)
+        const reduced = languages.flat().reduce((acc: {[key: string]: number}, lang: string) => {
+            acc[lang] ? acc[lang] += 1 : acc[lang] = 1
+            return acc
+        }, initial)
+
+        return Object.keys(reduced).map(i => {
+            return { 
+                key: i,
+                count: reduced[i]
+            } as Count
+        }).sort((a, b) => b.count - a.count)
+    }
+
     public async GetItem(category: string, slug: string): Promise<ContentItem | undefined> {
         const cat = await this.GetCategory(category)
         const filePath = join(process.cwd(), baseFolder, category, slug + '.md')
@@ -92,7 +109,8 @@ export class MarkdownContentService implements ItemServiceInterface {
 
     public async GetItemsByTag(tag: string): Promise<Array<ContentItem>> {
         const items = await this.GetItems()
-        return items.filter(i => i.tags.some(x => x.toLowerCase() === tag.toLowerCase()))
+        return items.filter(i => i.tags.some(x => x.toLowerCase() === tag.toLowerCase()) || 
+            i.languages.some(x => x.toLowerCase() === tag.toLowerCase()))
     }
 
     private toItem(source: string, slug: string, cat: Category): ContentItem {

@@ -4,6 +4,7 @@ description: "Solidity is a programming language designed for developing smart c
 authors: ['@wslyvh']
 level: Beginner
 tags: ['Web3']
+languages: ['Solidity']
 featured: true
 date: 2020-07-07
 dateAdded: 2022-01-15
@@ -11,7 +12,7 @@ dateAdded: 2022-01-15
 
 ## What is a smart contract?
 
-A smart contract is a simple program that lives on decentralized blockchain network (such as Ethereum). They're actually not that smart. And nothing like a (legal) contract. They’re more like an executable piece of code that requires input or an trigger from an external source. They can validate those input conditions and if correct, execute their own logic to update the state on a blockchain.
+Smart contracts are the backbone of decentralized applications (DApps) and Web3. A smart contract is a simple program that lives on a blockchain network (such as Ethereum). They're actually not that smart. And nothing like a (legal) contract. They’re more like an executable piece of code that requires input or an trigger from an external source. They can validate those input conditions and if correct, execute their own logic to update the state on a blockchain.
 
 ## Benefits
 
