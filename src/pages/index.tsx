@@ -26,10 +26,10 @@ export default function Index(props: Props) {
       <MainLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 is a learning platform for developers to explore and learn about Web3. Whether you’re a new dev getting your hands dirty for the first time, or a seasoned developer making the transition into the Web3 space. 
+            useWeb3 is a learning platform for developers to explore and learn about Web3. Whether youre a new dev getting your hands dirty for the first time, or a seasoned developer making the transition into the Web3 space. 
           </p>
           <p>
-            Explore the latest resources, tutorials, challenges, tools, courses and boilerplates and start learning. Once you’re ready, browse the job board to land a job at some of the leading companies that work on core, open-source infrastructure, products, tools, frameworks, DAO's, etc.
+            Explore the latest resources, tutorials, challenges, tools, courses and boilerplates and start learning. Once you&apos;re ready, browse the job board to land a job at some of the leading companies that work on core, open-source infrastructure, products, tools, frameworks, DAOs, etc.
           </p>
           <p>
             <strong>Explore. Learn. Build.</strong>
