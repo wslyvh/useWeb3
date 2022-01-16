@@ -1,0 +1,29 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+    .icon { 
+        margin-right: $gap-8;
+    }
+}
+
+.primary { 
+    --block-accent-color: #004FFF; // primary-500
+}
+
+.secondary {
+    --block-accent-color: #EBA134; // secondary
+}
+
+.twitter {
+    --block-accent-color: #1DA1F2; 
+}
+
+.github {
+    --block-accent-color: #333;
+    color: $color-neutral-100;
+}
+
+.website {
+    --block-accent-color: #FFFFFF;
+    color: #151A26 !important;
+}

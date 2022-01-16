@@ -13,9 +13,9 @@ import { Job } from 'types/job'
 import { Row } from 'components/row'
 import  moment from 'dayjs'
 import { Company } from 'types/company'
-import { Link } from 'components/link'
 import { marked } from 'marked'
 import { MarkdownContentService } from 'services/content'
+import { LinkButton } from 'components/link-button'
 
 interface Props {
     categories: Array<Category>
@@ -38,18 +38,18 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={`Jobs at ${props.company.title}`} description={props.company.description} imageUrl={props.company.logo} />
 
-      <MainLayout className={styles.container} title={props.company.title}>
-        {isFeatured && (props.company.website || props.company.twitter || props.company.github) && 
-          <div className={styles.icons}>
-            {props.company.website && <Link href={props.company.website}><i className="bi bi-globe" /></Link>}
-            {props.company.twitter && <Link href={`https://twitter.com/${props.company.twitter}`}><i className="bi bi-twitter" /></Link>}
-            {props.company.github && <Link href={props.company.github}><i className="bi bi-github" /></Link>}
-          </div>
-        }
-        
+      <MainLayout className={styles.container} title={props.company.title}>        
         {props.company.body && <article className={styles.body} dangerouslySetInnerHTML={{__html: marked.parse(props.company.body) }} />}
         {!props.company.body && props.company.description && <article className={styles.body} dangerouslySetInnerHTML={{__html: props.company.description }} />}
         
+        {isFeatured && (props.company.website || props.company.twitter || props.company.github) && 
+          <div className={styles.icons}>
+            {props.company.website && <LinkButton href={props.company.website} text='Website' type='website' />}
+            {props.company.twitter && <LinkButton href={`https://twitter.com/${props.company.twitter}`} text='Twitter' type='twitter' />}
+            {props.company.github && <LinkButton href={props.company.github} text='Github' type='github' />}
+          </div>
+        }
+
         <h3>Jobs</h3>
         <main>
           <Featured type='rows'>
