@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
-import { Featured } from 'components/featured'
-import { Card } from 'components/card'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
-import { Dropdown } from 'components/dropdown'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
+import { FilteredOverview } from 'components/filtered-overview'
 
 interface Props {
   categories: Array<Category>
@@ -24,67 +22,12 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
-  const [items, setItems] = useState<Array<ContentItem>>([])
-  useEffect(() => {
-    let sorted = [...props.items].sort((a, b) => a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1).reverse()
-    setItems(sorted)
-  }, [props.items])
-
-  if (!props.category) {
-    return <></>
-  }
-
-  function onSort(value: string) {
-    let sorted = [...items]
-    if (value === 'Recently added') {
-      sorted = sorted.sort((a, b) => a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1).reverse()
-    }
-    if (value === 'Title') {
-      sorted = sorted.sort((a, b) => a.title > b.title ? 1 : a.title === b.title ? 0 : -1)
-    }
-    if (value === 'Expertise') {
-      sorted = sorted.sort((a, b) => a.level > b.level ? 1 : a.level === b.level ? 0 : -1)
-    }
-    
-    setItems(sorted)
-  }
-
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={`Learn through ${props.category.emoji} ${props.category.title}`} description={props.category.description} />
+      <SEO title={`Learn from ${props.category.emoji} ${props.category.title}`} description={props.category.description} />
 
       <MainLayout className={styles.container} title={props.category.title}>
-        {props.category.description && 
-          <article>
-            <p dangerouslySetInnerHTML={{__html: props.category.description }} />
-          </article>
-        }
-
-        <div className={styles.filter}>
-          <p>Sort by:</p>
-          <Dropdown className={styles.sort} items={['Recently added', 'Title', 'Expertise']} onSelect={(value) => onSort(value)} />
-        </div>
-
-        <main>
-          <Featured>
-            {items.map(i => {
-              return (
-                <Card small
-                  key={i.id}
-                  title={i.title}
-                  description={i.description}
-                  author={i.authors.join(', ')}
-                  tag={i.level}
-                  detailsUrl={`/${i.category.id}/${i.id}`}
-                  url={i.url} />
-              )
-            })}
-          </Featured>
-        </main>
-
-        {props.category.title === 'Books' && <p>
-          <small>* Links in the books category may contain referral links. Any proceeds will help and support this site.</small>
-        </p>}
+        <FilteredOverview title={props.category.title} description={props.category.description} items={props.items} />
       </MainLayout>
     </NavigationProvider>
   )
