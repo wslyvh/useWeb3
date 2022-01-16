@@ -43,6 +43,11 @@
         display: flex;
         gap: $gap-8;
         margin-bottom: $gap-16;
+
+        @media (max-width: $screen-480) {
+            flex-direction: column;
+            gap: 0;
+        }
     }
 
     // Index
