@@ -22,6 +22,10 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
+  if (!props.category) {
+    return <></>
+  }
+
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={`Learn from ${props.category.emoji} ${props.category.title}`} description={props.category.description} />
@@ -43,7 +47,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: { category: i.id }
       }
     }),
-    fallback: true
+    fallback: false
   }
 }
 
