@@ -29,11 +29,10 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
+  const router = useRouter()
   if (!props.item) {
     return <></>
   }
-
-  const router = useRouter()
   const websiteIsSameCurrentPage = props.item.url.includes(router.asPath) // e.g. Guides do not contain external links
   
   return (
