@@ -1,4 +1,5 @@
 
+export { AngelJobService } from './angel'
 export { AirtableJobService } from './airtable'
 export { BreezyJobService } from './breezy'
 export { GreenhouseJobService } from './greenhouse'

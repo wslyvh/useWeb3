@@ -20,3 +20,26 @@ export const JOBS_LEVER = ['aragon', 'centrifuge', 'protocol', 'compound-2', 'Un
 export const JOBS_BREEZY = ['the-graph', 'immunefi', 'superrare', 'centrifuge', 'celer-network', 'bloxstaking', 'hal-collective-inc', 'spruce-systems']
 export const JOBS_WORKABLE = ['superfluid', 'walletconnect', 'doingud', 'web3labs', 'ankr', 'paraswap', 'argenthq']
 export const JOBS_WRK = ['filebase']
+export const JOBS_ANGEL = [
+  'balancer-labs-1',
+  'aave',
+  'aztec-network',
+  'curve-labs',
+  'dorg-1',
+  'endaoment-3',
+  'ethereum-push-notification-service',
+  'fleekhq',
+  'fractional-art',
+  'gelato-network',
+  'gitcoin',
+  'livepeer',
+  'metamask',
+  'offchain-labs',
+  'paperchain',
+  'pocket-network',
+  'protocol-labs',
+  'tally-governance',
+  'web3api',
+  'web3labs',
+  'uniswap',
+]

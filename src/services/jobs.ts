@@ -1,8 +1,8 @@
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_WORKABLE, JOBS_WRK } from 'utils/constants'
-import { AirtableJobService, BreezyJobService, GreenhouseJobService, LeverJobService, WorkableJobService, WrkJobService } from './jobs/index'
+import { JOBS_ANGEL, JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_WORKABLE, JOBS_WRK } from 'utils/constants'
+import { AngelJobService, AirtableJobService, BreezyJobService, GreenhouseJobService, LeverJobService, WorkableJobService, WrkJobService } from './jobs/index'
 
 export class JobService implements JobServiceInterface {  
     public async GetCompany(id: string): Promise<Company | undefined> {
@@ -24,6 +24,7 @@ export class JobService implements JobServiceInterface {
       const leverService = new LeverJobService()
       const workableService = new WorkableJobService()
       const wrkService = new WrkJobService()
+      const angelService = new AngelJobService()
 
       try {
         if (companyId) {
@@ -42,6 +43,8 @@ export class JobService implements JobServiceInterface {
           const wrk = JOBS_WRK.some(i => i === companyId)
           if (wrk)
             jobs = await wrkService.GetJobs(companyId, maxItems)
+          const angel = JOBS_ANGEL.some(i => i === companyId)
+          if (angel) jobs = await angelService.GetJobs(companyId, maxItems)
 
           // Check Airtable last. Doesn't have constant company list
           if (!breezy && !greenhouse && !lever && !workable && !wrk) {
@@ -55,9 +58,10 @@ export class JobService implements JobServiceInterface {
           const workableJobs = JOBS_WORKABLE.map(item => workableService.GetJobs(item, maxItems))
           const wrkJobs = JOBS_WRK.map(item => wrkService.GetJobs(item, maxItems))
           const airtableJobs = airtableService.GetJobs()
+          const angelJobs = JOBS_ANGEL.map(item => angelService.GetJobs(item, maxItems))
           
           // Get all jobs
-          jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, workableJobs, wrkJobs, airtableJobs].flat())).flat()
+          jobs = (await Promise.all([angelJobs, breezyJobs, greenhouseJobs, leverJobs, workableJobs, wrkJobs, airtableJobs].flat())).flat()
         }
 
         return jobs
