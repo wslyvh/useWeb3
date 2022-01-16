@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { AirtableItemService } from 'services/airtable'
+import { MarkdownContentService } from 'services/content'
 const Twit = require('twit')
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<string>) {
@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     })
 
-    const service = new AirtableItemService()
+    const service = new MarkdownContentService()
     const categories = await service.GetCategories()
     const items = await service.GetItems()
     const item = items[Math.floor(Math.random() * items.length)]

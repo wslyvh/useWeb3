@@ -1,18 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 # useWeb3
 
-useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development.
+useWeb3 is a learning platform for developers to explore and learn about Web3. Whether you’re a new dev getting your hands dirty for the first time, or a seasoned developer making the transition into the Web3 space. 
 
-https://useweb3.xyz/
+Explore the latest resources, tutorials, challenges, tools, courses and boilerplates and start learning. Once you’re ready, browse the job board to land a job at some of the leading companies that work on core, open-source infrastructure, products, tools, frameworks, DAO's, etc.
+
+Explore. Learn. Build.
+
+https://www.useweb3.xyz/
 
 # Development
 
-First, run the development server:
+First, install all packages `yarn install` and then run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 

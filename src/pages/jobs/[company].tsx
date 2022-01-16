@@ -3,7 +3,6 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
 import { Featured } from 'components/featured'
-import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
@@ -16,6 +15,7 @@ import  moment from 'dayjs'
 import { Company } from 'types/company'
 import { Link } from 'components/link'
 import { marked } from 'marked'
+import { MarkdownContentService } from 'services/content'
 
 interface Props {
     categories: Array<Category>
@@ -98,7 +98,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     }
   }
   
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const categories = await service.GetCategories()
   const jobService = new JobService()
   const jobs = await jobService.GetJobs(companyId)

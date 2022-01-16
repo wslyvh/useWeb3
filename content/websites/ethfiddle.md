@@ -2,7 +2,7 @@
 title: "EthFiddle"
 description: "Solidity IDE in the browser"
 authors: ["@loomnetwork"]
-tags: ["IDE"]
+tags: ["DevEx"]
 languages: ["Solidity"]
 url: "https://ethfiddle.com/"
 dateAdded: 2021-09-25

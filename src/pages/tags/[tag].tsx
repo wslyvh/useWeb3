@@ -5,12 +5,12 @@ import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
 import { Featured } from 'components/featured'
 import { Card } from 'components/card'
-import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from '../pages.module.scss'
+import { MarkdownContentService } from 'services/content'
 
 interface Props {
   categories: Array<Category>
@@ -54,7 +54,7 @@ export default function Index(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const tags = await service.GetTags()
 
   return {
@@ -76,7 +76,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     }
   }
   
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const categories = await service.GetCategories()
   const items = await service.GetItemsByTag(tag)
   

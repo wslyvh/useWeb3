@@ -1,8 +1,8 @@
 ---
 title: "The Architecture of a Web 3.0 application"
-description: "The architecture of Web 3.0 applications (or 'DApps") are completely different from Web 2.0 applications."
+description: "The architecture of Web 3.0 applications (or 'DApps') are completely different from Web 2.0 applications."
 authors: ["@iam_preethi"]
-tags: ["Architecture","Dapp"]
+tags: ["DevEx","Dapp"]
 languages: []
 url: "https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application"
 dateAdded: 2021-11-15

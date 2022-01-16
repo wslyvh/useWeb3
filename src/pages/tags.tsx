@@ -3,11 +3,11 @@ import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { GetStaticProps } from 'next'
-import { AirtableItemService } from 'services/airtable'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { Tags } from 'components/tags'
 import { Count } from 'types/count'
+import { MarkdownContentService } from 'services/content'
 
 interface Props {
   categories: Array<Category>
@@ -33,7 +33,7 @@ export default function Index(props: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const categories = await service.GetCategories()
   const tags = await service.GetTags()
 

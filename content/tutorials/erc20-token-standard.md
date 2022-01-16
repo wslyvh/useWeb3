@@ -2,7 +2,7 @@
 title: "ERC20 token standard"
 description: "Understand the ERC20 token smart contract"
 authors: ["@ethereumdevio"]
-tags: ["Smart Contracts","Tokens"]
+tags: ["DeFi","Smart Contracts"]
 languages: []
 url: "https://ethereumdev.io/understand-the-erc20-token-smart-contract/"
 dateAdded: 2021-08-17

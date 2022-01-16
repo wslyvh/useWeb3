@@ -2,7 +2,7 @@
 title: "GitHub in Remix IDE"
 description: "Remix release v0.18.0 now includes full support for a plugin called dGIT that allows you to interact with GitHub as if you were doing it on your terminal or in VSCode."
 authors: ["@EthereumRemix","@bunsenstraat"]
-tags: ["IDE"]
+tags: ["DevEx"]
 languages: ["Solidity"]
 url: "https://medium.com/remix-ide/github-in-remix-ide-356de378f7da"
 dateAdded: 2021-09-25

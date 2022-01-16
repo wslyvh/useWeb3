@@ -156,9 +156,10 @@ export class AirtableItemService implements ItemServiceInterface {
             id: source.fields['Category Slug'] ? (source.fields['Category Slug'] as string[])[0]: '',
             title: source.fields['Category Title'] ? (source.fields['Category Title'] as string[])[0]: ''
           },
+          dateAdded: new Date(source._rawJson.createdTime as string).getTime()
       } as ContentItem
 
-      if (source.fields['Level']) item.level = source.fields['Level'] as 'Beginner' | 'Intermediate' | 'Advanced'
+      if (source.fields['Level']) item.level = source.fields['Level'] as 'All' | 'Beginner' | 'Intermediate' | 'Advanced'
       if (source.fields['Date']) item.date = new Date(source.fields['Date'] as string).getTime()
       if (source.fields['Alternate Url']) item.alternateUrl = source.fields['Alternate Url'] as string
       

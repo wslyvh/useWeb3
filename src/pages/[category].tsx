@@ -5,13 +5,13 @@ import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
 import { Featured } from 'components/featured'
 import { Card } from 'components/card'
-import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import { Dropdown } from 'components/dropdown'
 import styles from './pages.module.scss'
+import { MarkdownContentService } from 'services/content'
 
 interface Props {
   categories: Array<Category>
@@ -26,7 +26,7 @@ interface Params extends ParsedUrlQuery {
 export default function Index(props: Props) {
   const [items, setItems] = useState<Array<ContentItem>>([])
   useEffect(() => {
-    let sorted = [...props.items].sort((a, b) => a.created > b.created ? 1 : a.created === b.created ? 0 : -1).reverse()
+    let sorted = [...props.items].sort((a, b) => a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1).reverse()
     setItems(sorted)
   }, [props.items])
 
@@ -37,7 +37,7 @@ export default function Index(props: Props) {
   function onSort(value: string) {
     let sorted = [...items]
     if (value === 'Recently added') {
-      sorted = sorted.sort((a, b) => a.created > b.created ? 1 : a.created === b.created ? 0 : -1).reverse()
+      sorted = sorted.sort((a, b) => a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1).reverse()
     }
     if (value === 'Title') {
       sorted = sorted.sort((a, b) => a.title > b.title ? 1 : a.title === b.title ? 0 : -1)
@@ -91,7 +91,7 @@ export default function Index(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const categories = await service.GetCategories()
 
   return {
@@ -113,7 +113,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     }
   }
   
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const category = await service.GetCategory(categoryId)
   if (!category) {
     return {

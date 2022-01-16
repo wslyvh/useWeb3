@@ -25,7 +25,7 @@ export function Sitenav(props: Props) {
             </li>
             {categories.map(i => {
               return (
-                <li key={i.id} className={currentPath === `/${i.id}` ? styles.active :""}>
+                <li key={i.id} className={currentPath.includes(`/${i.id}`) ? styles.active : ''}>
                   <Link href={`/${i.id}`}>
                     <span role="img" aria-label={i.id}>{i.emoji}</span>
                     <span className={styles.text}>{i.title}</span>
@@ -33,20 +33,20 @@ export function Sitenav(props: Props) {
                 </li>
               )
             })}
-             <li className={currentPath === "/jobs" ? styles.active :""}>
+             <li className={currentPath.includes('/jobs') ? styles.active : ''}>
               <Link href={'/jobs'}>
                 <span role="img" aria-label="jobs">💼</span>
                 <span className={styles.text}>Jobs</span>
               </Link>
             </li>
-             <li className={currentPath === "/tags" ? styles.active :""}>
+             <li className={currentPath.includes('/tags') ? styles.active : ''}>
               <Link href={'/tags'}>
                 <span role="img" aria-label="tags">🏷️</span>
                 <span className={styles.text}>Tags</span>
               </Link>
             </li>
-             <li className={currentPath === "/submit" ? styles.active :""}>
-              <Link href={'/submit'}>
+             <li>
+              <Link href='https://github.com/wslyvh/useWeb3/tree/main/content'>
                 <span role="img" aria-label="submit">🔗</span>
                 <span className={styles.text}>Submit</span>
               </Link>

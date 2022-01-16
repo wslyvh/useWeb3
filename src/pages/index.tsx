@@ -5,11 +5,11 @@ import { Card } from 'components/card'
 import { Featured } from 'components/featured'
 import { ContentItem } from 'types/content-item'
 import { GetStaticProps } from 'next'
-import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
+import { MarkdownContentService } from 'services/content'
 
 interface Props {
   categories: Array<Category>
@@ -26,10 +26,13 @@ export default function Index(props: Props) {
       <MainLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 provides a curated overview of the best and latest resources on Ethereum, blockchain and Web3 development. 
+            useWeb3 is a learning platform for developers to explore and learn about Web3. Whether you’re a new dev getting your hands dirty for the first time, or a seasoned developer making the transition into the Web3 space. 
           </p>
           <p>
-            These resources help you develop your own smart contracts, DeFi project, ERC20 or NFT tokens in Solidity or Vyper. Connect with them using Web3 client libraries. Or publish them to the network or decentralized web, such as IPFS.
+            Explore the latest resources, tutorials, challenges, tools, courses and boilerplates and start learning. Once you’re ready, browse the job board to land a job at some of the leading companies that work on core, open-source infrastructure, products, tools, frameworks, DAO's, etc.
+          </p>
+          <p>
+            <strong>Explore. Learn. Build.</strong>
           </p>
         </article>
 
@@ -69,7 +72,7 @@ export default function Index(props: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async () => {
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const items = await service.GetItems('', true)
   const categories = await service.GetCategories()
 

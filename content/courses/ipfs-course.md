@@ -2,7 +2,7 @@
 title: "IPFS Course"
 description: "In this course, we'll dive into the basics of cryptographic hashing and content addressing on the decentralized web with IPFS"
 authors: ["@protoschool"]
-tags: ["Storage","IPFS"]
+tags: ["Storage"]
 languages: []
 url: "https://proto.school/course/ipfs"
 dateAdded: 2021-09-23

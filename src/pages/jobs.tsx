@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Main as MainLayout } from 'components/layouts/main'
 import { GetStaticProps } from 'next'
-import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD, JOBS_AMOUNT_PER_COMPANY } from 'utils/constants'
@@ -15,6 +14,8 @@ import { Link } from 'components/link'
 import Pagination from 'next-pagination'
 import { useRouter } from 'next/dist/client/router'
 import { SEO } from 'components/SEO'
+import { MarkdownContentService } from 'services/content'
+
 interface Props {
   categories: Array<Category>
   jobs: Array<Job>
@@ -91,7 +92,7 @@ export default function Index(props: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const categories = await service.GetCategories()
 
   const jobService = new JobService()

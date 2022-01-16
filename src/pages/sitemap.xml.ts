@@ -1,12 +1,12 @@
 import { SITE_URL } from "utils/constants"
-import { AirtableItemService } from "services/airtable"
 import { JobService } from "services/jobs"
 import slugify from "slugify"
+import { MarkdownContentService } from "services/content"
 
 const Sitemap = () => {}
 
 export const getServerSideProps = async ({ res }: any) => {
-    const service = new AirtableItemService()
+    const service = new MarkdownContentService()
     const items = await service.GetItems()
     const categories = await service.GetCategories()
     const tags = (await service.GetTags()).map(i => i.key.toLowerCase().replace(/ /g, '%20').replace(/&/g, '%26'))
@@ -40,7 +40,7 @@ export const getServerSideProps = async ({ res }: any) => {
                 return `
                     <url>
                         <loc>${baseUrl}${i.category.id}/${i.id}</loc>
-                        <lastmod>${new Date(i.created).toISOString()}</lastmod>
+                        <lastmod>${new Date(i.dateAdded).toISOString()}</lastmod>
                         <changefreq>monthly</changefreq>
                         <priority>0.5</priority>
                     </url>`
@@ -84,11 +84,6 @@ export const getServerSideProps = async ({ res }: any) => {
                         <priority>0.6</priority>
                     </url>`
             }).join("")}
-            <url>
-                <loc>${baseUrl}submit</loc>
-                <lastmod>${launchDate}</lastmod>
-                <changefreq>yearly</changefreq>
-            </url>
         </urlset>`
     
     res.setHeader("Content-Type", "text/xml")

@@ -13,6 +13,32 @@
         }
     }
 
+    .markdown { 
+        p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote, image, code {
+            margin-bottom: $gap-16;
+        }
+
+        ul, ol,
+        ul ul, ol ul,
+        ol ol, ul ol {
+            list-style-position: inside; 
+            margin-left: $gap-16; 
+            margin-top: 0;
+        }
+
+        ul ul, ol ul { 
+            list-style-type: circle; 
+            margin-top: $gap-8;
+            margin-bottom: $gap-8;
+        }
+
+        ol ol, ul ol { 
+            list-style-type: lower-latin; 
+            margin-top: $gap-8;
+            margin-bottom: $gap-8;
+        }
+    }
+
     .icons { 
         display: flex;
         gap: $gap-8;

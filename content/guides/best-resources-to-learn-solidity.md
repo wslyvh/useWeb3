@@ -1,20 +1,17 @@
 ---
 title: "Best resources to learn Solidity"
-description: 'Solidity is a programming language designed for developing smart contracts that run on Ethereum. These are the best resources to learn more about it.'
+description: "Solidity is a programming language designed for developing smart contracts that run on Ethereum. It's the most in demand skill in the Web3 space. These are the best resources to help you learn more about it."
 authors: ['@wslyvh']
 level: Beginner
-tags: ['Ethereum', 'Web3']
+tags: ['Web3']
 featured: true
 date: 2020-07-07
+dateAdded: 2022-01-15
 ---
-
-Solidity is a statically-typed curly-braces programming language designed for developing smart contracts that run on Ethereum.
 
 ## What is a smart contract?
 
 A smart contract is a simple program that lives on decentralized blockchain network (such as Ethereum). They're actually not that smart. And nothing like a (legal) contract. They’re more like an executable piece of code that requires input or an trigger from an external source. They can validate those input conditions and if correct, execute their own logic to update the state on a blockchain.
-
-If a blockchain is like a database then a smart contract is like a stored procedure.
 
 ## Benefits
 
@@ -65,4 +62,4 @@ https://consensys.github.io/smart-contract-best-practices/
 
 ## Other resources
 
-If you'd like to read more, make sure to checkout all the other [Solidity](https://www.useweb3.xyz/tags/solidity) resources on the site.
+If you'd like to read more, make sure to checkout all the other [Solidity](/tags/smart%20contracts) resources on the site.

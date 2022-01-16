@@ -4,7 +4,6 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
-import { AirtableItemService } from 'services/airtable'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
@@ -15,6 +14,9 @@ import { Tag } from 'components/tag'
 import { getLevelStyle } from 'utils/helpers'
 import styles from '../pages.module.scss'
 import { Link } from 'components/link'
+import { MarkdownContentService } from 'services/content'
+import { marked } from 'marked'
+import { useRouter } from 'next/router'
 
 interface Props {
   categories: Array<Category>
@@ -27,10 +29,9 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
-  if (!props.item) {
-    return <></>
-  }
-
+  const router = useRouter()
+  const websiteIsSameCurrentPage = props.item.url.includes(router.asPath) // e.g. Guides do not contain external links
+  
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={props.item.title} description={props.item.description} />
@@ -45,9 +46,11 @@ export default function Index(props: Props) {
         </article>
 
         <article className={styles.website}>
-          <Link href={props.item.url}>
-            <span className='accent block'>Visit website &raquo;</span>
-          </Link>
+          {!websiteIsSameCurrentPage && 
+            <Link href={props.item.url}>
+              <span className='accent block'>Visit website &raquo;</span>
+            </Link>
+          }
           {props.item.alternateUrl && 
             <Link href={props.item.alternateUrl}>
               <span className='block'>Alternate link &raquo;</span>
@@ -60,9 +63,8 @@ export default function Index(props: Props) {
         </main>
 
         {props.item.content && props.item.content !== props.item.description && 
-          <main className={styles.content}>
-            <p dangerouslySetInnerHTML={{__html: props.item.content}} />
-          </main>
+          <main className={styles.markdown} dangerouslySetInnerHTML={{__html: marked.parse(props.item.content)}} />
+          
         }
 
         <article className={styles.tags}>
@@ -79,7 +81,7 @@ export default function Index(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const items = await service.GetItems()
 
   return {
@@ -102,7 +104,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     }
   }
   
-  const service = new AirtableItemService()
+  const service = new MarkdownContentService()
   const item = await service.GetItem(category, resource)
   if (!item) {
     return {

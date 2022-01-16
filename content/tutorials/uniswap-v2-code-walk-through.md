@@ -2,7 +2,7 @@
 title: "Uniswap v2 Code walk-through"
 description: "Uniswap v2 can create an exchange market between any two ERC-20 tokens. In this article we will go over the source code for the contracts that implement this protocol."
 authors: ["@ori_pomerantz"]
-tags: ["Smart Contracts","Tokens"]
+tags: ["DeFi","Smart Contracts"]
 languages: ["Solidity"]
 url: "https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code/"
 dateAdded: 2021-11-15

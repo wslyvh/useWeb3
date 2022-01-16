@@ -7,11 +7,12 @@ export interface ContentItem {
     content: string
     authors: Array<string>
     date?: number
-    level?: 'Beginner' | 'Intermediate' | 'Advanced'
+    level: 'All' | 'Beginner' | 'Intermediate' | 'Advanced'
     tags: Array<string>
     languages: Array<string>
     url: string
     alternateUrl?: string
     featured?: boolean
     category: Category
+    dateAdded: number
 }
