@@ -29,6 +29,10 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
+  if (!props.item) {
+    return <></>
+  }
+
   const router = useRouter()
   const websiteIsSameCurrentPage = props.item.url.includes(router.asPath) // e.g. Guides do not contain external links
   
@@ -90,7 +94,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: { category: i.category.id, resource: i.id }
       }
     }),
-    fallback: true
+    fallback: false // content is from markdown 
   }
 }
 
