@@ -28,7 +28,7 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={`Explore #${props.tag}`} />
+      <SEO title={`Explore #${props.tag} resources`} />
 
       <MainLayout className={styles.container} title={`#${props.tag}`}>
         <FilteredOverview title={props.tag} items={props.items} />

@@ -8,6 +8,7 @@ import styles from './pages.module.scss'
 import { Tags } from 'components/tags'
 import { Count } from 'types/count'
 import { MarkdownContentService } from 'services/content'
+import { SEO } from 'components/SEO'
 
 interface Props {
   categories: Array<Category>
@@ -18,6 +19,8 @@ interface Props {
 export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
+      <SEO title='Explore resources by tags' />
+
       <MainLayout title='Tags' className={styles.container}>
         <section>
           <p>
