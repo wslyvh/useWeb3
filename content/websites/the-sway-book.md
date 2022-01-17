@@ -2,7 +2,7 @@
 title: "The Sway Book"
 description: "An introduction to the Sway programming language."
 authors: ["@FuelLabs"]
-tags: ["Smart Contracts","Scalability","Sway"]
+tags: ["Smart Contracts","Scalability"]
 languages: ["Sway"]
 url: "https://fuellabs.github.io/sway/latest/"
 dateAdded: 2022-01-16
