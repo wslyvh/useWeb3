@@ -2,7 +2,7 @@
 title: "Tenderly"
 description: "Simulate, debug and monitor anything on EVM-compatible chains"
 authors: ["@TenderlyApp"]
-tags: ["Infrastructure","Development"]
+tags: ["DevEx"]
 languages: ["Solidity, Vyper"]
 url: "https://docs.tenderly.co/"
 dateAdded: 2021-01-19

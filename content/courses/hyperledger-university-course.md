@@ -5,7 +5,7 @@ description: 'This free, open-source course aims at providing a reliable basis f
 authors: ['Rafael Belchior and contributors']
 level: [Intermediate, Advanced]
 tags: ['Smart Contracts','Dapp','Enterprise']
-languages: ['Python','JavaScript', 'Typescript']
+languages: ['Python','JavaScript']
 dataAdded:  [2022-01-18]
 url: 'https://github.com/hyperledger-labs/university-course'
 ---
