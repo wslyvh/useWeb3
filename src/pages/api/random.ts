@@ -19,35 +19,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const service = new MarkdownContentService()
     const categories = await service.GetCategories()
     const items = await service.GetItems()
-    const item = items[Math.floor(Math.random() * items.length)]
-    const category = categories.find(i => i.id === item.category.id)
-    
-    const text = `${category?.emoji} ${item.title}
+
+    for (let i = 0; i < 10; i++) {
+        const item = items[Math.floor(Math.random() * items.length)]
+        const category = categories.find(i => i.id === item.category.id)
+        
+        const text = `
+${category?.emoji} ${item.title}
 by ${item.authors.join(' ')}
 
 Check it out at 👇
-${item.url}`
+${item.url}\n\n`
 
-    console.log(text)
+        console.log(text)        
+    }
     let error = ''
-    try {
-        twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
-            if (err) {
-                error = err
-                console.log('Unable to post Twitter update..')
-                console.error(err)
-            }
-            else { 
-                console.log('Update posted to Twitter..')
-                console.log(`https://twitter.com/useWeb3/status/${data.id_str}`)
-            }
-        })
-    }
-    catch(e) {
-        error = 'Unknown error'
-        console.log('Unable to post Twitter update..')
-        console.error(e)
-    }
+    // try {
+    //     twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
+    //         if (err) {
+    //             error = err
+    //             console.log('Unable to post Twitter update..')
+    //             console.error(err)
+    //         }
+    //         else { 
+    //             console.log('Update posted to Twitter..')
+    //             console.log(`https://twitter.com/useWeb3/status/${data.id_str}`)
+    //         }
+    //     })
+    // }
+    // catch(e) {
+    //     error = 'Unknown error'
+    //     console.log('Unable to post Twitter update..')
+    //     console.error(e)
+    // }
 
     if (error) res.status(500).send(error)
     else res.status(200).send('Ok')
