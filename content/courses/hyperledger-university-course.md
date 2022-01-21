@@ -6,7 +6,7 @@ authors: ['Rafael Belchior and contributors']
 level: [Intermediate, Advanced]
 tags: ['Smart Contracts','Dapp','Enterprise']
 languages: ['Python','JavaScript']
-dataAdded:  2022-01-18
+dateAdded: 2022-01-18
 url: 'https://github.com/hyperledger-labs/university-course'
 ---
 
