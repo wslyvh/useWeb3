@@ -2,7 +2,7 @@ name: Twitter Bot
 
 on:
   schedule:
-    - cron: "0 14 * * *"
+    - cron: "30 15 * * *"
 
 jobs:
   build:
