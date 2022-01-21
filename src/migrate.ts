@@ -4,8 +4,6 @@ import { AirtableItemService } from "./services/airtable"
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-// NOTE: tsconfig -> "module": "commonjs", instead of esnext
-
 console.log("Airtabe -> to markdown migration..")
 run()
 
