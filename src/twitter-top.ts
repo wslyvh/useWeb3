@@ -5,27 +5,28 @@ const Twit = require('twit')
 
 dotenv.config()
 
-console.log("Tweet most popular resources")
+console.log("Tweet top resources")
 run()
 
+const EXCLUDE = ['https://github.com/wslyvh/useWeb3/tree/main/content']
+
 async function run() {
+    console.log('TOP')
     const service = new MarkdownContentService()
-    const response = await fetch('https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=10', {
+    
+    const response = await fetch(`https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:props:url&filters=event:name==Outbound+Link%3A+Click`, {
         headers: { 'Authorization': `Bearer ${process.env.PLAUSIBLE_API_KEY}` },
     })
-
+    
     const body = await response.json()
-    const stats = body.results.filter((i: any) => i.page !== '/')
-        .map((i: any) => i.page.split('/').filter((i: any) => !!i)).filter((i: string[]) => i.length === 1).splice(0, 5).flat()
+    const stats = body.results.map((i: any) => i.url).filter((i: any) => !EXCLUDE.includes(i)).splice(0, 5)
+    const items = await service.GetItems()
 
-    let text = `Most popular last week 🔥\n\n`
-    for (const item of stats) {
-        if (item === 'jobs') {
-            text += `- 💼 Jobs \n`
-        }
-        else {
-            const category = await service.GetCategory(item)        
-            text += `- ${category?.emoji} ${category?.title} \n`
+    let text = `Most popular last week 🚀\n\n`
+    for (let index = 0; index < stats.length; index++) {
+        const resource = items.find(i => i.url === stats[index])
+        if (resource) {
+            text += `${index + 1}. ${resource.title} ${resource.authors.join(' ')} \n`
         }
     }
 
