@@ -18,7 +18,7 @@ async function run() {
     const stats = body.results.filter((i: any) => i.page !== '/')
         .map((i: any) => i.page.split('/').filter((i: any) => !!i)).filter((i: string[]) => i.length === 1).splice(0, 5).flat()
 
-    let text = `Most popular last week ✨\n\n`
+    let text = `Most popular last week 🌱\n\n`
     for (const item of stats) {
         if (item === 'jobs') {
             text += `- 💼 Jobs \n`
