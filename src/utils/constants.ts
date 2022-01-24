@@ -10,7 +10,7 @@ export const DEFAULT_REVALIDATE_PERIOD = 3600
 export const JOBS_SINCE_LAST_UPDATED = 60
 export const JOBS_AMOUNT_PER_COMPANY = 5
 export const JOBS_FILTER = ['ethereum', 'web3', 'developer', 'engineer', 'hacker', 'evangelist', 
-    'software', 'fullstack', 'full-stack', 'full stack', 'blockchain', 'solidity', 'protocol', 'engineering', 'product', 'security']
+    'software', 'fullstack', 'full-stack', 'full stack', 'blockchain', 'solidity', 'protocol', 'engineering', 'product', 'security', 'technical', 'smart contract', 'smart-contract']
 export const JOBS_GREENHOUSE = ['consensys', 'consensysinc', 'gnosis', 'openzeppelin', 'figment', '0x', 
     'blockdaemon', 'setlabs', 'dydx', 'brave', 'dharma', 'thesis', 'matterlabs', 'chainsafesystems', 'textileio', 'optimism']
 export const JOBS_LEVER = ['aragon', 'centrifuge', 'protocol', 'compound-2', 'Uniswap', 'Mycelium', 

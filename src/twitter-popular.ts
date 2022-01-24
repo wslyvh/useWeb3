@@ -1,33 +1,40 @@
 import * as dotenv from 'dotenv'
+import fetch from 'cross-fetch'
 import { MarkdownContentService } from './services/content'
-dotenv.config()
 const Twit = require('twit')
 
-console.log("Tweet random resource")
+dotenv.config()
+
+console.log("Tweet most popular resources")
 run()
 
 async function run() {
+    const service = new MarkdownContentService()
+    const response = await fetch('https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=10', {
+        headers: { 'Authorization': `Bearer ${process.env.PLAUSIBLE_API_KEY}` },
+    })
+
+    const body = await response.json()
+    const stats = body.results.filter((i: any) => i.page !== '/')
+        .map((i: any) => i.page.split('/').filter((i: any) => !!i)).filter((i: string[]) => i.length === 1).splice(0, 5).flat()
+
+    let text = `Most popular last week ✨\n\n`
+    for (const item of stats) {
+        if (item === 'jobs') {
+            text += `- 💼 Jobs \n`
+        }
+        else {
+            const category = await service.GetCategory(item)        
+            text += `- ${category?.emoji} ${category?.title} \n`
+        }
+    }
+
     const twitterClient = new Twit({
         consumer_key: process.env.TWITTER_CONSUMER_KEY,
         consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
         access_token: process.env.TWITTER_ACCESS_TOKEN,
         access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     })
-
-    const service = new MarkdownContentService()
-    const categories = await service.GetCategories()
-    const items = await service.GetItems()
-
-    const item = items[Math.floor(Math.random() * items.length)]
-    const category = categories.find(i => i.id === item.category.id)
-    
-    const text = `
-${category?.emoji} ${item.title}
-by ${item.authors.join(' ')}
-
-Check it out at 👇
-${item.url}`
-
     try {
         twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
             if (err) {

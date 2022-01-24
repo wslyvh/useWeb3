@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "tools:migrate": "ts-node src/migrate",
-    "twitter:random": "ts-node src/random-tweet"
+    "twitter:popular": "ts-node src/twitter-popular",
+    "twitter:random": "ts-node src/twitter-random"
   },
   "dependencies": {
     "airtable": "^0.11.1",
@@ -30,6 +31,7 @@
     "@types/he": "^1.1.2",
     "@types/marked": "^4.0.0",
     "@types/react": "17.0.14",
+    "cross-fetch": "^3.1.5",
     "dotenv": "^10.0.0",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
