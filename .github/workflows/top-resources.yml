@@ -2,7 +2,7 @@ name: Top Resources tweet
 
 on:
   schedule:
-    - cron: "30 15 * * 0"
+    - cron: "0 15 * * 5"
 
 jobs:
   build:
