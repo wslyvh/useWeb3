@@ -1,11 +1,14 @@
 import { ReactNode, useRef, useState, useEffect } from "react";
-import styles from "./main.module.scss";
-import { Sitenav } from "components/sitenav";
+
 import { Link } from "components/link";
-import { Newsletter } from "components/newsletter";
-import Fab from "components/fab";
-import MobileNav from "components/mobileNav";
 import { Donate } from "components/donate";
+import { Sitenav } from "components/sitenav";
+import { Newsletter } from "components/newsletter";
+
+import Fab from "components/fab";
+import styles from "./main.module.scss";
+import MobileNav from "components/mobileNav";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 type Props = {
   title?: string;
@@ -15,21 +18,23 @@ type Props = {
 
 export function Main(props: Props) {
   const [isMobileNavOpen, setMobileNav] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("light");
+  const [theme, setTheme] = useLocalStorage("SITE_THEME", "light");
+  const [className, setClassName] = useState("");
   const buttonRef = useRef<HTMLButtonElement>(null);
   const handleCLick = () => {
     setMobileNav((state) => !state);
   };
   const title = props.title ?? "useWeb3";
 
-  let className = `${styles.container}`;
-  if (props.className) className += ` ${props.className} ${currentTheme}`;
+  useEffect(() => {
+    if (props.className) setClassName(`${styles.container} ${props.className} ${theme}`);
+  }, [theme]);
 
   return (
     <div className={className}>
       <aside className={styles.sitenav}>
         <Sitenav />
-        <button className={styles.darkModeButton} onClick={() => setCurrentTheme(currentTheme === "light" ? "dark" : "light")}>
+        <button className={styles.darkModeButton} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
               strokeLinecap="round"

@@ -1,7 +1,17 @@
 import { useState, useEffect } from "react";
 
-export const useLocalStorage = (key: string, defaultValue = null) => {
-  const [value, setValue] = useState(defaultValue);
+export default function useLocalStorage(key: string, defaultValue: any) {
+  const [value, setValue] = useState(() => {
+    try {
+      const saved = localStorage.getItem(key);
+      if (saved !== null) {
+        return JSON.parse(saved);
+      }
+      return defaultValue;
+    } catch {
+      return defaultValue;
+    }
+  });
 
   useEffect(() => {
     const rawValue = JSON.stringify(value);
@@ -9,4 +19,4 @@ export const useLocalStorage = (key: string, defaultValue = null) => {
   }, [key, value]);
 
   return [value, setValue];
-};
+}
