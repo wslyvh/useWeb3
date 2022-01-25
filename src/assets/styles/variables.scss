@@ -1,24 +1,24 @@
 // Fonts
-$font-primary: 'JetBrains Mono', 'Courier New', monospace;
+$font-primary: "JetBrains Mono", "Courier New", monospace;
 
 // Weight
 $font-normal: 400;
 $font-bold: 700;
 
 // Colors
-$color-primary: #000D99;
-$color-primary-500: #004FFF;
-$color-primary-100: #99CCFF;
+$color-primary: #000d99;
+$color-primary-500: #004fff;
+$color-primary-100: #99ccff;
 
-$color-secondary: #EBA134;
-$color-secondary-500: #FAC748;
-$color-secondary-100: #FFE3B2;
+$color-secondary: #eba134;
+$color-secondary-500: #fac748;
+$color-secondary-100: #ffe3b2;
 
-$color-neutral: #151A26;
-$color-neutral-500: #6A707F;
-$color-neutral-100: #E9ECF1;
+$color-neutral: #151a26;
+$color-neutral-500: #6a707f;
+$color-neutral-100: #e9ecf1;
 
-// Error, warning, succes, info colors 
+// Error, warning, succes, info colors
 $color-info: #d0f0fd;
 $color-info-dark: #04283f;
 $color-success: #d1f7c4;
@@ -33,7 +33,7 @@ $size-12: 0.75rem; // 12px
 $size-16: 1rem; // 16px
 $size-20: 1.25rem; // 20px
 
-// Headings 
+// Headings
 $size-h1: 2rem; // 32px
 $size-h2: 1.75rem; // 28px
 $size-h3: 1.5rem; // 24px
@@ -55,3 +55,68 @@ $screen-1280: 1280px;
 
 // Content
 $max-content-width: $screen-1280 + (24px * 2);
+
+// Themes
+$themes: (
+  "light": (
+    "colors": (
+      // Primary colors
+      "primary": #000d99,
+      "primary-500": #004fff,
+      "primary-100": #99ccff,
+      // Secondary colors
+      "secondary": #eba134,
+      "secondary-500": #fac748,
+      "secondary-100": #ffe3b2,
+      // Neutral colors
+      "neutral": #151a26,
+      "neutral-500": #6a707f,
+      "neutral-100": #e9ecf1,
+      // Error, warning, succes, info colors
+      "info": #d0f0fd,
+      "info-dark": #04283f,
+      "success": #d1f7c4,
+      "success-dark": #0b1d05,
+      "warning": #ffeab6,
+      "warning-dark": #3b2501,
+      "error": #ffdce5,
+      "error-dark": #4c0c1c,
+    ),
+  ),
+  "dark": (
+    "colors": (
+      // Primary colors
+      "primary": red,
+      "primary-500": red,
+      "primary-100": red,
+      // Secondary colors
+      "secondary": red,
+      "secondary-500": red,
+      "secondary-100": red,
+      // Neutral colors
+      "neutral": red,
+      "neutral-500": red,
+      "neutral-100": red,
+      // Error, warning, succes, info colors
+      "info": red,
+      "info-dark": red,
+      "success": red,
+      "success-dark": red,
+      "warning": red,
+      "warning-dark": red,
+      "error": red,
+      "error-dark": red,
+    ),
+  ),
+);
+
+@each $theme-name, $theme-vars in $themes {
+  $colors: map-get($theme-vars, "colors");
+
+  .#{$theme-name} {
+    // Variables for each color
+    @each $name, $color in $colors {
+      --color-#{$name}: #{$color};
+    }
+  }
+}

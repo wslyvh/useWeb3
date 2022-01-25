@@ -7,9 +7,10 @@
 
 .sitenav {
   flex-shrink: 0;
-  background: $color-neutral-100;
+  background: var(--color-neutral-100);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: $gap-24;
   height: 100vh;
   -ms-overflow-style: none;
@@ -28,7 +29,7 @@
   display: none;
   @media (max-width: $screen-640) {
     flex-shrink: 0;
-    background: $color-neutral-100;
+    background: var(--color-neutral-100);
     display: flex;
     justify-content: center;
     padding-top: $gap-24;
@@ -45,6 +46,12 @@
   display: none;
 }
 
+.darkModeButton {
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
 .content {
   padding: $gap-24;
   overflow-y: auto;
@@ -56,10 +63,10 @@
   }
 
   a {
-    color: $color-primary-500;
+    color: var(--color-primary-500);
 
     &:hover {
-      color: $color-primary;
+      color: var(--color-primary);
     }
   }
 }
@@ -74,7 +81,7 @@
     position: relative;
     display: block;
     content: "";
-    background: $color-primary-100;
+    background: var(--color-primary-100);
     z-index: -5;
 
     height: 15px;

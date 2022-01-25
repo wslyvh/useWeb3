@@ -1,61 +1,60 @@
-@use 'assets/styles/variables.scss' as *;
+@use "assets/styles/variables.scss" as *;
 
 .card {
-    font-family: $font-primary;
-    font-weight: $font-normal;
-    font-size: $size-16;
-    line-height: 1.25rem;
-    color: $color-neutral;
-    
-    .title {
-        color: $color-neutral;
-        padding: $gap-8 0;
-        border-bottom: 3px dotted $color-primary-100;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+  font-family: $font-primary;
+  font-weight: $font-normal;
+  font-size: $size-16;
+  line-height: 1.25rem;
+  color: var(--color-neutral);
 
-        &:hover {
-            color: $color-neutral-500;
-        }
+  .title {
+    color: var(--color-neutral);
+    padding: $gap-8 0;
+    border-bottom: 3px dotted var(--color-primary-100);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: var(--color-neutral-500);
     }
+  }
 
-    .description {
-        margin-top: $gap-8;
+  .description {
+    margin-top: $gap-8;
 
-        height: 1.25rem * 4;
-        -webkit-line-clamp: 4;
+    height: 1.25rem * 4;
+    -webkit-line-clamp: 4;
 
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-    .author { 
-        color: $color-neutral-500;
-        font-size: smaller;
-    }
+  .author {
+    color: var(--color-neutral-500);
+    font-size: smaller;
+  }
 
-    .footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .details { 
-        font-size: smaller;
-        color: $color-neutral;
-    }
+  .details {
+    font-size: smaller;
+    color: var(--color-neutral);
+  }
 }
 
 .small {
-    @extend .card;
-    line-height: 1.5rem;
+  @extend .card;
+  line-height: 1.5rem;
 
-    .description {
-        height: 1.5rem * 2;
-        -webkit-line-clamp: 2;
-    }
-
+  .description {
+    height: 1.5rem * 2;
+    -webkit-line-clamp: 2;
+  }
 }
