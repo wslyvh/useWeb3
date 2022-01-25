@@ -1,8 +1,9 @@
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_WORKABLE, JOBS_WRK } from 'utils/constants'
+import { JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_RECRUITEE, JOBS_WORKABLE, JOBS_WRK } from 'utils/constants'
 import { AirtableJobService, BreezyJobService, GreenhouseJobService, LeverJobService, WorkableJobService, WrkJobService } from './jobs/index'
+import { RecruiteeJobService } from './jobs/recruitee'
 
 export class JobService implements JobServiceInterface {  
     public async GetCompany(id: string): Promise<Company | undefined> {
@@ -22,6 +23,7 @@ export class JobService implements JobServiceInterface {
       const breezyService = new BreezyJobService()
       const greenhouseService = new GreenhouseJobService()
       const leverService = new LeverJobService()
+      const recruiteeService = new RecruiteeJobService()
       const workableService = new WorkableJobService()
       const wrkService = new WrkJobService()
 
@@ -36,6 +38,9 @@ export class JobService implements JobServiceInterface {
           const lever = JOBS_LEVER.some(i => i === companyId)
           if (lever) jobs = await leverService.GetJobs(companyId, maxItems)
 
+          const recruitee = JOBS_RECRUITEE.some(i => i === companyId)
+          if (recruitee) jobs = await recruiteeService.GetJobs(companyId, maxItems)
+
           const workable = JOBS_WORKABLE.some(i => i === companyId)
           if (workable) jobs = await workableService.GetJobs(companyId, maxItems)
 
@@ -44,7 +49,7 @@ export class JobService implements JobServiceInterface {
             jobs = await wrkService.GetJobs(companyId, maxItems)
 
           // Check Airtable last. Doesn't have constant company list
-          if (!breezy && !greenhouse && !lever && !workable && !wrk) {
+          if (!breezy && !greenhouse && !lever && !recruitee && !workable && !wrk) {
             jobs = await airtableService.GetJobs(companyId)
           }
         }
@@ -52,12 +57,13 @@ export class JobService implements JobServiceInterface {
           const breezyJobs = JOBS_BREEZY.map(item => breezyService.GetJobs(item, maxItems))
           const greenhouseJobs = JOBS_GREENHOUSE.map(item => greenhouseService.GetJobs(item, maxItems))
           const leverJobs = JOBS_LEVER.map(item => leverService.GetJobs(item, maxItems))
+          const recruiteeJobs = JOBS_RECRUITEE.map(item => recruiteeService.GetJobs(item, maxItems))
           const workableJobs = JOBS_WORKABLE.map(item => workableService.GetJobs(item, maxItems))
           const wrkJobs = JOBS_WRK.map(item => wrkService.GetJobs(item, maxItems))
           const airtableJobs = airtableService.GetJobs()
           
           // Get all jobs
-          jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, workableJobs, wrkJobs, airtableJobs].flat())).flat()
+          jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, recruiteeJobs, workableJobs, wrkJobs, airtableJobs].flat())).flat()
         }
 
         return jobs
