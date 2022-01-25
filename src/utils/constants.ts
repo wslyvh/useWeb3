@@ -12,7 +12,7 @@ export const JOBS_AMOUNT_PER_COMPANY = 5
 export const JOBS_FILTER = ['ethereum', 'web3', 'developer', 'engineer', 'hacker', 'evangelist', 
     'software', 'fullstack', 'full-stack', 'full stack', 'blockchain', 'solidity', 'protocol', 'engineering', 'product', 'security', 'technical', 'smart contract', 'smart-contract']
 export const JOBS_GREENHOUSE = ['consensys', 'consensysinc', 'gnosis', 'openzeppelin', 'figment', '0x', 
-    'blockdaemon', 'setlabs', 'dydx', 'brave', 'dharma', 'thesis', 'matterlabs', 'chainsafesystems', 'textileio', 'optimism']
+    'blockdaemon', 'setlabs', 'dydx', 'brave', 'dharma', 'thesis', 'matterlabs', 'chainsafesystems', 'textileio', 'optimism', 'nethermind']
 export const JOBS_LEVER = ['aragon', 'centrifuge', 'protocol', 'compound-2', 'Uniswap', 'Mycelium', 
     'chainlink', 'RabbitHoleStudios', 'coin-gecko', 'with-foundation', 'Rarible', 'defialliance',
     'zerion', '3box', 'ArtBlocks', 'blocknative', 'connext-network', 'fuellabs', 'alchemy', 'offchainlabs', 'axiomzen',
