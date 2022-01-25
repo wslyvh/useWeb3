@@ -1,138 +1,154 @@
-@use 'assets/styles/variables.scss' as *;
+@use "assets/styles/variables.scss" as *;
 
 .container {
-    h2 { 
-        margin-bottom: $gap-8;
+  h2 {
+    margin-bottom: $gap-8;
+  }
+
+  // Company / Jobs
+  .body {
+    ul {
+      margin-left: $gap-24;
+      margin-bottom: $gap-16;
+    }
+  }
+
+  .markdown {
+    p,
+    ul,
+    ol,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    blockquote,
+    image,
+    code {
+      margin-bottom: $gap-16;
     }
 
-    // Company / Jobs 
-    .body { 
-        ul {
-            margin-left: $gap-24;
-            margin-bottom: $gap-16;
-        }
+    ul,
+    ol,
+    ul ul,
+    ol ul,
+    ol ol,
+    ul ol {
+      list-style-position: inside;
+      margin-left: $gap-16;
+      margin-top: 0;
     }
 
-    .markdown { 
-        p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote, image, code {
-            margin-bottom: $gap-16;
-        }
-
-        ul, ol,
-        ul ul, ol ul,
-        ol ol, ul ol {
-            list-style-position: inside; 
-            margin-left: $gap-16; 
-            margin-top: 0;
-        }
-
-        ul ul, ol ul { 
-            list-style-type: circle; 
-            margin-top: $gap-8;
-            margin-bottom: $gap-8;
-        }
-
-        ol ol, ul ol { 
-            list-style-type: lower-latin; 
-            margin-top: $gap-8;
-            margin-bottom: $gap-8;
-        }
+    ul ul,
+    ol ul {
+      list-style-type: circle;
+      margin-top: $gap-8;
+      margin-bottom: $gap-8;
     }
 
-    .icons { 
-        display: flex;
-        gap: $gap-8;
-        margin-bottom: $gap-16;
-
-        @media (max-width: $screen-480) {
-            flex-direction: column;
-            gap: 0;
-        }
+    ol ol,
+    ul ol {
+      list-style-type: lower-latin;
+      margin-top: $gap-8;
+      margin-bottom: $gap-8;
     }
+  }
 
-    // Index
-    .featured {
-        margin-bottom: $gap-16;
+  .icons {
+    display: flex;
+    gap: $gap-8;
+    margin-bottom: $gap-16;
+
+    @media (max-width: $screen-480) {
+      flex-direction: column;
+      gap: 0;
     }
+  }
 
-    // Submit
-    iframe {
-        background: transparent;
-        border: 1px solid #ccc;
-    }
+  // Index
+  .featured {
+    margin-bottom: $gap-16;
+  }
 
-    // Resources
-    .authors { 
-        width: auto;
-        display: flex;
-        align-items: center;
-        
-        div:first-child {
-            span {
-                font-weight: $font-bold;
-                margin-right: $gap-8;
-            }
+  // Submit
+  iframe {
+    background: transparent;
+    border: 1px solid #ccc;
+  }
 
-            ul {
-                display: inline-flex;
-                margin-right: $gap-8;
-            }
-        }
-    }
+  // Resources
+  .authors {
+    width: auto;
+    display: flex;
+    align-items: center;
 
-    .second {
-        margin-top: $gap-16;
-    }
-
-    .website {
-        display: flex;
-    }
-
-    .tags { 
-        display: flex;
-        align-items: center;
-        align-content: flex-start;
-        justify-content: space-between;
-
-        >:first-child {
-            margin-right: $gap-8;
-        }
-        
-        .level {
-            flex-shrink: 0;
-            padding: $gap-8;
-        }
-    }
-
-    .content { 
-        p {
-            white-space: pre-wrap;
-        }
-    }
-
-    .muted { 
-        color: $color-neutral-500;
-        font-size: smaller;
-    }
-
-    .mr { 
+    div:first-child {
+      span {
+        font-weight: $font-bold;
         margin-right: $gap-8;
+      }
+
+      ul {
+        display: inline-flex;
+        margin-right: $gap-8;
+      }
+    }
+  }
+
+  .second {
+    margin-top: $gap-16;
+  }
+
+  .website {
+    display: flex;
+  }
+
+  .tags {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: space-between;
+
+    > :first-child {
+      margin-right: $gap-8;
     }
 
-    // Category page
-    .filter {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-bottom: $gap-8;
-    
-        p {
-            font-weight: $font-bold;
-            margin: 0 $gap-8 0 0;
-        }
-    
-        .sort {
-            width: 200px;
-        }
+    .level {
+      flex-shrink: 0;
+      padding: $gap-8;
     }
+  }
+
+  .content {
+    p {
+      white-space: pre-wrap;
+    }
+  }
+
+  .muted {
+    color: var(--color-neutral-500);
+    font-size: smaller;
+  }
+
+  .mr {
+    margin-right: $gap-8;
+  }
+
+  // Category page
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: $gap-8;
+
+    p {
+      font-weight: $font-bold;
+      margin: 0 $gap-8 0 0;
+    }
+
+    .sort {
+      width: 200px;
+    }
+  }
 }

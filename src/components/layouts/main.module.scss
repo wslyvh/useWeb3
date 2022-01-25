@@ -3,6 +3,7 @@
 .container {
   display: flex;
   min-height: 100vh;
+  background: var(--color-background);
 }
 
 .sitenav {
@@ -75,6 +76,7 @@
   h1 {
     position: relative;
     display: inline-block;
+    z-index: 1;
   }
 
   h1:after {
@@ -82,7 +84,7 @@
     display: block;
     content: "";
     background: var(--color-primary-100);
-    z-index: -5;
+    z-index: -1;
 
     height: 15px;
     top: -20px;

@@ -5,28 +5,28 @@ $font-primary: "JetBrains Mono", "Courier New", monospace;
 $font-normal: 400;
 $font-bold: 700;
 
-// Colors
-$color-primary: #000d99;
-$color-primary-500: #004fff;
-$color-primary-100: #99ccff;
+// // Colors
+// $color-primary: #000d99;
+// $color-primary-500: #004fff;
+// $color-primary-100: #99ccff;
 
-$color-secondary: #eba134;
-$color-secondary-500: #fac748;
-$color-secondary-100: #ffe3b2;
+// $color-secondary: #eba134;
+// $color-secondary-500: #fac748;
+// $color-secondary-100: #ffe3b2;
 
-$color-neutral: #151a26;
-$color-neutral-500: #6a707f;
-$color-neutral-100: #e9ecf1;
+// $color-neutral: #151a26;
+// $color-neutral-500: #6a707f;
+// $color-neutral-100: #e9ecf1;
 
-// Error, warning, succes, info colors
-$color-info: #d0f0fd;
-$color-info-dark: #04283f;
-$color-success: #d1f7c4;
-$color-success-dark: #0b1d05;
-$color-warning: #ffeab6;
-$color-warning-dark: #3b2501;
-$color-error: #ffdce5;
-$color-error-dark: #4c0c1c;
+// // Error, warning, succes, info colors
+// $color-info: #d0f0fd;
+// $color-info-dark: #04283f;
+// $color-success: #d1f7c4;
+// $color-success-dark: #0b1d05;
+// $color-warning: #ffeab6;
+// $color-warning-dark: #3b2501;
+// $color-error: #ffdce5;
+// $color-error-dark: #4c0c1c;
 
 // Sizes
 $size-12: 0.75rem; // 12px
@@ -81,31 +81,39 @@ $themes: (
       "warning-dark": #3b2501,
       "error": #ffdce5,
       "error-dark": #4c0c1c,
+      // MISC
+      "background": white,
+      "text": black,
+      "text-inverse": white,
     ),
   ),
   "dark": (
     "colors": (
       // Primary colors
-      "primary": red,
-      "primary-500": red,
-      "primary-100": red,
+      "primary": #000d99,
+      "primary-500": #0edbff,
+      "primary-100": #6a828c,
       // Secondary colors
-      "secondary": red,
-      "secondary-500": red,
-      "secondary-100": red,
+      "secondary": #eba134,
+      "secondary-500": #fac748,
+      "secondary-100": #ffe3b2,
       // Neutral colors
-      "neutral": red,
-      "neutral-500": red,
-      "neutral-100": red,
+      "neutral": #151a26,
+      "neutral-500": #6a707f,
+      "neutral-100": #e9ecf1,
       // Error, warning, succes, info colors
-      "info": red,
-      "info-dark": red,
-      "success": red,
-      "success-dark": red,
-      "warning": red,
-      "warning-dark": red,
-      "error": red,
-      "error-dark": red,
+      "info": #d0f0fd,
+      "info-dark": #04283f,
+      "success": #d1f7c4,
+      "success-dark": #0b1d05,
+      "warning": #ffeab6,
+      "warning-dark": #3b2501,
+      "error": #ffdce5,
+      "error-dark": #4c0c1c,
+      // MISC
+      "background": #222c34,
+      "text": white,
+      "text-inverse": black,
     ),
   ),
 );

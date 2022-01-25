@@ -20,7 +20,7 @@
 
 .github {
   --block-accent-color: #333;
-  color: $color-neutral-100;
+  color: var(--color-neutral-100);
 }
 
 .website {
