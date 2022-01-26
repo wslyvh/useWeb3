@@ -2,7 +2,7 @@ name: Ariel
 
 on:
   schedule:
-    - cron: "*/2 * * * *"
+    - cron: "*/15 * * * *"
 
 jobs:
   build:
@@ -13,13 +13,29 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: temp
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
+
       - name: Install Dependencies
         working-directory: ./tools/ariel
         run: yarn install
+
       - name: Run 
         working-directory: ./tools/ariel
         run: yarn runner
+
+      - name: Create file
+        run: date +%s > ./data/report.txt
+        working-directory: ./
+        
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: main # The branch name where you want to push the assets
+          FOLDER: data # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Automated run: ({sha}) {msg}" # The commit message
