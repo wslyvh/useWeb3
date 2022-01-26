@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.useweb3.xyz/sitemap.xml

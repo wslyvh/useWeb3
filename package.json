@@ -1,0 +1,42 @@
+{
+  "name": "use-web3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --fix",
+    "tools:migrate": "ts-node src/migrate",
+    "twitter:popular": "ts-node src/twitter-popular",
+    "twitter:random": "ts-node src/twitter-random",
+    "twitter:top": "ts-node src/twitter-top"
+  },
+  "dependencies": {
+    "airtable": "^0.11.1",
+    "bootstrap-icons": "^1.7.2",
+    "dayjs": "^1.10.7",
+    "gray-matter": "^4.0.3",
+    "he": "^1.2.0",
+    "marked": "^4.0.1",
+    "next": "^12.0.3",
+    "next-pagination": "^3.1.0",
+    "next-plausible": "^2.1.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.41.1",
+    "slugify": "^1.6.1",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "@types/he": "^1.1.2",
+    "@types/marked": "^4.0.0",
+    "@types/react": "17.0.14",
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^10.0.0",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "ts-node": "^10.4.0",
+    "typescript": "4.3.5"
+  }
+}
