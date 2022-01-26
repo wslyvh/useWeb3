@@ -1,0 +1,25 @@
+name: Ariel
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"
+
+jobs:
+  build:
+    name: Ariel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          ref: temp
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install Dependencies
+        working-directory: ./tools/ariel
+        run: yarn install
+      - name: Run 
+        working-directory: ./tools/ariel
+        run: yarn run
