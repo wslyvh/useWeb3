@@ -10,7 +10,7 @@ export const DEFAULT_REVALIDATE_PERIOD = 3600
 export const JOBS_SINCE_LAST_UPDATED = 60
 export const JOBS_AMOUNT_PER_COMPANY = 5
 export const JOBS_FILTER = ['ethereum', 'web3', 'developer', 'engineer', 'hacker', 'evangelist', 
-    'software', 'fullstack', 'full-stack', 'full stack', 'blockchain', 'solidity', 'protocol', 'engineering', 'product', 'security', 'technical', 'smart contract', 'smart-contract']
+    'software', 'fullstack', 'full-stack', 'full stack', 'blockchain', 'solidity', 'protocol', 'engineering', 'product', 'security', 'technical', 'smart contract', 'smart-contract', 'devops']
 export const JOBS_GREENHOUSE = ['consensys', 'consensysinc', 'gnosis', 'openzeppelin', 'figment', '0x', 
     'blockdaemon', 'setlabs', 'dydx', 'brave', 'dharma', 'thesis', 'matterlabs', 'chainsafesystems', 'textileio', 'optimism', 'nethermind']
 export const JOBS_LEVER = ['aragon', 'centrifuge', 'protocol', 'compound-2', 'Uniswap', 'Mycelium', 
@@ -21,3 +21,26 @@ export const JOBS_BREEZY = ['the-graph', 'immunefi', 'superrare', 'centrifuge', 
 export const JOBS_WORKABLE = ['superfluid', 'walletconnect', 'doingud', 'web3labs', 'ankr', 'paraswap', 'argenthq']
 export const JOBS_WRK = ['filebase']
 export const JOBS_RECRUITEE = ['giveth', 'poapinc', 'rampnetwork', 'makerdao']
+export const JOBS_ANGEL = [
+    'aave',
+    'aztec-network',
+    'balancer-labs-1',
+    'curve-labs',
+    'dorg-1',
+    'endaoment-3',
+    'ethereum-push-notification-service',
+    'fleekhq',
+    'fractional-art',
+    'gelato-network',
+    'gitcoin',
+    'livepeer',
+    'metamask',
+    // 'offchain-labs', // Lever
+    'paperchain',
+    'pocket-network',
+    // 'protocol-labs', // Lever
+    'tally-governance',
+    'web3api',
+    'web3labs',
+    // 'uniswap', // Lever
+  ]

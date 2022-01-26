@@ -1,9 +1,8 @@
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_RECRUITEE, JOBS_WORKABLE, JOBS_WRK } from 'utils/constants'
-import { AirtableJobService, BreezyJobService, GreenhouseJobService, LeverJobService, WorkableJobService, WrkJobService } from './jobs/index'
-import { RecruiteeJobService } from './jobs/recruitee'
+import { JOBS_ANGEL, JOBS_BREEZY, JOBS_GREENHOUSE, JOBS_LEVER, JOBS_RECRUITEE, JOBS_WORKABLE, JOBS_WRK } from 'utils/constants'
+import { AirtableJobService, AngelJobService, BreezyJobService, GreenhouseJobService, LeverJobService, RecruiteeJobService, WorkableJobService, WrkJobService } from './jobs/index'
 
 export class JobService implements JobServiceInterface {  
     public async GetCompany(id: string): Promise<Company | undefined> {
@@ -20,6 +19,7 @@ export class JobService implements JobServiceInterface {
     public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
       let jobs = new Array<Job>()
       const airtableService = new AirtableJobService()
+      const angelService = new AngelJobService()
       const breezyService = new BreezyJobService()
       const greenhouseService = new GreenhouseJobService()
       const leverService = new LeverJobService()
@@ -29,6 +29,9 @@ export class JobService implements JobServiceInterface {
 
       try {
         if (companyId) {
+          const angel = JOBS_ANGEL.some(i => i === companyId)
+          if (angel) jobs = await angelService.GetJobs(companyId, maxItems)
+
           const breezy = JOBS_BREEZY.some(i => i === companyId)
           if (breezy) jobs = await breezyService.GetJobs(companyId, maxItems)
           
@@ -53,6 +56,7 @@ export class JobService implements JobServiceInterface {
           jobs = jobs.concat(airtable)
         }
         else {
+          const angelJobs = JOBS_ANGEL.map(item => angelService.GetJobs(item, maxItems))
           const breezyJobs = JOBS_BREEZY.map(item => breezyService.GetJobs(item, maxItems))
           const greenhouseJobs = JOBS_GREENHOUSE.map(item => greenhouseService.GetJobs(item, maxItems))
           const leverJobs = JOBS_LEVER.map(item => leverService.GetJobs(item, maxItems))
@@ -62,7 +66,7 @@ export class JobService implements JobServiceInterface {
           const airtableJobs = airtableService.GetJobs()
           
           // Get all jobs
-          jobs = (await Promise.all([breezyJobs, greenhouseJobs, leverJobs, recruiteeJobs, workableJobs, wrkJobs, airtableJobs].flat())).flat()
+          jobs = (await Promise.all([angelJobs, breezyJobs, greenhouseJobs, leverJobs, recruiteeJobs, workableJobs, wrkJobs, airtableJobs].flat())).flat()
         }
 
         return jobs
