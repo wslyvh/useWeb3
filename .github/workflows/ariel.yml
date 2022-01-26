@@ -22,4 +22,4 @@ jobs:
         run: yarn install
       - name: Run 
         working-directory: ./tools/ariel
-        run: yarn runner
+        run: yarn start
