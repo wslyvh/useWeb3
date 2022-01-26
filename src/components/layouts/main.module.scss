@@ -8,7 +8,7 @@
 
 .sitenav {
   flex-shrink: 0;
-  background: var(--color-neutral-100);
+  background: var(--color-primary-100);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,6 +52,7 @@
   margin: 10px;
   align-self: flex-end;
   cursor: pointer;
+  background: var(--color-primary-100);
 }
 
 .content {
