@@ -36,7 +36,9 @@ export default function Index(props: Props) {
   const body = props.job.body ?? ''
   const basicFormatting = new RegExp(/\s(__|\*\*)(?!\s)(.(?!\1))+(?!\s(?=\1))/).test(body)
   const linkFormatting = new RegExp(/\[(.+)\]\(([^ ]+?)( "(.+)")?\)/).test(body)
-  const content = basicFormatting || linkFormatting ? marked.parse(body) : body
+  const listFormatting = new RegExp(/(^(\W{1})(\s)(.*)(?:$)?)+/).test(body)
+  const headingFormatting = new RegExp(/^(#{1,6}\s*[\S]+)/).test(body) || body.includes('## ') || body.includes('### ')
+  const content = basicFormatting || linkFormatting || listFormatting || headingFormatting ? marked.parse(body) : body
   const html = he.decode(content)
 
   return (
@@ -100,7 +102,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   const company = jobs.length > 0 ? jobs[0].company : undefined
   const job = jobs.find(i => slugify(i.title, { lower: true, strict: true, trim: true }) === 
     slugify(jobId, { lower: true, strict: true, trim: true }))
-  
+
   return {
     props: {
       categories,

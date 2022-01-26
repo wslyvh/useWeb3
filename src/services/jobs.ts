@@ -49,9 +49,8 @@ export class JobService implements JobServiceInterface {
             jobs = await wrkService.GetJobs(companyId, maxItems)
 
           // Check Airtable last. Doesn't have constant company list
-          if (!breezy && !greenhouse && !lever && !recruitee && !workable && !wrk) {
-            jobs = await airtableService.GetJobs(companyId)
-          }
+          const airtable = await airtableService.GetJobs(companyId)
+          jobs = jobs.concat(airtable)
         }
         else {
           const breezyJobs = JOBS_BREEZY.map(item => breezyService.GetJobs(item, maxItems))
