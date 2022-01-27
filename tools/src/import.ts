@@ -37,76 +37,84 @@ const main = async () => {
   console.log("Companies to scrap: ", JOBS_ANGEL.length)
 
   for (let i = 0; i < JOBS_ANGEL.length; i++) {
-    const company = JOBS_ANGEL[i];
-    console.log("Company: ", company);
+    try {
+      const company = JOBS_ANGEL[i];
+      console.log("Company: ", company);
 
-    const page = `${BASE_URL}/${company}/jobs`;
+      const page = `${BASE_URL}/${company}/jobs`;
 
-    // Variables to be passed down to helpers and mutated
-    let pagination = { length: 0 };
-    let extraInfo = {
-      name: "",
-      content: "",
-    };
+      // Variables to be passed down to helpers and mutated
+      let pagination = { length: 0 };
+      let extraInfo = {
+        name: "",
+        content: "",
+      };
 
-    await setTimeout(5000);
-    if (!globalThis.agent) {
-      await setAgent();
-    }
-
-    if (!globalThis.jobsJson?.[company]?.name) {
-      await getCompanyDetails(company, extraInfo, globalThis.agent);
-      globalThis.jobsToWrite[company] = {
-        name: extraInfo.name,
-        content: extraInfo.content,
+      await setTimeout(5000);
+      if (!globalThis.agent) {
+        await setAgent();
       }
-    } else {
-      console.log("Company details already scrapped. Skipping...");
-    }
-    const [jobUris, jobPostedDates] = await getJobsList(
-      page,
-      globalThis.agent,
-      pagination,
-      company
-    );
 
-    const filteredJobUrisWithDate = getFilteredJobUrisAndDates(
-      jobUris,
-      jobPostedDates,
-      company
-    );
+      if (!globalThis.jobsJson?.[company]?.name) {
+        await getCompanyDetails(company, extraInfo, globalThis.agent);
+        globalThis.jobsToWrite[company] = {
+          name: extraInfo.name,
+          content: extraInfo.content,
+        }
+      } else {
+        console.log("Company details already scrapped. Skipping...");
+      }
+      const [jobUris, jobPostedDates] = await getJobsList(
+        page,
+        globalThis.agent,
+        pagination,
+        company
+      );
 
-    console.log(filteredJobUrisWithDate.length, " jobs to scrap for ", company);
+      const filteredJobUrisWithDate = getFilteredJobUrisAndDates(
+        jobUris,
+        jobPostedDates,
+        company
+      );
 
-    await scrapManyJobDetails(
-      filteredJobUrisWithDate,
-      company,
-      globalThis.agent
-    );
+      console.log(filteredJobUrisWithDate.length, " jobs to scrap for ", company);
 
-    if (Object.keys(globalThis.jobsToWrite).length) {
-      await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite, null, 4))
-      console.log("Jobs overwritten in jobs.json");
-    }
+      await scrapManyJobDetails(
+        filteredJobUrisWithDate,
+        company,
+        globalThis.agent
+      );
 
-    if (pagination.length) {
-      for (let i = 2; i <= pagination.length; i++) {
-        const pageToVisit = `${page}?page=${i}`;
+      if (Object.keys(globalThis.jobsToWrite).length) {
+        await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite, null, 4))
+        console.log("Jobs overwritten in jobs.json");
+      }
 
-        console.log("Visiting page ", i.toString(), " out of ", pagination.length)
-        const [jobUris, jobPostedDates] = await getJobsList(pageToVisit, globalThis.agent, pagination)
-        const filteredJobUrisWithDate = getFilteredJobUrisAndDates(jobUris, jobPostedDates, company)
+      if (pagination.length) {
+        for (let i = 2; i <= pagination.length; i++) {
+          const pageToVisit = `${page}?page=${i}`;
 
-        console.log(filteredJobUrisWithDate.length, "job(s) to scrap on page", i, "for", company)
-        await scrapManyJobDetails(filteredJobUrisWithDate, company, globalThis.agent)
+          console.log("Visiting page ", i.toString(), " out of ", pagination.length)
+          const [jobUris, jobPostedDates] = await getJobsList(pageToVisit, globalThis.agent, pagination)
+          const filteredJobUrisWithDate = getFilteredJobUrisAndDates(jobUris, jobPostedDates, company)
 
-        if (Object.keys(globalThis.jobsToWrite).length) {
-          await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite, null, 4))
-          console.log("Jobs updated in jobs.json")
+          console.log(filteredJobUrisWithDate.length, "job(s) to scrap on page", i, "for", company)
+          await scrapManyJobDetails(filteredJobUrisWithDate, company, globalThis.agent)
+
+          if (Object.keys(globalThis.jobsToWrite).length) {
+            await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite, null, 4))
+            console.log("Jobs updated in jobs.json")
+          }
         }
       }
     }
+    catch (e) {
+      console.log('Unable to process company..')
+      console.error(e)
+    }
   }
+
+  process.exit()
 }
 
-main();
+main()
