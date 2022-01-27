@@ -6,7 +6,7 @@ import { CompanyDetails, JobDetails } from "./types";
 import { BASE_URL } from "./const";
 import { JOBS_ANGEL, JOBS_FILTER } from "../../src/utils/constants"
 
-const filePath = '../../data/jobs.json'
+const filePath = '../data/jobs.json'
 
 const main = async () => {
   (await import("dotenv")).default.config()
@@ -85,7 +85,7 @@ const main = async () => {
     );
 
     if (Object.keys(globalThis.jobsToWrite).length) {
-      await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite))
+      await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite, null, 4))
       console.log("Jobs overwritten in jobs.json");
     }
 
@@ -101,7 +101,7 @@ const main = async () => {
         await scrapManyJobDetails(filteredJobUrisWithDate, company, globalThis.agent)
 
         if (Object.keys(globalThis.jobsToWrite).length) {
-          await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite))
+          await fs.writeFile(filePath, JSON.stringify(globalThis.jobsToWrite, null, 4))
           console.log("Jobs updated in jobs.json")
         }
       }
