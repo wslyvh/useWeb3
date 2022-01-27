@@ -2,7 +2,7 @@
 title: "hardhat-starter-kit"
 description: "Template for building smart contract projects in hardhat with solidity, python, and chainlink. "
 authors: ["@chainlinklabs"]
-tags: ["Smart Contracts", "hardhat", "Chainlink"]
+tags: ["Smart Contracts", "Oracles"]
 languages: ["Solidity", "JavaScript"]
 url: "https://github.com/smartcontractkit/hardhat-starter-kit"
 featured: true

@@ -2,7 +2,7 @@
 title: "hardhat-starter-kit"
 description: "Template for building smart contract projects in hardhat with solidity, bash, and chainlink. "
 authors: ["@chainlinklabs"]
-tags: ["Smart Contracts", "dapptools", "Chainlink"]
+tags: ["Smart Contracts", "Oracles"]
 languages: ["Solidity", "Bash"]
 url: "https://github.com/smartcontractkit/dapptools-starter-kit"
 featured: true

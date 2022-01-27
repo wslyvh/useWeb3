@@ -2,7 +2,7 @@
 title: "How to make NFT Art with On-Chain Metadata"
 description: "End-To-End NFT/ERC-721/Blockchain Collectible tutorial. We deploy some adorable puppies.  "
 authors: ["@patrickalphac"]
-tags: ["brownie", "javascript", "NFT", "Chainlink", "opensea"]
+tags: ["Smart Contracts", "NFT", "Cryptography"]
 languages: ["Solidity"]
 url: "https://www.youtube.com/watch?v=p36tXHX1JD8"
 dateAdded: 2022-01-25

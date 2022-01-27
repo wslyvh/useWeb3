@@ -2,7 +2,7 @@
 title: "hardhat-starter-kit"
 description: "Template for building smart contract projects in brownie with solidity, python, and chainlink. "
 authors: ["@chainlinklabs"]
-tags: ["Smart Contracts", "hardhat", "Chainlink"]
+tags: ["Smart Contracts", "Oracles"]
 languages: ["Solidity", "Python"]
 url: "https://github.com/smartcontractkit/chainlink-mix"
 featured: true

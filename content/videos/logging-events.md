@@ -2,7 +2,7 @@
 title: "All about Logging and Events"
 description: "We look at how to make all you wonderful web3, blockchain, and smart contract developers even BETTER by showing you how to use dapptools!"
 authors: ["@patrickalphac"]
-tags: ["events", "logging", "topics"]
+tags: ["Smart Contracts", "DevEx"]
 languages: ["Solidity", "Python"]
 url: "https://www.youtube.com/watch?v=w18c9HLEuBs"
 dateAdded: 2022-01-25
