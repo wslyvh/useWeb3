@@ -13,16 +13,23 @@ export function Tags(props: Props) {
 
   return (
     <ul className={className}>
-        {props.tags.map(i => {
-          const id = i.key.toLowerCase()
+      {props.tags.map((i) => {
+        const id = i.key.toLowerCase()
 
-          return <li key={id} className='block fixed'>
+        return (
+          <li key={id} className="block fixed">
             <Link href={`/tags/${id}`}>
               {i.key}
-              {i.count !== 0 && <> <small>({i.count})</small></>}
+              {i.count !== 0 && (
+                <>
+                  {' '}
+                  <small>({i.count})</small>
+                </>
+              )}
             </Link>
           </li>
-        })}
+        )
+      })}
     </ul>
   )
 }

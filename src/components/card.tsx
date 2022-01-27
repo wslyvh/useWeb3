@@ -22,31 +22,28 @@ export function Card(props: Props) {
 
   return (
     <section className={className}>
-      {props.url && 
+      {props.url && (
         <Link href={props.url}>
           <h4 className={styles.title}>{props.title}</h4>
         </Link>
-      }
+      )}
       {!props.url && <h4 className={styles.title}>{props.title}</h4>}
       <p className={styles.description}>{props.description}</p>
       {props.author && <p className={styles.author}>- {props.author}</p>}
-      {props.tag && 
-        <Tag text={props.tag} type={getLevelStyle(props.tag)} />
-      }
+      {props.tag && <Tag text={props.tag} type={getLevelStyle(props.tag)} />}
       <div className={styles.footer}>
-        {props.detailsUrl && 
+        {props.detailsUrl && (
           <Link className={styles.details} href={props.detailsUrl}>
             <span>More details &raquo;</span>
           </Link>
-        }
+        )}
         {!props.detailsUrl && <span></span>}
-        {props.url && 
+        {props.url && (
           <Link href={props.url}>
             <button className="accent block">&raquo;</button>
           </Link>
-        }
+        )}
       </div>
     </section>
-
   )
 }

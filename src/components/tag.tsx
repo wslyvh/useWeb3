@@ -10,9 +10,5 @@ export function Tag(props: Props) {
   let className = `${styles.tag} ${styles[props.type ?? 'default']}`
   if (props.className) className += ` ${props.className}`
 
-  return (
-    <span className={className}>
-      {props.text}
-    </span>
-  )
+  return <span className={className}>{props.text}</span>
 }

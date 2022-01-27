@@ -1,19 +1,15 @@
-import * as React from "react";
-import styles from "./fab.module.scss";
+import * as React from 'react'
+import styles from './fab.module.scss'
 export interface IFabProps {
-  className?: string;
+  className?: string
 }
 
 export default function Fab(
-  props: IFabProps &
-    React.DetailedHTMLProps<
-      React.ButtonHTMLAttributes<HTMLButtonElement>,
-      HTMLButtonElement
-    >
+  props: IFabProps & React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 ) {
-  const { className, ...rest } = props;
-  let className_ = `block ${styles.fab}`;
-  if (className) className_ += ` ${className}`;
+  const { className, ...rest } = props
+  let className_ = `block ${styles.fab}`
+  if (className) className_ += ` ${className}`
 
   return (
     <button aria-haspopup="true" className={className_} {...rest}>
@@ -23,15 +19,9 @@ export default function Fab(
         viewBox="0 0 24 24"
         stroke="currentColor"
         aria-hidden="true"
-        className={styles.fabIcon}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4 6h16M4 12h16M4 18h16"
-        />
+        className={styles.fabIcon}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-  );
+  )
 }

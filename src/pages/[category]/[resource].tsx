@@ -1,5 +1,5 @@
 import React from 'react'
-import  moment from 'dayjs'
+import moment from 'dayjs'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'
@@ -34,7 +34,7 @@ export default function Index(props: Props) {
     return <></>
   }
   const websiteIsSameCurrentPage = props.item.url.includes(router.asPath) // e.g. Guides do not contain external links
-  
+
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={props.item.title} description={props.item.description} />
@@ -45,39 +45,50 @@ export default function Index(props: Props) {
             <span>By</span>
             <Authors authors={props.item.authors} />
           </div>
-          {props.item.date && <div className={styles.muted}>Published {moment(props.item.date).format('MMM D, YYYY')}</div>}
+          {props.item.date && (
+            <div className={styles.muted}>Published {moment(props.item.date).format('MMM D, YYYY')}</div>
+          )}
         </article>
 
         <article className={styles.website}>
-          {!websiteIsSameCurrentPage && 
+          {!websiteIsSameCurrentPage && (
             <Link href={props.item.url}>
-              <span className='accent block'>Visit website &raquo;</span>
+              <span className="accent block">Visit website &raquo;</span>
             </Link>
-          }
-          {props.item.alternateUrl && 
+          )}
+          {props.item.alternateUrl && (
             <Link href={props.item.alternateUrl}>
-              <span className='block'>Alternate link &raquo;</span>
+              <span className="block">Alternate link &raquo;</span>
             </Link>
-          }
+          )}
         </article>
-        
+
         <main>
-          <p><strong dangerouslySetInnerHTML={{__html: props.item.description }} /></p>
+          <p>
+            <strong dangerouslySetInnerHTML={{ __html: props.item.description }} />
+          </p>
         </main>
 
-        {props.item.content && props.item.content !== props.item.description && 
-          <main className={styles.markdown} dangerouslySetInnerHTML={{__html: marked.parse(props.item.content)}} />
-          
-        }
+        {props.item.content && props.item.content !== props.item.description && (
+          <main className={styles.markdown} dangerouslySetInnerHTML={{ __html: marked.parse(props.item.content) }} />
+        )}
 
         <article className={styles.tags}>
-          <Tags tags={props.item.tags.map(i => { return { key: i, count: 0 }})} />
+          <Tags
+            tags={props.item.tags.map((i) => {
+              return { key: i, count: 0 }
+            })}
+          />
           <Tag className={styles.level} text={props.item.level} type={getLevelStyle(props.item.level)} />
         </article>
 
-        {props.item.category.title === 'Books' && <p>
-          <small>* Links in the books category may contain referral links. Any proceeds will help and support this site.</small>
-        </p>}
+        {props.item.category.title === 'Books' && (
+          <p>
+            <small>
+              * Links in the books category may contain referral links. Any proceeds will help and support this site.
+            </small>
+          </p>
+        )}
       </MainLayout>
     </NavigationProvider>
   )
@@ -88,12 +99,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const items = await service.GetItems()
 
   return {
-    paths: items.map(i => {
+    paths: items.map((i) => {
       return {
-        params: { category: i.category.id, resource: i.id }
+        params: { category: i.category.id, resource: i.id },
       }
     }),
-    fallback: false // content is from markdown 
+    fallback: false, // content is from markdown
   }
 }
 
@@ -106,14 +117,14 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       notFound: true,
     }
   }
-  
+
   const service = new MarkdownContentService()
   const item = await service.GetItem(category, resource)
   if (!item) {
     return {
       props: null,
       notFound: true,
-      revalidate: DEFAULT_REVALIDATE_PERIOD
+      revalidate: DEFAULT_REVALIDATE_PERIOD,
     }
   }
 
@@ -121,8 +132,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   return {
     props: {
       categories,
-      item
+      item,
     },
-    revalidate: DEFAULT_REVALIDATE_PERIOD
+    revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
 }

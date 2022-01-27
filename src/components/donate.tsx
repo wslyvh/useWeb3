@@ -15,9 +15,10 @@ export function Donate(props: Props) {
     <section className={className}>
       <h3>💰 Support us 💰</h3>
       <p className={styles.description}>
-        Enjoy useWeb3? Please consider donating on <Link href='https://gitcoin.co/grants/4143/wslyvh-useweb3-ethgas-tokenlog-more'>Gitcoin Grants</Link>.
-        <br/>
-        Your donation helps to keep this site running. Thank you! 
+        Enjoy useWeb3? Please consider donating on{' '}
+        <Link href="https://gitcoin.co/grants/4143/wslyvh-useweb3-ethgas-tokenlog-more">Gitcoin Grants</Link>.
+        <br />
+        Your donation helps to keep this site running. Thank you!
       </p>
     </section>
   )

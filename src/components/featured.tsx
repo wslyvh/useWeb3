@@ -20,7 +20,11 @@ export function Featured(props: Props) {
     <article className={className}>
       <div className={styles.header}>
         {props.title && <h3>{props.title}</h3>}
-        {props.link && <Link className={styles.link} href={props.link}>view all</Link>}
+        {props.link && (
+          <Link className={styles.link} href={props.link}>
+            view all
+          </Link>
+        )}
       </div>
       <div className={type}>{props.children}</div>
     </article>

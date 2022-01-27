@@ -28,7 +28,10 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={`Learn from ${props.category.emoji} ${props.category.title}`} description={props.category.description} />
+      <SEO
+        title={`Learn from ${props.category.emoji} ${props.category.title}`}
+        description={props.category.description}
+      />
 
       <MainLayout className={styles.container} title={props.category.title}>
         <FilteredOverview title={props.category.title} description={props.category.description} items={props.items} />
@@ -42,12 +45,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const categories = await service.GetCategories()
 
   return {
-    paths: categories.map(i => {
+    paths: categories.map((i) => {
       return {
-        params: { category: i.id }
+        params: { category: i.id },
       }
     }),
-    fallback: false
+    fallback: false,
   }
 }
 
@@ -59,14 +62,14 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       notFound: true,
     }
   }
-  
+
   const service = new MarkdownContentService()
   const category = await service.GetCategory(categoryId)
   if (!category) {
     return {
       props: null,
       notFound: true,
-      revalidate: DEFAULT_REVALIDATE_PERIOD
+      revalidate: DEFAULT_REVALIDATE_PERIOD,
     }
   }
 
@@ -77,8 +80,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       key: categoryId,
       categories,
       category,
-      items
+      items,
     },
-    revalidate: DEFAULT_REVALIDATE_PERIOD
+    revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
 }
