@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "ts-node ./src/index.ts",
-    "start-headful": "SA_SHOW_BROWSER=true ts-node index.js",
-    "regenerate": "SA_SHOW_BROWSER=true ts-node regenerate_profile.ts",
-    "test": "jest"
+    "start": "ts-node ./src/import.ts",
+    "regenerate": "SA_SHOW_BROWSER=true ts-node ./src/regenerate_profile.ts"
   },
   "dependencies": {
     "bluebird": "^3.7.2",

@@ -1,0 +1,25 @@
+{
+  "cookies": [
+    {
+      "sameSite": "Lax",
+      "name": "datadome",
+      "value": "",
+      "domain": ".angel.co",
+      "path": "/",
+      "expires": "1673864652.018073",
+      "httpOnly": false,
+      "secure": true
+    },
+    {
+      "sameSite": "None",
+      "name": "_gat",
+      "value": "1",
+      "domain": ".angel.co",
+      "path": "/",
+      "expires": "1642328712",
+      "httpOnly": false,
+      "secure": false
+    }
+  ],
+  "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.209 Safari/537.36"
+}
