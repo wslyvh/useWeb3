@@ -1,0 +1,44 @@
+name: Tyrael
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Tyrael
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          ref: tyrael
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - name: Install Dependencies
+        working-directory: ./tools
+        run: yarn install
+
+      - name: Run 
+        working-directory: ./tools
+        run: yarn start
+
+      - name: Commit files
+        env:
+          SRC_FOLDER_PATH: 'data'
+          SOURCE_BRANCH: 'tyrael'
+          TARGET_BRANCH: 'main'
+        run: |
+          files=$(find $SRC_FOLDER_PATH -type f)          # get the file list
+          git config --global user.name 'wslyvh'
+          git config --global user.email 'wslyvh@users.noreply.github.com'
+          git add --all
+          git commit -m "Automated commit" -a
+          git fetch                                       # fetch branches
+          git checkout $TARGET_BRANCH                     # checkout to your branch
+          git checkout $SOURCE_BRANCH -- $files           # copy files from the source branch
+          git add -A
+          git diff-index --quiet HEAD ||  git commit -am "Automated merge"  # commit to the repository (ignore if no modification)
+          git push origin $TARGET_BRANCH                  # push to remote branch
