@@ -55,6 +55,14 @@
   background: var(--color-primary-100);
 }
 
+.themeSwitcher {
+  padding: 10px;
+}
+
+.themeSwitcher:focus {
+  outline: none;
+}
+
 .content {
   padding: $gap-24;
   overflow-y: auto;

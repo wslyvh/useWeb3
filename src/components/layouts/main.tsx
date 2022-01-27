@@ -34,11 +34,18 @@ export function Main(props: Props) {
     <div className={className}>
       <aside className={styles.sitenav}>
         <Sitenav />
-        <button className={styles.darkModeButton} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        {/* <button className={styles.darkModeButton} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
           </svg>
-        </button>
+        </button> */}
+
+        <select name="theme_switcher" className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="pantone">Pantone</option>
+          <option value="blueberry_dark">Blueberry Dark</option>
+        </select>
       </aside>
       <aside className={styles.mobileSitenav}>
         <MobileNav isOpen={isMobileNavOpen} />
