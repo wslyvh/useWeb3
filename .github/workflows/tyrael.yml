@@ -24,6 +24,8 @@ jobs:
       - name: Run 
         working-directory: ./tools
         run: yarn start
+        env:
+          DATADOME_COOKIE: ${{ secrets.DATADOME_COOKIE }}
 
       - name: Commit files
         env:
