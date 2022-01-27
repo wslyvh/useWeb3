@@ -8,7 +8,8 @@ const main = async () => {
     console.log('  -', i.name)
   })
 
-  const file = join(__dirname, '../../data', 'jobs.json')
+  // const file = join(__dirname, '../../data', 'jobs.json')
+  const file = join(__dirname, '../../data', 'date.txt')
   console.log('Creating file', file)
   fs.writeFileSync(file, new Date().getTime().toString())
 }
