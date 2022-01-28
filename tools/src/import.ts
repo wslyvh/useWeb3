@@ -4,7 +4,7 @@ import { setTimeout } from "timers/promises";
 import { getJobsList, getCompanyDetails, setAgent, scrapManyJobDetails } from "./jobs"
 import { CompanyDetails, JobDetails } from "./types";
 import { BASE_URL } from "./const";
-import { JOBS_ANGEL, JOBS_FILTER } from "../../src/utils/constants"
+import { JOBS_ANGEL, JOBS_FILTER, JOBS_SINCE_LAST_UPDATED } from "../../src/utils/constants"
 
 const filePath = '../data/jobs.json'
 
@@ -22,7 +22,7 @@ const main = async () => {
       }
 
       const matchesFilter = JOBS_FILTER.some((f) => uri.toLowerCase().includes(f))
-      const matchesDateFilter = jobPostedDates[i] >= subDays(new Date(Date.now()), 30)
+      const matchesDateFilter = jobPostedDates[i] >= subDays(new Date(Date.now()), 30) // JOBS_SINCE_LAST_UPDATED
 
       if (matchesFilter && matchesDateFilter) {
         acc.push({ jobUri: uri, jobPostedDate: jobPostedDates[i] });
