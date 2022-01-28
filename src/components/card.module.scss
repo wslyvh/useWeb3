@@ -1,4 +1,4 @@
-@use "assets/styles/variables.scss" as *;
+@use 'assets/styles/variables.scss' as *;
 
 .card {
   font-family: $font-primary;
@@ -6,9 +6,10 @@
   font-size: $size-16;
   line-height: 1.25rem;
   color: var(--color-neutral);
+  --block-background-color: var(--color-card-bg-color);
 
   .title {
-    color: var(--color-neutral);
+    color: var(--color-card-title-text);
     padding: $gap-8 0;
     border-bottom: 3px dotted var(--color-primary-100);
     white-space: nowrap;
@@ -30,11 +31,11 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: black;
+    color: var(--color-card-title-text);
   }
 
   .author {
-    color: var(--color-neutral-500);
+    color: var(--color-card-author-color);
     font-size: smaller;
   }
 
@@ -46,7 +47,7 @@
 
   .details {
     font-size: smaller;
-    color: var(--color-neutral);
+    color: var(--color-card-title-text);
   }
 }
 

@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import styles from './main.module.scss'
 import { Sitenav } from 'components/sitenav'
 import { Link } from 'components/link'
@@ -6,6 +6,7 @@ import { Newsletter } from 'components/newsletter'
 import Fab from 'components/fab'
 import MobileNav from 'components/mobileNav'
 import { Donate } from 'components/donate'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 type Props = {
   title?: string
@@ -15,30 +16,27 @@ type Props = {
 
 export function Main(props: Props) {
   const [isMobileNavOpen, setMobileNav] = useState(false)
+  const [className, setClassName] = useState('')
+  const [theme, setTheme] = useLocalStorage('SITE_THEME', 'light')
   const buttonRef = useRef<HTMLButtonElement>(null)
   const handleCLick = () => {
     setMobileNav((state) => !state)
   }
   const title = props.title ?? 'useWeb3'
 
-  let className = `${styles.container}`
-  if (props.className) className += ` ${props.className}`
+  useEffect(() => {
+    if (props.className) setClassName(`${styles.container} ${props.className} ${theme}`)
+  }, [theme])
 
   return (
     <div className={className}>
       <aside className={styles.sitenav}>
         <Sitenav />
-        {/* <button className={styles.darkModeButton} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-          </svg>
-        </button> */}
-
-        <select name="theme_switcher" className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-          <option value="pantone">Pantone</option>
-          <option value="blueberry_dark">Blueberry Dark</option>
+        <select name='theme_switcher' className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
+          <option value='light'>Light</option>
+          <option value='dark'>Dark</option>
+          <option value='pantone'>Pantone</option>
+          <option value='blueberry_dark'>Blueberry Dark</option>
         </select>
       </aside>
       <aside className={styles.mobileSitenav}>
@@ -58,11 +56,11 @@ export function Main(props: Props) {
 
           <footer className={styles.footer}>
             <p>
-              Follow @ <Link href="https://twitter.com/useWeb3">useWeb3</Link>. Contribute on{' '}
-              <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
+              Follow @ <Link href='https://twitter.com/useWeb3'>useWeb3</Link>. Contribute on{' '}
+              <Link href='https://github.com/wslyvh/useWeb3'>Github</Link>.
             </p>
             <p>
-              Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>.
+              Created by <Link href='https://twitter.com/wslyvh'>@wslyvh</Link>.
             </p>
           </footer>
           <Fab onClick={handleCLick} />

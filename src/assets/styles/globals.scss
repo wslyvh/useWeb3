@@ -1,7 +1,7 @@
-@use "./variables" as *;
+@use './variables' as *;
 
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
-@import url("https://unpkg.com/blocks.css/dist/blocks.min.css");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://unpkg.com/blocks.css/dist/blocks.min.css');
 
 html,
 body {
@@ -11,7 +11,7 @@ body {
   font-weight: $font-normal;
   font-size: $size-16;
   color: var(--color-neutral);
-  --block-accent-color: #eba134; // secondary
+  --block-accent-color: #eba134;
   overflow: hidden;
 }
 

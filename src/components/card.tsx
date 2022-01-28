@@ -1,24 +1,24 @@
-import React from "react";
-import styles from "./card.module.scss";
-import { Link } from "components/link";
-import { Tag } from "./tag";
-import { getLevelStyle } from "utils/helpers";
+import React from 'react'
+import styles from './card.module.scss'
+import { Link } from 'components/link'
+import { Tag } from './tag'
+import { getLevelStyle } from 'utils/helpers'
 
 interface Props {
-  title: string;
-  description: string;
-  author?: string;
-  small?: boolean;
-  tag?: string;
-  detailsUrl?: string;
-  url?: string;
-  className?: string;
+  title: string
+  description: string
+  author?: string
+  small?: boolean
+  tag?: string
+  detailsUrl?: string
+  url?: string
+  className?: string
 }
 
 export function Card(props: Props) {
-  let className = `${styles.card} fixed block`;
-  if (props.className) className += ` ${props.className}`;
-  if (props.small) className += ` ${styles.small}`;
+  let className = `${styles.card} fixed block`
+  if (props.className) className += ` ${props.className}`
+  if (props.small) className += ` ${styles.small}`
 
   return (
     <section className={className}>
@@ -40,7 +40,7 @@ export function Card(props: Props) {
         {!props.detailsUrl && <span></span>}
         {props.url && (
           <Link href={props.url}>
-            <button className="accent block">&raquo;</button>
+            <button className='accent block'>&raquo;</button>
           </Link>
         )}
       </div>

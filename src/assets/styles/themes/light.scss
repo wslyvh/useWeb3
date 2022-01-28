@@ -1,27 +1,29 @@
 $colors: (
   // Primary colors
-  "primary": #000d99,
-  "primary-500": #004fff,
-  "primary-100": #99ccff,
+  'primary': #000d99,
+  'primary-500': #004fff,
+  'primary-100': #99ccff,
   // Secondary colors
-  "secondary": #eba134,
-  "secondary-500": #fac748,
-  "secondary-100": #ffe3b2,
+  'secondary': #eba134,
+  'secondary-500': #fac748,
+  'secondary-100': #ffe3b2,
   // Neutral colors
-  "neutral": #151a26,
-  "neutral-500": #6a707f,
-  "neutral-100": #e9ecf1,
+  'neutral': #151a26,
+  'neutral-500': #6a707f,
+  'neutral-100': #e9ecf1,
   // Error, warning, succes, info colors
-  "info": #d0f0fd,
-  "info-dark": #04283f,
-  "success": #d1f7c4,
-  "success-dark": #0b1d05,
-  "warning": #ffeab6,
-  "warning-dark": #3b2501,
-  "error": #ffdce5,
-  "error-dark": #4c0c1c,
+  'info': #d0f0fd,
+  'info-dark': #04283f,
+  'success': #d1f7c4,
+  'success-dark': #0b1d05,
+  'warning': #ffeab6,
+  'warning-dark': #3b2501,
+  'error': #ffdce5,
+  'error-dark': #4c0c1c,
   // MISC
-  "background": white,
-  "text": black,
-  "text-inverse": white
+  'background': white,
+  'text': black,
+  'text-inverse': white,
+  'card-bg-color': white,
+  'card-title-text': black
 );
