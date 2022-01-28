@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { ContentItem } from "types/content-item";
-import styles from "pages/pages.module.scss";
-import { Card } from "./card";
-import { Dropdown } from "./dropdown";
-import { Featured } from "./featured";
+import { useState, useEffect } from 'react'
+import { ContentItem } from 'types/content-item'
+import styles from 'pages/pages.module.scss'
+import { Card } from './card'
+import { Dropdown } from './dropdown'
+import { Featured } from './featured'
 
 interface Props {
   title: string
