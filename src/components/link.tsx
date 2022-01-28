@@ -13,12 +13,7 @@ export function Link(props: LinkProps) {
 
   if (isExternal) {
     return (
-      <a
-        href={props.href}
-        className={className}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={props.href} className={className} target="_blank" rel="noopener noreferrer">
         {props.children}
       </a>
     )
@@ -26,7 +21,9 @@ export function Link(props: LinkProps) {
 
   return (
     <NextLink href={props.href} passHref>
-      <a href={props.href} className={className}>{props.children}</a>
+      <a href={props.href} className={className}>
+        {props.children}
+      </a>
     </NextLink>
   )
 }

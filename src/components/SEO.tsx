@@ -29,12 +29,12 @@ export function SEO(props: SEOProps) {
       <meta property="og:title" content={title} key="og_title" />
       <meta property="og:description" content={description} key="og_description" />
       <meta property="og:url" content={url} key="og_url" />
-      
+
       <meta property="og:image" content={image} key="og_image" />
       <meta property="og:image:url" content={image} key="og_image_url" />
       <meta property="og:image:secure_url" content={image} key="og_image_secure_url" />
-      <meta property="og:image:alt" content='useWeb3 social image with icons background' key="og_image_alt" />
-      <meta property="og:image:type" content='image/png' key="og_image_type" />
+      <meta property="og:image:alt" content="useWeb3 social image with icons background" key="og_image_alt" />
+      <meta property="og:image:type" content="image/png" key="og_image_type" />
       <meta property="og:image:width" content="1200" key="og_image_width" />
       <meta property="og:image:height" content="630" key="og_image_height" />
 

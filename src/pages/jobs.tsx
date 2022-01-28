@@ -9,7 +9,7 @@ import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { Featured } from 'components/featured'
 import { Row } from 'components/row'
-import  moment from 'dayjs'
+import moment from 'dayjs'
 import { Link } from 'components/link'
 import Pagination from 'next-pagination'
 import { useRouter } from 'next/dist/client/router'
@@ -36,39 +36,47 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title='Find Web3 jobs' description='Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem.' />
-      <MainLayout className={styles.container} title='Web3 Jobs'>
+      <SEO
+        title="Find Web3 jobs"
+        description="Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem."
+      />
+      <MainLayout className={styles.container} title="Web3 Jobs">
         <article>
-          <p>Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem.</p>
-        </article>
-
-        <article>
-          <h2>
-            Add your company
-          </h2>
           <p>
-            You can use the <Link href='https://airtable.com/shrIbgc0llBQFpo7G'>Company form</Link> to submit your company profile for review.
+            Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3
+            ecosystem.
           </p>
         </article>
 
         <article>
-          <h2>
-            Add your job(s)
-          </h2>
+          <h2>Add your company</h2>
           <p>
-            You can use the <Link href='https://airtable.com/shrY9atkDkPKKd03Z'>Jobs form</Link> to submit your job(s) for review. Please make sure your company profile is submitted and reviewed first! 
+            You can use the <Link href="https://airtable.com/shrIbgc0llBQFpo7G">Company form</Link> to submit your
+            company profile for review.
           </p>
         </article>
 
         <article>
-          <p>useWeb3 has a technical audience, software engineers, builders, product developers, designers, researchers and makers. It will only list companies and jobs that are aligned with the values of Web3 and are contributing to core, open-source infrastructure, products, tools, frameworks and DAOs. </p>
+          <h2>Add your job(s)</h2>
+          <p>
+            You can use the <Link href="https://airtable.com/shrY9atkDkPKKd03Z">Jobs form</Link> to submit your job(s)
+            for review. Please make sure your company profile is submitted and reviewed first!
+          </p>
+        </article>
+
+        <article>
+          <p>
+            useWeb3 has a technical audience, software engineers, builders, product developers, designers, researchers
+            and makers. It will only list companies and jobs that are aligned with the values of Web3 and are
+            contributing to core, open-source infrastructure, products, tools, frameworks and DAOs.{' '}
+          </p>
         </article>
 
         <Pagination total={props.jobs.length} />
 
         <main>
-          <Featured type='rows'>
-            {jobs.map(i => {
+          <Featured type="rows">
+            {jobs.map((i) => {
               return (
                 <Row
                   key={`${i.id}_${i.location}`}
@@ -77,9 +85,10 @@ export default function Index(props: Props) {
                   date={moment(i.updated).fromNow(true)}
                   author={i.company.title}
                   authorUrl={i.company.id}
-                  url={i.url} 
+                  url={i.url}
                   imageUrl={i.company.logo}
-                  featured={i.featured} />
+                  featured={i.featured}
+                />
               )
             })}
           </Featured>
@@ -101,8 +110,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       categories,
-      jobs
+      jobs,
     },
-    revalidate: DEFAULT_REVALIDATE_PERIOD
+    revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
 }

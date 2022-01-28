@@ -42,12 +42,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const tags = await service.GetTags()
 
   return {
-    paths: tags.map(i => {
+    paths: tags.map((i) => {
       return {
-        params: { tag: i.key }
+        params: { tag: i.key },
       }
     }),
-    fallback: true
+    fallback: true,
   }
 }
 
@@ -59,17 +59,17 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       notFound: true,
     }
   }
-  
+
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
   const items = await service.GetItemsByTag(tag)
-  
+
   return {
     props: {
       categories,
       tag,
-      items
+      items,
     },
-    revalidate: DEFAULT_REVALIDATE_PERIOD
+    revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
 }

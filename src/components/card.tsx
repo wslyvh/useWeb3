@@ -45,5 +45,5 @@ export function Card(props: Props) {
         )}
       </div>
     </section>
-  );
+  )
 }

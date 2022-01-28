@@ -1,34 +1,28 @@
-import { ReactNode, useRef, useState, useEffect } from "react";
-
-import { Link } from "components/link";
-import { Donate } from "components/donate";
-import { Sitenav } from "components/sitenav";
-import { Newsletter } from "components/newsletter";
-
-import Fab from "components/fab";
-import styles from "./main.module.scss";
-import MobileNav from "components/mobileNav";
-import useLocalStorage from "../../hooks/useLocalStorage";
+import { ReactNode, useRef, useState } from 'react'
+import styles from './main.module.scss'
+import { Sitenav } from 'components/sitenav'
+import { Link } from 'components/link'
+import { Newsletter } from 'components/newsletter'
+import Fab from 'components/fab'
+import MobileNav from 'components/mobileNav'
+import { Donate } from 'components/donate'
 
 type Props = {
-  title?: string;
-  className?: string;
-  children: ReactNode;
-};
+  title?: string
+  className?: string
+  children: ReactNode
+}
 
 export function Main(props: Props) {
-  const [isMobileNavOpen, setMobileNav] = useState(false);
-  const [theme, setTheme] = useLocalStorage("SITE_THEME", "light");
-  const [className, setClassName] = useState("");
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [isMobileNavOpen, setMobileNav] = useState(false)
+  const buttonRef = useRef<HTMLButtonElement>(null)
   const handleCLick = () => {
-    setMobileNav((state) => !state);
-  };
-  const title = props.title ?? "useWeb3";
+    setMobileNav((state) => !state)
+  }
+  const title = props.title ?? 'useWeb3'
 
-  useEffect(() => {
-    if (props.className) setClassName(`${styles.container} ${props.className} ${theme}`);
-  }, [theme]);
+  let className = `${styles.container}`
+  if (props.className) className += ` ${props.className}`
 
   return (
     <div className={className}>
@@ -64,7 +58,7 @@ export function Main(props: Props) {
 
           <footer className={styles.footer}>
             <p>
-              Follow @ <Link href="https://twitter.com/useWeb3">useWeb3</Link>. Contribute on{" "}
+              Follow @ <Link href="https://twitter.com/useWeb3">useWeb3</Link>. Contribute on{' '}
               <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
             </p>
             <p>
@@ -75,5 +69,5 @@ export function Main(props: Props) {
         </div>
       </main>
     </div>
-  );
+  )
 }

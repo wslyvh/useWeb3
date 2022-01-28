@@ -51,9 +51,6 @@ export class AirtableJobService implements JobServiceInterface {
       }).all()
 
       return records.map((source) => {
-        const logo = (source.fields['Company Logo'] as any[])?.length > 0 ? 
-          (source.fields['Company Logo'] as any[])[0].url : ''
-
         let job = {
           id: source.fields['Slug'],
           title: source.fields['Title'],
@@ -66,9 +63,12 @@ export class AirtableJobService implements JobServiceInterface {
             description: (source.fields['Company Description'] as string[])[0],
             body: (source.fields['Company Body'] as string[])[0],
             website: (source.fields['Company Website'] as string[])[0],
-            twitter: (source.fields['Company Twitter'] as string[])[0],
-            github: (source.fields['Company Github'] as string[])[0],
-            logo: logo
+            twitter: (source.fields['Company Twitter'] as string[])?.length > 0 ?
+              (source.fields['Company Twitter'] as string[])[0] : '',
+            github: (source.fields['Company Github'] as string[])?.length > 0 ?
+              (source.fields['Company Github'] as string[])[0] : '',
+            logo: (source.fields['Company Logo'] as any[])?.length > 0 ? 
+              (source.fields['Company Logo'] as any[])[0].url : ''
           }, 
           url: source.fields['External Url'] ?? `mailto:${source.fields['Email']}?subject=Apply for ${source.fields['Title']}`,
           updated: new Date(source.fields['Updated'] as string).getTime(),

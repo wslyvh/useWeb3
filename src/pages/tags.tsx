@@ -19,22 +19,18 @@ interface Props {
 export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title='Explore resources by tags' />
+      <SEO title="Explore resources by tags" />
 
-      <MainLayout title='Tags' className={styles.container}>
+      <MainLayout title="Tags" className={styles.container}>
         <section>
-          <p>
-            Browse resources based on their tags.
-          </p>
+          <p>Browse resources based on their tags.</p>
           <main>
             <Tags tags={props.tags} />
           </main>
         </section>
 
         <section>
-          <p className={styles.second}>
-            Or by programming language.
-          </p>
+          <p className={styles.second}>Or by programming language.</p>
           <main>
             <Tags tags={props.languages} />
           </main>
@@ -54,8 +50,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: {
       categories,
       tags,
-      languages
+      languages,
     },
-    revalidate: DEFAULT_REVALIDATE_PERIOD
+    revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
 }

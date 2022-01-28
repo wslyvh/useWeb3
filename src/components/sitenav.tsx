@@ -17,7 +17,7 @@ export function Sitenav(props: Props) {
   return (
     <nav className={className}>
       <ul className={styles.sidenav}>
-        <li className={currentPath === "/" ? styles.active : ""}>
+        <li className={currentPath === '/' ? styles.active : ''}>
           <Link href="/">
             <span role="img" aria-label="home">
               🏠
@@ -27,7 +27,7 @@ export function Sitenav(props: Props) {
         </li>
         {categories.map((i) => {
           return (
-            <li key={i.id} className={currentPath.includes(`/${i.id}`) ? styles.active : ""}>
+            <li key={i.id} className={currentPath.includes(`/${i.id}`) ? styles.active : ''}>
               <Link href={`/${i.id}`}>
                 <span role="img" aria-label={i.id}>
                   {i.emoji}
@@ -35,18 +35,18 @@ export function Sitenav(props: Props) {
                 <span className={styles.text}>{i.title}</span>
               </Link>
             </li>
-          );
+          )
         })}
-        <li className={currentPath.includes("/jobs") ? styles.active : ""}>
-          <Link href={"/jobs"}>
+        <li className={currentPath.includes('/jobs') ? styles.active : ''}>
+          <Link href={'/jobs'}>
             <span role="img" aria-label="jobs">
               💼
             </span>
             <span className={styles.text}>Jobs</span>
           </Link>
         </li>
-        <li className={currentPath.includes("/tags") ? styles.active : ""}>
-          <Link href={"/tags"}>
+        <li className={currentPath.includes('/tags') ? styles.active : ''}>
+          <Link href={'/tags'}>
             <span role="img" aria-label="tags">
               🏷️
             </span>

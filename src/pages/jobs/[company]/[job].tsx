@@ -9,7 +9,7 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from 'pages/pages.module.scss'
 import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
-import  moment from 'dayjs'
+import moment from 'dayjs'
 import { Company } from 'types/company'
 import slugify from 'slugify'
 import { Link } from 'components/link'
@@ -18,14 +18,14 @@ import he from 'he'
 import { MarkdownContentService } from 'services/content'
 
 interface Props {
-    categories: Array<Category>
-    company: Company | undefined
-    job: Job | undefined
+  categories: Array<Category>
+  company: Company | undefined
+  job: Job | undefined
 }
 
 interface Params extends ParsedUrlQuery {
-    company: string
-    job: string
+  company: string
+  job: string
 }
 
 export default function Index(props: Props) {
@@ -36,7 +36,9 @@ export default function Index(props: Props) {
   const body = props.job.body ?? ''
   const basicFormatting = new RegExp(/\s(__|\*\*)(?!\s)(.(?!\1))+(?!\s(?=\1))/).test(body)
   const linkFormatting = new RegExp(/\[(.+)\]\(([^ ]+?)( "(.+)")?\)/).test(body)
-  const content = basicFormatting || linkFormatting ? marked.parse(body) : body
+  const listFormatting = new RegExp(/(^(\W{1})(\s)(.*)(?:$)?)+/).test(body)
+  const headingFormatting = new RegExp(/^(#{1,6}\s*[\S]+)/).test(body) || body.includes('## ') || body.includes('### ')
+  const content = basicFormatting || linkFormatting || listFormatting || headingFormatting ? marked.parse(body) : body
   const html = he.decode(content)
 
   return (
@@ -45,23 +47,25 @@ export default function Index(props: Props) {
 
       <MainLayout className={styles.container} title={props.job.title}>
         <p>
-          <Link className={styles.mr} href={`/jobs/${props.company.id}`}>{props.company.title}</Link> 
+          <Link className={styles.mr} href={`/jobs/${props.company.id}`}>
+            {props.company.title}
+          </Link>
           <span className={styles.muted}>{props.job.location}</span>
         </p>
 
         <article className={styles.website}>
           <Link href={props.job.url}>
-            <span className='accent block'>Apply to job &raquo;</span>
+            <span className="accent block">Apply to job &raquo;</span>
           </Link>
         </article>
-        
+
         <h3>Description</h3>
-        {props.job.body && 
-          <main className={styles.body} dangerouslySetInnerHTML={{__html: html }} />
-        }
-        {!props.job.body && 
-          <main className={styles.body}>Apply for the role of {props.job.title} at {props.company.title}.</main>
-        }
+        {props.job.body && <main className={styles.body} dangerouslySetInnerHTML={{ __html: html }} />}
+        {!props.job.body && (
+          <main className={styles.body}>
+            Apply for the role of {props.job.title} at {props.company.title}.
+          </main>
+        )}
 
         <p className={styles.muted}>Posted {moment(props.job.updated).fromNow()}</p>
       </MainLayout>
@@ -74,12 +78,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const jobs = await service.GetJobs()
 
   return {
-    paths: jobs.map(i => {
+    paths: jobs.map((i) => {
       return {
-        params: { company: i.company.id, job: slugify(i.title, { lower: true, strict: true, trim: true }) }
+        params: { company: i.company.id, job: slugify(i.title, { lower: true, strict: true, trim: true }) },
       }
     }),
-    fallback: true
+    fallback: true,
   }
 }
 
@@ -92,21 +96,24 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       notFound: true,
     }
   }
-  
+
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
   const jobService = new JobService()
   const jobs = await jobService.GetJobs(companyId)
   const company = jobs.length > 0 ? jobs[0].company : undefined
-  const job = jobs.find(i => slugify(i.title, { lower: true, strict: true, trim: true }) === 
-    slugify(jobId, { lower: true, strict: true, trim: true }))
-  
+  const job = jobs.find(
+    (i) =>
+      slugify(i.title, { lower: true, strict: true, trim: true }) ===
+      slugify(jobId, { lower: true, strict: true, trim: true })
+  )
+
   return {
     props: {
       categories,
       company,
-      job
+      job,
     },
-    revalidate: DEFAULT_REVALIDATE_PERIOD
+    revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
 }
