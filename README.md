@@ -8,12 +8,58 @@ Explore. Learn. Build.
 
 https://www.useweb3.xyz/
 
-# Development
+<!-- TABLE OF CONTENTS -->
+&nbsp;
 
-First, install all packages `yarn install` and then run the development server:
+## Table of Contents
 
-```bash
-yarn dev
+- [Getting Started](#getting-started)
+
+&nbsp;
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+This is an example of how you can set up your project locally. To get a local copy up and running follow these simple example steps.
+
+1. Clone the repo
+
+```sh
+git clone with HTTPS          https://github.com/wslyvh/useWeb3.git
+git clone with SSH            git@github.com:wslyvh/useWeb3.git
+git clone with Github CLI     gh repo clone wslyvh/useWeb3
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the project
+
+```sh
+1. yarn install      # Installs all dependencies for this project
+2. yarn dev          # Starts the project in development mode
+```
+
+&nbsp;
+
+## Environment Variables
+
+- [Plausible API Key](https://plausible.io/activate)
+- [Twitter API Key](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
+- [Airtable API Key](https://support.airtable.com/hc/en-us/articles/219046777-How-do-I-get-my-API-key-)
+
+```sh
+# You'll need to create this file in the project's root folder
+Filename: .env
+Variables:
+    # PLAUSIBLE
+    PLAUSIBLE_API_KEY=
+
+    # Twitter
+    TWITTER_CONSUMER_KEY=
+    TWITTER_CONSUMER_SECRET=
+    TWITTER_ACCESS_TOKEN=
+    TWITTER_ACCESS_TOKEN_SECRET=
+
+    # Airtable
+    AIRTABLE_API_KEY=
+    AIRTABLE_API_BASE=
+```

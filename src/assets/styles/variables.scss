@@ -1,32 +1,14 @@
+@use 'themes/dark.scss';
+@use 'themes/light.scss';
+@use 'themes/pantone.scss';
+@use 'themes/blueberry_dark.scss';
+
 // Fonts
 $font-primary: 'JetBrains Mono', 'Courier New', monospace;
 
 // Weight
 $font-normal: 400;
 $font-bold: 700;
-
-// Colors
-$color-primary: #000D99;
-$color-primary-500: #004FFF;
-$color-primary-100: #99CCFF;
-
-$color-secondary: #EBA134;
-$color-secondary-500: #FAC748;
-$color-secondary-100: #FFE3B2;
-
-$color-neutral: #151A26;
-$color-neutral-500: #6A707F;
-$color-neutral-100: #E9ECF1;
-
-// Error, warning, succes, info colors 
-$color-info: #d0f0fd;
-$color-info-dark: #04283f;
-$color-success: #d1f7c4;
-$color-success-dark: #0b1d05;
-$color-warning: #ffeab6;
-$color-warning-dark: #3b2501;
-$color-error: #ffdce5;
-$color-error-dark: #4c0c1c;
 
 // Sizes
 $size-12: 0.75rem; // 12px
@@ -55,3 +37,22 @@ $screen-1280: 1280px;
 
 // Content
 $max-content-width: $screen-1280 + (24px * 2);
+
+// Themes
+$themes: (
+    'light': light.$colors,
+    'dark': dark.$colors,
+    'pantone': pantone.$colors,
+    'blueberry_dark': blueberry_dark.$colors,
+);
+
+@each $theme-name, $theme-vars in $themes {
+    $colors: $theme-vars;
+
+    .#{$theme-name} {
+        // Variables for each color
+        @each $name, $color in $colors {
+            --color-#{$name}: #{$color};
+        }
+    }
+}

@@ -31,9 +31,13 @@
             position: relative;
 
             &:hover {
-                background: $color-neutral-100;
+                background: var(--color-neutral-100);
                 border-radius: $gap-8;
             }
         }
+    }
+
+    .text_black {
+        color: black;
     }
 }

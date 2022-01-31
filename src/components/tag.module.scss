@@ -4,25 +4,25 @@
     display: inline-block;
     font-size: $size-12;
     padding: 0 $gap-8;
-    background: $color-secondary-100;
+    background: var(--color-secondary-100);
 }
 
 .info {
-    background: $color-info;
-    color: $color-info-dark;
+    background: var(--color-info);
+    color: var(--color-info-dark);
 }
 
 .success {
-    background: $color-success;
-    color: $color-success-dark;
+    background: var(--color-success);
+    color: var(--color-success-dark);
 }
 
 .warning {
-    background: $color-warning;
-    color: $color-warning-dark;
+    background: var(--color-warning);
+    color: var(--color-warning-dark);
 }
 
 .error {
-    background: $color-error;
-    color: $color-error-dark;
+    background: var(--color-error);
+    color: var(--color-error-dark);
 }

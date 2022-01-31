@@ -66,7 +66,7 @@
         width: auto;
         display: flex;
         align-items: center;
-        
+
         div:first-child {
             span {
                 font-weight: $font-bold;
@@ -111,7 +111,7 @@
     }
 
     .muted { 
-        color: $color-neutral-500;
+        color: var(--color-neutral-500);
         font-size: smaller;
     }
 
