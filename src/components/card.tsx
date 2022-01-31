@@ -40,7 +40,7 @@ export function Card(props: Props) {
         {!props.detailsUrl && <span></span>}
         {props.url && (
           <Link href={props.url}>
-            <button className='accent block'>&raquo;</button>
+            <button className="accent block">&raquo;</button>
           </Link>
         )}
       </div>

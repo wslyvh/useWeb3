@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
-import { useOnOutsideClick } from "hooks/useOnOutsideClick";
-import styles from "./dropdown.module.scss";
+import { useRef, useState } from 'react'
+import { useOnOutsideClick } from 'hooks/useOnOutsideClick'
+import styles from './dropdown.module.scss'
 
 interface Props {
   items: Array<string>

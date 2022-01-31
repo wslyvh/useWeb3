@@ -3,15 +3,13 @@
 .container {
   display: flex;
   min-height: 100vh;
-  background: var(--color-background);
 }
 
 .sitenav {
   flex-shrink: 0;
-  background: var(--color-primary-100);
+  background: $color-neutral-100;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: $gap-24;
   height: 100vh;
   -ms-overflow-style: none;
@@ -30,7 +28,7 @@
   display: none;
   @media (max-width: $screen-640) {
     flex-shrink: 0;
-    background: var(--color-neutral-100);
+    background: $color-neutral-100;
     display: flex;
     justify-content: center;
     padding-top: $gap-24;
@@ -47,22 +45,6 @@
   display: none;
 }
 
-.darkModeButton {
-  width: 30px;
-  margin: 10px;
-  align-self: flex-end;
-  cursor: pointer;
-  background: var(--color-primary-100);
-}
-
-.themeSwitcher {
-  padding: 10px;
-}
-
-.themeSwitcher:focus {
-  outline: none;
-}
-
 .content {
   padding: $gap-24;
   overflow-y: auto;
@@ -74,10 +56,10 @@
   }
 
   a {
-    color: var(--color-primary-500);
+    color: $color-primary-500;
 
     &:hover {
-      color: var(--color-primary);
+      color: $color-primary;
     }
   }
 }
@@ -86,15 +68,14 @@
   h1 {
     position: relative;
     display: inline-block;
-    z-index: 1;
   }
 
   h1:after {
     position: relative;
     display: block;
     content: "";
-    background: var(--color-primary-100);
-    z-index: -1;
+    background: $color-primary-100;
+    z-index: -5;
 
     height: 15px;
     top: -20px;

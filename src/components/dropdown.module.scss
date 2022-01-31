@@ -1,43 +1,39 @@
-@use "assets/styles/variables.scss" as *;
+@use 'assets/styles/variables.scss' as *;
 
 .container {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  padding: 0;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    
+    .selected {
+        display: flex;
+        justify-content: space-between;
+        margin: 4px $gap-8;
 
-  .selected {
-    display: flex;
-    justify-content: space-between;
-    margin: 4px $gap-8;
-
-    p {
-      margin: 0;
-      padding: 0;
+        p {
+            margin: 0;
+            padding: 0;
+        }
     }
-  }
 
-  .dropdown {
-    list-style-type: none;
-    position: absolute;
-    width: 100%;
-    background: #ffffff;
-    border: 2px solid var(--block-text-color);
-    border-radius: $gap-8;
-    margin-top: $gap-8;
-
-    li {
-      padding: $gap-8;
-      position: relative;
-
-      &:hover {
-        background: var(--color-neutral-100);
+    .dropdown {
+        list-style-type: none;
+        position: absolute;
+        width: 100%;
+        background: #FFFFFF;
+        border: 2px solid var(--block-text-color);
         border-radius: $gap-8;
-      }
-    }
-  }
+        margin-top: $gap-8;
 
-  .text_black {
-    color: black;
-  }
+        li {
+            padding: $gap-8;
+            position: relative;
+
+            &:hover {
+                background: $color-neutral-100;
+                border-radius: $gap-8;
+            }
+        }
+    }
 }
