@@ -52,7 +52,7 @@ async function run() {
   for (let index = 0; index < combined.length; index++) {
     const resource = items.find((i) => i.url === combined[index])
     if (resource) {
-      text += `${index + 1}. ${resource.category.emoji} ${resource.title} ${resource.authors.join(' ')} \n`
+      text += `${index + 1}. ${resource.title} ${resource.authors.join(' ')} \n`
     }
   }
 
