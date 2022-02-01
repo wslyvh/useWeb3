@@ -34,6 +34,34 @@
                     "currency": "",
                     "equity": false
                 }
+            },
+            "1940303-engineering-manager": {
+                "url": "https://angel.co/company/aave/jobs/1940303-engineering-manager",
+                "id": "1940303-engineering-manager",
+                "published_on": "2022-01-31T00:00:00.000Z",
+                "title": "Engineering Manager",
+                "description": "<p>The Aave Companies are focused on innovation in Web3, and have cultivated a thriving, collaborative team environment. Valuing expertise and dedication, the Aave fam is welcoming, passionate, and eager to build great products. We celebrate differences and seek to recruit, develop, and retain the most talented people from a diverse candidate pool...and we're hiring!</p>\n\n<p>We are looking for an experienced Engineering Manager to support and grow our engineering team. Focusing primarily on process development and people management, this role will help increase efficiency and productivity across the team, as well as promote career development of individual contributors.</p>\n\n<p>Initially, this role will report to the VP of Engineering</p>\n\n<p><strong>Responsibilities</strong></p>\n\n<ul>\n<li>Ensure the engineering team is able to efficiently ship and develop high quality projects at scale.</li>\n<li>Manage and coordinate individual contributors across the engineering team.</li>\n<li>Identify friction points and implement solutions to improve potential bottlenecks in the engineering process.</li>\n<li>Build strong relationships with Product, Design, and other functions; partner with various teams to deliver value to users.</li>\n<li>Work closely with leadership and executives to share progress across projects.</li>\n<li>Mentor and onboard new engineers onto the team.</li>\n</ul>\n\n<p><strong>Requirements</strong></p>\n\n<ul>\n<li>Proven experience as an Engineering Manager</li>\n<li>3+ years of experience as a manager for at least one mid-sized engineering team (including frontend, backend, QA, etc.)</li>\n<li>Able to make informed decisions that require a quick turnaround</li>\n<li>Strong interest in DeFi and Web3; experience in the field is a plus.</li>\n<li>Able to quickly understand and synthesize complex and nuanced technical information into big-picture, actionable insights.</li>\n<li>BSc/BA in Computer Science, Engineering or a related field.</li>\n</ul>\n\n<p><strong>Benefits</strong></p>\n\n<ul>\n<li>Flexible working with office based in Central London (W11) or remote</li>\n<li>Private health care</li>\n<li>5 weeks of paid holiday</li>\n<li>Front-row seat in the development of a new Web3 future and new job category</li>\n<li>Innovation-driven work environment</li>\n</ul>\n",
+                "location": "London",
+                "salary": {
+                    "min": "",
+                    "max": "",
+                    "currency": "",
+                    "equity": false
+                }
+            },
+            "1940302-senior-smart-contract-engineer": {
+                "url": "https://angel.co/company/aave/jobs/1940302-senior-smart-contract-engineer",
+                "id": "1940302-senior-smart-contract-engineer",
+                "published_on": "2022-01-31T00:00:00.000Z",
+                "title": "Senior Smart Contract Engineer",
+                "description": "<p>The Aave Companies are focused on innovation in Web3, and have cultivated a thriving, collaborative culture. Valuing expertise and dedication, the Aave fam is welcoming, passionate, and eager to build great products. We celebrate differences and seek to recruit, develop, and retain the most talented people from a diverse candidate pool...and we're hiring!</p>\n\n<p>We are looking for a Senior Smart Contract Engineer to help us innovate and build the next generation of Web3, on the smart contract side, across a variety of new and exciting verticals, from protocol design to implementation.</p>\n\n<p>Although the role is remote friendly, it is preferred that you are located and working within the GMT-PST time zones for coordination purposes.</p>\n\n<p><strong>Responsibilities</strong></p>\n\n<ul>\n<li>Work closely with our smart contract development team to develop and build new core smart contracts.</li>\n<li>Brainstorm and ideate on new protocol designs.</li>\n<li>Engage and work with both internal and external auditing teams and implementing feedback.</li>\n<li>Evaluate and assess L2s and other scaling solutions.</li>\n</ul>\n\n<p><strong>Requirements</strong></p>\n\n<ul>\n<li>4+ years of experience building and releasing secure and production grade contracts in Solidity</li>\n<li>6+ years as a developer</li>\n<li>Experienced problem solver with an interest in building complex smart contracts</li>\n<li>Demonstrated experience shipping and deploying smart contracts on main-net and/or side-chains holding significant amounts of value</li>\n<li>Strong understanding of the EVM (Ethereum Virtual Machine) and the DeFi and Web3 ecosystem where an understanding of NFTs</li>\n</ul>\n\n<p><strong>Benefits</strong></p>\n\n<ul>\n<li>Flexible working with office based in Central London (W11) or remote</li>\n<li>Private health care</li>\n<li>5 weeks of paid holiday</li>\n<li>Front-row seat in the development of a new Web3 future and new job category</li>\n<li>Innovation-driven work environment</li>\n</ul>\n",
+                "location": "London",
+                "salary": {
+                    "min": "",
+                    "max": "",
+                    "currency": "",
+                    "equity": false
+                }
             }
         }
     },
@@ -519,6 +547,20 @@
                 "salary": {
                     "min": "80k",
                     "max": "140k",
+                    "currency": "$",
+                    "equity": true
+                }
+            },
+            "1721343-founding-frontend-engineer": {
+                "url": "https://angel.co/company/paperchain/jobs/1721343-founding-frontend-engineer",
+                "id": "1721343-founding-frontend-engineer",
+                "published_on": "2022-01-25T01:01:36.935Z",
+                "title": "Founding Frontend Engineer",
+                "description": "<h3>about the role</h3>\n<p>We're scaling our engineering team to build new features that our improve our products.</p>\n\n<p>You’ll help solve unique, large scale, highly complex technical problems and build delightful user experiences and scalable frontend systems to make instant payments accessible to every creator in the world. </p>\n\n<p>You'll also work with our security and risk engineering teams to build trust and safety features to protect user accounts, without compromising on the user experience. </p>\n\n<p>If you're excited by the problem space of designing and delivering engaging user experiences, building performant user interfaces, and building trustworthy financial systems, let's talk!</p>\n\n<p>We're in a mode of hyper-growth and want to add to our team as soon as possible</p>\n\n<p>If you are in the US / New York City you're welcome to join the CEO and work out of our co-work space.</p>\n<h3>responsibilities</h3>\n<ul>\n<li>Articulate a long term technical direction and vision for maintaining and scaling our web and mobile platforms</li>\n<li>Create wonderful UX by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, React Navigation, Jest and Webpack</li>\n<li>Work with CEO, CTO and the backend team to prioritize and ship user stories at a rapid pace</li>\n<li>We want you to bring your best practice design techniques and coding standards to lay the foundation for the Paperchain wallet experience</li>\n<li>Make your coworkers feel included in every interaction.</li>\n<li>All of your work should be optimized for interoperability with our product API stack</li>\n</ul>\n<h3>about you</h3>\n<ul>\n<li>You have at least 5 years of experience in software engineering and at least 4 years of experience in developing web apps and shipping user-facing features with JavaScript and modern, component-based JS frameworks like React.</li>\n<li>You've developed and shipped user-facing features using component-based UI frameworks.</li>\n<li>You’re familiar with current trends and best practices in front-end architecture, including performance, security and usability.</li>\n<li>You’re familiar with product and design lifecycles, and collaborating closely with designers, engineers, and product managers.</li>\n<li>You write high quality, well tested code to meet the needs of your customers.</li>\n</ul>\n<h3>bonus</h3>\n<ul>\n<li>You've worked on front-end teams in the finance or security space</li>\n<li>You have at least 1 year of experience in developing React Native mobile apps or helped move existing native apps to React Native</li>\n<li>Personally interested in what's happening in the creator economy (NFTs, crypto, music and media streaming)</li>\n<li>Passionate or interested in the online content space and web3 finance, in particular, exploring new product experiences for creators by combining both</li>\n</ul>\n",
+                "location": "New York City • Remote",
+                "salary": {
+                    "min": "80k",
+                    "max": "150k",
                     "currency": "$",
                     "equity": true
                 }
