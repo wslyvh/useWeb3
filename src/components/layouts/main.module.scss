@@ -28,11 +28,13 @@
 
 .mobileSitenav {
   display: none;
+  
   @media (max-width: $screen-640) {
     flex-shrink: 0;
-    background: var(--color-neutral-100);
+    background: var(--color-primary-100);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     padding-top: $gap-24;
     height: 100vh;
     -ms-overflow-style: none;
@@ -57,6 +59,15 @@
 
 .themeSwitcher {
   padding: 10px;
+
+  @media (max-width: $screen-1280) {
+    display: flex;
+    width: 60px;
+  }
+  @media (max-width: $screen-640) {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .themeSwitcher:focus {
