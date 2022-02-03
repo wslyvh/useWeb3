@@ -32,7 +32,7 @@ export function Main(props: Props) {
     <div className={className}>
       <aside className={styles.sitenav}>
         <Sitenav />
-        <select name="theme_switcher" className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
+        <select name="theme_switcher" value={theme} className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
           <option value="pantone">Pantone</option>
@@ -42,7 +42,7 @@ export function Main(props: Props) {
       <aside className={styles.mobileSitenav}>
         <MobileNav isOpen={isMobileNavOpen} />
 
-        {isMobileNavOpen && <select name="theme_switcher" className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
+        {isMobileNavOpen && <select name="theme_switcher" value={theme} className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
           <option value="pantone">Pantone</option>
