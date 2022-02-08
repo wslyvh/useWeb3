@@ -470,6 +470,20 @@
                     "currency": "$",
                     "equity": true
                 }
+            },
+            "1016042-smart-contract-developer-ethereum": {
+                "url": "https://angel.co/company/gelato-network/jobs/1016042-smart-contract-developer-ethereum",
+                "id": "1016042-smart-contract-developer-ethereum",
+                "published_on": "2022-02-01T01:00:31.435Z",
+                "title": "Smart Contract Developer (Ethereum)🍦",
+                "description": "<p>Gelato Network is a protocol that automates smart contract executions on Ethereum. We develop an open-source system coordinating a decentralized network of relay nodes that developers can plug into to create amazing automated dApps for their users.</p>\n\n<p>Join our team and work directly with the founders to build the future of Automation for the upcoming decentralized web. Enjoy a lot of perks, travel with us to cool events and participate in amazing off-side retreats with the team!</p>\n\n<p>Participate in creating the most sophisticated crypto bot network ever created by designing the smart contracts that will rule them all!</p>\n\n<p><strong>What we offer:</strong></p>\n\n<ul>\n<li>Small, fully remote team, with team members in Zug, Paris, New York, Shanghai, Berlin and many other cool places.<br></li>\n<li>Join the “Gelato Legendary Member Club” and work directly with the founders</li>\n<li>Participate in building the infrastructure that aims to become the glue between all crypto networks and power the most promising dApps on Ethereum</li>\n<li>Token Options - Get a share of the networks future token and be able to participate in Gelato’s upcoming DAO</li>\n<li>Worldclass Investors - We are backed by the community, including industry leading experts such as Dragonfly, ParaFi, Nascent, IDEO, Gnosis, Christoph Jentzsch, IOSG, Galaxy Digital and the two largest Venture DAOs (The LAO, Metacartel Ventures)</li>\n</ul>\n\n<p>** Requirements:**</p>\n\n<ul>\n<li> Experience in writing smart contracts in solidity</li>\n<li> Experience with web3 libraries (ethers.js, web3.js) - preferably ethers.js</li>\n<li> Experience with testing your code locally and on ethereum test networks</li>\n<li> Experience with the hardhat development environment </li>\n<li> Experience deploying contracts to production environments like mainnet or polygon</li>\n<li> Experience with writing subgraphs for indexing contract data </li>\n<li> Experience using dapps like Uniswap, Aave, or Maker. </li>\n<li> You can work with high autonomy</li>\n<li> Strong written and verbal communication skills</li>\n</ul>\n\n<p>** Bonus:**</p>\n\n<ul>\n<li> Knowledge about the inner workings of the EVM</li>\n<li> Mathematics &amp; Finance Background</li>\n<li> Experience in building and running bots that interact with smart contracts on Ethereum</li>\n<li> Knowledge about Ethereum Client &amp; Mining software</li>\n<li> Front-end experience, building dApps on existing smart contracts</li>\n</ul>\n\n<p>** Technologies we use and teach:**</p>\n\n<ul>\n<li>Solidity</li>\n<li>Node.js</li>\n<li>Typescript</li>\n<li>Javascript</li>\n<li>Ethers.js</li>\n<li>Hardhat </li>\n<li>React</li>\n</ul>\n",
+                "location": "Europe • Berlin • Munich • Remote",
+                "salary": {
+                    "min": "60k",
+                    "max": "85k",
+                    "currency": "$",
+                    "equity": true
+                }
             }
         }
     },
