@@ -5,7 +5,6 @@ import { Link } from 'components/link'
 import { Newsletter } from 'components/newsletter'
 import Fab from 'components/fab'
 import MobileNav from 'components/mobileNav'
-import { Donate } from 'components/donate'
 import useLocalStorage from '../../hooks/useLocalStorage'
 
 type Props = {
@@ -26,13 +25,17 @@ export function Main(props: Props) {
 
   useEffect(() => {
     if (props.className) setClassName(`${styles.container} ${props.className} ${theme}`)
-  }, [theme])
+  }, [props.className, theme])
 
   return (
     <div className={className}>
       <aside className={styles.sitenav}>
         <Sitenav />
-        <select name="theme_switcher" value={theme} className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
+        <select
+          name="theme_switcher"
+          value={theme}
+          className={styles.themeSwitcher}
+          onChange={(e) => setTheme(e.target.value)}>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
           <option value="pantone">Pantone</option>
@@ -42,12 +45,18 @@ export function Main(props: Props) {
       <aside className={styles.mobileSitenav}>
         <MobileNav isOpen={isMobileNavOpen} />
 
-        {isMobileNavOpen && <select name="theme_switcher" value={theme} className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-          <option value="pantone">Pantone</option>
-          <option value="blueberry_dark">Blueberry Dark</option>
-        </select>}
+        {isMobileNavOpen && (
+          <select
+            name="theme_switcher"
+            value={theme}
+            className={styles.themeSwitcher}
+            onChange={(e) => setTheme(e.target.value)}>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="pantone">Pantone</option>
+            <option value="blueberry_dark">Blueberry Dark</option>
+          </select>
+        )}
       </aside>
       <main className={styles.content}>
         <div className={styles.inner}>
