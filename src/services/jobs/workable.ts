@@ -1,4 +1,4 @@
-import  moment from 'dayjs'
+import moment from 'dayjs'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
@@ -15,7 +15,7 @@ export class WorkableJobService implements JobServiceInterface {
       id: id,
       title: id,
       description: '',
-      body: ''
+      body: '',
     } as Company
   }
 
@@ -26,7 +26,8 @@ export class WorkableJobService implements JobServiceInterface {
       const res = await fetch(`https://www.workable.com/api/accounts/${companyId}?details=true`)
       const data = await res.json()
 
-      return data.jobs.map((i: any) => {
+      return data.jobs
+        .map((i: any) => {
           return {
             id: String(i.shortcode),
             title: i.title,
@@ -34,15 +35,16 @@ export class WorkableJobService implements JobServiceInterface {
             body: i.description,
             location: i.country && i.city ? `${i.city}, ${i.country}` : '',
             company: {
-                id: companyId,
-                title: data.name,
-                description: removeHtml(data.description),
-                body: data.description
-            }, 
+              id: companyId,
+              title: data.name,
+              description: removeHtml(data.description),
+              body: data.description,
+            },
             url: i.url,
-            updated: new Date(i.published_on).getTime()
+            updated: new Date(i.published_on).getTime(),
           } as Job
-      }).filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+        })
+        .filter((job: Job) => JOBS_FILTER.some((f) => job.title.toLowerCase().includes(f)))
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)

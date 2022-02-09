@@ -39,23 +39,28 @@ a {
   text-overflow: ellipsis;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: $size-h1;
   color: var(--color-text);
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: $size-h2;
   color: var(--color-text);
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: $size-h3;
   color: var(--color-text);
 }
 
-.p, p,
-.article, article {
+.p,
+p,
+.article,
+article {
   margin-bottom: $gap-16;
   color: var(--color-text);
 }

@@ -1,28 +1,28 @@
 @use 'assets/styles/variables.scss' as *;
 
 .tag {
-    display: inline-block;
-    font-size: $size-12;
-    padding: 0 $gap-8;
-    background: var(--color-secondary-100);
+  display: inline-block;
+  font-size: $size-12;
+  padding: 0 $gap-8;
+  background: var(--color-secondary-100);
 }
 
 .info {
-    background: var(--color-info);
-    color: var(--color-info-dark);
+  background: var(--color-info);
+  color: var(--color-info-dark);
 }
 
 .success {
-    background: var(--color-success);
-    color: var(--color-success-dark);
+  background: var(--color-success);
+  color: var(--color-success-dark);
 }
 
 .warning {
-    background: var(--color-warning);
-    color: var(--color-warning-dark);
+  background: var(--color-warning);
+  color: var(--color-warning-dark);
 }
 
 .error {
-    background: var(--color-error);
-    color: var(--color-error-dark);
+  background: var(--color-error);
+  color: var(--color-error-dark);
 }

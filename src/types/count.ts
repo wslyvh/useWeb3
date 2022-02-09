@@ -1,4 +1,4 @@
 export interface Count {
-    key: string,
-    count: number
+  key: string
+  count: number
 }

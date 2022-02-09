@@ -1,4 +1,4 @@
-import  moment from 'dayjs'
+import moment from 'dayjs'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
@@ -23,13 +23,12 @@ export class GreenhouseJobService implements JobServiceInterface {
           id: id,
           title: data.name,
           description: removeHtml(data.content),
-          body: data.content
+          body: data.content,
         } as Company
 
         map.set(key, [company, Date.now()])
         return company
       }
-      
     } catch (e) {
       console.log('GreenhouseJobService', 'Unable to fetch company', id)
       console.error(e)
@@ -44,7 +43,7 @@ export class GreenhouseJobService implements JobServiceInterface {
     try {
       const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${companyId}/jobs`)
       const data = await res.json()
-      
+
       if (!data) return []
       let company = await this.GetCompany(companyId)
       if (!company) {
@@ -52,27 +51,30 @@ export class GreenhouseJobService implements JobServiceInterface {
           id: companyId,
           title: companyId,
           description: '',
-          body: ''
+          body: '',
         }
       }
 
-      const jobs = await Promise.all(data.jobs?.map(async (i: any) => {
+      const jobs = await Promise.all(
+        data.jobs?.map(async (i: any) => {
           const response = await fetch(`https://boards-api.greenhouse.io/v1/boards/${companyId}/jobs/${i.id}`)
           const job = await response.json()
-          
+
           return {
             id: String(i.id),
             title: i.title,
             description: removeHtml(job.content),
             body: job.content,
             location: i.location.name,
-            company: company, 
+            company: company,
             url: i.absolute_url,
-            updated: new Date(i.updated_at).getTime()
+            updated: new Date(i.updated_at).getTime(),
           } as Job
-      }) as Array<Job>)
+        }) as Array<Job>
+      )
 
-      return jobs.filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+      return jobs
+        .filter((job: Job) => JOBS_FILTER.some((f) => job.title.toLowerCase().includes(f)))
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)

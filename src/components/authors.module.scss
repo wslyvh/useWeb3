@@ -1,11 +1,11 @@
 @use 'assets/styles/variables.scss' as *;
 
 .container {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 
-    li {
-        margin-right: $gap-8;
-    }
+  li {
+    margin-right: $gap-8;
+  }
 }

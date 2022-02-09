@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "prettier": "prettier --write ./src/**.{ts,tsx}",
+    "prettier": "prettier --write ./src/**/*.{ts,tsx,scss}",
     "tools:migrate": "ts-node src/migrate",
     "twitter:popular": "ts-node src/twitter-popular",
     "twitter:random": "ts-node src/twitter-random",

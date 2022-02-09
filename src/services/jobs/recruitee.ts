@@ -1,4 +1,4 @@
-import  moment from 'dayjs'
+import moment from 'dayjs'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
@@ -15,7 +15,7 @@ export class RecruiteeJobService implements JobServiceInterface {
       id: id,
       title: id,
       description: '',
-      body: ''
+      body: '',
     } as Company
   }
 
@@ -26,7 +26,8 @@ export class RecruiteeJobService implements JobServiceInterface {
       const res = await fetch(`https://${companyId}.recruitee.com/api/offers/`)
       const data = await res.json()
 
-      return data.offers.map((i: any) => {
+      return data.offers
+        .map((i: any) => {
           return {
             id: String(i.id),
             title: i.title,
@@ -34,14 +35,15 @@ export class RecruiteeJobService implements JobServiceInterface {
             body: i.description,
             location: i.location,
             company: {
-                id: companyId,
-                title: i.company_name,
-                description: ''
-            }, 
+              id: companyId,
+              title: i.company_name,
+              description: '',
+            },
             url: i.careers_url,
-            updated: new Date(i.published_at).getTime()
+            updated: new Date(i.published_at).getTime(),
           } as Job
-      }).filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+        })
+        .filter((job: Job) => JOBS_FILTER.some((f) => job.title.toLowerCase().includes(f)))
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)

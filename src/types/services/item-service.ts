@@ -1,6 +1,6 @@
-import { Category } from "types/category"
-import { ContentItem } from "types/content-item"
-import { Count } from "types/count"
+import { Category } from 'types/category'
+import { ContentItem } from 'types/content-item'
+import { Count } from 'types/count'
 
 export interface ItemServiceInterface {
   GetCategory(id: string): Promise<Category | undefined>
@@ -10,4 +10,3 @@ export interface ItemServiceInterface {
   GetItems(category?: string, featured?: boolean): Promise<Array<ContentItem>>
   GetItemsByTag(tag?: string): Promise<Array<ContentItem>>
 }
-  

@@ -1,4 +1,4 @@
-@use "assets/styles/variables.scss" as *;
+@use 'assets/styles/variables.scss' as *;
 
 .container {
   display: flex;
@@ -28,7 +28,7 @@
 
 .mobileSitenav {
   display: none;
-  
+
   @media (max-width: $screen-640) {
     flex-shrink: 0;
     background: var(--color-primary-100);
@@ -103,7 +103,7 @@
   h1:after {
     position: relative;
     display: block;
-    content: "";
+    content: '';
     background: var(--color-primary-100);
     z-index: -5;
 

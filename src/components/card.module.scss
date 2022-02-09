@@ -1,62 +1,62 @@
 @use 'assets/styles/variables.scss' as *;
 
 .card {
-    font-family: $font-primary;
-    font-weight: $font-normal;
-    font-size: $size-16;
-    line-height: 1.25rem;
-    color: var(--color-neutral);
-    --block-background-color: var(--color-card-bg-color);
+  font-family: $font-primary;
+  font-weight: $font-normal;
+  font-size: $size-16;
+  line-height: 1.25rem;
+  color: var(--color-neutral);
+  --block-background-color: var(--color-card-bg-color);
 
-    .title {
-        color: var(--color-card-title-text);
-        padding: $gap-8 0;
-        border-bottom: 3px dotted var(--color-primary-100);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+  .title {
+    color: var(--color-card-title-text);
+    padding: $gap-8 0;
+    border-bottom: 3px dotted var(--color-primary-100);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-        &:hover {
-            color: var(--color-neutral-500);
-        }
+    &:hover {
+      color: var(--color-neutral-500);
     }
+  }
 
-    .description {
-        margin-top: $gap-8;
+  .description {
+    margin-top: $gap-8;
 
-        height: 1.25rem * 4;
-        -webkit-line-clamp: 4;
+    height: 1.25rem * 4;
+    -webkit-line-clamp: 4;
 
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        color: var(--color-card-title-text);
-    }
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-card-title-text);
+  }
 
-    .author {
-        color: var(--color-card-author-color);
-        font-size: smaller;
-    }
+  .author {
+    color: var(--color-card-author-color);
+    font-size: smaller;
+  }
 
-    .footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .details {        
-        font-size: smaller;
-        color: var(--color-card-title-text);
-    }
+  .details {
+    font-size: smaller;
+    color: var(--color-card-title-text);
+  }
 }
 
 .small {
-    @extend .card;
-    line-height: 1.5rem;
+  @extend .card;
+  line-height: 1.5rem;
 
-    .description {
-        height: 1.5rem * 2;
-        -webkit-line-clamp: 2;
-    }
+  .description {
+    height: 1.5rem * 2;
+    -webkit-line-clamp: 2;
+  }
 }

@@ -1,4 +1,4 @@
-import  moment from 'dayjs'
+import moment from 'dayjs'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
@@ -15,7 +15,7 @@ export class LeverJobService implements JobServiceInterface {
       id: id,
       title: id,
       description: '',
-      body: ''
+      body: '',
     } as Company
   }
 
@@ -25,10 +25,11 @@ export class LeverJobService implements JobServiceInterface {
     try {
       const res = await fetch(`https://api.lever.co/v0/postings/${companyId}?mode=json`)
       const data = await res.json()
-      
+
       if (!data) return []
 
-      return data.map((i: any) => {
+      return data
+        .map((i: any) => {
           return {
             id: i.id,
             title: i.text,
@@ -36,14 +37,15 @@ export class LeverJobService implements JobServiceInterface {
             body: i.description,
             location: i.categories?.location,
             company: {
-                id: companyId,
-                title: companyId,
-                description: ''
-            }, 
+              id: companyId,
+              title: companyId,
+              description: '',
+            },
             url: i.applyUrl,
-            updated: new Date(i.createdAt).getTime()
+            updated: new Date(i.createdAt).getTime(),
           } as Job
-      }).filter((job: Job) => JOBS_FILTER.some(f => job.title.toLowerCase().includes(f)))
+        })
+        .filter((job: Job) => JOBS_FILTER.some((f) => job.title.toLowerCase().includes(f)))
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)

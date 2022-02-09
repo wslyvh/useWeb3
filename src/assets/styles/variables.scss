@@ -15,7 +15,7 @@ $size-12: 0.75rem; // 12px
 $size-16: 1rem; // 16px
 $size-20: 1.25rem; // 20px
 
-// Headings 
+// Headings
 $size-h1: 2rem; // 32px
 $size-h2: 1.75rem; // 28px
 $size-h3: 1.5rem; // 24px
@@ -40,19 +40,19 @@ $max-content-width: $screen-1280 + (24px * 2);
 
 // Themes
 $themes: (
-    'light': light.$colors,
-    'dark': dark.$colors,
-    'pantone': pantone.$colors,
-    'blueberry_dark': blueberry_dark.$colors,
+  'light': light.$colors,
+  'dark': dark.$colors,
+  'pantone': pantone.$colors,
+  'blueberry_dark': blueberry_dark.$colors,
 );
 
 @each $theme-name, $theme-vars in $themes {
-    $colors: $theme-vars;
+  $colors: $theme-vars;
 
-    .#{$theme-name} {
-        // Variables for each color
-        @each $name, $color in $colors {
-            --color-#{$name}: #{$color};
-        }
+  .#{$theme-name} {
+    // Variables for each color
+    @each $name, $color in $colors {
+      --color-#{$name}: #{$color};
     }
+  }
 }

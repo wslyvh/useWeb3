@@ -1,37 +1,37 @@
 @use 'assets/styles/variables.scss' as *;
 
 .container {
-    h3 {
-        margin-bottom: $gap-16;
+  h3 {
+    margin-bottom: $gap-16;
+  }
+
+  border-radius: $gap-8;
+  background: var(--color-primary-100);
+  padding: $gap-16 $gap-40;
+  text-align: center;
+
+  @media (max-width: $screen-640) {
+    padding: $gap-16 $gap-16;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    input {
+      padding: $gap-8;
+      margin-right: $gap-8;
+      width: 100%;
+      outline: none;
     }
 
-    border-radius: $gap-8;
-    background: var(--color-primary-100);
-    padding: $gap-16 $gap-40;
-    text-align: center;
+    @media (max-width: $screen-480) {
+      flex-wrap: wrap;
 
-    @media (max-width: $screen-640) {
-        padding: $gap-16 $gap-16;
+      input {
+        margin-right: 0;
+      }
     }
-
-    .row {
-        display: flex;
-        justify-content: center;
-        flex-wrap: nowrap;
-
-        input {
-            padding: $gap-8;
-            margin-right: $gap-8;
-            width: 100%;
-            outline: none;
-        }
-
-        @media (max-width: $screen-480) {
-            flex-wrap: wrap;
-
-            input {
-                margin-right: 0;
-            }
-        }
-    }
+  }
 }
