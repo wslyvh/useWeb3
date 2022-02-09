@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import styles from './main.module.scss'
 import { Sitenav } from 'components/sitenav'
 import { Link } from 'components/link'
@@ -6,6 +6,7 @@ import { Newsletter } from 'components/newsletter'
 import Fab from 'components/fab'
 import MobileNav from 'components/mobileNav'
 import { Donate } from 'components/donate'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 type Props = {
   title?: string
@@ -15,22 +16,38 @@ type Props = {
 
 export function Main(props: Props) {
   const [isMobileNavOpen, setMobileNav] = useState(false)
+  const [className, setClassName] = useState('')
+  const [theme, setTheme] = useLocalStorage('SITE_THEME', 'light')
   const buttonRef = useRef<HTMLButtonElement>(null)
   const handleCLick = () => {
     setMobileNav((state) => !state)
   }
   const title = props.title ?? 'useWeb3'
 
-  let className = `${styles.container}`
-  if (props.className) className += ` ${props.className}`
+  useEffect(() => {
+    if (props.className) setClassName(`${styles.container} ${props.className} ${theme}`)
+  }, [theme])
 
   return (
     <div className={className}>
       <aside className={styles.sitenav}>
         <Sitenav />
+        <select name="theme_switcher" value={theme} className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="pantone">Pantone</option>
+          <option value="blueberry_dark">Blueberry Dark</option>
+        </select>
       </aside>
       <aside className={styles.mobileSitenav}>
         <MobileNav isOpen={isMobileNavOpen} />
+
+        {isMobileNavOpen && <select name="theme_switcher" value={theme} className={styles.themeSwitcher} onChange={(e) => setTheme(e.target.value)}>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="pantone">Pantone</option>
+          <option value="blueberry_dark">Blueberry Dark</option>
+        </select>}
       </aside>
       <main className={styles.content}>
         <div className={styles.inner}>

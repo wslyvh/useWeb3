@@ -5,18 +5,19 @@
     font-weight: $font-normal;
     font-size: $size-16;
     line-height: 1.25rem;
-    color: $color-neutral;
-    
+    color: var(--color-neutral);
+    --block-background-color: var(--color-card-bg-color);
+
     .title {
-        color: $color-neutral;
+        color: var(--color-card-title-text);
         padding: $gap-8 0;
-        border-bottom: 3px dotted $color-primary-100;
+        border-bottom: 3px dotted var(--color-primary-100);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
 
         &:hover {
-            color: $color-neutral-500;
+            color: var(--color-neutral-500);
         }
     }
 
@@ -30,10 +31,11 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: var(--color-card-title-text);
     }
 
-    .author { 
-        color: $color-neutral-500;
+    .author {
+        color: var(--color-card-author-color);
         font-size: smaller;
     }
 
@@ -43,9 +45,9 @@
         align-items: center;
     }
 
-    .details { 
+    .details {        
         font-size: smaller;
-        color: $color-neutral;
+        color: var(--color-card-title-text);
     }
 }
 
@@ -57,5 +59,4 @@
         height: 1.5rem * 2;
         -webkit-line-clamp: 2;
     }
-
 }

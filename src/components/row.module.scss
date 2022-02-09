@@ -5,21 +5,21 @@
     font-weight: $font-normal;
     font-size: $size-16;
     line-height: 1.25rem;
-    color: $color-neutral;
+    color: var(--color-neutral);
 
     display: flex;
     flex-direction: column;
     
     .title {
-        color: $color-neutral;
+        color: var(--color-neutral);
         padding: $gap-8 0;
-        border-bottom: 3px dotted $color-primary-100;
+        border-bottom: 3px dotted var(--color-primary-100);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
 
         &:hover {
-            color: $color-neutral-500;
+            color: var(--color-neutral-500);
         }
     }
 
@@ -57,8 +57,8 @@
         margin-right: $gap-8;
     }
 
-    .muted { 
-        color: $color-neutral-500;
+    .muted {
+        color: var(--color-neutral-500);
         font-size: smaller;
     }
 }
