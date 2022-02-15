@@ -29,7 +29,7 @@ interface Params extends ParsedUrlQuery {
 export default function Index(props: Props) {
   const router = useRouter()
 
-  if (!props.category && router.asPath.endsWith('-jobs')) {
+  if ((router.query?.category as string).endsWith('-jobs')) {
     return (
       <NavigationProvider categories={props.categories}>
         <SEO
