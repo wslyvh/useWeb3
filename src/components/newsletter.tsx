@@ -42,11 +42,8 @@ export function Newsletter(props: Props) {
           </div>
           <div>
             <p>
-              By subscribing, you agree with Revue’s{' '}
-              <Link href="https://www.getrevue.co/terms">Terms of Service</Link>{' '}
-              and{' '}
-              <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>
-              .
+              By subscribing, you agree with Revue’s <Link href="https://www.getrevue.co/terms">Terms of Service</Link>{' '}
+              and <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>.
             </p>
           </div>
         </div>
