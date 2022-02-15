@@ -9,7 +9,7 @@ import { Job } from 'types/job'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Departments } from './departments'
-import { DEPARTMENTS } from 'utils/jobs'
+import { DEPARTMENTS, getApplicationUrl } from 'utils/jobs'
 
 interface Props {
   jobs: Array<Job>
@@ -72,7 +72,7 @@ export function JobsOverview(props: Props) {
                     date={moment(i.updated).fromNow(true)}
                     author={i.company.title}
                     authorUrl={i.company.id}
-                    url={`${i.url}?utm_source=useWeb3`}
+                    url={getApplicationUrl(i.url)}
                     imageUrl={i.company.logo}
                     featured={i.featured}
                   />

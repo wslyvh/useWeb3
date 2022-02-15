@@ -16,6 +16,7 @@ import { Company } from 'types/company'
 import { marked } from 'marked'
 import { MarkdownContentService } from 'services/content'
 import { LinkButton } from 'components/link-button'
+import { getApplicationUrl } from 'utils/jobs'
 
 interface Props {
   categories: Array<Category>
@@ -72,7 +73,7 @@ export default function Index(props: Props) {
                   date={moment(i.updated).fromNow()}
                   author={i.company.title}
                   authorUrl={i.company.id}
-                  url={`${i.url}?utm_source=useWeb3`}
+                  url={getApplicationUrl(i.url)}
                   imageUrl={i.company.logo}
                   featured={i.featured}
                 />

@@ -16,6 +16,7 @@ import { Link } from 'components/link'
 import { marked } from 'marked'
 import he from 'he'
 import { MarkdownContentService } from 'services/content'
+import { getApplicationUrl } from 'utils/jobs'
 
 interface Props {
   categories: Array<Category>
@@ -54,7 +55,7 @@ export default function Index(props: Props) {
         </p>
 
         <article className={styles.website}>
-          <Link href={`${props.job.url}?utm_source=useWeb3`}>
+          <Link href={getApplicationUrl(props.job.url)}>
             <span className="accent block">Apply to job &raquo;</span>
           </Link>
         </article>

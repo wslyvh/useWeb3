@@ -99,3 +99,11 @@ export function getTags(value: string) {
 
   return tags
 }
+
+export function getApplicationUrl(url: string) {
+  if (url.startsWith('mailto:')) { 
+    return url
+  }
+
+  return `${url}?utm_source=useweb3.xyz&ref=useweb3.xyz`
+}
