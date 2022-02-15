@@ -66,20 +66,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const categories = await service.GetCategories()
 
   return {
-    paths: [...categories.map((i) => {
-      return {
-        params: { category: i.id },
-      }
-    }),
-    // Adding filtered job pages
-    { params: { category: 'engineering-jobs' } },
-    { params: { category: 'product-jobs' } },
-    { params: { category: 'sales-jobs' } },
-    { params: { category: 'marketing-jobs' } },
-    { params: { category: 'people-jobs' } },
-    { params: { category: 'operations-jobs' } },
-    { params: { category: 'non-tech-jobs' } },
-    { params: { category: 'remote-web3-jobs' } }
+    paths: [
+      ...categories.map((i) => {
+        return {
+          params: { category: i.id },
+        }
+      }),
+      // Adding filtered job pages
+      { params: { category: 'engineering-jobs' } },
+      { params: { category: 'product-jobs' } },
+      { params: { category: 'sales-jobs' } },
+      { params: { category: 'marketing-jobs' } },
+      { params: { category: 'people-jobs' } },
+      { params: { category: 'operations-jobs' } },
+      { params: { category: 'non-tech-jobs' } },
+      { params: { category: 'remote-web3-jobs' } },
     ].flat(),
     fallback: false,
   }
@@ -100,8 +101,9 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
         key: categoryId,
         categories,
         items: new Array<ContentItem>(),
-        jobs: remote ? jobs.filter(i => i.remote) :
-          jobs.filter(i => i.department.toLowerCase() === department.toLowerCase())
+        jobs: remote
+          ? jobs.filter((i) => i.remote)
+          : jobs.filter((i) => i.department.toLowerCase() === department.toLowerCase()),
       },
       revalidate: DEFAULT_REVALIDATE_PERIOD,
     }
@@ -125,7 +127,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       categories,
       category,
       items,
-      jobs: new Array<Job>()
+      jobs: new Array<Job>(),
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }

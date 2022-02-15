@@ -25,7 +25,7 @@ const engineering = [
   'technical',
   'technician',
   'coder',
-  'evangelist'
+  'evangelist',
 ]
 
 // Product & Design => Prioritize Development
@@ -92,7 +92,7 @@ export function getJobDepartment(value: string): string {
   return 'Other'
 }
 
-export function getJobFilter(value: string) { }
+export function getJobFilter(value: string) {}
 
 export function getTags(value: string) {
   const tags = new Array<string>()

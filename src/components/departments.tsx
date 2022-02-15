@@ -17,9 +17,7 @@ export function Departments(props: Props) {
 
         return (
           <li key={id} className="block fixed">
-            <Link href={`/${id}-jobs`}>
-              {i}
-            </Link>
+            <Link href={`/${id}-jobs`}>{i}</Link>
           </li>
         )
       })}
