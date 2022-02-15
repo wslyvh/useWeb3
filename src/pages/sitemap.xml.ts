@@ -2,6 +2,7 @@ import { SITE_URL } from 'utils/constants'
 import { JobService } from 'services/jobs'
 import slugify from 'slugify'
 import { MarkdownContentService } from 'services/content'
+import { DEPARTMENTS } from 'utils/jobs'
 
 const Sitemap = () => {}
 
@@ -70,7 +71,7 @@ export const getServerSideProps = async ({ res }: any) => {
                 <loc>${baseUrl}jobs</loc>
                 <lastmod>${currentDate}</lastmod>
                 <changefreq>daily</changefreq>
-                <priority>0.8</priority>
+                <priority>1.0</priority>
             </url>
             ${companies
               .map((i) => {
@@ -80,6 +81,17 @@ export const getServerSideProps = async ({ res }: any) => {
                         <lastmod>${currentDate}</lastmod>
                         <changefreq>daily</changefreq>
                         <priority>0.7</priority>
+                    </url>`
+              })
+              .join('')}
+            ${DEPARTMENTS
+              .map((i) => {
+                return `
+                    <url>
+                        <loc>${baseUrl}/${i.toLowerCase()}-jobs</loc>
+                        <lastmod>${currentDate}</lastmod>
+                        <changefreq>daily</changefreq>
+                        <priority>0.8</priority>
                     </url>`
               })
               .join('')}

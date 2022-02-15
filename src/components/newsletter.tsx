@@ -1,5 +1,6 @@
 import { usePlausible } from 'next-plausible'
 import React from 'react'
+import { Link } from 'components/link'
 import styles from './newsletter.module.scss'
 
 interface Props {
@@ -42,13 +43,9 @@ export function Newsletter(props: Props) {
           <div>
             <p>
               By subscribing, you agree with Revue’s{' '}
-              <a target="_blank" href="https://www.getrevue.co/terms">
-                Terms of Service
-              </a>{' '}
+              <Link href="https://www.getrevue.co/terms">Terms of Service</Link>{' '}
               and{' '}
-              <a target="_blank" href="https://www.getrevue.co/privacy">
-                Privacy Policy
-              </a>
+              <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>
               .
             </p>
           </div>
