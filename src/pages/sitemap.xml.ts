@@ -87,7 +87,7 @@ export const getServerSideProps = async ({ res }: any) => {
             ${DEPARTMENTS.map((i) => {
               return `
                     <url>
-                        <loc>${baseUrl}/${i.toLowerCase()}-jobs</loc>
+                        <loc>${baseUrl}${i.toLowerCase()}-jobs</loc>
                         <lastmod>${currentDate}</lastmod>
                         <changefreq>daily</changefreq>
                         <priority>0.8</priority>
