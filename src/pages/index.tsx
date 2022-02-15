@@ -10,6 +10,7 @@ import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
+import { Link } from 'components/link'
 
 interface Props {
   categories: Array<Category>
@@ -26,14 +27,8 @@ export default function Index(props: Props) {
       <MainLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 is a learning platform for developers to explore and learn about Web3. Whether youre a new dev
-            getting your hands dirty for the first time, or a seasoned developer making the transition into the Web3
-            space.
-          </p>
-          <p>
-            Explore the latest resources, tutorials, challenges, tools, courses and boilerplates and start learning.
-            Once you&apos;re ready, browse the job board to land a job at some of the leading companies that work on
-            core, open-source infrastructure, products, tools, frameworks, DAOs, etc.
+            useWeb3 is a platform for developers to explore and learn about Web3. Whether youre a new dev getting your
+            hands dirty for the first time, or a seasoned developer making the transition into the Web3 space.
           </p>
           <p>
             <strong>Explore. Learn. Build.</strong>
@@ -41,10 +36,20 @@ export default function Index(props: Props) {
         </article>
 
         <article>
-          <h2>How would you like to get started?</h2>
+          <h2>Web3 Jobs</h2>
           <p>
-            Get familiar with the core concepts and fundamentals, or start learning through tutorials, courses, books,
-            videos or code challenges.
+            Browse the job board to find your Web3, Solidity or blockchain jobs at one of the leading companies that
+            work on core, open-source infrastructure, products, tools, frameworks and DAOs.
+          </p>
+
+          <Link href="/jobs">Browse all Web3 jobs</Link>
+        </article>
+
+        <article>
+          <h2>Start learning</h2>
+          <p>
+            Explore the latest resources and get familiar with the core concepts and fundamentals. Learning from
+            tutorials, courses, books, videos or code challenges and start building!
           </p>
         </article>
 
