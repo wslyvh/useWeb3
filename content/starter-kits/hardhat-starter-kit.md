@@ -5,7 +5,6 @@ authors: ["@chainlinklabs"]
 tags: ["Smart Contracts", "Oracles"]
 languages: ["Solidity", "JavaScript"]
 url: "https://github.com/smartcontractkit/hardhat-starter-kit"
-featured: true
 dateAdded: 2022-01-25
 level: "All"
 ---
