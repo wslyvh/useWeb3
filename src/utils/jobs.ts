@@ -101,7 +101,7 @@ export function getTags(value: string) {
 }
 
 export function getApplicationUrl(url: string) {
-  if (url.startsWith('mailto:')) { 
+  if (url.startsWith('mailto:')) {
     return url
   }
 
