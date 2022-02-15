@@ -54,7 +54,7 @@ export default function Index(props: Props) {
         </p>
 
         <article className={styles.website}>
-          <Link href={props.job.url}>
+          <Link href={`${props.job.url}?utm_source=useWeb3`}>
             <span className="accent block">Apply to job &raquo;</span>
           </Link>
         </article>
