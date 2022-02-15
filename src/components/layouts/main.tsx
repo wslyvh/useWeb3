@@ -9,6 +9,7 @@ import useLocalStorage from '../../hooks/useLocalStorage'
 
 type Props = {
   title?: string
+  hideNewsletter?: boolean
   className?: string
   children: ReactNode
 }
@@ -68,7 +69,7 @@ export function Main(props: Props) {
 
           {props.children}
 
-          <Newsletter className={styles.newsletter} />
+          {!props.hideNewsletter && <Newsletter className={styles.newsletter} />}
 
           <footer className={styles.footer}>
             <p>

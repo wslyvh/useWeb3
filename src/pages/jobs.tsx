@@ -15,6 +15,7 @@ import Pagination from 'next-pagination'
 import { useRouter } from 'next/dist/client/router'
 import { SEO } from 'components/SEO'
 import { MarkdownContentService } from 'services/content'
+import { Newsletter } from 'components/newsletter'
 
 interface Props {
   categories: Array<Category>
@@ -37,10 +38,10 @@ export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
       <SEO
-        title="Find Web3 jobs"
+        title="Web3, Blockchain and Crypto jobs"
         description="Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem."
       />
-      <MainLayout className={styles.container} title="Web3 Jobs">
+      <MainLayout className={styles.container} title="Web3 Jobs" hideNewsletter>
         <article>
           <p>
             Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3
@@ -49,28 +50,15 @@ export default function Index(props: Props) {
         </article>
 
         <article>
-          <h2>Add your company</h2>
+          <h2>Post a job</h2>
           <p>
-            You can use the <Link href="https://airtable.com/shrIbgc0llBQFpo7G">Company form</Link> to submit your
-            company profile for review.
+            Hiring for Web3 jobs? <Link href="https://airtable.com/shrIbgc0llBQFpo7G">Add your company</Link> and <Link href="https://airtable.com/shrY9atkDkPKKd03Z">post your job</Link> for review.
           </p>
         </article>
 
-        <article>
-          <h2>Add your job(s)</h2>
-          <p>
-            You can use the <Link href="https://airtable.com/shrY9atkDkPKKd03Z">Jobs form</Link> to submit your job(s)
-            for review. Please make sure your company profile is submitted and reviewed first!
-          </p>
-        </article>
+        <Newsletter className={styles.newsletter} title='' description='Receive the latest jobs in your inbox.' />
 
-        <article>
-          <p>
-            useWeb3 has a technical audience, software engineers, builders, product developers, designers, researchers
-            and makers. It will only list companies and jobs that are aligned with the values of Web3 and are
-            contributing to core, open-source infrastructure, products, tools, frameworks and DAOs.{' '}
-          </p>
-        </article>
+        {/* Add filters */}
 
         <Pagination total={props.jobs.length} />
 
