@@ -4,6 +4,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
+import { getJobDepartment } from 'utils/jobs'
 
 export class AirtableJobService implements JobServiceInterface {
   private client: Airtable
@@ -63,9 +64,12 @@ export class AirtableJobService implements JobServiceInterface {
           let job = {
             id: source.fields['Slug'],
             title: source.fields['Title'],
+            department: getJobDepartment(source.fields['Title'] as string),
             description: source.fields['Description'],
             body: source.fields['Body'],
             location: source.fields['Location'],
+            remote: source.fields['Remote'] ?? false,
+            parttime: source.fields['Parttime'] ?? false,
             company: {
               id: (source.fields['Company Slug'] as string[])[0],
               title: (source.fields['Company Name'] as string[])[0],

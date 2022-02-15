@@ -2,8 +2,8 @@ import moment from 'dayjs'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_FILTER, JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
-import { isCacheExpired, removeHtml } from 'utils/helpers'
+import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
+import { getJobDepartment } from 'utils/jobs'
 
 const map = new Map()
 
@@ -33,9 +33,11 @@ export class LeverJobService implements JobServiceInterface {
           return {
             id: i.id,
             title: i.text,
+            department: getJobDepartment(i.text),
             description: i.descriptionPlain,
             body: i.description,
             location: i.categories?.location,
+            remote: i.categories?.location.toLowerCase().includes('remote') ?? false,
             company: {
               id: companyId,
               title: companyId,
@@ -45,7 +47,6 @@ export class LeverJobService implements JobServiceInterface {
             updated: new Date(i.createdAt).getTime(),
           } as Job
         })
-        .filter((job: Job) => JOBS_FILTER.some((f) => job.title.toLowerCase().includes(f)))
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)

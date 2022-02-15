@@ -21,6 +21,8 @@ import {
   WrkJobService,
 } from './jobs/index'
 
+const cache = new Map()
+
 export class JobService implements JobServiceInterface {
   public async GetCompany(id: string): Promise<Company | undefined> {
     try {
@@ -33,6 +35,11 @@ export class JobService implements JobServiceInterface {
   }
 
   public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
+    const cacheKey = `jobs.getjobs:${companyId ?? 'all'}`
+    if (cache.has(cacheKey)) {
+      return cache.get(cacheKey)
+    }
+
     let jobs = new Array<Job>()
     const airtableService = new AirtableJobService()
     const angelService = new AngelJobService()
@@ -96,10 +103,13 @@ export class JobService implements JobServiceInterface {
         ).flat()
       }
 
-      return jobs
+      const filtered = jobs
         .filter((i) => (companyId ? i.company.id === companyId : true))
         .sort((a, b) => b.updated - a.updated)
         .sort((a, b) => (a.featured ? (b.featuredUntil ?? 0) - (a.featuredUntil ?? 0) : 1))
+
+      cache.set(cacheKey, filtered)
+      return filtered
     } catch (e) {
       console.log('GetJobs', 'Unable to fetch jobs', companyId)
       console.error(e)

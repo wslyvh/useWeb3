@@ -1,0 +1,26 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  h2 {
+    margin-bottom: $gap-8;
+  }
+
+  // Company / Jobs
+  .body {
+    ul {
+      margin-left: $gap-24;
+      margin-bottom: $gap-16;
+    }
+  }
+
+  .newsletter {
+    margin: $gap-8 0;
+    padding: $gap-8;
+  }
+
+  .filters { 
+    display: flex;
+    justify-content: center;
+    margin: $gap-8 0;
+  }
+}

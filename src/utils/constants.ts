@@ -9,29 +9,7 @@ export const DOMAIN = 'useweb3.xyz'
 export const DEFAULT_REVALIDATE_PERIOD = 3600
 
 export const JOBS_SINCE_LAST_UPDATED = 60
-export const JOBS_AMOUNT_PER_COMPANY = 5
-export const JOBS_FILTER = [
-  'ethereum',
-  'web3',
-  'developer',
-  'engineer',
-  'hacker',
-  'evangelist',
-  'software',
-  'fullstack',
-  'full-stack',
-  'full stack',
-  'blockchain',
-  'solidity',
-  'protocol',
-  'engineering',
-  'product',
-  'security',
-  'technical',
-  'smart contract',
-  'smart-contract',
-  'devops',
-]
+export const JOBS_AMOUNT_PER_COMPANY = 20
 export const JOBS_GREENHOUSE = [
   'consensys',
   'consensysinc',
@@ -60,7 +38,6 @@ export const JOBS_LEVER = [
   'Mycelium',
   'chainlink',
   'RabbitHoleStudios',
-  'coin-gecko',
   'with-foundation',
   'Rarible',
   'defialliance',

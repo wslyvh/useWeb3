@@ -2,8 +2,9 @@ import moment from 'dayjs'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_FILTER, JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
+import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { removeHtml } from 'utils/helpers'
+import { getJobDepartment } from 'utils/jobs'
 import jobData from '../../../data/jobs.json'
 
 export class AngelJobService implements JobServiceInterface {
@@ -34,6 +35,7 @@ export class AngelJobService implements JobServiceInterface {
         return {
           id: i.id,
           title: i.title,
+          department: getJobDepartment(i.title),
           description: removeHtml(i.description),
           body: i.description,
           location: i.location,
@@ -47,7 +49,6 @@ export class AngelJobService implements JobServiceInterface {
           updated: new Date(i.published_on).getTime(),
         } as Job
       })
-      .filter((job: Job) => JOBS_FILTER.some((f) => job.title.toLowerCase().includes(f)))
       .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
       .sort((a: Job, b: Job) => b.updated - a.updated)
       .slice(0, maxItems ?? 100)
