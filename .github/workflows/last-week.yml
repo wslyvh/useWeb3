@@ -1,12 +1,12 @@
-name: Top Resources tweet
+name: Last week
 
 on:
   schedule:
-    - cron: "0 15 * * 6"
+    - cron: "0 14 * * 5"
 
 jobs:
   build:
-    name: Tweet most popular resources
+    name: Tweet about last week
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Run Twitter bot
-        run: yarn twitter:top
+        run: yarn twitter:popular
         env:
           PLAUSIBLE_API_KEY: ${{ secrets.PLAUSIBLE_API_KEY }}
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
