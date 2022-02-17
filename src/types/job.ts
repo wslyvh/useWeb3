@@ -20,7 +20,15 @@ export interface Job {
 export const defaultJob = {
   id: '',
   title: '',
-  department: 'Engineering' as 'Engineering' | 'Product' | 'Sales' | 'Marketing' | 'People' | 'Operations' | 'Non-Tech' | 'Other',
+  department: 'Engineering' as
+    | 'Engineering'
+    | 'Product'
+    | 'Sales'
+    | 'Marketing'
+    | 'People'
+    | 'Operations'
+    | 'Non-Tech'
+    | 'Other',
   description: '',
   body: '',
   location: 'Remote',

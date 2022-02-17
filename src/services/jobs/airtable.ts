@@ -61,7 +61,7 @@ export class AirtableJobService implements JobServiceInterface {
 
       return records
         .map((source) => {
-          const applicationUrl = source.fields['External Url'] as string ?? ''
+          const applicationUrl = (source.fields['External Url'] as string) ?? ''
           let job = {
             id: source.fields['Slug'],
             title: source.fields['Title'],
@@ -89,7 +89,9 @@ export class AirtableJobService implements JobServiceInterface {
                   ? (source.fields['Company Logo'] as any[])[0].url
                   : '',
             },
-            url: isEmail(applicationUrl) ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)` : applicationUrl,
+            url: isEmail(applicationUrl)
+              ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)`
+              : applicationUrl,
             updated: new Date(source.fields['Updated'] as string).getTime(),
             featured: false,
           } as Job

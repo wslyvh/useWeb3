@@ -35,17 +35,17 @@ export class AirtableService {
 
   public async CreateCompany(company: Company): Promise<string> {
     const response = await this.base('Companies').create({
-      "Name": company.title,
-      "Description": company.description,
-      "Body": company.body,
-      "Website": company.website,
-      "Twitter": company.twitter,
-      "Github": company.github,
-      "Board Url": company.externalJobBoard,
-      "Logo": [
+      Name: company.title,
+      Description: company.description,
+      Body: company.body,
+      Website: company.website,
+      Twitter: company.twitter,
+      Github: company.github,
+      'Board Url': company.externalJobBoard,
+      Logo: [
         {
-          "url": company.logo
-        } as any
+          url: company.logo,
+        } as any,
       ],
     })
 
@@ -59,19 +59,17 @@ export class AirtableService {
 
   public async CreateJob(job: Job): Promise<string> {
     const response = await this.base('Jobs').create({
-      "Title": job.title,
-      "Body": job.body,
-      "Description": job.description,
-      "Location": job.location,
-      "External Url": job.url,
-      "Active": false,
-      "Remote": job.remote,
-      "Department": job.department,
-      "Min Salary": job.minSalary,
-      "Max Salary": job.maxSalary,
-      "Company": [
-        job.company.id
-      ],
+      Title: job.title,
+      Body: job.body,
+      Description: job.description,
+      Location: job.location,
+      'External Url': job.url,
+      Active: false,
+      Remote: job.remote,
+      Department: job.department,
+      'Min Salary': job.minSalary,
+      'Max Salary': job.maxSalary,
+      Company: [job.company.id],
     })
 
     if (!response.id) {
@@ -84,14 +82,12 @@ export class AirtableService {
 
   public async CreateOrder(order: Order): Promise<string> {
     const response = await this.base('Orders').create({
-      "Name": order.name,
-      "Email": order.email,
-      "Address": order.address,
-      "Type": order.type,
-      "Tx": order.tx,
-      "Jobs": [
-        order.jobId
-      ]
+      Name: order.name,
+      Email: order.email,
+      Address: order.address,
+      Type: order.type,
+      Tx: order.tx,
+      Jobs: [order.jobId],
     })
 
     if (!response.id) {
@@ -108,9 +104,7 @@ export class AirtableService {
       title: source.fields['Name'],
       description: source.fields['Description'],
       body: source.fields['Body'],
-      logo: (source.fields['Logo'] as any[])?.length > 0
-        ? (source.fields['Logo'] as any[])[0].url
-        : '',
+      logo: (source.fields['Logo'] as any[])?.length > 0 ? (source.fields['Logo'] as any[])[0].url : '',
       website: source.fields['Website'],
       twitter: source.fields['Twitter'],
       github: source.fields['Github'],

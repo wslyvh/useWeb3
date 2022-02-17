@@ -15,5 +15,5 @@ export const defaultOrder = {
   address: '',
   type: 'Featured' as 'Standard' | 'Logo' | 'Featured',
   tx: '',
-  jobId: ''
+  jobId: '',
 }

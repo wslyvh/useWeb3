@@ -98,23 +98,33 @@ export default function Index(props: Props) {
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={`Post Web3 jobs`} description={`Reach hundreds of thousands of Web3, Solidity and blockchain developers, designers, researchers and other builders.`} />
+      <SEO
+        title={`Post Web3 jobs`}
+        description={`Reach hundreds of thousands of Web3, Solidity and blockchain developers, designers, researchers and other builders.`}
+      />
 
       <MainLayout className={styles.container} title={'Post Job'} hideNewsletter>
-        <form onSubmit={handleSubmit} role='form'>
-          {step === 1 && <CompanyForm company={company} onChange={i => setCompany(i)} />}
-          {step === 2 && <JobForm job={job} onChange={i => setJob(i)} />}
-          {step === 3 && <OrderForm order={order} onChange={i => setOrder(i)} />}
+        <form onSubmit={handleSubmit} role="form">
+          {step === 1 && <CompanyForm company={company} onChange={(i) => setCompany(i)} />}
+          {step === 2 && <JobForm job={job} onChange={(i) => setJob(i)} />}
+          {step === 3 && <OrderForm order={order} onChange={(i) => setOrder(i)} />}
           {step === 4 && <Finished company={company} job={job} order={order} />}
 
-          {step < 4 && <button type="submit" className="accent block searchButton">Next &raquo;</button>}
-          {step === 4 && <button type="button" className="accent block searchButton" onClick={reset}>Post another job</button>}
+          {step < 4 && (
+            <button type="submit" className="accent block searchButton">
+              Next &raquo;
+            </button>
+          )}
+          {step === 4 && (
+            <button type="button" className="accent block searchButton" onClick={reset}>
+              Post another job
+            </button>
+          )}
         </form>
       </MainLayout>
     </NavigationProvider>
   )
 }
-
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const service = new MarkdownContentService()

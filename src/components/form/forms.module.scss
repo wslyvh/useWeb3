@@ -14,7 +14,8 @@
     margin-bottom: $gap-16;
   }
 
-  input, textarea {
+  input,
+  textarea {
     padding: $gap-8;
     width: 100%;
     outline: none;
@@ -24,7 +25,7 @@
       background: #dddddd;
     }
   }
-  
+
   .dropdown {
     width: 100%;
     outline: none;
@@ -46,7 +47,7 @@
     }
   }
 
-  .payment { 
+  .payment {
     @extend .group;
   }
 }
@@ -59,7 +60,7 @@
 }
 
 .search {
-  .container { 
+  .container {
     position: relative;
   }
 
