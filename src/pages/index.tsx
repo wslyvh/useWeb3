@@ -38,10 +38,12 @@ export default function Index(props: Props) {
         <article>
           <h2>Web3 Jobs</h2>
           <p>
-            <Link href="/jobs">Browse all jobs</Link> to find your Web3, Solidity or blockchain jobs at one of the leading companies that
-            work on core, open-source infrastructure, products, tools, frameworks and DAOs. 
+            <Link href="/jobs">Browse all jobs</Link> to find your Web3, Solidity or blockchain jobs at one of the
+            leading companies that work on core, open-source infrastructure, products, tools, frameworks and DAOs.
           </p>
-          <p>Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link></p>
+          <p>
+            Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
+          </p>
         </article>
 
         <article>
