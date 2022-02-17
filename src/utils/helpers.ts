@@ -24,3 +24,8 @@ export function removeHtml(value: string) {
     .replace(/(\r\n|\n|\r)/gm, ' ')
     .replace(/\s\s+/g, ' ')
 }
+
+export function isEmail(text: string): boolean {
+  var regex = /\S+@\S+\.\S+/
+  return regex.test(text)
+}

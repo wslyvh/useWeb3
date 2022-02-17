@@ -1,0 +1,88 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  .form {
+    max-width: 60%;
+
+    @media (max-width: $screen-1280) {
+      max-width: 640px;
+    }
+  }
+
+  ul {
+    margin-left: $gap-24;
+    margin-bottom: $gap-16;
+  }
+
+  input, textarea {
+    padding: $gap-8;
+    width: 100%;
+    outline: none;
+
+    &:disabled,
+    &:read-only {
+      background: #dddddd;
+    }
+  }
+  
+  .dropdown {
+    width: 100%;
+    outline: none;
+    margin-top: $gap-8;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $gap-16;
+
+    .header {
+      font-weight: $font-bold;
+    }
+
+    .info {
+      color: var(--color-neutral-500);
+      font-size: smaller;
+    }
+  }
+
+  .payment { 
+    @extend .group;
+  }
+}
+
+.pricing {
+  border-radius: $gap-8;
+  background: var(--color-primary-100);
+  padding: $gap-8;
+  margin-bottom: $gap-16;
+}
+
+.search {
+  .container { 
+    position: relative;
+  }
+
+  .dropdown {
+    z-index: 2;
+    list-style-type: none;
+    position: absolute;
+    width: 100%;
+    background: #ffffff;
+    border: 2px solid var(--block-text-color);
+    border-radius: $gap-8;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+
+    li {
+      padding: $gap-8;
+      position: relative;
+
+      &:hover {
+        background: var(--color-neutral-100);
+        border-radius: $gap-8;
+      }
+    }
+  }
+}

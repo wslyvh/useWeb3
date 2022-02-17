@@ -4,6 +4,7 @@ import styles from './dropdown.module.scss'
 
 interface Props {
   items: Array<string>
+  selected?: string
   className?: string
   onSelect: (value: string) => void // eslint-disable-line no-unused-vars
 }
@@ -11,7 +12,7 @@ interface Props {
 export function Dropdown(props: Props) {
   const ref = useRef(null)
   const [open, setOpen] = useState(false)
-  const [selected, setSelected] = useState(props.items[0])
+  const [selected, setSelected] = useState(props.selected ?? props.items[0])
   useOnOutsideClick(ref, () => setOpen(false))
 
   let className = `block round ${styles.container}`

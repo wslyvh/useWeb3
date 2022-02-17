@@ -1,10 +1,9 @@
 import Airtable, { FieldSet } from 'airtable'
-import { Category } from 'types/category'
-import { ContentItem } from 'types/content-item'
-import { Count } from 'types/count'
-import { ItemServiceInterface } from 'types/services/item-service'
+import { Company } from 'types/company'
+import { Job } from 'types/job'
+import { Order } from 'types/order'
 
-export class AirtableItemService implements ItemServiceInterface {
+export class AirtableService {
   private client: Airtable
   private base: Airtable.Base
 
@@ -17,170 +16,105 @@ export class AirtableItemService implements ItemServiceInterface {
     this.base = this.client.base(process.env.AIRTABLE_API_BASE ?? '')
   }
 
-  public async GetCategory(id: string): Promise<Category | undefined> {
+  public async GetCompanies(): Promise<Array<Company>> {
     try {
-      const records = await this.base('Category')
+      const records = await this.base('Companies')
         .select({
-          filterByFormula: `SEARCH("${id}", {Slug})`,
+          filterByFormula: `({Disabled} = FALSE())`,
         })
         .all()
 
-      return records.map((i) => this.toCategory(i)).find((i) => !!i)
+      return records.map((i) => this.toCompany(i)).sort((a, b) => a.title.localeCompare(b.title))
     } catch (e) {
-      console.log('GetCategory', 'Unable to fetch category', id)
-      console.error(e)
-    }
-  }
-
-  public async GetCategories(): Promise<Array<Category>> {
-    try {
-      const records = await this.base('Category')
-        .select({
-          filterByFormula: `({Items})`,
-        })
-        .all()
-
-      return records.map((i) => this.toCategory(i)).sort((a, b) => a.title.localeCompare(b.title))
-    } catch (e) {
-      console.log('GetCategories', 'Unable to fetch categories')
+      console.log('GetCompanies', 'Unable to fetch companies')
       console.error(e)
     }
 
     return []
   }
 
-  public async GetTags(): Promise<Array<Count>> {
-    try {
-      const records = await this.base('Items')
-        .select({
-          fields: ['Tags'],
-          filterByFormula: `AND(
-                ({Status} = 'Accepted'),
-                ({Tags})
-              )
-          `,
-        })
-        .all()
+  public async CreateCompany(company: Company): Promise<string> {
+    const response = await this.base('Companies').create({
+      "Name": company.title,
+      "Description": company.description,
+      "Body": company.body,
+      "Website": company.website,
+      "Twitter": company.twitter,
+      "Github": company.github,
+      "Board Url": company.externalJobBoard,
+      "Logo": [
+        {
+          "url": company.logo
+        } as any
+      ],
+    })
 
-      const initial: { [key: string]: number } = {}
-      const tags = records.map((i) => i.fields['Tags'] as string[])
-      const reduced = tags.flat().reduce((acc: { [key: string]: number }, tag: string) => {
-        acc[tag] ? (acc[tag] += 1) : (acc[tag] = 1)
-        return acc
-      }, initial)
-
-      return Object.keys(reduced)
-        .map((i) => {
-          return {
-            key: i,
-            count: reduced[i],
-          } as Count
-        })
-        .sort((a, b) => b.count - a.count)
-    } catch (e) {
-      console.log('GetTags', 'Unable to fetch tags')
-      console.error(e)
+    if (!response.id) {
+      console.log('Unable to create job')
+      return ''
     }
 
-    return []
+    return response.id
   }
 
-  public async GetItem(category: string, slug: string): Promise<ContentItem | undefined> {
-    try {
-      const records = await this.base('Items')
-        .select({
-          filterByFormula: `AND(
-                    ({Status} = 'Accepted'),
-                    ({Category Slug} = "${category}"),
-                    ({Slug} = "${slug}")
-                  )
-            `,
-        })
-        .all()
+  public async CreateJob(job: Job): Promise<string> {
+    const response = await this.base('Jobs').create({
+      "Title": job.title,
+      "Body": job.body,
+      "Description": job.description,
+      "Location": job.location,
+      "External Url": job.url,
+      "Active": false,
+      "Remote": job.remote,
+      "Department": job.department,
+      "Min Salary": job.minSalary,
+      "Max Salary": job.maxSalary,
+      "Company": [
+        job.company.id
+      ],
+    })
 
-      return records.map((i) => this.toItem(i)).find((i) => !!i)
-    } catch (e) {
-      console.log('GetItem', 'Unable to fetch item', category, slug)
-      console.error(e)
+    if (!response.id) {
+      console.log('Unable to create job')
+      return ''
     }
 
-    return undefined
+    return response.id
   }
 
-  public async GetItems(category?: string, featured?: boolean): Promise<Array<ContentItem>> {
-    try {
-      const records = await this.base('Items')
-        .select({
-          filterByFormula: `AND(
-                    ({Status} = 'Accepted')
-                    ${category ? `, ({Category Slug} = "${category}")` : ''}
-                    ${featured ? `, ({Featured})` : ''}
-                    )
-            `,
-        })
-        .all()
+  public async CreateOrder(order: Order): Promise<string> {
+    const response = await this.base('Orders').create({
+      "Name": order.name,
+      "Email": order.email,
+      "Address": order.address,
+      "Type": order.type,
+      "Tx": order.tx,
+      "Jobs": [
+        order.jobId
+      ]
+    })
 
-      return records.map((i) => this.toItem(i))
-    } catch (e) {
-      console.log('GetItems', 'Unable to fetch items', category, featured)
-      console.error(e)
+    if (!response.id) {
+      console.log('Unable to create job')
+      return ''
     }
 
-    return []
+    return response.id
   }
 
-  public async GetItemsByTag(tag: string): Promise<Array<ContentItem>> {
-    try {
-      const records = await this.base('Items')
-        .select({
-          filterByFormula: `AND(
-                    ({Status} = 'Accepted'),
-                    (FIND(", ${tag.toLowerCase()}, ", ", " & LOWER(ARRAYJOIN(Tags)) & ", ") > 0)
-                  )
-            `,
-        })
-        .all()
-
-      return records.map((i) => this.toItem(i))
-    } catch (e) {
-      console.log('GetItems', 'Unable to fetch items by tag', tag)
-      console.error(e)
-    }
-
-    return []
-  }
-
-  private toCategory(source: Airtable.Record<FieldSet>): Category {
+  private toCompany(source: Airtable.Record<FieldSet>): Company {
     return {
-      id: source.fields['Slug'],
-      title: source.fields['Title'],
-      description: source.fields['Description'] ?? '',
-      emoji: source.fields['Emoji'] ?? '',
-    } as Category
-  }
-
-  private toItem(source: Airtable.Record<FieldSet>): ContentItem {
-    let item: ContentItem = {
-      id: source.fields['Slug'],
-      title: source.fields['Title'],
+      id: source.id,
+      title: source.fields['Name'],
       description: source.fields['Description'],
-      content: source.fields['Content'],
-      authors: source.fields['Authors'] ? (source.fields['Authors'] as string[]) : [],
-      tags: source.fields['Tags'] ? (source.fields['Tags'] as string[]) : [],
-      languages: source.fields['Language'] ? (source.fields['Language'] as string[]) : [],
-      url: source.fields['Url'],
-      featured: source.fields['Featured'] ?? false,
-      category: {
-        id: source.fields['Category Slug'] ? (source.fields['Category Slug'] as string[])[0] : '',
-        title: source.fields['Category Title'] ? (source.fields['Category Title'] as string[])[0] : '',
-      },
-      dateAdded: new Date(source._rawJson.createdTime as string).getTime(),
-    } as ContentItem
-
-    if (source.fields['Level']) item.level = source.fields['Level'] as 'All' | 'Beginner' | 'Intermediate' | 'Advanced'
-    if (source.fields['Date']) item.date = new Date(source.fields['Date'] as string).getTime()
-    if (source.fields['Alternate Url']) item.alternateUrl = source.fields['Alternate Url'] as string
-
-    return item
+      body: source.fields['Body'],
+      logo: (source.fields['Logo'] as any[])?.length > 0
+        ? (source.fields['Logo'] as any[])[0].url
+        : '',
+      website: source.fields['Website'],
+      twitter: source.fields['Twitter'],
+      github: source.fields['Github'],
+      externalJobBoard: source.fields['Board Url'],
+    } as Company
   }
 }

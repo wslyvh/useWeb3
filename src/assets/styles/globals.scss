@@ -64,3 +64,8 @@ article {
   margin-bottom: $gap-16;
   color: var(--color-text);
 }
+
+.muted {
+  color: var(--color-neutral-500);
+  font-size: smaller;
+}

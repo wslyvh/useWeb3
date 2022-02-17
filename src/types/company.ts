@@ -7,4 +7,17 @@ export interface Company {
   website?: string
   twitter?: string
   github?: string
+  externalJobBoard?: string
+}
+
+export const defaultCompany = {
+  id: '',
+  title: '',
+  description: '',
+  body: '',
+  website: '',
+  twitter: '',
+  github: '',
+  externalJobBoard: '',
+  logo: '',
 }

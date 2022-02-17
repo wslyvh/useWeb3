@@ -1,0 +1,40 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+
+  .card { 
+    padding: $gap-8;
+  }
+
+  .qr {
+    display: flex;
+    justify-content: center;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: $gap-8 0;
+    width: auto;
+
+    .text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right: $gap-8;
+    }
+
+    .icon {
+      cursor: pointer;
+      font-size: $size-20;  
+      margin-right: $gap-8;
+      flex-shrink: 0;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
-import { getJobDepartment } from 'utils/jobs'
+import { isEmail } from 'utils/helpers'
 
 export class AirtableJobService implements JobServiceInterface {
   private client: Airtable
@@ -61,15 +61,15 @@ export class AirtableJobService implements JobServiceInterface {
 
       return records
         .map((source) => {
+          const applicationUrl = source.fields['External Url'] as string ?? ''
           let job = {
             id: source.fields['Slug'],
             title: source.fields['Title'],
-            department: getJobDepartment(source.fields['Title'] as string),
+            department: source.fields['Department'],
             description: source.fields['Description'],
             body: source.fields['Body'],
             location: source.fields['Location'],
             remote: source.fields['Remote'] ?? false,
-            parttime: source.fields['Parttime'] ?? false,
             company: {
               id: (source.fields['Company Slug'] as string[])[0],
               title: (source.fields['Company Name'] as string[])[0],
@@ -89,9 +89,7 @@ export class AirtableJobService implements JobServiceInterface {
                   ? (source.fields['Company Logo'] as any[])[0].url
                   : '',
             },
-            url:
-              source.fields['External Url'] ??
-              `mailto:${source.fields['Email']}?subject=Apply for ${source.fields['Title']}`,
+            url: isEmail(applicationUrl) ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)` : applicationUrl,
             updated: new Date(source.fields['Updated'] as string).getTime(),
             featured: false,
           } as Job
@@ -99,6 +97,12 @@ export class AirtableJobService implements JobServiceInterface {
           if (source.fields['Featured']) {
             job.featuredUntil = new Date(source.fields['Featured'] as string).getTime()
             job.featured = job.featuredUntil >= new Date().getTime()
+          }
+          if (source.fields['Min Salary']) {
+            job.minSalary = source.fields['Min Salary'] as number
+          }
+          if (source.fields['MMaxin Salary']) {
+            job.maxSalary = source.fields['Max Salary'] as number
           }
 
           return job

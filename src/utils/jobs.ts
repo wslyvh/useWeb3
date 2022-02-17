@@ -1,3 +1,19 @@
+export const STANDARD_PRICE = 49
+export const LOGO_PRICE = 99
+export const FEATURED_PRICE = 149
+export const DISCOUNT_PERCENTAGE = 10
+
+export function getPrice(type: string): number {
+  switch (type) {
+    case 'Logo':
+      return LOGO_PRICE
+    case 'Featured':
+      return FEATURED_PRICE
+  }
+
+  return STANDARD_PRICE
+}
+
 // Engineering & Software Development => Execute Development
 const engineering = [
   'software',
@@ -92,7 +108,7 @@ export function getJobDepartment(value: string): string {
   return 'Other'
 }
 
-export function getJobFilter(value: string) {}
+export function getJobFilter(value: string) { }
 
 export function getTags(value: string) {
   const tags = new Array<string>()

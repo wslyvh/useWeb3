@@ -44,8 +44,7 @@ export function JobsOverview(props: Props) {
       <article>
         <h2>Post a job</h2>
         <p>
-          Hiring for Web3 jobs? <Link href="https://airtable.com/shrIbgc0llBQFpo7G">Add your Web3 company</Link> and{' '}
-          <Link href="https://airtable.com/shrY9atkDkPKKd03Z">post your job</Link> for review.
+          Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
         </p>
       </article>
 
