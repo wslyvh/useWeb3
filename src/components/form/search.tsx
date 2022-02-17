@@ -1,4 +1,3 @@
-import { Link } from 'components/link'
 import { useEffect, useState } from 'react'
 import { Company, defaultCompany } from 'types/company'
 import styles from './forms.module.scss'
@@ -50,7 +49,7 @@ export function Search(props: Props) {
         Find Company
       </label>
       <span className={styles.info}>
-        If you've added your company before, you can search for it and skip this step.
+        If you&apos;ve added your company before, you can search for it and skip this step.
       </span>
 
       <div className="fixed wrapper block">

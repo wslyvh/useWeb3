@@ -2,8 +2,6 @@ import { useEtherPrice } from 'hooks/useEtherPrice'
 import { useEffect, useState } from 'react'
 import QRCode from 'react-qr-code'
 import styles from './payment.module.scss'
-import Web3Modal from 'web3modal'
-import WalletConnectProvider from '@walletconnect/web3-provider'
 import { Web3Provider } from '@ethersproject/providers'
 import { parseUnits } from '@ethersproject/units'
 
@@ -26,19 +24,12 @@ const receivingName = 'useweb3.eth'
 // }
 
 export function Payment(props: Props) {
-  const isBrowser = typeof window !== 'undefined'
-  if (!isBrowser) return <></>
-
-  // const web3Modal = new Web3Modal({
-  //     providerOptions
-  // })
+  let className = `${styles.container} fixed wrapper block`
+  if (props.className) className += ` ${props.className}`
 
   const etherPrice = useEtherPrice()
   const [priceInEther, setPriceInEther] = useState('')
   const [message, setMessage] = useState('')
-
-  let className = `${styles.container} fixed wrapper block`
-  if (props.className) className += ` ${props.className}`
 
   useEffect(() => {
     if (etherPrice > 0) {
@@ -46,36 +37,43 @@ export function Payment(props: Props) {
     }
   }, [props.price, etherPrice])
 
-  async function connectAndPay() {
-    try {
-      const instance = await web3Modal.connect()
-      const provider = new Web3Provider(instance)
-      const signer = provider.getSigner()
-      const address = await signer.getAddress()
-      const network = await provider.getNetwork()
-      if (!acceptedNetworks.some((i) => i === network.chainId)) {
-        setMessage('Please select Mainnet/Optimism/Arbitrum')
-        return
-      } else {
-        setMessage('')
-      }
+  const isBrowser = typeof window !== 'undefined'
+  if (!isBrowser) return <></>
 
-      // Send in Eth
-      const params = [
-        {
-          from: address,
-          to: receivingAddress,
-          value: parseUnits(priceInEther, 'ether').toHexString(),
-        },
-      ]
-      const tx = await provider.send('eth_sendTransaction', params)
+  // const web3Modal = new Web3Modal({
+  //     providerOptions
+  // })
 
-      // Send in DAI/USDC
-    } catch (e) {
-      if (e === 'Modal closed by user') setMessage('Connection cancelled..')
-      if (e.code === 4001) setMessage('Transaction cancelled..')
-    }
-  }
+  // async function connectAndPay() {
+  //   try {
+  //     const instance = await web3Modal.connect()
+  //     const provider = new Web3Provider(instance)
+  //     const signer = provider.getSigner()
+  //     const address = await signer.getAddress()
+  //     const network = await provider.getNetwork()
+  //     if (!acceptedNetworks.some((i) => i === network.chainId)) {
+  //       setMessage('Please select Mainnet/Optimism/Arbitrum')
+  //       return
+  //     } else {
+  //       setMessage('')
+  //     }
+
+  //     // Send in Eth
+  //     const params = [
+  //       {
+  //         from: address,
+  //         to: receivingAddress,
+  //         value: parseUnits(priceInEther, 'ether').toHexString(),
+  //       },
+  //     ]
+  //     const tx = await provider.send('eth_sendTransaction', params)
+
+  //     // Send in DAI/USDC
+  //   } catch (e) {
+  //     if (e === 'Modal closed by user') setMessage('Connection cancelled..')
+  //     if (e.code === 4001) setMessage('Transaction cancelled..')
+  //   }
+  // }
 
   return (
     <div className={className}>
