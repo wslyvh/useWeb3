@@ -1,7 +1,8 @@
 import { Company } from './company'
 
 export interface Job {
-  id: string // slug
+  id: string
+  slug: string
   title: string
   department: 'Engineering' | 'Product' | 'Sales' | 'Marketing' | 'People' | 'Operations' | 'Non-Tech' | 'Other'
   description?: string
@@ -19,6 +20,7 @@ export interface Job {
 
 export const defaultJob = {
   id: '',
+  slug: '',
   title: '',
   department: 'Engineering' as
     | 'Engineering'

@@ -103,7 +103,7 @@ export class AirtableJobService implements JobServiceInterface {
           if (source.fields['Min Salary']) {
             job.minSalary = source.fields['Min Salary'] as number
           }
-          if (source.fields['MMaxin Salary']) {
+          if (source.fields['Max Salary']) {
             job.maxSalary = source.fields['Max Salary'] as number
           }
 

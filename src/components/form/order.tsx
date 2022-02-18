@@ -1,5 +1,8 @@
 import { Dropdown } from 'components/dropdown'
+import { Link } from 'components/link'
+import { Job } from 'types/job'
 import { Order } from 'types/order'
+import { SITE_URL } from 'utils/constants'
 import { getPrice } from 'utils/jobs'
 import styles from './forms.module.scss'
 import { FormInput } from './input'
@@ -7,6 +10,7 @@ import { Payment } from './payment'
 import { Pricing } from './pricing'
 
 interface Props {
+  job: Job
   order: Order
   onChange: (value: Order) => void
   className?: string
@@ -17,6 +21,7 @@ const orderTypes = ['Standard', 'Logo', 'Featured']
 export function OrderForm(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
+  const orderLink = `${SITE_URL}jobs/post?id=${props.job.id}`
 
   return (
     <div className={className}>
@@ -28,6 +33,16 @@ export function OrderForm(props: Props) {
       <div className={styles.form}>
         <div className={styles.group}>
           <Pricing />
+        </div>
+
+        <div className={styles.group}>
+          <p>If you need approval or can't complete this transaction right now, no worries! You can always come back to this page using the following link.</p>
+          <ul>
+            <li><Link href={orderLink}>{props.job.title}</Link> 
+              <i className={`${styles.icon} bi bi-clipboard`} role="button"
+                onClick={() => navigator.clipboard.writeText(orderLink)}
+          /></li>
+          </ul>
         </div>
 
         <FormInput

@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
@@ -14,18 +14,34 @@ import { Company, defaultCompany } from 'types/company'
 import { defaultJob, Job } from 'types/job'
 import { Order, defaultOrder } from 'types/order'
 import { Finished } from 'components/form/finished'
+import { useWarnIfUnsavedChanges } from 'hooks/useWarnIfUnsavedChanges'
+import { useRouter } from 'next/router'
 
 interface Props {
   categories: Array<Category>
 }
 
 export default function Index(props: Props) {
+  const router = useRouter()
   const [step, setStep] = useState(1)
   const [company, setCompany] = useState<Company>(defaultCompany)
   const [job, setJob] = useState<Job>(defaultJob)
   const [order, setOrder] = useState<Order>(defaultOrder)
+  useWarnIfUnsavedChanges(`Are you sure you want to leave this page? Information you've entered may not be saved..`, step > 1)
 
-  // TODO: Leaving page notification
+  useEffect(() => {
+    async function asyncEffect() {
+      const response = await fetch(`/api/company/job/${router.query.id}`)
+      if (response.status !== 200) return
+
+      const body = await response.json()
+      setCompany({ ...company, id: body.data.company.id })
+      setJob(body.data)
+      setStep(3)
+    }
+
+    if (router.query.id) asyncEffect()
+  }, [router.query.id])
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -107,7 +123,7 @@ export default function Index(props: Props) {
         <form onSubmit={handleSubmit} role="form">
           {step === 1 && <CompanyForm company={company} onChange={(i) => setCompany(i)} />}
           {step === 2 && <JobForm job={job} onChange={(i) => setJob(i)} />}
-          {step === 3 && <OrderForm order={order} onChange={(i) => setOrder(i)} />}
+          {step === 3 && <OrderForm job={job} order={order} onChange={(i) => setOrder(i)} />}
           {step === 4 && <Finished company={company} job={job} order={order} />}
 
           {step < 4 && (
@@ -126,7 +142,7 @@ export default function Index(props: Props) {
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
 

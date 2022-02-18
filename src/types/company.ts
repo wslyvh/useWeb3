@@ -1,5 +1,6 @@
 export interface Company {
   id: string
+  slug: string
   title: string
   description: string
   body: string
@@ -12,6 +13,7 @@ export interface Company {
 
 export const defaultCompany = {
   id: '',
+  slug: '',
   title: '',
   description: '',
   body: '',

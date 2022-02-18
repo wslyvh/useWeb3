@@ -50,6 +50,11 @@
   .payment {
     @extend .group;
   }
+
+  .icon {
+    cursor: pointer;
+    margin-left: $gap-8;
+  }
 }
 
 .pricing {

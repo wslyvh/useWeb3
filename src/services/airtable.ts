@@ -2,6 +2,7 @@ import Airtable, { FieldSet } from 'airtable'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { Order } from 'types/order'
+import { isEmail } from 'utils/helpers'
 
 export class AirtableService {
   private client: Airtable
@@ -55,6 +56,48 @@ export class AirtableService {
     }
 
     return response.id
+  }
+
+  public async GetJob(id: string): Promise<Job | undefined> {
+    const source = await this.base('Jobs').find(id)
+
+    if (source) {
+      const applicationUrl = (source.fields['External Url'] as string) ?? ''
+      let job = {
+        id: source.fields['ID'],
+        slug: source.fields['Slug'],
+        title: source.fields['Title'],
+        department: source.fields['Department'],
+        description: source.fields['Description'],
+        body: source.fields['Body'],
+        location: source.fields['Location'],
+        remote: source.fields['Remote'] ?? false,
+        company: {
+          id: (source.fields['Company ID'] as string[])[0],
+          slug: (source.fields['Company Slug'] as string[])[0],
+        },
+        url: isEmail(applicationUrl)
+          ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)`
+          : applicationUrl,
+        updated: new Date(source.fields['Updated'] as string).getTime(),
+        featured: false,
+      } as Job
+
+      if (source.fields['Featured']) {
+        job.featuredUntil = new Date(source.fields['Featured'] as string).getTime()
+        job.featured = job.featuredUntil >= new Date().getTime()
+      }
+      if (source.fields['Min Salary']) {
+        job.minSalary = source.fields['Min Salary'] as number
+      }
+      if (source.fields['Max Salary']) {
+        job.maxSalary = source.fields['Max Salary'] as number
+      }
+
+      return job
+    }
+
+    return undefined
   }
 
   public async CreateJob(job: Job): Promise<string> {
