@@ -27,7 +27,10 @@ export default function Index(props: Props) {
   const [company, setCompany] = useState<Company>(defaultCompany)
   const [job, setJob] = useState<Job>(defaultJob)
   const [order, setOrder] = useState<Order>(defaultOrder)
-  useWarnIfUnsavedChanges(`Are you sure you want to leave this page? Information you've entered may not be saved..`, step > 1)
+  useWarnIfUnsavedChanges(
+    `Are you sure you want to leave this page? Information you've entered may not be saved..`,
+    step > 1
+  )
 
   useEffect(() => {
     async function asyncEffect() {

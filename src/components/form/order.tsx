@@ -36,12 +36,19 @@ export function OrderForm(props: Props) {
         </div>
 
         <div className={styles.group}>
-          <p>If you need approval or can't complete this transaction right now, no worries! You can always come back to this page using the following link.</p>
+          <p>
+            If you need approval or can't complete this transaction right now, no worries! You can always come back to
+            this page using the following link.
+          </p>
           <ul>
-            <li><Link href={orderLink}>{props.job.title}</Link> 
-              <i className={`${styles.icon} bi bi-clipboard`} role="button"
+            <li>
+              <Link href={orderLink}>{props.job.title}</Link>
+              <i
+                className={`${styles.icon} bi bi-clipboard`}
+                role="button"
                 onClick={() => navigator.clipboard.writeText(orderLink)}
-          /></li>
+              />
+            </li>
           </ul>
         </div>
 
