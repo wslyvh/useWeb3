@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './row.module.scss'
 import { Link } from 'components/link'
-import slugify from 'slugify'
 import Image from 'next/image'
+import { defaultSlugify } from 'utils/helpers'
 
 interface Props {
   title: string
@@ -28,7 +28,7 @@ export function Row(props: Props) {
           <Image src={props.imageUrl} alt={`${props.author} logo`} height={45} width={45} />
         </div>
       )}
-      <Link href={`/jobs/${props.authorUrl}/${slugify(props.title, { lower: true, strict: true, trim: true })}`}>
+      <Link href={`/jobs/${props.authorUrl}/${defaultSlugify(props.title)}`}>
         <h4 className={styles.title}>{props.title}</h4>
       </Link>
       <div className={styles.body}>

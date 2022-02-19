@@ -3,7 +3,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
-import { removeHtml } from 'utils/helpers'
+import { defaultSlugify, removeHtml } from 'utils/helpers'
 import { getJobDepartment } from 'utils/jobs'
 
 const map = new Map()
@@ -14,6 +14,7 @@ export class WorkableJobService implements JobServiceInterface {
 
     return {
       id: id,
+      slug: id,
       title: id,
       description: '',
       body: '',
@@ -31,6 +32,7 @@ export class WorkableJobService implements JobServiceInterface {
         .map((i: any) => {
           return {
             id: String(i.shortcode),
+            slug: defaultSlugify(i.title),
             title: i.title,
             department: getJobDepartment(i.title),
             description: removeHtml(i.description),

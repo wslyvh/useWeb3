@@ -1,9 +1,10 @@
 import moment from 'dayjs'
+import slugify from 'slugify'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
-import { removeHtml } from 'utils/helpers'
+import { defaultSlugify, removeHtml } from 'utils/helpers'
 import { getJobDepartment } from 'utils/jobs'
 import jobData from '../../../data/jobs.json'
 
@@ -13,6 +14,7 @@ export class AngelJobService implements JobServiceInterface {
 
     return {
       id: id,
+      slug: id,
       title: id,
       description: '',
       body: '',
@@ -34,6 +36,7 @@ export class AngelJobService implements JobServiceInterface {
       .map((i: any) => {
         return {
           id: i.id,
+          slug: defaultSlugify(i.title),
           title: i.title,
           department: getJobDepartment(i.title),
           description: removeHtml(i.description),

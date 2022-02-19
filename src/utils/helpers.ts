@@ -1,3 +1,4 @@
+import slugify from 'slugify'
 import { DEFAULT_REVALIDATE_PERIOD } from './constants'
 
 export function getLevelStyle(tag: string) {
@@ -28,4 +29,8 @@ export function removeHtml(value: string) {
 export function isEmail(text: string): boolean {
   var regex = /\S+@\S+\.\S+/
   return regex.test(text)
+}
+
+export function defaultSlugify(text: string): string {
+  return slugify(text, { lower: true, strict: true, trim: true })
 }

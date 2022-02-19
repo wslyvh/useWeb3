@@ -97,11 +97,7 @@ export const getServerSideProps = async ({ res }: any) => {
               .map((i) => {
                 return `
                     <url>
-                        <loc>${baseUrl}jobs/${i.company.id}/${slugify(i.title, {
-                  lower: true,
-                  strict: true,
-                  trim: true,
-                })}</loc>
+                        <loc>${baseUrl}jobs/${i.company.slug}/${i.slug})}</loc>
                         <lastmod>${currentDate}</lastmod>
                         <changefreq>weekly</changefreq>
                         <priority>0.6</priority>

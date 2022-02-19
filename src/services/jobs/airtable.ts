@@ -4,7 +4,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
-import { isEmail } from 'utils/helpers'
+import { defaultSlugify, isEmail } from 'utils/helpers'
 
 export class AirtableJobService implements JobServiceInterface {
   private client: Airtable
@@ -64,6 +64,7 @@ export class AirtableJobService implements JobServiceInterface {
           const applicationUrl = (source.fields['External Url'] as string) ?? ''
           let job = {
             id: source.fields['Slug'],
+            slug: defaultSlugify(source.fields['Title'] as string),
             title: source.fields['Title'],
             department: source.fields['Department'],
             description: source.fields['Description'],

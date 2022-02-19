@@ -80,8 +80,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: jobs.map((i) => {
+      if (!i.slug) console.log(i.company.id, i.title)
       return {
-        params: { company: i.company.id, job: slugify(i.title, { lower: true, strict: true, trim: true }) },
+        params: { company: i.company.id, job: i.slug },
       }
     }),
     fallback: true,
@@ -103,11 +104,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   const jobService = new JobService()
   const jobs = await jobService.GetJobs(companyId)
   const company = jobs.length > 0 ? jobs[0].company : undefined
-  const job = jobs.find(
-    (i) =>
-      slugify(i.title, { lower: true, strict: true, trim: true }) ===
-      slugify(jobId, { lower: true, strict: true, trim: true })
-  )
+  const job = jobs.find((i) => i.slug === jobId)
 
   return {
     props: {

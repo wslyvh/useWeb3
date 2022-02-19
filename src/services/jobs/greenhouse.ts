@@ -3,7 +3,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
-import { isCacheExpired, removeHtml } from 'utils/helpers'
+import { defaultSlugify, isCacheExpired, removeHtml } from 'utils/helpers'
 import { getJobDepartment } from 'utils/jobs'
 
 const map = new Map()
@@ -22,6 +22,7 @@ export class GreenhouseJobService implements JobServiceInterface {
       if (data) {
         const company = {
           id: id,
+          slug: id,
           title: data.name,
           description: removeHtml(data.content),
           body: data.content,
@@ -50,6 +51,7 @@ export class GreenhouseJobService implements JobServiceInterface {
       if (!company) {
         company = {
           id: companyId,
+          slug: companyId,
           title: companyId,
           description: '',
           body: '',
@@ -63,6 +65,7 @@ export class GreenhouseJobService implements JobServiceInterface {
 
           return {
             id: String(i.id),
+            slug: defaultSlugify(i.title),
             title: i.title,
             department: getJobDepartment(i.title),
             description: removeHtml(job.content),

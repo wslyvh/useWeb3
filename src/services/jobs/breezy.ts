@@ -3,6 +3,7 @@ import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
+import { defaultSlugify } from 'utils/helpers'
 import { getJobDepartment } from 'utils/jobs'
 
 const map = new Map()
@@ -13,6 +14,7 @@ export class BreezyJobService implements JobServiceInterface {
 
     return {
       id: id,
+      slug: id,
       title: id,
       description: '',
       body: '',
@@ -29,6 +31,7 @@ export class BreezyJobService implements JobServiceInterface {
         .map((i: any) => {
           return {
             id: String(i.id),
+            slug: defaultSlugify(i.name),
             title: i.name,
             department: getJobDepartment(i.name),
             location: i.location.name,
