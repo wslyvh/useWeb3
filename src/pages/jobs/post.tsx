@@ -38,7 +38,9 @@ export default function Index(props: Props) {
       if (response.status !== 200) return
 
       const body = await response.json()
-      setCompany({ ...company, id: body.data.company.id })
+      setCompany((current) => {
+        return { ...current, id: body.data.company.id }
+      })
       setJob(body.data)
       setStep(3)
     }

@@ -37,8 +37,8 @@ export function OrderForm(props: Props) {
 
         <div className={styles.group}>
           <p>
-            If you need approval or can't complete this transaction right now, no worries! You can always come back to
-            this page using the following link.
+            If you need approval or can&apos;t complete this transaction right now, no worries! You can always come back
+            to this page using the following link.
           </p>
           <ul>
             <li>
