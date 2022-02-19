@@ -70,7 +70,16 @@ export const JOBS_BREEZY = [
   'hal-collective-inc',
   'spruce-systems',
 ]
-export const JOBS_WORKABLE = ['superfluid', 'walletconnect', 'doingud', 'web3labs', 'ankr', 'paraswap', 'argenthq', 'zkx']
+export const JOBS_WORKABLE = [
+  'superfluid',
+  'walletconnect',
+  'doingud',
+  'web3labs',
+  'ankr',
+  'paraswap',
+  'argenthq',
+  'zkx',
+]
 export const JOBS_WRK = ['filebase']
 export const JOBS_RECRUITEE = ['giveth', 'poapinc', 'rampnetwork', 'makerdao']
 export const JOBS_ANGEL = [
