@@ -12,7 +12,7 @@ export function Link(props: LinkProps) {
   const className = props.className ?? ''
   const isExternal = props.href.match(/^([a-z0-9]*:|.{0})\/\/.*$/)
 
-  if (isExternal) {
+  if (isExternal || props.newWindow) {
     return (
       <a href={props.href} className={className} target="_blank" rel="noopener noreferrer">
         {props.children}
@@ -22,7 +22,7 @@ export function Link(props: LinkProps) {
 
   return (
     <NextLink href={props.href} passHref>
-      <a href={props.href} className={className} target={props.newWindow ? '_blank' : '_self'}>
+      <a href={props.href} className={className}>
         {props.children}
       </a>
     </NextLink>
