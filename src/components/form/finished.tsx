@@ -30,7 +30,9 @@ export function Finished(props: Props) {
       </ul>
 
       <p>
-        <Link href={`/api/company/order/invoice/${props.order.id}`} newWindow>Download invoice</Link>
+        <Link href={`/api/company/order/invoice/${props.order.id}`} newWindow>
+          Download invoice
+        </Link>
       </p>
     </div>
   )
