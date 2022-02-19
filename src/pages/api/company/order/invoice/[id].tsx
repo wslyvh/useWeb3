@@ -4,8 +4,8 @@ import { jsPDF } from 'jspdf'
 import { getPrice, RECEIVER_ADDRESS, RECEIVER_ENS } from 'utils/jobs'
 
 const defaultFont = 'courier'
-const offsetLeft = 15
-const offsetRight = 195
+const offsetLeft = 20
+const offsetRight = 190
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
