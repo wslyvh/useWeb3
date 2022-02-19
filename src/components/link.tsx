@@ -3,6 +3,7 @@ import { default as NextLink } from 'next/link'
 
 interface LinkProps {
   href: string
+  newWindow?: boolean
   className?: string
   children: ReactNode
 }
@@ -21,7 +22,7 @@ export function Link(props: LinkProps) {
 
   return (
     <NextLink href={props.href} passHref>
-      <a href={props.href} className={className}>
+      <a href={props.href} className={className} target={props.newWindow ? '_blank' : '_self'}>
         {props.children}
       </a>
     </NextLink>

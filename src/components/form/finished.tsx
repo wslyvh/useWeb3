@@ -1,3 +1,4 @@
+import { Link } from 'components/link'
 import { Company } from 'types/company'
 import { Job } from 'types/job'
 import { Order } from 'types/order'
@@ -14,8 +15,6 @@ export function Finished(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
 
-  // send email confirmation / invoice
-
   return (
     <div className={className}>
       <p>
@@ -29,6 +28,10 @@ export function Finished(props: Props) {
         <li>Job ID: {props.job.id}</li>
         <li>Order ID: {props.order.id}</li>
       </ul>
+
+      <p>
+        <Link href={`/api/company/order/invoice/${props.order.id}`} newWindow>Download invoice</Link>
+      </p>
     </div>
   )
 }

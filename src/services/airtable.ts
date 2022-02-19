@@ -123,6 +123,27 @@ export class AirtableService {
     return response.id
   }
 
+  public async GetOrder(id: string): Promise<Order | undefined> {
+    const source = await this.base('Orders').find(id)
+
+    if (source) {
+      return {
+        id: source.id,
+        name: source.fields['Name'],
+        email: source.fields['Email'],
+        address: source.fields['Address'],
+        type: source.fields['Type'],
+        tx: source.fields['Tx'],
+        jobId: source.fields['Job Title'],
+        companyName: source.fields['Company Name'],
+        created: new Date(source.fields['Created'] as string).getTime(),
+        invoiceNr: source.fields['Invoice Nr'],
+      } as Order
+    }
+
+    return undefined
+  }
+
   public async CreateOrder(order: Order): Promise<string> {
     const response = await this.base('Orders').create({
       Name: order.name,

@@ -6,6 +6,9 @@ export interface Order {
   type: 'Standard' | 'Logo' | 'Featured'
   tx: string
   jobId: string
+  companyName?: string
+  created?: number
+  invoiceNr?: number
 }
 
 export const defaultOrder = {
