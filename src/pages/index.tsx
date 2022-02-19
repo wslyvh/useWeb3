@@ -11,6 +11,8 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { Link } from 'components/link'
+import { Departments } from 'components/departments'
+import { DEPARTMENTS } from 'utils/jobs'
 
 interface Props {
   categories: Array<Category>
@@ -38,8 +40,10 @@ export default function Index(props: Props) {
         <article>
           <h2>Web3 Jobs</h2>
           <p>
-            <Link href="/jobs">Browse all jobs</Link> to find your Web3, Solidity or blockchain jobs at one of the
-            leading companies that work on core, open-source infrastructure, products, tools, frameworks and DAOs.
+            Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
+          </p>
+          <p className={styles.filters}>
+            <Departments departments={DEPARTMENTS} />
           </p>
           <p>
             Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
