@@ -3,7 +3,7 @@ title: "Best resources to learn Solidity"
 description: "Solidity is a programming language designed for developing smart contracts that run on Ethereum. It's the most in demand skill in the Web3 space. These are the best resources to help you learn more about it."
 authors: ['@wslyvh']
 level: Beginner
-tags: ['Web3']
+tags: ['Smart Contracts']
 languages: ['Solidity']
 featured: true
 date: 2020-07-07

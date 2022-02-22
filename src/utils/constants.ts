@@ -31,6 +31,7 @@ export const JOBS_GREENHOUSE = [
 ]
 export const JOBS_LEVER = [
   'aragon',
+  'bobanetwork',
   'centrifuge',
   'protocol',
   'compound-2',

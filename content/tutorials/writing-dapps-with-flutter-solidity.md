@@ -2,7 +2,7 @@
 title: "Writing DAPPs with Flutter + Solidity"
 description: "Flutter example project to run Solidity smart contracts using web3Dart library"
 authors: ["@mcarlomagno1"]
-tags: []
+tags: ['Mobile']
 languages: ["Solidity","Flutter","Dart"]
 url: "https://itnext.io/writing-dapps-with-flutter-solidity-27d0621fd01"
 dateAdded: 2021-10-09
