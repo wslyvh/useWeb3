@@ -30,7 +30,10 @@ export class GasPriceService {
 
   public AsHeatmapData(data: Array<GasPrice>, days: number = 7): Heatmap {
     const hoursPerDay = 24
-    const xDayOfTheWeek = new Array(days).fill(0).map((_, i) => moment.utc().subtract(i, 'd').format('ddd')).reverse()
+    const xDayOfTheWeek = new Array(days)
+      .fill(0)
+      .map((_, i) => moment.utc().subtract(i, 'd').format('ddd'))
+      .reverse()
     const weekDays = xDayOfTheWeek.map((i) => moment().day(i).weekday())
     const yHoursInTheDay = new Array(hoursPerDay).fill(0).map((_, i) => `${i}:00`)
     const hoursInTheDay = new Array(hoursPerDay).fill(0).map((_, i) => i)
@@ -42,7 +45,9 @@ export class GasPriceService {
           return null
         }
 
-        const baseFeesPerHr = data.filter(i => moment(i.created).format('d:H') === `${weekDay}:${hourOfTheDay}`).map(i => i.baseFee)
+        const baseFeesPerHr = data
+          .filter((i) => moment(i.created).format('d:H') === `${weekDay}:${hourOfTheDay}`)
+          .map((i) => i.baseFee)
         const avg = baseFeesPerHr.length > 0 ? baseFeesPerHr.reduce((a, b) => a + b, 0) / baseFeesPerHr.length : 0
         return avg ? Math.floor(avg) : 0
       })
@@ -55,7 +60,7 @@ export class GasPriceService {
     return {
       x: xDayOfTheWeek,
       y: yHoursInTheDay,
-      data: heatmap
+      data: heatmap,
     }
   }
 }

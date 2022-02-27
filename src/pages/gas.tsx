@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       categories,
-      heatmap
+      heatmap,
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
