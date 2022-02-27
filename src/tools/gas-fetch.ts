@@ -7,15 +7,6 @@ dotenv.config()
 console.log('Collect latest gas prices')
 run()
 
-type GasPrice = {
-  id: number
-  baseFee: number
-  prioritySlow: number
-  priorityNormal: number
-  priorityFast: number
-  created: string
-}
-
 async function run() {
   const supabaseUrl = process.env.SUPABASE_URL
   const supabaseKey = process.env.SUPABASE_KEY
@@ -30,15 +21,15 @@ async function run() {
 
   const latestBaseFees = eth_feeHistory.baseFeePerGas.map((i: any) => Number(i))
   const medianBaseFee = getMedian(latestBaseFees)
-  const baseFee = (medianBaseFee / 1e9).toFixed(2)
+  const baseFee = Number((medianBaseFee / 1e9).toFixed(2))
   console.log('Base Fee (in gwei)', baseFee)
 
   const slowFees = eth_feeHistory.reward.map((x: any) => Number(x[0]))
-  const prioritySlow = (getMedian(slowFees) / 1e9).toFixed(2)
+  const prioritySlow = Math.round((getMedian(slowFees) / 1e9) * 100) / 100
   const normalFees = eth_feeHistory.reward.map((x: any) => Number(x[1]))
-  const priorityNormal = (getMedian(normalFees) / 1e9).toFixed(2)
+  const priorityNormal = Math.round((getMedian(normalFees) / 1e9) * 100) / 100
   const fastFees = eth_feeHistory.reward.map((x: any) => Number(x[2]))
-  const priorityFast = (getMedian(fastFees) / 1e9).toFixed(2)
+  const priorityFast = Math.round((getMedian(fastFees) / 1e9) * 100) / 100
   console.log('Priority Fees (slow, normal, fast)', prioritySlow, priorityNormal, priorityFast)
 
   const supabase = createClient(supabaseUrl, supabaseKey)
@@ -55,9 +46,6 @@ async function run() {
     console.log('Unable to save fee history..')
     throw new Error(insert.error.message)
   }
-
-  // const query = await supabase.from<GasPrice>('gas').select('*')
-  // console.log('QUERY', query.data)
 }
 
 function getMedian(numbers: Array<number>) {
