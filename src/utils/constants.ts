@@ -28,6 +28,7 @@ export const JOBS_GREENHOUSE = [
   'textileio',
   'optimism',
   'nethermind',
+  'ankrnetwork'
 ]
 export const JOBS_LEVER = [
   'aragon',
@@ -76,7 +77,6 @@ export const JOBS_WORKABLE = [
   'walletconnect',
   'doingud',
   'web3labs',
-  'ankr',
   'paraswap',
   'argenthq',
   'zkx',
