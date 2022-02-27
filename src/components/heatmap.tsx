@@ -15,7 +15,7 @@ export function Heatmap(props: Props) {
   return (
     <section className={className}>
       <HeatMapGrid
-        data={props.data}
+        data={props.data as number[][]}
         xLabels={props.x}
         yLabels={props.y}
         cellRender={(x, y, value) => <span>{value}</span>}
