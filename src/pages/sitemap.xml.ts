@@ -68,6 +68,12 @@ export const getServerSideProps = async ({ res }: any) => {
               })
               .join('')}
             <url>
+                <loc>${baseUrl}gas</loc>
+                <lastmod>${launchDate}</lastmod>
+                <changefreq>hourly</changefreq>
+                <priority>0.7</priority>
+            </url>
+            <url>
                 <loc>${baseUrl}jobs</loc>
                 <lastmod>${currentDate}</lastmod>
                 <changefreq>daily</changefreq>
