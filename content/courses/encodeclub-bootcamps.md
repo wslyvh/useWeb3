@@ -2,7 +2,7 @@
 title: "Encode Club Bootcamps"
 description: "Become a certified Web3 developer!"
 authors: ["@encodeclub"]
-tags: ["Smart Contracts","Dapp","NFT","DAO","Web3"]
+tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","Rust","Python","Vyper","Cairo"]
 url: "https://www.encode.club/encode-bootcamps"
 featured: true

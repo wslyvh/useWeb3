@@ -2,8 +2,8 @@
 title: "Web3 with Sam KAmani"
 description: "Weekly podcast with monologues on all things Web3 and interviews with founders and investors of Web3 startups."
 authors: ["@samkamani"]
-tags: ["DeFi, Metaverse, NFTs, Blockchain, Crypto, AI"]
-languages: [English]
+tags: []
+languages: []
 url: "https://web3pod.xyz"
 dateAdded: 2022-02-22
 level: "All"

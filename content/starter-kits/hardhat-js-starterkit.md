@@ -2,7 +2,7 @@
 title: "hardhat-js-starterkit"
 description: "Template for building smart contract projects in hardhat with solidity and javascript with necessary utilities."
 authors: ["@ahmedali8"]
-tags: ["Smart Contracts", "Hardhat"]
+tags: ["Smart Contracts"]
 languages: ["Solidity", "JavaScript"]
 url: "https://github.com/ahmedali8/hardhat-js-starterkit"
 dateAdded: 2022-02-26

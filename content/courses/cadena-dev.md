@@ -2,8 +2,8 @@
 title: "Cadena"
 description: "Self paced tutorials to learn Web3 by building"
 authors: ["@cadenadev"]
-tags: ["Smart Contracts","Dapp","EVM", "DAO", "NFT"]
-languages: ["Solidity", "DART"]
+tags: ["Smart Contracts","Dapp"]
+languages: ["Solidity"]
 url: "https://www.cadena.dev/"
 dateAdded: 2022-02-22
 level: "All"
