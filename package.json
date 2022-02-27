@@ -8,16 +8,17 @@
     "start": "next start",
     "lint": "next lint --fix",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,scss}",
-    "twitter:gm": "ts-node src/twitter-gm",
-    "twitter:last-week": "ts-node src/twitter-last-week",
-    "twitter:popular": "ts-node src/twitter-popular",
-    "twitter:random": "ts-node src/twitter-random",
-    "twitter:top": "ts-node src/twitter-top",
-    "prepare": "husky install"
+    "twitter:gm": "ts-node src/tools/twitter-gm",
+    "twitter:last-week": "ts-node src/tools/twitter-last-week",
+    "twitter:popular": "ts-node src/tools/twitter-popular",
+    "twitter:random": "ts-node src/tools/twitter-random",
+    "twitter:top": "ts-node src/tools/twitter-top",
+    "gas:fetch": "ts-node src/tools/gas-fetch"
   },
   "dependencies": {
     "@ethersproject/providers": "^5.5.3",
     "@ethersproject/units": "^5.5.0",
+    "@supabase/supabase-js": "^1.30.7",
     "@walletconnect/web3-provider": "^1.7.1",
     "airtable": "^0.11.1",
     "bootstrap-icons": "^1.7.2",

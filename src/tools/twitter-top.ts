@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv'
 import fetch from 'cross-fetch'
-import { MarkdownContentService } from './services/content'
+import { MarkdownContentService } from 'services/content'
 const Twit = require('twit')
 
 dotenv.config()
