@@ -25,6 +25,14 @@ export function Sitenav(props: Props) {
             <span className={styles.text}>Home</span>
           </Link>
         </li>
+        <li className={currentPath.includes('/jobs') ? styles.active : ''}>
+          <Link href={'/jobs'}>
+            <span role="img" aria-label="jobs">
+              💼
+            </span>
+            <span className={styles.text}>Jobs</span>
+          </Link>
+        </li>
         {categories.map((i) => {
           return (
             <li key={i.id} className={currentPath.includes(`/${i.id}`) ? styles.active : ''}>
@@ -37,12 +45,12 @@ export function Sitenav(props: Props) {
             </li>
           )
         })}
-        <li className={currentPath.includes('/jobs') ? styles.active : ''}>
-          <Link href={'/jobs'}>
+        <li className={currentPath.includes('/gas') ? styles.active : ''}>
+          <Link href={'/gas'}>
             <span role="img" aria-label="jobs">
-              💼
+              ⛽
             </span>
-            <span className={styles.text}>Jobs</span>
+            <span className={styles.text}>Gas</span>
           </Link>
         </li>
         <li className={currentPath.includes('/tags') ? styles.active : ''}>
