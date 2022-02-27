@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import moment from 'dayjs'
+import moment from 'moment'
 import Pagination from 'next-pagination'
 import { Featured } from 'components/featured'
 import { Newsletter } from 'components/newsletter'

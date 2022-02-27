@@ -5,13 +5,15 @@ import { useRouter } from 'next/dist/client/router'
 
 interface SEOProps {
   title?: string
+  divider?: string
   description?: string
   imageUrl?: string
 }
 
 export function SEO(props: SEOProps) {
   const router = useRouter()
-  const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE} · Learn Web3 development`
+  const divider = props.divider ?? `·`
+  const title = props.title ? `${props.title} ${divider} ${TITLE}` : `${TITLE} ${divider} Learn Web3 development`
   const description = props.description || DESCRIPTION
   const image = props.imageUrl || IMAGE_OG
   const url = router.route === '/' ? SITE_URL : SITE_URL.replace(/\/$/, '') + router.asPath.split('?')[0]

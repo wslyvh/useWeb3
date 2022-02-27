@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'dayjs'
+import moment from 'moment'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { Main as MainLayout } from 'components/layouts/main'

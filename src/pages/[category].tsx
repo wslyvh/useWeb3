@@ -50,7 +50,8 @@ export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
       <SEO
-        title={`Learn from ${props.category.emoji} ${props.category.title}`}
+        title={`Web3 ${props.category.title}`}
+        divider={props.category.emoji}
         description={props.category.description}
       />
 
