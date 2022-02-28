@@ -1,0 +1,20 @@
+name: Lastest Resources
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Lastest Resources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install Dependencies
+        run: yarn install
+      - name: Get Lastest Resources
+        run: yarn latest

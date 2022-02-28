@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint --fix",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,scss}",
+    "latest": "ts-node src/tools/latest",
     "twitter:gm": "ts-node src/tools/twitter-gm",
     "twitter:last-week": "ts-node src/tools/twitter-last-week",
     "twitter:popular": "ts-node src/tools/twitter-popular",
