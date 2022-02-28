@@ -22,6 +22,6 @@ async function run() {
     const category = categories.find((i) => i.id === item.category.id)
     text += `${category?.emoji} ${item.title} ${item.authors.join(' ')} \n`
   }
-  
+
   console.log(text)
 }
