@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv'
 import fetch from 'cross-fetch'
-import { MarkdownContentService } from 'services/content'
+import { MarkdownContentService } from '../services/content'
 const Twit = require('twit')
 
 dotenv.config()
@@ -29,7 +29,12 @@ async function run() {
   for (const item of stats) {
     if (item === 'jobs') {
       text += `- 💼 Jobs \n`
-    } else {
+    } 
+    else if (item.endsWith('-jobs')) {
+      const category = item.replace('-jobs', '')
+      text += `- 💼 ${category.charAt(0).toUpperCase() + category.slice(1)} Jobs \n`
+    }
+    else {
       const category = await service.GetCategory(item)
       text += `- ${category?.emoji} ${category?.title} \n`
     }

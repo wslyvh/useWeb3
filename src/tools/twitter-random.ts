@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv'
-import { MarkdownContentService } from 'services/content'
+import { MarkdownContentService } from '../services/content'
 const Twit = require('twit')
 
 dotenv.config()
