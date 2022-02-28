@@ -29,12 +29,10 @@ async function run() {
   for (const item of stats) {
     if (item === 'jobs') {
       text += `- 💼 Jobs \n`
-    } 
-    else if (item.endsWith('-jobs')) {
+    } else if (item.endsWith('-jobs')) {
       const category = item.replace('-jobs', '')
       text += `- 💼 ${category.charAt(0).toUpperCase() + category.slice(1)} Jobs \n`
-    }
-    else {
+    } else {
       const category = await service.GetCategory(item)
       text += `- ${category?.emoji} ${category?.title} \n`
     }
