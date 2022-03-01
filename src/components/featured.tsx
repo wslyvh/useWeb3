@@ -22,7 +22,7 @@ export function Featured(props: Props) {
         {props.title && <h3>{props.title}</h3>}
         {props.link && (
           <Link className={styles.link} href={props.link}>
-            view all
+            查看全部
           </Link>
         )}
       </div>

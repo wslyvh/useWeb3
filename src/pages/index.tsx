@@ -29,32 +29,30 @@ export default function Index(props: Props) {
       <MainLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 is a platform for developers to explore and learn about Web3. Whether youre a new dev getting your
-            hands dirty for the first time, or a seasoned developer making the transition into the Web3 space.
+            useWeb3 是一个为开发者提供探索和了解有关Web 3.0知识的一个学习平台。无论是第一次动手的新开发者还是一个正进入Web3领域的经验丰富的开发者。
           </p>
           <p>
-            <strong>Explore. Learn. Build.</strong>
+            <strong>探索. 学习. 构建.</strong>
           </p>
         </article>
 
         <article>
-          <h2>Web3 Jobs</h2>
+          <h2>Web3 招聘</h2>
           <p>
-            Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
+            浏览所有的工作，该空间中优秀公司中选择关于Solidity或区块链工作，找到属于你的Web3。
           </p>
           <p className={styles.filters}>
             <Departments departments={DEPARTMENTS} />
           </p>
           <p>
-            Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
+            Web3工作的招聘? <Link href="/jobs/post">发布工作</Link>
           </p>
         </article>
 
         <article>
-          <h2>Start learning</h2>
+          <h2>开始了解</h2>
           <p>
-            Explore the latest resources and get familiar with the core concepts and fundamentals. Learning from
-            tutorials, courses, books, videos or code challenges and start building!
+            获取最新的资源以及核心理念、基本原理。学习教程、课程、书籍、视频资料或者编程闯关并开始构建。
           </p>
         </article>
 
