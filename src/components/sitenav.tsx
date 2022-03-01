@@ -19,18 +19,18 @@ export function Sitenav(props: Props) {
       <ul className={styles.sidenav}>
         <li className={currentPath === '/' ? styles.active : ''}>
           <Link href="/">
-            <span role="img" aria-label="home">
+            <span role="img" aria-label="首页">
               🏠
             </span>
-            <span className={styles.text}>Home</span>
+            <span className={styles.text}>首页</span>
           </Link>
         </li>
         <li className={currentPath.includes('/jobs') ? styles.active : ''}>
           <Link href={'/jobs'}>
-            <span role="img" aria-label="jobs">
+            <span role="img" aria-label="招聘">
               💼
             </span>
-            <span className={styles.text}>Jobs</span>
+            <span className={styles.text}>招聘</span>
           </Link>
         </li>
         {categories.map((i) => {

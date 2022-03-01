@@ -1,10 +1,10 @@
 export const TITLE = 'useWeb3.xyz'
 export const DESCRIPTION =
-  'A platform for developers to learn about Web3. Explore tutorials, guides, courses, challenges and more. Learn by building ⚒️ Find your job ✨ Start contributing'
-export const SITE_URL = 'https://www.useweb3.xyz/'
+  'Web3开发者学习平台. Explore tutorials, guides, courses, challenges and more. Learn by building ⚒️ Find your job ✨ Start contributing'
+export const SITE_URL = 'https://useweb3.chejj.cc/'
 export const IMAGE_OG = `${SITE_URL}images/social.png`
 export const SOCIAL_HANDLE = '@useWeb3'
-export const DOMAIN = 'useweb3.xyz'
+export const DOMAIN = 'chejj.cc'
 
 export const DEFAULT_REVALIDATE_PERIOD = 3600
 
