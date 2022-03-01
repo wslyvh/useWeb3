@@ -1,6 +1,6 @@
 {
     "id": "starter-kits",
-    "title": "Starter kits",
-    "description": "These boilerplates and starterkits allow you to quickly get into web3 and smart contract development. Clone a repo or run a single command and start coding. These are the web3 equivalents of 'create-react-app'.",
+    "title": "启动套件",
+    "description": "这些样板示例和入门工具包可以让您快速进入web3和智能合约开发领域。克隆代码仓库、运行命令即可开始编码。这些都是web3对应的“'create-react-app”。",
     "emoji": "🏗️"
 }

@@ -1,6 +1,6 @@
 {
     "id": "tutorials",
-    "title": "Tutorials",
-    "description": "A curated list of free, community tutorials that are based around specific projects, tasks or challenges. They include step-by-step written instructions, screenshots and code examples to help you practice and master new skills.",
+    "title": "新手教程",
+    "description": "一个基于特定项目、任务或挑战的免费社区教程的策划列表。它们包括一步一步的书面说明、屏幕截图和代码示例，以帮助您练习和掌握新技能。",
     "emoji": "💻"
 }
