@@ -26,7 +26,7 @@ export function Sitenav(props: Props) {
           </Link>
         </li>
         <li className={currentPath.includes('/jobs') ? styles.active : ''}>
-          <Link href={'/jobs'}>
+          <Link href={'https://www.useweb3.xyz/jobs'}>
             <span role="img" aria-label="招聘">
               💼
             </span>
@@ -46,7 +46,7 @@ export function Sitenav(props: Props) {
           )
         })}
         <li className={currentPath.includes('/gas') ? styles.active : ''}>
-          <Link href={'/gas'}>
+          <Link href={'https://www.useweb3.xyz/gas'}>
             <span role="img" aria-label="jobs">
               ⛽
             </span>
@@ -58,11 +58,11 @@ export function Sitenav(props: Props) {
             <span role="img" aria-label="tags">
               🏷️
             </span>
-            <span className={styles.text}>Tags</span>
+            <span className={styles.text}>标签</span>
           </Link>
         </li>
         <li>
-          <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">
+          <Link href="https://github.com/xusai2014/useWeb3/tree/main/content">
             <span role="img" aria-label="submit">
               🔗
             </span>

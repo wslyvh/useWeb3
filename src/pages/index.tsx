@@ -45,7 +45,7 @@ export default function Index(props: Props) {
             <Departments departments={DEPARTMENTS} />
           </p>
           <p>
-            Web3工作的招聘? <Link href="/jobs/post">发布工作</Link>
+            Web3工作的招聘? <Link href="https://www.useweb3.xyz/jobs/post">发布工作</Link>
           </p>
         </article>
 
