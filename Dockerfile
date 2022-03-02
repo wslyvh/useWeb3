@@ -6,7 +6,7 @@ RUN which git
 ENV PATH /app/node_modules/.bin:$PATH
 ENV NODE_ENV production
 COPY . /app
-RUN yarn install
+RUN yarn install --production --silent --ignore-optional --pure-lockfile
 
 
 

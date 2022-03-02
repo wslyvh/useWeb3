@@ -29,7 +29,8 @@ export default function Index(props: Props) {
       <MainLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 是一个为开发者提供探索和了解有关Web 3.0知识的一个学习平台。无论是第一次动手的新开发者还是一个正进入Web3领域的经验丰富的开发者。
+            useWeb3 是一个为开发者提供探索和了解有关Web
+            3.0知识的一个学习平台。无论是第一次动手的新开发者还是一个正进入Web3领域的经验丰富的开发者。
           </p>
           <p>
             <strong>探索. 学习. 构建.</strong>
@@ -38,9 +39,7 @@ export default function Index(props: Props) {
 
         <article>
           <h2>Web3 招聘</h2>
-          <p>
-            浏览所有的工作，该空间中优秀公司中选择关于Solidity或区块链工作，找到属于你的Web3。
-          </p>
+          <p>浏览所有的工作，该空间中优秀公司中选择关于Solidity或区块链工作，找到属于你的Web3。</p>
           <p className={styles.filters}>
             <Departments departments={DEPARTMENTS} />
           </p>
@@ -51,9 +50,7 @@ export default function Index(props: Props) {
 
         <article>
           <h2>开始了解</h2>
-          <p>
-            获取最新的资源以及核心理念、基本原理。学习教程、课程、书籍、视频资料或者编程闯关并开始构建。
-          </p>
+          <p>获取最新的资源以及核心理念、基本原理。学习教程、课程、书籍、视频资料或者编程闯关并开始构建。</p>
         </article>
 
         {props.categories.map((category) => {
