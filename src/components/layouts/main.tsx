@@ -73,11 +73,12 @@ export function Main(props: Props) {
 
           <footer className={styles.footer}>
             <p>
-              Follow @ <Link href="https://twitter.com/useWeb3">useWeb3</Link>. Contribute on{' '}
-              <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
+              By <Link href="https://twitter.com/wslyvh">@wslyvh</Link> · Follow <Link href="https://twitter.com/useWeb3">useWeb3</Link> · Contribute <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
             </p>
             <p>
-              Created by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>.
+              <Link href='https://vercel.com/?utm_source=useWeb3&amp;utm_campaign=oss'>
+                <img src='https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg' alt='Powered by Vercel' />
+              </Link>
             </p>
           </footer>
           <Fab onClick={handleCLick} />

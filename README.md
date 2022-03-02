@@ -63,3 +63,7 @@ Variables:
     AIRTABLE_API_KEY=
     AIRTABLE_API_BASE=
 ```
+
+# Powered by
+
+[![Powered by Vercel](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg "Powered by Vercel")](https://vercel.com/?utm_source=useWeb3&utm_campaign=oss)
