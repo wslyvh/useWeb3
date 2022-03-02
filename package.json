@@ -40,7 +40,7 @@
     "twit": "^2.2.11",
     "web3modal": "^1.9.5"
   },
-  "devDependencies": {
+  "optionalDependencies": {
     "@types/he": "^1.1.2",
     "@types/marked": "^4.0.0",
     "@types/react": "17.0.14",

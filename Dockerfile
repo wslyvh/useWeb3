@@ -1,9 +1,12 @@
 FROM node:alpine3.15 as module-stage
 WORKDIR /app
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+RUN apk add git
+RUN which git
 ENV PATH /app/node_modules/.bin:$PATH
 ENV NODE_ENV production
 COPY . /app
-RUN yarn install --production --silent --ignore-optional --pure-lockfile
+RUN yarn install
 
 
 
