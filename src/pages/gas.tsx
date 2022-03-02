@@ -56,7 +56,7 @@ export default function Index(props: Props) {
               Transaction fees are rewarded to them for providing these services.
             </li>
             <li>
-              A fee market allows prioritization of transactions by 'tipping' the validators for processing specific
+              A fee market allows prioritization of transactions by &apos;tipping&apos; the validators for processing specific
               transactions more quickly.
             </li>
             <li>
@@ -64,7 +64,7 @@ export default function Index(props: Props) {
               of code executions it can perform within a transaction.
             </li>
             <li>
-              Additionally, it prevents accidental or hostile infinite loops, e.g. denial of service ('DDoS') attacks.
+              Additionally, it prevents accidental or hostile infinite loops, e.g. denial of service (&apos;DDoS&apos;) attacks.
               In a DDoS attack, an attacker tries to flood the network by spamming empty transactions. A fee market
               ensures that doing such attacks, for an extended period of time, to become expensive.
             </li>
