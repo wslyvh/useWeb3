@@ -28,7 +28,10 @@ export default function Index(props: Props) {
       />
       <MainLayout className={styles.container} title="ETH Gas tracker">
         <article>
-          <p>Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works is key to efficiently use and develop on Ethereum.</p>
+          <p>
+            Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works
+            is key to efficiently use and develop on Ethereum.
+          </p>
         </article>
 
         <GasData />
@@ -41,26 +44,48 @@ export default function Index(props: Props) {
         <article className={styles.markdown}>
           <h3>Ethereum Gas explained</h3>
           <p>
-            Gas is an important concept within the Web3 world. It is the virtual fuel required to execute transactions on the network. Similar to how a car needs gasoline to drive. Most public blockchains denominate these transaction fees in their native currency.
+            Gas is an important concept within the Web3 world. It is the virtual fuel required to execute transactions
+            on the network. Similar to how a car needs gasoline to drive. Most public blockchains denominate these
+            transaction fees in their native currency.
           </p>
           <p>There are a few crucial aspects of using gas or transaction fees in public, permissionless networks:</p>
           <ol>
-            <li>Every transaction published on a blockchain imposes a cost of downloading, executing and verify it. People who run a node (validators) spend time, money and effort to do this for which they are compensated. Transaction fees are rewarded to them for providing these services.</li>
-            <li>A fee market allows prioritization of transactions by 'tipping' the validators for processing specific transactions more quickly.</li>
-            <li>For smart contract platforms, it avoids computational waste in code, by setting a limit to how many steps of code executions it can perform within a transaction.</li>
-            <li>Additionally, it prevents accidental or hostile infinite loops, e.g. denial of service ('DDoS') attacks. In a DDoS attack, an attacker tries to flood the network by spamming empty transactions. A fee market ensures that doing such attacks, for an extended period of time, to become expensive.</li>
+            <li>
+              Every transaction published on a blockchain imposes a cost of downloading, executing and verify it. People
+              who run a node (validators) spend time, money and effort to do this for which they are compensated.
+              Transaction fees are rewarded to them for providing these services.
+            </li>
+            <li>
+              A fee market allows prioritization of transactions by 'tipping' the validators for processing specific
+              transactions more quickly.
+            </li>
+            <li>
+              For smart contract platforms, it avoids computational waste in code, by setting a limit to how many steps
+              of code executions it can perform within a transaction.
+            </li>
+            <li>
+              Additionally, it prevents accidental or hostile infinite loops, e.g. denial of service ('DDoS') attacks.
+              In a DDoS attack, an attacker tries to flood the network by spamming empty transactions. A fee market
+              ensures that doing such attacks, for an extended period of time, to become expensive.
+            </li>
           </ol>
         </article>
 
         <article className={styles.markdown}>
           <h3>Further reading</h3>
           <ul>
-            <li><Link href='https://ethereum.org/en/developers/docs/gas/'>https://ethereum.org/en/developers/docs/gas/</Link></li>
-            <li><Link href='https://www.blocknative.com/gas-platform'>https://www.blocknative.com/gas-platform</Link></li>
+            <li>
+              <Link href="https://ethereum.org/en/developers/docs/gas/">
+                https://ethereum.org/en/developers/docs/gas/
+              </Link>
+            </li>
+            <li>
+              <Link href="https://www.blocknative.com/gas-platform">https://www.blocknative.com/gas-platform</Link>
+            </li>
           </ul>
         </article>
       </MainLayout>
-    </NavigationProvider >
+    </NavigationProvider>
   )
 }
 
