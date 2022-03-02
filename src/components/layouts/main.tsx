@@ -6,6 +6,7 @@ import { Newsletter } from 'components/newsletter'
 import Fab from 'components/fab'
 import MobileNav from 'components/mobileNav'
 import useLocalStorage from '../../hooks/useLocalStorage'
+import Image from 'next/image'
 
 type Props = {
   title?: string
@@ -79,9 +80,11 @@ export function Main(props: Props) {
             </p>
             <p>
               <Link href="https://vercel.com/?utm_source=useWeb3&amp;utm_campaign=oss">
-                <img
+                <Image
                   src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
                   alt="Powered by Vercel"
+                  height={28}
+                  width={200}
                 />
               </Link>
             </p>
