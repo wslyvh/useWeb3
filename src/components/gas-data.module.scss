@@ -1,0 +1,20 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  section {
+    margin-bottom: $gap-16;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  .columns {
+    display: flex;
+    gap: $gap-16;
+
+    @media (max-width: $screen-480) {
+      flex-direction: column;
+    }
+  }
+}
