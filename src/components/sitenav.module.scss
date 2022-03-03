@@ -3,6 +3,14 @@
 .container {
   .sidenav {
     list-style-type: none;
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+  }
+
+  .sidenav::-webkit-scrollbar {
+    display: none;
   }
 
   .sidenav li {
