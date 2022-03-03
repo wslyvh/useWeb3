@@ -34,3 +34,10 @@ export function isEmail(text: string): boolean {
 export function defaultSlugify(text: string): string {
   return slugify(text, { lower: true, strict: true, trim: true })
 }
+
+export function getYoutubeVideoId(url: string): string | null {
+  const regexExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
+  const match = url.match(regexExp)
+
+  return match && match[2].length == 11 ? match[2] : null
+}

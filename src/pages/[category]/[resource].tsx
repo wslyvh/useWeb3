@@ -8,9 +8,11 @@ import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
+import { getYoutubeVideoId } from 'utils/helpers'
 import { Authors } from 'components/authors'
 import { Tags } from 'components/tags'
 import { Tag } from 'components/tag'
+import { YoutubeEmbed } from 'components/youtube-embed'
 import { getLevelStyle } from 'utils/helpers'
 import styles from '../pages.module.scss'
 import { Link } from 'components/link'
@@ -34,6 +36,7 @@ export default function Index(props: Props) {
     return <></>
   }
   const websiteIsSameCurrentPage = props.item.url.includes(router.asPath) // e.g. Guides do not contain external links
+  const youtubeVideoId = props.item.category.title === 'Videos' ? getYoutubeVideoId(props.item.url) : null
 
   return (
     <NavigationProvider categories={props.categories}>
@@ -68,6 +71,8 @@ export default function Index(props: Props) {
             <strong dangerouslySetInnerHTML={{ __html: props.item.description }} />
           </p>
         </main>
+
+        {youtubeVideoId && <YoutubeEmbed videoId={youtubeVideoId} title={props.item.title} />}
 
         {props.item.content && props.item.content !== props.item.description && (
           <main className={styles.markdown} dangerouslySetInnerHTML={{ __html: marked.parse(props.item.content) }} />

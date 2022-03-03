@@ -1,0 +1,18 @@
+@use 'assets/styles/variables.scss' as *;
+
+.video-wrapper {
+  overflow: hidden;
+  padding-bottom: 56.25%; // 16:9 ratio
+  position: relative;
+  height: 0;
+  margin: $gap-24 0;
+
+  iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    position: absolute;
+  }
+}
