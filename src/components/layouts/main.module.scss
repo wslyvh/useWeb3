@@ -13,17 +13,12 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: $gap-24;
+  gap: $gap-24;
   height: 100vh;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  overflow-y: scroll;
+
   @media (max-width: $screen-640) {
     display: none;
   }
-}
-
-.sitenav::-webkit-scrollbar {
-  display: none;
 }
 
 .mobileSitenav {
@@ -36,17 +31,11 @@
     flex-direction: column;
     justify-content: space-between;
     padding-top: $gap-24;
+    gap: $gap-24;
     height: 100vh;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-y: scroll;
     z-index: 100;
     position: absolute;
   }
-}
-
-.mobileSitenav::-webkit-scrollbar {
-  display: none;
 }
 
 .darkModeButton {
