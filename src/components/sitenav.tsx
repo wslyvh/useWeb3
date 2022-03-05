@@ -61,6 +61,14 @@ export function Sitenav(props: Props) {
             <span className={styles.text}>Tags</span>
           </Link>
         </li>
+        <li className={currentPath.includes('/latest') ? styles.active : ''}>
+          <Link href={'/latest'}>
+            <span role="img" aria-label="latest">
+              ⏱️
+            </span>
+            <span className={styles.text}>Latest</span>
+          </Link>
+        </li>
         <li>
           <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">
             <span role="img" aria-label="submit">
