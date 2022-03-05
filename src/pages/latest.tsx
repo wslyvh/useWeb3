@@ -21,11 +21,7 @@ export default function Index(props: Props) {
   const description = 'Here you can find the latest, most recently added resources to the site.'
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO
-        title={`${title} resources`}
-        divider='⏱️'
-        description={description}
-      />
+      <SEO title={`${title} resources`} divider="⏱️" description={description} />
 
       <MainLayout className={styles.container} title={title}>
         <FilteredOverview title={title} description={description} items={props.items} />
@@ -42,7 +38,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       categories,
-      items: items.filter(i => moment(i.dateAdded) >= moment().subtract(30, 'days')),
+      items: items.filter((i) => moment(i.dateAdded) >= moment().subtract(30, 'days')),
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
