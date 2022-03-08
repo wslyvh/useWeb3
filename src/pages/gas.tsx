@@ -12,6 +12,7 @@ import { GasPriceService } from 'services/gas'
 import { Heatmap as HeatmapType } from 'types/gas'
 import Link from 'next/link'
 import { GasData } from 'components/gas-data'
+import { GasTable } from 'components/gas-table'
 
 interface Props {
   categories: Array<Category>
@@ -36,6 +37,11 @@ export default function Index(props: Props) {
         </article>
 
         <GasData />
+
+        <article className={styles.markdown}>
+          <h2>Average Ethereum Transaction costs</h2>
+          <GasTable gasPrice={22} />
+        </article>
 
         <article className={styles.markdown}>
           <h2>Average Ethereum Gas Prices per hour</h2>

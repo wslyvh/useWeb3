@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useInterval } from './useInterval'
 
-export function useEtherPrice() {
+export function useEtherPrice(interval: number = 30000) {
   const [price, setPrice] = useState<number>(0)
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function useEtherPrice() {
   useInterval(async () => {
     console.log('Updating price', price)
     await trySetPrice()
-  }, 30000)
+  }, interval)
 
   async function trySetPrice() {
     try {
