@@ -24,7 +24,7 @@ export function useGasPrice(interval: number = 15000) {
       const feeData = await provider.getFeeData()
 
       if (feeData && feeData.maxFeePerGas) {
-        const price = Math.round(Number(formatUnits(feeData.maxFeePerGas, "gwei")))
+        const price = Math.round(Number(formatUnits(feeData.maxFeePerGas, 'gwei')))
         setPrice(price)
       }
     } catch (e) {
