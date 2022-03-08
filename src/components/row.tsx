@@ -71,7 +71,11 @@ export function BasicRow(props: BasicProps) {
 
       <ul className={styles.tags}>
         {props.tags.map((i) => {
-          return <li key={i} className="block fixed inline">{i}</li>
+          return (
+            <li key={i} className="block fixed inline">
+              {i}
+            </li>
+          )
         })}
       </ul>
     </section>

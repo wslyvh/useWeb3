@@ -20,11 +20,14 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO
         title="Web3 Grants and support programs"
-        divider='💰'
+        divider="💰"
         description="These grant and ecosystem support programs can help you build your own projects, tools, infrastructure, research and other public goods."
       />
       <MainLayout className={styles.container} title="Web3 Grants and support programs">
-        <p>These grant and ecosystem support programs can help you build your own projects, tools, infrastructure, research and other public goods.</p>
+        <p>
+          These grant and ecosystem support programs can help you build your own projects, tools, infrastructure,
+          research and other public goods.
+        </p>
 
         <main>
           <Featured type="rows">
@@ -53,6 +56,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       categories,
-    }
+    },
   }
 }
