@@ -40,11 +40,13 @@ export function GasTable(props: Props) {
         </thead>
         <tbody>
           {transactions.map((i) => {
-            return <tr key={i.name}>
-              <td>{i.name}</td>
-              <td className={styles.right}>{i.cost.toLocaleString('en-US')}</td>
-              <td className={styles.right}>${getUsdValue(i.cost).toFixed(2)}</td>
-            </tr>
+            return (
+              <tr key={i.name}>
+                <td>{i.name}</td>
+                <td className={styles.right}>{i.cost.toLocaleString('en-US')}</td>
+                <td className={styles.right}>${getUsdValue(i.cost).toFixed(2)}</td>
+              </tr>
+            )
           })}
         </tbody>
       </table>

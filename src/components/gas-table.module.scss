@@ -1,26 +1,27 @@
 @use 'assets/styles/variables.scss' as *;
 
 .container {
-  table { 
-    width: 100%; 
-    border-collapse: collapse; 
+  table {
+    width: 100%;
+    border-collapse: collapse;
   }
-  
-  tr:nth-of-type(odd) { 
+
+  tr:nth-of-type(odd) {
     background: rgba(182, 196, 196, 0.2);
     color: '#3C4A59';
   }
 
-  th { 
+  th {
     background: rgba(182, 196, 196, 1);
     color: '#3C4A59';
-    font-weight: bold; 
+    font-weight: bold;
   }
-  
-  td, th { 
+
+  td,
+  th {
     padding: $gap-8;
     border: 2px solid #fff;
-    text-align: left; 
+    text-align: left;
     border-radius: $gap-8;
   }
 
