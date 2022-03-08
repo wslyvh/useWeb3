@@ -45,6 +45,14 @@ export function Sitenav(props: Props) {
             </li>
           )
         })}
+        <li className={currentPath.includes('/grants') ? styles.active : ''}>
+          <Link href={'/grants'}>
+            <span role="img" aria-label="grants">
+              💰
+            </span>
+            <span className={styles.text}>Grants</span>
+          </Link>
+        </li>
         <li className={currentPath.includes('/gas') ? styles.active : ''}>
           <Link href={'/gas'}>
             <span role="img" aria-label="jobs">

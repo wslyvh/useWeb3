@@ -61,4 +61,15 @@
     color: var(--color-neutral-500);
     font-size: smaller;
   }
+
+  .info {
+    margin-top: $gap-8;
+    color: var(--color-neutral-500);
+    font-size: smaller;
+  }
+
+  .tags {
+    margin-bottom: $gap-8;
+    text-align: right;
+  }
 }

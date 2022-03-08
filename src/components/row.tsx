@@ -48,3 +48,32 @@ export function Row(props: Props) {
     </section>
   )
 }
+
+interface BasicProps {
+  title: string
+  description?: string
+  url: string
+  tags: string[]
+  className?: string
+}
+
+export function BasicRow(props: BasicProps) {
+  let className = `${styles.card} fixed block`
+  if (props.className) className += ` ${props.className}`
+
+  return (
+    <section className={className}>
+      <Link href={props.url}>
+        <h4 className={styles.title}>{props.title}</h4>
+      </Link>
+
+      <p className={styles.info}>{props.description}</p>
+
+      <ul className={styles.tags}>
+        {props.tags.map((i) => {
+          return <li key={i} className="block fixed inline">{i}</li>
+        })}
+      </ul>
+    </section>
+  )
+}
