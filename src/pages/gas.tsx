@@ -40,7 +40,7 @@ export default function Index(props: Props) {
 
         <article className={styles.markdown}>
           <h2>Average Ethereum Transaction costs</h2>
-          <GasTable gasPrice={22} />
+          <GasTable />
         </article>
 
         <article className={styles.markdown}>

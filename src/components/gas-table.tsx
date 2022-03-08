@@ -1,8 +1,8 @@
 import { useEtherPrice } from 'hooks/useEtherPrice'
+import { useGasPrice } from 'hooks/useGasPrice'
 import styles from './gas-table.module.scss'
 
 interface Props {
-  gasPrice: number
   className?: string
 }
 
@@ -20,12 +20,13 @@ const transactions = [
 ]
 
 export function GasTable(props: Props) {
-  const etherPrice = useEtherPrice(1000000)
+  const gasPrice = useGasPrice(60000)
+  const etherPrice = useEtherPrice(60000)
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
 
   function getUsdValue(priceInGwei: number) {
-    return ((priceInGwei * props.gasPrice) / 1e9) * etherPrice
+    return ((priceInGwei * gasPrice) / 1e9) * etherPrice
   }
 
   return (
