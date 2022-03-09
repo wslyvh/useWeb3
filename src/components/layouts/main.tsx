@@ -7,6 +7,7 @@ import Fab from 'components/fab'
 import MobileNav from 'components/mobileNav'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import Image from 'next/image'
+import { Donate } from 'components/donate'
 
 type Props = {
   title?: string
@@ -66,7 +67,7 @@ export function Main(props: Props) {
             <h1>{title}</h1>
           </header>
 
-          {/* <Donate /> */}
+          <Donate />
 
           {props.children}
 
