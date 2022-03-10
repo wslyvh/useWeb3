@@ -6,7 +6,7 @@ tags: ["Web3"]
 languages: []
 url: "https://tim.blog/2021/03/08/vitalik-buterin-naval-ravikant/"
 dateAdded: 2021-08-16
-level: "Intermediate"
+levels: ["Intermediate"]
 ---
 
 Vitalik Buterin, creator of Ethereum, on understanding Ethereum, ETH vs. BTC, ETH2, scaling plans and timelines, NFTs, future considerations, life extension, and more (ft. Naval Ravikant)

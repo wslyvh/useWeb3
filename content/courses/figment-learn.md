@@ -6,7 +6,7 @@ tags: ["Web3"]
 languages: ["Solidity", "JavaScript"]
 url: "https://learn.figment.io/"
 dateAdded: 2022-01-25
-level: "All"
+levels: ["All"]
 
 ---
 

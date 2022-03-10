@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://blog.chain.link/events-and-logging-in-solidity/"
 dateAdded: 2021-11-30
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-11-22
 ---
 

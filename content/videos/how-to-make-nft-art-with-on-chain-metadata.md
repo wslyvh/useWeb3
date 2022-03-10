@@ -6,7 +6,7 @@ tags: ["NFT", "Cryptography"]
 languages: ["Solidity"]
 url: "https://www.youtube.com/watch?v=9oERTH9Bkw0"
 dateAdded: 2022-01-25
-level: "beginner"
+levels: ["Beginner"]
 date: 2021-09-03
 ---
 

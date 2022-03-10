@@ -6,7 +6,7 @@ tags: ["Security","DeFi"]
 languages: []
 url: "https://medium.com/immunefi/how-to-get-a-bigger-bounty-by-optimizing-attack-parameters-a51b144f5cc2"
 dateAdded: 2021-09-24
-level: "Advanced"
+levels: ["Advanced"]
 date: 2021-09-15
 ---
 

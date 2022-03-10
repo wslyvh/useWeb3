@@ -6,7 +6,7 @@ tags: ["DeFi","Smart Contracts"]
 languages: ["Solidity"]
 url: "https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code/"
 dateAdded: 2021-11-15
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-05-01
 ---
 

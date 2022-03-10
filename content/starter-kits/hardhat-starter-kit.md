@@ -6,7 +6,7 @@ tags: ["Smart Contracts", "Oracles"]
 languages: ["Solidity", "JavaScript"]
 url: "https://github.com/smartcontractkit/hardhat-starter-kit"
 dateAdded: 2022-01-25
-level: "All"
+levels: ["All"]
 ---
 
 Test, deploy, and interact with your smart contracts with this javascript hardhat based framework!

@@ -6,7 +6,7 @@ tags: ["Data Analytics"]
 languages: ["Web3", "SQL"]
 url: "https://ournetwork.mirror.xyz/gP16wLY-9BA1E_ZuOSv1EUAgYGfK9mELNza8cfgMWPQ"
 dateAdded: 2022-02-22
-level: "All"
+levels: ["All"]
 ---
 
 OurNetwork contributors and the Dune team are partnering up to bring to fruition Web3's first learn-to-earn data program. We'll spend 30 days teaching a cohort of 30 students how to analyze data in Web3 and communicate their work publicly.

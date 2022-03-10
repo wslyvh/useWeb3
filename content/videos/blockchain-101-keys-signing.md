@@ -6,7 +6,7 @@ tags: ["Cryptography"]
 languages: []
 url: "https://youtu.be/xIDL_akeras"
 dateAdded: 2021-09-07
-level: "Beginner"
+levels: ["Beginner"]
 date: 2017-12-30
 ---
 

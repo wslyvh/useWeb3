@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://betterprogramming.pub/learn-solidity-events-2801d6a99a92"
 dateAdded: 2021-09-14
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-01-31
 ---
 

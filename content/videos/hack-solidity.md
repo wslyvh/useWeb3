@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Security"]
 languages: ["Vyper"]
 url: "https://www.youtube.com/playlist?list=PLO5VPQH6OWdWsCgXJT9UuzgbC8SPvTRi5"
 dateAdded: 2021-08-16
-level: "Beginner"
+levels: ["Beginner"]
 date: 2020-06-20
 ---
 

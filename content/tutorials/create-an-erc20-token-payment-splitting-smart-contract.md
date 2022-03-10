@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://medium.com/coinmonks/create-an-erc20-token-payment-splitting-smart-contract-c79436470ccc"
 dateAdded: 2021-09-18
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-16
 ---
 

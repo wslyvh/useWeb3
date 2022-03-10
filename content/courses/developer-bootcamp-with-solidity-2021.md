@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
 url: "https://www.udemy.com/course/blockchain-developer/"
 dateAdded: 2021-08-17
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 Welcome to the Ethereum Blockchain Developer Bootcamp With Solidity. The only course you'll need to become an Ethereum blockchain developer.

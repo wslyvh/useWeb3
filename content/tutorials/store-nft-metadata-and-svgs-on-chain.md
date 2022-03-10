@@ -6,7 +6,7 @@ tags: ["Smart Contracts","NFT"]
 languages: ["Solidity"]
 url: "https://andyhartnett.medium.com/solidity-tutorial-how-to-store-nft-metadata-and-svgs-on-the-blockchain-6df44314406b"
 dateAdded: 2021-09-18
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-17
 ---
 

@@ -6,7 +6,7 @@ tags: ["Dapp"]
 languages: ["JavaScript"]
 url: "https://medium.com/coinmonks/web3-react-connect-users-to-metamask-or-any-wallet-from-your-frontend-241fd538ed39"
 dateAdded: 2021-09-10
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-08-10
 ---
 

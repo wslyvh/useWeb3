@@ -3,7 +3,7 @@ title: 'Enterprise Blockchain Technologies'
 description: 'This free, open-source course aims at providing a reliable basis for university students to get started in enterprise blockchain.
 '
 authors: ['Rafael Belchior and contributors']
-level: [Intermediate, Advanced]
+levels: ['Intermediate', 'Advanced']
 tags: ['Smart Contracts','Dapp','Enterprise']
 languages: ['Python','JavaScript']
 dateAdded: 2022-01-18

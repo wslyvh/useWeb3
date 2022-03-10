@@ -6,7 +6,7 @@ tags: ["Dapp"]
 languages: ["JavaScript"]
 url: "https://youtu.be/t9gWZYJxk7c"
 dateAdded: 2021-08-16
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-08-11
 ---
 

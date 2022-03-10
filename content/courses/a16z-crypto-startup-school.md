@@ -7,7 +7,7 @@ languages: []
 url: "https://a16z.com/crypto-startup-school/"
 featured: true
 dateAdded: 2021-08-11
-level: "All"
+levels: ["All"]
 ---
 
 Learn How to Build a Crypto Company

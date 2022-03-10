@@ -7,7 +7,7 @@ languages: []
 url: "https://amzn.to/2WBFXiQ"
 featured: true
 dateAdded: 2021-08-25
-level: "All"
+levels: ["All"]
 date: 2020-06-20
 alternateUrl: "https://github.com/sherminvo/TokenEconomyBook/wiki"
 ---

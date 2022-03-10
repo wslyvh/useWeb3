@@ -6,7 +6,7 @@ tags: ["DevEx","Dapp"]
 languages: []
 url: "https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application"
 dateAdded: 2021-11-15
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-22
 ---
 

@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity"]
 url: "https://www.coursera.org/specializations/blockchain"
 dateAdded: 2021-08-17
-level: "Intermediate"
+levels: ["Intermediate"]
 ---
 
 This specialization introduces blockchain, a revolutionary technology that enables peer-to-peer transfer of digital assets without any intermediaries, and is predicted to be just as impactful as the Internet. More specifically, it prepares learners to program on the Ethereum blockchain. The four courses provide learners with (i) an understanding and working knowledge of foundational blockchain concepts, (ii) a skill set for designing and implementing smart contracts, (iii) methods for developing decentralized applications on the blockchain, and (iv) information about the ongoing specific industry-wide blockchain frameworks.

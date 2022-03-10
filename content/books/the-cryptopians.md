@@ -7,7 +7,7 @@ languages: []
 url: "https://amzn.to/3JB9I6e"
 featured: true
 dateAdded: 2022-02-22
-level: "All"
+levels: ["All"]
 date: 2022-02-22
 alternateUrl: "https://www.goodreads.com/book/show/57356067-the-cryptopians"
 ---

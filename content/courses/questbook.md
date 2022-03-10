@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp","EVM"]
 languages: ["Solidity"]
 url: "https://www.questbook.app/"
 dateAdded: 2021-09-21
-level: "All"
+levels: ["All"]
 ---
 
 Questbook is a decentralized university where learning is always free. We enable with our cryptoeconomics and a native erc20 coin that powers the ecosystem. 

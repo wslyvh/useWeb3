@@ -6,7 +6,7 @@ tags: ["NFT"]
 languages: []
 url: "https://www.paradigm.xyz/2021/10/a-guide-to-designing-effective-nft-launches/"
 dateAdded: 2021-10-16
-level: "All"
+levels: ["All"]
 date: 2021-10-13
 ---
 

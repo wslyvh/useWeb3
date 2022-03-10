@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://blog.paulmcaviney.ca/state-variables"
 dateAdded: 2021-11-15
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-11-06
 ---
 

@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://www.youtube.com/playlist?list=PLYSZ-f9LCH3sEf0UKTLCaZErJeQtK7GCD"
 dateAdded: 2021-08-16
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-05-19
 ---
 

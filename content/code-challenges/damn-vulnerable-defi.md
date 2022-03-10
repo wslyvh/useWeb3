@@ -7,7 +7,7 @@ languages: ["Solidity"]
 url: "https://www.damnvulnerabledefi.xyz/"
 featured: true
 dateAdded: 2021-08-11
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 More and more DeFi projects on Ethereum are getting hacked. This is your chance to join the party.

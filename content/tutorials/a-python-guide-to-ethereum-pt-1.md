@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","Python"]
 url: "https://snakecharmers.ethereum.org/a-developers-guide-to-ethereum-pt-1/"
 dateAdded: 2021-08-17
-level: "Beginner"
+levels: ["Beginner"]
 date: 2020-09-08
 ---
 

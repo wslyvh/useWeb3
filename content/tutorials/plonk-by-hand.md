@@ -6,7 +6,7 @@ tags: ["Privacy","Cryptography"]
 languages: []
 url: "https://research.metastate.dev/plonk-by-hand-part-1/"
 dateAdded: 2021-11-15
-level: "Advanced"
+levels: ["Advanced"]
 date: 2020-09-30
 ---
 

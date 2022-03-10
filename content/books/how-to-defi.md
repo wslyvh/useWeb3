@@ -6,7 +6,7 @@ tags: ["DeFi"]
 languages: []
 url: "https://amzn.to/3uFEaFZ"
 dateAdded: 2021-08-11
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-07-01
 alternateUrl: "https://www.goodreads.com/book/show/53530922-how-to-defi"
 ---

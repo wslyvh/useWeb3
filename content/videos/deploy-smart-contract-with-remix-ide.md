@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://youtu.be/bZKVfXmzRDw"
 dateAdded: 2021-09-18
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-09-12
 ---
 

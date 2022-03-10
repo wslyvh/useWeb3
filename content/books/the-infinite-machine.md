@@ -6,7 +6,7 @@ tags: ["Web3"]
 languages: []
 url: "https://amzn.to/3a3OfTu"
 dateAdded: 2021-08-11
-level: "All"
+levels: ["All"]
 date: 2020-07-14
 alternateUrl: "https://www.goodreads.com/book/show/50175330-the-infinite-machine"
 ---

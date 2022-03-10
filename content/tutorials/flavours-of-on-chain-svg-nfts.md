@@ -6,7 +6,7 @@ tags: ["Smart Contracts","NFT"]
 languages: ["Solidity"]
 url: "https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum"
 dateAdded: 2021-09-24
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-08-25
 ---
 

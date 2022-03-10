@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://soliditydeveloper.com/smock2"
 dateAdded: 2021-11-20
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-11-14
 ---
 

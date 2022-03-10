@@ -6,7 +6,7 @@ tags: ["Dapp"]
 languages: ["Solidity"]
 url: "https://youtu.be/jQ1rK2vlEAU"
 dateAdded: 2021-09-24
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-09-17
 ---
 

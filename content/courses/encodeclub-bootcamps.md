@@ -7,7 +7,7 @@ languages: ["Solidity","Rust","Python","Vyper","Cairo"]
 url: "https://www.encode.club/encode-bootcamps"
 featured: true
 dateAdded: 2022-02-18
-level: "Intermediate"
+levels: ["Intermediate"]
 ---
 
 - Intensive, remote live courses and teaching.

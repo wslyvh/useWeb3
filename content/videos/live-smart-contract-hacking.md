@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Security"]
 languages: ["Solidity"]
 url: "https://youtu.be/P8LXLoTUJ5g"
 dateAdded: 2021-09-28
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-12
 ---
 

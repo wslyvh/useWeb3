@@ -6,7 +6,7 @@ tags: ["Dapp","UX & Design"]
 languages: []
 url: "https://rimble.consensys.design/guides"
 dateAdded: 2021-08-17
-level: "Beginner"
+levels: ["Beginner"]
 date: 2018-09-13
 ---
 

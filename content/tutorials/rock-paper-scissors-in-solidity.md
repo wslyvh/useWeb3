@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://medium.com/@websculpt/rock-paper-scissors-in-solidity-part-1-9d7c5d8a316e"
 dateAdded: 2021-10-02
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-28
 ---
 

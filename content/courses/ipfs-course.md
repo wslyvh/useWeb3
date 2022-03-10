@@ -6,7 +6,7 @@ tags: ["Storage"]
 languages: []
 url: "https://proto.school/course/ipfs"
 dateAdded: 2021-09-23
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 The InterPlanetary File System (IPFS) is a peer-to-peer network protocol for storing and sharing data in a distributed file system, with addresses based on content, not location. In this course, we'll dive into the basics of cryptographic hashing and content addressing on the decentralized web, take a look at how Content Identifiers (CIDs) are constructed in IPFS, and get hands on with the js-ipfs API. Through JavaScript coding challenges, we'll learn to store and share files with peers, create links between Merkle DAGs, and explore the Mutable File System (MFS), which lets you work with content-addressed files and directories as if you were using a traditional named-based file system. As we go, we'll learn more about other protocol layers of the Web3 stack that work in parallel with IPFS, including Multiformats, IPLD, libp2p, and Filecoin.

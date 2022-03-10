@@ -6,7 +6,7 @@ tags: ["Smart Contracts","EVM"]
 languages: ["Solidity"]
 url: "https://mudit.blog/solidity-tips-and-tricks-to-save-gas-and-reduce-bytecode-size/"
 dateAdded: 2021-09-01
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2019-02-16
 ---
 

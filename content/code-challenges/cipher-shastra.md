@@ -6,7 +6,7 @@ tags: ["Smart Contracts","DeFi","Cryptography","Security"]
 languages: ["Solidity"]
 url: "https://ciphershastra.com/"
 dateAdded: 2021-09-18
-level: "All"
+levels: ["All"]
 ---
 
 Cipher Shastra is a playground where anyone can enhance their Security Skills by solving and learning from CTF like challenges. 

@@ -6,7 +6,7 @@ tags: ["Oracles"]
 languages: []
 url: "https://youtu.be/1gVsV2PWUKU"
 dateAdded: 2021-10-31
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-10-26
 ---
 

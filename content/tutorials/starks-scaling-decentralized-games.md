@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Scalability","Cryptography"]
 languages: ["Cairo"]
 url: "https://killari.medium.com/starks-verifying-a-complex-auto-battler-calculation-on-ethereum-d8698f29808d"
 dateAdded: 2021-11-23
-level: "Advanced"
+levels: ["Advanced"]
 date: 2021-10-06
 ---
 

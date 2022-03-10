@@ -6,7 +6,7 @@ tags: ["Smart Contracts","EVM"]
 languages: []
 url: "https://www.defi-academy.com/courses/introduction-to-smart-contracts"
 dateAdded: 2021-10-07
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 Learn the basics of Solidity: the language to create smart contracts.

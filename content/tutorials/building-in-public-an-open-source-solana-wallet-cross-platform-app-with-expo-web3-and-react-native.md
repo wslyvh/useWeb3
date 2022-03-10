@@ -6,7 +6,7 @@ tags: ["Dapp", 'UX & Design', 'Mobile']
 languages: ["JavaScript"]
 url: "https://moviendo.me/building-in-public-an-open-source-solana-wallet-cross-platform-app-with-expo-web3-react-native/index.html"
 dateAdded: 2021-09-27
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-15
 ---
 

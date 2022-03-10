@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Scalability"]
 languages: ["Cairo"]
 url: "https://github.com/Shard-Labs/starknet-hardhat-example"
 dateAdded: 2022-01-15
-level: "All"
+levels: ["All"]
 ---
 
 Basic Sample Hardhat Project - with Starknet Plugin

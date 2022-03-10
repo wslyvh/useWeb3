@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Scalability"]
 languages: ["Cairo"]
 url: "https://perama-v.github.io/cairo/by-example/"
 dateAdded: 2022-01-15
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 First setup using Nile which makes managing files and command line calls to StarkNet simple.

@@ -6,7 +6,7 @@ tags: ["Cryptography","Security","Privacy","Scalability"]
 languages: []
 url: "https://aszepieniec.github.io/stark-anatomy/"
 dateAdded: 2021-10-30
-level: "Advanced"
+levels: ["Advanced"]
 date: 2021-10-28
 ---
 

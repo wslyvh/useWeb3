@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp","NFT"]
 languages: ["Solidity", "JavaScript"]
 url: "https://egghead.io/courses/build-an-nft-based-ticketing-system-1a2f387c"
 dateAdded: 2022-02-22
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 NFTs, non-fungible tokens, have taken the online world by storm ushering in the proclamation of a new world-wide web... web3.

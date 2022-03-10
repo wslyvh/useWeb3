@@ -6,7 +6,7 @@ tags: ["Cryptography","Dapp"]
 languages: ["JavaScript"]
 url: "https://youtu.be/vhUjCLYlnMM"
 dateAdded: 2021-09-10
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-05
 ---
 

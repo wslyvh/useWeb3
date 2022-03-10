@@ -7,7 +7,7 @@ languages: ["Solidity"]
 url: "https://cryptozombies.io/"
 featured: true
 dateAdded: 2021-08-11
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 Learn to Code Blockchain DApps By Building Simple Games

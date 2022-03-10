@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://github.com/bkrem/awesome-solidity"
 dateAdded: 2021-08-14
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 A curated list of awesome Solidity resources, libraries, tools and more

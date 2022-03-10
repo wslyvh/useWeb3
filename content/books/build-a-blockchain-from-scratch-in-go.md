@@ -6,7 +6,7 @@ tags: ["Cryptography"]
 languages: ["Go"]
 url: "https://web3coach.gumroad.com/l/build-a-blockchain-from-scratch-in-go"
 dateAdded: 2021-08-19
-level: "Beginner"
+levels: ["Beginner"]
 date: 2020-06-01
 ---
 

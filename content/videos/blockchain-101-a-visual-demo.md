@@ -6,7 +6,7 @@ tags: ["Cryptography"]
 languages: []
 url: "https://youtu.be/_160oMzblY8"
 dateAdded: 2021-09-07
-level: "Beginner"
+levels: ["Beginner"]
 date: 2016-11-05
 ---
 

@@ -7,7 +7,7 @@ languages: ["Solidity"]
 url: "https://www.youtube.com/playlist?list=PLJz1HruEnenCXH7KW7wBCEBnBLOVkiqIi"
 featured: true
 dateAdded: 2021-08-16
-level: "Beginner"
+levels: ["Beginner"]
 date: 2019-10-10
 ---
 

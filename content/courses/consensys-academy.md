@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
 url: "https://consensys.net/academy/"
 dateAdded: 2021-08-11
-level: "All"
+levels: ["All"]
 ---
 
 Become a certified blockchain developer

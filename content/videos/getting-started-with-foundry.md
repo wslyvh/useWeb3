@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Rust"]
 url: "https://youtu.be/wqFnif_6Mbc"
 dateAdded: 2022-01-10
-level: "Beginner"
+levels: ["Beginner"]
 date: 2022-01-09
 ---
 

@@ -6,7 +6,7 @@ tags: ["Dapp"]
 languages: ["Solidity"]
 url: "https://camiinthisthang.hashnode.dev/wthisweb3"
 dateAdded: 2021-10-02
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-09-28
 ---
 

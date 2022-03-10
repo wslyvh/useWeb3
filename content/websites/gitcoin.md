@@ -6,7 +6,7 @@ tags: []
 languages: []
 url: "https://gitcoin.co/"
 dateAdded: 2021-10-24
-level: "All"
+levels: ["All"]
 ---
 
 Connect with the community developing digital public goods, creating financial freedom, and defining the future of the open web.

@@ -29,7 +29,7 @@ export function FilteredOverview(props: Props) {
       sorted = sorted.sort((a, b) => (a.title > b.title ? 1 : a.title === b.title ? 0 : -1))
     }
     if (value === 'Expertise') {
-      sorted = sorted.sort((a, b) => (a.level > b.level ? 1 : a.level === b.level ? 0 : -1))
+      sorted = sorted.sort((a, b) => (a.levels > b.levels ? 1 : a.levels === b.levels ? 0 : -1))
     }
 
     setItems(sorted)
@@ -62,7 +62,7 @@ export function FilteredOverview(props: Props) {
                 title={i.title}
                 description={i.description}
                 author={i.authors.join(', ')}
-                tag={i.level}
+                levels={i.levels}
                 detailsUrl={`/${i.category.id}/${i.id}`}
                 url={i.url}
               />

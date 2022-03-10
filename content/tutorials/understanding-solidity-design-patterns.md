@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://hackernoon.com/solidity-tutorial-understanding-design-patterns-part-1"
 dateAdded: 2021-10-09
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-10-07
 ---
 

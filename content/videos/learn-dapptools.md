@@ -6,7 +6,7 @@ tags: ["Smart Contracts", "DevEx"]
 languages: ["Solidity", "Bash"]
 url: "https://www.youtube.com/watch?v=ZurrDzuurQs"
 dateAdded: 2022-01-25
-level: "beginner"
+levels: ["Beginner"]
 date: 2022-01-17
 ---
 

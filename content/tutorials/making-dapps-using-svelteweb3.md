@@ -6,7 +6,7 @@ tags: ["Dapp"]
 languages: ["Vyper"]
 url: "https://chiuzon.medium.com/enjoy-making-dapps-using-svelteweb3-b78dfea1d902"
 dateAdded: 2021-11-15
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-11-14
 ---
 

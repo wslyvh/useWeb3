@@ -6,7 +6,7 @@ tags: ["DeFi","Web3"]
 languages: []
 url: "https://youtu.be/v1Z5BnBuFyE"
 dateAdded: 2022-01-04
-level: "All"
+levels: ["All"]
 ---
 
 This is a video from Rekt, the dark web of DeFi journalism.

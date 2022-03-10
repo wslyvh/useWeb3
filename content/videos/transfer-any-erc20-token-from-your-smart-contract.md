@@ -6,7 +6,7 @@ tags: ["Smart Contracts","EVM","Dapp"]
 languages: ["Solidity"]
 url: "https://www.youtube.com/watch?v=9tYkS7YyOjU"
 dateAdded: 2021-10-04
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-10-04
 ---
 

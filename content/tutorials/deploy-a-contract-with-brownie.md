@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity","Python"]
 url: "https://www.quicknode.com/guides/web3-sdks/how-to-deploy-a-smart-contract-with-brownie"
 dateAdded: 2021-08-20
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-07-24
 ---
 

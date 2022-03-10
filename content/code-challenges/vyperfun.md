@@ -7,7 +7,7 @@ languages: ["Vyper"]
 url: "https://vyper.fun/"
 featured: true
 dateAdded: 2021-08-13
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 This is an interactive tutorial website for learning Vyper while building games using smart contracts, similar to Cryptozombies.

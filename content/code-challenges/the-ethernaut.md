@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Security"]
 languages: ["Solidity"]
 url: "https://ethernaut.openzeppelin.com/"
 dateAdded: 2021-08-11
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 The Ethernaut is a Web3/Solidity based wargame inspired on overthewire.org, played in the Ethereum Virtual Machine. Each level is a smart contract that needs to be 'hacked'.

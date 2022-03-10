@@ -6,7 +6,7 @@ tags: ["Smart Contracts","NFT"]
 languages: ["Solidity"]
 url: "https://youtu.be/tBMk1iZa85Y"
 dateAdded: 2021-10-02
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-10
 ---
 

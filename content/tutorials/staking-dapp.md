@@ -6,7 +6,7 @@ tags: ["Dapp","Smart Contracts"]
 languages: ["Solidity","JavaScript"]
 url: "https://stermi.medium.com/how-to-write-your-first-decentralized-app-scaffold-eth-challenge-1-staking-dapp-b0b6a6f4d242"
 dateAdded: 2021-09-01
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-08-31
 ---
 

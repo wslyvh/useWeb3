@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: []
 url: "https://amzn.to/34pfBUE"
 dateAdded: 2022-01-09
-level: "All"
+levels: ["All"]
 date: 2019-10-05
 ---
 

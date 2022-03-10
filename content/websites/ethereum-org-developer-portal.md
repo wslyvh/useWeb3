@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp","EVM"]
 languages: []
 url: "https://ethereum.org/developers"
 dateAdded: 2021-08-16
-level: "All"
+levels: ["All"]
 ---
 
 ethereum.org is here to help you build with Ethereum with documentation on foundational concepts as well as the development stack. Plus there are tutorials to get you up and running.

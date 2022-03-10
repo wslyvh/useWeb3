@@ -6,7 +6,7 @@ tags: ["EVM"]
 languages: []
 url: "https://github.com/wolflo/evm-opcodes"
 dateAdded: 2021-09-14
-level: "Advanced"
+levels: ["Advanced"]
 ---
 
 An updated version of the EVM reference page at ethervm.io

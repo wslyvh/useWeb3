@@ -7,7 +7,7 @@ languages: ["Solidity","JavaScript"]
 url: "https://www.chainshot.com/"
 featured: true
 dateAdded: 2021-08-11
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 Blockchain is an exciting new discipline in Computer Science. It combines a wide array of skills from math and cryptography to social sciences and understanding organizations. Understanding blockchain decentralization and how/where to apply it is a brand new skill that very few have mastered.

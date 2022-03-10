@@ -6,7 +6,7 @@ tags: ["Dapp", 'UX & Design']
 languages: ["JavaScript"]
 url: "https://www.quicknode.com/guides/web3-sdks/how-to-build-a-wallet-generator-for-solana-in-react"
 dateAdded: 2021-10-31
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-10-29
 ---
 

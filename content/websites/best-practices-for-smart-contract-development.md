@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Security"]
 languages: ["Solidity"]
 url: "https://yos.io/2019/11/10/smart-contract-development-best-practices/"
 dateAdded: 2021-08-29
-level: "Intermediate"
+levels: ["Intermediate"]
 ---
 
 The history of software development spans decades. We benefit from the best practices, design patterns, and nuggets of wisdom that has accumulated over half a century.

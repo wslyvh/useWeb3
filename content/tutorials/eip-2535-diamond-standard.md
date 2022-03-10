@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://soliditydeveloper.com/eip-2535"
 dateAdded: 2021-10-24
-level: "Advanced"
+levels: ["Advanced"]
 date: 2021-10-16
 ---
 

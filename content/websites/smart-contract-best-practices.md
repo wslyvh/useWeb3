@@ -7,7 +7,7 @@ languages: ["Solidity"]
 url: "https://consensys.github.io/smart-contract-best-practices/"
 featured: true
 dateAdded: 2021-08-16
-level: "Intermediate"
+levels: ["Intermediate"]
 ---
 
 This document provides a baseline knowledge of security considerations for intermediate Solidity programmers. It is maintained by ConsenSys Diligence, with contributions from our friends in the broader Ethereum community.

@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Security"]
 languages: ["Solidity"]
 url: "https://capturetheether.com/"
 dateAdded: 2021-08-11
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 Capture the Ether is a game in which you hack Ethereum smart contracts to learn about security.

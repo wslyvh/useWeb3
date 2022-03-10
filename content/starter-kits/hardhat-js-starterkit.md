@@ -6,7 +6,7 @@ tags: ["Smart Contracts"]
 languages: ["Solidity", "JavaScript"]
 url: "https://github.com/ahmedali8/hardhat-js-starterkit"
 dateAdded: 2022-02-26
-level: "Intermediate"
+levels: ["Intermediate"]
 ---
 
 Simply Write, Test, Deploy, and Interact with your smart contracts with this javascript hardhat based framework containing various utilities for helping you out to easily manage your project.

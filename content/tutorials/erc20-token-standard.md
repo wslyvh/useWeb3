@@ -6,7 +6,7 @@ tags: ["DeFi","Smart Contracts"]
 languages: []
 url: "https://ethereumdev.io/understand-the-erc20-token-smart-contract/"
 dateAdded: 2021-08-17
-level: "Beginner"
+levels: ["Beginner"]
 date: 2020-04-05
 ---
 

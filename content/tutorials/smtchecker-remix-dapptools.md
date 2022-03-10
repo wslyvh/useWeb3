@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Security","EVM"]
 languages: ["Solidity"]
 url: "https://fv.ethereum.org/2021/12/01/smtchecker-dapptools/"
 dateAdded: 2021-12-05
-level: "Advanced"
+levels: ["Advanced"]
 date: 2021-12-01
 ---
 

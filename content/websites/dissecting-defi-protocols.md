@@ -6,7 +6,7 @@ tags: ["DeFi","Smart Contracts"]
 languages: ["Solidity"]
 url: "https://0xkowloon.substack.com/"
 dateAdded: 2021-11-15
-level: "Advanced"
+levels: ["Advanced"]
 ---
 
 Dissecting DeFi Protocols analyzes smart contracts of different DeFi protocols.

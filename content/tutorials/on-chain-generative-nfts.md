@@ -6,7 +6,7 @@ tags: ["Smart Contracts","NFT"]
 languages: ["Solidity"]
 url: "https://medium.com/@beautifooldata/contract-development-of-buddy-buddy-tags-fun-completely-on-chain-generative-nfts-for-be9766bb680d"
 dateAdded: 2021-10-02
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-09-26
 ---
 

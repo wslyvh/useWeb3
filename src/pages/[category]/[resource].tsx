@@ -11,14 +11,13 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import { getYoutubeVideoId } from 'utils/helpers'
 import { Authors } from 'components/authors'
 import { Tags } from 'components/tags'
-import { Tag } from 'components/tag'
 import { YoutubeEmbed } from 'components/youtube-embed'
-import { getLevelStyle } from 'utils/helpers'
 import styles from '../pages.module.scss'
 import { Link } from 'components/link'
 import { MarkdownContentService } from 'services/content'
 import { marked } from 'marked'
 import { useRouter } from 'next/router'
+import { Levels } from 'components/levels'
 
 interface Props {
   categories: Array<Category>
@@ -84,7 +83,7 @@ export default function Index(props: Props) {
               return { key: i, count: 0 }
             })}
           />
-          <Tag className={styles.level} text={props.item.level} type={getLevelStyle(props.item.level)} />
+          <Levels levels={props.item.levels} />
         </article>
 
         {props.item.category.title === 'Books' && (

@@ -6,7 +6,7 @@ tags: ["DevEx"]
 languages: ["Solidity"]
 url: "https://ethfiddle.com/"
 dateAdded: 2021-09-25
-level: "All"
+levels: ["All"]
 ---
 
 Solidity IDE in the browser

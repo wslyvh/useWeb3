@@ -7,7 +7,7 @@ languages: ["Solidity","JavaScript"]
 url: "https://github.com/EthWorks/useDApp"
 featured: true
 dateAdded: 2021-09-16
-level: "All"
+levels: ["All"]
 ---
 
 Introduces great features:

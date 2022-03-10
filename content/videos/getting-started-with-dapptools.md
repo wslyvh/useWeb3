@@ -6,7 +6,7 @@ tags: ["Smart Contracts","DevEx"]
 languages: ["Solidity"]
 url: "https://youtu.be/UY9WeFBLI5M"
 dateAdded: 2021-10-30
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-10-18
 ---
 

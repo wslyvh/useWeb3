@@ -6,7 +6,7 @@ tags: ["DeFi", "Oracles"]
 languages: ["Solidity", "Python"]
 url: "https://www.youtube.com/watch?v=x0YDcZly_PU"
 dateAdded: 2022-01-25
-level: "beginner"
+levels: ["Beginner"]
 date: 2021-06-07
 ---
 

@@ -6,7 +6,7 @@ tags: ["Data Analytics"]
 languages: ["SQL"]
 url: "https://youtube.com/playlist?list=PLK3b5d4iK10ext4v-GBySekaA8-GP8quD"
 dateAdded: 2022-02-22
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-07-19
 ---
 

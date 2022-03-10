@@ -6,7 +6,7 @@ tags: ["NFT"]
 languages: ["Solidity"]
 url: "https://youtu.be/UBGXFV1TQxc"
 dateAdded: 2021-10-09
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-10-06
 ---
 

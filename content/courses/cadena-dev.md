@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity"]
 url: "https://www.cadena.dev/"
 dateAdded: 2022-02-22
-level: "All"
+levels: ["All"]
 ---
 
 Cadena helps developers transition into web3 tuition free.

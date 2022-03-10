@@ -1,15 +1,14 @@
 import React from 'react'
 import styles from './card.module.scss'
 import { Link } from 'components/link'
-import { Tag } from './tag'
-import { getLevelStyle } from 'utils/helpers'
+import { Levels } from './levels'
 
 interface Props {
   title: string
   description: string
   author?: string
   small?: boolean
-  tag?: string
+  levels?: Array<string>
   detailsUrl?: string
   url?: string
   className?: string
@@ -30,7 +29,7 @@ export function Card(props: Props) {
       {!props.url && <h4 className={styles.title}>{props.title}</h4>}
       <p className={styles.description}>{props.description}</p>
       {props.author && <p className={styles.author}>- {props.author}</p>}
-      {props.tag && <Tag text={props.tag} type={getLevelStyle(props.tag)} />}
+      {props.levels && <Levels levels={props.levels} /> }
       <div className={styles.footer}>
         {props.detailsUrl && (
           <Link className={styles.details} href={props.detailsUrl}>

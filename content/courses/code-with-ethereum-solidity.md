@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
 url: "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/"
 dateAdded: 2021-08-16
-level: "Beginner"
+levels: ["Beginner"]
 ---
 
 Smart Contracts? They're here.  The Ethereum Blockchain?  Covered.  Solidity?  Yep!

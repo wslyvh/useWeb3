@@ -6,7 +6,7 @@ tags: ["Dapp"]
 languages: []
 url: "https://github.com/chiuzon/sveltekit-web3-hackaton-starter"
 dateAdded: 2021-11-25
-level: "All"
+levels: ["All"]
 date: 2021-11-25
 ---
 

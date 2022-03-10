@@ -6,7 +6,7 @@ tags: ["Cryptography","Security"]
 languages: []
 url: "https://medium.com/@pierreia/quick-tour-on-ethereum-private-keys-attacks-3082846b7632"
 dateAdded: 2022-01-10
-level: "Intermediate"
+levels: ["Intermediate"]
 date: 2021-12-26
 ---
 

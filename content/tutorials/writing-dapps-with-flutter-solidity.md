@@ -6,7 +6,7 @@ tags: ['Mobile']
 languages: ["Solidity","Flutter","Dart"]
 url: "https://itnext.io/writing-dapps-with-flutter-solidity-27d0621fd01"
 dateAdded: 2021-10-09
-level: "Beginner"
+levels: ["Beginner"]
 date: 2021-10-07
 ---
 

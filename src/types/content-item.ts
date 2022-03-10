@@ -7,7 +7,7 @@ export interface ContentItem {
   content: string
   authors: Array<string>
   date?: number
-  level: 'All' | 'Beginner' | 'Intermediate' | 'Advanced'
+  levels: Array<'All' | 'Beginner' | 'Intermediate' | 'Advanced'>
   tags: Array<string>
   languages: Array<string>
   url: string

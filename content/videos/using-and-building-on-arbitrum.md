@@ -6,7 +6,7 @@ tags: ["Smart Contracts","Scalability"]
 languages: ["Solidity","JavaScript"]
 url: "https://youtu.be/d4EgugQLZqs"
 dateAdded: 2022-01-15
-level: "Intermediate"
+levels: ["Intermediate"]
 ---
 
 Arbitrum is  a layer 2 scaling solution for the Ethereum network. In this tutorial we will be looking at how optimistic roll ups work, deploying a smart contract to Arbitrum and then carrying out a token swap on layer 2 using Uniswap.
