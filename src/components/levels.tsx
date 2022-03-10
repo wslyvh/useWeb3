@@ -3,6 +3,7 @@ import styles from './levels.module.scss'
 
 interface Props {
     levels: Array<string>
+    className?: string
   }
   
   export function Levels(props: Props) {
@@ -12,7 +13,7 @@ interface Props {
             {props.levels.map((level, i) => {
                 let type = getLevelStyle(level)
                 let className = `${styles.tag} ${styles[type ?? 'default']}`
-                if (className) className += ` ${className}`
+                if (props.className) className += ` ${props.className}`
               
                 return <li key={i} className={className}>{level}</li>
             })}

@@ -83,7 +83,7 @@ export default function Index(props: Props) {
               return { key: i, count: 0 }
             })}
           />
-          <Levels levels={props.item.levels} />
+          <Levels className={styles.level} levels={props.item.levels} />
         </article>
 
         {props.item.category.title === 'Books' && (
