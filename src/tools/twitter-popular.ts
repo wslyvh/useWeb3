@@ -27,7 +27,9 @@ async function run() {
 
   let text = `Most popular last week 🔥\n\n`
   for (const item of stats) {
-    if (item === 'jobs') {
+    if (item === 'gas') {
+      text += `- ⛽ Gas Tracker \n`
+    } else if (item === 'jobs') {
       text += `- 💼 Jobs \n`
     } else if (item.endsWith('-jobs')) {
       const category = item.replace('-jobs', '')
