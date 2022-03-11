@@ -124,5 +124,5 @@ export function getApplicationUrl(url: string) {
     return url
   }
 
-  return `${url}?utm_source=useweb3.xyz&ref=useweb3.xyz`
+  return `${url}${url.includes('?') ? '&' : '?'}utm_source=useweb3.xyz&ref=useweb3.xyz`
 }
