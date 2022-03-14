@@ -31,7 +31,9 @@ export function GasTable(props: Props) {
 
   return (
     <article className={className}>
-      <small className='muted'>* At current gas price of <strong>{gasPrice} gwei</strong>.</small>
+      <small className="muted">
+        * At current gas price of <strong>{gasPrice} gwei</strong>.
+      </small>
       <table>
         <thead>
           <tr>
