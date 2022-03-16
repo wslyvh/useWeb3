@@ -79,6 +79,7 @@ export const JOBS_ANGEL = [
   'aave',
   'aztec-network',
   'balancer-labs-1',
+  'celestialabs',
   'curve-labs',
   'dorg-1',
   'endaoment-3',
