@@ -31,6 +31,7 @@ export const JOBS_GREENHOUSE = [
   'ankrnetwork',
 ]
 export const JOBS_LEVER = [
+  'ethereumfoundation',
   'aragon',
   'bobanetwork',
   'centrifuge',
