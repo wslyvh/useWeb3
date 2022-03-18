@@ -23,16 +23,16 @@ export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
       <SEO
-        title="ETH Gas tracker"
+        title="Ethereum Gas tracker"
         divider="⛽"
         description="Monitor and track the Ethereum gas price to reduce transaction fees save money."
       />
-      <MainLayout className={styles.container} title="ETH Gas tracker">
+      <MainLayout className={styles.container} title="Ethereum Gas tracker">
         <article>
           <p>
             Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works
-            is key to efficiently use and develop on Ethereum and can greatly reduce your costs to deploy and transact
-            with the network.
+            is key to efficiently use and develop on Ethereum and can greatly reduce the gas fees, required to
+            deploy and transact with the network.
           </p>
         </article>
 
