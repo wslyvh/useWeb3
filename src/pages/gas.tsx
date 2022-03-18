@@ -31,8 +31,8 @@ export default function Index(props: Props) {
         <article>
           <p>
             Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works
-            is key to efficiently use and develop on Ethereum and can greatly reduce the gas fees, required to
-            deploy and transact with the network.
+            is key to efficiently use and develop on Ethereum and can greatly reduce the gas fees, required to deploy
+            and transact with the network.
           </p>
         </article>
 
