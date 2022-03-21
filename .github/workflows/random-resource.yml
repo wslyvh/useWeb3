@@ -3,6 +3,7 @@ name: Random Resource tweet
 on:
   schedule:
     - cron: "30 15 * * *"
+  workflow_dispatch:
 
 jobs:
   build:

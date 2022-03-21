@@ -3,6 +3,7 @@ name: Last week
 on:
   schedule:
     - cron: "0 14 * * 5"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,7 +19,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Run Twitter bot
-        run: yarn twitter:popular
+        run: yarn twitter:last-week
         env:
           PLAUSIBLE_API_KEY: ${{ secrets.PLAUSIBLE_API_KEY }}
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
