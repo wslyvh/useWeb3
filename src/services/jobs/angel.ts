@@ -55,8 +55,7 @@ export class AngelJobService implements JobServiceInterface {
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
         .slice(0, maxItems ?? 100)
-    }
-    catch (e) {
+    } catch (e) {
       console.log('AngelJobService', 'Unable to fetch jobs', companyId)
       console.error(e)
     }
