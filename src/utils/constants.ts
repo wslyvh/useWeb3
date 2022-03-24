@@ -21,7 +21,6 @@ export const JOBS_GREENHOUSE = [
   'setlabs',
   'dydx',
   'brave',
-  'dharma',
   'thesis',
   'matterlabs',
   'chainsafesystems',
