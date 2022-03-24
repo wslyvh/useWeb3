@@ -26,7 +26,7 @@ export class AngelJobService implements JobServiceInterface {
     try {
       const data: any = jobData
       const company = data[companyId]
-      if (!company.jobs) return []
+      if (!company?.jobs) return []
 
       const jobs = Object.entries(company.jobs).map((i) => {
         return i[1]
