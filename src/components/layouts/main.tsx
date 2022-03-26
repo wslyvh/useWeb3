@@ -67,7 +67,7 @@ export function Main(props: Props) {
             <h1>{title}</h1>
           </header>
 
-          <Donate />
+          {/* <Donate /> */}
 
           {props.children}
 

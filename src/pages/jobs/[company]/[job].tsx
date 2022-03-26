@@ -105,13 +105,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   const company = jobs.length > 0 ? jobs[0].company : undefined
   const job = jobs.find((i) => i.slug === jobId)
 
-  if (!company || job) {
-    return {
-      props: null,
-      notFound: true,
-    }
-  }
-
   return {
     props: {
       categories,
