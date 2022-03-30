@@ -42,7 +42,12 @@ export default function Index(props: Props) {
   const headingFormatting = new RegExp(/^(#{1,6}\s*[\S]+)/).test(body) || body.includes('## ') || body.includes('### ')
   const content =
     props.job.asMarkdown ||
-      boldFormatting || basicFormatting || italicFormatting || linkFormatting || listFormatting || headingFormatting
+    boldFormatting ||
+    basicFormatting ||
+    italicFormatting ||
+    linkFormatting ||
+    listFormatting ||
+    headingFormatting
       ? marked.parse(body)
       : body
   const html = he.decode(content)
