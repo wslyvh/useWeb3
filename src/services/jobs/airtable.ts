@@ -69,6 +69,7 @@ export class AirtableJobService implements JobServiceInterface {
             department: source.fields['Department'],
             description: source.fields['Description'],
             body: source.fields['Body'],
+            asMarkdown: true,
             location: source.fields['Location'],
             remote: source.fields['Remote'] ?? false,
             company: {

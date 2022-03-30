@@ -7,6 +7,7 @@ export interface Job {
   department: 'Engineering' | 'Product' | 'Sales' | 'Marketing' | 'People' | 'Operations' | 'Non-Tech' | 'Other'
   description?: string
   body?: string
+  asMarkdown?: boolean
   location: string
   remote: boolean
   minSalary?: number

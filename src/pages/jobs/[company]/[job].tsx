@@ -35,12 +35,14 @@ export default function Index(props: Props) {
 
   const body = props.job.body ?? ''
   const basicFormatting = new RegExp(/\s(__|\*\*)(?!\s)(.(?!\1))+(?!\s(?=\1))/).test(body)
+  const boldFormatting = new RegExp(/\*(.+?)\*/s).test(body) || new RegExp(/\**(.+?)\**/s).test(body)
   const italicFormatting = new RegExp(/_(.+?)_/s).test(body) || new RegExp(/__(.+?)__/s).test(body)
   const linkFormatting = new RegExp(/\[(.+)\]\(([^ ]+?)( "(.+)")?\)/).test(body)
   const listFormatting = new RegExp(/(^(\W{1})(\s)(.*)(?:$)?)+/).test(body)
   const headingFormatting = new RegExp(/^(#{1,6}\s*[\S]+)/).test(body) || body.includes('## ') || body.includes('### ')
   const content =
-    basicFormatting || italicFormatting || linkFormatting || listFormatting || headingFormatting
+    props.job.asMarkdown ||
+      boldFormatting || basicFormatting || italicFormatting || linkFormatting || listFormatting || headingFormatting
       ? marked.parse(body)
       : body
   const html = he.decode(content)
