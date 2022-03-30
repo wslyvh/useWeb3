@@ -51,7 +51,7 @@ export function JobsOverview(props: Props) {
       <Newsletter className={styles.newsletter} title="" description="Receive the latest Web3 jobs in your inbox." />
 
       <div className={styles.filters}>
-        <Departments departments={DEPARTMENTS} />
+        <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
       </div>
 
       {props.jobs.length === 0 && <p>No active job openings. Try another filter.</p>}
@@ -83,7 +83,7 @@ export function JobsOverview(props: Props) {
           <Pagination total={props.jobs.length} />
 
           <div className={styles.filters}>
-            <Departments departments={DEPARTMENTS} />
+            <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
           </div>
         </>
       )}

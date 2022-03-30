@@ -1,3 +1,4 @@
+import { defaultSlugify } from 'utils/helpers'
 import { Link } from './link'
 import styles from './tags.module.scss'
 
@@ -13,7 +14,7 @@ export function Departments(props: Props) {
   return (
     <ul className={className}>
       {props.departments.map((i) => {
-        const id = i.toLowerCase()
+        const id = defaultSlugify(i)
 
         return (
           <li key={id} className="block fixed">

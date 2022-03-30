@@ -43,7 +43,7 @@ export default function Index(props: Props) {
             Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
           </p>
           <p className={styles.filters}>
-            <Departments departments={DEPARTMENTS} />
+            <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
           </p>
           <p>
             Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
