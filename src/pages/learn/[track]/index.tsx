@@ -36,7 +36,7 @@ export default function Index(props: Props) {
         <small>{props.track.lessons.length} lessons</small>
         <ul>
           {props.track.lessons.map((i) => {
-            return <li>{i.name}</li>
+            return <li key={i.id}>{i.name}</li>
           })}
         </ul>
 
