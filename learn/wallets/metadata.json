@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "name": "Wallets",
+    "description": "Learn more about wallets, what they are, what they allow you to do and how you can use them to explore Web3.",
+    "image": "",
+    "website": "https://www.useweb3.xyz/",
+    "twitter": "useWeb3",
+    "reward": {
+        "id": "poap",
+        "params": {
+            "eventId": 26372,
+            "score": 300
+        }
+    }
+}
