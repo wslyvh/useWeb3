@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       categories,
-      tracks
+      tracks,
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }

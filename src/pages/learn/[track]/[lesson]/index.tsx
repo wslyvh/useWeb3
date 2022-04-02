@@ -24,9 +24,8 @@ export default function Index(props: Props) {
 
       <MainLayout className={styles.container} title={props.track.name}>
         <h3>{props.lesson.name}</h3>
-        
-        <Container track={props.track} />
 
+        <Container track={props.track} />
       </MainLayout>
     </NavigationProvider>
   )
@@ -35,28 +34,30 @@ export default function Index(props: Props) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const tracks = GetTracks()
 
-  const lessons = tracks.map(i => {
-    return i.lessons.map(x => {
-      return {
-        track: i.id,
-        lesson: x.id
-      }
+  const lessons = tracks
+    .map((i) => {
+      return i.lessons.map((x) => {
+        return {
+          track: i.id,
+          lesson: x.id,
+        }
+      })
     })
-  }).flat()
+    .flat()
 
   return {
-    paths: lessons.map(i => {
+    paths: lessons.map((i) => {
       return { params: i }
     }),
-    fallback: false
+    fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
-  const track = GetTrack(context.params?.track as string ?? '')
-  const lesson = track?.lessons.find(i => i.id === context.params?.lesson)
+  const track = GetTrack((context.params?.track as string) ?? '')
+  const lesson = track?.lessons.find((i) => i.id === context.params?.lesson)
 
   if (!track || !lesson) {
     return {
@@ -69,7 +70,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
     props: {
       categories,
       track,
-      lesson
+      lesson,
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }

@@ -27,7 +27,9 @@ export default function Index(props: Props) {
 
         <div className={styles.icons}>
           {props.track.website && <LinkButton href={props.track.website} text="Website" type="website" />}
-          {props.track.twitter && <LinkButton href={`https://twitter.com/${props.track.twitter}`} text="Twitter" type="twitter" />}
+          {props.track.twitter && (
+            <LinkButton href={`https://twitter.com/${props.track.twitter}`} text="Twitter" type="twitter" />
+          )}
         </div>
 
         <h3>In this module </h3>
@@ -48,17 +50,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const ids = GetTrackIDs()
 
   return {
-    paths: ids.map(i => {
+    paths: ids.map((i) => {
       return { params: { track: i } }
     }),
-    fallback: false
+    fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
-  const track = GetTrack(context.params?.track as string ?? '')
+  const track = GetTrack((context.params?.track as string) ?? '')
 
   if (!track) {
     return {
@@ -70,7 +72,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   return {
     props: {
       categories,
-      track
+      track,
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
