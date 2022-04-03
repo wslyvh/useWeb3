@@ -2,6 +2,8 @@
     "version": 1,
     "name": "Fundamentals",
     "description": "This journey helps you guide through some of the fundamental aspects of blockchain and Web3 development. You'll learn about basic cryptography, blocks, transactions, keys and how that's all linked together.",
+    "level": "Beginner",
+    "tags": ["Web3", "Blockchain", "Cryptography"],
     "image": "",
     "website": "https://www.useweb3.xyz/",
     "twitter": "useWeb3",

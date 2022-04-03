@@ -25,6 +25,14 @@ export function Sitenav(props: Props) {
             <span className={styles.text}>Home</span>
           </Link>
         </li>
+        <li className={currentPath.includes('/learn') ? styles.active : ''}>
+          <Link href={'/learn'}>
+            <span role="img" aria-label="learn">
+              🧠
+            </span>
+            <span className={styles.text}>Learn</span>
+          </Link>
+        </li>
         <li className={currentPath.includes('/jobs') ? styles.active : ''}>
           <Link href={'/jobs'}>
             <span role="img" aria-label="jobs">

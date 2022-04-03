@@ -38,17 +38,17 @@ export default function Index(props: Props) {
 
         <GasData />
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h2>Average Ethereum Transaction costs</h2>
           <GasTable />
         </article>
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h2>Average Ethereum Gas Prices per hour</h2>
           <Heatmap data={props.heatmap.data} x={props.heatmap.x} y={props.heatmap.y} />
         </article>
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h3>Ethereum Gas explained</h3>
           <p>
             Gas is an important concept within the Web3 world. It is the virtual fuel required to execute transactions
@@ -78,7 +78,7 @@ export default function Index(props: Props) {
           </ol>
         </article>
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h3>Further reading</h3>
           <ul>
             <li>

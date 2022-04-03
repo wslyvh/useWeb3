@@ -22,10 +22,10 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={props.track.name} divider="🧠" description={props.track.description} />
 
-      <MainLayout className={styles.container} title={props.track.name}>
-        <h3>{props.lesson.name}</h3>
+      <MainLayout className={styles.container} title={props.track.name} hideNewsletter>
+        <p>{props.track.description}</p>
 
-        <Container track={props.track} />
+        <Container track={props.track} lesson={props.lesson} />
       </MainLayout>
     </NavigationProvider>
   )

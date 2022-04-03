@@ -1,0 +1,59 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  border-radius: $gap-8;
+  margin-bottom: $gap-16;
+  padding: $gap-16;
+  align-items: center;
+
+  .icon {
+    margin-left: $gap-16;
+    margin-right: $gap-32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $size-20;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.info {
+  @extend .container;
+  background: var(--color-info);
+
+  .icon {
+    color: var(--color-info-dark);
+  }
+}
+
+.success {
+  @extend .container;
+  background: var(--color-success);
+
+  .icon {
+    color: var(--color-success-dark);
+  }
+}
+
+.warning {
+  @extend .container;
+  background: var(--color-warning);
+
+  .icon {
+    color: var(--color-warning-dark);
+  }
+}
+
+.error {
+  @extend .container;
+  background: var(--color-error);
+
+  .icon {
+    color: var(--color-error-dark);
+  }
+}

@@ -68,8 +68,16 @@
     font-size: smaller;
   }
 
-  .tags {
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: $gap-8;
-    text-align: right;
+
+    li {
+      a {
+        color: var(--color-neutral);
+      }
+    }
   }
 }

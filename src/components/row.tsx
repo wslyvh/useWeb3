@@ -2,7 +2,8 @@ import React from 'react'
 import styles from './row.module.scss'
 import { Link } from 'components/link'
 import Image from 'next/image'
-import { defaultSlugify } from 'utils/helpers'
+import { defaultSlugify, getLevelStyle } from 'utils/helpers'
+import { Tag } from 'components/tag'
 
 interface Props {
   title: string
@@ -53,6 +54,7 @@ interface BasicProps {
   title: string
   description?: string
   url: string
+  level?: string
   tags: string[]
   className?: string
 }
@@ -69,15 +71,18 @@ export function BasicRow(props: BasicProps) {
 
       <p className={styles.info}>{props.description}</p>
 
-      <ul className={styles.tags}>
-        {props.tags.map((i) => {
-          return (
-            <li key={i} className="block fixed inline">
-              {i}
-            </li>
-          )
-        })}
-      </ul>
+      <div className={styles.footer}>
+        <div>{props.level && <Tag text={props.level} type={getLevelStyle(props.level)} />}</div>
+        <ul>
+          {props.tags.map((i) => {
+            return (
+              <li key={i} className="block fixed inline">
+                <Link href={`/tags/${i}`}>{i}</Link>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </section>
   )
 }

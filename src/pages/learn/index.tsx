@@ -10,6 +10,8 @@ import { MarkdownContentService } from 'services/content'
 import { Link } from 'components/link'
 import { GetTracks } from 'services/learn/filesystem'
 import { Track } from 'types/learn'
+import { Featured } from 'components/featured'
+import { BasicRow } from 'components/row'
 
 interface Props {
   categories: Array<Category>
@@ -25,16 +27,27 @@ export default function Index(props: Props) {
       <SEO title={`${title}`} divider="🧠" description={description} />
 
       <MainLayout className={styles.container} title={title}>
-        <h2>Explore all tracks</h2>
-        <ul>
-          {props.tracks.map((track) => {
-            return (
-              <li key={track.id}>
-                <Link href={`/learn/${track.id}`}>{track.name}</Link> - {track.description}
-              </li>
-            )
-          })}
-        </ul>
+        <p>A free, fun and engaging way to learn more about Web3, its projects and their communities.</p>
+        <p>
+          <i>Learn by doing and level up your skills with fresh challenges.</i>
+        </p>
+
+        <main>
+          <Featured type="rows">
+            {props.tracks.map((i) => {
+              return (
+                <BasicRow
+                  key={i.id}
+                  title={i.name}
+                  description={i.description}
+                  url={`/learn/${i.id}`}
+                  level={i.level}
+                  tags={i.tags}
+                />
+              )
+            })}
+          </Featured>
+        </main>
       </MainLayout>
     </NavigationProvider>
   )

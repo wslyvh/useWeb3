@@ -14,6 +14,7 @@ import { Tags } from 'components/tags'
 import { Tag } from 'components/tag'
 import { getLevelStyle } from 'utils/helpers'
 import { Link } from 'components/link'
+import { Celebrate } from 'components/learn/celebrate'
 
 interface Props {
   categories: Array<Category>
@@ -35,46 +36,32 @@ export default function Index(props: Props) {
           )}
         </div>
 
-        <article>
-          <h2>Lessons</h2>
-          <small>{props.track.lessons.length} lessons </small>
-          <Tag className={styles.level} text={props.track.level} type={getLevelStyle(props.track.level)} />
-        </article>
-
         <main className={styles.body}>
-          <ul>
-            {props.track.lessons.map((i) => {
-              return (
-                <li key={i.id}>
-                  <strong>{i.name}</strong>
-                  <p>{i.description}</p>
-                </li>
-              )
-            })}
-          </ul>
+          <p>
+            Congratulations for finishing the <strong>{props.track.name}</strong> module!
+          </p>
+
+          <Celebrate />
+
+          {props.track.reward && (
+            <p>
+              The following reward is available for you: <strong>{props.track.reward.id}</strong>
+            </p>
+          )}
+
+          <p>
+            <Link href="/learn">Explore more tracks &raquo;</Link>
+          </p>
         </main>
 
-        <div className={`${styles.icons}`}>
-          <LinkButton
-            href={`/learn/${props.track.id}/${props.track.lessons[0].id}`}
-            text="Start &raquo;"
-            type="secondary"
+        <article className={styles.tags}>
+          <Tags
+            tags={props.track.tags.map((i) => {
+              return { key: i, count: 0 }
+            })}
           />
-          <Link href="/learn">Explore more tracks &raquo;</Link>
-        </div>
-
-        {props.track.tags && props.track.tags.length > 0 && (
-          <>
-            <h2>Tags</h2>
-            <article className={styles.tags}>
-              <Tags
-                tags={props.track.tags.map((i) => {
-                  return { key: i, count: 0 }
-                })}
-              />
-            </article>
-          </>
-        )}
+          <Tag className={styles.level} text={props.track.level} type={getLevelStyle(props.track.level)} />
+        </article>
       </MainLayout>
     </NavigationProvider>
   )
