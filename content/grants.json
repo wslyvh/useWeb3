@@ -137,5 +137,14 @@
         "tags": [
             "Longevity"
         ]
+    },
+     {
+        "name": "Data Union DAO Grants",
+        "description": "Data Union DAO is funding builders to build Data Unions using the Data Union SDKs. Visit dataunions.org for more information.",
+        "url": "https://streamr.network/fund/",
+        "tags": [
+            "Data Union"
+            "Data"
+        ]
     }
 ]
