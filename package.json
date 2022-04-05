@@ -20,6 +20,7 @@
     "@ethersproject/providers": "^5.5.3",
     "@ethersproject/units": "^5.5.0",
     "@supabase/supabase-js": "^1.30.7",
+    "@svgr/webpack": "^6.2.1",
     "@walletconnect/web3-provider": "^1.7.1",
     "airtable": "^0.11.1",
     "bootstrap-icons": "^1.7.2",

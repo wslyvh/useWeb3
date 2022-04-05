@@ -1,9 +1,7 @@
-@use 'assets/styles/variables.scss' as *;
+@use 'assets/styles/variables.scss'as *;
 
 .container {
   display: flex;
-  border-radius: $gap-8;
-  margin-bottom: $gap-16;
   padding: $gap-16;
   align-items: center;
 
@@ -13,12 +11,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: $size-20;
+    font-size: $size-16;
     flex-shrink: 0;
   }
 
   p {
     margin-bottom: 0;
+    flex-grow: 1;
+  }
+
+  .close {
+    cursor: pointer;
+    margin-right: $gap-16;
+    margin-left: $gap-32;
+    font-size: $size-16;
+    flex-shrink: 0;
+  }
+}
+
+.center {
+  p {
+    text-align: center;
   }
 }
 

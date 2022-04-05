@@ -1,6 +1,5 @@
 import React from 'react'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Card } from 'components/card'
 import { Featured } from 'components/featured'
 import { ContentItem } from 'types/content-item'
@@ -13,6 +12,7 @@ import { MarkdownContentService } from 'services/content'
 import { Link } from 'components/link'
 import { Departments } from 'components/departments'
 import { DEPARTMENTS } from 'utils/jobs'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -26,7 +26,7 @@ interface Params extends ParsedUrlQuery {
 export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
-      <MainLayout className={styles.container}>
+      <TopnavLayout className={styles.container}>
         <article>
           <p>
             useWeb3 is a platform for developers to explore and learn about Web3. Whether youre a new dev getting your
@@ -81,7 +81,7 @@ export default function Index(props: Props) {
             </Featured>
           )
         })}
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

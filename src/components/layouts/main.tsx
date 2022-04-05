@@ -41,8 +41,6 @@ export function Main(props: Props) {
           onChange={(e) => setTheme(e.target.value)}>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
-          <option value="pantone">Pantone</option>
-          <option value="blueberry_dark">Blueberry Dark</option>
         </select>
       </aside>
       <aside className={styles.mobileSitenav}>
@@ -56,8 +54,6 @@ export function Main(props: Props) {
             onChange={(e) => setTheme(e.target.value)}>
             <option value="light">Light</option>
             <option value="dark">Dark</option>
-            <option value="pantone">Pantone</option>
-            <option value="blueberry_dark">Blueberry Dark</option>
           </select>
         )}
       </aside>

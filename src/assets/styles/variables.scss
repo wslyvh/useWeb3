@@ -1,7 +1,5 @@
 @use 'themes/dark.scss';
 @use 'themes/light.scss';
-@use 'themes/pantone.scss';
-@use 'themes/blueberry_dark.scss';
 
 // Fonts
 $font-primary: 'JetBrains Mono', 'Courier New', monospace;
@@ -14,7 +12,8 @@ $font-bold: 700;
 // Sizes
 $size-12: 0.75rem; // 12px
 $size-16: 1rem; // 16px
-$size-20: 1.25rem; // 20px
+$size-24: 1.5rem; // 24px
+$size-32: 2rem; // 32px
 
 // Headings
 $size-h1: 2rem; // 32px
@@ -43,8 +42,6 @@ $max-content-width: $screen-1280 + (24px * 2);
 $themes: (
   'light': light.$colors,
   'dark': dark.$colors,
-  'pantone': pantone.$colors,
-  'blueberry_dark': blueberry_dark.$colors,
 );
 
 @each $theme-name, $theme-vars in $themes {
