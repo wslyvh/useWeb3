@@ -30,7 +30,7 @@ export function Alert(props: Props) {
       <p className={styles.description}>{props.text}</p>
 
       {props.allowClose && (
-        <span role='button' className={styles.close} onClick={() => setClosed(true)}>
+        <span role="button" className={styles.close} onClick={() => setClosed(true)}>
           <i className="bi bi-x-circle" />
         </span>
       )}
