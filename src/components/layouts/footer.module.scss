@@ -1,9 +1,9 @@
-@use 'assets/styles/variables.scss'as *;
+@use 'assets/styles/variables.scss' as *;
 
 .footer {
   display: flex;
   justify-content: center;
-  background: #3C4A59; // TODO
+  background: #3c4a59; // TODO
   color: #fff;
 
   .inner {
@@ -33,7 +33,7 @@
     }
 
     hr {
-      border-bottom: 1px solid #C1E5FB; // TODO
+      border-bottom: 1px solid #c1e5fb; // TODO
     }
 
     .credits {
@@ -41,14 +41,14 @@
       align-items: center;
       justify-content: space-between;
       margin: $gap-40 0;
-      
+
       ul {
         display: flex;
         align-items: center;
         list-style-type: none;
         gap: $gap-16;
 
-        .icon { 
+        .icon {
           font-size: $size-20;
         }
       }

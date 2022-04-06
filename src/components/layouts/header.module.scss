@@ -1,8 +1,8 @@
-@use 'assets/styles/variables.scss'as *;
+@use 'assets/styles/variables.scss' as *;
 
 .header {
   width: 100%;
-  border-bottom: 1px solid #C1E5FB; // TODO
+  border-bottom: 1px solid #c1e5fb; // TODO
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -45,7 +45,7 @@
         left: 0;
         width: 100%;
         padding: $gap-16 0;
-        border-top: 1px solid #C1E5FB; // TODO
+        border-top: 1px solid #c1e5fb; // TODO
 
         -webkit-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
         -moz-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
@@ -58,7 +58,7 @@
         }
 
         a {
-          color: #3C4A59; // TODO
+          color: #3c4a59; // TODO
         }
       }
 
@@ -79,8 +79,8 @@
             margin-bottom: $gap-16;
           }
 
-          &:hover { 
-            color: #3C4A59; // TODO
+          &:hover {
+            color: #3c4a59; // TODO
           }
         }
       }

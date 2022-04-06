@@ -18,26 +18,46 @@ export function Footer(props: Props) {
         <div className={styles.navigation}>
           <ul>
             <li className={styles.header}>Explore</li>
-            <li><Link href='/guides'>Guides</Link></li>
-            <li><Link href='/guides'>Books</Link></li>
-            <li><Link href='/guides'>Tags</Link></li>
-            <li><Link href='/guides'>etc</Link></li>
+            <li>
+              <Link href="/guides">Guides</Link>
+            </li>
+            <li>
+              <Link href="/guides">Books</Link>
+            </li>
+            <li>
+              <Link href="/guides">Tags</Link>
+            </li>
+            <li>
+              <Link href="/guides">etc</Link>
+            </li>
           </ul>
           <ul>
             <li className={styles.header}>Learn</li>
-            <li><Link href='/guides'>etc</Link></li>
+            <li>
+              <Link href="/guides">etc</Link>
+            </li>
           </ul>
           <ul>
             <li className={styles.header}>Build</li>
-            <li><Link href='/guides'>Grants</Link></li>
-            <li><Link href='/guides'>Starter Kits</Link></li>
-            <li><Link href='/guides'>etc</Link></li>
+            <li>
+              <Link href="/guides">Grants</Link>
+            </li>
+            <li>
+              <Link href="/guides">Starter Kits</Link>
+            </li>
+            <li>
+              <Link href="/guides">etc</Link>
+            </li>
           </ul>
           <ul>
             <li className={styles.header}>Jobs</li>
-            {DEPARTMENTS.map(i => {
+            {DEPARTMENTS.map((i) => {
               const id = defaultSlugify(i)
-              return <li key={i}><Link href={`/${id}-jobs`}>{i}</Link></li>
+              return (
+                <li key={i}>
+                  <Link href={`/${id}-jobs`}>{i}</Link>
+                </li>
+              )
             })}
           </ul>
         </div>
@@ -46,9 +66,19 @@ export function Footer(props: Props) {
 
         <div className={styles.credits}>
           <ul>
-            <li className={styles.icon}><Link href="https://github.com/wslyvh/useWeb3"><i className="bi bi-github" /></Link></li>
-            <li className={styles.icon}><Link href="https://twitter.com/useWeb3"><i className="bi bi-twitter" /></Link></li>
-            <li>by <Link href="https://twitter.com/wslyvh">@wslyvh</Link></li>
+            <li className={styles.icon}>
+              <Link href="https://github.com/wslyvh/useWeb3">
+                <i className="bi bi-github" />
+              </Link>
+            </li>
+            <li className={styles.icon}>
+              <Link href="https://twitter.com/useWeb3">
+                <i className="bi bi-twitter" />
+              </Link>
+            </li>
+            <li>
+              by <Link href="https://twitter.com/wslyvh">@wslyvh</Link>
+            </li>
           </ul>
 
           <Link href="https://vercel.com/?utm_source=useWeb3&amp;utm_campaign=oss">

@@ -21,9 +21,7 @@ export function TopnavLayout(props: Props) {
 
       <Header />
 
-      <main className={styles.content}>
-        {props.children}
-      </main>
+      <main className={styles.content}>{props.children}</main>
 
       <Footer />
     </div>
