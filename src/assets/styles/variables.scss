@@ -2,8 +2,9 @@
 @use 'themes/light.scss';
 
 // Fonts
-$font-primary: 'JetBrains Mono', 'Courier New', monospace;
+$font-primary: 'PT Mono', 'Courier New', monospace; // 'JetBrains Mono'
 $font-secondary: 'Times New Roman', 'Georgia', serif;
+$font-tertiary: Helvetica, Arial, sans-serif;
 
 // Weight
 $font-normal: 400;
@@ -12,6 +13,7 @@ $font-bold: 700;
 // Sizes
 $size-12: 0.75rem; // 12px
 $size-16: 1rem; // 16px
+$size-20: 1.25rem; // 20px
 $size-24: 1.5rem; // 24px
 $size-32: 2rem; // 32px
 

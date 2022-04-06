@@ -3,103 +3,14 @@
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   background: var(--color-background);
 }
 
-.header {
-  overflow-y: auto;
-  width: 100%;
-  border-bottom: 1px solid lightblue;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-
-  .main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 $gap-24;
-
-    @media (max-width: $screen-640) {
-      margin: 0 $gap-16;
-    }
-  }
-
-  .icon {
-    width: 30px;
-  }
-
-  .navigation {
-    list-style-type: none;
-    display: flex;
-    gap: $gap-16;
-
-    li.primary {
-      cursor: pointer;
-      padding: $gap-32 $gap-16;
-
-      .foldout {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        z-index: 10 !important;
-        background: #fff;
-        left: 0;
-        width: 100%;
-        margin-top: $gap-32;
-        padding: $gap-16 0;
-        border-top: 1px solid lightblue;
-
-        transition: opacity 0.3s;
-        -webkit-transition: opacity 0.3s;
-        opacity: 0;
-
-        -webkit-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
-        -moz-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
-        box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
-      }
-
-      &:hover {
-        .foldout {
-          opacity: 1;
-        }
-      }
-    }
-
-    .subnav {
-      list-style-type: none;
-      display: flex;
-      gap: $gap-32;
-
-      a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        span {
-          font-size: $size-24;
-          margin-bottom: $gap-16;
-        }
-      }
-    }
-  }
-
-  .icons {
-    list-style-type: none;
-    display: flex;
-    gap: $gap-16;
-  }
-}
-
 .content {
-  padding: $gap-24;
-  overflow-y: auto;
-  height: 100vh;
-  width: 100%;
+  margin: $gap-24;
 
-  .inner {
-    max-width: $max-content-width;
+  @media (max-width: $screen-640) {
+    margin: $gap-16;
   }
 
   a {
@@ -109,8 +20,4 @@
       color: var(--color-primary);
     }
   }
-}
-
-.footer {
-  text-align: center;
 }
