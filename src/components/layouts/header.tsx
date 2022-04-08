@@ -70,7 +70,7 @@ export function Header(props: Props) {
             <Link href="/learn">Learn</Link>
           </li>
           <li className={styles.primary}>
-            <Link href="/build">Build</Link>
+            <Link href="#">Build</Link>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
                 {build.map((i) => {
