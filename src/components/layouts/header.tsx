@@ -9,6 +9,26 @@ type Props = {
   className?: string
 }
 
+const explore = [
+  { url: `/books`, icon: '📚', text: 'Books' },
+  { url: `/gas`, icon: '⛽', text: 'Gas' },
+  { url: `/guides`, icon: '📖', text: 'Guides' },
+  { url: `/podcasts`, icon: '🎙️', text: 'Podcasts' },
+  { url: `/movies`, icon: '🎬', text: 'Movies' },
+  { url: `/websites`, icon: '🌐', text: 'Websites' },
+  { url: `/tags`, icon: '🏷️', text: 'Tags' },
+]
+
+const learn = ['code challenges', 'courses', 'tutorials', 'videos']
+// 1 single page to filter/search for resources
+// + link to submit resources
+
+const build = [
+  { url: `/jobs`, icon: '💼', text: 'Jobs' },
+  { url: `/starter-kits`, icon: '🏗️', text: 'Starter kits' },
+  { url: `/grants`, icon: '💰', text: 'Grants' },
+]
+
 export function Header(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
@@ -33,42 +53,16 @@ export function Header(props: Props) {
             <Link href="#">Explore</Link>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
-                <li>
-                  <Link href="/guides">
-                    <span>📖</span>
-                    Guides
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/books">
-                    <span>📚</span>
-                    Books
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/podcasts">
-                    <span>🎙️</span>
-                    Podcasts
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/movies">
-                    <span>🎬</span>
-                    Movies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/websites">
-                    <span>🌐</span>
-                    Websites
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tags">
-                    <span>🏷️</span>
-                    Tags
-                  </Link>
-                </li>
+                {explore.map((i) => {
+                  return (
+                    <li key={i.url}>
+                      <Link href={i.url}>
+                        <span>{i.icon}</span>
+                        {i.text}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </aside>
           </li>
@@ -77,6 +71,20 @@ export function Header(props: Props) {
           </li>
           <li className={styles.primary}>
             <Link href="/build">Build</Link>
+            <aside className={styles.foldout}>
+              <ul className={styles.subnav}>
+                {build.map((i) => {
+                  return (
+                    <li key={i.url}>
+                      <Link href={i.url}>
+                        <span>{i.icon}</span>
+                        {i.text}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </aside>
           </li>
         </ul>
 

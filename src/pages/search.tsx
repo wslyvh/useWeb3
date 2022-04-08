@@ -52,7 +52,7 @@ export default function Index(props: Props) {
     const sliceEnd = page * size
 
     setItems(allSearchedItems.slice(sliceStart, sliceEnd))
-  }, [props.items, router.query])
+  }, [props.items, allSearchedItems, router.query])
 
   return (
     <NavigationProvider categories={props.categories}>

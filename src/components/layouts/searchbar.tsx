@@ -23,7 +23,7 @@ export function Searchbar(props: Props) {
         ref.current.focus()
       }, 100)
     }
-  }, [props.open])
+  }, [ref, props.open])
 
   return (
     <div className={className}>
