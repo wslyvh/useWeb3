@@ -55,7 +55,8 @@
         "url": "https://grants.filecoin.io/",
         "tags": [
             "DevEx",
-            "Storage"
+            "Storage",
+            "Data"
         ]
     },
     {
@@ -143,7 +144,7 @@
         "description": "Data Union DAO is funding builders to build Data Unions using the Data Union SDKs. Visit dataunions.org for more information.",
         "url": "https://streamr.network/fund/",
         "tags": [
-            "Data Union"
+            "Storage",
             "Data"
         ]
     }

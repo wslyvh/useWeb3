@@ -2,7 +2,7 @@
 title: "NFT School"
 description: "Community education platform for developers in the non-fungible token space."
 authors: ["@protocollabs"]
-tags: ["Web3"]
+tags: ["Web3", "Storage", "Data"]
 languages: []
 url: "https://nftschool.dev/"
 dateAdded: 2021-10-09

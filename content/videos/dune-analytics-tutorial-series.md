@@ -2,7 +2,7 @@
 title: "Dune Analytics Tutorial series"
 description: "This tutorial series will guide you through how Dune Analytics works, it's technical aspects, use-cases and applications."
 authors: ['@duneanalytics', '0xBoxer']
-tags: ["Data Analytics"]
+tags: ["Data", Data Analytics"]
 languages: ["SQL"]
 url: "https://youtube.com/playlist?list=PLK3b5d4iK10ext4v-GBySekaA8-GP8quD"
 dateAdded: 2022-02-22

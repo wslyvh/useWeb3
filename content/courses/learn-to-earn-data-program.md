@@ -2,7 +2,7 @@
 title: Learn to Earn - Data program
 description: "OurNetwork contributors and the Dune team are partnering up to bring to fruition Web3's first learn-to-earn data program"
 authors: ["@OurNetwork__", "@DuneAnalytics", "@andrewhong5297"]
-tags: ["Data Analytics"]
+tags: ["Data", Data Analytics"]
 languages: ["Web3", "SQL"]
 url: "https://ournetwork.mirror.xyz/gP16wLY-9BA1E_ZuOSv1EUAgYGfK9mELNza8cfgMWPQ"
 dateAdded: 2022-02-22

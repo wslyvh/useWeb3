@@ -2,7 +2,7 @@
 title: "EIP-2535 Diamond standard"
 description: "EIP-2535: A standard for organizing and upgrading a modular smart contract system."
 authors: ["@gorgos"]
-tags: ["Smart Contracts"]
+tags: ["Smart Contracts", "Design Patterns"]
 languages: ["Solidity"]
 url: "https://soliditydeveloper.com/eip-2535"
 dateAdded: 2021-10-24
