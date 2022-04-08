@@ -38,6 +38,7 @@ $screen-1024: 1024px;
 $screen-1280: 1280px;
 
 // Content
+$content-width: $screen-640 + (24px * 2);
 $max-content-width: $screen-1280 + (24px * 2);
 
 // Themes

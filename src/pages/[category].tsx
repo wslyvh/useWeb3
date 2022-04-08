@@ -6,7 +6,7 @@ import { ContentItem } from 'types/content-item'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
-import { DEFAULT_REVALIDATE_PERIOD, JOBS_AMOUNT_PER_COMPANY } from 'utils/constants'
+import { DEFAULT_REVALIDATE_PERIOD, DEFAULT_MAX_ITEMS } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { FilteredOverview } from 'components/filtered-overview'
@@ -95,7 +95,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const service = new MarkdownContentService()
     const jobService = new JobService()
     const categories = await service.GetCategories()
-    const jobs = await jobService.GetJobs('', JOBS_AMOUNT_PER_COMPANY)
+    const jobs = await jobService.GetJobs('', DEFAULT_MAX_ITEMS)
 
     return {
       props: {

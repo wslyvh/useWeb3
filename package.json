@@ -26,6 +26,7 @@
     "bootstrap-icons": "^1.7.2",
     "gray-matter": "^4.0.3",
     "he": "^1.2.0",
+    "js-search": "^2.0.0",
     "jspdf": "^2.5.1",
     "marked": "^4.0.1",
     "moment": "^2.29.1",
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "@types/he": "^1.1.2",
+    "@types/js-search": "^1.4.0",
     "@types/marked": "^4.0.0",
     "@types/react": "17.0.14",
     "cross-fetch": "^3.1.5",

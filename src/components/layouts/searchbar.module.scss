@@ -1,0 +1,60 @@
+@use 'assets/styles/variables.scss'as *;
+
+.container {
+  display: flex;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 $gap-24;
+    max-width: $content-width;
+    width: 100%;
+
+    form {
+      width: 100%;
+
+      .searchbar {
+        display: flex;
+        align-items: center;
+        gap: $gap-8;
+        padding: 4px;
+        border: 1px solid #c1e5fb; // TODO
+        background: rgba(#c1e5fb, 0.2); // TODO
+        color: #3c4a59; // TODO
+
+        .icon {
+          padding: 0 $gap-8;
+        }
+
+        input {
+          background: transparent;
+          outline: none;
+          width: 100%;
+        }
+
+        .clear {
+          font-size: 12px;
+          padding: $gap-8;
+          color: lightgray; // TODO
+        }
+      }
+    }
+
+    .popular {
+      list-style-type: none;
+
+      .header {
+        font-weight: $font-bold;
+      }
+
+      li {
+        margin: $gap-16 0;
+
+        a {
+          color: #3c4a59; // TODO
+        }
+      }
+    }
+  }
+}

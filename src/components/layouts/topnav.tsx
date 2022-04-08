@@ -1,7 +1,5 @@
 import { ReactNode } from 'react'
 import styles from './topnav.module.scss'
-import { Link } from 'components/link'
-import Image from 'next/image'
 import { Alert } from 'components/alert'
 import { Header } from './header'
 import { Footer } from './footer'

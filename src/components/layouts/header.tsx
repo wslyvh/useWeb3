@@ -1,17 +1,28 @@
 import styles from './header.module.scss'
 import { Link } from 'components/link'
 import Icon from 'assets/images/icon.svg'
+import { useRef, useState } from 'react'
+import { Searchbar } from './searchbar'
+import { useOnOutsideClick } from 'hooks/useOnOutsideClick'
 
 type Props = {
   className?: string
 }
 
 export function Header(props: Props) {
-  let className = `${styles.header}`
+  let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
 
+  const ref = useRef(null)
+  const [foldout, setFoldout] = useState('')
+  useOnOutsideClick(ref, () => setFoldout(''))
+
+  function onClose() {
+    setFoldout('')
+  }
+
   return (
-    <header className={className}>
+    <header className={className} ref={ref}>
       <div className={styles.main}>
         <Link href="/" className={styles.icon}>
           <Icon />
@@ -70,14 +81,18 @@ export function Header(props: Props) {
         </ul>
 
         <ul className={styles.icons}>
-          <li>
+          <li className={styles.primary} onClick={() => setFoldout(foldout !== 'search' ? 'search' : '')}>
             <i className="bi bi-search" />
           </li>
-          <li>
+          <li className={styles.primary} onClick={() => setFoldout(foldout !== 'account' ? 'account' : '')}>
             <i className="bi bi-person-circle" />
           </li>
         </ul>
       </div>
+
+      <Searchbar className={`${styles.foldout} ${foldout === 'search' ? styles.open : ''}`}
+        open={foldout === 'search'}
+        close={() => onClose()} />
     </header>
   )
 }

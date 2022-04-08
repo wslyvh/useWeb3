@@ -1,6 +1,6 @@
-@use 'assets/styles/variables.scss' as *;
+@use 'assets/styles/variables.scss'as *;
 
-.header {
+.container {
   width: 100%;
   border-bottom: 1px solid #c1e5fb; // TODO
   text-align: center;
@@ -20,6 +20,7 @@
 
   .icon {
     width: 30px;
+    flex-shrink: 0;
   }
 
   .navigation {
@@ -36,25 +37,12 @@
         padding: $gap-32 $gap-16;
       }
 
-      .foldout {
-        display: none;
-        justify-content: center;
-        position: absolute;
-        z-index: 10 !important;
-        background: #fff;
-        left: 0;
-        width: 100%;
-        padding: $gap-16 0;
-        border-top: 1px solid #c1e5fb; // TODO
-
-        -webkit-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
-        -moz-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
-        box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
-      }
-
       &:hover {
         .foldout {
-          display: flex;
+          visibility: visible;
+          pointer-events: auto;
+          opacity: 1;
+          z-index: 20 !important;
         }
 
         a {
@@ -87,10 +75,43 @@
     }
   }
 
+  .foldout {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 10 !important;
+    background: #fff;
+    left: 0;
+    width: 100%;
+    padding: $gap-16 0;
+    border-top: 1px solid #c1e5fb; // TODO
+
+    -webkit-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
+    -moz-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
+    box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
+  }
+
+  .open { 
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
+
   .icons {
     list-style-type: none;
     display: flex;
+    flex-shrink: 0;
     font-size: $size-20;
     gap: $gap-16;
+
+    li {
+      cursor: pointer;
+      padding: 0;
+    }
   }
 }
