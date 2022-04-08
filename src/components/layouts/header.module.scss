@@ -1,4 +1,4 @@
-@use 'assets/styles/variables.scss'as *;
+@use 'assets/styles/variables.scss' as *;
 
 .container {
   width: 100%;
@@ -96,7 +96,7 @@
     box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
   }
 
-  .open { 
+  .open {
     visibility: visible;
     pointer-events: auto;
     opacity: 1;

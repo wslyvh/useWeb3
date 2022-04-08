@@ -41,35 +41,38 @@ export function Searchbar(props: Props) {
           <div className={styles.searchbar}>
             <i className={`${styles.icon} bi bi-search`} onClick={() => ref.current?.focus()} />
             <input
-              type='text'
+              type="text"
               onChange={(e) => setSearchTerm(e.target.value)}
               value={searchTerm}
               autoComplete="off"
               placeholder="Search.."
               ref={ref}
             />
-            <i className={`${styles.clear} bi bi-x-circle-fill`} onClick={() => {
-              setSearchTerm('')
-              ref.current?.focus()
-            }} />
+            <i
+              className={`${styles.clear} bi bi-x-circle-fill`}
+              onClick={() => {
+                setSearchTerm('')
+                ref.current?.focus()
+              }}
+            />
           </div>
         </form>
 
         <ul className={styles.popular}>
           <li className={styles.header}>Popular search terms</li>
-          <li onClick={() => props.close ? props.close() : {}}>
+          <li onClick={() => (props.close ? props.close() : {})}>
             <Link href="/search?q=Solidity">Solidity</Link>
           </li>
-          <li onClick={() => props.close ? props.close() : {}}>
+          <li onClick={() => (props.close ? props.close() : {})}>
             <Link href="/search?q=NFT">NFTs</Link>
           </li>
-          <li onClick={() => props.close ? props.close() : {}}>
+          <li onClick={() => (props.close ? props.close() : {})}>
             <Link href="/search?q=DeFi">DeFi</Link>
           </li>
-          <li onClick={() => props.close ? props.close() : {}}>
+          <li onClick={() => (props.close ? props.close() : {})}>
             <Link href="/search?q=Web3">Web3</Link>
           </li>
-          <li onClick={() => props.close ? props.close() : {}}>
+          <li onClick={() => (props.close ? props.close() : {})}>
             <Link href="/search?q=Security">Security</Link>
           </li>
         </ul>

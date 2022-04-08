@@ -68,13 +68,16 @@ export function BasicRow(props: BasicProps) {
     <section className={className}>
       <Link href={props.url}>
         <h4 className={styles.title}>
-        {props.icon && <span>{props.icon}</span>} {props.title}</h4>
+          {props.icon && <span>{props.icon}</span>} {props.title}
+        </h4>
       </Link>
 
       <p className={styles.info}>{props.description}</p>
 
       <div className={styles.footer}>
-        <div className={styles.level}>{props.level && <Tag text={props.level} type={getLevelStyle(props.level)} />}</div>
+        <div className={styles.level}>
+          {props.level && <Tag text={props.level} type={getLevelStyle(props.level)} />}
+        </div>
         <ul>
           {props.tags.map((i) => {
             return (
