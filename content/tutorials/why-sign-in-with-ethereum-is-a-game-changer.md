@@ -1,6 +1,6 @@
 ---
 title: "Why Sign-In with Ethereum is a Game-Changer"
-description: "Sign-In with Ethereum is a game-changer for user choice on the Internet. Instead of submitting to "Big Login," users can now login using the same keys controlling their blockchain accounts--without an intermediary."
+description: "Sign-In with Ethereum is a game-changer for user choice on the Internet. Instead of submitting to 'Big Login' users can now login using the same keys controlling their blockchain accounts--without an intermediary."
 authors: ["@SpruceID","Obstropolos"]
 tags: ["Cryptography","Security", "Standards","Design Patterns"]
 languages: []

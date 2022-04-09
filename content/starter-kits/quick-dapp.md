@@ -1,6 +1,6 @@
 ---
 title: "Quick dApp"
-description: "Forkable "one-click install" ETH + Truffle + Ganache + VanillaJS dev stack to build locally"
+description: "Forkable 'one-click install' ETH + Truffle + Ganache + VanillaJS dev stack to build locally"
 authors: ["@MatthieuScarset"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
