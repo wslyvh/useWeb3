@@ -9,7 +9,7 @@ type Props = {
   className?: string
 }
 
-const explore = [
+export const explore = [
   { url: `/books`, icon: '📚', text: 'Books' },
   { url: `/gas`, icon: '⛽', text: 'Gas' },
   { url: `/guides`, icon: '📖', text: 'Guides' },
@@ -19,11 +19,16 @@ const explore = [
   { url: `/tags`, icon: '🏷️', text: 'Tags' },
 ]
 
-const learn = ['code challenges', 'courses', 'tutorials', 'videos']
+export const learn = [
+  { url: `/code-challenges`, icon: '🏆', text: 'Challenges' },
+  { url: `/courses`, icon: '🎓', text: 'Courses' },
+  { url: `/tutorials`, icon: '💻', text: 'Tutorials' },
+  { url: `/videos`, icon: '📺', text: 'Videos' },
+]
 // 1 single page to filter/search for resources
 // + link to submit resources
 
-const build = [
+export const build = [
   { url: `/jobs`, icon: '💼', text: 'Jobs' },
   { url: `/starter-kits`, icon: '🏗️', text: 'Starter kits' },
   { url: `/grants`, icon: '💰', text: 'Grants' },
@@ -50,7 +55,7 @@ export function Header(props: Props) {
 
         <ul className={styles.navigation}>
           <li className={styles.primary}>
-            <Link href="#">Explore</Link>
+            <span>Explore</span>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
                 {explore.map((i) => {
@@ -68,9 +73,23 @@ export function Header(props: Props) {
           </li>
           <li className={styles.primary}>
             <Link href="/learn">Learn</Link>
+            <aside className={styles.foldout}>
+              <ul className={styles.subnav}>
+                {learn.map((i) => {
+                  return (
+                    <li key={i.url}>
+                      <Link href={i.url}>
+                        <span>{i.icon}</span>
+                        {i.text}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </aside>
           </li>
           <li className={styles.primary}>
-            <Link href="#">Build</Link>
+            <span>Build</span>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
                 {build.map((i) => {

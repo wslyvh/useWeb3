@@ -1,6 +1,5 @@
 import React from 'react'
 import { ParsedUrlQuery } from 'querystring'
-import { Card } from 'components/card'
 import { Featured } from 'components/featured'
 import { ContentItem } from 'types/content-item'
 import { GetStaticProps } from 'next'
@@ -13,6 +12,7 @@ import { Link } from 'components/link'
 import { Departments } from 'components/departments'
 import { DEPARTMENTS } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
+import { Panel, PanelCard } from 'components/panel'
 
 interface Props {
   categories: Array<Category>
@@ -66,15 +66,15 @@ export default function Index(props: Props) {
             <Featured key={category.id} className={styles.featured} title={category.title} link={category.id}>
               {items.map((i) => {
                 return (
-                  <Card
-                    small
+                  <PanelCard
                     key={i.id}
                     title={i.title}
+                    icon={i.category.emoji}
                     description={i.description}
-                    author={i.authors.join(', ')}
-                    tag={i.level}
-                    detailsUrl={`/${i.category.id}/${i.id}`}
                     url={i.url}
+                    detailsUrl={`/${i.category.id}/${i.id}`}
+                    level={i.level}
+                    tags={i.tags}
                   />
                 )
               })}

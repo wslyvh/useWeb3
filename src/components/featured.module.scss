@@ -4,6 +4,7 @@
   .header {
     display: flex;
     align-items: center;
+    margin-bottom: $gap-16;
   }
 
   .link {
@@ -12,6 +13,7 @@
 
   .grid {
     display: grid;
+    gap: $gap-16;
     grid-template-columns: 1fr 1fr 1fr;
 
     @media (max-width: $screen-1024) {
@@ -25,6 +27,7 @@
 
   .rows {
     display: grid;
+    gap: $gap-16;
     grid-template-columns: 1fr;
   }
 }

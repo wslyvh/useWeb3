@@ -3,6 +3,7 @@ import { Link } from 'components/link'
 import Image from 'next/image'
 import { DEPARTMENTS } from 'utils/jobs'
 import { defaultSlugify } from 'utils/helpers'
+import { build, explore, learn } from './header'
 
 type Props = {
   className?: string
@@ -18,36 +19,33 @@ export function Footer(props: Props) {
         <div className={styles.navigation}>
           <ul>
             <li className={styles.header}>Explore</li>
-            <li>
-              <Link href="/guides">Guides</Link>
-            </li>
-            <li>
-              <Link href="/guides">Books</Link>
-            </li>
-            <li>
-              <Link href="/guides">Tags</Link>
-            </li>
-            <li>
-              <Link href="/guides">etc</Link>
-            </li>
+            {explore.map((i) => {
+              return (
+                <li key={i.url}>
+                  <Link href={i.url}>{i.text}</Link>
+                </li>
+              )
+            })}
           </ul>
           <ul>
             <li className={styles.header}>Learn</li>
-            <li>
-              <Link href="/guides">etc</Link>
-            </li>
+            {learn.map((i) => {
+              return (
+                <li key={i.url}>
+                  <Link href={i.url}>{i.text}</Link>
+                </li>
+              )
+            })}
           </ul>
           <ul>
             <li className={styles.header}>Build</li>
-            <li>
-              <Link href="/guides">Grants</Link>
-            </li>
-            <li>
-              <Link href="/guides">Starter Kits</Link>
-            </li>
-            <li>
-              <Link href="/guides">etc</Link>
-            </li>
+            {build.map((i) => {
+              return (
+                <li key={i.url}>
+                  <Link href={i.url}>{i.text}</Link>
+                </li>
+              )
+            })}
           </ul>
           <ul>
             <li className={styles.header}>Jobs</li>

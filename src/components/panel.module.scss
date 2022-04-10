@@ -1,0 +1,172 @@
+@use 'assets/styles/variables.scss' as *;
+
+.outer {
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
+
+.panel {
+  display: inline-flex;
+  color: var(--color-neutral) !important;
+
+  .border {
+    position: relative;
+    top: -4px;
+    left: -4px;
+    border: 2px solid #3c4a59; // TODO
+    padding: 2px 4px;
+  }
+}
+
+.stretch {
+  height: 100%;
+  width: 100%;
+
+  .border {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.link {
+  &:hover {
+    > .border {
+      top: -2px;
+      left: -2px;
+    }
+  }
+}
+
+.fill {
+  > .border {
+    background: #fff; // TODO
+  }
+}
+
+.small {
+  font-size: $size-12;
+
+  .border {
+    top: -2px !important;
+    left: -2px !important;
+    border-width: 1px !important;
+    padding: 0px 2px;
+  }
+}
+
+.primary {
+  @extend .panel;
+  background: #c1e5fb; // TODO
+}
+
+.secondary {
+  @extend .panel;
+  background: #b6c6c4; // TODO
+}
+
+.tertiary {
+  @extend .panel;
+  background: #cdcee3; // TODO
+}
+
+.neutral {
+  @extend .panel;
+  background: var(--color-neutral-100);
+}
+
+.info {
+  @extend .panel;
+  background: var(--color-info);
+  color: var(--color-info-dark);
+
+  .border {
+    border: 2px solid var(--color-info-dark);
+  }
+}
+
+.success {
+  @extend .panel;
+  background: var(--color-success);
+  color: var(--color-success-dark);
+
+  .border {
+    border: 2px solid var(--color-success-dark);
+  }
+}
+
+.warning {
+  @extend .panel;
+  background: var(--color-warning);
+  color: var(--color-warning-dark);
+
+  .border {
+    border: 2px solid var(--color-warning-dark);
+  }
+}
+
+.error {
+  @extend .panel;
+  background: var(--color-error);
+  color: var(--color-error-dark);
+
+  .border {
+    border: 2px solid var(--color-error-dark);
+  }
+}
+
+.card {
+  .inner {
+    margin: $gap-16;
+
+    @media (max-width: $screen-640) {
+      margin: $gap-8;
+    }
+  }
+
+  .title {
+    font-size: $size-20;
+    margin-bottom: $gap-16;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .tags {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap-8;
+    margin-bottom: $gap-16;
+
+    .tag {
+      margin-right: $gap-8;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .description {
+    margin-bottom: $gap-16;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 1rem * 2;
+  }
+
+  .details {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      color: var(--color-neutral) !important;
+      text-decoration: underline;
+    }
+  }
+}

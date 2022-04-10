@@ -32,7 +32,8 @@
       cursor: pointer;
       padding: 0;
 
-      a {
+      > a,
+      > span {
         display: flex;
         padding: $gap-32 $gap-16;
       }
