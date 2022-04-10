@@ -55,7 +55,8 @@
         "url": "https://grants.filecoin.io/",
         "tags": [
             "DevEx",
-            "Storage"
+            "Storage",
+            "Data"
         ]
     },
     {
@@ -136,6 +137,15 @@
         "url": "https://www.vitadao.com/",
         "tags": [
             "Longevity"
+        ]
+    },
+     {
+        "name": "Data Union DAO Grants",
+        "description": "Data Union DAO is funding builders to build Data Unions using the Data Union SDKs. Visit dataunions.org for more information.",
+        "url": "https://streamr.network/fund/",
+        "tags": [
+            "Storage",
+            "Data"
         ]
     }
 ]
