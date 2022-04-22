@@ -104,7 +104,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
         items: new Array<ContentItem>(),
         jobs: remote
           ? jobs.filter((i) => i.remote)
-          : jobs.filter((i) => i.featured || (i.department.toLowerCase() === department.toLowerCase())),
+          : jobs.filter((i) => i.featured || i.department.toLowerCase() === department.toLowerCase()),
       },
       revalidate: DEFAULT_REVALIDATE_PERIOD,
     }
