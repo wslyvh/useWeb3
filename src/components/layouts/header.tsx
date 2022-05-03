@@ -29,8 +29,9 @@ export const learn = [
 // + link to submit resources
 
 export const build = [
+  { url: `/starter-kits`, icon: '🏗️', text: 'Templates' },
+  { url: `/bounties`, icon: '💸', text: 'Bounties' },
   { url: `/jobs`, icon: '💼', text: 'Jobs' },
-  { url: `/starter-kits`, icon: '🏗️', text: 'Starter kits' },
   { url: `/grants`, icon: '💰', text: 'Grants' },
 ]
 

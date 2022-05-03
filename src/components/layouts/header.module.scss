@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  border-bottom: 1px solid #c1e5fb; // TODO
+  border-bottom: 2px solid #c1e5fb; // TODO
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -90,7 +90,7 @@
     left: 0;
     width: 100%;
     padding: $gap-16 0;
-    border-top: 1px solid #c1e5fb; // TODO
+    border-top: 2px solid #c1e5fb; // TODO
 
     -webkit-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
     -moz-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
