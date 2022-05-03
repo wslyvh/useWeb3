@@ -30,7 +30,7 @@ export const learn = [
 
 export const build = [
   { url: `/starter-kits`, icon: '🏗️', text: 'Templates' },
-  { url: `/bounties`, icon: '💸', text: 'Bounties' },
+  { url: `/earn`, icon: '💸', text: 'Earn' },
   { url: `/jobs`, icon: '💼', text: 'Jobs' },
   { url: `/grants`, icon: '💰', text: 'Grants' },
 ]
