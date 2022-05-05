@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       categories,
-      jobs: jobs.filter((i) => i.department === 'Engineering'),
+      jobs: jobs.filter((i) => i.featured || i.department === 'Engineering'),
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }
