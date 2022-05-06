@@ -76,7 +76,7 @@ export function Main(props: Props) {
           <footer className={styles.footer}>
             <p>
               By <Link href="https://twitter.com/wslyvh">@wslyvh</Link> · Follow{' '}
-              <Link href="https://twitter.com/useWeb3">useWeb3</Link> · Contribute{' '}
+              <Link href="https://twitter.com/useWeb3">@useWeb3</Link> · Contribute{' '}
               <Link href="https://github.com/wslyvh/useWeb3">Github</Link>.
             </p>
             <p>
