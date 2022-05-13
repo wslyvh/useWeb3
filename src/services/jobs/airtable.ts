@@ -105,10 +105,10 @@ export class AirtableJobService implements JobServiceInterface {
             job.featuredUntil = new Date(source.fields['Featured'] as string).getTime()
             job.featured = job.featuredUntil >= new Date().getTime()
           }
-          if (source.fields['Min Salary']) {
+          if (source.fields['Min Salary'] !== undefined) {
             job.minSalary = source.fields['Min Salary'] as number
           }
-          if (source.fields['Max Salary']) {
+          if (source.fields['Max Salary'] !== undefined) {
             job.maxSalary = source.fields['Max Salary'] as number
           }
 

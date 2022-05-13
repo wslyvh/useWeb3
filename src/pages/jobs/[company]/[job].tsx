@@ -42,12 +42,12 @@ export default function Index(props: Props) {
   const headingFormatting = new RegExp(/^(#{1,6}\s*[\S]+)/).test(body) || body.includes('## ') || body.includes('### ')
   const content =
     props.job.asMarkdown ||
-    boldFormatting ||
-    basicFormatting ||
-    italicFormatting ||
-    linkFormatting ||
-    listFormatting ||
-    headingFormatting
+      boldFormatting ||
+      basicFormatting ||
+      italicFormatting ||
+      linkFormatting ||
+      listFormatting ||
+      headingFormatting
       ? marked.parse(body)
       : body
   const html = he.decode(content)
@@ -58,11 +58,20 @@ export default function Index(props: Props) {
 
       <MainLayout className={styles.container} title={props.job.title}>
         <p>
-          <Link className={styles.mr} href={`/jobs/${props.company.id}`}>
+          🏛️ <Link className={styles.mr} href={`/jobs/${props.company.id}`}>
             {props.company.title}
           </Link>
-          <span className={styles.muted}>{props.job.location}</span>
         </p>
+
+        <p>
+          🌐 {props.job.location}
+        </p>
+
+        {props.job.minSalary !== undefined && props.job.maxSalary !== undefined && (
+          <p className={styles.body}>
+            💰 ${props.job.minSalary.toLocaleString()} - ${props.job.maxSalary.toLocaleString()}/year
+          </p>
+        )}
 
         <article className={styles.website}>
           <Link href={getApplicationUrl(props.job.url)}>
