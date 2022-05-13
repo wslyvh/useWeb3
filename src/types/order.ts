@@ -3,7 +3,7 @@ export interface Order {
   name: string
   email: string
   address: string
-  type: 'Standard' | 'Logo' | 'Featured'
+  type: 'Standard' | 'Featured'
   tx: string
   jobId: string
   companyName?: string
@@ -16,7 +16,7 @@ export const defaultOrder = {
   name: '',
   email: '',
   address: '',
-  type: 'Featured' as 'Standard' | 'Logo' | 'Featured',
+  type: 'Featured' as 'Standard' | 'Featured',
   tx: '',
   jobId: '',
 }

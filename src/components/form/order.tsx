@@ -16,7 +16,7 @@ interface Props {
   className?: string
 }
 
-const orderTypes = ['Standard', 'Logo', 'Featured']
+const orderTypes = ['Standard', 'Featured']
 
 export function OrderForm(props: Props) {
   let className = `${styles.container}`
