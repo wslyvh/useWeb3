@@ -1,5 +1,5 @@
 import { Link } from 'components/link'
-import { FEATURED_PRICE, LOGO_PRICE, STANDARD_PRICE } from 'utils/jobs'
+import { FEATURED_PRICE, STANDARD_PRICE } from 'utils/jobs'
 import styles from './forms.module.scss'
 
 interface Props {
@@ -18,13 +18,6 @@ export function Pricing(props: Props) {
       <ul>
         <li>60 days on the job board</li>
         {/* <li>{discountPercentage}% discount for each sequential job</li> */}
-      </ul>
-      <p>
-        Logo listing <strong>${LOGO_PRICE} USD</strong>
-      </p>
-      <ul>
-        <li>Same as standard listing</li>
-        <li>Your company logo added to the listing</li>
       </ul>
       <p>
         Featured listing <strong>${FEATURED_PRICE} USD</strong>
