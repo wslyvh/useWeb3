@@ -4,12 +4,10 @@
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  gap: $gap-16;
+}
 
-  li {
-    margin-right: $gap-8;
-
-    a {
-      color: var(--color-neutral);
-    }
-  }
+.small {
+  @extend .container;
+  gap: $gap-8;
 }

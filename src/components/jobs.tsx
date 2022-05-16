@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import moment from 'moment'
 import Pagination from 'next-pagination'
 import { Featured } from 'components/featured'
@@ -8,9 +7,9 @@ import styles from './jobs.module.scss'
 import { Job } from 'types/job'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { Departments } from './departments'
-import { DEPARTMENTS, getApplicationUrl } from 'utils/jobs'
-import { Panel } from './panel'
+import { DEPARTMENTS_AS_COUNTS, getApplicationUrl } from 'utils/jobs'
+import { Tags } from './tags'
+import { PanelCard } from './panel'
 
 interface Props {
   jobs: Array<Job>
@@ -47,7 +46,7 @@ export function JobsOverview(props: Props) {
       </div>
 
       <div className={styles.filters}>
-        <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
+        <Tags fill tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
       </div>
 
       {props.jobs.length === 0 && <p>No active job openings. Try another filter.</p>}
@@ -79,7 +78,7 @@ export function JobsOverview(props: Props) {
           <Pagination total={props.jobs.length} />
 
           <div className={styles.filters}>
-            <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
+            <Tags fill tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
           </div>
         </>
       )}

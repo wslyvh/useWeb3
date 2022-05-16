@@ -1,24 +1,29 @@
 import { Count } from 'types/count'
-import { Link } from './link'
+import { Panel } from './panel'
+import { defaultSlugify } from 'utils/helpers'
 import styles from './tags.module.scss'
 
 interface Props {
   tags: Array<Count>
+  fill?: boolean
+  small?: boolean
+  large?: boolean
   className?: string
 }
 
 export function Tags(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
+  if (props.small) className += ` ${styles.small}`
 
   return (
     <ul className={className}>
       {props.tags.map((i) => {
-        const id = i.key.toLowerCase()
+        const id = defaultSlugify(i.key)
 
         return (
-          <li key={id} className="block fixed">
-            <Link href={`/tags/${id}`}>
+          <li key={id}>
+            <Panel href={`/tags/${id}`} type="secondary" {...props}>
               {i.key}
               {i.count !== 0 && (
                 <>
@@ -26,7 +31,7 @@ export function Tags(props: Props) {
                   <small>({i.count})</small>
                 </>
               )}
-            </Link>
+            </Panel>
           </li>
         )
       })}

@@ -10,11 +10,11 @@ import { GetTrack, GetTrackIDs } from 'services/learn/filesystem'
 import { Track } from 'types/learn'
 import { LinkButton } from 'components/link-button'
 import { Tags } from 'components/tags'
-import { Tag } from 'components/tag'
 import { getLevelStyle } from 'utils/helpers'
 import { Link } from 'components/link'
 import { Celebrate } from 'components/learn/celebrate'
 import { TopnavLayout } from 'components/layouts/topnav'
+import { Panel } from 'components/panel'
 
 interface Props {
   categories: Array<Category>
@@ -60,7 +60,10 @@ export default function Index(props: Props) {
               return { key: i, count: 0 }
             })}
           />
-          <Tag className={styles.level} text={props.track.level} type={getLevelStyle(props.track.level)} />
+
+          <Panel className={styles.level} type={getLevelStyle(props.track.level)}>
+            {props.track.level}
+          </Panel>
         </article>
       </TopnavLayout>
     </NavigationProvider>

@@ -1,8 +1,8 @@
 import styles from './slider.module.scss'
 import { default as ReactSlider } from 'react-slick'
-import { Card } from 'components/card'
 import { createRef } from 'react'
 import { ContentItem } from 'types/content-item'
+import { PanelCard } from 'components/panel'
 
 type Props = {
   items: Array<ContentItem>
@@ -54,15 +54,15 @@ export function Slider(props: Props) {
         <ReactSlider ref={ref} {...settings}>
           {props.items.map((i) => {
             return (
-              <Card
-                small
+              <PanelCard
                 key={i.id}
                 title={i.title}
+                icon={i.category.emoji}
                 description={i.description}
-                author={i.authors.join(', ')}
-                tag={i.level}
-                detailsUrl={`/${i.category.id}/${i.id}`}
                 url={i.url}
+                detailsUrl={`/${i.category.id}/${i.id}`}
+                level={i.level}
+                tags={i.tags}
               />
             )
           })}

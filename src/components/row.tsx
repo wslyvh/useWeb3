@@ -2,8 +2,9 @@ import React from 'react'
 import styles from './row.module.scss'
 import { Link } from 'components/link'
 import Image from 'next/image'
-import { defaultSlugify, getLevelStyle } from 'utils/helpers'
-import { Tag } from 'components/tag'
+import { defaultSlugify, getLevelStyle, toTags } from 'utils/helpers'
+import { Panel } from './panel'
+import { Tags } from './tags'
 
 interface Props {
   title: string
@@ -76,17 +77,13 @@ export function BasicRow(props: BasicProps) {
 
       <div className={styles.footer}>
         <div className={styles.level}>
-          {props.level && <Tag text={props.level} type={getLevelStyle(props.level)} />}
+          {props.level && (
+            <Panel small type={getLevelStyle(props.level)}>
+              {props.level}
+            </Panel>
+          )}
         </div>
-        <ul>
-          {props.tags.map((i) => {
-            return (
-              <li key={i} className="block fixed inline">
-                <Link href={`/tags/${i}`}>{i}</Link>
-              </li>
-            )
-          })}
-        </ul>
+        <Tags small fill tags={toTags(props.tags)} />
       </div>
     </section>
   )

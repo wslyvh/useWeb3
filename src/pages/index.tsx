@@ -8,12 +8,12 @@ import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
-import { Link } from 'components/link'
-import { Departments } from 'components/departments'
-import { DEPARTMENTS } from 'utils/jobs'
+import { DEPARTMENTS_AS_COUNTS } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
-import { Panel, PanelCard } from 'components/panel'
+import { PanelCard } from 'components/panel'
 import { TitleWithAction } from 'components/layouts/title-action'
+import { Tags } from 'components/tags'
+import { Slider } from 'components/layouts/slider'
 
 interface Props {
   categories: Array<Category>
@@ -44,7 +44,7 @@ export default function Index(props: Props) {
             Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
           </p>
           <p className={styles.filters}>
-            <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
+            <Tags fill tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
           </p>
         </article>
 
@@ -59,6 +59,8 @@ export default function Index(props: Props) {
         {props.categories.map((category) => {
           const items = props.items.filter((item) => item.category.id === category.id)
           if (items.length === 0) return null
+
+          // return <Slider title={category.title} items={items} />
 
           return (
             <Featured key={category.id} className={styles.featured} title={category.title} link={category.id}>

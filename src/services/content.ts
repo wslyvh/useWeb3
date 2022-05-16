@@ -136,6 +136,8 @@ export class MarkdownContentService implements ItemServiceInterface {
       dateAdded: new Date(doc.data.dateAdded as string).getTime(),
       url: doc.data.url ?? `/${cat.id}/${slug}`,
       content: doc.content,
+      tags: doc.data.tags ?? [],
+      languages: doc.data.languages ?? [],
       category: cat,
     } as ContentItem
   }
