@@ -28,9 +28,17 @@
     display: flex;
     gap: $gap-16;
 
+    @media (max-width: $screen-640) {
+      padding: $gap-32 $gap-16;
+    }
+
     li.primary {
       cursor: pointer;
       padding: 0;
+
+      @media (max-width: $screen-640) {
+        display: none;
+      }
 
       > a,
       > span {
@@ -97,6 +105,14 @@
     box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
   }
 
+  .submenu {
+    @extend .foldout;
+
+    @media (min-width: $screen-640) {
+      display: none;
+    }
+  }
+
   .open {
     visibility: visible;
     pointer-events: auto;
@@ -113,6 +129,14 @@
     li {
       cursor: pointer;
       padding: 0;
+    }
+
+    .hamburger {
+      display: none;
+
+      @media (max-width: $screen-640) {
+        display: flex;
+      }
     }
   }
 }

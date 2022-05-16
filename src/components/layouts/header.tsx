@@ -4,35 +4,28 @@ import Icon from 'assets/images/icon.svg'
 import { useRef, useState } from 'react'
 import { Searchbar } from './searchbar'
 import { useOnOutsideClick } from 'hooks/useOnOutsideClick'
+import { MobileSubmenu } from './submenu'
 
 type Props = {
   className?: string
 }
 
-export const explore = [
-  { url: `/books`, icon: '📚', text: 'Books' },
-  { url: `/gas`, icon: '⛽', text: 'Gas' },
-  { url: `/guides`, icon: '📖', text: 'Guides' },
-  { url: `/podcasts`, icon: '🎙️', text: 'Podcasts' },
-  { url: `/movies`, icon: '🎬', text: 'Movies' },
-  { url: `/websites`, icon: '🌐', text: 'Websites' },
-  { url: `/tags`, icon: '🏷️', text: 'Tags' },
-]
-
-export const learn = [
-  { url: `/code-challenges`, icon: '🏆', text: 'Challenges' },
-  { url: `/courses`, icon: '🎓', text: 'Courses' },
-  { url: `/tutorials`, icon: '💻', text: 'Tutorials' },
-  { url: `/videos`, icon: '📺', text: 'Videos' },
-]
-// 1 single page to filter/search for resources
-// + link to submit resources
-
-export const build = [
-  { url: `/starter-kits`, icon: '🏗️', text: 'Templates' },
-  { url: `/earn`, icon: '💸', text: 'Earn' },
-  { url: `/jobs`, icon: '💼', text: 'Jobs' },
-  { url: `/grants`, icon: '💰', text: 'Grants' },
+export const MENU_ITEMS = [
+  { url: `/books`, icon: '📚', text: 'Books', category: 'explore' },
+  { url: `/gas`, icon: '⛽', text: 'Gas', category: 'explore' },
+  { url: `/guides`, icon: '📖', text: 'Guides', category: 'explore' },
+  { url: `/podcasts`, icon: '🎙️', text: 'Podcasts', category: 'explore' },
+  { url: `/movies`, icon: '🎬', text: 'Movies', category: 'explore' },
+  { url: `/websites`, icon: '🌐', text: 'Websites', category: 'explore' },
+  { url: `/tags`, icon: '🏷️', text: 'Tags', category: 'explore' },
+  { url: `/code-challenges`, icon: '🏆', text: 'Challenges', category: 'learn' },
+  { url: `/courses`, icon: '🎓', text: 'Courses', category: 'learn' },
+  { url: `/tutorials`, icon: '💻', text: 'Tutorials', category: 'learn' },
+  { url: `/videos`, icon: '📺', text: 'Videos', category: 'learn' },
+  { url: `/starter-kits`, icon: '🏗️', text: 'Templates', category: 'build' },
+  { url: `/earn`, icon: '💸', text: 'Earn', category: 'build' },
+  { url: `/jobs`, icon: '💼', text: 'Jobs', category: 'build' },
+  { url: `/grants`, icon: '💰', text: 'Grants', category: 'build' },
 ]
 
 export function Header(props: Props) {
@@ -59,7 +52,7 @@ export function Header(props: Props) {
             <span>Explore</span>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
-                {explore.map((i) => {
+                {MENU_ITEMS.filter((i) => i.category === 'explore').map((i) => {
                   return (
                     <li key={i.url}>
                       <Link href={i.url}>
@@ -76,7 +69,7 @@ export function Header(props: Props) {
             <span>Learn</span>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
-                {learn.map((i) => {
+                {MENU_ITEMS.filter((i) => i.category === 'learn').map((i) => {
                   return (
                     <li key={i.url}>
                       <Link href={i.url}>
@@ -93,7 +86,7 @@ export function Header(props: Props) {
             <span>Build</span>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
-                {build.map((i) => {
+                {MENU_ITEMS.filter((i) => i.category === 'build').map((i) => {
                   return (
                     <li key={i.url}>
                       <Link href={i.url}>
@@ -109,14 +102,23 @@ export function Header(props: Props) {
         </ul>
 
         <ul className={styles.icons}>
-          <li className={styles.primary} onClick={() => setFoldout(foldout !== 'search' ? 'search' : '')}>
+          <li onClick={() => setFoldout(foldout !== 'search' ? 'search' : '')}>
             <i className="bi bi-search" />
+          </li>
+          <li className={styles.hamburger} onClick={() => setFoldout(foldout !== 'submenu' ? 'submenu' : '')}>
+            <i className="bi bi-list" />
           </li>
           {/* <li className={styles.primary} onClick={() => setFoldout(foldout !== 'account' ? 'account' : '')}>
             <i className="bi bi-person-circle" />
           </li> */}
         </ul>
       </div>
+
+      <MobileSubmenu
+        className={`${styles.submenu} ${foldout === 'submenu' ? styles.open : ''}`}
+        open={foldout === 'submenu'}
+        close={() => onClose()}
+      />
 
       <Searchbar
         className={`${styles.foldout} ${foldout === 'search' ? styles.open : ''}`}

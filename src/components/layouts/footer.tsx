@@ -3,7 +3,7 @@ import { Link } from 'components/link'
 import Image from 'next/image'
 import { DEPARTMENTS } from 'utils/jobs'
 import { defaultSlugify } from 'utils/helpers'
-import { build, explore, learn } from './header'
+import { MENU_ITEMS } from './header'
 
 type Props = {
   className?: string
@@ -19,7 +19,7 @@ export function Footer(props: Props) {
         <div className={styles.navigation}>
           <ul>
             <li className={styles.header}>Explore</li>
-            {explore.map((i) => {
+            {MENU_ITEMS.filter((i) => i.category === 'explore').map((i) => {
               return (
                 <li key={i.url}>
                   <Link href={i.url}>{i.text}</Link>
@@ -29,7 +29,7 @@ export function Footer(props: Props) {
           </ul>
           <ul>
             <li className={styles.header}>Learn</li>
-            {learn.map((i) => {
+            {MENU_ITEMS.filter((i) => i.category === 'learn').map((i) => {
               return (
                 <li key={i.url}>
                   <Link href={i.url}>{i.text}</Link>
@@ -39,7 +39,7 @@ export function Footer(props: Props) {
           </ul>
           <ul>
             <li className={styles.header}>Build</li>
-            {build.map((i) => {
+            {MENU_ITEMS.filter((i) => i.category === 'build').map((i) => {
               return (
                 <li key={i.url}>
                   <Link href={i.url}>{i.text}</Link>

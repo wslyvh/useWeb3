@@ -5,6 +5,11 @@
     display: flex;
     align-items: center;
     margin-bottom: $gap-16;
+
+    h3 {
+      font-weight: $font-bold;
+      text-transform: uppercase;
+    }
   }
 
   .link {
