@@ -9,14 +9,12 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from '../pages.module.scss'
 import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
-import { Row } from 'components/row'
-import moment from 'moment'
 import { Company } from 'types/company'
 import { marked } from 'marked'
 import { MarkdownContentService } from 'services/content'
 import { LinkButton } from 'components/link-button'
-import { getApplicationUrl } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
+import { JobPanel } from 'components/panel'
 
 interface Props {
   categories: Array<Category>
@@ -65,19 +63,7 @@ export default function Index(props: Props) {
         <main>
           <Featured type="rows">
             {props.jobs.map((i) => {
-              return (
-                <Row
-                  key={`${i.id}_${i.location}`}
-                  title={i.title}
-                  description={i.location}
-                  date={moment(i.updated).fromNow()}
-                  author={i.company.title}
-                  authorUrl={i.company.id}
-                  url={getApplicationUrl(i.url)}
-                  imageUrl={i.company.logo}
-                  featured={i.featured}
-                />
-              )
+              return <JobPanel key={i.id} job={i} />
             })}
           </Featured>
         </main>

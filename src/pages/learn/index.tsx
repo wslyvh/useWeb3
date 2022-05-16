@@ -9,8 +9,8 @@ import { MarkdownContentService } from 'services/content'
 import { GetTracks } from 'services/learn/filesystem'
 import { Track } from 'types/learn'
 import { Featured } from 'components/featured'
-import { BasicRow } from 'components/row'
 import { TopnavLayout } from 'components/layouts/topnav'
+import { PanelCard } from 'components/panel'
 
 interface Props {
   categories: Array<Category>
@@ -35,7 +35,7 @@ export default function Index(props: Props) {
           <Featured type="rows">
             {props.tracks.map((i) => {
               return (
-                <BasicRow
+                <PanelCard
                   key={i.id}
                   title={i.name}
                   description={i.description}

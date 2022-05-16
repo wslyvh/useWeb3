@@ -128,17 +128,21 @@ export class MarkdownContentService implements ItemServiceInterface {
 
   private toItem(source: string, slug: string, cat: Category): ContentItem {
     const doc = matter(source)
-    return {
+    let item = {
       ...doc.data,
       id: slug,
       featured: doc.data.featured ?? false,
-      date: new Date(doc.data.date as string).getTime(),
-      dateAdded: new Date(doc.data.dateAdded as string).getTime(),
       url: doc.data.url ?? `/${cat.id}/${slug}`,
-      content: doc.content,
       tags: doc.data.tags ?? [],
       languages: doc.data.languages ?? [],
+      level: doc.data.level ?? 'All',
+      content: doc.content,
       category: cat,
     } as ContentItem
+
+    if (doc.data.date) item.date = new Date(doc.data.date as string).getTime()
+    if (doc.data.dateAdded) item.dateAdded = new Date(doc.data.dateAdded as string).getTime()
+
+    return item
   }
 }

@@ -10,6 +10,7 @@ export interface Job {
   asMarkdown?: boolean
   location: string
   remote: boolean
+  parttime?: boolean
   minSalary?: number
   maxSalary?: number
   company: Company

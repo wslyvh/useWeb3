@@ -8,6 +8,9 @@ interface Props {
   fill?: boolean
   small?: boolean
   large?: boolean
+  asJobs?: boolean
+  withIcons?: boolean
+  noLinks?: boolean
   className?: string
 }
 
@@ -15,15 +18,21 @@ export function Tags(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
   if (props.small) className += ` ${styles.small}`
+  if (props.withIcons) className += ` ${styles.icons}`
 
   return (
     <ul className={className}>
       {props.tags.map((i) => {
-        const id = defaultSlugify(i.key)
+        const id = i.key.toLowerCase() // Keep spaces (no slugify)
+        let href = `/tags/${id}`
+
+        if (props.asJobs) {
+          href = `/${defaultSlugify(id)}-jobs`
+        }
 
         return (
           <li key={id}>
-            <Panel href={`/tags/${id}`} type="secondary" {...props}>
+            <Panel href={props.noLinks ? undefined : href} type="secondary" {...props}>
               {i.key}
               {i.count !== 0 && (
                 <>

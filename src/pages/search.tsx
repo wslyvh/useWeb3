@@ -18,7 +18,7 @@ import {
 } from 'js-search'
 import { useRouter } from 'next/router'
 import { Featured } from 'components/featured'
-import { BasicRow } from 'components/row'
+import { PanelCard } from 'components/panel'
 
 interface Props {
   items: any[]
@@ -39,6 +39,7 @@ export default function Index(props: Props) {
 
   index.addIndex('title')
   index.addIndex('description')
+  index.addIndex('tags')
   index.addDocuments(props.items)
 
   const allSearchedItems = index.search(router.query.q as string) // 55
@@ -71,7 +72,7 @@ export default function Index(props: Props) {
             <Featured type="rows">
               {items.map((i: any, index: number) => {
                 return (
-                  <BasicRow
+                  <PanelCard
                     key={`${index}_${i.id}`}
                     title={i.title}
                     description={i.description}
