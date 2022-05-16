@@ -6,6 +6,14 @@
   background: #3c4a59; // TODO
   color: #fff;
 
+  a {
+    color: var(--color-neutral-100);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
   .inner {
     display: flex;
     flex-direction: column;
@@ -32,7 +40,15 @@
 
         .header {
           font-weight: $font-bold;
-          margin-bottom: $gap-8;
+
+          &::after {
+            content: '';
+            display: block;
+            margin: $gap-8 0 $gap-16 0;
+            width: $gap-16;
+            height: 2px;
+            background: var(--color-neutral-100);
+          }
         }
 
         li {
@@ -42,7 +58,7 @@
     }
 
     hr {
-      border-bottom: 1px solid #c1e5fb; // TODO
+      border-bottom: 1px solid var(--color-neutral-100); // TODO
     }
 
     .credits {
