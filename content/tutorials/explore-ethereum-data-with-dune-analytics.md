@@ -2,7 +2,7 @@
 title: Explore Ethereum Data with Dune Analytics
 description: "This tutorial will teach you how to query onchain data using the amazing Dune Analytics platform."
 authors: ["@ethereumdevio"]
-tags: ["Data", Data Analytics"]
+tags: ["Data", "Data Analytics"]
 languages: ["SQL"]
 url: "https://ethereumdev.io/explore-ethereum-data-with-sql-queries-on-dune-analytics/"
 dateAdded: 2022-02-22
