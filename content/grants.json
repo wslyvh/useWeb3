@@ -139,6 +139,17 @@
             "Longevity"
         ]
     },
+    
+    {
+        "name": "EPNS Grants",
+        "description": "To provide grants to projects, ideas, and events that benefit EPNS and its ecosystem.",
+        "url": "https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a",
+        "tags": [
+            "DevEx",
+            "Dapp"
+        ]
+    },
+    
      {
         "name": "Data Union DAO Grants",
         "description": "Data Union DAO is funding builders to build Data Unions using the Data Union SDKs. Visit dataunions.org for more information.",
