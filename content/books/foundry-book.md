@@ -4,7 +4,7 @@ description: "A book on all things Foundry, a smart contract development toolcha
 authors: ["@onbjerg"]
 tags: ["Smart Contracts"]
 languages: ['Rust', 'Solidity']
-url: "https://onbjerg.github.io/foundry-book/"
+url: "https://book.getfoundry.sh/"
 dateAdded: 2022-02-22
 level: "Beginner"
 ---
