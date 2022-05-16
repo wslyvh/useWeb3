@@ -1,6 +1,5 @@
 import React, { FormEvent, useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
@@ -16,6 +15,7 @@ import { Order, defaultOrder } from 'types/order'
 import { Finished } from 'components/form/finished'
 import { useWarnIfUnsavedChanges } from 'hooks/useWarnIfUnsavedChanges'
 import { useRouter } from 'next/router'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -124,7 +124,7 @@ export default function Index(props: Props) {
         description={`Reach hundreds of thousands of Web3, Solidity and blockchain developers, designers, researchers and other builders.`}
       />
 
-      <MainLayout className={styles.container} title={'Post Job'} hideNewsletter>
+      <TopnavLayout className={styles.container} title={'Post Web3 Job'} hideNewsletter>
         <form onSubmit={handleSubmit} role="form">
           {step === 1 && <CompanyForm company={company} onChange={(i) => setCompany(i)} />}
           {step === 2 && <JobForm job={job} onChange={(i) => setJob(i)} />}
@@ -142,7 +142,7 @@ export default function Index(props: Props) {
             </button>
           )}
         </form>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

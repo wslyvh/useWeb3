@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
@@ -10,6 +9,7 @@ import { MarkdownContentService } from 'services/content'
 import { GetTrack, GetTracks } from 'services/learn/filesystem'
 import { Lesson, Track } from 'types/learn'
 import { Container } from 'components/learn/container'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -22,11 +22,11 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={props.track.name} divider="🧠" description={props.track.description} />
 
-      <MainLayout className={styles.container} title={props.track.name} hideNewsletter>
+      <TopnavLayout className={styles.container} title={props.track.name} hideNewsletter>
         <p>{props.track.description}</p>
 
         <Container track={props.track} lesson={props.lesson} />
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

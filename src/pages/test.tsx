@@ -58,6 +58,16 @@ export default function Index(props: Props) {
         </p>
 
         <p>
+          <Panel small>Small</Panel>
+        </p>
+        <p>
+          <Panel>Normal</Panel>
+        </p>
+        <p>
+          <Panel large>Large</Panel>
+        </p>
+
+        <p>
           <Panel fill>Fill</Panel>
         </p>
         <p>

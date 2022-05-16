@@ -1,0 +1,10 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap-8;
+  margin-bottom: $gap-16;
+}

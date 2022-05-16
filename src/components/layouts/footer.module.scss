@@ -9,14 +9,23 @@
   .inner {
     display: flex;
     flex-direction: column;
-    margin: 0 $gap-24;
+    margin: 0 $gap-32;
     max-width: $max-content-width;
     width: 100%;
 
+    @media (max-width: $screen-640) {
+      margin: 0 $gap-16;
+    }
+
     .navigation {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       margin: $gap-40 0;
+      gap: $gap-16;
+
+      @media (max-width: $screen-640) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       ul {
         list-style-type: none;

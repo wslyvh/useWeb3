@@ -1,36 +1,38 @@
 @use 'assets/styles/variables.scss' as *;
 
 .container {
-  h3 {
-    margin-bottom: $gap-16;
-  }
+  margin: $gap-16 0;
 
-  border-radius: $gap-8;
-  background: var(--color-primary-100);
-  padding: $gap-16 $gap-40;
-  text-align: center;
-
-  @media (max-width: $screen-640) {
-    padding: $gap-16 $gap-16;
-  }
-
-  .row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-
-    input {
-      padding: $gap-8;
-      margin-right: $gap-8;
-      width: 100%;
-      outline: none;
+  section {
+    h3 {
+      margin-bottom: $gap-16;
     }
 
-    @media (max-width: $screen-480) {
-      flex-wrap: wrap;
+    padding: $gap-16 $gap-32;
+    text-align: center;
+
+    @media (max-width: $screen-640) {
+      padding: $gap-16 $gap-16;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
 
       input {
-        margin-right: 0;
+        padding: $gap-8;
+        margin-right: $gap-8;
+        width: 100%;
+        outline: none;
+      }
+
+      @media (max-width: $screen-480) {
+        flex-wrap: wrap;
+
+        input {
+          margin-right: 0;
+        }
       }
     }
   }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
@@ -12,6 +11,7 @@ import { GetTracks } from 'services/learn/filesystem'
 import { Track } from 'types/learn'
 import { Featured } from 'components/featured'
 import { BasicRow } from 'components/row'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -26,7 +26,7 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={`${title}`} divider="🧠" description={description} />
 
-      <MainLayout className={styles.container} title={title}>
+      <TopnavLayout className={styles.container} title={title}>
         <p>A free, fun and engaging way to learn more about Web3, its projects and their communities.</p>
         <p>
           <i>Learn by doing and level up your skills with fresh challenges.</i>
@@ -48,7 +48,7 @@ export default function Index(props: Props) {
             })}
           </Featured>
         </main>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

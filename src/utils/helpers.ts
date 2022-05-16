@@ -41,3 +41,7 @@ export function getYoutubeVideoId(url: string): string | null {
 
   return match && match[2].length == 11 ? match[2] : null
 }
+
+export function capitalize(text: string) {
+  return text.charAt(0).toUpperCase() + text.slice(1)
+}

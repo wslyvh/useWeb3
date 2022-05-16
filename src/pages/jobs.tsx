@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Main as MainLayout } from 'components/layouts/main'
 import { GetStaticProps } from 'next'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -10,6 +9,7 @@ import { Job } from 'types/job'
 import { SEO } from 'components/SEO'
 import { MarkdownContentService } from 'services/content'
 import { JobsOverview } from 'components/jobs'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -23,9 +23,9 @@ export default function Index(props: Props) {
         title="Web3, Blockchain and Crypto jobs"
         description="Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem."
       />
-      <MainLayout className={styles.container} title="Web3 Jobs" hideNewsletter>
+      <TopnavLayout className={styles.container} title="Web3 Jobs" hideNewsletter>
         <JobsOverview jobs={props.jobs} />
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

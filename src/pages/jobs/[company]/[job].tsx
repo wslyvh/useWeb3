@@ -1,7 +1,6 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
@@ -16,6 +15,7 @@ import { marked } from 'marked'
 import he from 'he'
 import { MarkdownContentService } from 'services/content'
 import { getApplicationUrl } from 'utils/jobs'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -56,7 +56,7 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={props.job.title} description={props.job.description} imageUrl={props.company.logo} />
 
-      <MainLayout className={styles.container} title={props.job.title}>
+      <TopnavLayout className={styles.container} title={props.job.title}>
         <p>
           <Link className={styles.mr} href={`/jobs/${props.company.id}`}>
             {props.company.title}
@@ -79,7 +79,7 @@ export default function Index(props: Props) {
         )}
 
         <p className={styles.muted}>Posted {moment(props.job.updated).fromNow()}</p>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

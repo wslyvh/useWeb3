@@ -1,5 +1,4 @@
 import React from 'react'
-import { Main as MainLayout } from 'components/layouts/main'
 import { GetStaticProps } from 'next'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -10,6 +9,7 @@ import { Featured } from 'components/featured'
 import { BasicRow } from 'components/row'
 import programs from '../../content/grants.json'
 import { defaultSlugify } from 'utils/helpers'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -23,7 +23,7 @@ export default function Index(props: Props) {
         divider="💰"
         description="These grant and ecosystem support programs can help you build your own projects, tools, infrastructure, research and other public goods."
       />
-      <MainLayout className={styles.container} title="Web3 Grants and support programs">
+      <TopnavLayout className={styles.container} title="Web3 Grants and support programs">
         <p>
           These grant and ecosystem support programs can help you build your own projects, tools, infrastructure,
           research and other public goods.
@@ -44,7 +44,7 @@ export default function Index(props: Props) {
             })}
           </Featured>
         </main>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

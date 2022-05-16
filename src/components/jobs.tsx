@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Departments } from './departments'
 import { DEPARTMENTS, getApplicationUrl } from 'utils/jobs'
+import { Panel } from './panel'
 
 interface Props {
   jobs: Array<Job>
@@ -41,14 +42,9 @@ export function JobsOverview(props: Props) {
         </p>
       </article>
 
-      <article>
-        <h2>Post a job</h2>
-        <p>
-          Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
-        </p>
-      </article>
-
-      <Newsletter className={styles.newsletter} title="" description="Receive the latest Web3 jobs in your inbox." />
+      <div className={styles.filters}>
+        <Newsletter className={styles.newsletter} title="" description="Receive the latest Web3 jobs in your inbox." />
+      </div>
 
       <div className={styles.filters}>
         <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />

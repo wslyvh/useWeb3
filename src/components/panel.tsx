@@ -9,6 +9,7 @@ interface Props {
   type?: 'primary' | 'secondary' | 'tertiary' | 'neutral' | 'info' | 'success' | 'warning' | 'error'
   fill?: boolean
   small?: boolean
+  large?: boolean
   stretch?: boolean
   className?: string
 }
@@ -21,6 +22,7 @@ export function Panel(props: Props) {
   if (props.href) className += ` ${styles.link}`
   if (props.fill) className += ` ${styles.fill}`
   if (props.small) className += ` ${styles.small}`
+  if (props.large) className += ` ${styles.large}`
   if (props.stretch) className += ` ${styles.stretch}`
 
   if (props.href) {
@@ -69,9 +71,9 @@ export function PanelCard(props: CardProps) {
           {props.icon && <small>{props.icon}</small>} {props.title}
         </h4>
 
-        <ul className={styles.tags}>
-          {props.tags &&
-            props.tags.map((i) => {
+        {props.tags && props.tags.length > 0 && (
+          <ul className={styles.tags}>
+            {props.tags.map((i) => {
               return (
                 <li key={i}>
                   <Panel className={styles.tag} href={`/tags/${i.toLowerCase()}`} type="neutral" small>
@@ -80,7 +82,8 @@ export function PanelCard(props: CardProps) {
                 </li>
               )
             })}
-        </ul>
+          </ul>
+        )}
 
         <p className={`${styles.description} muted`}>{props.description}</p>
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Featured } from 'components/featured'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -17,6 +16,7 @@ import { marked } from 'marked'
 import { MarkdownContentService } from 'services/content'
 import { LinkButton } from 'components/link-button'
 import { getApplicationUrl } from 'utils/jobs'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -43,7 +43,7 @@ export default function Index(props: Props) {
         imageUrl={props.company.logo}
       />
 
-      <MainLayout className={styles.container} title={props.company.title}>
+      <TopnavLayout className={styles.container} title={props.company.title}>
         {props.company.body && (
           <article className={styles.body} dangerouslySetInnerHTML={{ __html: marked.parse(props.company.body) }} />
         )}
@@ -81,7 +81,7 @@ export default function Index(props: Props) {
             })}
           </Featured>
         </main>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

@@ -1,6 +1,6 @@
 import { defaultSlugify } from 'utils/helpers'
-import { Link } from './link'
-import styles from './tags.module.scss'
+import { Panel } from './panel'
+import styles from './departments.module.scss'
 
 interface Props {
   departments: Array<string>
@@ -17,8 +17,10 @@ export function Departments(props: Props) {
         const id = defaultSlugify(i)
 
         return (
-          <li key={id} className="block fixed">
-            <Link href={`/${id}-jobs`}>{i}</Link>
+          <li key={id}>
+            <Panel type="secondary" href={`/${id}-jobs`}>
+              {i}
+            </Panel>
           </li>
         )
       })}

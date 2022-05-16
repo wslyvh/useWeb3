@@ -73,7 +73,7 @@ export function Header(props: Props) {
             </aside>
           </li>
           <li className={styles.primary}>
-            <Link href="/learn">Learn</Link>
+            <span>Learn</span>
             <aside className={styles.foldout}>
               <ul className={styles.subnav}>
                 {learn.map((i) => {
@@ -112,9 +112,9 @@ export function Header(props: Props) {
           <li className={styles.primary} onClick={() => setFoldout(foldout !== 'search' ? 'search' : '')}>
             <i className="bi bi-search" />
           </li>
-          <li className={styles.primary} onClick={() => setFoldout(foldout !== 'account' ? 'account' : '')}>
+          {/* <li className={styles.primary} onClick={() => setFoldout(foldout !== 'account' ? 'account' : '')}>
             <i className="bi bi-person-circle" />
-          </li>
+          </li> */}
         </ul>
       </div>
 

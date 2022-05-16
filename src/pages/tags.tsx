@@ -1,5 +1,4 @@
 import React from 'react'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { GetStaticProps } from 'next'
@@ -9,6 +8,7 @@ import { Tags } from 'components/tags'
 import { Count } from 'types/count'
 import { MarkdownContentService } from 'services/content'
 import { SEO } from 'components/SEO'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -21,9 +21,9 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title="Explore resources by tags" />
 
-      <MainLayout title="Tags" className={styles.container}>
+      <TopnavLayout title="Tags" className={styles.container}>
         <section>
-          <p>Browse resources based on their tags.</p>
+          <p>Browse Web3 resources based on their tags.</p>
           <main>
             <Tags tags={props.tags} />
           </main>
@@ -35,7 +35,7 @@ export default function Index(props: Props) {
             <Tags tags={props.languages} />
           </main>
         </section>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

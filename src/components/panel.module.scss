@@ -55,6 +55,14 @@
   }
 }
 
+.large {
+  font-size: $size-20;
+
+  .border {
+    padding: 4px 8px;
+  }
+}
+
 .primary {
   @extend .panel;
   background: #c1e5fb; // TODO

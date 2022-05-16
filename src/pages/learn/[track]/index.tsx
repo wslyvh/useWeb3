@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
@@ -14,6 +13,7 @@ import { Tags } from 'components/tags'
 import { Tag } from 'components/tag'
 import { getLevelStyle } from 'utils/helpers'
 import { Link } from 'components/link'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -25,7 +25,7 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={props.track.name} divider="🧠" description={props.track.description} />
 
-      <MainLayout className={styles.container} title={props.track.name}>
+      <TopnavLayout className={styles.container} title={props.track.name}>
         <p>{props.track.description}</p>
 
         <div className={styles.icons}>
@@ -75,7 +75,7 @@ export default function Index(props: Props) {
             </article>
           </>
         )}
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

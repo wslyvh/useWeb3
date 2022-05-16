@@ -13,6 +13,7 @@ import { Departments } from 'components/departments'
 import { DEPARTMENTS } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { Panel, PanelCard } from 'components/panel'
+import { TitleWithAction } from 'components/layouts/title-action'
 
 interface Props {
   categories: Array<Category>
@@ -38,15 +39,12 @@ export default function Index(props: Props) {
         </article>
 
         <article>
-          <h2>Web3 Jobs</h2>
+          <TitleWithAction title="Web3 Jobs" action={{ href: '/jobs/post', text: 'Post a Job' }} />
           <p>
             Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
           </p>
           <p className={styles.filters}>
             <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
-          </p>
-          <p>
-            Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
           </p>
         </article>
 
