@@ -16,6 +16,7 @@ import he from 'he'
 import { MarkdownContentService } from 'services/content'
 import { getApplicationUrl } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
+import { Panel } from 'components/panel'
 
 interface Props {
   categories: Array<Category>
@@ -57,26 +58,57 @@ export default function Index(props: Props) {
       <SEO title={props.job.title} description={props.job.description} imageUrl={props.company.logo} />
 
       <TopnavLayout className={styles.container} title={props.job.title}>
-        <p>
-          🏛️{' '}
-          <Link className={styles.mr} href={`/jobs/${props.company.id}`}>
-            {props.company.title}
-          </Link>
-        </p>
-
-        <p>🌐 {props.job.location}</p>
-
-        {props.job.minSalary !== undefined && props.job.maxSalary !== undefined && (
-          <p className={styles.body}>
-            💰 ${props.job.minSalary.toLocaleString()} - ${props.job.maxSalary.toLocaleString()}/year
-          </p>
-        )}
-
-        {props.job.updated && (
-          <p>
-            📅 <span className={styles.muted}>{moment(props.job.updated).fromNow(true)} ago</span>
-          </p>
-        )}
+        <ul className={styles.properties}>
+          <li>
+            <span>🏛️</span>
+            <Link className={styles.mr} href={`/jobs/${props.company.id}`}>
+              {props.company.title}
+            </Link>
+          </li>
+          {props.job.minSalary !== undefined && props.job.maxSalary !== undefined && (
+            <li>
+              <span>💰</span>
+              <span>
+                ${props.job.minSalary.toLocaleString()} - ${props.job.maxSalary.toLocaleString()}/year
+              </span>
+            </li>
+          )}
+          <li>
+            <span>🏷️</span>
+            <span>
+              <Panel small type="secondary">
+                {props.job.department}
+              </Panel>
+            </span>
+          </li>
+          <li>
+            <span>🌐</span>
+            <span>
+              {props.job.remote && (
+                <Panel small type="secondary">
+                  {props.job.location}
+                </Panel>
+              )}
+              {!props.job.remote && props.job.location}
+            </span>
+          </li>
+          {props.job.parttime && (
+            <li>
+              <span>🕓</span>
+              <span>
+                <Panel small type="secondary">
+                  Part-time
+                </Panel>
+              </span>
+            </li>
+          )}
+          {props.job.updated && (
+            <li>
+              <span>📅</span>
+              <span className={styles.muted}>{moment(props.job.updated).fromNow(true)} ago</span>
+            </li>
+          )}
+        </ul>
 
         <article className={styles.website}>
           <Link href={getApplicationUrl(props.job.url)}>
@@ -91,8 +123,6 @@ export default function Index(props: Props) {
             Apply for the role of {props.job.title} at {props.company.title}.
           </main>
         )}
-
-        <p className={styles.muted}>Posted {moment(props.job.updated).fromNow()}</p>
       </TopnavLayout>
     </NavigationProvider>
   )
