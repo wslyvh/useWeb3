@@ -21,6 +21,8 @@ export default function Index(props: Props) {
   const title = 'Learn Web3'
   const description = 'Learn more about Web3, Ethereum, and other topics.'
 
+  return <></>
+  
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={`${title}`} divider="🧠" description={description} />
