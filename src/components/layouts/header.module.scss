@@ -1,0 +1,142 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  width: 100%;
+  border-bottom: 2px solid #c1e5fb; // TODO
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 $gap-32;
+
+    @media (max-width: $screen-640) {
+      margin: 0 $gap-16;
+    }
+  }
+
+  .icon {
+    width: 30px;
+    flex-shrink: 0;
+  }
+
+  .navigation {
+    list-style-type: none;
+    display: flex;
+    gap: $gap-16;
+
+    @media (max-width: $screen-640) {
+      padding: $gap-32 $gap-16;
+    }
+
+    li.primary {
+      cursor: pointer;
+      padding: 0;
+
+      @media (max-width: $screen-640) {
+        display: none;
+      }
+
+      > a,
+      > span {
+        display: flex;
+        padding: $gap-32 $gap-16;
+      }
+
+      &:hover {
+        .foldout {
+          visibility: visible;
+          pointer-events: auto;
+          opacity: 1;
+          z-index: 20 !important;
+        }
+
+        a {
+          color: #3c4a59; // TODO
+        }
+      }
+
+      .subnav {
+        list-style-type: none;
+        display: flex;
+        gap: $gap-16;
+
+        a {
+          color: var(--color-neutral);
+          padding: 0 $gap-16;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          span {
+            font-size: $size-24;
+            margin-bottom: $gap-16;
+          }
+
+          &:hover {
+            color: #3c4a59; // TODO
+          }
+        }
+      }
+    }
+  }
+
+  .foldout {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 10 !important;
+    background: #fff;
+    left: 0;
+    width: 100%;
+    padding: $gap-16 0;
+    border-top: 2px solid #c1e5fb; // TODO
+
+    -webkit-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
+    -moz-box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
+    box-shadow: 0 $gap-8 $gap-8 -8px darkgray;
+  }
+
+  .submenu {
+    @extend .foldout;
+
+    @media (min-width: $screen-640) {
+      display: none;
+    }
+  }
+
+  .open {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .icons {
+    list-style-type: none;
+    display: flex;
+    flex-shrink: 0;
+    font-size: $size-20;
+    gap: $gap-16;
+
+    li {
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .hamburger {
+      display: none;
+
+      @media (max-width: $screen-640) {
+        display: flex;
+      }
+    }
+  }
+}

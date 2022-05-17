@@ -1,0 +1,6 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  margin: $gap-16 0;
+  border-bottom: 3px dotted var(--color-primary-100);
+}

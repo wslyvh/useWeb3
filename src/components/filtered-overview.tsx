@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { ContentItem } from 'types/content-item'
 import styles from 'pages/pages.module.scss'
-import { Card } from './card'
 import { Dropdown } from './dropdown'
 import { Featured } from './featured'
+import { PanelCard } from './panel'
 
 interface Props {
   title: string
@@ -56,15 +56,15 @@ export function FilteredOverview(props: Props) {
         <Featured>
           {items.map((i) => {
             return (
-              <Card
-                small
+              <PanelCard
                 key={i.id}
                 title={i.title}
+                icon={i.category.emoji}
                 description={i.description}
-                author={i.authors.join(', ')}
-                tag={i.level}
-                detailsUrl={`/${i.category.id}/${i.id}`}
                 url={i.url}
+                detailsUrl={`/${i.category.id}/${i.id}`}
+                level={i.level}
+                tags={i.tags}
               />
             )
           })}

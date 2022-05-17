@@ -3,7 +3,16 @@ module.exports = {
   images: {
     domains: [
       'dl.airtable.com',
-      'www.datocms-assets.com'
+      'www.datocms-assets.com',
+      'acegif.com'
     ],
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    })
+
+    return config
+  }
 }

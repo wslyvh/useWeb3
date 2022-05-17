@@ -1,7 +1,6 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
 import { Featured } from 'components/featured'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -10,13 +9,12 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from '../pages.module.scss'
 import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
-import { Row } from 'components/row'
-import moment from 'moment'
 import { Company } from 'types/company'
 import { marked } from 'marked'
 import { MarkdownContentService } from 'services/content'
 import { LinkButton } from 'components/link-button'
-import { getApplicationUrl } from 'utils/jobs'
+import { TopnavLayout } from 'components/layouts/topnav'
+import { JobPanel } from 'components/panel'
 
 interface Props {
   categories: Array<Category>
@@ -43,7 +41,7 @@ export default function Index(props: Props) {
         imageUrl={props.company.logo}
       />
 
-      <MainLayout className={styles.container} title={props.company.title}>
+      <TopnavLayout className={styles.container} title={props.company.title}>
         {props.company.body && (
           <article className={styles.body} dangerouslySetInnerHTML={{ __html: marked.parse(props.company.body) }} />
         )}
@@ -65,23 +63,11 @@ export default function Index(props: Props) {
         <main>
           <Featured type="rows">
             {props.jobs.map((i) => {
-              return (
-                <Row
-                  key={`${i.id}_${i.location}`}
-                  title={i.title}
-                  description={i.location}
-                  date={moment(i.updated).fromNow()}
-                  author={i.company.title}
-                  authorUrl={i.company.id}
-                  url={getApplicationUrl(i.url)}
-                  imageUrl={i.company.logo}
-                  featured={i.featured}
-                />
-              )
+              return <JobPanel key={i.id} job={i} />
             })}
           </Featured>
         </main>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

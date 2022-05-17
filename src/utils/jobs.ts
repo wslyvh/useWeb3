@@ -75,6 +75,12 @@ const operations = ['customer', 'support', 'client', 'operations', 'facilitator'
 const nontech = ['finance', 'legal', 'compliance', 'corporate', 'office', 'administrative']
 
 export const DEPARTMENTS = ['Engineering', 'Product', 'Sales', 'Marketing', 'People', 'Operations', 'Non-Tech']
+export const DEPARTMENTS_AS_COUNTS = DEPARTMENTS.map((i) => {
+  return {
+    key: i,
+    count: 0,
+  }
+})
 
 export function getJobDepartment(value: string): string {
   if (engineering.some((i) => value.toLowerCase().includes(i))) {

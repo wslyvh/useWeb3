@@ -1,12 +1,11 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
-import { DEFAULT_REVALIDATE_PERIOD, JOBS_AMOUNT_PER_COMPANY } from 'utils/constants'
+import { DEFAULT_REVALIDATE_PERIOD, DEFAULT_MAX_ITEMS } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { FilteredOverview } from 'components/filtered-overview'
@@ -14,6 +13,8 @@ import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { JobsOverview } from 'components/jobs'
 import { useRouter } from 'next/router'
+import { TopnavLayout } from 'components/layouts/topnav'
+import { capitalize } from 'utils/helpers'
 
 interface Props {
   categories: Array<Category>
@@ -30,15 +31,23 @@ export default function Index(props: Props) {
   const router = useRouter()
 
   if ((router.query?.category as string).endsWith('-jobs')) {
+    const category = (router.query.category as string).replace('-jobs', '')
+    let title = `Web3 ${capitalize(category)} Jobs`
+    if (category === 'remote-web3') title = 'Remote Web3 Jobs'
+    if (category === 'non-tech') title = 'Non-Tech Web3 Jobs'
     return (
       <NavigationProvider categories={props.categories}>
         <SEO
           title="Web3, Blockchain and Crypto jobs"
           description="Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem."
         />
-        <MainLayout className={styles.container} title="Web3 Jobs" hideNewsletter>
+        <TopnavLayout
+          className={styles.container}
+          title={title}
+          action={{ href: '/jobs/post', text: 'Post a Job' }}
+          hideNewsletter>
           <JobsOverview jobs={props.jobs} />
-        </MainLayout>
+        </TopnavLayout>
       </NavigationProvider>
     )
   }
@@ -55,9 +64,9 @@ export default function Index(props: Props) {
         description={props.category.description}
       />
 
-      <MainLayout className={styles.container} title={props.category.title}>
+      <TopnavLayout className={styles.container} title={`Web3 ${props.category.title}`}>
         <FilteredOverview title={props.category.title} description={props.category.description} items={props.items} />
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }
@@ -95,7 +104,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const service = new MarkdownContentService()
     const jobService = new JobService()
     const categories = await service.GetCategories()
-    const jobs = await jobService.GetJobs('', JOBS_AMOUNT_PER_COMPANY)
+    const jobs = await jobService.GetJobs('', DEFAULT_MAX_ITEMS)
 
     return {
       props: {

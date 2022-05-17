@@ -1,0 +1,10 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  .navigator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $gap-8;
+  }
+}

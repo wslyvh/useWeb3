@@ -1,0 +1,83 @@
+@use 'assets/styles/variables.scss' as *;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background: #3c4a59; // TODO
+  color: #fff;
+
+  a {
+    color: var(--color-neutral-100);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    margin: 0 $gap-32;
+    max-width: $max-content-width;
+    width: 100%;
+
+    @media (max-width: $screen-640) {
+      margin: 0 $gap-16;
+    }
+
+    .navigation {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: $gap-40 0;
+      gap: $gap-16;
+
+      @media (max-width: $screen-640) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      ul {
+        list-style-type: none;
+
+        .header {
+          font-weight: $font-bold;
+          text-transform: uppercase;
+
+          &::after {
+            content: '';
+            display: block;
+            margin: $gap-8 0 $gap-16 0;
+            width: $gap-16;
+            height: 2px;
+            background: var(--color-neutral-100);
+          }
+        }
+
+        li {
+          margin: $gap-8 0;
+        }
+      }
+    }
+
+    hr {
+      border-bottom: 1px solid var(--color-neutral-100); // TODO
+    }
+
+    .credits {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: $gap-40 0;
+
+      ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        gap: $gap-16;
+
+        .icon {
+          font-size: $size-20;
+        }
+      }
+    }
+  }
+}

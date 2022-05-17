@@ -1,0 +1,7 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  margin: $gap-32 0;
+  position: relative;
+  height: 200px;
+}

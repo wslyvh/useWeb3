@@ -1,0 +1,14 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  progress {
+    width: 100%;
+    height: 16px;
+  }
+
+  .lessons {
+    margin-top: $gap-8;
+    display: flex;
+    justify-content: center;
+  }
+}

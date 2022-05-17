@@ -1,15 +1,13 @@
-import Link from 'next/link'
-import moment from 'moment'
 import Pagination from 'next-pagination'
 import { Featured } from 'components/featured'
 import { Newsletter } from 'components/newsletter'
-import { Row } from 'components/row'
 import styles from './jobs.module.scss'
 import { Job } from 'types/job'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { Departments } from './departments'
-import { DEPARTMENTS, getApplicationUrl } from 'utils/jobs'
+import { DEPARTMENTS_AS_COUNTS } from 'utils/jobs'
+import { Tags } from './tags'
+import { JobPanel } from './panel'
 
 interface Props {
   jobs: Array<Job>
@@ -41,17 +39,12 @@ export function JobsOverview(props: Props) {
         </p>
       </article>
 
-      <article>
-        <h2>Post a job</h2>
-        <p>
-          Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
-        </p>
-      </article>
-
-      <Newsletter className={styles.newsletter} title="" description="Receive the latest Web3 jobs in your inbox." />
+      <div className={styles.filters}>
+        <Newsletter className={styles.newsletter} title="" description="Receive the latest Web3 jobs in your inbox." />
+      </div>
 
       <div className={styles.filters}>
-        <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
+        <Tags fill asJobs tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
       </div>
 
       {props.jobs.length === 0 && <p>No active job openings. Try another filter.</p>}
@@ -63,19 +56,7 @@ export function JobsOverview(props: Props) {
           <main>
             <Featured type="rows">
               {jobs.map((i) => {
-                return (
-                  <Row
-                    key={`${i.id}_${i.location}`}
-                    title={i.title}
-                    description={i.location}
-                    date={moment(i.updated).fromNow(true)}
-                    author={i.company.title}
-                    authorUrl={i.company.id}
-                    url={getApplicationUrl(i.url)}
-                    imageUrl={i.company.logo}
-                    featured={i.featured}
-                  />
-                )
+                return <JobPanel key={i.id} job={i} />
               })}
             </Featured>
           </main>
@@ -83,7 +64,7 @@ export function JobsOverview(props: Props) {
           <Pagination total={props.jobs.length} />
 
           <div className={styles.filters}>
-            <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
+            <Tags fill asJobs tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
           </div>
         </>
       )}

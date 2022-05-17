@@ -1,5 +1,4 @@
 import React from 'react'
-import { Main as MainLayout } from 'components/layouts/main'
 import { GetStaticProps } from 'next'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -13,6 +12,7 @@ import { Heatmap as HeatmapType } from 'types/gas'
 import Link from 'next/link'
 import { GasData } from 'components/gas-data'
 import { GasTable } from 'components/gas-table'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -27,7 +27,7 @@ export default function Index(props: Props) {
         divider="⛽"
         description="Monitor and track the Ethereum gas price to reduce transaction fees save money."
       />
-      <MainLayout className={styles.container} title="Ethereum Gas tracker">
+      <TopnavLayout className={styles.container} title="Ethereum Gas tracker">
         <article>
           <p>
             Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works
@@ -38,17 +38,17 @@ export default function Index(props: Props) {
 
         <GasData />
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h2>Average Ethereum Transaction costs</h2>
           <GasTable />
         </article>
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h2>Average Ethereum Gas Prices per hour</h2>
           <Heatmap data={props.heatmap.data} x={props.heatmap.x} y={props.heatmap.y} />
         </article>
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h3>Ethereum Gas explained</h3>
           <p>
             Gas is an important concept within the Web3 world. It is the virtual fuel required to execute transactions
@@ -78,7 +78,7 @@ export default function Index(props: Props) {
           </ol>
         </article>
 
-        <article className={styles.markdown}>
+        <article className="markdown">
           <h3>Further reading</h3>
           <ul>
             <li>
@@ -91,7 +91,7 @@ export default function Index(props: Props) {
             </li>
           </ul>
         </article>
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
-import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -10,6 +9,7 @@ import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { FilteredOverview } from 'components/filtered-overview'
 import moment from 'moment'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -23,9 +23,9 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={`${title} resources`} divider="⏱️" description={description} />
 
-      <MainLayout className={styles.container} title={title}>
+      <TopnavLayout className={styles.container} title={title}>
         <FilteredOverview title={title} description={description} items={props.items} />
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

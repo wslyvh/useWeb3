@@ -1,7 +1,5 @@
 import React from 'react'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
-import { Card } from 'components/card'
 import { Featured } from 'components/featured'
 import { ContentItem } from 'types/content-item'
 import { GetStaticProps } from 'next'
@@ -10,9 +8,12 @@ import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
-import { Link } from 'components/link'
-import { Departments } from 'components/departments'
-import { DEPARTMENTS } from 'utils/jobs'
+import { DEPARTMENTS_AS_COUNTS } from 'utils/jobs'
+import { TopnavLayout } from 'components/layouts/topnav'
+import { PanelCard } from 'components/panel'
+import { TitleWithAction } from 'components/layouts/title-action'
+import { Tags } from 'components/tags'
+import { Slider } from 'components/layouts/slider'
 
 interface Props {
   categories: Array<Category>
@@ -26,7 +27,7 @@ interface Params extends ParsedUrlQuery {
 export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
-      <MainLayout className={styles.container}>
+      <TopnavLayout className={styles.container}>
         <article>
           <p>
             useWeb3 is a platform for developers to explore and learn about Web3. Whether youre a new dev getting your
@@ -38,15 +39,12 @@ export default function Index(props: Props) {
         </article>
 
         <article>
-          <h2>Web3 Jobs</h2>
+          <TitleWithAction title="Web3 Jobs" action={{ href: '/jobs/post', text: 'Post a Job' }} />
           <p>
             Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
           </p>
           <p className={styles.filters}>
-            <Departments departments={[...DEPARTMENTS, 'Remote Web3']} />
-          </p>
-          <p>
-            Hiring for Web3 jobs? <Link href="/jobs/post">Post your job</Link>
+            <Tags fill asJobs tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
           </p>
         </article>
 
@@ -62,26 +60,28 @@ export default function Index(props: Props) {
           const items = props.items.filter((item) => item.category.id === category.id)
           if (items.length === 0) return null
 
+          // return <Slider title={category.title} items={items} />
+
           return (
             <Featured key={category.id} className={styles.featured} title={category.title} link={category.id}>
               {items.map((i) => {
                 return (
-                  <Card
-                    small
+                  <PanelCard
                     key={i.id}
                     title={i.title}
+                    icon={i.category.emoji}
                     description={i.description}
-                    author={i.authors.join(', ')}
-                    tag={i.level}
-                    detailsUrl={`/${i.category.id}/${i.id}`}
                     url={i.url}
+                    detailsUrl={`/${i.category.id}/${i.id}`}
+                    level={i.level}
+                    tags={i.tags}
                   />
                 )
               })}
             </Featured>
           )
         })}
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

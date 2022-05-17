@@ -1,7 +1,6 @@
 import React from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -10,6 +9,7 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from '../pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { FilteredOverview } from 'components/filtered-overview'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -30,9 +30,9 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={`Explore #${props.tag} resources`} />
 
-      <MainLayout className={styles.container} title={`#${props.tag}`}>
+      <TopnavLayout className={styles.container} title={`#${props.tag}`}>
         <FilteredOverview title={props.tag} items={props.items} />
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

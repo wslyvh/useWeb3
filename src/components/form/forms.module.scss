@@ -58,10 +58,11 @@
 }
 
 .pricing {
-  border-radius: $gap-8;
-  background: var(--color-primary-100);
-  padding: $gap-8;
   margin-bottom: $gap-16;
+
+  section {
+    padding: $gap-16;
+  }
 }
 
 .search {

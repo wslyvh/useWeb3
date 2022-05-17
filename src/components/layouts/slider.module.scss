@@ -1,0 +1,23 @@
+@use 'assets/styles/variables.scss' as *;
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .slider {
+    display: flex;
+  }
+
+  .arrow {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    font-size: $size-12;
+
+    --block-accent-color: var(--color-background);
+    --block-background-color: var(--color-neutral);
+  }
+}

@@ -2,7 +2,6 @@ import React from 'react'
 import moment from 'moment'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { Main as MainLayout } from 'components/layouts/main'
 import { ContentItem } from 'types/content-item'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
@@ -11,7 +10,6 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import { getYoutubeVideoId } from 'utils/helpers'
 import { Authors } from 'components/authors'
 import { Tags } from 'components/tags'
-import { Tag } from 'components/tag'
 import { YoutubeEmbed } from 'components/youtube-embed'
 import { getLevelStyle } from 'utils/helpers'
 import styles from '../pages.module.scss'
@@ -19,6 +17,8 @@ import { Link } from 'components/link'
 import { MarkdownContentService } from 'services/content'
 import { marked } from 'marked'
 import { useRouter } from 'next/router'
+import { TopnavLayout } from 'components/layouts/topnav'
+import { Panel } from 'components/panel'
 
 interface Props {
   categories: Array<Category>
@@ -42,7 +42,7 @@ export default function Index(props: Props) {
     <NavigationProvider categories={props.categories}>
       <SEO title={props.item.title} description={props.item.description} />
 
-      <MainLayout className={styles.container} title={props.item.title}>
+      <TopnavLayout className={styles.container} title={props.item.title}>
         <article className={styles.authors}>
           <div>
             <span>By</span>
@@ -80,11 +80,14 @@ export default function Index(props: Props) {
 
         <article className={styles.tags}>
           <Tags
+            fill
             tags={props.item.tags.map((i) => {
               return { key: i, count: 0 }
             })}
           />
-          <Tag className={styles.level} text={props.item.level} type={getLevelStyle(props.item.level)} />
+          <Panel className={styles.level} type={getLevelStyle(props.item.level)}>
+            {props.item.level}
+          </Panel>
         </article>
 
         {props.item.category.title === 'Books' && (
@@ -94,7 +97,7 @@ export default function Index(props: Props) {
             </small>
           </p>
         )}
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }

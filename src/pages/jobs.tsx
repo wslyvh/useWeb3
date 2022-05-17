@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { Main as MainLayout } from 'components/layouts/main'
+import React from 'react'
 import { GetStaticProps } from 'next'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
-import { DEFAULT_REVALIDATE_PERIOD, JOBS_AMOUNT_PER_COMPANY } from 'utils/constants'
+import { DEFAULT_REVALIDATE_PERIOD, DEFAULT_MAX_ITEMS } from 'utils/constants'
 import styles from './pages.module.scss'
 import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { SEO } from 'components/SEO'
 import { MarkdownContentService } from 'services/content'
 import { JobsOverview } from 'components/jobs'
+import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
   categories: Array<Category>
@@ -23,9 +23,9 @@ export default function Index(props: Props) {
         title="Web3, Blockchain and Crypto jobs"
         description="Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem."
       />
-      <MainLayout className={styles.container} title="Web3 Jobs" hideNewsletter>
+      <TopnavLayout title="Web3 Jobs" action={{ href: '/jobs/post', text: 'Post a Job' }} hideNewsletter>
         <JobsOverview jobs={props.jobs} />
-      </MainLayout>
+      </TopnavLayout>
     </NavigationProvider>
   )
 }
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const categories = await service.GetCategories()
 
   const jobService = new JobService()
-  const jobs = await jobService.GetJobs('', JOBS_AMOUNT_PER_COMPANY)
+  const jobs = await jobService.GetJobs('', DEFAULT_MAX_ITEMS)
 
   return {
     props: {
