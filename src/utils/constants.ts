@@ -28,7 +28,7 @@ export const JOBS_GREENHOUSE = [
   'optimism',
   'nethermind',
   'ankrnetwork',
-  'toucanearth'
+  'toucanearth',
 ]
 export const JOBS_LEVER = [
   'ethereumfoundation',
