@@ -24,7 +24,7 @@ export function TopnavLayout(props: Props) {
 
   return (
     <div className={className}>
-      <Alert text="Notification bar (e.g. News, Gitcoin rounds, etc.)" type="warning" center allowClose />
+      {/* <Alert text="Notification bar (e.g. News, Gitcoin rounds, etc.)" type="warning" center allowClose /> */}
 
       <Header />
 
