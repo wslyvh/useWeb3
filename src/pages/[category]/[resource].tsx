@@ -7,7 +7,7 @@ import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
-import { getYoutubeVideoId } from 'utils/helpers'
+import { getYoutubeVideoId, toTags } from 'utils/helpers'
 import { Authors } from 'components/authors'
 import { Tags } from 'components/tags'
 import { YoutubeEmbed } from 'components/youtube-embed'
@@ -43,15 +43,41 @@ export default function Index(props: Props) {
       <SEO title={props.item.title} description={props.item.description} />
 
       <TopnavLayout className={styles.container} title={props.item.title}>
-        <article className={styles.authors}>
-          <div>
-            <span>By</span>
-            <Authors authors={props.item.authors} />
-          </div>
-          {props.item.date && (
-            <div className={styles.muted}>Published {moment(props.item.date).format('MMM D, YYYY')}</div>
+        <ul className={styles.properties}>
+          <li>
+            <span className={styles.icon}>{props.item.category.emoji}</span>
+            <Link className={styles.mr} href={`/${props.item.category.id}`}>
+              {props.item.category.title}
+            </Link>
+          </li>
+          {props.item.authors.length > 0 && (
+            <li>
+              <span className={styles.icon}>
+                {props.item.authors.length === 1 && <span>👤</span>}
+                {props.item.authors.length > 1 && <span>👥</span>}
+              </span>
+              <Authors authors={props.item.authors} />
+            </li>
           )}
-        </article>
+          <li>
+            <span className={styles.icon}>⭐</span>
+            <Panel type={getLevelStyle(props.item.level)} small>
+              {props.item.level}
+            </Panel>
+          </li>
+          {props.item.tags.length > 0 && (
+            <li>
+              <span className={styles.icon}>🏷️</span>
+              <Tags small tags={toTags(props.item.tags)} />
+            </li>
+          )}
+          {props.item.date && (
+            <li>
+              <span className={styles.icon}>📅</span>
+              <span className={styles.muted}>{moment(props.item.date).fromNow(true)} ago</span>
+            </li>
+          )}
+        </ul>
 
         <article className={styles.website}>
           {!websiteIsSameCurrentPage && (
@@ -77,18 +103,6 @@ export default function Index(props: Props) {
         {props.item.content && props.item.content !== props.item.description && (
           <main className={styles.markdown} dangerouslySetInnerHTML={{ __html: marked.parse(props.item.content) }} />
         )}
-
-        <article className={styles.tags}>
-          <Tags
-            fill
-            tags={props.item.tags.map((i) => {
-              return { key: i, count: 0 }
-            })}
-          />
-          <Panel className={styles.level} type={getLevelStyle(props.item.level)}>
-            {props.item.level}
-          </Panel>
-        </article>
 
         {props.item.category.title === 'Books' && (
           <p>

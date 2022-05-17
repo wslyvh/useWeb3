@@ -53,6 +53,19 @@
     }
   }
 
+  .properties {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-16;
+    margin-bottom: $gap-16;
+
+    > li {
+      display: flex;
+      gap: $gap-8;
+    }
+  }
+
   .second {
     margin-top: $gap-16;
   }

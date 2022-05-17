@@ -72,6 +72,12 @@ export default function Index(props: Props) {
           </p>
         )}
 
+        {props.job.updated && (
+          <p>
+            📅 <span className={styles.muted}>{moment(props.job.updated).fromNow(true)} ago</span>
+          </p>
+        )}
+
         <article className={styles.website}>
           <Link href={getApplicationUrl(props.job.url)}>
             <span className="accent block">Apply to job &raquo;</span>
