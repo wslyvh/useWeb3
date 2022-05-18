@@ -31,14 +31,16 @@ export function MobileSubmenu(props: Props) {
             </li>
             {collapsed === 'explore' &&
               MENU_ITEMS.filter((i) => i.category === 'explore').map((i) => {
-                return <ul>
-                  <li key={i.url}>
-                    <Link href={i.url} className={styles.item}>
-                      <span>{i.icon}</span>
-                      {i.text}
-                    </Link>
-                  </li>
-                </ul>
+                return (
+                  <ul>
+                    <li key={i.url}>
+                      <Link href={i.url} className={styles.item}>
+                        <span>{i.icon}</span>
+                        {i.text}
+                      </Link>
+                    </li>
+                  </ul>
+                )
               })}
             <li className={styles.header} onClick={() => setCollapsed(collapsed !== 'learn' ? 'learn' : '')}>
               <span>Learn</span>
@@ -47,14 +49,16 @@ export function MobileSubmenu(props: Props) {
             </li>
             {collapsed === 'learn' &&
               MENU_ITEMS.filter((i) => i.category === 'learn').map((i) => {
-                return <ul>
-                  <li key={i.url}>
-                    <Link href={i.url} className={styles.item}>
-                      <span>{i.icon}</span>
-                      {i.text}
-                    </Link>
-                  </li>
-                </ul>
+                return (
+                  <ul>
+                    <li key={i.url}>
+                      <Link href={i.url} className={styles.item}>
+                        <span>{i.icon}</span>
+                        {i.text}
+                      </Link>
+                    </li>
+                  </ul>
+                )
               })}
             <li className={styles.header} onClick={() => setCollapsed(collapsed !== 'build' ? 'build' : '')}>
               <span>Build</span>
@@ -63,14 +67,16 @@ export function MobileSubmenu(props: Props) {
             </li>
             {collapsed === 'build' &&
               MENU_ITEMS.filter((i) => i.category === 'build').map((i) => {
-                return <ul>
-                  <li key={i.url}>
-                    <Link href={i.url} className={styles.item}>
-                      <span>{i.icon}</span>
-                      {i.text}
-                    </Link>
-                  </li>
-                </ul>
+                return (
+                  <ul>
+                    <li key={i.url}>
+                      <Link href={i.url} className={styles.item}>
+                        <span>{i.icon}</span>
+                        {i.text}
+                      </Link>
+                    </li>
+                  </ul>
+                )
               })}
           </ul>
         </div>

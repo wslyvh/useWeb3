@@ -60,8 +60,10 @@ export function Footer(props: Props) {
           </ul>
         </div>
 
-        <p className='bold right'>
-          <Link href="https://twitter.com/wslyvh">Submit Resources <i className="bi bi-arrow-up-right" /></Link>
+        <p className="bold right">
+          <Link href="https://twitter.com/wslyvh">
+            Submit Resources <i className="bi bi-arrow-up-right" />
+          </Link>
         </p>
         <hr />
 
