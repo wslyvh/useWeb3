@@ -102,7 +102,7 @@ export function Header(props: Props) {
 
         <ul className={styles.icons}>
           <li>
-            <Link href='/gas'>⛽</Link>
+            <Link href="/gas">⛽</Link>
           </li>
           <li onClick={() => setFoldout(foldout !== 'search' ? 'search' : '')}>
             <i className="bi bi-search" />
