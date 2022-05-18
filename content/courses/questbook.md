@@ -4,7 +4,7 @@ description: "Self paced tutorials to learn Web3 by building"
 authors: ["@questbookapp","@madhavanmalolan"]
 tags: ["Smart Contracts","Dapp","EVM"]
 languages: ["Solidity"]
-url: "https://www.questbook.app/"
+url: "https://learn.questbook.xyz/"
 dateAdded: 2021-09-21
 level: "All"
 ---
