@@ -43,8 +43,8 @@ export default function Index(props: Props) {
   index.addDocuments(props.items)
 
   const q: string = router.query.q as string
-  const searchItems = index.search(q)
-  const [items, setItems] = useState(searchItems)
+  const [searchItems, setSearchItems] = useState<any[]>([])
+  const [paginatedItems, setPaginatedItems] = useState<any[]>([])
 
   useEffect(() => {
     const page = !isNaN(Number(router.query['page'])) ? Number(router.query['page']) : 1
@@ -53,8 +53,10 @@ export default function Index(props: Props) {
     const sliceStart = page == 1 ? 0 : size * (page - 1)
     const sliceEnd = page * size
 
-    setItems(searchItems.slice(sliceStart, sliceEnd))
-  }, [q, props.items])
+    const items = index.search(q)
+    setSearchItems(items)
+    setPaginatedItems(items.slice(sliceStart, sliceEnd))
+  }, [router.query])
 
   return (
     <NavigationProvider categories={props.categories}>
@@ -71,7 +73,7 @@ export default function Index(props: Props) {
 
           <main>
             <Featured type="rows">
-              {items.map((i: any, index: number) => {
+              {paginatedItems.map((i: any, index: number) => {
                 return (
                   <PanelCard
                     key={`${index}_${i.id}`}
