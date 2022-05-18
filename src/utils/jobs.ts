@@ -72,7 +72,7 @@ const people = ['people', 'talent', 'hr', 'recruiter', 'recruitment']
 const operations = ['customer', 'support', 'client', 'operations', 'facilitator']
 
 // Non-Tech, Finance, Legal
-const nontech = ['finance', 'legal', 'compliance', 'corporate', 'office', 'administrative']
+const nontech = ['finance', 'legal', 'compliance', 'corporate', 'office', 'administrative', 'counsel']
 
 export const DEPARTMENTS = ['Engineering', 'Product', 'Sales', 'Marketing', 'People', 'Operations', 'Non-Tech']
 export const DEPARTMENTS_AS_COUNTS = DEPARTMENTS.map((i) => {
