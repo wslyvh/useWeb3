@@ -42,8 +42,9 @@ export default function Index(props: Props) {
   index.addIndex('tags')
   index.addDocuments(props.items)
 
-  const allSearchedItems = index.search(router.query.q as string) // 55
-  const [items, setItems] = useState(allSearchedItems) // on init = 55 (override on useEffect to paginated items)
+  const q: string = router.query.q as string
+  const searchItems = index.search(q)
+  const [items, setItems] = useState(searchItems)
 
   useEffect(() => {
     const page = !isNaN(Number(router.query['page'])) ? Number(router.query['page']) : 1
@@ -52,8 +53,8 @@ export default function Index(props: Props) {
     const sliceStart = page == 1 ? 0 : size * (page - 1)
     const sliceEnd = page * size
 
-    setItems(allSearchedItems.slice(sliceStart, sliceEnd))
-  }, [props.items, allSearchedItems, router.query])
+    setItems(searchItems.slice(sliceStart, sliceEnd))
+  }, [q, props.items])
 
   return (
     <NavigationProvider categories={props.categories}>
@@ -62,11 +63,11 @@ export default function Index(props: Props) {
           <h2>
             Search Results{' '}
             <small className="muted">
-              {router.query.q} <small>({allSearchedItems.length})</small>
+              {router.query.q} <small>({searchItems.length})</small>
             </small>
           </h2>
 
-          <Pagination total={allSearchedItems.length} />
+          <Pagination total={searchItems.length} />
 
           <main>
             <Featured type="rows">

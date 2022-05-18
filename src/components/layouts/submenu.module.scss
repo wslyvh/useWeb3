@@ -8,13 +8,14 @@
   }
 
   .navigation {
+    margin-bottom: $gap-16;
+    
     ul {
       list-style-type: none;
       display: flex;
       flex-direction: column;
       text-align: left;
       gap: $gap-8;
-      margin-bottom: $gap-16;
 
       li.header {
         cursor: pointer;
@@ -23,11 +24,11 @@
         align-items: center;
         font-weight: $font-bold;
         text-transform: uppercase;
-        padding-bottom: $gap-8;
       }
 
       li {
         width: 100%;
+        padding: $gap-8 0;
         border-bottom: 1px solid var(--color-neutral-100); // TODO
 
         span {
@@ -35,7 +36,6 @@
         }
 
         .item {
-          padding: $gap-8 0;
           display: block;
         }
       }

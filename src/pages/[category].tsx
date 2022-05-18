@@ -64,7 +64,13 @@ export default function Index(props: Props) {
         description={props.category.description}
       />
 
-      <TopnavLayout className={styles.container} title={`Web3 ${props.category.title}`}>
+      <TopnavLayout
+        className={styles.container}
+        title={`Web3 ${props.category.title}`}
+        action={{
+          href: `https://github.com/wslyvh/useWeb3/tree/main/content/${props.category.id}`,
+          text: `Submit ${props.category.title.endsWith('s') ? props.category.title.slice(0, -1) : props.category.title}`
+        }}>
         <FilteredOverview title={props.category.title} description={props.category.description} items={props.items} />
       </TopnavLayout>
     </NavigationProvider>

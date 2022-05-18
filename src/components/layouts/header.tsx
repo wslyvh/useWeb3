@@ -101,7 +101,7 @@ export function Header(props: Props) {
         </ul>
 
         <ul className={styles.icons}>
-          <li>
+          <li className={styles.emoji}>
             <Link href="/gas">⛽</Link>
           </li>
           <li onClick={() => setFoldout(foldout !== 'search' ? 'search' : '')}>

@@ -31,17 +31,15 @@ export function MobileSubmenu(props: Props) {
             </li>
             {collapsed === 'explore' &&
               MENU_ITEMS.filter((i) => i.category === 'explore').map((i) => {
-                return (
+                return <ul>
                   <li key={i.url}>
                     <Link href={i.url} className={styles.item}>
                       <span>{i.icon}</span>
                       {i.text}
                     </Link>
                   </li>
-                )
+                </ul>
               })}
-          </ul>
-          <ul>
             <li className={styles.header} onClick={() => setCollapsed(collapsed !== 'learn' ? 'learn' : '')}>
               <span>Learn</span>
               {collapsed === 'learn' && <i className="bi bi-caret-up-fill" />}
@@ -49,17 +47,15 @@ export function MobileSubmenu(props: Props) {
             </li>
             {collapsed === 'learn' &&
               MENU_ITEMS.filter((i) => i.category === 'learn').map((i) => {
-                return (
+                return <ul>
                   <li key={i.url}>
                     <Link href={i.url} className={styles.item}>
                       <span>{i.icon}</span>
                       {i.text}
                     </Link>
                   </li>
-                )
+                </ul>
               })}
-          </ul>
-          <ul>
             <li className={styles.header} onClick={() => setCollapsed(collapsed !== 'build' ? 'build' : '')}>
               <span>Build</span>
               {collapsed !== 'build' && <i className="bi bi-caret-down-fill" />}
@@ -67,14 +63,14 @@ export function MobileSubmenu(props: Props) {
             </li>
             {collapsed === 'build' &&
               MENU_ITEMS.filter((i) => i.category === 'build').map((i) => {
-                return (
+                return <ul>
                   <li key={i.url}>
                     <Link href={i.url} className={styles.item}>
                       <span>{i.icon}</span>
                       {i.text}
                     </Link>
                   </li>
-                )
+                </ul>
               })}
           </ul>
         </div>

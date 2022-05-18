@@ -71,6 +71,14 @@ article {
   font-size: smaller;
 }
 
+.bold { 
+  font-weight: $font-bold;
+}
+
+.right {
+  text-align: right;
+}
+
 .markdown {
   p,
   ul,
