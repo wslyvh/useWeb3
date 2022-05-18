@@ -13,7 +13,7 @@ import { TopnavLayout } from 'components/layouts/topnav'
 import { PanelCard } from 'components/panel'
 import { TitleWithAction } from 'components/layouts/title-action'
 import { Tags } from 'components/tags'
-import { Slider } from 'components/layouts/slider'
+import { GetJobs } from 'services/job'
 
 interface Props {
   categories: Array<Category>
@@ -90,6 +90,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async () => {
   const service = new MarkdownContentService()
   const items = await service.GetItems('', true)
   const categories = await service.GetCategories()
+
+  // const jbs = await GetJobs()
 
   return {
     props: {
