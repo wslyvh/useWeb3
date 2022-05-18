@@ -21,10 +21,10 @@ export const MENU_ITEMS = [
   { url: `/courses`, icon: '🎓', text: 'Courses', category: 'learn' },
   { url: `/tutorials`, icon: '💻', text: 'Tutorials', category: 'learn' },
   { url: `/videos`, icon: '📺', text: 'Videos', category: 'learn' },
-  { url: `/starter-kits`, icon: '🏗️', text: 'Templates', category: 'build' },
   { url: `/earn`, icon: '💸', text: 'Earn', category: 'build' },
-  { url: `/jobs`, icon: '💼', text: 'Jobs', category: 'build' },
   { url: `/grants`, icon: '💰', text: 'Grants', category: 'build' },
+  { url: `/starter-kits`, icon: '🏗️', text: 'Templates', category: 'build' },
+  { url: `/jobs`, icon: '💼', text: 'Jobs', category: 'build' },
 ]
 
 export function Header(props: Props) {
