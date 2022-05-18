@@ -5,6 +5,7 @@ authors: ['@wslyvh']
 level: Beginner
 tags: ['Web3']
 languages: []
+url: "https://www.useweb3.xyz/guides/what-is-web3"
 featured: true
 date: 2022-01-22
 dateAdded: 2022-01-15

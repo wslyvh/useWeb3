@@ -5,6 +5,7 @@ authors: ['@wslyvh']
 level: Beginner
 tags: ['Smart Contracts']
 languages: ['Solidity']
+url: "https://www.useweb3.xyz/guides/best-resources-to-learn-solidity"
 featured: true
 date: 2020-07-07
 dateAdded: 2022-01-15
