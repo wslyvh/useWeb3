@@ -12,7 +12,6 @@ type Props = {
 
 export const MENU_ITEMS = [
   { url: `/books`, icon: '📚', text: 'Books', category: 'explore' },
-  { url: `/gas`, icon: '⛽', text: 'Gas', category: 'explore' },
   { url: `/guides`, icon: '📖', text: 'Guides', category: 'explore' },
   { url: `/podcasts`, icon: '🎙️', text: 'Podcasts', category: 'explore' },
   { url: `/movies`, icon: '🎬', text: 'Movies', category: 'explore' },
@@ -102,6 +101,9 @@ export function Header(props: Props) {
         </ul>
 
         <ul className={styles.icons}>
+          <li>
+            <Link href='/gas'>⛽</Link>
+          </li>
           <li onClick={() => setFoldout(foldout !== 'search' ? 'search' : '')}>
             <i className="bi bi-search" />
           </li>
