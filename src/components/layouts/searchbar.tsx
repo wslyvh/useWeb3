@@ -20,7 +20,9 @@ export function Searchbar(props: Props) {
   useEffect(() => {
     if (ref.current && props.open) {
       setTimeout(() => {
-        ref.current.focus()
+        if (ref?.current) {
+          ref.current.focus()
+        }
       }, 100)
     }
   }, [ref, props.open])

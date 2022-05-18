@@ -32,7 +32,7 @@ export function MobileSubmenu(props: Props) {
             {collapsed === 'explore' &&
               MENU_ITEMS.filter((i) => i.category === 'explore').map((i) => {
                 return (
-                  <ul>
+                  <ul key={i.url}>
                     <li key={i.url}>
                       <Link href={i.url} className={styles.item}>
                         <span>{i.icon}</span>
@@ -50,7 +50,7 @@ export function MobileSubmenu(props: Props) {
             {collapsed === 'learn' &&
               MENU_ITEMS.filter((i) => i.category === 'learn').map((i) => {
                 return (
-                  <ul>
+                  <ul key={i.url}>
                     <li key={i.url}>
                       <Link href={i.url} className={styles.item}>
                         <span>{i.icon}</span>
@@ -68,7 +68,7 @@ export function MobileSubmenu(props: Props) {
             {collapsed === 'build' &&
               MENU_ITEMS.filter((i) => i.category === 'build').map((i) => {
                 return (
-                  <ul>
+                  <ul key={i.url}>
                     <li key={i.url}>
                       <Link href={i.url} className={styles.item}>
                         <span>{i.icon}</span>
