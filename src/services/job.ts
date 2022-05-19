@@ -46,18 +46,19 @@ export async function GetOrganization(id: string): Promise<Organization | undefi
     return cache.get(cacheKey)
   }
   try {
-    const records = await base('Orgs').select({
-      filterByFormula: `SEARCH("${id}", {id})`
-    }).all()
+    const records = await base('Orgs')
+      .select({
+        filterByFormula: `SEARCH("${id}", {id})`,
+      })
+      .all()
 
     if (records.length > 0) {
-      const org = records.map((source) => toOrganization(source)).find(i => i.id === id)
+      const org = records.map((source) => toOrganization(source)).find((i) => i.id === id)
       if (org) {
         cache.set(cacheKey, org)
         return org
       }
     }
-
   } catch (e) {
     console.log('GetOrganization', 'Unable to fetch org', id)
     console.error(e)
@@ -89,7 +90,8 @@ export async function GetJobs(): Promise<Job[]> {
   // console.log('ORGS', orgs)
   const jobs = (await Promise.all(orgs.map(getJobsByOrg))).flat()
 
-  return jobs.filter((i) => i !== undefined)
+  return jobs
+    .filter((i) => i !== undefined)
     .sort((a, b) => b.updated - a.updated)
     .sort((a, b) => (a.featured ? (b.featuredUntil ?? 0) - (a.featuredUntil ?? 0) : 1))
 }
@@ -107,8 +109,6 @@ export async function GetJobsByOrganization(orgId: string): Promise<Job[]> {
 
   return []
 }
-
-
 
 // PAGES // FEATURES
 // ===
@@ -188,43 +188,42 @@ export function toOrganization(source: Record<FieldSet>): Organization {
     org.logo = (source.fields['logo'] as any[])[0].url
   }
   if (source.fields['website']) {
-    org.website = source.fields['website'] as string ?? ''
+    org.website = (source.fields['website'] as string) ?? ''
   }
   if (source.fields['twitter']) {
-    org.twitter = source.fields['twitter'] as string ?? ''
+    org.twitter = (source.fields['twitter'] as string) ?? ''
   }
   if (source.fields['github']) {
-    org.github = source.fields['github'] as string ?? ''
+    org.github = (source.fields['github'] as string) ?? ''
   }
   if (source.fields['externalBoardUrl']) {
     org.externalBoardUrl = source.fields['externalBoardUrl'] as string
-  }
-  else {
+  } else {
     switch (org.ATS) {
       case 'Angel':
         org.externalBoardUrl = `https://angel.co/company/${org.id}/jobs`
-        break;
+        break
       case 'Breezy':
         org.externalBoardUrl = `https://${org.id}.breezy.hr/`
-        break;
+        break
       case 'Greenhouse':
         org.externalBoardUrl = `https://boards.greenhouse.io/${org.id}/`
-        break;
+        break
       case 'Lever':
         org.externalBoardUrl = `https://jobs.lever.co/${org.id}/`
-        break;
+        break
       case 'Recruitee':
         org.externalBoardUrl = `https://${org.id}.recruitee.com`
-        break;
+        break
       case 'Workable':
         org.externalBoardUrl = `https://apply.workable.com/${org.id}/`
-        break;
+        break
       case 'Wrk':
         org.externalBoardUrl = `https://jobs.wrk.xyz/${org.id}`
-        break;
+        break
     }
   }
-  
+
   return org
 }
 
@@ -257,10 +256,7 @@ export function toJob(source: Record<FieldSet>, org?: Organization): Job {
         (source.fields['Company Github'] as string[])?.length > 0
           ? (source.fields['Company Github'] as string[])[0]
           : '',
-      logo:
-        (source.fields['Company Logo'] as any[])?.length > 0
-          ? (source.fields['Company Logo'] as any[])[0].url
-          : '',
+      logo: (source.fields['Company Logo'] as any[])?.length > 0 ? (source.fields['Company Logo'] as any[])[0].url : '',
     },
     url: isEmail(applicationUrl)
       ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)`

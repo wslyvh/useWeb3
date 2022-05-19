@@ -26,7 +26,8 @@ export class AirtableJobService implements JobServiceInterface {
           filterByFormula: `AND(
             ({Active}),
             ({Company Slug} = "${orgId}")
-          )`})
+          )`,
+        })
         .all()
 
       return records

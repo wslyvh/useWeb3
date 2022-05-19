@@ -134,9 +134,7 @@ export function JobPanel(props: JobProps) {
             {props.job.org.logo && (
               <Image src={props.job.org.logo} alt={`${props.job.org.title} logo`} height={64} width={64} />
             )}
-            {!props.job.org.logo && (
-              <span className={styles.badge}>{props.job.org.title.toUpperCase().charAt(0)}</span>
-            )}
+            {!props.job.org.logo && <span className={styles.badge}>{props.job.org.title.toUpperCase().charAt(0)}</span>}
           </Link>
         )}
         <div className={styles.body}>
