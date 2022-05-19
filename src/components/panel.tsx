@@ -130,24 +130,24 @@ export function JobPanel(props: JobProps) {
     <Panel className={className} fill={!props.job.featured} type={props.job.featured ? 'warning' : 'neutral'} stretch>
       <div className={styles.inner}>
         {props.job.featured && (
-          <Link className={styles.logo} href={`/jobs/${props.job.company.id}`}>
-            {props.job.company.logo && (
-              <Image src={props.job.company.logo} alt={`${props.job.company.title} logo`} height={64} width={64} />
+          <Link className={styles.logo} href={`/jobs/${props.job.org.id}`}>
+            {props.job.org.logo && (
+              <Image src={props.job.org.logo} alt={`${props.job.org.title} logo`} height={64} width={64} />
             )}
-            {!props.job.company.logo && (
-              <span className={styles.badge}>{props.job.company.title.toUpperCase().charAt(0)}</span>
+            {!props.job.org.logo && (
+              <span className={styles.badge}>{props.job.org.title.toUpperCase().charAt(0)}</span>
             )}
           </Link>
         )}
         <div className={styles.body}>
-          <Link href={`/jobs/${props.job.company.id}/${defaultSlugify(props.job.title)}`}>
+          <Link href={`/jobs/${props.job.org.id}/${defaultSlugify(props.job.title)}`}>
             <h4>
               {props.job.title}
               {props.job.featured && <span> 🔥</span>}
             </h4>
           </Link>
           <div>
-            <Link href={`/jobs/${props.job.company.id}`}>{props.job.company.title}</Link>{' '}
+            <Link href={`/jobs/${props.job.org.id}`}>{props.job.org.title}</Link>{' '}
             <span className="muted">{props.job.location}</span>
           </div>
           <Tags className={styles.tags} small withIcons noLinks tags={toTags(tags)} />

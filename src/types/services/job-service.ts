@@ -1,7 +1,6 @@
-import { Company } from 'types/company'
+import { Organization } from 'types/org'
 import { Job } from 'types/job'
 
 export interface JobServiceInterface {
-  GetCompany(id: string): Promise<Company | undefined>
-  GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>>
+  GetJobs(orgId: string, org: Organization): Promise<Array<Job>>
 }

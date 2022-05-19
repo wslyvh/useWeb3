@@ -1,12 +1,12 @@
-import { Company } from 'types/company'
+import { Organization } from 'types/org'
 import styles from './forms.module.scss'
 import { FormInput } from './input'
 import { Pricing } from './pricing'
 import { Search } from './search'
 
 interface Props {
-  company: Company
-  onChange: (value: Company) => void
+  org: Organization
+  onChange: (value: Organization) => void
   className?: string
 }
 
@@ -16,7 +16,7 @@ export function CompanyForm(props: Props) {
 
   return (
     <div className={className}>
-      <h2>Step 1: Company Info</h2>
+      <h2>Step 1: Organization Info</h2>
       <p className="muted">
         Please keep in mind that all the information shared here will be part of your public profile.
       </p>
@@ -26,36 +26,36 @@ export function CompanyForm(props: Props) {
           <Pricing />
         </div>
 
-        <Search className={styles.group} onSelect={(company) => props.onChange(company)} />
+        <Search className={styles.group} onSelect={(org) => props.onChange(org)} />
 
         <FormInput
           id="title"
           name="Name"
-          info="Name of your company/project"
-          value={props.company.title}
-          onChange={(value) => props.onChange({ ...props.company, title: value })}
+          info="Name of your organization/project"
+          value={props.org.title}
+          onChange={(value) => props.onChange({ ...props.org, title: value })}
           required
-          readOnly={!!props.company.id}
+          readOnly={!!props.org.id}
         />
 
         <FormInput
           id="description"
           name="Description"
-          info="Describe in short the mission of your company/project (max. 120 chars)"
-          value={props.company.description}
-          onChange={(value) => props.onChange({ ...props.company, description: value })}
+          info="Describe in short the mission of your organization/project (max. 120 chars)"
+          value={props.org.description}
+          onChange={(value) => props.onChange({ ...props.org, description: value })}
           required
-          readOnly={!!props.company.id}
+          readOnly={!!props.org.id}
         />
 
         <FormInput
           id="body"
           type="textarea"
           name="Info"
-          info="Full description of what your company/project is doing (supports markdown)"
-          value={props.company.body}
-          onChange={(value) => props.onChange({ ...props.company, body: value })}
-          readOnly={!!props.company.id}
+          info="Full description of what your organization/project is doing (supports markdown)"
+          value={props.org.body}
+          onChange={(value) => props.onChange({ ...props.org, body: value })}
+          readOnly={!!props.org.id}
         />
 
         <FormInput
@@ -63,9 +63,9 @@ export function CompanyForm(props: Props) {
           name="Logo Url"
           info="Link to a square, 1:1 ratio logo (e.g. Github or Twitter profile picture)"
           placeholder="https://pbs.twimg.com/profile_images/1427622818074841091/Q6NYEk61_400x400.jpg"
-          value={props.company.logo}
-          onChange={(value) => props.onChange({ ...props.company, logo: value })}
-          readOnly={!!props.company.id}
+          value={props.org.logo}
+          onChange={(value) => props.onChange({ ...props.org, logo: value })}
+          readOnly={!!props.org.id}
         />
 
         <FormInput
@@ -73,10 +73,10 @@ export function CompanyForm(props: Props) {
           name="Website"
           info="Link to your main website"
           placeholder="https://www.useweb3.xyz/"
-          value={props.company.website}
-          onChange={(value) => props.onChange({ ...props.company, website: value })}
+          value={props.org.website}
+          onChange={(value) => props.onChange({ ...props.org, website: value })}
           required
-          readOnly={!!props.company.id}
+          readOnly={!!props.org.id}
         />
 
         <FormInput
@@ -84,10 +84,10 @@ export function CompanyForm(props: Props) {
           name="Twitter handle"
           info="Your Twitter handle (e.g. @useWeb3)"
           placeholder="@useWeb3"
-          value={props.company.twitter}
-          onChange={(value) => props.onChange({ ...props.company, twitter: value })}
+          value={props.org.twitter}
+          onChange={(value) => props.onChange({ ...props.org, twitter: value })}
           required
-          readOnly={!!props.company.id}
+          readOnly={!!props.org.id}
         />
 
         <FormInput
@@ -95,10 +95,10 @@ export function CompanyForm(props: Props) {
           name="Github Url"
           info="Link to Github or open-source repositories"
           placeholder="https://github.com/wslyvh/useWeb3"
-          value={props.company.github}
-          onChange={(value) => props.onChange({ ...props.company, github: value })}
+          value={props.org.github}
+          onChange={(value) => props.onChange({ ...props.org, github: value })}
           required
-          readOnly={!!props.company.id}
+          readOnly={!!props.org.id}
         />
 
         <FormInput
@@ -106,9 +106,9 @@ export function CompanyForm(props: Props) {
           name="Job board Url"
           info="Link to your own job board (e.g. Greenhouse, Lever, Angelist, etc.)"
           placeholder="https://ethereum.bamboohr.com/jobs/"
-          value={props.company.externalJobBoard}
-          onChange={(value) => props.onChange({ ...props.company, externalJobBoard: value })}
-          readOnly={!!props.company.id}
+          value={props.org.externalBoardUrl}
+          onChange={(value) => props.onChange({ ...props.org, externalBoardUrl: value })}
+          readOnly={!!props.org.id}
         />
       </div>
     </div>

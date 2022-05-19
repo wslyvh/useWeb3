@@ -27,7 +27,7 @@ export function Pricing(props: Props) {
         <ul>
           <li>Same as standard listing</li>
           <li>At the top of the job board for 2 weeks</li>
-          <li>Your company logo added to the listing</li>
+          <li>Your organization logo added to the listing</li>
           <li>
             <Link href="https://twitter.com/useWeb3">Twitter</Link> shoutout (1 tweet + 1 retweet)
           </li>

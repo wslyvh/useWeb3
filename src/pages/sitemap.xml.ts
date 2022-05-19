@@ -1,8 +1,8 @@
 import { SITE_URL } from 'utils/constants'
-import { JobService } from 'services/jobs'
 import slugify from 'slugify'
 import { MarkdownContentService } from 'services/content'
 import { DEPARTMENTS } from 'utils/jobs'
+import { GetJobs } from 'services/job'
 
 const Sitemap = () => {}
 
@@ -12,9 +12,8 @@ export const getServerSideProps = async ({ res }: any) => {
   const categories = await service.GetCategories()
   const tags = (await service.GetTags()).map((i) => i.key.toLowerCase().replace(/ /g, '%20').replace(/&/g, '%26'))
 
-  const jobService = new JobService()
-  const jobs = await jobService.GetJobs()
-  const companies = Array.from(new Set(jobs.map((i) => i.company.id)))
+  const jobs = await GetJobs()
+  const companies = Array.from(new Set(jobs.map((i) => i.org.id)))
 
   const baseUrl = SITE_URL
   const currentDate = new Date().toISOString()
@@ -103,7 +102,7 @@ export const getServerSideProps = async ({ res }: any) => {
               .map((i) => {
                 return `
                     <url>
-                        <loc>${baseUrl}jobs/${i.company.slug}/${i.slug}</loc>
+                        <loc>${baseUrl}jobs/${i.org.id}/${i.slug}</loc>
                         <lastmod>${currentDate}</lastmod>
                         <changefreq>weekly</changefreq>
                         <priority>0.6</priority>

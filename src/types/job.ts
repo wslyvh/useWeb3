@@ -1,4 +1,4 @@
-import { Company } from './company'
+import { Organization } from './org'
 
 export interface Job {
   id: string
@@ -13,7 +13,7 @@ export interface Job {
   parttime?: boolean
   minSalary?: number
   maxSalary?: number
-  company: Company
+  org: Organization
   url: string
   updated: number
   featured?: boolean
@@ -37,7 +37,7 @@ export const defaultJob = {
   body: '',
   location: 'Remote',
   remote: true,
-  company: {} as Company,
+  org: {} as Organization,
   url: '',
   updated: new Date().getTime(),
 }

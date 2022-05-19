@@ -9,12 +9,12 @@ import { DEFAULT_REVALIDATE_PERIOD, DEFAULT_MAX_ITEMS } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { FilteredOverview } from 'components/filtered-overview'
-import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
 import { JobsOverview } from 'components/jobs'
 import { useRouter } from 'next/router'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { capitalize } from 'utils/helpers'
+import { GetJobs } from 'services/job'
 
 interface Props {
   categories: Array<Category>
@@ -110,9 +110,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const department = categoryId.replace('-jobs', '')
     const remote = department.includes('remote')
     const service = new MarkdownContentService()
-    const jobService = new JobService()
     const categories = await service.GetCategories()
-    const jobs = await jobService.GetJobs('', DEFAULT_MAX_ITEMS)
+    const jobs = await GetJobs()
 
     return {
       props: {

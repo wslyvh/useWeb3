@@ -1,66 +1,26 @@
 import moment from 'moment'
-import { Company } from 'types/company'
+import { Organization } from 'types/org'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
-import { defaultSlugify, isCacheExpired, removeHtml } from 'utils/helpers'
+import { defaultSlugify, removeHtml } from 'utils/helpers'
 import { getJobDepartment } from 'utils/jobs'
 
 const map = new Map()
 
 export class GreenhouseJobService implements JobServiceInterface {
-  public async GetCompany(id: string): Promise<Company | undefined> {
-    const key = `GreenhouseJobService:GetCompany?id=${id}`
-    if (map.has(key) && !isCacheExpired(map, key)) {
-      return map.get(key)[0]
-    }
+  public async GetJobs(orgId: string, org: Organization): Promise<Array<Job>> {
+    if (!orgId) return []
 
     try {
-      const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${id}`)
-      const data = await res.json()
-
-      if (data) {
-        const company = {
-          id: id,
-          slug: id,
-          title: data.name,
-          description: removeHtml(data.content),
-          body: data.content,
-        } as Company
-
-        map.set(key, [company, Date.now()])
-        return company
-      }
-    } catch (e) {
-      console.log('GreenhouseJobService', 'Unable to fetch company', id)
-      console.error(e)
-    }
-
-    return undefined
-  }
-
-  public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
-    if (!companyId) return []
-
-    try {
-      const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${companyId}/jobs`)
+      const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${orgId}/jobs`)
       const data = await res.json()
 
       if (!data) return []
-      let company = await this.GetCompany(companyId)
-      if (!company) {
-        company = {
-          id: companyId,
-          slug: companyId,
-          title: companyId,
-          description: '',
-          body: '',
-        }
-      }
 
       const jobs = await Promise.all(
         data.jobs?.map(async (i: any) => {
-          const response = await fetch(`https://boards-api.greenhouse.io/v1/boards/${companyId}/jobs/${i.id}`)
+          const response = await fetch(`https://boards-api.greenhouse.io/v1/boards/${orgId}/jobs/${i.id}`)
           const job = await response.json()
 
           return {
@@ -72,7 +32,7 @@ export class GreenhouseJobService implements JobServiceInterface {
             body: job.content,
             location: i.location.name,
             remote: i.location.name.toLowerCase().includes('remote'),
-            company: company,
+            org: org,
             url: i.absolute_url,
             updated: new Date(i.updated_at).getTime(),
           } as Job
@@ -82,9 +42,8 @@ export class GreenhouseJobService implements JobServiceInterface {
       return jobs
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
-        .slice(0, maxItems ?? 100)
     } catch (e) {
-      console.log('GreenhouseJobService', 'Unable to fetch jobs', companyId)
+      console.log('GreenhouseJobService', 'Unable to fetch jobs', orgId)
       console.error(e)
     }
 

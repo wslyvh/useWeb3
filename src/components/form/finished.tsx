@@ -1,11 +1,11 @@
 import { Link } from 'components/link'
-import { Company } from 'types/company'
+import { Organization } from 'types/org'
 import { Job } from 'types/job'
 import { Order } from 'types/order'
 import styles from './forms.module.scss'
 
 interface Props {
-  company: Company
+  org: Organization
   job: Job
   order: Order
   className?: string
@@ -24,13 +24,13 @@ export function Finished(props: Props) {
 
       <p>For your reference</p>
       <ul>
-        <li>Company ID: {props.company.id}</li>
+        <li>Organization ID: {props.org.id}</li>
         <li>Job ID: {props.job.id}</li>
         <li>Order ID: {props.order.id}</li>
       </ul>
 
       <p>
-        <Link href={`/api/company/order/invoice/${props.order.id}`} newWindow>
+        <Link href={`/api/org/order/invoice/${props.order.id}`} newWindow>
           Download invoice
         </Link>
       </p>

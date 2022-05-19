@@ -1,4 +1,5 @@
-import { Company } from 'types/company'
+import Airtable, { Record, FieldSet } from 'airtable'
+import { Organization } from 'types/org'
 import { Job } from 'types/job'
 import {
   AirtableJobService,
@@ -10,25 +11,67 @@ import {
   WorkableJobService,
   WrkJobService,
 } from './jobs/index'
+import { defaultSlugify, isEmail } from 'utils/helpers'
+
+if (!process.env.AIRTABLE_API_KEY || !process.env.AIRTABLE_API_KEY) {
+  throw new Error('Airtable API Base or Key not set.')
+}
 
 const cache = new Map()
+const client: Airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
+const base: Airtable.Base = client.base(process.env.AIRTABLE_API_BASE ?? '')
 
-// add company details in same table, description, image, website, Github, etc.
-const mockCompanies = [
-  { id: 'gnosis', name: 'Gnosis', type: 'Greenhouse' },
-  { id: 'openzeppelin', name: 'OpenZeppelin', type: 'Greenhouse' },
-  { id: 'ethereumfoundation', name: 'Ethereum Foundation', type: 'Lever' },
-  { id: 'aragon', name: 'Aragon', type: 'Lever' },
-  { id: 'the-graph', name: 'the Graph', type: 'Breezy' },
-  { id: 'immunefi', name: 'Immunefi', type: 'Breezy' },
-]
+export async function GetOrganizations(): Promise<Organization[]> {
+  const cacheKey = `jobs.getorganizations`
+  if (cache.has(cacheKey)) {
+    return cache.get(cacheKey)
+  }
+  try {
+    const records = await base('Orgs').select().all()
 
-export async function GetCompanies(filter?: any): Promise<Company[]> {
+    const orgs = records.map((source) => toOrganization(source))
+    cache.set(cacheKey, orgs)
+    return orgs
+  } catch (e) {
+    console.log('GetOrganizations', 'Unable to fetch orgs')
+    console.error(e)
+  }
+
   return []
 }
 
-export async function GetCompany(id: string): Promise<Company | undefined> {
-  return undefined
+export async function GetOrganization(id: string): Promise<Organization | undefined> {
+  const cacheKey = `jobs.getorganization:${id}`
+  if (cache.has(cacheKey)) {
+    return cache.get(cacheKey)
+  }
+  try {
+    const records = await base('Orgs').select({
+      filterByFormula: `SEARCH("${id}", {id})`
+    }).all()
+
+    if (records.length > 0) {
+      const org = records.map((source) => toOrganization(source)).find(i => i.id === id)
+      if (org) {
+        cache.set(cacheKey, org)
+        return org
+      }
+    }
+
+  } catch (e) {
+    console.log('GetOrganization', 'Unable to fetch org', id)
+    console.error(e)
+  }
+
+  console.log(`Org '${id}' not found`)
+}
+
+export async function GetFeaturedJob(recordId: string): Promise<Job | undefined> {
+  const source = await base('Jobs').find(recordId)
+
+  if (source) {
+    return toJob(source)
+  }
 }
 
 // - query by org
@@ -36,45 +79,36 @@ export async function GetCompany(id: string): Promise<Company | undefined> {
 // - query by tags
 // - query by remote
 // - query by part-time
-export async function GetJobs(org?: string, filter?: any): Promise<Job[]> {
-  const cacheKey = `jobs.getjobs:${org ?? 'all'}`
+export async function GetJobs(): Promise<Job[]> {
+  const cacheKey = `jobs.getjobs:all`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
 
-  const companies = mockCompanies // GetCompanies()
-
-  const airtableService = new AirtableJobService()
-  const angelService = new AngelJobService()
-  const breezyService = new BreezyJobService()
-  const greenhouseService = new GreenhouseJobService()
-  const leverService = new LeverJobService()
-  const recruiteeService = new RecruiteeJobService()
-  const workableService = new WorkableJobService()
-  const wrkService = new WrkJobService()
-
-  const jobs = (
-    await Promise.all(
-      companies.map(async (i) => {
-        if (i.type === 'Greenhouse') {
-          return greenhouseService.GetJobs(i.id)
-        }
-        if (i.type === 'Lever') {
-          return leverService.GetJobs(i.id)
-        }
-        if (i.type === 'Breezy') {
-          return breezyService.GetJobs(i.id)
-        }
-
-        return []
-      })
-    )
-  ).flat()
-
-  console.log('JOBS', jobs)
+  const orgs = await GetOrganizations()
+  // console.log('ORGS', orgs)
+  const jobs = (await Promise.all(orgs.map(getJobsByOrg))).flat()
 
   return jobs.filter((i) => i !== undefined)
+    .sort((a, b) => b.updated - a.updated)
+    .sort((a, b) => (a.featured ? (b.featuredUntil ?? 0) - (a.featuredUntil ?? 0) : 1))
 }
+
+export async function GetJobsByOrganization(orgId: string): Promise<Job[]> {
+  const cacheKey = `jobs.getjobs:all`
+  if (cache.has(cacheKey)) {
+    return cache.get(cacheKey)
+  }
+
+  const org = await GetOrganization(orgId)
+  if (org) {
+    return await getJobsByOrg(org)
+  }
+
+  return []
+}
+
+
 
 // PAGES // FEATURES
 // ===
@@ -93,12 +127,158 @@ export async function GetJobs(org?: string, filter?: any): Promise<Job[]> {
 // - full-/part-time
 // => /jobs/t/[tag]/[page]
 
-// 4. Show all jobs by company // paginated
-// => /jobs/c/[company]/[page]
+// 4. Show all jobs by orgId // paginated
+// => /jobs/c/[orgId]/[page]
 
 // 5. Show job details (DONE)
-// => /jobs/c/[company]/[job]
+// => /jobs/c/[orgId]/[job]
 
 // Nextjs
-// get all jobs, incl. filters, company details, etc.
+// get all jobs, incl. filters, orgId details, etc.
 // => cache them / so all other calls can query from that same list
+
+async function getJobsByOrg(org: Organization): Promise<Job[]> {
+  const airtableService = new AirtableJobService()
+  const angelService = new AngelJobService()
+  const breezyService = new BreezyJobService()
+  const greenhouseService = new GreenhouseJobService()
+  const leverService = new LeverJobService()
+  const recruiteeService = new RecruiteeJobService()
+  const workableService = new WorkableJobService()
+  const wrkService = new WrkJobService()
+
+  const airtableJobs = airtableService.GetJobs(org.id, org)
+  let atsJobs: Promise<Job[]> = Promise.resolve([])
+
+  if (org.ATS === 'Angel') {
+    atsJobs = angelService.GetJobs(org.id, org)
+  }
+  if (org.ATS === 'Breezy') {
+    atsJobs = breezyService.GetJobs(org.id, org)
+  }
+  if (org.ATS === 'Greenhouse') {
+    atsJobs = greenhouseService.GetJobs(org.id, org)
+  }
+  if (org.ATS === 'Lever') {
+    atsJobs = leverService.GetJobs(org.id, org)
+  }
+  if (org.ATS === 'Recruitee') {
+    atsJobs = recruiteeService.GetJobs(org.id, org)
+  }
+  if (org.ATS === 'Workable') {
+    atsJobs = workableService.GetJobs(org.id, org)
+  }
+  if (org.ATS === 'Wrk') {
+    atsJobs = wrkService.GetJobs(org.id, org)
+  }
+
+  return (await Promise.all([airtableJobs, atsJobs])).flat()
+}
+
+export function toOrganization(source: Record<FieldSet>): Organization {
+  let org = {
+    id: source.fields['id'],
+    title: source.fields['title'],
+    description: source.fields['description'],
+    body: source.fields['body'] ?? '',
+    ATS: source.fields['ATS'] ?? 'Other',
+  } as Organization
+
+  if (source.fields['logo'] && Array.isArray(source.fields['logo']) && (source.fields['logo'] as any[]).length > 0) {
+    org.logo = (source.fields['logo'] as any[])[0].url
+  }
+  if (source.fields['website']) {
+    org.website = source.fields['website'] as string ?? ''
+  }
+  if (source.fields['twitter']) {
+    org.twitter = source.fields['twitter'] as string ?? ''
+  }
+  if (source.fields['github']) {
+    org.github = source.fields['github'] as string ?? ''
+  }
+  if (source.fields['externalBoardUrl']) {
+    org.externalBoardUrl = source.fields['externalBoardUrl'] as string
+  }
+  else {
+    switch (org.ATS) {
+      case 'Angel':
+        org.externalBoardUrl = `https://angel.co/company/${org.id}/jobs`
+        break;
+      case 'Breezy':
+        org.externalBoardUrl = `https://${org.id}.breezy.hr/`
+        break;
+      case 'Greenhouse':
+        org.externalBoardUrl = `https://boards.greenhouse.io/${org.id}/`
+        break;
+      case 'Lever':
+        org.externalBoardUrl = `https://jobs.lever.co/${org.id}/`
+        break;
+      case 'Recruitee':
+        org.externalBoardUrl = `https://${org.id}.recruitee.com`
+        break;
+      case 'Workable':
+        org.externalBoardUrl = `https://apply.workable.com/${org.id}/`
+        break;
+      case 'Wrk':
+        org.externalBoardUrl = `https://jobs.wrk.xyz/${org.id}`
+        break;
+    }
+  }
+  
+  return org
+}
+
+export function toJob(source: Record<FieldSet>, org?: Organization): Job {
+  const applicationUrl = (source.fields['External Url'] as string) ?? ''
+  let job = {
+    id: source.fields['Slug'],
+    slug: defaultSlugify(source.fields['Title'] as string),
+    title: source.fields['Title'],
+    department: source.fields['Department'],
+    description: source.fields['Description'],
+    body: source.fields['Body'],
+    asMarkdown: true,
+    location: source.fields['Location'],
+    remote: source.fields['Remote'] ?? false,
+    org: org ?? {
+      id: (source.fields['Company Slug'] as string[])[0],
+      title: (source.fields['Company Name'] as string[])[0],
+      description: (source.fields['Company Description'] as string[])[0],
+      body: (source.fields['Company Body'] as string[])[0],
+      website:
+        (source.fields['Company Website'] as string[])?.length > 0
+          ? (source.fields['Company Website'] as string[])[0]
+          : '',
+      twitter:
+        (source.fields['Company Twitter'] as string[])?.length > 0
+          ? (source.fields['Company Twitter'] as string[])[0]
+          : '',
+      github:
+        (source.fields['Company Github'] as string[])?.length > 0
+          ? (source.fields['Company Github'] as string[])[0]
+          : '',
+      logo:
+        (source.fields['Company Logo'] as any[])?.length > 0
+          ? (source.fields['Company Logo'] as any[])[0].url
+          : '',
+    },
+    url: isEmail(applicationUrl)
+      ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)`
+      : applicationUrl,
+    updated: new Date(source.fields['Updated'] as string).getTime(),
+    featured: false,
+  } as Job
+
+  if (source.fields['Featured']) {
+    job.featuredUntil = new Date(source.fields['Featured'] as string).getTime()
+    job.featured = job.featuredUntil >= new Date().getTime()
+  }
+  if (source.fields['Min Salary'] !== undefined) {
+    job.minSalary = source.fields['Min Salary'] as number
+  }
+  if (source.fields['Max Salary'] !== undefined) {
+    job.maxSalary = source.fields['Max Salary'] as number
+  }
+
+  return job
+}

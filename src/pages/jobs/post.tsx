@@ -9,7 +9,7 @@ import { MarkdownContentService } from 'services/content'
 import { CompanyForm } from 'components/form/company'
 import { JobForm } from 'components/form/job'
 import { OrderForm } from 'components/form/order'
-import { Company, defaultCompany } from 'types/company'
+import { Organization, defaultOrg } from 'types/org'
 import { defaultJob, Job } from 'types/job'
 import { Order, defaultOrder } from 'types/order'
 import { Finished } from 'components/form/finished'
@@ -24,7 +24,7 @@ interface Props {
 export default function Index(props: Props) {
   const router = useRouter()
   const [step, setStep] = useState(1)
-  const [company, setCompany] = useState<Company>(defaultCompany)
+  const [org, setOrg] = useState<Organization>(defaultOrg)
   const [job, setJob] = useState<Job>(defaultJob)
   const [order, setOrder] = useState<Order>(defaultOrder)
   useWarnIfUnsavedChanges(
@@ -34,12 +34,12 @@ export default function Index(props: Props) {
 
   useEffect(() => {
     async function asyncEffect() {
-      const response = await fetch(`/api/company/job/${router.query.id}`)
+      const response = await fetch(`/api/org/job/${router.query.id}`)
       if (response.status !== 200) return
 
       const body = await response.json()
-      setCompany((current) => {
-        return { ...current, id: body.data.company.id }
+      setOrg((current) => {
+        return { ...current, id: body.data.org.id }
       })
       setJob(body.data)
       setStep(3)
@@ -52,30 +52,30 @@ export default function Index(props: Props) {
     event.preventDefault()
 
     if (step === 1) {
-      if (company.id) {
+      if (org.id) {
         setStep(step + 1)
         return
       }
 
-      const response = await fetch('/api/company', {
+      const response = await fetch('/api/org', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          company: company,
+          org: org,
         }),
       })
 
       if (response.status === 200) {
         const body = await response.json()
-        setCompany({ ...company, id: body.data })
+        setOrg({ ...org, id: body.data })
         setStep(step + 1)
         return
       }
     }
 
     if (step === 2) {
-      job.company = company
-      const response = await fetch('/api/company/job', {
+      job.org = org
+      const response = await fetch('/api/org/job', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -93,7 +93,7 @@ export default function Index(props: Props) {
 
     if (step === 3) {
       order.jobId = job.id
-      const response = await fetch('/api/company/order', {
+      const response = await fetch('/api/org/order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -111,7 +111,7 @@ export default function Index(props: Props) {
   }
 
   async function reset() {
-    setCompany(defaultCompany)
+    setOrg(defaultOrg)
     setJob(defaultJob)
     setOrder(defaultOrder)
     setStep(1)
@@ -126,10 +126,10 @@ export default function Index(props: Props) {
 
       <TopnavLayout className={styles.container} title={'Post Web3 Job'} hideNewsletter>
         <form onSubmit={handleSubmit} role="form">
-          {step === 1 && <CompanyForm company={company} onChange={(i) => setCompany(i)} />}
+          {step === 1 && <CompanyForm org={org} onChange={(i) => setOrg(i)} />}
           {step === 2 && <JobForm job={job} onChange={(i) => setJob(i)} />}
           {step === 3 && <OrderForm job={job} order={order} onChange={(i) => setOrder(i)} />}
-          {step === 4 && <Finished company={company} job={job} order={order} />}
+          {step === 4 && <Finished org={org} job={job} order={order} />}
 
           {step < 4 && (
             <button type="submit" className="accent block searchButton">

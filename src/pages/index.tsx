@@ -13,7 +13,7 @@ import { TopnavLayout } from 'components/layouts/topnav'
 import { PanelCard } from 'components/panel'
 import { TitleWithAction } from 'components/layouts/title-action'
 import { Tags } from 'components/tags'
-import { GetJobs } from 'services/job'
+import { GetJobs, GetOrganization, GetOrganizations } from 'services/job'
 
 interface Props {
   categories: Array<Category>
@@ -91,7 +91,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async () => {
   const items = await service.GetItems('', true)
   const categories = await service.GetCategories()
 
-  // const jbs = await GetJobs()
+  const result = await GetJobs()
 
   return {
     props: {

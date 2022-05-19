@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { AirtableService } from 'services/airtable'
-import { Company } from 'types/company'
+import { Organization } from 'types/org'
 
 const cache = new Map()
 
@@ -16,8 +16,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 }
 
 async function GET(req: NextApiRequest, res: NextApiResponse) {
-  let companies: Array<Company> = []
-  const cacheKey = 'api/company:all'
+  let companies: Array<Organization> = []
+  const cacheKey = 'api/organization:all'
   if (cache.has(cacheKey)) {
     companies = cache.get(cacheKey)
   } else {
@@ -30,9 +30,9 @@ async function GET(req: NextApiRequest, res: NextApiResponse) {
 
 async function POST(req: NextApiRequest, res: NextApiResponse) {
   const service = new AirtableService()
-  const id = await service.CreateCompany(req.body.company)
+  const id = await service.CreateCompany(req.body.org)
 
   return id
     ? res.status(200).json({ status: 200, message: 'OK', data: id })
-    : res.status(500).json({ status: 200, message: 'Unable to save company' })
+    : res.status(500).json({ status: 200, message: 'Unable to save org' })
 }

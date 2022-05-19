@@ -7,27 +7,27 @@ import { NavigationProvider } from 'context/navigation'
 import { SEO } from 'components/SEO'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from '../pages.module.scss'
-import { JobService } from 'services/jobs'
 import { Job } from 'types/job'
-import { Company } from 'types/company'
+import { Organization } from 'types/org'
 import { marked } from 'marked'
 import { MarkdownContentService } from 'services/content'
 import { LinkButton } from 'components/link-button'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { JobPanel } from 'components/panel'
+import { GetJobs } from 'services/job'
 
 interface Props {
   categories: Array<Category>
-  company: Company | null
+  org: Organization | null
   jobs: Array<Job>
 }
 
 interface Params extends ParsedUrlQuery {
-  company: string
+  org: string
 }
 
 export default function Index(props: Props) {
-  if (!props.company) {
+  if (!props.org) {
     return <></>
   }
 
@@ -36,26 +36,26 @@ export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
       <SEO
-        title={`Jobs at ${props.company.title}`}
-        description={props.company.description}
-        imageUrl={props.company.logo}
+        title={`Jobs at ${props.org.title}`}
+        description={props.org.description}
+        imageUrl={props.org.logo}
       />
 
-      <TopnavLayout className={styles.container} title={props.company.title}>
-        {props.company.body && (
-          <article className={styles.body} dangerouslySetInnerHTML={{ __html: marked.parse(props.company.body) }} />
+      <TopnavLayout className={styles.container} title={props.org.title}>
+        {props.org.body && (
+          <article className={styles.body} dangerouslySetInnerHTML={{ __html: marked.parse(props.org.body) }} />
         )}
-        {!props.company.body && props.company.description && (
-          <article className={styles.body} dangerouslySetInnerHTML={{ __html: props.company.description }} />
+        {!props.org.body && props.org.description && (
+          <article className={styles.body} dangerouslySetInnerHTML={{ __html: props.org.description }} />
         )}
 
-        {isFeatured && (props.company.website || props.company.twitter || props.company.github) && (
+        {isFeatured && (props.org.website || props.org.twitter || props.org.github) && (
           <div className={styles.icons}>
-            {props.company.website && <LinkButton href={props.company.website} text="Website" type="website" />}
-            {props.company.twitter && (
-              <LinkButton href={`https://twitter.com/${props.company.twitter}`} text="Twitter" type="twitter" />
+            {props.org.website && <LinkButton href={props.org.website} text="Website" type="website" />}
+            {props.org.twitter && (
+              <LinkButton href={`https://twitter.com/${props.org.twitter}`} text="Twitter" type="twitter" />
             )}
-            {props.company.github && <LinkButton href={props.company.github} text="Github" type="github" />}
+            {props.org.github && <LinkButton href={props.org.github} text="Github" type="github" />}
           </div>
         )}
 
@@ -73,14 +73,13 @@ export default function Index(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const service = new JobService()
-  const jobs = await service.GetJobs()
-  const companies = Array.from(new Set(jobs.map((i) => i.company.id)))
+  const jobs = await GetJobs()
+  const companies = Array.from(new Set(jobs.map((i) => i.org.id)))
 
   return {
     paths: companies.map((i) => {
       return {
-        params: { company: i },
+        params: { org: i },
       }
     }),
     fallback: true,
@@ -88,8 +87,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
-  const companyId = context.params?.company
-  if (!companyId) {
+  const orgId = context.params?.org as string
+  if (!orgId) {
     return {
       props: null,
       notFound: true,
@@ -98,14 +97,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
-  const jobService = new JobService()
-  const jobs = await jobService.GetJobs(companyId)
-  const company = jobs.length > 0 ? jobs[0].company : null
+  const jobs = await GetJobs()
+  const org = jobs.length > 0 ? jobs[0].org : null
 
   return {
     props: {
       categories,
-      company,
+      org,
       jobs,
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,

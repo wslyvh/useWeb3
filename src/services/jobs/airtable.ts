@@ -1,6 +1,6 @@
 import Airtable from 'airtable'
 import moment from 'moment'
-import { Company } from 'types/company'
+import { Organization } from 'types/org'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
@@ -19,44 +19,14 @@ export class AirtableJobService implements JobServiceInterface {
     this.base = this.client.base(process.env.AIRTABLE_API_BASE ?? '')
   }
 
-  public async GetCompany(id: string): Promise<Company | undefined> {
-    try {
-      const records = await this.base('Companies')
-        .select({
-          filterByFormula: `SEARCH("${id}", {Slug})`,
-        })
-        .all()
-
-      // TODO: Not used yet. Map fields correctly..
-      return records
-        .map((source) => {
-          return {
-            id: source.fields['Slug'],
-            title: source.fields['Name'],
-            description: source.fields['Name'],
-            body: source.fields['Name'],
-          } as Company
-        })
-        .find((i) => !!i)
-    } catch (e) {
-      console.log('GetCompany', 'Unable to fetch company', id)
-      console.error(e)
-    }
-  }
-
-  public async GetJobs(companyId?: string, maxItems?: number): Promise<Array<Job>> {
+  public async GetJobs(orgId: string, org: Organization): Promise<Array<Job>> {
     try {
       const records = await this.base('Jobs')
         .select({
-          filterByFormula: companyId
-            ? `AND(
-          ({Active}),
-          ({Company Slug} = "${companyId}")
-        )`
-            : `AND(
-          ({Active})
-        )`,
-        })
+          filterByFormula: `AND(
+            ({Active}),
+            ({Company Slug} = "${orgId}")
+          )`})
         .all()
 
       return records
@@ -72,28 +42,7 @@ export class AirtableJobService implements JobServiceInterface {
             asMarkdown: true,
             location: source.fields['Location'],
             remote: source.fields['Remote'] ?? false,
-            company: {
-              id: (source.fields['Company Slug'] as string[])[0],
-              title: (source.fields['Company Name'] as string[])[0],
-              description: (source.fields['Company Description'] as string[])[0],
-              body: (source.fields['Company Body'] as string[])[0],
-              website:
-                (source.fields['Company Website'] as string[])?.length > 0
-                  ? (source.fields['Company Website'] as string[])[0]
-                  : '',
-              twitter:
-                (source.fields['Company Twitter'] as string[])?.length > 0
-                  ? (source.fields['Company Twitter'] as string[])[0]
-                  : '',
-              github:
-                (source.fields['Company Github'] as string[])?.length > 0
-                  ? (source.fields['Company Github'] as string[])[0]
-                  : '',
-              logo:
-                (source.fields['Company Logo'] as any[])?.length > 0
-                  ? (source.fields['Company Logo'] as any[])[0].url
-                  : '',
-            },
+            org: org,
             url: isEmail(applicationUrl)
               ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)`
               : applicationUrl,
@@ -116,9 +65,8 @@ export class AirtableJobService implements JobServiceInterface {
         })
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
-        .slice(0, maxItems ?? 100)
     } catch (e) {
-      console.log('AirtableJobService', 'Unable to fetch jobs', companyId)
+      console.log('AirtableJobService', 'Unable to fetch jobs', orgId)
       console.error(e)
     }
 
