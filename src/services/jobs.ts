@@ -156,7 +156,7 @@ export function toOrganization(source: Record<FieldSet>): Organization {
   let org = {
     id: source.fields['id'],
     title: source.fields['title'],
-    description: source.fields['description'],
+    description: source.fields['description'] ?? '',
     body: source.fields['body'] ?? '',
     ATS: source.fields['ATS'] ?? 'Other',
   } as Organization
