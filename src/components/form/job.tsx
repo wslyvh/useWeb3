@@ -41,7 +41,7 @@ export function JobForm(props: Props) {
           <div>
             <Dropdown
               className={styles.dropdown}
-              items={DEPARTMENTS}
+              items={DEPARTMENTS as unknown as string[]}
               onSelect={(value) => props.onChange({ ...props.job, department: value as any })}
             />
           </div>
