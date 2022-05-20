@@ -68,7 +68,7 @@ export async function GetOrganization(id: string): Promise<Organization | undefi
 }
 
 export async function GetFeaturedJob(recordId: string): Promise<Job | undefined> {
-  const source = await base('Jobs').find(recordId)
+  const source = await base('OrgJobs').find(recordId)
 
   if (source) {
     return toJob(source)
@@ -87,7 +87,6 @@ export async function GetJobs(): Promise<Job[]> {
   }
 
   const orgs = await GetOrganizations()
-  // console.log('ORGS', orgs)
   const jobs = (await Promise.all(orgs.map(getJobsByOrg))).flat()
 
   return jobs

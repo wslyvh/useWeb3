@@ -1,43 +1,39 @@
+import { Department, Tag, Type } from 'utils/jobs'
 import { Organization } from './org'
 
 export interface Job {
   id: string
   slug: string
   title: string
-  department: 'Engineering' | 'Product' | 'Sales' | 'Marketing' | 'People' | 'Operations' | 'Non-Tech' | 'Other'
-  description?: string
-  body?: string
-  asMarkdown?: boolean
+  department: Department
+  description: string
+  body: string
+  contentType?: 'markdown' | 'html' // default = text
   location: string
   remote: boolean
-  parttime?: boolean
-  minSalary?: number
-  maxSalary?: number
   org: Organization
   url: string
+  type?: Type
+  minSalary?: number
+  maxSalary?: number
+  tags: Tag[]
   updated: number
   featured?: boolean
   featuredUntil?: number
 }
 
-export const defaultJob = {
+export const defaultJob: Job = {
   id: '',
   slug: '',
   title: '',
-  department: 'Engineering' as
-    | 'Engineering'
-    | 'Product'
-    | 'Sales'
-    | 'Marketing'
-    | 'People'
-    | 'Operations'
-    | 'Non-Tech'
-    | 'Other',
+  department: 'Engineering',
   description: '',
   body: '',
   location: 'Remote',
   remote: true,
+  type: 'Full-time',
   org: {} as Organization,
   url: '',
   updated: new Date().getTime(),
+  tags: [],
 }

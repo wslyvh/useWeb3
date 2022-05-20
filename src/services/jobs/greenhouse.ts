@@ -4,7 +4,7 @@ import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { defaultSlugify, removeHtml } from 'utils/helpers'
-import { getJobDepartment } from 'utils/jobs'
+import { getJobDepartment, getJobTags } from 'utils/jobs'
 
 const map = new Map()
 
@@ -15,7 +15,6 @@ export class GreenhouseJobService implements JobServiceInterface {
     try {
       const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${orgId}/jobs`)
       const data = await res.json()
-
       if (!data) return []
 
       const jobs = await Promise.all(
@@ -25,15 +24,17 @@ export class GreenhouseJobService implements JobServiceInterface {
 
           return {
             id: String(i.id),
-            slug: defaultSlugify(i.title),
+            slug: `${String(i.id)}-${defaultSlugify(i.title)}`,
             title: i.title,
             department: getJobDepartment(i.title),
             description: removeHtml(job.content),
             body: job.content,
+            contentType: 'html',
             location: i.location.name,
             remote: i.location.name.toLowerCase().includes('remote'),
             org: org,
             url: i.absolute_url,
+            tags: getJobTags(i.title),
             updated: new Date(i.updated_at).getTime(),
           } as Job
         }) as Array<Job>
@@ -50,3 +51,36 @@ export class GreenhouseJobService implements JobServiceInterface {
     return []
   }
 }
+
+// EXAMPLE
+// ==
+
+// {
+// absolute_url: 'https://boards.greenhouse.io/edgeandnode/jobs/4012532005',
+// data_compliance: [ { type: 'gdpr', requires_consent: false, retention_period: null } ],
+// internal_job_id: 4016498005,
+// location: { name: 'Remote' },
+// metadata: [],
+// id: 4012532005,
+// updated_at: '2022-05-08T21:37:37-04:00',
+// requisition_id: '10',
+// title: 'Technical Writer',
+// content: '',
+// departments: [
+//   {
+//     id: 4012177005,
+//     name: 'Product Marketing',
+//     child_ids: [],
+//     parent_id: null
+//   }
+// ],
+// offices: [
+//   {
+//     id: 4003055005,
+//     name: 'Remote',
+//     location: null,
+//     child_ids: [],
+//     parent_id: null
+//   }
+// ]
+// }

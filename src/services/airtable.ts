@@ -45,7 +45,7 @@ export class AirtableService {
   }
 
   public async CreateJob(job: Job): Promise<string> {
-    const response = await this.base('Jobs').create({
+    const response = await this.base('OrgJobs').create({
       Title: job.title,
       Body: job.body,
       Description: job.description,

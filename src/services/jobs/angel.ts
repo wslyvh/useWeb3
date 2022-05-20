@@ -4,7 +4,7 @@ import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
 import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { defaultSlugify, removeHtml } from 'utils/helpers'
-import { getJobDepartment } from 'utils/jobs'
+import { getJobDepartment, getJobTags } from 'utils/jobs'
 import jobData from '../../../data/jobs.json'
 
 export class AngelJobService implements JobServiceInterface {
@@ -24,7 +24,7 @@ export class AngelJobService implements JobServiceInterface {
         .map((i: any) => {
           return {
             id: i.id,
-            slug: defaultSlugify(i.title),
+            slug: `${String(i.id)}-${defaultSlugify(i.title)}`,
             title: i.title,
             department: getJobDepartment(i.title),
             description: removeHtml(i.description),
@@ -32,6 +32,7 @@ export class AngelJobService implements JobServiceInterface {
             location: i.location,
             org: org,
             url: i.url,
+            tags: getJobTags(i.title),
             updated: new Date(i.published_on).getTime(),
           } as Job
         })
