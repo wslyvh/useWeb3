@@ -31,7 +31,7 @@ export class AirtableJobService implements JobServiceInterface {
         .all()
 
       return records
-        .map((source) => toJob(source))
+        .map((source) => toJob(source, org))
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
     } catch (e) {

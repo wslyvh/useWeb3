@@ -16,7 +16,7 @@ import { MarkdownContentService } from 'services/content'
 import { getApplicationUrl } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { Panel } from 'components/panel'
-import { GetJobs } from 'services/jobs'
+import { GetJobs, GetJobsByOrganization, GetOrganization } from 'services/jobs'
 
 interface Props {
   categories: Array<Category>
@@ -42,7 +42,7 @@ export default function Index(props: Props) {
   const listFormatting = new RegExp(/(^(\W{1})(\s)(.*)(?:$)?)+/).test(body)
   const headingFormatting = new RegExp(/^(#{1,6}\s*[\S]+)/).test(body) || body.includes('## ') || body.includes('### ')
   const content =
-    props.job.asMarkdown ||
+    props.job.contentType === 'markdown' ||
     boldFormatting ||
     basicFormatting ||
     italicFormatting ||
@@ -61,7 +61,7 @@ export default function Index(props: Props) {
         <ul className={styles.properties}>
           <li>
             <span>🏛️</span>
-            <Link className={styles.mr} href={`/jobs/${props.org.id}`}>
+            <Link className={styles.mr} href={`/org/${props.org.id}`}>
               {props.org.title}
             </Link>
           </li>
@@ -92,7 +92,7 @@ export default function Index(props: Props) {
               {!props.job.remote && props.job.location}
             </span>
           </li>
-          {props.job.parttime && (
+          {props.job.type === 'Part-time' && (
             <li>
               <span>🕓</span>
               <span>
@@ -142,9 +142,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
-  const companyId = context.params?.org
+  const orgId = context.params?.org
   const jobId = context.params?.job
-  if (!companyId || !jobId) {
+  if (!orgId || !jobId) {
     return {
       props: null,
       notFound: true,
@@ -153,9 +153,23 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
-  const jobs = await GetJobs()
-  const org = jobs.length > 0 ? jobs[0].org : undefined
+
+  const org = await GetOrganization(orgId)
+  if (!org) {
+    return {
+      props: null,
+      notFound: true,
+    }
+  }
+
+  const jobs = await GetJobsByOrganization(orgId)
   const job = jobs.find((i) => i.slug === jobId)
+  if (!job) {
+    return {
+      props: null,
+      notFound: true,
+    }
+  }
 
   return {
     props: {

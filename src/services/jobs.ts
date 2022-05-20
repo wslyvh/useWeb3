@@ -23,7 +23,7 @@ const client: Airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
 const base: Airtable.Base = client.base(process.env.AIRTABLE_API_BASE ?? '')
 
 export async function GetOrganizations(): Promise<Organization[]> {
-  const cacheKey = `jobs.getorganizations`
+  const cacheKey = `jobs.GetOrganizations`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -42,7 +42,7 @@ export async function GetOrganizations(): Promise<Organization[]> {
 }
 
 export async function GetOrganization(id: string): Promise<Organization | undefined> {
-  const cacheKey = `jobs.getorganization:${id}`
+  const cacheKey = `jobs.GetOrganization:${id}`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -82,7 +82,7 @@ export async function GetFeaturedJob(recordId: string): Promise<Job | undefined>
 // - query by remote
 // - query by part-time
 export async function GetJobs(): Promise<Job[]> {
-  const cacheKey = `jobs.getjobs:all`
+  const cacheKey = `jobs.GetJobs:all`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -97,7 +97,7 @@ export async function GetJobs(): Promise<Job[]> {
 }
 
 export async function GetJobsByOrganization(orgId: string): Promise<Job[]> {
-  const cacheKey = `jobs.getjobs:all`
+  const cacheKey = `jobs.GetJobsByOrganization:${orgId}`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -109,33 +109,6 @@ export async function GetJobsByOrganization(orgId: string): Promise<Job[]> {
 
   return []
 }
-
-// PAGES // FEATURES
-// ===
-
-// 1. Post job (DONE)
-// => /jobs/post
-
-// 2. Show all jobs // paginated
-// => /jobs/[page]
-
-// 3. Show all jobs by tags // paginated
-// tags could be:
-// - department (e.g. engineering, product, sales)
-// - skills (e.g. front-end, devops, solidity, etc.)
-// - location (e.g. remote
-// - full-/part-time
-// => /jobs/t/[tag]/[page]
-
-// 4. Show all jobs by orgId // paginated
-// => /jobs/c/[orgId]/[page]
-
-// 5. Show job details (DONE)
-// => /jobs/c/[orgId]/[job]
-
-// Nextjs
-// get all jobs, incl. filters, orgId details, etc.
-// => cache them / so all other calls can query from that same list
 
 async function getJobsByOrg(org: Organization): Promise<Job[]> {
   const airtableService = new AirtableJobService()

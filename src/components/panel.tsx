@@ -119,18 +119,21 @@ export function JobPanel(props: JobProps) {
   if (props.job.remote) {
     tags.push(`🌐 Remote`)
   }
-  if (props.job.parttime) {
-    tags.push('Part-time')
+  if (props.job.type && props.job.type !== 'Full-time') {
+    tags.push(props.job.type)
   }
   if (props.job.minSalary !== undefined && props.job.maxSalary !== undefined) {
     tags.push(`💰 ${props.job.minSalary / 1000}K - ${props.job.maxSalary / 1000}K`)
   }
 
+  const orgLink = `/org/${props.job.org.id}`
+  const jobLink = `/org/${props.job.org.id}/${props.job.slug}`
+
   return (
     <Panel className={className} fill={!props.job.featured} type={props.job.featured ? 'warning' : 'neutral'} stretch>
       <div className={styles.inner}>
         {props.job.featured && (
-          <Link className={styles.logo} href={`/jobs/${props.job.org.id}`}>
+          <Link className={styles.logo} href={orgLink}>
             {props.job.org.logo && (
               <Image src={props.job.org.logo} alt={`${props.job.org.title} logo`} height={64} width={64} />
             )}
@@ -138,15 +141,14 @@ export function JobPanel(props: JobProps) {
           </Link>
         )}
         <div className={styles.body}>
-          <Link href={`/jobs/${props.job.org.id}/${defaultSlugify(props.job.title)}`}>
+          <Link href={jobLink}>
             <h4>
               {props.job.title}
               {props.job.featured && <span> 🔥</span>}
             </h4>
           </Link>
           <div>
-            <Link href={`/jobs/${props.job.org.id}`}>{props.job.org.title}</Link>{' '}
-            <span className="muted">{props.job.location}</span>
+            <Link href={orgLink}>{props.job.org.title}</Link> <span className="muted">{props.job.location}</span>
           </div>
           <Tags className={styles.tags} small withIcons noLinks tags={toTags(tags)} />
         </div>

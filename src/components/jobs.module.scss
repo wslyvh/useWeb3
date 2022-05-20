@@ -11,4 +11,10 @@
     justify-content: center;
     margin: $gap-8 0;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin: $gap-16 0;
+  }
 }

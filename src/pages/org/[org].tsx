@@ -14,7 +14,7 @@ import { MarkdownContentService } from 'services/content'
 import { LinkButton } from 'components/link-button'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { JobPanel } from 'components/panel'
-import { GetJobs } from 'services/jobs'
+import { GetJobsByOrganization, GetOrganization, GetOrganizations } from 'services/jobs'
 
 interface Props {
   categories: Array<Category>
@@ -57,6 +57,8 @@ export default function Index(props: Props) {
 
         <h3>Jobs</h3>
         <main>
+          {props.jobs.length === 0 && <i className="muted">No active job openings.</i>}
+
           <Featured type="rows">
             {props.jobs.map((i) => {
               return <JobPanel key={i.id} job={i} />
@@ -69,13 +71,12 @@ export default function Index(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const jobs = await GetJobs()
-  const companies = Array.from(new Set(jobs.map((i) => i.org.id)))
+  const orgs = await GetOrganizations()
 
   return {
-    paths: companies.map((i) => {
+    paths: orgs.map((i) => {
       return {
-        params: { org: i },
+        params: { org: i.id },
       }
     }),
     fallback: true,
@@ -93,9 +94,16 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
-  const jobs = await GetJobs()
-  const org = jobs.length > 0 ? jobs[0].org : null
 
+  const org = await GetOrganization(orgId)
+  if (!org) {
+    return {
+      props: null,
+      notFound: true,
+    }
+  }
+
+  const jobs = await GetJobsByOrganization(orgId)
   return {
     props: {
       categories,

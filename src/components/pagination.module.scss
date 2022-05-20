@@ -1,0 +1,31 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  list-style-type: none;
+  gap: $gap-8;
+
+  li {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cdcee3; // TODO
+
+    a {
+      padding: $gap-8;
+
+      &.selected {
+        background: #cdcee3; // TODO
+      }
+
+      &:hover,
+      &:active {
+        background: var(--color-neutral-100);
+      }
+    }
+
+    .disabled {
+      cursor: auto;
+      padding: 0 $gap-8;
+    }
+  }
+}

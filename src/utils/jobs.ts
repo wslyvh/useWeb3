@@ -1,3 +1,5 @@
+import { capitalize } from './helpers'
+
 export const STANDARD_PRICE = 25
 export const FEATURED_PRICE = 99
 export const DISCOUNT_PERCENTAGE = 10
@@ -127,12 +129,10 @@ export type Skill = typeof SKILLS[number]
 export const TAGS = [...DEPARTMENTS, ...SKILLS] as const
 export type Tag = typeof TAGS[number]
 
-export const DEPARTMENTS_AS_COUNTS = DEPARTMENTS.map((i) => {
-  return {
-    key: i,
-    count: 0,
-  }
-})
+export const DEPARTMENTS_AS_COUNTS = DEPARTMENTS.map((i) => ({
+  key: i,
+  count: 0,
+}))
 
 export function getJobDepartment(value: string): Department {
   if (engineering.some((i) => value.toLowerCase().includes(i))) {
@@ -233,4 +233,12 @@ export function getApplicationUrl(url: string) {
   }
 
   return `${url}${url.includes('?') ? '&' : '?'}utm_source=useweb3.xyz&ref=useweb3.xyz`
+}
+
+export function getPageTitle(tag: string) {
+  let title = `Web3 ${capitalize(tag)} Jobs`
+  if (tag === 'remote') title = 'Remote Web3 Jobs'
+  if (tag === 'non-tech') title = 'Non-Tech Web3 Jobs'
+
+  return title
 }

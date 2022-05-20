@@ -1,34 +1,23 @@
-import Pagination from 'next-pagination'
+import { Pagination } from 'components/pagination'
 import { Featured } from 'components/featured'
 import { Newsletter } from 'components/newsletter'
 import styles from './jobs.module.scss'
 import { Job } from 'types/job'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { DEPARTMENTS_AS_COUNTS } from 'utils/jobs'
+import { Tag } from 'utils/jobs'
 import { Tags } from './tags'
 import { JobPanel } from './panel'
+import { PagedResult } from 'types/paged'
+import { DEFAULT_MAX_ITEMS } from 'utils/constants'
 
 interface Props {
-  jobs: Array<Job>
+  results: PagedResult<Job>
+  tags: Array<Tag>
   className?: string
 }
 
 export function JobsOverview(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
-
-  const router = useRouter()
-  const [jobs, setJobs] = useState(props.jobs)
-
-  useEffect(() => {
-    const page = !isNaN(Number(router.query['page'])) ? Number(router.query['page']) : 1
-    const size = !isNaN(Number(router.query['size'])) ? Number(router.query['size']) : 20
-
-    const sliceStart = page == 1 ? 0 : size * (page - 1)
-    const sliceEnd = page * size
-    setJobs(props.jobs.slice(sliceStart, sliceEnd))
-  }, [props.jobs, router.query])
 
   return (
     <div className={className}>
@@ -44,28 +33,43 @@ export function JobsOverview(props: Props) {
       </div>
 
       <div className={styles.filters}>
-        <Tags fill asJobs tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
+        <Tags
+          fill
+          asJobs
+          tags={props.tags.map((i) => ({
+            key: i,
+            count: 0,
+          }))}
+        />
       </div>
 
-      {props.jobs.length === 0 && <p>No active job openings. Try another filter.</p>}
+      {props.results.items.length === 0 && <p>No active job openings. Try another filter.</p>}
 
-      {props.jobs.length > 0 && (
+      {props.results.items.length > 0 && (
         <>
-          <Pagination total={props.jobs.length} />
+          <Pagination
+            className={styles.pagination}
+            itemsPerPage={DEFAULT_MAX_ITEMS}
+            totalItems={props.results.total}
+            currentPage={props.results.currentPage}
+            truncate
+          />
 
           <main>
             <Featured type="rows">
-              {jobs.map((i) => {
+              {props.results.items.map((i) => {
                 return <JobPanel key={i.id} job={i} />
               })}
             </Featured>
           </main>
 
-          <Pagination total={props.jobs.length} />
-
-          <div className={styles.filters}>
-            <Tags fill asJobs tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
-          </div>
+          <Pagination
+            className={styles.pagination}
+            itemsPerPage={DEFAULT_MAX_ITEMS}
+            totalItems={props.results.total}
+            currentPage={props.results.currentPage}
+            truncate
+          />
         </>
       )}
     </div>

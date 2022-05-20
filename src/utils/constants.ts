@@ -9,7 +9,7 @@ export const DOMAIN = 'useweb3.xyz'
 export const DEFAULT_REVALIDATE_PERIOD = 3600
 export const DEFAULT_MAX_ITEMS = 20
 
-export const JOBS_SINCE_LAST_UPDATED = 90
+export const JOBS_SINCE_LAST_UPDATED = 60
 export const JOBS_GREENHOUSE = [
   'consensys',
   'consensysinc',

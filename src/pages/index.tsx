@@ -44,7 +44,7 @@ export default function Index(props: Props) {
             Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
           </p>
           <p className={styles.filters}>
-            <Tags fill asJobs tags={[...DEPARTMENTS_AS_COUNTS, { key: 'Remote Web3', count: 0 }]} />
+            <Tags fill asJobs tags={DEPARTMENTS_AS_COUNTS} />
           </p>
         </article>
 

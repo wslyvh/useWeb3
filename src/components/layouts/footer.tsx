@@ -53,7 +53,7 @@ export function Footer(props: Props) {
               const id = defaultSlugify(i)
               return (
                 <li key={i}>
-                  <Link href={`/${id}-jobs`}>{i}</Link>
+                  <Link href={`/jobs/t/${id}`}>{i}</Link>
                 </li>
               )
             })}

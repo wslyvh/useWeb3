@@ -27,7 +27,7 @@ export function Tags(props: Props) {
         let href = `/tags/${id}`
 
         if (props.asJobs) {
-          href = `/${defaultSlugify(id)}-jobs`
+          href = `/jobs/t/${defaultSlugify(id)}`
         }
 
         return (
