@@ -25,6 +25,7 @@ const base: Airtable.Base = client.base(process.env.AIRTABLE_API_BASE ?? '')
 export async function GetOrganizations(): Promise<Organization[]> {
   const cacheKey = `jobs.GetOrganizations`
   if (cache.has(cacheKey)) {
+    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
   try {
@@ -44,6 +45,7 @@ export async function GetOrganizations(): Promise<Organization[]> {
 export async function GetOrganization(id: string): Promise<Organization | undefined> {
   const cacheKey = `jobs.GetOrganization:${id}`
   if (cache.has(cacheKey)) {
+    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
   try {
@@ -84,6 +86,7 @@ export async function GetFeaturedJob(recordId: string): Promise<Job | undefined>
 export async function GetJobs(): Promise<Job[]> {
   const cacheKey = `jobs.GetJobs:all`
   if (cache.has(cacheKey)) {
+    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
 
@@ -99,6 +102,7 @@ export async function GetJobs(): Promise<Job[]> {
 export async function GetJobsByOrganization(orgId: string): Promise<Job[]> {
   const cacheKey = `jobs.GetJobsByOrganization:${orgId}`
   if (cache.has(cacheKey)) {
+    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
 
