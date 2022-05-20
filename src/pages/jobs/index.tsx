@@ -2,13 +2,13 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
-import { DEFAULT_REVALIDATE_PERIOD, DEFAULT_MAX_ITEMS } from 'utils/constants'
+import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import { Job } from 'types/job'
 import { SEO } from 'components/SEO'
 import { MarkdownContentService } from 'services/content'
 import { JobsOverview } from 'components/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
-import { GetJobs } from 'services/job'
+import { GetJobs } from 'services/jobs'
 
 interface Props {
   categories: Array<Category>
@@ -32,13 +32,12 @@ export default function Index(props: Props) {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
-
   const jobs = await GetJobs()
 
   return {
     props: {
       categories,
-      jobs: jobs.filter((i) => i.featured || i.department === 'Engineering'),
+      jobs: jobs.filter((i) => i.featured),
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }

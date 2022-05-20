@@ -2,7 +2,7 @@ import { SITE_URL } from 'utils/constants'
 import slugify from 'slugify'
 import { MarkdownContentService } from 'services/content'
 import { DEPARTMENTS } from 'utils/jobs'
-import { GetJobs } from 'services/job'
+import { GetJobs } from 'services/jobs'
 
 const Sitemap = () => {}
 

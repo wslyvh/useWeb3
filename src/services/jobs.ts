@@ -12,6 +12,7 @@ import {
   WrkJobService,
 } from './jobs/index'
 import { defaultSlugify, isEmail } from 'utils/helpers'
+import { getJobTags } from 'utils/jobs'
 
 if (!process.env.AIRTABLE_API_KEY || !process.env.AIRTABLE_API_KEY) {
   throw new Error('Airtable API Base or Key not set.')
@@ -229,39 +230,24 @@ export function toOrganization(source: Record<FieldSet>): Organization {
 export function toJob(source: Record<FieldSet>, org?: Organization): Job {
   const applicationUrl = (source.fields['External Url'] as string) ?? ''
   let job = {
-    id: source.fields['Slug'],
-    slug: defaultSlugify(source.fields['Title'] as string),
+    id: String(source.fields['Slug']),
+    slug: `${String(source.fields['ID'])}-${defaultSlugify(source.fields['Title'] as string)}`,
     title: source.fields['Title'],
     department: source.fields['Department'],
     description: source.fields['Description'],
     body: source.fields['Body'],
-    asMarkdown: true,
+    contentType: 'markdown',
     location: source.fields['Location'],
     remote: source.fields['Remote'] ?? false,
-    org: org ?? {
-      id: (source.fields['Company Slug'] as string[])[0],
-      title: (source.fields['Company Name'] as string[])[0],
-      description: (source.fields['Company Description'] as string[])[0],
-      body: (source.fields['Company Body'] as string[])[0],
-      website:
-        (source.fields['Company Website'] as string[])?.length > 0
-          ? (source.fields['Company Website'] as string[])[0]
-          : '',
-      twitter:
-        (source.fields['Company Twitter'] as string[])?.length > 0
-          ? (source.fields['Company Twitter'] as string[])[0]
-          : '',
-      github:
-        (source.fields['Company Github'] as string[])?.length > 0
-          ? (source.fields['Company Github'] as string[])[0]
-          : '',
-      logo: (source.fields['Company Logo'] as any[])?.length > 0 ? (source.fields['Company Logo'] as any[])[0].url : '',
-    },
+    org: org,
     url: isEmail(applicationUrl)
       ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)`
       : applicationUrl,
-    updated: new Date(source.fields['Updated'] as string).getTime(),
-    featured: false,
+    tags: getJobTags(source.fields['Title'] as string),
+    type: source.fields['Type'],
+    updated: source.fields['Date']
+      ? new Date(source.fields['Date'] as string).getTime()
+      : new Date(source.fields['Updated'] as string).getTime(),
   } as Job
 
   if (source.fields['Featured']) {

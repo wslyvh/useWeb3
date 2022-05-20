@@ -13,7 +13,7 @@ import { TopnavLayout } from 'components/layouts/topnav'
 import { PanelCard } from 'components/panel'
 import { TitleWithAction } from 'components/layouts/title-action'
 import { Tags } from 'components/tags'
-import { GetJobs, GetOrganization, GetOrganizations } from 'services/job'
+import { GetJobs, GetOrganization, GetOrganizations } from 'services/jobs'
 
 interface Props {
   categories: Array<Category>

@@ -16,7 +16,7 @@ import { MarkdownContentService } from 'services/content'
 import { getApplicationUrl } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { Panel } from 'components/panel'
-import { GetJobs } from 'services/job'
+import { GetJobs } from 'services/jobs'
 
 interface Props {
   categories: Array<Category>

@@ -42,7 +42,6 @@ export default function Index(props: Props) {
   index.addIndex('tags')
   index.addDocuments(props.items)
 
-  const q: string = router.query.q as string
   const [searchItems, setSearchItems] = useState<any[]>([])
   const [paginatedItems, setPaginatedItems] = useState<any[]>([])
 
@@ -53,7 +52,7 @@ export default function Index(props: Props) {
     const sliceStart = page == 1 ? 0 : size * (page - 1)
     const sliceEnd = page * size
 
-    const items = index.search(q)
+    const items = index.search(String(router.query.q))
     setSearchItems(items)
     setPaginatedItems(items.slice(sliceStart, sliceEnd))
   }, [router.query])
