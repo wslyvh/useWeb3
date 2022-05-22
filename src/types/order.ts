@@ -6,7 +6,7 @@ export interface Order {
   type: 'Standard' | 'Featured'
   tx: string
   jobId: string
-  companyName?: string
+  orgName?: string
   created?: number
   invoiceNr?: number
 }

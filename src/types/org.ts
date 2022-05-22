@@ -11,6 +11,7 @@ export interface Organization {
   twitter?: string
   github?: string
   externalBoardUrl?: string
+  recordId: string
 }
 
 export const defaultOrg: Organization = {
@@ -24,4 +25,5 @@ export const defaultOrg: Organization = {
   github: '',
   ATS: 'Other',
   externalBoardUrl: '',
+  recordId: '',
 }

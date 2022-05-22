@@ -1,6 +1,6 @@
 import { Dropdown } from 'components/dropdown'
 import { Job } from 'types/job'
-import { DEPARTMENTS } from 'utils/jobs'
+import { DEPARTMENTS, TYPES } from 'utils/jobs'
 import styles from './forms.module.scss'
 import { FormInput } from './input'
 
@@ -65,6 +65,21 @@ export function JobForm(props: Props) {
           onChange={(value) => props.onChange({ ...props.job, body: value })}
           required
         />
+
+        <div className={styles.group}>
+          <label className={styles.header} htmlFor="type">
+            Type
+          </label>
+          <span className={styles.info}>Which kind of employment type fits the role</span>
+
+          <div>
+            <Dropdown
+              className={styles.dropdown}
+              items={(TYPES as unknown as string[]).filter((i) => !!i)}
+              onSelect={(value) => props.onChange({ ...props.job, type: value as any })}
+            />
+          </div>
+        </div>
 
         <div className={styles.group}>
           <label className={styles.header} htmlFor="remote">

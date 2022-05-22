@@ -2,9 +2,8 @@ import moment from 'moment'
 import { Organization } from 'types/org'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { defaultSlugify } from 'utils/helpers'
-import { getJobDepartment, getJobTags } from 'utils/jobs'
+import { DAYS_JOBS_LISTED_DEFAULT, getJobDepartment, getJobTags } from 'utils/jobs'
 
 const map = new Map()
 
@@ -35,7 +34,7 @@ export class LeverJobService implements JobServiceInterface {
             updated: new Date(i.createdAt).getTime(),
           } as Job
         })
-        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
+        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(DAYS_JOBS_LISTED_DEFAULT, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
     } catch (e) {
       console.log('LeverJobService', 'Unable to fetch jobs', orgId)

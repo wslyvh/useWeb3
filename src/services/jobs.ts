@@ -25,11 +25,14 @@ const base: Airtable.Base = client.base(process.env.AIRTABLE_API_BASE ?? '')
 export async function GetOrganizations(): Promise<Organization[]> {
   const cacheKey = `jobs.GetOrganizations`
   if (cache.has(cacheKey)) {
-    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
   try {
-    const records = await base('Orgs').select().all()
+    const records = await base('Orgs')
+      .select({
+        filterByFormula: `({Disabled} = FALSE())`,
+      })
+      .all()
 
     const orgs = records.map((source) => toOrganization(source))
     cache.set(cacheKey, orgs)
@@ -45,7 +48,6 @@ export async function GetOrganizations(): Promise<Organization[]> {
 export async function GetOrganization(id: string): Promise<Organization | undefined> {
   const cacheKey = `jobs.GetOrganization:${id}`
   if (cache.has(cacheKey)) {
-    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
   try {
@@ -86,7 +88,6 @@ export async function GetFeaturedJob(recordId: string): Promise<Job | undefined>
 export async function GetJobs(): Promise<Job[]> {
   const cacheKey = `jobs.GetJobs:all`
   if (cache.has(cacheKey)) {
-    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
 
@@ -102,7 +103,6 @@ export async function GetJobs(): Promise<Job[]> {
 export async function GetJobsByOrganization(orgId: string): Promise<Job[]> {
   const cacheKey = `jobs.GetJobsByOrganization:${orgId}`
   if (cache.has(cacheKey)) {
-    console.log(`GET ${cacheKey}`)
     return cache.get(cacheKey)
   }
 
@@ -159,6 +159,7 @@ export function toOrganization(source: Record<FieldSet>): Organization {
     description: source.fields['description'] ?? '',
     body: source.fields['body'] ?? '',
     ATS: source.fields['ATS'] ?? 'Other',
+    recordId: source.fields['recordId'],
   } as Organization
 
   if (source.fields['logo'] && Array.isArray(source.fields['logo']) && (source.fields['logo'] as any[]).length > 0) {

@@ -2,9 +2,8 @@ import moment from 'moment'
 import { Job } from 'types/job'
 import { Organization } from 'types/org'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { defaultSlugify } from 'utils/helpers'
-import { getJobDepartment, getJobTags, Type } from 'utils/jobs'
+import { DAYS_JOBS_LISTED_DEFAULT, getJobDepartment, getJobTags, Type } from 'utils/jobs'
 
 const map = new Map()
 
@@ -33,7 +32,7 @@ export class BreezyJobService implements JobServiceInterface {
             updated: new Date(i.published_date).getTime(),
           } as Job
         })
-        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
+        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(DAYS_JOBS_LISTED_DEFAULT, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
     } catch (e) {
       console.log('BreezyJobService', 'Unable to fetch jobs', orgId)

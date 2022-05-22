@@ -7,6 +7,31 @@ export const ACCEPTED_NETWORK_IDS = [1, 10, 42161]
 export const RECEIVER_ADDRESS = '0xA512C3cF9A63715CEd87DE5058c684cBFF9f4321'
 export const RECEIVER_ENS = 'useweb3.eth'
 
+export const DAYS_JOBS_LISTED_DEFAULT = 30
+export const DAYS_JOBS_LISTED_FEATURED = 60
+
+export const JOBS_ANGEL = [
+  'aave',
+  'aztec-network',
+  'balancer-labs-1',
+  'celestialabs',
+  'curve-labs',
+  'dorg-1',
+  'endaoment-3',
+  'ethereum-push-notification-service',
+  'fleekhq',
+  'fractional-art',
+  'gelato-network',
+  'gitcoin',
+  'livepeer',
+  'metamask',
+  'paperchain',
+  'pocket-network',
+  'tally-governance',
+  'web3api',
+  'web3labs',
+]
+
 export function getPrice(type: string): number {
   switch (type) {
     case 'Featured':
@@ -89,14 +114,37 @@ const nontech = ['finance', 'legal', 'compliance', 'corporate', 'office', 'admin
 
 // Further Specialization for tagging
 // ==
-const backend = ['back-end', 'backend', 'back end']
-const frontend = ['front-end', 'frontend', 'front end']
-const fullstack = ['full-stack', 'fullstack', 'full stack']
-const smartcontract = ['smart-contract', 'smart contract', 'solidity']
-const devrel = ['developer advocate', 'developer evangelist', 'evangelist', 'developer relations', 'devrel']
+const backend = ['back-end', 'backend', 'back end', 'blockchain', 'protocol', 'rust', 'python', 'go']
+const frontend = [
+  'front-end',
+  'frontend',
+  'front end',
+  'mobile',
+  'application',
+  'javascript',
+  'typescript',
+  'react',
+  'angular',
+  'html',
+  'css',
+]
+const fullstack = ['full-stack', 'fullstack', 'full stack', 'software', 'engineer']
+const smartcontract = ['smart-contract', 'smart contract', 'solidity', 'vyper', 'yul', 'cairo', 'ethereum']
+const security = ['security', 'audit']
+const devrel = [
+  'developer advocate',
+  'advocate',
+  'developer evangelist',
+  'evangelist',
+  'developer relations',
+  'devrel',
+  'dev rel',
+]
 const devops = ['dev-ops', 'devops', 'dev ops', 'automation', 'cloud', 'sre', 'reliability']
-const qa = ['qa', 'quality assurance', 'quality', 'test']
-const design = ['design', 'graphic', 'visual', 'creative']
+const qa = ['qa', 'quality', 'test', 'automation']
+const design = ['design', 'graphic', 'visual', 'creative', 'UX', 'UI', '3D', 'video', 'animator', 'animation']
+const management = ['lead', 'chief', 'head', 'director', 'manager']
+const junior = ['junior', 'jr.', 'intern', 'entry', 'associate']
 
 export const DEPARTMENTS = [
   'Engineering',
@@ -118,11 +166,14 @@ export const SKILLS = [
   'Front-end',
   'Full-stack',
   'Smart Contract',
+  'Security',
   'DevRel',
   'DevOps',
   'QA',
   'Design',
-  '',
+  'Lead',
+  'Management',
+  'Junior',
 ] as const
 export type Skill = typeof SKILLS[number]
 
@@ -211,6 +262,9 @@ export function getJobTags(value: string): Array<Tag> {
   if (smartcontract.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Smart Contract')
   }
+  if (security.some((i) => value.toLowerCase().includes(i))) {
+    tags.push('Security')
+  }
   if (devrel.some((i) => value.toLowerCase().includes(i))) {
     tags.push('DevRel')
   }
@@ -222,6 +276,12 @@ export function getJobTags(value: string): Array<Tag> {
   }
   if (design.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Design')
+  }
+  if (management.some((i) => value.toLowerCase().includes(i))) {
+    tags.push('Management')
+  }
+  if (junior.some((i) => value.toLowerCase().includes(i))) {
+    tags.push('Junior')
   }
 
   return tags

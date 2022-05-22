@@ -14,6 +14,7 @@ import { PanelCard } from 'components/panel'
 import { TitleWithAction } from 'components/layouts/title-action'
 import { Tags } from 'components/tags'
 import { GetJobs, GetOrganization, GetOrganizations } from 'services/jobs'
+import { toTags } from 'utils/helpers'
 
 interface Props {
   categories: Array<Category>
@@ -44,7 +45,20 @@ export default function Index(props: Props) {
             Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
           </p>
           <p className={styles.filters}>
-            <Tags fill asJobs tags={DEPARTMENTS_AS_COUNTS} />
+            <Tags
+              fill
+              asJobs
+              tags={toTags([
+                'Engineering',
+                'Smart Contract',
+                'Full-stack',
+                'Back-end',
+                'Front-end',
+                'DevRel',
+                'Product',
+                'Design',
+              ])}
+            />
           </p>
         </article>
 

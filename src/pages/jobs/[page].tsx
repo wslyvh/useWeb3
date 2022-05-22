@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: { page: String(i) },
       }
     }),
-    fallback: false,
+    fallback: true,
   }
 }
 

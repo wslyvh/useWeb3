@@ -28,6 +28,11 @@ export function CompanyForm(props: Props) {
 
         <Search className={styles.group} onSelect={(org) => props.onChange(org)} />
 
+        {/* 
+          id: org.id,
+          ATS: org.ATS,
+          externalBoardUrl: org.externalBoardUrl, 
+      */}
         <FormInput
           id="title"
           name="Name"
@@ -105,7 +110,7 @@ export function CompanyForm(props: Props) {
           id="externalJobBoard"
           name="Job board Url"
           info="Link to your own job board (e.g. Greenhouse, Lever, Angelist, etc.)"
-          placeholder="https://ethereum.bamboohr.com/jobs/"
+          placeholder="https://jobs.lever.co/ethereumfoundation/"
           value={props.org.externalBoardUrl}
           onChange={(value) => props.onChange({ ...props.org, externalBoardUrl: value })}
           readOnly={!!props.org.id}

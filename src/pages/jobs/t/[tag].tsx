@@ -64,7 +64,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: { tag: defaultSlugify(i) },
       }
     }),
-    fallback: false,
+    fallback: true,
   }
 }
 

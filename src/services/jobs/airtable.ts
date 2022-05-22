@@ -3,8 +3,8 @@ import moment from 'moment'
 import { Organization } from 'types/org'
 import { Job } from 'types/job'
 import { JobServiceInterface } from 'types/services/job-service'
-import { JOBS_SINCE_LAST_UPDATED } from 'utils/constants'
 import { toJob } from 'services/jobs'
+import { DAYS_JOBS_LISTED_FEATURED } from 'utils/jobs'
 
 export class AirtableJobService implements JobServiceInterface {
   private client: Airtable
@@ -32,7 +32,7 @@ export class AirtableJobService implements JobServiceInterface {
 
       return records
         .map((source) => toJob(source, org))
-        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(JOBS_SINCE_LAST_UPDATED, 'd')))
+        .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(DAYS_JOBS_LISTED_FEATURED, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
     } catch (e) {
       console.log('AirtableJobService', 'Unable to fetch jobs', orgId)

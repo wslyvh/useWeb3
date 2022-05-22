@@ -16,20 +16,18 @@ export class AirtableService {
     this.base = this.client.base(process.env.AIRTABLE_API_BASE ?? '')
   }
 
-  public async GetCompanies(): Promise<Array<Organization>> {
-    return []
-  }
-
-  public async CreateCompany(org: Organization): Promise<string> {
-    const response = await this.base('Companies').create({
-      Name: org.title,
-      Description: org.description,
-      Body: org.body,
-      Website: org.website,
-      Twitter: org.twitter,
-      Github: org.github,
-      'Board Url': org.externalBoardUrl,
-      Logo: [
+  public async CreateOrg(org: Organization): Promise<string> {
+    const response = await this.base('Orgs').create({
+      title: org.title,
+      id: org.id,
+      ATS: org.ATS,
+      description: org.description,
+      body: org.body,
+      website: org.website,
+      twitter: org.twitter,
+      github: org.github,
+      externalBoardUrl: org.externalBoardUrl,
+      logo: [
         {
           url: org.logo,
         } as any,
@@ -37,7 +35,7 @@ export class AirtableService {
     })
 
     if (!response.id) {
-      console.log('Unable to create job')
+      console.log('Unable to create org')
       return ''
     }
 
@@ -54,9 +52,10 @@ export class AirtableService {
       Active: false,
       Remote: job.remote,
       Department: job.department,
+      Type: job.type,
       'Min Salary': job.minSalary,
       'Max Salary': job.maxSalary,
-      Company: [job.org.id],
+      org: [job.org.recordId],
     })
 
     if (!response.id) {
@@ -79,7 +78,7 @@ export class AirtableService {
         type: source.fields['Type'],
         tx: source.fields['Tx'],
         jobId: source.fields['Job Title'],
-        companyName: source.fields['Company Name'],
+        orgName: source.fields['Org Name'],
         created: new Date(source.fields['Created'] as string).getTime(),
         invoiceNr: source.fields['Invoice Nr'],
       } as Order

@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     doc.setFont(defaultFont, 'normal')
     doc.text(
-      `${order.companyName}
+      `${order.orgName}
 ${order.name}
 ${order.email}
 
