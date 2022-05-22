@@ -29,6 +29,9 @@ interface Params extends ParsedUrlQuery {
 
 export default function Index(props: Props) {
   const router = useRouter()
+  if (!router.query.tag || !props.results) {
+    return <></>
+  }
   const title = getPageTitle(router.query.tag as string)
 
   return (
@@ -92,6 +95,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     (i) => i.featured || i.tags.map((x) => defaultSlugify(x)).some((x) => x === defaultSlugify(tagId))
   )
 
+  console.log('getStaticProps [tag]/[page]', tagId, page, byTag.length)
   return {
     props: {
       categories,

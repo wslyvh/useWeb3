@@ -224,27 +224,21 @@ export function getJobTags(value: string): Array<Tag> {
   if (engineering.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Engineering')
   }
-
   if (product.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Product')
   }
-
   if (business.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Business')
   }
-
   if (marketing.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Marketing')
   }
-
   if (people.some((i) => value.toLowerCase().includes(i))) {
     tags.push('People')
   }
-
   if (operations.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Operations')
   }
-
   if (nontech.some((i) => value.toLowerCase().includes(i))) {
     tags.push('Non-Tech')
   }

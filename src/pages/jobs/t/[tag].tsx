@@ -28,6 +28,9 @@ interface Params extends ParsedUrlQuery {
 
 export default function Index(props: Props) {
   const router = useRouter()
+  if (!router.query.tag || !props.results) {
+    return <></>
+  }
   const title = getPageTitle(router.query.tag as string)
 
   return (

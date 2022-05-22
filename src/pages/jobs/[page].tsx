@@ -24,6 +24,9 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function Index(props: Props) {
+  if (!props.results) {
+    return <></>
+  }
   return (
     <NavigationProvider categories={props.categories}>
       <SEO
