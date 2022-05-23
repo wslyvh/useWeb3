@@ -55,7 +55,7 @@ export class AirtableService {
       Type: job.type,
       'Min Salary': job.minSalary,
       'Max Salary': job.maxSalary,
-      org: [job.org.recordId],
+      org: [job.org.recordId || job.org.id],
     })
 
     if (!response.id) {
