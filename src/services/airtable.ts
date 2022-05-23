@@ -94,7 +94,7 @@ export class AirtableService {
       Address: order.address,
       Type: order.type,
       Tx: order.tx,
-      Jobs: [order.jobId],
+      OrgJobs: [order.jobId],
     })
 
     if (!response.id) {

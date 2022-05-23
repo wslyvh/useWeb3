@@ -58,10 +58,13 @@ export async function GetOrganization(id: string): Promise<Organization | undefi
       .all()
 
     if (records.length > 0) {
-      const org = records.map((source) => toOrganization(source)).find((i) => i.id === id)
-      if (org) {
-        cache.set(cacheKey, org)
-        return org
+      const orgs = records.map((source) => toOrganization(source))
+      if (orgs.length > 0) {
+        const org = orgs[0]
+        if (org) {
+          cache.set(cacheKey, org)
+          return org
+        }
       }
     }
   } catch (e) {
@@ -75,8 +78,11 @@ export async function GetOrganization(id: string): Promise<Organization | undefi
 export async function GetFeaturedJob(recordId: string): Promise<Job | undefined> {
   const source = await base('OrgJobs').find(recordId)
 
-  if (source) {
-    return toJob(source)
+  if (source && source.fields['orgId']) {
+    const org = await GetOrganization(source.fields['orgId'] as string)
+    if (org) {
+      return toJob(source, org)
+    }
   }
 }
 
