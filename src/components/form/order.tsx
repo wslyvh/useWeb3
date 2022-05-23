@@ -37,7 +37,10 @@ export function OrderForm(props: Props) {
 
         <div className={styles.group}>
           <p>
-            <b>If you're planning to post multiple jobs, feel free to skip this payment step and only send a single transaction for all jobs at the end. Or feel free to get in touch!</b>
+            <b>
+              If you're planning to post multiple jobs, feel free to skip this payment step and only send a single
+              transaction for all jobs at the end. Or feel free to get in touch!
+            </b>
           </p>
           <p>
             If you need approval or can&apos;t complete this transaction right now, no worries! You can always come back
