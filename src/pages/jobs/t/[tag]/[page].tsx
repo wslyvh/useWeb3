@@ -95,7 +95,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     (i) => i.featured || i.tags.map((x) => defaultSlugify(x)).some((x) => x === defaultSlugify(tagId))
   )
 
-  console.log('getStaticProps [tag]/[page]', tagId, page, byTag.length)
   return {
     props: {
       categories,
