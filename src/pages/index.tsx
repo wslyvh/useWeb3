@@ -8,12 +8,10 @@ import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
-import { DEPARTMENTS_AS_COUNTS } from 'utils/jobs'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { PanelCard } from 'components/panel'
 import { TitleWithAction } from 'components/layouts/title-action'
 import { Tags } from 'components/tags'
-import { GetJobs, GetOrganization, GetOrganizations } from 'services/jobs'
 import { toTags } from 'utils/helpers'
 
 interface Props {
@@ -104,8 +102,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async () => {
   const service = new MarkdownContentService()
   const items = await service.GetItems('', true)
   const categories = await service.GetCategories()
-
-  const result = await GetJobs()
 
   return {
     props: {

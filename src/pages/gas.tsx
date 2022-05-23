@@ -78,7 +78,7 @@ export default function Index(props: Props) {
           </ol>
         </article>
 
-        <article className="markdown">
+        <article className={`${styles.gas} markdown`}>
           <h3>Further reading</h3>
           <ul>
             <li>

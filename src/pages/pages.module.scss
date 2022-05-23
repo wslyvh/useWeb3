@@ -60,7 +60,7 @@
     gap: $gap-16;
     margin-bottom: $gap-16;
 
-    > li {
+    >li {
       display: flex;
       gap: $gap-8;
     }
@@ -125,5 +125,13 @@
     .sort {
       width: 200px;
     }
+  }
+}
+
+.gas {
+  ul li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
