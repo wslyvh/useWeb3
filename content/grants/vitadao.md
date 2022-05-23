@@ -4,6 +4,7 @@ description: "We are collectively funding, and advancing longevity research in a
 authors: ["@vita_dao"]
 tags: ['Longevity']
 url: "https://www.vitadao.com/"
+dateAdded: 2022-05-16
 ---
 
 VitaDAO is a community owned collective funding early stage longevity research

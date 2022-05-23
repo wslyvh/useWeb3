@@ -4,6 +4,7 @@ description: "The Chainlink Community Grant Program funds development teams and 
 authors: ["@chainlink"]
 tags: ['DeFi', 'DevEx']
 url: "https://chain.link/community/grants"
+dateAdded: 2022-05-16
 ---
 
 The Chainlink grant program deploys substantial resources toward the creation of critical developer tooling, the addition of high-quality data, and the launching of key services around the Chainlink Network.

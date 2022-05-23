@@ -4,6 +4,7 @@ description: "Foster the development of the Connext ecosystem through targeted r
 authors: ["@ConnextNetwork"]
 tags: ['Interoperability']
 url: "https://grants.connext.network/"
+dateAdded: 2022-05-16
 ---
 
 🚀 Mission

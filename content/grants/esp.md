@@ -4,6 +4,7 @@ description: "We provide grants and other support for open source projects that 
 authors: ["@EF_ESP"]
 tags: ['Ethereum', 'Protocol', 'DevEx', 'Public Goods']
 url: "https://esp.ethereum.foundation/"
+dateAdded: 2022-05-16
 ---
 
 ESP focuses on strengthening Ethereum's foundations and enabling future builders: improving infrastructure, expanding the range of tools available to those building on Ethereum, deepening our understanding of cryptographic primitives, and growing the builder ecosystem through education and community development. The work we support is open source, non-commercial and built for positive sum outcomes.

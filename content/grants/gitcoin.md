@@ -4,6 +4,7 @@ description: "Discover and fund extraordinary Public Goods with Quadratic Fundin
 authors: ["@gitcoin"]
 tags: ['Public Goods', 'DevEx']
 url: "https://gitcoin.co/grants/"
+dateAdded: 2022-05-16
 ---
 
 Gitcoin Grants allows individuals to get funding for a public goods project they are working on. Gitcoin Grants leverages Quadratic Funding (QF) to allocate extra funding from a matching pool to the most impactful projects, based on the number of contributors.

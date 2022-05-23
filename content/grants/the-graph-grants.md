@@ -4,6 +4,7 @@ description: "The Graph Grants focuses on funding protocol infrastructure, tooli
 authors: ["@graphgrants"]
 tags: ['DevEx', 'Data']
 url: "https://thegraph.foundation/"
+dateAdded: 2022-05-16
 ---
 
 The Graph Grants focuses on funding **protocol infrastructure**, **tooling, dapps** and **subgraphs,** and **community building** efforts.

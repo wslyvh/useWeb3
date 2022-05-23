@@ -4,6 +4,7 @@ description: "The Data Fund exists to support projects that further the vision o
 authors: ["@streamr"]
 tags: ['Storage', 'Data']
 url: "https://streamr.network/fund/"
+dateAdded: 2022-05-16
 ---
 
 The Data Fund exists to support projects that further the vision of a decentralized data economy and welcomes all proposals. It is funded by a 10 million DATA allocation set aside from the initial project funds.

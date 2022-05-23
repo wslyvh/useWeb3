@@ -4,6 +4,7 @@ description: "We provide grant funding to projects and operational support for e
 authors: ["@Meta_Cartel"]
 tags: ['Dapp', 'DAO']
 url: "https://www.metacartel.org/grants/"
+dateAdded: 2022-05-16
 ---
 
 ## What is MetaCartel DAO?

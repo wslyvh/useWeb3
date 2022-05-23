@@ -4,6 +4,7 @@ description: "To provide grants to projects, ideas, and events that benefit EPNS
 authors: ["@epnsproject"]
 tags: ['DevEx', 'Dapp']
 url: "https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+dateAdded: 2022-05-16
 ---
 
 To bring more projects, ideas and developers to grow the EPNS ecosystem even faster.
