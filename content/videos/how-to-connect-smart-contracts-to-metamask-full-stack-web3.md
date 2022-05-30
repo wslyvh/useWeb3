@@ -3,7 +3,7 @@ title: "How to connect metamask to your smart contracts on a website"
 description: "We learn exactly how web3 / blockchain / smart contract applications work in the front end using HTML and Javascript. We then go through 6 different ways you can connect your Metamask, Phantom, or other blockchain wallet address to your front end. We’ll look at popular Nextjs / React packages to make your development lifecycle 100 times easier. "
 authors: ["@patrickalphac"]
 tags: ["Smart Contracts", "DevEx"]
-languages: ["Solidity", "Javascript", "HTML"]
+languages: ["Solidity", "Javascript"]
 url: "https://www.youtube.com/watch?v=pdsYCkUWrgQ"
 dateAdded: 2022-05-27
 level: "beginner"

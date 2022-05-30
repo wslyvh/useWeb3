@@ -3,7 +3,7 @@ title: "How to build an on-chain DAO"
 description: "Using Compound and Openzeppelin as a basis, we build a 100% on-chain DAO using an ERC20 governance token for votes.  "
 authors: ["@patrickalphac"]
 tags: ["Smart Contracts", "DevEx"]
-languages: ["Solidity", "Typescript"]
+languages: ["Solidity", "JavaScript"]
 url: "https://www.youtube.com/watch?v=AhJtmUqhAqg"
 dateAdded: 2022-05-27
 level: "beginner"

@@ -2,8 +2,8 @@
 title: "Learn Blockchain, Solidity, and Full Stack Web3 Development with JavaScript – 32-Hour Course"
 description: "This course will give you a full introduction into all of the core concepts related to blockchain, smart contracts, Solidity, ERC20s, full-stack Web3 dapps, decentralized finance (DeFi), JavaScript, TypeScript, Chainlink, Ethereum, upgradable smart contracts, DAOs, the graph, moralis, aave, IPFS, and more. Follow along with the videos and you'll be a blockchain wizard in no time!"
 authors: ["@PatrickAlphaC"]
-tags: ["DeFi","NFT","Dapp", "DAO", "Cryptography","Smart Contracts","UX & Design","Storage"]
-languages: ["Solidity","Javascript", "Typescript"]
+tags: ["Dapp","Cryptography","Smart Contracts"]
+languages: ["Solidity","Javascript"]
 url: "https://www.youtube.com/watch?v=gyMwXuJrbJQQ"
 featured: true
 dateAdded: 2022-05-27
