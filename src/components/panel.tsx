@@ -173,16 +173,23 @@ export function IssuePanel(props: IssueProps) {
   let className = `${styles.job}`
   if (props.className) className += ` ${props.className}`
 
-  const tags: string[] = props.issue.labels.map(i => i.name)
-    .filter(i => i.toLowerCase().includes('help wanted') || i.toLowerCase().includes('good first'))
+  const tags: string[] = props.issue.labels
+    .map((i) => i.name)
+    .filter((i) => i.toLowerCase().includes('help wanted') || i.toLowerCase().includes('good first'))
 
   return (
-    <Panel className={className} type='neutral' fill stretch>
+    <Panel className={className} type="neutral" fill stretch>
       <div className={styles.inner}>
         <div className={styles.logo}>
-          <Image src={props.issue.author?.avatarUrl ??
-            'https://camo.githubusercontent.com/6e2f6de0032f63dd90d46812bcc47c1519ee78c4e095733ec35a964901b1274d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f35316334663761346261326430393962326261396630343830333264643734613f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3634'}
-            alt={props.issue.author?.login} height={64} width={64} />
+          <Image
+            src={
+              props.issue.author?.avatarUrl ??
+              'https://camo.githubusercontent.com/6e2f6de0032f63dd90d46812bcc47c1519ee78c4e095733ec35a964901b1274d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f35316334663761346261326430393962326261396630343830333264643734613f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3634'
+            }
+            alt={props.issue.author?.login}
+            height={64}
+            width={64}
+          />
         </div>
         <div className={styles.body}>
           <Link href={props.issue.url}>
