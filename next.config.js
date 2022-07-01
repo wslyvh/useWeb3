@@ -3,6 +3,8 @@ module.exports = {
   images: {
     domains: [
       'dl.airtable.com',
+      'avatars.githubusercontent.com',
+      'camo.githubusercontent.com',
       'www.datocms-assets.com',
       'acegif.com'
     ],

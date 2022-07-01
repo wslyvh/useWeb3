@@ -21,6 +21,7 @@ export const MENU_ITEMS = [
   { url: `/courses`, icon: '🎓', text: 'Courses', category: 'learn' },
   { url: `/tutorials`, icon: '💻', text: 'Tutorials', category: 'learn' },
   { url: `/videos`, icon: '📺', text: 'Videos', category: 'learn' },
+  { url: `/contribute`, icon: '✨', text: 'Contribute', category: 'build' },
   { url: `/earn`, icon: '💸', text: 'Earn', category: 'build' },
   { url: `/grants`, icon: '💰', text: 'Grants', category: 'build' },
   { url: `/starter-kits`, icon: '🏗️', text: 'Templates', category: 'build' },

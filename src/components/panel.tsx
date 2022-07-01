@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react'
 import Image from 'next/image'
 import { Job } from 'types/job'
-import { defaultSlugify, getLevelStyle, toTags } from 'utils/helpers'
+import { getLevelStyle, toTags } from 'utils/helpers'
 import { getApplicationUrl } from 'utils/jobs'
 import { Link } from './link'
 import styles from './panel.module.scss'
 import moment from 'moment'
 import { Tags } from './tags'
+import { Issue } from 'types/issue'
 
 interface Props {
   children: ReactNode
@@ -157,6 +158,46 @@ export function JobPanel(props: JobProps) {
             Apply
           </Panel>
           <span className={styles.date + ' muted'}>{moment(props.job.updated).fromNow(true)}</span>
+        </div>
+      </div>
+    </Panel>
+  )
+}
+
+interface IssueProps {
+  issue: Issue
+  className?: string
+}
+
+export function IssuePanel(props: IssueProps) {
+  let className = `${styles.job}`
+  if (props.className) className += ` ${props.className}`
+
+  const tags: string[] = props.issue.labels.map(i => i.name)
+    .filter(i => i.toLowerCase().includes('help wanted') || i.toLowerCase().includes('good first'))
+
+  return (
+    <Panel className={className} type='neutral' fill stretch>
+      <div className={styles.inner}>
+        <div className={styles.logo}>
+          <Image src={props.issue.author?.avatarUrl ??
+            'https://camo.githubusercontent.com/6e2f6de0032f63dd90d46812bcc47c1519ee78c4e095733ec35a964901b1274d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f35316334663761346261326430393962326261396630343830333264643734613f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3634'}
+            alt={props.issue.author?.login} height={64} width={64} />
+        </div>
+        <div className={styles.body}>
+          <Link href={props.issue.url}>
+            <h4>{props.issue.title}</h4>
+          </Link>
+          <div>
+            <span className="muted">{props.issue.author?.login}</span>
+          </div>
+          <Tags className={styles.tags} small withIcons noLinks tags={toTags(tags)} />
+        </div>
+        <div className={styles.actions}>
+          <Panel fill type="secondary" href={props.issue.url}>
+            Details &raquo;
+          </Panel>
+          <span className={styles.date + ' muted'}>{moment(props.issue.updatedAt).fromNow(true)}</span>
         </div>
       </div>
     </Panel>

@@ -1,0 +1,13 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  .featured {
+    margin-bottom: $gap-16;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin: $gap-16 0;
+  }
+}
