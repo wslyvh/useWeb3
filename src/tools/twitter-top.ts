@@ -22,12 +22,12 @@ async function run() {
   const stats = body.results.splice(0, 10)
 
   // Most popular pages
-  const responsePopular = await fetch('https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=10', {
+  const responsePopular = await fetch('https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=20', {
     headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_API_KEY}` },
   })
   const bodyPopular = await responsePopular.json()
   const pagesPopular = bodyPopular.results
-    .filter((i: any) => i.page !== '/' && i.page.split('/').length > 2)
+    .filter((i: any) => i.page !== '/' && !i.page.startsWith('/jobs/') && i.page.split('/').length > 2)
     .map((i: any) => {
       return {
         url: i.page,
@@ -47,7 +47,7 @@ async function run() {
 
   let text = `Most popular last week 🚀\n\n`
   for (let index = 0; index < combined.length; index++) {
-    const resource = items.find((i) => i.url === combined[index])
+    const resource = items.find((i) => i.url === combined[index] || i.url.endsWith(combined[index]))
     if (resource) {
       text += `${index + 1}. ${resource.title} ${resource.authors.join(' ')} \n`
     }
