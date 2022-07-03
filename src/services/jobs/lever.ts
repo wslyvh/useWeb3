@@ -12,9 +12,14 @@ export class LeverJobService implements JobServiceInterface {
     if (!orgId) return []
 
     try {
-      const res = await fetch(`https://api.lever.co/v0/postings/${orgId}?mode=json`)
+      let url = `https://api.eu.lever.co/v0/postings/${orgId}?mode=json`
+      if (orgId === 'matterlabs') {
+        url = `https://api.eu.lever.co/v0/postings/${orgId}?mode=json`
+      }
+
+      const res = await fetch(url)
       const data = await res.json()
-      if (!data) return []
+      if (!data || !Array.isArray(data)) return []
 
       return data
         .map((i: any) => {

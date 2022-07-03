@@ -14,7 +14,7 @@ export class GreenhouseJobService implements JobServiceInterface {
     try {
       const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${orgId}/jobs`)
       const data = await res.json()
-      if (!data) return []
+      if (!data || !!data.error) return []
 
       const jobs = await Promise.all(
         data.jobs?.map(async (i: any) => {
