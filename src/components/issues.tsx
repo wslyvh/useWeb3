@@ -15,6 +15,10 @@ export function IssuesOverview(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
 
+  if (!props.results || props.results.items?.length === 0) {
+    return null
+  }
+
   return (
     <div className={className}>
       <p>Make your first contribution to any open-source Web3 project by tackling one of the issues listed below.</p>
@@ -47,35 +51,29 @@ export function IssuesOverview(props: Props) {
         />
       </Featured>
 
-      {props.results.items.length === 0 && <p>No issues found.</p>}
+      <Pagination
+        className={styles.pagination}
+        itemsPerPage={DEFAULT_MAX_ITEMS}
+        totalItems={props.results.total}
+        currentPage={props.results.currentPage}
+        truncate
+      />
 
-      {props.results.items.length > 0 && (
-        <>
-          <Pagination
-            className={styles.pagination}
-            itemsPerPage={DEFAULT_MAX_ITEMS}
-            totalItems={props.results.total}
-            currentPage={props.results.currentPage}
-            truncate
-          />
+      <main>
+        <Featured type="rows">
+          {props.results.items.map((i) => {
+            return <IssuePanel key={`${i.id}_${i.number}`} issue={i} />
+          })}
+        </Featured>
+      </main>
 
-          <main>
-            <Featured type="rows">
-              {props.results.items.map((i) => {
-                return <IssuePanel key={`${i.id}_${i.number}`} issue={i} />
-              })}
-            </Featured>
-          </main>
-
-          <Pagination
-            className={styles.pagination}
-            itemsPerPage={DEFAULT_MAX_ITEMS}
-            totalItems={props.results.total}
-            currentPage={props.results.currentPage}
-            truncate
-          />
-        </>
-      )}
+      <Pagination
+        className={styles.pagination}
+        itemsPerPage={DEFAULT_MAX_ITEMS}
+        totalItems={props.results.total}
+        currentPage={props.results.currentPage}
+        truncate
+      />
     </div>
   )
 }
