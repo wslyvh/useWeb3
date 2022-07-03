@@ -18,10 +18,7 @@ export function IssuesOverview(props: Props) {
   return (
     <div className={className}>
       <p>Make your first contribution to any open-source Web3 project by tackling one of the issues listed below.</p>
-      <p>
-        Each issue displayed here is a "good first issue," selected for its relative approachability for first-time
-        contributors.
-      </p>
+      <p>Each issue displayed here is a &apos;good first&apos;-issue, selected for its approachability for first-time contributors.</p>
 
       <Featured className={styles.featured}>
         <PanelCard
