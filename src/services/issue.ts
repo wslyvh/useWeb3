@@ -98,7 +98,6 @@ export async function GetRepos(): Promise<Repository[]> {
       cursor = undefined
     }
   }
-  console.log('REPOSITORIES', repos.length)
 
   return repos
 }
