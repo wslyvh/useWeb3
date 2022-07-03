@@ -12,6 +12,7 @@ interface Props {
   withIcons?: boolean
   noLinks?: boolean
   className?: string
+  addToList?: React.ReactNode | React.ReactNode[]
 }
 
 export function Tags(props: Props) {
@@ -44,6 +45,7 @@ export function Tags(props: Props) {
           </li>
         )
       })}
+      {props.addToList && <>{props.addToList}</>}
     </ul>
   )
 }

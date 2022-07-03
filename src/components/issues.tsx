@@ -44,7 +44,7 @@ export function IssuesOverview(props: Props) {
           title="Solidity"
           icon="✨"
           description="Solidity, the Smart Contract Programming Language "
-          url="https://github.com/ethereum/solidity/contribute"
+          url="https://docs.soliditylang.org/en/latest/contributing.html"
           level="Intermediate"
           tags={['C++', 'Solidity', 'Smart Contracts']}
         />

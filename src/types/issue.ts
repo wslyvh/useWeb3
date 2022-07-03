@@ -1,12 +1,16 @@
 export interface Repository {
   id: string
   name: string
+  nameWithOwner: string
   description: string
+  stargazerCount: number
+  forkCount: number
+  primaryLanguage: Language
   url: string
+  createdAt: number
+  updatedAt: number
+  pushedAt: number
   owner: User
-  stargazers: number
-  forks: number
-  primaryLanguage: string
 }
 
 export interface Issue {
@@ -15,9 +19,10 @@ export interface Issue {
   title: string
   body: string
   url: string
+  commentsCount: number
   labels: Label[]
-  author?: User
-  repository?: Repository
+  author: User
+  repository: Repository
   createdAt: number
   updatedAt: number
 }
@@ -35,7 +40,6 @@ export interface Label {
 }
 
 export interface Language {
-  id: string
   name: string
   color: string
 }

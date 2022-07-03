@@ -182,29 +182,41 @@ export function IssuePanel(props: IssueProps) {
       <div className={styles.inner}>
         <div className={styles.logo}>
           <Image
-            src={
-              props.issue.author?.avatarUrl ??
-              'https://camo.githubusercontent.com/6e2f6de0032f63dd90d46812bcc47c1519ee78c4e095733ec35a964901b1274d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f35316334663761346261326430393962326261396630343830333264643734613f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3634'
-            }
-            alt={props.issue.author?.login}
+            src={props.issue.author.avatarUrl}
+            alt={props.issue.author.login}
             height={64}
             width={64}
           />
+          {/* // TODO: With more orgs/repos, replace author with repo images?
+          <Image
+            src={props.issue.repository.owner.avatarUrl}
+            alt={props.issue.repository.owner.login}
+            height={64}
+            width={64}
+          /> */}
         </div>
         <div className={styles.body}>
           <Link href={props.issue.url}>
             <h4>{props.issue.title}</h4>
           </Link>
           <div>
-            <span className="muted">{props.issue.author?.login}</span>
+            <Link href={props.issue.repository.url}>{props.issue.repository.nameWithOwner}</Link> <span className="muted"><i className="bi bi-star"></i> {props.issue.repository.stargazerCount}</span>
           </div>
-          <Tags className={styles.tags} small withIcons noLinks tags={toTags(tags)} />
+          <Tags
+            className={styles.tags}
+            small withIcons noLinks
+            tags={toTags(tags)}
+            addToList={
+              <li className={styles.primaryLanguage}>
+                <span className={styles.dot} style={{ backgroundColor: props.issue.repository.primaryLanguage.color }}>&nbsp;</span>
+                <span className="muted">{props.issue.repository.primaryLanguage.name}</span>
+              </li>
+            } />
         </div>
-        <div className={styles.actions}>
-          <Panel fill type="secondary" href={props.issue.url}>
-            Details &raquo;
-          </Panel>
-          <span className={styles.date + ' muted'}>{moment(props.issue.updatedAt).fromNow(true)}</span>
+        <div className={styles.stats}>
+          <span className={styles.date + ' muted'}>{props.issue.author.login} <i className="bi bi-person"></i></span>
+          <span className={styles.date + ' muted'}>{moment(props.issue.createdAt).fromNow(false)} <i className="bi bi-clock"></i></span>
+          <span className={styles.date + ' muted'}>{props.issue.commentsCount} <i className="bi bi-chat-text"></i></span>
         </div>
       </div>
     </Panel>

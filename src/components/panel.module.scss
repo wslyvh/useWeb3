@@ -31,7 +31,7 @@
 
 .link {
   &:hover {
-    > .border {
+    >.border {
       top: -2px;
       left: -2px;
     }
@@ -39,7 +39,7 @@
 }
 
 .fill {
-  > .border {
+  >.border {
     background: #fff; // TODO
   }
 }
@@ -198,6 +198,7 @@
 
     @media (max-width: $screen-640) {
       margin: $gap-8;
+      flex-wrap: wrap;
     }
   }
 
@@ -228,6 +229,7 @@
     flex-direction: column;
     gap: $gap-8;
     flex-grow: 2;
+    flex-basis: 0;
   }
 
   .actions {
@@ -243,6 +245,42 @@
       }
     }
   }
+
+  .stats {
+    @extend .actions;
+    align-items: flex-end;
+
+    span {
+      display: flex;
+      flex-direction: row;
+      gap: $gap-8;
+    }
+
+    @media (max-width: $screen-640) {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: $gap-8;
+
+      span {
+        flex-direction: row-reverse;
+
+        i {
+          margin-left: $gap-8;
+        }
+
+        &:first-child {
+          i {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .date {
+        display: flex;
+      }
+    }
+  }
 }
 
 .featured {
@@ -251,4 +289,17 @@
 
 .normal {
   @extend .job;
+}
+
+.primaryLanguage {
+  display: flex;
+  align-items: center;
+  gap: $gap-8;
+
+  .dot {
+    height: 0.75rem;
+    width: 0.75rem;
+    background: var(--color-neutral-100); // TODO
+    border-radius: 50%;
+  }
 }

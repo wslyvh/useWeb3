@@ -8,7 +8,7 @@ import { DEFAULT_MAX_ITEMS, DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from '../pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { TopnavLayout } from 'components/layouts/topnav'
-import { GetIssues } from 'services/issue'
+import { GetIssues, GetRepos } from 'services/issue'
 import { SEO } from 'components/SEO'
 import { Issue } from 'types/issue'
 import { PagedResult } from 'types/paged'
@@ -44,6 +44,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async () => {
   const items = await service.GetItems('', true)
   const categories = await service.GetCategories()
   const issues = await GetIssues()
+
+  const repos = await GetRepos()
 
   return {
     props: {
