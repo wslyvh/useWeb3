@@ -17,11 +17,7 @@ export class MarkdownContentService implements ItemServiceInterface {
     const dir = join(process.cwd(), baseFolder)
     const dirs = fs
       .readdirSync(dir, { withFileTypes: true })
-      .filter(
-        (i) =>
-          i.isDirectory() &&
-          fs.readdirSync(join(dir, i.name), { withFileTypes: true }).some((i) => i.isFile() && i.name.endsWith('.md'))
-      )
+      .filter((i) => i.isDirectory() && fs.readdirSync(join(dir, i.name), { withFileTypes: true }).some((i) => i.isFile() && i.name.endsWith('.md')))
 
     return dirs.map((i) => {
       const fullPath = join(dir, i.name, 'metadata.json')
@@ -120,9 +116,7 @@ export class MarkdownContentService implements ItemServiceInterface {
   public async GetItemsByTag(tag: string): Promise<Array<ContentItem>> {
     const items = await this.GetItems()
     return items.filter(
-      (i) =>
-        i.tags.some((x) => x.toLowerCase() === tag.toLowerCase()) ||
-        i.languages.some((x) => x.toLowerCase() === tag.toLowerCase())
+      (i) => i.tags.some((x) => x.toLowerCase() === tag.toLowerCase()) || i.languages.some((x) => x.toLowerCase() === tag.toLowerCase())
     )
   }
 

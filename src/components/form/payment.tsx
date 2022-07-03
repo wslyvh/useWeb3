@@ -91,11 +91,7 @@ export function Payment(props: Props) {
             <br />
             {receivingAddress}
           </div>
-          <i
-            className={`${styles.icon} bi bi-clipboard`}
-            role="button"
-            onClick={() => navigator.clipboard.writeText(receivingAddress)}
-          />
+          <i className={`${styles.icon} bi bi-clipboard`} role="button" onClick={() => navigator.clipboard.writeText(receivingAddress)} />
         </div>
         <div className={styles.row}>
           <div className={styles.text}>
@@ -103,22 +99,14 @@ export function Payment(props: Props) {
             <br />
             {receivingName}
           </div>
-          <i
-            className={`${styles.icon} bi bi-clipboard`}
-            role="button"
-            onClick={() => navigator.clipboard.writeText(receivingName)}
-          />
+          <i className={`${styles.icon} bi bi-clipboard`} role="button" onClick={() => navigator.clipboard.writeText(receivingName)} />
         </div>
         <div className={styles.row}>
           <div className={styles.text}>
             <span className="muted">Amount</span>
             <br />${props.price} USD / {priceInEther} ETH
           </div>
-          <i
-            className={`${styles.icon} bi bi-clipboard`}
-            role="button"
-            onClick={() => navigator.clipboard.writeText(priceInEther)}
-          />
+          <i className={`${styles.icon} bi bi-clipboard`} role="button" onClick={() => navigator.clipboard.writeText(priceInEther)} />
         </div>
         <div className={styles.row}>
           <strong>* Only ETH/DAI/UDSC on Mainnet/Arbitrum/Optimism</strong>

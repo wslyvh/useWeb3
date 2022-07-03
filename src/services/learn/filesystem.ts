@@ -11,11 +11,7 @@ export function GetTracks(): Array<Track> {
   const dir = resolve(process.cwd(), 'learn')
   const dirs = fs
     .readdirSync(dir, { withFileTypes: true })
-    .filter(
-      (i) =>
-        i.isDirectory() &&
-        fs.readdirSync(join(dir, i.name), { withFileTypes: true }).some((i) => i.isFile() && i.name.endsWith('.md'))
-    )
+    .filter((i) => i.isDirectory() && fs.readdirSync(join(dir, i.name), { withFileTypes: true }).some((i) => i.isFile() && i.name.endsWith('.md')))
 
   return dirs.map((i) => {
     const trackDir = join(dir, i.name)

@@ -85,12 +85,7 @@ export function Footer(props: Props) {
           </ul>
 
           <Link href="https://vercel.com/?utm_source=useWeb3&amp;utm_campaign=oss">
-            <Image
-              src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
-              alt="Powered by Vercel"
-              height={32}
-              width={120}
-            />
+            <Image src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" height={32} width={120} />
           </Link>
         </div>
       </div>

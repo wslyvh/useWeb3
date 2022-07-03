@@ -8,14 +8,7 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { TopnavLayout } from 'components/layouts/topnav'
-import {
-  LowerCaseSanitizer,
-  PrefixIndexStrategy,
-  Search,
-  SimpleTokenizer,
-  StopWordsTokenizer,
-  TfIdfSearchIndex,
-} from 'js-search'
+import { LowerCaseSanitizer, PrefixIndexStrategy, Search, SimpleTokenizer, StopWordsTokenizer, TfIdfSearchIndex } from 'js-search'
 import { useRouter } from 'next/router'
 import { Featured } from 'components/featured'
 import { PanelCard } from 'components/panel'

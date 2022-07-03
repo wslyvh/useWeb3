@@ -14,9 +14,7 @@ interface Props {
 export function FilteredOverview(props: Props) {
   const [items, setItems] = useState<Array<ContentItem>>([])
   useEffect(() => {
-    let sorted = [...props.items]
-      .sort((a, b) => (a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1))
-      .reverse()
+    let sorted = [...props.items].sort((a, b) => (a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1)).reverse()
     setItems(sorted)
   }, [props.items])
 
@@ -45,11 +43,7 @@ export function FilteredOverview(props: Props) {
 
       <div className={styles.filter}>
         <p>Sort by:</p>
-        <Dropdown
-          className={styles.sort}
-          items={['Recently added', 'Title', 'Expertise']}
-          onSelect={(value) => onSort(value)}
-        />
+        <Dropdown className={styles.sort} items={['Recently added', 'Title', 'Expertise']} onSelect={(value) => onSort(value)} />
       </div>
 
       <main>
@@ -73,9 +67,7 @@ export function FilteredOverview(props: Props) {
 
       {props.title === 'Books' && (
         <p>
-          <small>
-            * Links in the books category may contain referral links. Any proceeds will help and support this site.
-          </small>
+          <small>* Links in the books category may contain referral links. Any proceeds will help and support this site.</small>
         </p>
       )}
     </>

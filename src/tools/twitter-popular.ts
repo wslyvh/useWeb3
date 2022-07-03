@@ -10,12 +10,9 @@ run()
 
 async function run() {
   const service = new MarkdownContentService()
-  const response = await fetch(
-    'https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=10',
-    {
-      headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_API_KEY}` },
-    }
-  )
+  const response = await fetch('https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=10', {
+    headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_API_KEY}` },
+  })
 
   const body = await response.json()
   const stats = body.results

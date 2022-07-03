@@ -48,9 +48,7 @@ export function Search(props: Props) {
       <label className={styles.header} htmlFor="findCompany">
         Find Organization
       </label>
-      <span className={styles.info}>
-        If you&apos;ve added your organization before, you can search for it and skip this step.
-      </span>
+      <span className={styles.info}>If you&apos;ve added your organization before, you can search for it and skip this step.</span>
 
       <div className="fixed wrapper block">
         <input

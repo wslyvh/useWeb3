@@ -15,9 +15,7 @@ export function Newsletter(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
   const title = props.title ?? 'Newsletter'
-  const description =
-    props.description ??
-    'Sign up to be the first to get it and stay up to date with the latest news, resources and updates.'
+  const description = props.description ?? 'Sign up to be the first to get it and stay up to date with the latest news, resources and updates.'
 
   return (
     <Panel className={className} type="tertiary">
@@ -44,8 +42,7 @@ export function Newsletter(props: Props) {
             </div>
             <div>
               <p>
-                By subscribing, you agree with Revue’s{' '}
-                <Link href="https://www.getrevue.co/terms">Terms of Service</Link> and{' '}
+                By subscribing, you agree with Revue’s <Link href="https://www.getrevue.co/terms">Terms of Service</Link> and{' '}
                 <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>.
               </p>
             </div>

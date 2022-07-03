@@ -40,11 +40,7 @@ export default function Index(props: Props) {
         title="Web3, Blockchain and Crypto jobs"
         description="Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem."
       />
-      <TopnavLayout
-        className={styles.container}
-        title={title}
-        action={{ href: '/jobs/post', text: 'Post a Job' }}
-        hideNewsletter>
+      <TopnavLayout className={styles.container} title={title} action={{ href: '/jobs/post', text: 'Post a Job' }} hideNewsletter>
         <JobsOverview results={props.results} tags={props.tags} />
       </TopnavLayout>
     </NavigationProvider>
@@ -91,9 +87,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
         .filter((i) => !!i)
     ),
   ]
-  const byTag = jobs.filter(
-    (i) => i.featured || i.tags.map((x) => defaultSlugify(x)).some((x) => x === defaultSlugify(tagId))
-  )
+  const byTag = jobs.filter((i) => i.featured || i.tags.map((x) => defaultSlugify(x)).some((x) => x === defaultSlugify(tagId)))
 
   return {
     props: {

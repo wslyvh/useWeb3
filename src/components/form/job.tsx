@@ -17,9 +17,7 @@ export function JobForm(props: Props) {
   return (
     <div className={className}>
       <h2>Step 2: Job Details</h2>
-      <p className="muted">
-        Please keep in mind that all the information shared here will be part of the public job opening.
-      </p>
+      <p className="muted">Please keep in mind that all the information shared here will be part of the public job opening.</p>
 
       <div className={styles.form}>
         <FormInput
@@ -91,9 +89,7 @@ export function JobForm(props: Props) {
             <input
               type="checkbox"
               checked={props.job.remote}
-              onChange={(e) =>
-                props.onChange({ ...props.job, remote: e.target.checked, location: e.target.checked ? 'Remote' : '' })
-              }
+              onChange={(e) => props.onChange({ ...props.job, remote: e.target.checked, location: e.target.checked ? 'Remote' : '' })}
             />
           </div>
         </div>

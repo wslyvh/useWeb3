@@ -38,19 +38,13 @@ export default function Index(props: Props) {
       <SEO title={`Jobs at ${props.org.title}`} description={props.org.description} imageUrl={props.org.logo} />
 
       <TopnavLayout className={styles.container} title={props.org.title}>
-        {props.org.body && (
-          <article className={styles.body} dangerouslySetInnerHTML={{ __html: marked.parse(props.org.body) }} />
-        )}
-        {!props.org.body && props.org.description && (
-          <article className={styles.body} dangerouslySetInnerHTML={{ __html: props.org.description }} />
-        )}
+        {props.org.body && <article className={styles.body} dangerouslySetInnerHTML={{ __html: marked.parse(props.org.body) }} />}
+        {!props.org.body && props.org.description && <article className={styles.body} dangerouslySetInnerHTML={{ __html: props.org.description }} />}
 
         {isFeatured && (props.org.website || props.org.twitter || props.org.github) && (
           <div className={styles.icons}>
             {props.org.website && <LinkButton href={props.org.website} text="Website" type="website" />}
-            {props.org.twitter && (
-              <LinkButton href={`https://twitter.com/${props.org.twitter}`} text="Twitter" type="twitter" />
-            )}
+            {props.org.twitter && <LinkButton href={`https://twitter.com/${props.org.twitter}`} text="Twitter" type="twitter" />}
             {props.org.github && <LinkButton href={props.org.github} text="Github" type="github" />}
           </div>
         )}

@@ -18,8 +18,7 @@ export function Container(props: Props) {
   if (props.className) className += ` ${props.className}`
 
   const index = props.track.lessons.map((i) => i.id).indexOf(props.lesson.id)
-  const prev =
-    index === 0 ? `/learn/${props.track.id}` : `/learn/${props.track.id}/${props.track.lessons[index - 1].id}`
+  const prev = index === 0 ? `/learn/${props.track.id}` : `/learn/${props.track.id}/${props.track.lessons[index - 1].id}`
   const next =
     index === props.track.lessons.length - 1
       ? !!props.track.reward

@@ -29,8 +29,8 @@ export default function Index(props: Props) {
       <TopnavLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 is a platform for developers to explore and learn about Web3. Whether youre a new dev getting your
-            hands dirty for the first time, or a seasoned developer making the transition into the Web3 space.
+            useWeb3 is a platform for developers to explore and learn about Web3. Whether youre a new dev getting your hands dirty for the first time,
+            or a seasoned developer making the transition into the Web3 space.
           </p>
           <p>
             <strong>Explore. Learn. Build.</strong>
@@ -39,23 +39,12 @@ export default function Index(props: Props) {
 
         <article>
           <TitleWithAction title="Web3 Jobs" action={{ href: '/jobs/post', text: 'Post a Job' }} />
-          <p>
-            Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.
-          </p>
+          <p>Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.</p>
           <p className={styles.filters}>
             <Tags
               fill
               asJobs
-              tags={toTags([
-                'Engineering',
-                'Smart Contract',
-                'Full-stack',
-                'Back-end',
-                'Front-end',
-                'DevRel',
-                'Product',
-                'Design',
-              ])}
+              tags={toTags(['Engineering', 'Smart Contract', 'Full-stack', 'Back-end', 'Front-end', 'DevRel', 'Product', 'Design'])}
             />
           </p>
         </article>
@@ -63,8 +52,8 @@ export default function Index(props: Props) {
         <article>
           <h2>Start learning</h2>
           <p>
-            Explore the latest resources and get familiar with the core concepts and fundamentals. Learning from
-            tutorials, courses, books, videos or code challenges and start building!
+            Explore the latest resources and get familiar with the core concepts and fundamentals. Learning from tutorials, courses, books, videos or
+            code challenges and start building!
           </p>
         </article>
 

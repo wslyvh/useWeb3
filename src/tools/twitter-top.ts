@@ -22,12 +22,9 @@ async function run() {
   const stats = body.results.splice(0, 10)
 
   // Most popular pages
-  const responsePopular = await fetch(
-    'https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=10',
-    {
-      headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_API_KEY}` },
-    }
-  )
+  const responsePopular = await fetch('https://plausible.io/api/v1/stats/breakdown?site_id=useweb3.xyz&period=7d&property=event:page&limit=10', {
+    headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_API_KEY}` },
+  })
   const bodyPopular = await responsePopular.json()
   const pagesPopular = bodyPopular.results
     .filter((i: any) => i.page !== '/' && i.page.split('/').length > 2)

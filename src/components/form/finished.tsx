@@ -18,8 +18,8 @@ export function Finished(props: Props) {
   return (
     <div className={className}>
       <p>
-        Thank you for submitting your job posting. After confirmation of your transaction details, your posting will be
-        pushed online. This usually happens within 24 hrs.
+        Thank you for submitting your job posting. After confirmation of your transaction details, your posting will be pushed online. This usually
+        happens within 24 hrs.
       </p>
 
       <p>For your reference</p>

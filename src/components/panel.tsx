@@ -68,12 +68,7 @@ export function PanelCard(props: CardProps) {
   if (props.className) className += ` ${props.className}`
 
   return (
-    <Panel
-      className={className}
-      href={props.url}
-      type={props.level ? getLevelStyle(props.level) : 'primary'}
-      fill
-      stretch>
+    <Panel className={className} href={props.url} type={props.level ? getLevelStyle(props.level) : 'primary'} fill stretch>
       <div className={styles.inner}>
         <h4 className={styles.title}>
           {props.icon && <small>{props.icon}</small>} {props.title}
@@ -135,9 +130,7 @@ export function JobPanel(props: JobProps) {
       <div className={styles.inner}>
         {props.job.featured && (
           <Link className={styles.logo} href={orgLink}>
-            {props.job.org.logo && (
-              <Image src={props.job.org.logo} alt={`${props.job.org.title} logo`} height={64} width={64} />
-            )}
+            {props.job.org.logo && <Image src={props.job.org.logo} alt={`${props.job.org.title} logo`} height={64} width={64} />}
             {!props.job.org.logo && <span className={styles.badge}>{props.job.org.title.toUpperCase().charAt(0)}</span>}
           </Link>
         )}

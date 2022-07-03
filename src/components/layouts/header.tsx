@@ -123,11 +123,7 @@ export function Header(props: Props) {
         close={() => onClose()}
       />
 
-      <Searchbar
-        className={`${styles.foldout} ${foldout === 'search' ? styles.open : ''}`}
-        open={foldout === 'search'}
-        close={() => onClose()}
-      />
+      <Searchbar className={`${styles.foldout} ${foldout === 'search' ? styles.open : ''}`} open={foldout === 'search'} close={() => onClose()} />
     </header>
   )
 }

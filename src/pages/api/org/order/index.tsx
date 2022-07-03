@@ -13,7 +13,5 @@ async function POST(req: NextApiRequest, res: NextApiResponse) {
   const service = new AirtableService()
   const id = await service.CreateOrder(req.body.order)
 
-  return id
-    ? res.status(200).json({ status: 200, message: 'OK', data: id })
-    : res.status(500).json({ status: 200, message: 'Unable to save order' })
+  return id ? res.status(200).json({ status: 200, message: 'OK', data: id }) : res.status(500).json({ status: 200, message: 'Unable to save order' })
 }

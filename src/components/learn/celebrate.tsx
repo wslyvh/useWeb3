@@ -11,12 +11,7 @@ export function Celebrate(props: Props) {
 
   return (
     <div className={className}>
-      <Image
-        src="https://acegif.com/wp-content/uploads/funny-celebrate-8.gif"
-        alt="Celebrate!"
-        layout="fill"
-        objectFit="contain"
-      />
+      <Image src="https://acegif.com/wp-content/uploads/funny-celebrate-8.gif" alt="Celebrate!" layout="fill" objectFit="contain" />
     </div>
   )
 }

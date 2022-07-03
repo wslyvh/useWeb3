@@ -17,9 +17,7 @@ export function CompanyForm(props: Props) {
   return (
     <div className={className}>
       <h2>Step 1: Organization Info</h2>
-      <p className="muted">
-        Please keep in mind that all the information shared here will be part of your public profile.
-      </p>
+      <p className="muted">Please keep in mind that all the information shared here will be part of your public profile.</p>
 
       <div className={styles.form}>
         <div className={styles.group}>

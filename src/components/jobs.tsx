@@ -22,10 +22,7 @@ export function JobsOverview(props: Props) {
   return (
     <div className={className}>
       <article>
-        <p>
-          Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3
-          ecosystem.
-        </p>
+        <p>Find the latest Web3, Solidity, Ethereum, developer, engineering, product &amp; software jobs in the Web3 ecosystem.</p>
       </article>
 
       <div className={styles.filters}>

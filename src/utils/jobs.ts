@@ -91,17 +91,7 @@ const business = [
 ]
 
 // Marketing & Communications => Generate Pipeline
-const marketing = [
-  'communication',
-  'community',
-  'marketing',
-  'marketer',
-  'growth',
-  'content',
-  'brand',
-  'social',
-  'ambassador',
-]
+const marketing = ['communication', 'community', 'marketing', 'marketer', 'growth', 'content', 'brand', 'social', 'ambassador']
 
 // People & HR => Enable People
 const people = ['people', 'talent', 'hr', 'recruiter', 'recruitment']
@@ -115,47 +105,18 @@ const nontech = ['finance', 'legal', 'compliance', 'corporate', 'office', 'admin
 // Further Specialization for tagging
 // ==
 const backend = ['back-end', 'backend', 'back end', 'blockchain', 'protocol', 'rust', 'python', 'go']
-const frontend = [
-  'front-end',
-  'frontend',
-  'front end',
-  'mobile',
-  'application',
-  'javascript',
-  'typescript',
-  'react',
-  'angular',
-  'html',
-  'css',
-]
+const frontend = ['front-end', 'frontend', 'front end', 'mobile', 'application', 'javascript', 'typescript', 'react', 'angular', 'html', 'css']
 const fullstack = ['full-stack', 'fullstack', 'full stack', 'software', 'engineer']
 const smartcontract = ['smart-contract', 'smart contract', 'solidity', 'vyper', 'yul', 'cairo', 'ethereum']
 const security = ['security', 'audit']
-const devrel = [
-  'developer advocate',
-  'advocate',
-  'developer evangelist',
-  'evangelist',
-  'developer relations',
-  'devrel',
-  'dev rel',
-]
+const devrel = ['developer advocate', 'advocate', 'developer evangelist', 'evangelist', 'developer relations', 'devrel', 'dev rel']
 const devops = ['dev-ops', 'devops', 'dev ops', 'automation', 'cloud', 'sre', 'reliability']
 const qa = ['qa', 'quality', 'test', 'automation']
 const design = ['design', 'graphic', 'visual', 'creative', 'UX', 'UI', '3D', 'video', 'animator', 'animation']
 const management = ['lead', 'chief', 'head', 'director', 'manager']
 const junior = ['junior', 'jr.', 'intern', 'entry', 'associate']
 
-export const DEPARTMENTS = [
-  'Engineering',
-  'Product',
-  'Business',
-  'Marketing',
-  'People',
-  'Operations',
-  'Non-Tech',
-  'Other',
-] as const
+export const DEPARTMENTS = ['Engineering', 'Product', 'Business', 'Marketing', 'People', 'Operations', 'Non-Tech', 'Other'] as const
 export type Department = typeof DEPARTMENTS[number]
 
 export const TYPES = ['Full-time', 'Part-time', 'Contract', 'Internship', 'Volunteer', ''] as const

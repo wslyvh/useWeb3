@@ -26,9 +26,7 @@ export function OrderForm(props: Props) {
   return (
     <div className={className}>
       <h2>Step 3: Contact &amp; Invoice details</h2>
-      <p className="muted">
-        All the information here will not be shared public and is only used for administrative purposes.
-      </p>
+      <p className="muted">All the information here will not be shared public and is only used for administrative purposes.</p>
 
       <div className={styles.form}>
         <div className={styles.group}>
@@ -38,22 +36,18 @@ export function OrderForm(props: Props) {
         <div className={styles.group}>
           <p>
             <b>
-              If you&apos;re planning to post multiple jobs, feel free to skip this payment step and only send a single
-              transaction for all jobs at the end. Or feel free to get in touch!
+              If you&apos;re planning to post multiple jobs, feel free to skip this payment step and only send a single transaction for all jobs at
+              the end. Or feel free to get in touch!
             </b>
           </p>
           <p>
-            If you need approval or can&apos;t complete this transaction right now, no worries! You can always come back
-            to this page using the following link.
+            If you need approval or can&apos;t complete this transaction right now, no worries! You can always come back to this page using the
+            following link.
           </p>
           <ul>
             <li>
               <Link href={orderLink}>{props.job.title}</Link>
-              <i
-                className={`${styles.icon} bi bi-clipboard`}
-                role="button"
-                onClick={() => navigator.clipboard.writeText(orderLink)}
-              />
+              <i className={`${styles.icon} bi bi-clipboard`} role="button" onClick={() => navigator.clipboard.writeText(orderLink)} />
             </li>
           </ul>
         </div>

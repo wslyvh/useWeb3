@@ -45,9 +45,7 @@ export class GasPriceService {
           return null
         }
 
-        const baseFeesPerHr = data
-          .filter((i) => moment(i.created).format('d:H') === `${weekDay}:${hourOfTheDay}`)
-          .map((i) => i.baseFee)
+        const baseFeesPerHr = data.filter((i) => moment(i.created).format('d:H') === `${weekDay}:${hourOfTheDay}`).map((i) => i.baseFee)
         const avg = baseFeesPerHr.length > 0 ? baseFeesPerHr.reduce((a, b) => a + b, 0) / baseFeesPerHr.length : 0
         return avg ? Math.floor(avg) : 0
       })
