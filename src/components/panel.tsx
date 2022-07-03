@@ -181,12 +181,7 @@ export function IssuePanel(props: IssueProps) {
     <Panel className={className} type="neutral" fill stretch>
       <div className={styles.inner}>
         <div className={styles.logo}>
-          <Image
-            src={props.issue.author.avatarUrl}
-            alt={props.issue.author.login}
-            height={64}
-            width={64}
-          />
+          <Image src={props.issue.author.avatarUrl} alt={props.issue.author.login} height={64} width={64} />
           {/* // TODO: With more orgs/repos, replace author with repo images?
           <Image
             src={props.issue.repository.owner.avatarUrl}
@@ -200,23 +195,37 @@ export function IssuePanel(props: IssueProps) {
             <h4>{props.issue.title}</h4>
           </Link>
           <div>
-            <Link href={props.issue.repository.url}>{props.issue.repository.nameWithOwner}</Link> <span className="muted"><i className="bi bi-star"></i> {props.issue.repository.stargazerCount}</span>
+            <Link href={props.issue.repository.url}>{props.issue.repository.nameWithOwner}</Link>{' '}
+            <span className="muted">
+              <i className="bi bi-star"></i> {props.issue.repository.stargazerCount}
+            </span>
           </div>
           <Tags
             className={styles.tags}
-            small withIcons noLinks
+            small
+            withIcons
+            noLinks
             tags={toTags(tags)}
             addToList={
               <li className={styles.primaryLanguage}>
-                <span className={styles.dot} style={{ backgroundColor: props.issue.repository.primaryLanguage.color }}>&nbsp;</span>
+                <span className={styles.dot} style={{ backgroundColor: props.issue.repository.primaryLanguage.color }}>
+                  &nbsp;
+                </span>
                 <span className="muted">{props.issue.repository.primaryLanguage.name}</span>
               </li>
-            } />
+            }
+          />
         </div>
         <div className={styles.stats}>
-          <span className={styles.date + ' muted'}>{props.issue.author.login} <i className="bi bi-person"></i></span>
-          <span className={styles.date + ' muted'}>{moment(props.issue.createdAt).fromNow(false)} <i className="bi bi-clock"></i></span>
-          <span className={styles.date + ' muted'}>{props.issue.commentsCount} <i className="bi bi-chat-text"></i></span>
+          <span className={styles.date + ' muted'}>
+            {props.issue.author.login} <i className="bi bi-person"></i>
+          </span>
+          <span className={styles.date + ' muted'}>
+            {moment(props.issue.createdAt).fromNow(false)} <i className="bi bi-clock"></i>
+          </span>
+          <span className={styles.date + ' muted'}>
+            {props.issue.commentsCount} <i className="bi bi-chat-text"></i>
+          </span>
         </div>
       </div>
     </Panel>

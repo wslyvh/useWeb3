@@ -31,7 +31,7 @@
 
 .link {
   &:hover {
-    >.border {
+    > .border {
       top: -2px;
       left: -2px;
     }
@@ -39,7 +39,7 @@
 }
 
 .fill {
-  >.border {
+  > .border {
     background: #fff; // TODO
   }
 }

@@ -27,13 +27,13 @@ export async function GetRepos(): Promise<Repository[]> {
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+        Accept: 'application/json',
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
       // good-first-issues:>0
       // help-wanted-issues:>0
-      // stars:>10 // 100 // 10000 
+      // stars:>10 // 100 // 10000
       body: JSON.stringify({
         query: `{
           search(
@@ -74,20 +74,22 @@ export async function GetRepos(): Promise<Repository[]> {
               }
             }
           }
-        }`
-      })
+        }`,
+      }),
     })
 
     const body: any = await response.json()
     repos.push(
-      ...body.data.search.nodes.filter((i: any) => !!i.id).map((i: any) => {
-        return {
-          ...i,
-          createdAt: new Date(i.createdAt).getTime(),
-          updatedAt: new Date(i.updatedAt).getTime(),
-          pushedAt: new Date(i.pushedAt).getTime(),
-        }
-      })
+      ...body.data.search.nodes
+        .filter((i: any) => !!i.id)
+        .map((i: any) => {
+          return {
+            ...i,
+            createdAt: new Date(i.createdAt).getTime(),
+            updatedAt: new Date(i.updatedAt).getTime(),
+            pushedAt: new Date(i.pushedAt).getTime(),
+          }
+        })
     )
 
     if (body.data.search.pageInfo.hasNextPage) {
@@ -114,8 +116,8 @@ export async function GetIssues(): Promise<Issue[]> {
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+        Accept: 'application/json',
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -187,32 +189,38 @@ export async function GetIssues(): Promise<Issue[]> {
               }
             }
           }
-        }`
-      })
+        }`,
+      }),
     })
 
     const body: any = await response.json()
     issues.push(
-      ...body.data.search.nodes.filter((i: any) => !!i.id).map((i: any) => {
-        return {
-          ...i,
-          commentsCount: i.comments.totalCount,
-          labels: i.labels?.nodes ? i.labels.nodes.map((l: any) => {
-            return { name: l.name, color: l.color }
-          }) : [],
-          author: i.author ? i.author : {
-            id: 'ghost',
-            login: 'Deleted user',
-            avatarUrl: 'https://avatars.githubusercontent.com/u/10137?v=4',
-            url: 'https://github.com/ghost'
-          },
-          repository: {
-            ...i.repository,
-          },
-          createdAt: new Date(i.createdAt).getTime(),
-          updatedAt: new Date(i.updatedAt).getTime(),
-        }
-      })
+      ...body.data.search.nodes
+        .filter((i: any) => !!i.id)
+        .map((i: any) => {
+          return {
+            ...i,
+            commentsCount: i.comments.totalCount,
+            labels: i.labels?.nodes
+              ? i.labels.nodes.map((l: any) => {
+                  return { name: l.name, color: l.color }
+                })
+              : [],
+            author: i.author
+              ? i.author
+              : {
+                  id: 'ghost',
+                  login: 'Deleted user',
+                  avatarUrl: 'https://avatars.githubusercontent.com/u/10137?v=4',
+                  url: 'https://github.com/ghost',
+                },
+            repository: {
+              ...i.repository,
+            },
+            createdAt: new Date(i.createdAt).getTime(),
+            updatedAt: new Date(i.updatedAt).getTime(),
+          }
+        })
     )
 
     if (body.data.search.pageInfo.hasNextPage) {
