@@ -4,8 +4,7 @@ description: "Forkable Ethereum & Polygon dev stack focused on fast product iter
 authors: ["@lakshh07"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
-url: "[https://github.com/lakshh07/Web3-Starter-Kit](https://github.com/lakshh07/Web3-Starter-Kit)"
-featured: true
+url: "https://github.com/lakshh07/Web3-Starter-Kit"
 dateAdded: 2022-06-16
 level: "All"
 ---
