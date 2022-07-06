@@ -2,7 +2,7 @@
 title: "dev3"
 description: "Learn about Ethereum, DeFi, and the newest tech from the web3 builders making it happen."
 authors: ["@dawsonbotsford"]
-tags: ["Ethereum", "Developers"]
+tags: ["Ethereum", "DevEx"]
 languages: ["English"]
 url: "https://dev3.fm/"
 dateAdded: 2022-07-05
