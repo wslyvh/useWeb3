@@ -26,8 +26,10 @@ async function run() {
   for (const item of stats) {
     if (item === 'gas') {
       text += `- ⛽ Gas Tracker \n`
+    } else if (item === 'contribute') {
+      text += `- ✨ Contribute to OSS \n`
     } else if (item === 'jobs') {
-      text += `- 💼 Jobs \n`
+      text += `- 💼 Web3 Jobs \n`
     } else if (item.endsWith('-jobs')) {
       const category = item.replace('-jobs', '')
       text += `- 💼 ${category.charAt(0).toUpperCase() + category.slice(1)} Jobs \n`
