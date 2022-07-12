@@ -3,12 +3,11 @@ title: "Ethereum Smart Contract Auditor Roadmap"
 description: 'This roadmap provides a step by step approach to become a Ethereum Smart Contract Auditor'
 authors: ['@razzor_tweet']
 level: Beginner
-tags: ['Ethereum', 'Smart Contracts']
-languages: []
+tags: ['Security', 'Smart Contracts']
+languages: ['Solidity']
 url: "https://github.com/razzorsec/AuditorsRoadmap/blob/main/README.md"
-featured:
 date: 2022-07-11
-dateAdded: 
+dateAdded: 2022-07-12
 
 ---
 
