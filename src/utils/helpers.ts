@@ -46,6 +46,10 @@ export function capitalize(text: string) {
   return text.charAt(0).toUpperCase() + text.slice(1)
 }
 
+export function truncate(text: string, num: number = 120) {
+  return text.length > num ? text.slice(0, num > 3 ? num - 3 : num) + '...' : text
+}
+
 export function toTags(values: string[]) {
   return values.map((i) => {
     return {

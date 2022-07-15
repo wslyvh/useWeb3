@@ -1,12 +1,16 @@
 import moment from 'moment'
+import * as dotenv from 'dotenv'
+import fetch from 'cross-fetch'
 import { Issue, Repository } from 'types/issue'
+
+dotenv.config()
 
 if (!process.env.GITHUB_TOKEN) {
   throw new Error('Github API Token not set.')
 }
 
 const cache = new Map()
-const since = moment().subtract(1, 'year').format('YYYY-MM-DD')
+const defaultSince = moment().subtract(1, 'year')
 const orgs = [
   // Protocol
   'ethereum',
@@ -64,8 +68,8 @@ const orgString = `org:${orgs.join(' org:')}`
 // https://docs.github.com/en/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates
 // https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests#search-by-number-of-comments
 
-export async function GetRepos(): Promise<Repository[]> {
-  const cacheKey = `issues.GetRepos`
+export async function GetRepos(since: moment.Moment = defaultSince): Promise<Repository[]> {
+  const cacheKey = `issues.GetRepos-since:${since.format('YYYY-MM-DD')}`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -89,7 +93,7 @@ export async function GetRepos(): Promise<Repository[]> {
           search(
             first: 5, 
             ${cursor}
-            query: "topic:Ethereum is:public archived:false good-first-issues:>0 stars:>10 pushed:>${since} sort:created",
+            query: "topic:Ethereum is:public archived:false good-first-issues:>0 stars:>10 pushed:>${since.format('YYYY-MM-DD')} sort:created",
             type: REPOSITORY
           ) {
             repositoryCount
@@ -153,8 +157,8 @@ export async function GetRepos(): Promise<Repository[]> {
   return repos
 }
 
-export async function GetIssues(): Promise<Issue[]> {
-  const cacheKey = `issues.GetIssues`
+export async function GetIssues(since: moment.Moment = defaultSince): Promise<Issue[]> {
+  const cacheKey = `issues.GetIssues-since:${since.format('YYYY-MM-DD')}`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -175,7 +179,7 @@ export async function GetIssues(): Promise<Issue[]> {
           search(
             first: 100, 
             ${cursor}
-            query: "${orgString} is:open is:issue label:\\"good first issue\\",\\"help wanted\\" created:>${since} sort:created",
+            query: "${orgString} is:open is:issue label:\\"good first issue\\",\\"help wanted\\" created:>${since.format('YYYY-MM-DD')} sort:created",
             type: ISSUE
           ) {
             issueCount
