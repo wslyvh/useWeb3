@@ -26,7 +26,7 @@ async function run() {
   text += `Make your first contribution to any of these 'good first'-issues below.\n\n`
   text += `🛠️  ${issues.length} new issues\n`
 
-  // Send 1st tweet 
+  // Send 1st tweet
   let replyTo = ''
   const response = await twitterClient.post('statuses/update', { status: text })
   if (response.err) {
@@ -51,7 +51,7 @@ async function run() {
     const response = await twitterClient.post('statuses/update', {
       status: reply,
       in_reply_to_status_id: replyTo,
-      auto_populate_reply_metadata: true
+      auto_populate_reply_metadata: true,
     })
     if (response.err) {
       console.log('Unable to post Twitter update..')
