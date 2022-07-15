@@ -43,7 +43,7 @@ async function run() {
     const item = issues[i]
     let body = `➡️ ${item.repository.nameWithOwner}\n\n`
     if (item.repository.primaryLanguage.name) {
-      body += `Main language: ${item.repository.primaryLanguage.name}`
+      body += `Main language: #${item.repository.primaryLanguage.name}`
     }
 
     const remainingLength = 280 - (body.length + 25 + 15) // domain + extra/spacing/numbering
