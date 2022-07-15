@@ -7,7 +7,22 @@ if (!process.env.GITHUB_TOKEN) {
 
 const cache = new Map()
 const since = moment().subtract(1, 'year').format('YYYY-MM-DD')
-const orgs = ['ethereum', 'privacy-scaling-explorations']
+const orgs = [
+  // Protocol
+  'ethereum',
+  // Applied ZK
+  'privacy-scaling-explorations', 'semaphore-protocol', 'zkopru-network', 'quadratic-funding', 'web3well', 'Zokrates',
+  // Dev tooling & infra
+  'NomicFoundation', 'dethcrypto', 'crytic', 'scaffold-eth', 'blockchain-etl', 'ethereum-lists', 'ChainAgnostic', 'Web3Modal', 'TrueFiEng', 'goerli', 'WalletConnect',
+  // Libs & SDKs
+  'eth-brownie', 'dapphub', 'foundry-rs', 'vyperlang', 'ethereumjs', 'ethers-io', 'web3ui', 'web3p', 'web3j',
+  // CL
+  'prysmaticlabs', 'sigp', 'ConsenSys', 'status-im', 'ChainSafe', // Prysm, Lighthouse, Teku, Nimbus, lodestar
+  // EL:
+  'ledgerwatch', 'NethermindEth', 'hyperledger', // 'ethereum' (geth), Erigon, Nethermind, Besu
+  // L2/scalability: 
+  'l2beat', 'ethereum-optimism', 'OffchainLabs', 'matter-labs', 'hermeznetwork', 'maticnetwork', 'AztecProtocol',
+]
 const orgString = `org:${orgs.join(' org:')}`
 
 // Github docs
@@ -202,17 +217,17 @@ export async function GetIssues(): Promise<Issue[]> {
             commentsCount: i.comments.totalCount,
             labels: i.labels?.nodes
               ? i.labels.nodes.map((l: any) => {
-                  return { name: l.name, color: l.color }
-                })
+                return { name: l.name, color: l.color }
+              })
               : [],
             author: i.author
               ? i.author
               : {
-                  id: 'ghost',
-                  login: 'Deleted user',
-                  avatarUrl: 'https://avatars.githubusercontent.com/u/10137?v=4',
-                  url: 'https://github.com/ghost',
-                },
+                id: 'ghost',
+                login: 'Deleted user',
+                avatarUrl: 'https://avatars.githubusercontent.com/u/10137?v=4',
+                url: 'https://github.com/ghost',
+              },
             repository: {
               ...i.repository,
             },

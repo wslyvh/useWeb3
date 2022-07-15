@@ -174,14 +174,18 @@ export function IssuePanel(props: IssueProps) {
     <Panel className={className} type="neutral" fill stretch>
       <div className={styles.inner}>
         <div className={styles.logo}>
-          <Image src={props.issue.author.avatarUrl} alt={props.issue.author.login} height={64} width={64} />
-          {/* // TODO: With more orgs/repos, replace author with repo images?
+          {/* <Image 
+            src={props.issue.author.avatarUrl} 
+            alt={props.issue.author.login} 
+            height={64} 
+            width={64} /> */}
+          {/* // TODO: With more orgs/repos, replace author with repo images?*/}
           <Image
             src={props.issue.repository.owner.avatarUrl}
             alt={props.issue.repository.owner.login}
             height={64}
             width={64}
-          /> */}
+          /> 
         </div>
         <div className={styles.body}>
           <Link href={props.issue.url}>
@@ -199,13 +203,12 @@ export function IssuePanel(props: IssueProps) {
             withIcons
             noLinks
             tags={toTags(tags)}
-            addToList={
-              <li className={styles.primaryLanguage}>
-                <span className={styles.dot} style={{ backgroundColor: props.issue.repository.primaryLanguage.color }}>
-                  &nbsp;
-                </span>
-                <span className="muted">{props.issue.repository.primaryLanguage.name}</span>
-              </li>
+            addToList={props.issue.repository.primaryLanguage && <li className={styles.primaryLanguage}>
+              <span className={styles.dot} style={{ backgroundColor: props.issue.repository.primaryLanguage.color }}>
+                &nbsp;
+              </span>
+              <span className="muted">{props.issue.repository.primaryLanguage.name}</span>
+            </li>
             }
           />
         </div>
