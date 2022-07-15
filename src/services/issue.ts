@@ -67,7 +67,6 @@ const orgString = `org:${orgs.join(' org:')}`
 export async function GetRepos(): Promise<Repository[]> {
   const cacheKey = `issues.GetRepos`
   if (cache.has(cacheKey)) {
-    console.log('GET from cache', cacheKey)
     return cache.get(cacheKey)
   }
 
@@ -157,7 +156,6 @@ export async function GetRepos(): Promise<Repository[]> {
 export async function GetIssues(): Promise<Issue[]> {
   const cacheKey = `issues.GetIssues`
   if (cache.has(cacheKey)) {
-    console.log('GET from cache', cacheKey)
     return cache.get(cacheKey)
   }
 
