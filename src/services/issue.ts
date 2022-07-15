@@ -11,17 +11,52 @@ const orgs = [
   // Protocol
   'ethereum',
   // Applied ZK
-  'privacy-scaling-explorations', 'semaphore-protocol', 'zkopru-network', 'quadratic-funding', 'web3well', 'Zokrates',
+  'privacy-scaling-explorations',
+  'semaphore-protocol',
+  'zkopru-network',
+  'quadratic-funding',
+  'web3well',
+  'Zokrates',
   // Dev tooling & infra
-  'NomicFoundation', 'dethcrypto', 'crytic', 'scaffold-eth', 'blockchain-etl', 'ethereum-lists', 'ChainAgnostic', 'Web3Modal', 'TrueFiEng', 'goerli', 'WalletConnect',
+  'NomicFoundation',
+  'dethcrypto',
+  'crytic',
+  'scaffold-eth',
+  'blockchain-etl',
+  'ethereum-lists',
+  'ChainAgnostic',
+  'Web3Modal',
+  'TrueFiEng',
+  'goerli',
+  'WalletConnect',
   // Libs & SDKs
-  'eth-brownie', 'dapphub', 'foundry-rs', 'vyperlang', 'ethereumjs', 'ethers-io', 'web3ui', 'web3p', 'web3j',
+  'eth-brownie',
+  'dapphub',
+  'foundry-rs',
+  'vyperlang',
+  'ethereumjs',
+  'ethers-io',
+  'web3ui',
+  'web3p',
+  'web3j',
   // CL
-  'prysmaticlabs', 'sigp', 'ConsenSys', 'status-im', 'ChainSafe', // Prysm, Lighthouse, Teku, Nimbus, lodestar
+  'prysmaticlabs',
+  'sigp',
+  'ConsenSys',
+  'status-im',
+  'ChainSafe', // Prysm, Lighthouse, Teku, Nimbus, lodestar
   // EL:
-  'ledgerwatch', 'NethermindEth', 'hyperledger', // 'ethereum' (geth), Erigon, Nethermind, Besu
-  // L2/scalability: 
-  'l2beat', 'ethereum-optimism', 'OffchainLabs', 'matter-labs', 'hermeznetwork', 'maticnetwork', 'AztecProtocol',
+  'ledgerwatch',
+  'NethermindEth',
+  'hyperledger', // 'ethereum' (geth), Erigon, Nethermind, Besu
+  // L2/scalability:
+  'l2beat',
+  'ethereum-optimism',
+  'OffchainLabs',
+  'matter-labs',
+  'hermeznetwork',
+  'maticnetwork',
+  'AztecProtocol',
 ]
 const orgString = `org:${orgs.join(' org:')}`
 
