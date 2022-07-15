@@ -67,6 +67,7 @@ const orgString = `org:${orgs.join(' org:')}`
 export async function GetRepos(): Promise<Repository[]> {
   const cacheKey = `issues.GetRepos`
   if (cache.has(cacheKey)) {
+    console.log('GET from cache', cacheKey)
     return cache.get(cacheKey)
   }
 
@@ -149,12 +150,14 @@ export async function GetRepos(): Promise<Repository[]> {
     }
   }
 
+  cache.set(cacheKey, repos)
   return repos
 }
 
 export async function GetIssues(): Promise<Issue[]> {
   const cacheKey = `issues.GetIssues`
   if (cache.has(cacheKey)) {
+    console.log('GET from cache', cacheKey)
     return cache.get(cacheKey)
   }
 
@@ -252,17 +255,17 @@ export async function GetIssues(): Promise<Issue[]> {
             commentsCount: i.comments.totalCount,
             labels: i.labels?.nodes
               ? i.labels.nodes.map((l: any) => {
-                  return { name: l.name, color: l.color }
-                })
+                return { name: l.name, color: l.color }
+              })
               : [],
             author: i.author
               ? i.author
               : {
-                  id: 'ghost',
-                  login: 'Deleted user',
-                  avatarUrl: 'https://avatars.githubusercontent.com/u/10137?v=4',
-                  url: 'https://github.com/ghost',
-                },
+                id: 'ghost',
+                login: 'Deleted user',
+                avatarUrl: 'https://avatars.githubusercontent.com/u/10137?v=4',
+                url: 'https://github.com/ghost',
+              },
             repository: {
               ...i.repository,
             },
@@ -279,5 +282,6 @@ export async function GetIssues(): Promise<Issue[]> {
     }
   }
 
+  cache.set(cacheKey, issues)
   return issues
 }
