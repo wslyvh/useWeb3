@@ -2,7 +2,7 @@ name: Latest Issues tweet
 
 on:
   schedule:
-    - cron: "0 13 * * 3"
+    - cron: "0 13 * * 4"
   workflow_dispatch:
 
 jobs:

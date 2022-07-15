@@ -23,9 +23,10 @@ async function run() {
   console.log('')
 
   let text = `Contribute to open-source Web3 projects ✨\n\n`
-  text += `Make your first contribution to any of these 'good first'-issues below.\n\n`
-  text += `🛠️  ${issues.length} new issues\n`
+  text += `Make your first contribution to any of these 'good first'-issues below 🌈\n\n`
+  text += `${issues.length} new issues this week 🛠️`
 
+  console.log(text)
   // Send 1st tweet
   let replyTo = ''
   const response = await twitterClient.post('statuses/update', { status: text })
