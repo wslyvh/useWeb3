@@ -22,12 +22,12 @@ async function run() {
   console.log('Issues since', since.toISOString(), issues.length)
   console.log('')
 
+  // Send 1st tweet
   let text = `Contribute to open-source Web3 projects ✨\n\n`
   text += `Make your first contribution to any of these 'good first'-issues below 🌈\n\n`
   text += `${issues.length} new issues this week 🛠️`
-
   console.log(text)
-  // Send 1st tweet
+
   let replyTo = ''
   const response = await twitterClient.post('statuses/update', { status: text })
   if (response.err) {
@@ -38,6 +38,7 @@ async function run() {
     replyTo = response.data.id_str
   }
 
+  // Sent tweet per issue
   for (let i = 0; i < issues.length; i++) {
     console.log(`Issue #${i}. Replying to ${replyTo}`)
     const item = issues[i]
@@ -48,7 +49,6 @@ async function run() {
 
     const remainingLength = 280 - (body.length + 25 + 15) // domain + extra/spacing/numbering
     const reply = `${i + 1}. ${truncate(item.title, remainingLength)}\n\n${body}\n\n${item.url}`
-
     const response = await twitterClient.post('statuses/update', {
       status: reply,
       in_reply_to_status_id: replyTo,
@@ -61,5 +61,21 @@ async function run() {
     if (response.data) {
       replyTo = response.data.id_str
     }
+  }
+
+  // Sent last tweet 
+  text = `These are just the latest from last week..\n\n`
+  text += `Browse more than +500 'Good first'-issues on core protocol, developer tooling, infra, SDKs, consensus and execution clients, L2's, etc. 🛠️\n\n`
+  text += `https://www.useweb3.xyz/contribute`
+  console.log(text)
+
+  const responseLast = await twitterClient.post('statuses/update', {
+    status: text,
+    in_reply_to_status_id: replyTo,
+    auto_populate_reply_metadata: true,
+  })
+  if (responseLast.err) {
+    console.log('Unable to post Twitter update..')
+    console.error(responseLast.err)
   }
 }
