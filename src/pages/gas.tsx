@@ -23,7 +23,7 @@ interface Props {
 }
 
 export default function Index(props: Props) {
-  const { gasPrice, priorityFee }  = useGasPrice(15000)
+  const { gasPrice, priorityFee } = useGasPrice(15000)
   const etherPrice = useEtherPrice(15000)
   const title = gasPrice > 0 ? `${gasPrice} Gwei` : 'Ethereum Gas tracker'
 
@@ -33,7 +33,9 @@ export default function Index(props: Props) {
       <TopnavLayout className={styles.container} title="Ethereum Gas tracker">
         <section>
           <p>
-            <Panel fill >⛽ {gasPrice > 0 ? gasPrice : '-'} Max fee | {priorityFee > 0 ? priorityFee : '-'} priority</Panel>
+            <Panel fill>
+              ⛽ {gasPrice > 0 ? gasPrice : '-'} Max fee | {priorityFee > 0 ? priorityFee : '-'} priority
+            </Panel>
           </p>
         </section>
         <article>
