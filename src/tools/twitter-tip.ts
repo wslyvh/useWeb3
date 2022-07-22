@@ -26,5 +26,4 @@ async function run() {
       console.log(`https://twitter.com/useWeb3/status/${response.data.id_str}`)
     }
   }
-
 }

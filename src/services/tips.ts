@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv'
-import Airtable from "airtable"
+import Airtable from 'airtable'
 
 dotenv.config()
 
