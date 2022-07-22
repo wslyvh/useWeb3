@@ -2,10 +2,9 @@
 title: "Solidity, Blockchain, and Smart Contract Course – Beginner to Expert Python Tutorial"
 description: "This course will give you a full introduction into all of the core concepts in blockchain, smart contracts, solidity, NFTs/ERC721s, upgrades, and more."
 authors: ["@PatrickAlphaC"]
-tags: ["DeFi","NFT","Dapp","Cryptography","Smart Contracts","UX & Design","Storage"]
+tags: ["Dapp","Cryptography","Smart Contracts","UX & Design"]
 languages: ["Solidity","Python"]
 url: "https://www.youtube.com/watch?v=M576WGiDBdQ"
-featured: true
 dateAdded: 2021-09-10
 level: "Beginner"
 date: 2021-09-09
