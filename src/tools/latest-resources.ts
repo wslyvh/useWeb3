@@ -19,7 +19,7 @@ async function run() {
   console.log('New Resources since', since.toISOString(), recent.length)
   console.log('')
 
-  // If no items - don't post 
+  // If no items - don't post
   if (recent.length === 0) return
 
   const twitterClient = new Twit({
@@ -29,7 +29,7 @@ async function run() {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
   })
 
-  // If just 1 item, but as single tweet 
+  // If just 1 item, but as single tweet
   if (recent.length === 1) {
     const item = recent[0]
     const category = categories.find((i) => i.id === item.category.id)
@@ -79,7 +79,7 @@ by ${item.authors.join(' ')}
 ${i + 1}/${recent.length}
 
 ${item.url}`
-    
+
     const response = await twitterClient.post('statuses/update', {
       status: text,
       in_reply_to_status_id: replyTo,
