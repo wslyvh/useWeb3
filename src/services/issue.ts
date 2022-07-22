@@ -5,7 +5,7 @@ import { Issue, Repository } from 'types/issue'
 
 dotenv.config()
 
-if (!process.env.GITHUB_TOKEN) {
+if (!process.env.ISSUES_GITHUB_TOKEN) {
   throw new Error('Github API Token not set.')
 }
 
@@ -82,7 +82,7 @@ export async function GetRepos(since: moment.Moment = defaultSince): Promise<Rep
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.ISSUES_GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
       // good-first-issues:>0
@@ -171,7 +171,7 @@ export async function GetIssues(since: moment.Moment = defaultSince): Promise<Is
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.ISSUES_GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
