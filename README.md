@@ -64,6 +64,18 @@ Variables:
     AIRTABLE_API_BASE=
 ```
 
+## Twitter Schedule
+useWeb3 Schedules
+
+- Random daily resource: "30 15 * * *" - daily 
+- Most popular (categories): "0 15 * * 0" - sunday
+- GM: "0 10 * * 1" - monday
+- Random tip: "30 16 * * 2" - tuesday 
+- Latest resources: "30 14 * * 3" - wednesday 
+- Latest issues: "0 13 * * 4" - thursday 
+- Coolest thing you did last week: "0 14 * * 5" - friday
+- Most popular (resources): "0 15 * * 6" - saturday
+
 # Powered by
 
 [![Powered by Vercel](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg "Powered by Vercel")](https://vercel.com/?utm_source=useWeb3&utm_campaign=oss)

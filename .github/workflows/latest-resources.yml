@@ -1,11 +1,13 @@
-name: Show Lastest
+name: Tweet Lastest Resources
 
 on:
+  schedule:
+    - cron: "30 14 * * 3"
   workflow_dispatch:
 
 jobs:
   build:
-    name: Show Lastest
+    name: Lastest Resources
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -16,5 +18,5 @@ jobs:
           node-version: '16.x'
       - name: Install Dependencies
         run: yarn install
-      - name: Show Lastest Resources
-        run: yarn latest
+      - name: Get Lastest Resources
+        run: yarn latest:resources
