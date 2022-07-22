@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import { useInterval } from './useInterval'
 
 export function useGasPrice(interval: number = 15000) {
-  const [price, setPrice] = useState<number>(0)
+  const [gasPrice, setGasPrice] = useState<number>(0)
+  const [priorityFee, setPriorityFee] = useState<number>(0)
 
   useEffect(() => {
     async function asyncEffect() {
@@ -23,14 +24,17 @@ export function useGasPrice(interval: number = 15000) {
       const provider = getDefaultProvider()
       const feeData = await provider.getFeeData()
 
-      if (feeData && feeData.maxFeePerGas) {
-        const price = Math.round(Number(formatUnits(feeData.maxFeePerGas, 'gwei')))
-        setPrice(price)
+      if (feeData.maxFeePerGas && feeData.maxPriorityFeePerGas) {
+        const gasPrice = Math.round(Number(formatUnits(feeData.maxFeePerGas, 'gwei')))
+        const priorityFee = Math.round(Number(formatUnits(feeData.maxPriorityFeePerGas, 'gwei')) * 10) / 10
+
+        setGasPrice(gasPrice)
+        setPriorityFee(priorityFee)
       }
     } catch (e) {
       // Unable to fetch fee data
     }
   }
 
-  return price
+  return { gasPrice, priorityFee }
 }

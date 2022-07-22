@@ -13,6 +13,9 @@ import Link from 'next/link'
 import { GasData } from 'components/gas-data'
 import { GasTable } from 'components/gas-table'
 import { TopnavLayout } from 'components/layouts/topnav'
+import { Panel } from 'components/panel'
+import { useEtherPrice } from 'hooks/useEtherPrice'
+import { useGasPrice } from 'hooks/useGasPrice'
 
 interface Props {
   categories: Array<Category>
@@ -20,10 +23,19 @@ interface Props {
 }
 
 export default function Index(props: Props) {
+  const { gasPrice, priorityFee }  = useGasPrice(15000)
+  const etherPrice = useEtherPrice(15000)
+  const title = gasPrice > 0 ? `${gasPrice} Gwei` : 'Ethereum Gas tracker'
+
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title="Ethereum Gas tracker" divider="⛽" description="Monitor and track the Ethereum gas price to reduce transaction fees save money." />
+      <SEO title={title} divider="⛽" description="Monitor and track the Ethereum gas price to reduce transaction fees save money." />
       <TopnavLayout className={styles.container} title="Ethereum Gas tracker">
+        <section>
+          <p>
+            <Panel fill >⛽ {gasPrice > 0 ? gasPrice : '-'} Max fee | {priorityFee > 0 ? priorityFee : '-'} priority</Panel>
+          </p>
+        </section>
         <article>
           <p>
             Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works is key to efficiently use and
@@ -35,7 +47,7 @@ export default function Index(props: Props) {
 
         <article className="markdown">
           <h2>Average Ethereum Transaction costs</h2>
-          <GasTable />
+          <GasTable gasPrice={gasPrice} etherPrice={etherPrice} />
         </article>
 
         <article className="markdown">
