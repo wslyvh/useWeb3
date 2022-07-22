@@ -14,6 +14,7 @@
     "twitter:last-week": "ts-node src/tools/twitter-last-week",
     "twitter:popular": "ts-node src/tools/twitter-popular",
     "twitter:random": "ts-node src/tools/twitter-random",
+    "twitter:tip": "ts-node src/tools/twitter-tip",
     "twitter:top": "ts-node src/tools/twitter-top",
     "gas:fetch": "ts-node src/tools/gas-fetch"
   },
