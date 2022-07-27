@@ -3,7 +3,7 @@ import Airtable from 'airtable'
 
 dotenv.config()
 
-if (!process.env.AIRTABLE_API_KEY || !process.env.AIRTABLE_API_KEY) {
+if (!process.env.AIRTABLE_API_BASE || !process.env.AIRTABLE_API_KEY) {
   throw new Error('Airtable API Base or Key not set.')
 }
 

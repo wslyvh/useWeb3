@@ -21,6 +21,8 @@ jobs:
       - name: Run Twitter bot
         run: yarn twitter:tip
         env:
+          AIRTABLE_API_BASE: ${{ secrets.AIRTABLE_API_BASE }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}

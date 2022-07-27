@@ -16,6 +16,7 @@ async function run() {
   })
 
   const text = await GetRandomTip()
+  
   if (text) {
     const response = await twitterClient.post('statuses/update', { status: text })
     if (response.err) {
