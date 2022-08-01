@@ -1,7 +1,7 @@
 ---
 title: "Web3-Starter-Kit"
 description: "Forkable Ethereum & Polygon dev stack focused on fast product iterations"
-authors: ["@lakshh07"]
+authors: ["@LakshayMaini_"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
 url: "https://github.com/lakshh07/Web3-Starter-Kit"
