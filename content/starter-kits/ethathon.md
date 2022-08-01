@@ -2,7 +2,7 @@
 title: "ETHathon Full-Stack DApp Boilerplate"
 description: "Highly-integrated, fast, and type-safe monorepo with NextJS, Tailwind, Hardhat, wagmi.sh, and Rainbowkit."
 authors: ["@dennis_zoma"]
-tags: ["Smart Contracts","Dapp","Monorepo"]
+tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","TypeScript","Vyper","JavaScript"]
 url: "https://github.com/ethathon/ethathon"
 dateAdded: 2022-07-30
