@@ -1,0 +1,12 @@
+---
+title: "Revolut"
+description: "Learn crypto, earn crypto
+authors: ["@strel"]
+tags: []
+languages: []
+url: "https://www.revolut.com/go-from-cash-to-crypto-instantly"
+dateAdded: 2022-08-10
+level: "All"
+---
+
+Take short, simple courses to learn the basics of crypto. Pass a quick quiz and earn free tokens, added directly to your balance.
