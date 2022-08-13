@@ -40,6 +40,8 @@ async function run() {
 
   // Sent tweet per issue
   for (let i = 0; i < issues.length; i++) {
+    await new Promise(r => setTimeout(r, 1000))
+
     console.log(`Issue #${i}. Replying to ${replyTo}`)
     const item = issues[i]
     let body = `➡️ ${item.repository.nameWithOwner}\n\n`
@@ -64,6 +66,7 @@ async function run() {
   }
 
   // Sent last tweet
+  await new Promise(r => setTimeout(r, 1000))
   text = `These are just the latest from last week..\n\n`
   text += `Browse more than +500 'Good first'-issues on core protocol, developer tooling, infra, SDKs, consensus and execution clients, L2's, etc. 🛠️\n\n`
   text += `https://www.useweb3.xyz/contribute`
