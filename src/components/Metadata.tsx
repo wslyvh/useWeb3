@@ -26,7 +26,7 @@ export function Metadata(props: Props) {
         return `{
           "@context": "https://schema.org",
           "@type": "Course",
-          "name": "${item.title},
+          "name": "${item.title}",
           "description": "${item.description}",
           "provider": {
             "@type": "Organization",
@@ -51,7 +51,7 @@ export function Metadata(props: Props) {
       return `{
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "${item.title},
+        "headline": "${item.title}",
         "description": "${item.description}",
         "datePublished": "${item.date ? new Date(item.date).toISOString() : new Date(item.dateAdded).toISOString()}",
         "dateModified": "${new Date(item.dateAdded).toISOString()}",
