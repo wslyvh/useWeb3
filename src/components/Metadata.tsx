@@ -55,22 +55,22 @@ export function Metadata(props: Props) {
         "description": "${item.description}",
         "datePublished": "${item.date ? new Date(item.date).toISOString() : new Date(item.dateAdded).toISOString()}",
         "dateModified": "${new Date(item.dateAdded).toISOString()}",
-        ${
-          item.authors.length > 0 && {
-            author: item.authors.map((i) => {
-              return `{
+        ${item.authors.length > 0 && `
+          "author": ${item.authors.map((i) => {
+            return `{
               "@type": "Person",
               "name": "${i}",
               "url": "https://twitter.com/${i}"
             }`
-            }),
-          }
+          })}`
         }
       }`
     }
 
     return ``
   }
+
+  console.log('ARTICLE', generateJsonLd())
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: generateJsonLd() }} key="event-jsonld" />
 }
