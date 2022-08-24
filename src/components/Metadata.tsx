@@ -55,7 +55,9 @@ export function Metadata(props: Props) {
         "description": "${item.description}",
         "datePublished": "${item.date ? new Date(item.date).toISOString() : new Date(item.dateAdded).toISOString()}",
         "dateModified": "${new Date(item.dateAdded).toISOString()}",
-        ${item.authors.length > 0 && `
+        ${
+          item.authors.length > 0 &&
+          `
           "author": ${item.authors.map((i) => {
             return `{
               "@type": "Person",
