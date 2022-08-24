@@ -19,6 +19,7 @@ import { marked } from 'marked'
 import { useRouter } from 'next/router'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { Panel } from 'components/panel'
+import { Metadata } from 'components/Metadata'
 
 interface Props {
   categories: Array<Category>
@@ -41,6 +42,7 @@ export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={props.item.title} description={props.item.description} />
+      <Metadata type='content' data={props.item} />
 
       <TopnavLayout className={styles.container} title={props.item.title}>
         <ul className={styles.properties}>
