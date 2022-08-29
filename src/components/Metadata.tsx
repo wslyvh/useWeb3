@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { Job } from 'types/job'
 import { ContentItem } from 'types/content-item'
+import { MENU_ITEMS } from './layouts/header'
 
 interface Props {
   type: 'content' | 'job'
@@ -48,6 +49,26 @@ export function Metadata(props: Props) {
         // Video
       }
 
+      let authors = ''
+      if (item.authors.length === 1) {
+        authors = `"author": ${item.authors.map((i) => {
+          return `{
+            "@type": "Person",
+            "name": "${i}",
+            "url": "https://twitter.com/${i}"
+          }`
+        })}`
+      }
+      if (item.authors.length > 1) {
+        authors = `"author": [${item.authors.map((i) => {
+          return `{
+            "@type": "Person",
+            "name": "${i}",
+            "url": "https://twitter.com/${i}"
+          }`
+        })}]`
+      }
+
       return `{
         "@context": "https://schema.org",
         "@type": "Article",
@@ -55,24 +76,14 @@ export function Metadata(props: Props) {
         "description": "${item.description}",
         "datePublished": "${item.date ? new Date(item.date).toISOString() : new Date(item.dateAdded).toISOString()}",
         "dateModified": "${new Date(item.dateAdded).toISOString()}",
-        ${
-          item.authors.length > 0 &&
-          `
-          "author": ${item.authors.map((i) => {
-            return `{
-              "@type": "Person",
-              "name": "${i}",
-              "url": "https://twitter.com/${i}"
-            }`
-          })}`
-        }
+        ${authors}
       }`
     }
 
     return ``
   }
 
-  console.log('ARTICLE', generateJsonLd())
+  // console.log('JSON DATA', generateJsonLd())
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: generateJsonLd() }} key="event-jsonld" />
 }
