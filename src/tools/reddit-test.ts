@@ -46,7 +46,7 @@ async function run() {
     clientId: process.env.REDDIT_CLIENT_ID,
     clientSecret: process.env.REDDIT_CLIENT_SECRET,
     username: process.env.REDDIT_USERNAME,
-    password: process.env.REDDIT_PASSWORD
+    password: process.env.REDDIT_PASSWORD,
   })
 
   // console.log('GET Flairs')
@@ -60,7 +60,7 @@ async function run() {
     query: `${subsQuery} AND ${flairsQuery}`,
     time: 'week',
     sort: 'top',
-    limit: 20
+    limit: 20,
   })
   results.forEach((i) => {
     console.log(`- ${i.created_utc} ${i.subreddit_name_prefixed} (${i.link_flair_text})`)
@@ -68,7 +68,7 @@ async function run() {
     console.log(i.url)
     console.log()
   })
-    
+
   // console.log('SUBMIT Link')
   // client.getSubreddit('ethereumnoobies').submitLink({
   //   subredditName: 'ethereumnoobies',
