@@ -17,7 +17,8 @@
     "twitter:random": "ts-node src/tools/twitter-random",
     "twitter:tip": "ts-node src/tools/twitter-tip",
     "twitter:top": "ts-node src/tools/twitter-top",
-    "gas:fetch": "ts-node src/tools/gas-fetch"
+    "gas:fetch": "ts-node src/tools/gas-fetch",
+    "reddit:test": "ts-node src/tools/reddit-test"
   },
   "dependencies": {
     "@ethersproject/providers": "^5.5.3",
@@ -43,6 +44,7 @@
     "react-slick": "^0.28.1",
     "sass": "^1.41.1",
     "slugify": "^1.6.1",
+    "snoowrap": "^1.23.0",
     "twit": "^2.2.11",
     "web3modal": "^1.9.5"
   },
