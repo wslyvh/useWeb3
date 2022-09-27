@@ -6,5 +6,5 @@ export const IMAGE_OG = `${SITE_URL}images/social.png`
 export const SOCIAL_HANDLE = '@useWeb3'
 export const DOMAIN = 'useweb3.xyz'
 
-export const DEFAULT_REVALIDATE_PERIOD = 3600
+export const DEFAULT_REVALIDATE_PERIOD = 14400
 export const DEFAULT_MAX_ITEMS = 20
