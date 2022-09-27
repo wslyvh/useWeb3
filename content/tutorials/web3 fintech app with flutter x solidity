@@ -1,0 +1,13 @@
+---
+title: "Create a fintech app with Solidity and Flutter"
+description: "Create a fintech app to send and receive ERC20 tokens"
+authors: ["@karanja3093"]
+tags: ['Mobile', 'Flutter']
+languages: ["Solidity","Flutter","Dart"]
+url: "https://medium.com/@AllanKaranja/create-a-web-3-x-flutter-android-app-2db458a0f0d8"
+dateAdded: 2022-09-16
+level: "Beginner"
+date: 2022-09-16
+---
+
+This tutorial is to build a fintech app that allows you to send and receive ERC20 tokens using web3dart. After you can move to more complex smart contracts. 
