@@ -1,8 +1,6 @@
 import React from 'react'
-import Head from 'next/head'
 import { Job } from 'types/job'
 import { ContentItem } from 'types/content-item'
-import { MENU_ITEMS } from './layouts/header'
 
 interface Props {
   type: 'content' | 'job'
@@ -10,7 +8,7 @@ interface Props {
 }
 
 export function Metadata(props: Props) {
-  console.log('Generating JSON-LD', props.type, 'metadata..', props.data)
+  // console.log('Generating JSON-LD', props.type, 'metadata..', props.data)
 
   function generateJsonLd() {
     if (props.type === 'job') {
