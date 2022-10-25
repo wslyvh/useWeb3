@@ -2,7 +2,7 @@
 title: "UMA Grants for Developer Support"
 description: "UMA offers grants for the provision of tooling, support and education for developers seeking to build on UMA "
 authors: ["@UMAprotocol"]
-tags: ['Oracle']
+tags: ['Oracles']
 url: "https://sites.google.com/umaproject.org/umagrants/home"
 dateAdded: 2022-10-25
 ---
