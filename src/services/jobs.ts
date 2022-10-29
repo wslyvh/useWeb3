@@ -1,3 +1,4 @@
+import * as dotenv from 'dotenv'
 import Airtable, { Record, FieldSet } from 'airtable'
 import { Organization } from 'types/org'
 import { Job } from 'types/job'
@@ -13,6 +14,9 @@ import {
 } from './jobs/index'
 import { defaultSlugify, isEmail } from 'utils/helpers'
 import { getJobTags } from 'utils/jobs'
+import { SITE_URL } from 'utils/constants'
+
+dotenv.config()
 
 if (!process.env.AIRTABLE_API_KEY || !process.env.AIRTABLE_API_KEY) {
   throw new Error('Airtable API Base or Key not set.')
@@ -168,14 +172,17 @@ export function toOrganization(source: Record<FieldSet>): Organization {
     recordId: source.fields['recordId'],
   } as Organization
 
-  if (source.fields['logo'] && Array.isArray(source.fields['logo']) && (source.fields['logo'] as any[]).length > 0) {
-    org.logo = (source.fields['logo'] as any[])[0].url
-  }
+  // Remove Logo from Airtable/attachments
+  // if (source.fields['logo'] && Array.isArray(source.fields['logo']) && (source.fields['logo'] as any[]).length > 0) {
+  //   org.logo = (source.fields['logo'] as any[])[0].url
+  // }
   if (source.fields['website']) {
     org.website = (source.fields['website'] as string) ?? ''
   }
   if (source.fields['twitter']) {
-    org.twitter = (source.fields['twitter'] as string) ?? ''
+    const handle = (source.fields['twitter'] as string) ?? ''
+    org.twitter = handle
+    org.logo = `${SITE_URL}assets/orgs/${handle.replace('@', '')}.png`
   }
   if (source.fields['github']) {
     org.github = (source.fields['github'] as string) ?? ''

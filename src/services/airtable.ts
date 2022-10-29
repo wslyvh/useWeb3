@@ -27,11 +27,12 @@ export class AirtableService {
       twitter: org.twitter,
       github: org.github,
       externalBoardUrl: org.externalBoardUrl,
-      logo: [
-        {
-          url: org.logo,
-        } as any,
-      ],
+      // Remove Logo from Airtable/attachments
+      // logo: [
+      //   {
+      //     url: org.logo,
+      //   } as any,
+      // ],
     })
 
     if (!response.id) {

@@ -1,0 +1,32 @@
+name: Import Org logos
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Import Pretalx schedule
+        run: yarn org:import
+        env:
+          PRETALX_API_KEY: ${{ secrets.PRETALX_API_KEY }}
+
+      - name: Commit updates
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: 'CI Logo import'

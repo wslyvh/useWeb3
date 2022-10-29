@@ -61,6 +61,8 @@ export function CompanyForm(props: Props) {
           readOnly={!!props.org.id}
         />
 
+        {/* 
+        // Remove Logo from Airtable/attachments
         <FormInput
           id="logo"
           name="Logo Url"
@@ -69,7 +71,7 @@ export function CompanyForm(props: Props) {
           value={props.org.logo}
           onChange={(value) => props.onChange({ ...props.org, logo: value })}
           readOnly={!!props.org.id}
-        />
+        /> */}
 
         <FormInput
           id="website"
