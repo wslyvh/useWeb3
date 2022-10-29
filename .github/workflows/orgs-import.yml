@@ -20,10 +20,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Import Pretalx schedule
+      - name: Import org logos
         run: yarn org:import
         env:
-          PRETALX_API_KEY: ${{ secrets.PRETALX_API_KEY }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_API_BASE: ${{ secrets.AIRTABLE_API_BASE }}
 
       - name: Commit updates
         uses: EndBug/add-and-commit@v9
