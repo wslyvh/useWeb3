@@ -2,14 +2,13 @@
 title: "Solidity Starters: A Beginners Friendly book"
 description: "A Beginners Friendly book to Learn Smart contract development with solidity language, Fundamentals of solidity, Beginners guide to solidity & Ethereum blockchain programming 2022."
 authors: ["Crytoineer Inc"]
-tags: ["Solidity,Smart contract Development,Web3,Solidity Essentials"]
-languages: [English]
+tags: ["Smart Contracts", "EVM"]
+languages: ["Solidity"]
 url: "https://www.amazon.com/dp/B0BHJBF4W2"
-featured: true
 dateAdded: 2022-10-28
-level: "Beginners"
+level: "Beginner"
 date: 2022-10-28
-
+alternateUrl: "https://www.amazon.com/dp/B0BHJBF4W2"
 ---
 
 Solidity Starters : A Beginners Friendly book 
