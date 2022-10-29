@@ -132,6 +132,15 @@ export function JobForm(props: Props) {
           onChange={(value) => props.onChange({ ...props.job, url: value })}
           required
         />
+
+        <FormInput
+          id="email"
+          name="Email"
+          info="Contact email address for this job (will not be shared publicly)"
+          value={props.job.contact}
+          onChange={(value) => props.onChange({ ...props.job, contact: value })}
+          required
+        />
       </div>
     </div>
   )

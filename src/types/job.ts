@@ -13,6 +13,7 @@ export interface Job {
   remote: boolean
   org: Organization
   url: string
+  contact: string
   type?: Type
   minSalary?: number
   maxSalary?: number
@@ -34,6 +35,7 @@ export const defaultJob: Job = {
   type: 'Full-time',
   org: {} as Organization,
   url: '',
+  contact: '',
   updated: new Date().getTime(),
   tags: [],
 }

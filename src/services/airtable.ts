@@ -50,6 +50,7 @@ export class AirtableService {
       Description: job.description,
       Location: job.location,
       'External Url': job.url,
+      Contact: job.contact,
       Active: false,
       Remote: job.remote,
       Department: job.department,

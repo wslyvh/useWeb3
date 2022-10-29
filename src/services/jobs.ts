@@ -230,12 +230,15 @@ export function toJob(source: Record<FieldSet>, org?: Organization): Job {
     contentType: 'markdown',
     location: source.fields['Location'],
     remote: source.fields['Remote'] ?? false,
-    org: org,
     url: isEmail(applicationUrl) ? `mailto:${applicationUrl}?subject=Apply for ${source.fields['Title']} (useWeb3)` : applicationUrl,
     tags: getJobTags(source.fields['Title'] as string),
     type: source.fields['Type'],
     updated: source.fields['Date'] ? new Date(source.fields['Date'] as string).getTime() : new Date(source.fields['Updated'] as string).getTime(),
   } as Job
+
+  if (org) {
+    job.org = org
+  }
 
   if (source.fields['Featured']) {
     job.featuredUntil = new Date(source.fields['Featured'] as string).getTime()

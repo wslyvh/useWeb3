@@ -64,7 +64,7 @@ export function OrderForm(props: Props) {
         <FormInput
           id="email"
           name="Email"
-          info="Contact email"
+          info="Administrative email"
           value={props.order.email}
           onChange={(value) => props.onChange({ ...props.order, email: value })}
           required
