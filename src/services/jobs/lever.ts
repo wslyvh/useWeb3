@@ -32,7 +32,7 @@ export class LeverJobService implements JobServiceInterface {
             body: i.description,
             contentType: 'html',
             location: i.categories?.location,
-            remote: i.categories?.location.toLowerCase().includes('remote') ?? false,
+            remote: i.categories?.location?.toLowerCase().includes('remote') ?? false,
             org: org,
             url: i.applyUrl,
             tags: getJobTags(i.text),

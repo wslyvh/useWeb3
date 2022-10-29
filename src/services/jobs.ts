@@ -182,7 +182,7 @@ export function toOrganization(source: Record<FieldSet>): Organization {
   if (source.fields['twitter']) {
     const handle = (source.fields['twitter'] as string) ?? ''
     org.twitter = handle
-    org.logo = `${SITE_URL}assets/orgs/${handle.replace('@', '')}.png`
+    org.logo = `/assets/orgs/${handle.replace('@', '')}.png`
   }
   if (source.fields['github']) {
     org.github = (source.fields['github'] as string) ?? ''
