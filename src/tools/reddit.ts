@@ -37,17 +37,17 @@ run()
 // - r/EthereumNoobies 5692ba3c-cd46-11ec-ac02-ee7370f74b5e
 
 async function run() {
+  const type = process.argv[2]
+  if (type === 'post') {
+    submitToReddit('Learn Web3 Development @ useWeb3', 'https://www.useweb3.xyz/')
+    return
+  }
+
   const flairs = ['Tutorial', 'My Project', 'Fundamentals', 'Educational', 'r/EthDev', 'r/EthereumNoobies']
   const subreddits = ['ethdev', 'ethereumnoobies', 'eth', 'ethereum', 'ethdevjobs']
   // No flairs: ethereum, ethdevjobs
 
-  const client = new snoowrap({
-    userAgent: 'useWeb3',
-    clientId: process.env.REDDIT_CLIENT_ID,
-    clientSecret: process.env.REDDIT_CLIENT_SECRET,
-    username: process.env.REDDIT_USERNAME,
-    password: process.env.REDDIT_PASSWORD,
-  })
+  const client = initClient()
 
   // console.log('GET Flairs')
   // const flairs = await client.getSubreddit('ethdev').getLinkFlairTemplates()
@@ -68,12 +68,49 @@ async function run() {
     console.log(i.url)
     console.log()
   })
+}
 
-  // console.log('SUBMIT Link')
-  // client.getSubreddit('ethereumnoobies').submitLink({
-  //   subredditName: 'ethereumnoobies',
-  //   title: 'Learn Web3 Development @ useWeb3',
-  //   url: 'https://www.useweb3.xyz/',
-  //   flairId: '916d9bb6-195c-11e7-bbf8-0e0bfb1a8e84'
-  // }).then(i => console.log('OK', i))
+export function submitToReddit(title: string, url: string) {
+  const client = initClient()
+
+  client.getSubreddit('ethereum').submitLink({
+    subredditName: 'ethereum',
+    title,
+    url,
+    // no flair
+  }).then(i => console.log('OK', i))
+
+  // r/ethdev
+  client.getSubreddit('ethdev').submitLink({
+    subredditName: 'ethdev',
+    title,
+    url,
+    flairId: '95e9673a-f444-11e5-9bbc-0ee43ad8a7ed'
+  }).then(i => console.log('OK', i))
+
+  // r/ethereumnoobies
+  client.getSubreddit('ethereumnoobies').submitLink({
+    subredditName: 'ethereumnoobies',
+    title,
+    url,
+    flairId: '916d9bb6-195c-11e7-bbf8-0e0bfb1a8e84'
+  }).then(i => console.log('OK', i))
+
+  // r/eth
+  client.getSubreddit('eth').submitLink({
+    subredditName: 'eth',
+    title,
+    url,
+    flairId: '9d1b4a2e-cd45-11ec-a278-22915d55d8c1'
+  }).then(i => console.log('OK', i))
+}
+
+export function initClient(): snoowrap { 
+  return new snoowrap({
+    userAgent: 'useWeb3',
+    clientId: process.env.REDDIT_CLIENT_ID,
+    clientSecret: process.env.REDDIT_CLIENT_SECRET,
+    username: process.env.REDDIT_USERNAME,
+    password: process.env.REDDIT_PASSWORD,
+  })
 }

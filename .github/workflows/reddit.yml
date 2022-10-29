@@ -1,0 +1,27 @@
+name: Post on Reddit
+
+on:
+  schedule:
+    - cron: "0 0 26 * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Post on Reddit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run
+        run: yarn reddit post
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
