@@ -73,39 +73,51 @@ async function run() {
 export function submitToReddit(title: string, url: string) {
   const client = initClient()
 
-  client.getSubreddit('ethereum').submitLink({
-    subredditName: 'ethereum',
-    title,
-    url,
-    // no flair
-  }).then(i => console.log('OK', i))
+  client
+    .getSubreddit('ethereum')
+    .submitLink({
+      subredditName: 'ethereum',
+      title,
+      url,
+      // no flair
+    })
+    .then((i) => console.log('OK', i))
 
   // r/ethdev
-  client.getSubreddit('ethdev').submitLink({
-    subredditName: 'ethdev',
-    title,
-    url,
-    flairId: '95e9673a-f444-11e5-9bbc-0ee43ad8a7ed'
-  }).then(i => console.log('OK', i))
+  client
+    .getSubreddit('ethdev')
+    .submitLink({
+      subredditName: 'ethdev',
+      title,
+      url,
+      flairId: '95e9673a-f444-11e5-9bbc-0ee43ad8a7ed',
+    })
+    .then((i) => console.log('OK', i))
 
   // r/ethereumnoobies
-  client.getSubreddit('ethereumnoobies').submitLink({
-    subredditName: 'ethereumnoobies',
-    title,
-    url,
-    flairId: '916d9bb6-195c-11e7-bbf8-0e0bfb1a8e84'
-  }).then(i => console.log('OK', i))
+  client
+    .getSubreddit('ethereumnoobies')
+    .submitLink({
+      subredditName: 'ethereumnoobies',
+      title,
+      url,
+      flairId: '916d9bb6-195c-11e7-bbf8-0e0bfb1a8e84',
+    })
+    .then((i) => console.log('OK', i))
 
   // r/eth
-  client.getSubreddit('eth').submitLink({
-    subredditName: 'eth',
-    title,
-    url,
-    flairId: '9d1b4a2e-cd45-11ec-a278-22915d55d8c1'
-  }).then(i => console.log('OK', i))
+  client
+    .getSubreddit('eth')
+    .submitLink({
+      subredditName: 'eth',
+      title,
+      url,
+      flairId: '9d1b4a2e-cd45-11ec-a278-22915d55d8c1',
+    })
+    .then((i) => console.log('OK', i))
 }
 
-export function initClient(): snoowrap { 
+export function initClient(): snoowrap {
   return new snoowrap({
     userAgent: 'useWeb3',
     clientId: process.env.REDDIT_CLIENT_ID,
