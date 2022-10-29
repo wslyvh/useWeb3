@@ -12,7 +12,7 @@ export class LeverJobService implements JobServiceInterface {
     if (!orgId) return []
 
     try {
-      let url = `https://api.eu.lever.co/v0/postings/${orgId}?mode=json`
+      let url = `https://api.lever.co/v0/postings/${orgId}?mode=json`
       if (orgId === 'matterlabs') {
         url = `https://api.eu.lever.co/v0/postings/${orgId}?mode=json`
       }
@@ -23,7 +23,7 @@ export class LeverJobService implements JobServiceInterface {
 
       return data
         .map((i: any) => {
-          return {
+          const job = {
             id: i.id,
             slug: `${String(i.id)}-${defaultSlugify(i.text)}`,
             title: i.text,
@@ -31,13 +31,20 @@ export class LeverJobService implements JobServiceInterface {
             description: i.descriptionPlain,
             body: i.description,
             contentType: 'html',
-            location: i.categories?.location,
+            location: i.categories?.location ?? '',
             remote: i.categories?.location?.toLowerCase().includes('remote') ?? false,
             org: org,
             url: i.applyUrl,
             tags: getJobTags(i.text),
             updated: new Date(i.createdAt).getTime(),
           } as Job
+
+          if (orgId === 'ethereumfoundation') { 
+            job.featuredUntil = moment(job.updated).add(2, 'weeks').valueOf()
+            job.featured = job.featuredUntil >= new Date().getTime()
+          }
+
+          return job
         })
         .filter((job: Job) => moment(job.updated).isAfter(moment().subtract(DAYS_JOBS_LISTED_DEFAULT, 'd')))
         .sort((a: Job, b: Job) => b.updated - a.updated)
