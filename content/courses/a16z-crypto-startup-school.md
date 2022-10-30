@@ -5,7 +5,6 @@ authors: ["@a16z"]
 tags: ["Web3"]
 languages: []
 url: "https://a16z.com/crypto-startup-school/"
-featured: true
 dateAdded: 2021-08-11
 level: "All"
 ---
