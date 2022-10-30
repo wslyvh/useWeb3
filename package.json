@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint --fix",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,scss}",
-    "latest": "ts-node src/tools/latest",
     "latest:resources": "ts-node src/tools/latest-resources",
     "latest:issues": "ts-node src/tools/latest-issues",
     "org:import": "ts-node src/tools/org-import",
@@ -19,6 +18,7 @@
     "twitter:tip": "ts-node src/tools/twitter-tip",
     "twitter:top": "ts-node src/tools/twitter-top",
     "gas:fetch": "ts-node src/tools/gas-fetch",
+    "newsletter": "ts-node src/tools/newsletter",
     "reddit": "ts-node src/tools/reddit"
   },
   "dependencies": {

@@ -1,4 +1,5 @@
 import moment from 'moment'
+import fetch from 'cross-fetch'
 import { Job } from 'types/job'
 import { Organization } from 'types/org'
 import { JobServiceInterface } from 'types/services/job-service'

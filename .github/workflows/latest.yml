@@ -1,11 +1,11 @@
-name: Show Lastest
+name: Newsletter
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    name: Show Lastest
+    name: Get Latest items
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -17,4 +17,4 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Show Lastest Resources
-        run: yarn latest
+        run: yarn newsletter
