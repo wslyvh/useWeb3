@@ -47,10 +47,7 @@ async function run() {
 
   let text = `Most popular last week 🚀\n\n`
   for (let index = 0; index < combined.length; index++) {
-    const resource = items.find((i) =>
-      i.url === combined[index] ||
-      i.url.endsWith(combined[index]) ||
-      i.id === combined[index].split('/').pop())
+    const resource = items.find((i) => i.url === combined[index] || i.url.endsWith(combined[index]) || i.id === combined[index].split('/').pop())
     if (resource) {
       text += `${index + 1}. ${resource.title} ${resource.authors.join(' ')} \n`
     }
