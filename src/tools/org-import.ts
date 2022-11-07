@@ -30,16 +30,21 @@ async function run() {
 async function fetchAndSave(handle: string) {
   // console.log('Fetching', handle)
 
+  const filename = `${dir}/${handle}.png`
   try {
     const response = await fetch(`https://unavatar.io/twitter/${handle}`)
     const blob = await response.blob()
     const arrayBuffer = await blob.arrayBuffer()
     const buffer = Buffer.from(arrayBuffer)
-    fs.writeFileSync(`${dir}/${handle}.png`, buffer)
-    return true
+    const size = buffer.length
+    if (size > 1506) {
+      fs.writeFileSync(filename, buffer)
+      return true
+    }
   } catch (e) {
     console.log('Unable to fetch', handle)
     console.error(e)
-    return false
   }
+
+  return false
 }
