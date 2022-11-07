@@ -1,7 +1,7 @@
 ---
 title: "metaschool"
 description: "Learn about web3 and blockchain through creating awesome things."
-authors: ["@0xmetaschool_"]
+authors: ["@0xmetaschool"]
 tags: ["Smart Contracts","Dapp","NFT","DAO"]
 languages: ["Solidity", "Rust","JavaScript"]
 url: "https://metaschool.so/"
