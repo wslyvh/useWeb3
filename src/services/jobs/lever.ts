@@ -40,7 +40,7 @@ export class LeverJobService implements JobServiceInterface {
             updated: new Date(i.createdAt).getTime(),
           } as Job
 
-          if (orgId === 'ethereumfoundation' && job.department === 'Engineering') {
+          if (orgId === 'ethereumfoundation' && job.remote) {
             job.featuredUntil = moment(job.updated).add(2, 'weeks').valueOf()
             job.featured = job.featuredUntil >= new Date().getTime()
           }
