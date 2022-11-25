@@ -35,7 +35,6 @@ export default function Index(props: Props) {
   }
 
   const body = props.job.body ?? ''
-  console.log('BODY', body)
   const basicFormatting = new RegExp(/\s(__|\*\*)(?!\s)(.(?!\1))+(?!\s(?=\1))/).test(body)
   const boldFormatting = new RegExp(/\*(.+?)\*/s).test(body) || new RegExp(/\**(.+?)\**/s).test(body)
   const italicFormatting = new RegExp(/_(.+?)_/s).test(body) || new RegExp(/__(.+?)__/s).test(body)
@@ -50,11 +49,8 @@ export default function Index(props: Props) {
     linkFormatting ||
     listFormatting ||
     headingFormatting
-  console.log('isMarkdown', isMarkdown)
-  const content = isMarkdown ? marked.parse(body) : body
-  console.log('Content', content)
+  const content = isMarkdown ? marked.parse(he.decode(body)) : body
   const html = he.decode(content)
-  console.log('Decoded', html)
 
   return (
     <NavigationProvider categories={props.categories}>
