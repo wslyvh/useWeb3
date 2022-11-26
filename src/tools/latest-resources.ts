@@ -70,6 +70,8 @@ ${item.url}`
 
   // Resource tweets
   for (let i = 0; i < recent.length; i++) {
+    await new Promise((r) => setTimeout(r, 1000))
+
     const item = recent[i]
     const category = categories.find((i) => i.id === item.category.id)
 
