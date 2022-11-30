@@ -3,7 +3,7 @@ title: "ZK-SNARKS with circom"
 description: "Test and create zero knowledge proofs for your circuits"
 authors: ["@identhree"]
 tags: ["Smart Contracts","Cryptography"]
-languages: ["circom"]
+languages: ["Circom"]
 url: "https://docs.circom.io/"
 dateAdded: 2022-08-25
 level: "Intermediate"
