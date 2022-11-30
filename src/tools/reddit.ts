@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import snoowrap from 'snoowrap'
 
-console.log('Test Reddit API Access')
+console.log('Reddit API Access')
 dotenv.config()
 run()
 
@@ -58,9 +58,9 @@ async function run() {
 
   const results = await client.search({
     query: `${subsQuery} AND ${flairsQuery}`,
-    time: 'week',
+    time: 'month',
     sort: 'top',
-    limit: 20,
+    limit: 25,
   })
   results.forEach((i) => {
     console.log(`- ${i.created_utc} ${i.subreddit_name_prefixed} (${i.link_flair_text})`)
