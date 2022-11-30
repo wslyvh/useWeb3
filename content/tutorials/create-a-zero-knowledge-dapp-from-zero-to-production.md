@@ -1,7 +1,7 @@
 ---
 title: "How to create a Zero Knowledge DApp: From zero to production"
 description: ""
-authors: ["@aszepieniec"]
+authors: ["@ViviPlasenciaC"]
 tags: ["Cryptography","Scalability",'ZKP','Smart Contracts']
 languages: ['Circom', 'Solidity', 'JavaScript']
 url: "https://vivianblog.hashnode.dev/how-to-create-a-zero-knowledge-dapp-from-zero-to-production"
