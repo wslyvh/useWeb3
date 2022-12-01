@@ -62,14 +62,14 @@ export function Footer(props: Props) {
 
         <div className={styles.links}>
           <p>
-          <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">
-            <strong>Support Us</strong>
-          </Link>
+            <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">
+              <strong>Support Us</strong>
+            </Link>
           </p>
           <p>
-          <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">
-            Submit Resources <i className="bi bi-arrow-up-right" />
-          </Link>
+            <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">
+              Submit Resources <i className="bi bi-arrow-up-right" />
+            </Link>
           </p>
         </div>
 

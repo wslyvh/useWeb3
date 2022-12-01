@@ -79,7 +79,7 @@ export function MobileSubmenu(props: Props) {
                 )
               })}
             <li className={styles.header}>
-              <Link href='/support' className={styles.item}>
+              <Link href="/support" className={styles.item}>
                 <span>Support us</span>
               </Link>
             </li>

@@ -28,7 +28,9 @@ export function Pricing(props: Props) {
           <li>{DAYS_JOBS_LISTED_FEATURED} days on the job board</li>
           <li>At the top of the job board for 2 weeks</li>
           <li>Your organization logo added</li>
-          <li>Shared on <Link href="https://twitter.com/useWeb3">Twitter</Link>, incl. a tag to your organization.</li>
+          <li>
+            Shared on <Link href="https://twitter.com/useWeb3">Twitter</Link>, incl. a tag to your organization.
+          </li>
         </ul>
         <p>
           Discounts <strong>get in touch</strong>
