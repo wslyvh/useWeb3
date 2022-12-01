@@ -62,6 +62,14 @@
       border-bottom: 1px solid var(--color-neutral-100); // TODO
     }
 
+    .links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $gap-16;
+      padding: 0;
+    }
+
     .credits {
       display: flex;
       align-items: center;

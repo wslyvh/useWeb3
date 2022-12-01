@@ -5,6 +5,8 @@ export const SITE_URL = 'https://www.useweb3.xyz/'
 export const IMAGE_OG = `${SITE_URL}images/social.png`
 export const SOCIAL_HANDLE = '@useWeb3'
 export const DOMAIN = 'useweb3.xyz'
+export const GITCOIN_GRANT = 'https://gitcoin.co/grants/4143/wslyvh-useweb3-ethgas-tokenlog-more'
+export const NEWSLETTER_URL = 'https://www.getrevue.co/profile/useWeb3'
 
 export const DEFAULT_REVALIDATE_PERIOD = 14400
 export const DEFAULT_MAX_ITEMS = 20

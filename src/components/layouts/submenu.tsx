@@ -78,6 +78,11 @@ export function MobileSubmenu(props: Props) {
                   </ul>
                 )
               })}
+            <li className={styles.header}>
+              <Link href='/support' className={styles.item}>
+                <span>Support us</span>
+              </Link>
+            </li>
           </ul>
         </div>
 

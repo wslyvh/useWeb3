@@ -1,5 +1,5 @@
-import { usePlausible } from 'next-plausible'
 import React from 'react'
+import { GITCOIN_GRANT } from 'utils/constants'
 import styles from './donate.module.scss'
 import { Link } from './link'
 
@@ -16,7 +16,7 @@ export function Donate(props: Props) {
       <h3>💰 Support us 💰</h3>
       <p className={styles.description}>
         Enjoy useWeb3? Please consider donating on{' '}
-        <Link href="https://gitcoin.co/grants/4143/wslyvh-useweb3-ethgas-tokenlog-more">Gitcoin Grants</Link>.
+        <Link href={GITCOIN_GRANT}>Gitcoin Grants</Link>.
         <br />
         Your donation helps to keep this site running. Thank you!
       </p>
