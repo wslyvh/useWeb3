@@ -62,7 +62,7 @@ export function Footer(props: Props) {
 
         <div className={styles.links}>
           <p>
-            <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">
+            <Link href="/support">
               <strong>Support Us</strong>
             </Link>
           </p>
