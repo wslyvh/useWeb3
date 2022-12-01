@@ -4,7 +4,7 @@ description: "In-depth course about developing DApps on Ethereum"
 authors: ["@mushketyk"]
 tags: ["Smart Contracts","Dapp"]
 languages: []
-url: "https://app.pluralsight.com/library/courses/blockchain-ethereum-developing-applications"
+url: "https://www.pluralsight.com/courses/blockchain-ethereum-developing-applications"
 dateAdded: 2022-12-27
 level: "Beginner"
 ---
