@@ -68,7 +68,7 @@ async function run() {
   // Sent last tweet
   await new Promise((r) => setTimeout(r, 1000))
   text = `These are just the latest from last week..\n\n`
-  text += `Browse more than +500 'Good first'-issues on core protocol, developer tooling, infra, SDKs, consensus and execution clients, L2's, etc. 🛠️\n\n`
+  text += `Browse more than +500 #OpenSource 'Good first'-issues on core protocol, developer tooling, infra, SDKs, consensus and execution clients, L2's, etc. 🛠️\n\n`
   text += `https://www.useweb3.xyz/contribute`
   console.log(text)
 
