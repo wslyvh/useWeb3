@@ -1,6 +1,6 @@
 ---
 title: "Ethereum Smart Contract Auditor Roadmap"
-description: 'This roadmap provides a step by step approach to become a Ethereum Smart Contract Auditor'
+description: 'This roadmap provides a step by step approach to become an Ethereum Smart Contract Auditor'
 authors: ['@razzor_tweet']
 level: Beginner
 tags: ['Security', 'Smart Contracts']
