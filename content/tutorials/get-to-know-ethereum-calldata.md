@@ -1,6 +1,6 @@
 ---
 title: "Get to know Ethereum Calldata"
-description: "This article explain what Ethereum Calldata is and how it's structured."
+description: "This article explains what Ethereum Calldata is and how it's structured."
 authors: ["@jeantnd"]
 tags: ["Dapp","Smart Contracts","EVM"]
 languages: ["Solidity"]

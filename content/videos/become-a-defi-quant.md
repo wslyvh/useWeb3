@@ -1,6 +1,6 @@
 ---
 title: "Become a DEFI QUANT | Python, Chainlink, and Aave"
-description: "Learn how to put down collateral, borrow, lend, and short sell assets in the defi relam. A MUCH easier experience for anyone looking to create financial instruments. "
+description: "Learn how to put down collateral, borrow, lend, and short sell assets in the defi realm. A MUCH easier experience for anyone looking to create financial instruments. "
 authors: ["@patrickalphac"]
 tags: ["DeFi", "Oracles"]
 languages: ["Solidity", "Python"]

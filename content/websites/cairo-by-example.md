@@ -1,6 +1,6 @@
 ---
 title: "Cairo by example"
-description: "Cairo is programming language that can be used to write blockchain applications. The language is novel in that it converts program logic into STARK proofs."
+description: "Cairo is a programming language that can be used to write blockchain applications. The language is novel in that it converts program logic into STARK proofs."
 authors: ["@eth_worm"]
 tags: ["Smart Contracts","Scalability"]
 languages: ["Cairo"]

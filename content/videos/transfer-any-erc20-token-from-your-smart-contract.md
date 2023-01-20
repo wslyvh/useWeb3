@@ -1,6 +1,6 @@
 ---
 title: "Transfer any ERC20 token from your smart contract"
-description: "Lern how to allow your smart contract to transfer any ERC20 token that your contract received."
+description: "Learn how to allow your smart contract to transfer any ERC20 token that your contract received."
 authors: ["@ArtiChmaro"]
 tags: ["Smart Contracts","EVM","Dapp"]
 languages: ["Solidity"]
