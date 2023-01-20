@@ -10,6 +10,7 @@
     "prettier": "prettier --write ./src/**/*.{ts,tsx,scss}",
     "latest:resources": "ts-node src/tools/latest-resources",
     "latest:issues": "ts-node src/tools/latest-issues",
+    "discord:issues": "ts-node src/tools/discord-issues",
     "org:import": "ts-node src/tools/org-import",
     "twitter:gm": "ts-node src/tools/twitter-gm",
     "twitter:last-week": "ts-node src/tools/twitter-last-week",

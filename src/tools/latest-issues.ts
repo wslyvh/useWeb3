@@ -22,6 +22,11 @@ async function run() {
   console.log('Issues since', since.toISOString(), issues.length)
   console.log('')
 
+  if (issues.length === 0) {
+    console.log('No new issues..')
+    return
+  }
+  
   // Send 1st tweet
   let text = `Contribute to open-source Web3 projects ✨\n\n`
   text += `Make your first contribution to any of these 'good first'-issues below 🌈\n\n`

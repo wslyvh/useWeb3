@@ -1,0 +1,25 @@
+name: Discord issues
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Discord issues
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Discord issues
+        run: yarn discord:issues
+        env:
+          DISCORD_ID: ${{ secrets.DISCORD_ID }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
