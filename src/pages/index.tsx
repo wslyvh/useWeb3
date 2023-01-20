@@ -29,8 +29,8 @@ export default function Index(props: Props) {
       <TopnavLayout className={styles.container}>
         <article>
           <p>
-            useWeb3 is a platform for developers to explore and learn about Web3. Whether you're a new dev getting your hands dirty for the first time,
-            or a seasoned developer making the transition into the Web3 space.
+            useWeb3 is a platform for developers to explore and learn about Web3. Whether you&apos;re a new dev getting your hands dirty for the first
+            time, or a seasoned developer making the transition into the Web3 space.
           </p>
           <p>
             <strong>Explore. Learn. Build.</strong>
