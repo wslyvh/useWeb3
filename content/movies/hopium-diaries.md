@@ -1,6 +1,6 @@
 ---
 title: "Hopium Diaries"
-description: "An dystopian view of the new financial world emerging from crypto"
+description: "A dystopian view of the new financial world emerging from crypto"
 authors: ["@RektHQ"]
 tags: ["DeFi","Web3"]
 languages: []
