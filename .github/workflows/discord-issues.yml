@@ -23,3 +23,4 @@ jobs:
         env:
           DISCORD_ID: ${{ secrets.DISCORD_ID }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          ISSUES_GITHUB_TOKEN: ${{ secrets.ISSUES_GITHUB_TOKEN }}
