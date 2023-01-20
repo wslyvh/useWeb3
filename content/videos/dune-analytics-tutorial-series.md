@@ -10,11 +10,11 @@ level: "Beginner"
 date: 2021-07-19
 ---
 
-This tutorial series will guide you through Dune Analytics, it's tech stack, use-cases and how you can use Dune Analytics.
+This tutorial series will guide you through Dune Analytics, its tech stack, use cases and how you can use Dune Analytics.
 
 Contents
 - What is Dune?
-- Usecases of Dune
+- Use cases of Dune
 - How does Dune work?
 - Dune Tech
 - Database structure
