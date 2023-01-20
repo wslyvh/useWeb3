@@ -1,6 +1,6 @@
 ---
 title: "Epicenter"
-description: "A weekly podcast about the blockchain and cryptocurrency industy."
+description: "A weekly podcast about the blockchain and cryptocurrency industry."
 authors: ["@seb2point0","@crainbf","@meherroy","@sunnya97","@tw_tter"]
 tags: []
 languages: []
