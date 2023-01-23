@@ -39,6 +39,7 @@ const orgs = [
   'OpenZeppelin',
   'MetaMask',
   'tallyhowallet',
+  'blockscout',
   // Libs & SDKs
   'eth-brownie',
   'dapphub',
@@ -52,6 +53,7 @@ const orgs = [
   'web3j',
   'wagmi-dev',
   'trufflesuite',
+  'ApeWorX',
   // CL
   'prysmaticlabs',
   'sigp',
