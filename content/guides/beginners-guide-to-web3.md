@@ -40,6 +40,7 @@ Now that we have an understanding where we're coming from, let's dive in a littl
 - [Ethereum in 25 mins](https://youtu.be/mCzyDLanA7s) (VIDEO), Vitalik Buterin
 - [How does Ethereum work, anyway](https://www.preethikasireddy.com/post/how-does-ethereum-work-anyway), Preethi Kasireddy
 - [Mastering Ethereum](https://amzn.to/2VZvfz8) (BOOK), Andreas M. Antonopoulos, Gavin Wood. Or view on [Github](https://github.com/ethereumbook/ethereumbook)
+- [How Proof of Stake Ethereum Works](https://stonecoldpat.substack.com/p/how-proof-of-stake-ethereum-works), Patrick McCorry
 
 
 # 3. Ethereum Development 
