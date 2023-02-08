@@ -57,7 +57,13 @@ export async function GetOrganization(id: string): Promise<Organization | undefi
   try {
     const records = await base('Orgs')
       .select({
-        filterByFormula: `SEARCH("${id}", {id})`,
+        filterByFormula: `AND(
+          ({Disabled} = FALSE()),
+          (OR(
+            ({id} = "${id}"),
+            ({slug} = "${id}")
+          ))
+        )`,
       })
       .all()
 
@@ -82,8 +88,8 @@ export async function GetOrganization(id: string): Promise<Organization | undefi
 export async function GetFeaturedJob(recordId: string): Promise<Job | undefined> {
   const source = await base('OrgJobs').find(recordId)
 
-  if (source && source.fields['orgId']) {
-    const org = await GetOrganization(source.fields['orgId'] as string)
+  if (source && (source.fields['orgId'] || source.fields['orgSlug'])) {
+    const org = await GetOrganization((source.fields['orgId'] as string) ?? (source.fields['orgSlug'] as string))
     if (org) {
       return toJob(source, org)
     }
@@ -164,7 +170,7 @@ async function getJobsByOrg(org: Organization): Promise<Job[]> {
 
 export function toOrganization(source: Record<FieldSet>): Organization {
   let org = {
-    id: source.fields['id'],
+    id: source.fields['id'] ?? source.fields['slug'],
     title: source.fields['title'],
     description: source.fields['description'] ?? '',
     body: source.fields['body'] ?? '',

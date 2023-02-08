@@ -25,7 +25,10 @@ export class AirtableJobService implements JobServiceInterface {
         .select({
           filterByFormula: `AND(
             ({Active}),
-            ({orgId} = "${orgId}")
+            (OR(
+              ({orgId} = "${orgId}"),
+              ({orgSlug} = "${orgId}")
+            ))
           )`,
         })
         .all()
