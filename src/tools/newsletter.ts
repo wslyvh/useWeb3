@@ -37,7 +37,9 @@ async function run() {
 
   console.log(`### 🔥 Trending`)
   // https://github.com/trending/solidity?since=monthly
-  console.log('**useful-solidity-patterns** - This repo is an ongoing collection of useful, and occasionally clever, solidity/EVM patterns that actually get used in the wild. These bite-sized guides are written in approachable terms so engineers of all skill levels can understand them. Every guide comes with a concise, self-contained, working code example and tests to demonstrate the pattern. New patterns are added regularly.')
+  console.log(
+    '**useful-solidity-patterns** - This repo is an ongoing collection of useful, and occasionally clever, solidity/EVM patterns that actually get used in the wild. These bite-sized guides are written in approachable terms so engineers of all skill levels can understand them. Every guide comes with a concise, self-contained, working code example and tests to demonstrate the pattern. New patterns are added regularly.'
+  )
   console.log('<LINK>')
   console.log()
 
@@ -133,52 +135,53 @@ async function upcomingEvents() {
     auth: process.env.GOOGLE_API_KEY,
   })
   const sheetsResponse = await sheets.spreadsheets.get({
-    spreadsheetId: sheetId
+    spreadsheetId: sheetId,
   })
   const sheetNames = sheetsResponse.data?.sheets?.map((i: any) => i.properties.title)
   const sheet = sheetNames ? sheetNames[0] : ''
   if (!sheet) return console.log('No sheet')
 
   const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: sheetId,
-      range: `${sheet}!A1:1000`,
+    spreadsheetId: sheetId,
+    range: `${sheet}!A1:1000`,
   })
 
   const data = response.data?.values
   if (!data) {
-      console.log('No Data')
-      return
+    console.log('No Data')
+    return
   }
 
-  const events = data.slice(5).map((i: any) => {
-    // 0: '', 1: Title, 2: Start, 3: End, 4: Location, 5: Link, 6: Twitter, 7: TG/Discord
-    if (!i[1] || !i[2] || !i[3]) return
-    if (i[2].includes('TBD') || i[3].includes('TBD') || i[4].includes('TBD')) return
+  const events = data
+    .slice(5)
+    .map((i: any) => {
+      // 0: '', 1: Title, 2: Start, 3: End, 4: Location, 5: Link, 6: Twitter, 7: TG/Discord
+      if (!i[1] || !i[2] || !i[3]) return
+      if (i[2].includes('TBD') || i[3].includes('TBD') || i[4].includes('TBD')) return
 
-    let start, end
-    try { 
-      start = moment(`${i[2]} 2023`)
-      end = moment(`${i[3]} 2023`)
-    }
-    catch (e) { 
-      return
-    }
-    if (!start || start.format('MMM DD') === 'Invalid date' || !end || end.format('MMM DD') === 'Invalid date') {
-      return
-    }
-
-    if (start.isBefore(upcoming)) {
-      return {
-        title: i[1],
-        start: start,
-        end: end,
-        location: i[4],
-        link: i[5],
-        twitter: i[6],
+      let start, end
+      try {
+        start = moment(`${i[2]} 2023`)
+        end = moment(`${i[3]} 2023`)
+      } catch (e) {
+        return
       }
-    }
-  }).filter(i => !!i)
+      if (!start || start.format('MMM DD') === 'Invalid date' || !end || end.format('MMM DD') === 'Invalid date') {
+        return
+      }
 
+      if (start.isBefore(upcoming)) {
+        return {
+          title: i[1],
+          start: start,
+          end: end,
+          location: i[4],
+          link: i[5],
+          twitter: i[6],
+        }
+      }
+    })
+    .filter((i) => !!i)
 
   console.log()
   console.log('### 📅 Upcoming Events')
