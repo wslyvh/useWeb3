@@ -1,5 +1,5 @@
 ---
-title: "https://roadmap.sh/blockchain"
+title: "Blockchain developer roadmap"
 description: "Step by step guide to becoming a blockchain developer."
 authors: ["Roadmap.sh"]
 tags: []
