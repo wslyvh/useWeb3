@@ -2,12 +2,11 @@
 title: "Solidity Design Patterns"
 description: "An Essential guide to developing Smart contract on Ethereum with Solidity Design Patterns.Solidity design patterns are a critical component of smart contract development, enabling developers to create robust, efficient, and secure decentralized applications."
 authors: ["Crytoineer Inc"]
-tags: ["Smart Contracts","Web3","Solidity Design Patterns","Solidity code example"]
+tags: ["Smart Contracts","Design Patterns","Standards"]
 languages: ["Solidity"]
 url: "https://www.amazon.com/dp/B0BW7PHPZT"
 dateAdded: 2023-03-04
 level: "Intermediate"
-date: 2023-03-04
 alternateUrl: "https://play.google.com/store/books/details?id=p-auEAAAQBAJ"
 ---
 
