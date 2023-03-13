@@ -23,7 +23,9 @@ export function Newsletter(props: Props) {
         <h3>{title}</h3>
         <p className={styles.description}>{description}</p>
 
-        <iframe src="https://useweb3.substack.com/embed" width="400" height="120" />
+        <div className={styles.responsive}>
+          <iframe src="https://useweb3.substack.com/embed" />
+        </div>
       </section>
     </Panel>
   )
