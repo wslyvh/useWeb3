@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './gas-table.module.scss'
 
 interface Props {
@@ -22,6 +23,7 @@ const transactions = [
 export function GasTable(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
+  const [customGas, setCustomGas] = useState(0)
 
   function getUsdValue(priceInGwei: number) {
     return ((priceInGwei * props.gasPrice) / 1e9) * props.etherPrice
@@ -32,6 +34,7 @@ export function GasTable(props: Props) {
       <small className="muted">
         * At current gas price of <strong>{props.gasPrice} gwei</strong>.
       </small>
+
       <table>
         <thead>
           <tr>
@@ -50,6 +53,18 @@ export function GasTable(props: Props) {
               </tr>
             )
           })}
+          <tr>
+            <td>Custom</td>
+            <td className={styles.right}>
+              <input
+                className={styles.customInput}
+                onChange={(e) => setCustomGas(Number(e.target.value))}
+                autoComplete="off"
+                placeholder="Gas cost in gwei"
+              />
+            </td>
+            <td className={styles.right}>${getUsdValue(customGas).toFixed(2)}</td>
+          </tr>
         </tbody>
       </table>
     </article>

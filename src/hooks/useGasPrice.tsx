@@ -24,8 +24,8 @@ export function useGasPrice(interval: number = 15000) {
       const provider = getDefaultProvider()
       const feeData = await provider.getFeeData()
 
-      if (feeData.maxFeePerGas && feeData.maxPriorityFeePerGas) {
-        const gasPrice = Math.round(Number(formatUnits(feeData.maxFeePerGas, 'gwei')))
+      if (feeData.gasPrice && feeData.maxPriorityFeePerGas) {
+        const gasPrice = Math.round(Number(formatUnits(feeData.gasPrice, 'gwei')))
         const priorityFee = Math.round(Number(formatUnits(feeData.maxPriorityFeePerGas, 'gwei')) * 10) / 10
 
         setGasPrice(gasPrice)
