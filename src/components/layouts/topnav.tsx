@@ -24,7 +24,12 @@ export function TopnavLayout(props: Props) {
 
   return (
     <div className={className}>
-      {/* <Alert text="Notification bar (e.g. News, Gitcoin rounds, etc.)" type="warning" center allowClose /> */}
+      <Alert
+        text="Test your Web3 knowledge and claim your ZK certifications @ the new useWeb3 Academy"
+        url="https://academy.useweb3.xyz/"
+        type="info"
+        center
+      />
 
       <Header />
 

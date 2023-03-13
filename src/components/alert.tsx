@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styles from './alert.module.scss'
+import { Link } from './link'
 
 interface Props {
   text: string
+  url?: string
   center?: boolean
   allowClose?: boolean
   type?: 'info' | 'success' | 'warning' | 'error'
@@ -27,7 +29,10 @@ export function Alert(props: Props) {
         {type === 'error' && <i className="bi bi-exclamation-octagon" />}
       </div>
 
-      <p className={styles.description}>{props.text}</p>
+      <p className={styles.description}>
+        {props.url && <Link href={props.url}>{props.text}</Link>}
+        {!props.url && `${props.text}`}
+      </p>
 
       {props.allowClose && (
         <span role="button" className={styles.close} onClick={() => setClosed(true)}>
