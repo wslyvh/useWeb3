@@ -9,4 +9,4 @@ dateAdded: 2023-03-14
 level: "All"
 ---
 
-A CLI tool to help you build full-stack web3 dapps in minutes! Copy and paste features directly into your dapp with [pre-built components](https://createweb3dapp.alchemy.com/#components) and [templates](https://createweb3dapp.alchemy.com/#templates) ready to be used!
+The complete toolbox to create full-stack web3 applications!
