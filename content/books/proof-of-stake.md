@@ -3,7 +3,7 @@ title: "Proof of Stake"
 description: "The Making of Ethereum and the Philosophy of Blockchains"
 authors: ["@VitalikButerin"]
 tags: ["PoS","EVM", "Protocol", "Public Goods"]
-languages: [""]
+languages: []
 url: "https://amzn.to/3vDoDaX"
 dateAdded: 2023-01-05
 level: "All"

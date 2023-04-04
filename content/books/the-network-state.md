@@ -3,7 +3,7 @@ title: "The Network State"
 description: "How To Start a New Country"
 authors: ["@balajis"]
 tags: ["Governance"]
-languages: [""]
+languages: []
 url: "https://amzn.to/3vGXF28"
 dateAdded: 2023-01-05
 level: "All"

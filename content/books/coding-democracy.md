@@ -3,7 +3,7 @@ title: "Coding Democracy"
 description: "How Hackers Are Disrupting Power, Surveillance, and Authoritarianism"
 authors: ["Maureen Webb"]
 tags: ["Governance"]
-languages: [""]
+languages: []
 url: "https://amzn.to/3CkYQIv"
 dateAdded: 2023-01-05
 level: "All"
