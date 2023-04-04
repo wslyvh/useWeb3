@@ -3,7 +3,7 @@ title: "Rust-and-Solana-development-for-beginners-ICB"
 description: "
 Learn the FREE Rust + Solana development course and get a job as a Solana developer."
 authors: ["@ICareerBooster"]
-tags: ["Smart Contracts","Web3","Solana"]
+tags: ["Smart Contracts","Web3"]
 languages: ["Rust"]
 url: "https://careerbooster.io/courses/full-solana-and-rust-programming-course-for-beginners"
 dateAdded: 2022-11-21

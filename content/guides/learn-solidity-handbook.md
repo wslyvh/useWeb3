@@ -3,8 +3,8 @@ title: "Learn Solidity"
 description: 'A Handbook for Smart Contract Development'
 authors: ['@zubinpratap']
 level: Beginner
-tags: ['Solidity']
-languages: []
+tags: ['Smart Contracts']
+languages: ['Solidity']
 url: "https://www.freecodecamp.org/news/learn-solidity-handbook/"
 featured: true
 dateAdded: 2022-12-15

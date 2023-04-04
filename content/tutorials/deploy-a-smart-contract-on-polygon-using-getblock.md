@@ -1,13 +1,12 @@
 ---
 title: "Deploy a Smart Contract on Polygon using GetBlock"
-description: "This guide provides a step-by-step tutorial on how to create and deploy a smart contract on the Polygon test network using GetBlock endpoints, a virtual wallet (Metamask), and Remix. It covers preparatory steps such as signing up with GetBlock and creating an endpoint for Polygon Testnet (Mumbai), and provides an example of a smart contract. The tutorial is easy to follow and helps you check the contract status and test the smart contract."
+description: "This guide provides a step-by-step tutorial on how to create and deploy a smart contract on the Polygon test network using GetBlock endpoints, a virtual wallet (Metamask), and Remix."
 authors: ["@JoGetblock"]
-tags: ["Smart Contracts","Dapp", "Polygon"]
+tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","Go"]
 url: "https://getblock.medium.com/deploy-a-smart-contract-on-polygon-using-getblock-145c0fc7733"
 dateAdded: 2023-03-27
 level: "Beginner"
-date: 2023-03-27
 ---
 
 If you're new to smart contract development and looking to get started on the Polygon network, this guide is an excellent resource to have. It provides clear and concise steps on how to create and deploy a smart contract using GetBlock endpoints, Metamask, and Remix. The tutorial is easy to follow and provides preparatory steps to ensure a smooth deployment process.

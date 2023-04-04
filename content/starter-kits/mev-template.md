@@ -2,7 +2,7 @@
 title: "MEV Template"
 description: "Bootstrap your MEV bot strategies with a simple boilerplate to build on top of. "
 authors: ["@DeGatchi"]
-tags: ["MEV","Bot"]
+tags: ["MEV"]
 languages: ["Rust","Solidity"]
 url: "https://github.com/DeGatchi/mev-template-rs/"
 dateAdded: 2022-10-29
