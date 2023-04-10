@@ -2,7 +2,7 @@
 title: "DeFi Risk Tools & Resources"
 description: 'Repository about DeFi risk management.'
 authors: []
-level: Intermediate
+level: "Intermediate"
 tags: ['Smart Contracts',"DeFi","Security"]
 languages: ['Solidity']
 url: "https://github.com/defi-defense-dao/defi-risk-tools-list#developer-tools"
