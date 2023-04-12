@@ -5,7 +5,7 @@ authors: []
 tags: ["Cryptography"]
 languages: []
 url: "https://a16zcrypto.com/content/article/crypto-glossary/"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---
 

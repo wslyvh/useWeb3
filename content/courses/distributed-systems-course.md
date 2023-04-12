@@ -5,7 +5,7 @@ authors: []
 tags: ["Web3"]
 languages: ["Solidity"]
 url: "http://www.distributedsystemscourse.com/"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---
 

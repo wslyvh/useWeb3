@@ -5,7 +5,7 @@ authors: ["@web3university"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity"]
 url: "https://www.web3.university/"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---
 

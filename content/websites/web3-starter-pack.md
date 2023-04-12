@@ -5,7 +5,7 @@ authors: ["@wolflo0"]
 tags: ["Web3"]
 languages: []
 url: "https://cryptosociety.notion.site/Web3-Starter-Pack-5a922714348e4a7cbaa45b2f0a8861bd"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---
 

@@ -5,7 +5,7 @@ authors: []
 tags: ["Smart Contracts","Solidity"]
 languages: ["Solidity"]
 url: "https://medium.com/coinmonks/all-about-solidity-article-series-f57be7bf6746"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 date: 
 ---

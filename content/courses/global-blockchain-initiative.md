@@ -5,7 +5,7 @@ authors: []
 tags: ["Ethereum"]
 languages: []
 url: "https://blockchaininitiative.org/"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---
 

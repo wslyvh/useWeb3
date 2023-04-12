@@ -5,6 +5,6 @@ authors: []
 tags: []
 languages: ["Solidity"]
 url: "https://wizard.openzeppelin.com/"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---

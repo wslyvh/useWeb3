@@ -5,7 +5,7 @@ authors: ["@0xRajeev"]
 tags: []
 languages: ["Solidity"]
 url: "https://secureum.substack.com/p/solidity-101"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 date: 
 ---

@@ -5,7 +5,7 @@ authors: ["@EthCatHerders"]
 tags: ["Ethereum"]
 languages: []
 url: "https://www.ethereumcatherders.com/"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Intermediate"
 ---
 

@@ -5,7 +5,7 @@ authors: ["@developer_dao"]
 tags: ["Smart Contracts","Dapp","DAO"]
 languages: ["Solidity"]
 url: "https://academy.developerdao.com/getting-started"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---
 

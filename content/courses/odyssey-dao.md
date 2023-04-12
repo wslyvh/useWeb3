@@ -5,7 +5,7 @@ authors: []
 tags: ["Smart Contracts","NFT","DeFi"]
 languages: ["Solidity"]
 url: "https://www.odysseydao.com/"
-dateAdded: 
+dateAdded: 2023-04-12
 level: "Beginner"
 ---
 
