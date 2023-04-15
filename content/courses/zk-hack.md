@@ -2,7 +2,7 @@
 title: "ZK Hack"
 description: "Hub for zk learning and building."
 authors: ["@__zkhack__"]
-tags: ["Smart Contracts","ZKP""]
+tags: ["Smart Contracts","ZKP"]
 languages: ["Solidity"]
 url: "https://zkhack.dev/"
 dateAdded: 2023-04-12
