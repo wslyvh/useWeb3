@@ -50,6 +50,8 @@ async function run() {
     const resource = items.find((i) => i.url === combined[index] || i.url.endsWith(combined[index]) || i.id === combined[index].split('/').pop())
     if (resource) {
       text += `${index + 1}. ${resource.title} ${resource.authors.join(' ')} \n`
+    } else {
+      text += `${index + 1}. ${combined[index]} \n`
     }
   }
 
