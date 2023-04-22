@@ -5,7 +5,7 @@ authors: ["@__zkhack__"]
 tags: ["Smart Contracts","ZKP"]
 languages: ["Solidity"]
 url: "https://zkhack.dev/"
-dateAdded: 2023-04-12
+dateAdded: 2023-04-22
 level: "Intermediate"
 ---
 

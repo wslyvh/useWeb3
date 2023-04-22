@@ -5,7 +5,7 @@ authors: []
 tags: ["Web3"]
 languages: []
 url: "https://curious.xyz/"
-dateAdded: 2023-04-12
+dateAdded: 2023-04-22
 level: "Beginner"
 ---
 

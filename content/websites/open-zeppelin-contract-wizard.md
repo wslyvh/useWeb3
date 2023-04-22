@@ -5,6 +5,6 @@ authors: []
 tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://wizard.openzeppelin.com/"
-dateAdded: 2023-04-12
+dateAdded: 2023-04-22
 level: "Beginner"
 ---
