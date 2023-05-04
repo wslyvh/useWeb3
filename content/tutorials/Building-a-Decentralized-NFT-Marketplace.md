@@ -11,7 +11,7 @@ date: 2023-05-04
 ---
 
 
-Summary of What we will Do.
+Summary of what we will do.
 
 1. Developing the NFT Marketplace Smart Contract
 2. Getting up the infra needed to deploy the Contract
