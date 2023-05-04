@@ -10,15 +10,10 @@ level: "intermediate"
 date: 2023-05-04
 ---
 
-What is Formal Verification?
-What is Symbolic Execution? 
 
-Troy Interview: https://www.youtube.com/watch?v=H52U4ibkf5Q
-Josselin Interview: https://www.youtube.com/watch?v=3pWYvtx_sjA
+Summary of What we will Do.
 
-✍️ Article: https://medium.com/@patrickalphac/formal-verification-symbolic-execution-38e0ac9072eb
-🗻 Code Examples: https://github.com/PatrickAlphaC/denver-security/tree/main
-🟩 Comparing Symbolic Execution tools: https://hackmd.io/@SaferMaker/EVM-Sym-Exec
-📚 Invariant vs Fuzz: https://ethereum.stackexchange.com/questions/144691/whats-the-difference-between-invariant-and-fuzz-testing
-🛠️ Foundry Invariant: https://book.getfoundry.sh/forge/invariant-testing
-🦔 Echidna: https://github.com/crytic/echidna
+1. Developing the NFT Marketplace Smart Contract
+2. Getting up the infra needed to deploy the Contract
+3. Deploying the NFT Marketplace Smart Contract
+4. Listing and Buying NFT from the Marketplace.  
