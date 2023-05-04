@@ -1,13 +1,13 @@
 ---
-title: "Formal Verification & Symbolic Execution | The Security Silver Bullet?"
-description: "We look at formal verification & symbolic execution with two Trail of Bits Web3 security team members. Additionally, we review the value these techniques bring and compare them to other tools."
-authors: ["@patrickalphac"]
-tags: ["Smart Contracts", "Security"]
+title: "Building a Decentralized NFT Marketplace with Solidity and Hardhat: A Step-by-Step Tutorial"
+description: "In this Tutorial, We’ll go through the process of building the smart contracts that hold the business logic for our NFT marketplace."
+authors: ["@_BuildBear"]
+tags: ["Smart Contracts", "NFT Marketplace","Hardhat"]
 languages: ["Solidity"]
-url: "https://patrickalphac.medium.com/formal-verification-symbolic-execution-the-security-silver-bullet-38e0ac9072eb"
-dateAdded: 2023-04-25
+url: "https://medium.com/buildbear/building-a-decentralized-nft-marketplace-with-solidity-and-hardhat-a-step-by-step-tutorial-cef7af808b93"
+dateAdded: 2023-05-04
 level: "intermediate"
-date: 2023-04-25
+date: 2023-05-04
 ---
 
 What is Formal Verification?
