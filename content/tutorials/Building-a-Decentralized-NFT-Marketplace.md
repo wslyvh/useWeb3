@@ -6,8 +6,7 @@ tags: ["Smart Contracts", "NFT Marketplace","Hardhat"]
 languages: ["Solidity"]
 url: "https://medium.com/buildbear/building-a-decentralized-nft-marketplace-with-solidity-and-hardhat-a-step-by-step-tutorial-cef7af808b93"
 dateAdded: 2023-05-04
-level: "intermediate"
-date: 2023-05-04
+level: "Intermediate"
 ---
 
 
