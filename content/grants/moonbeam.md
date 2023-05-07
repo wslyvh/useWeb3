@@ -2,7 +2,7 @@
 title: "Moonbeam Grant Program"
 description: "The Moonbeam Grant Grant Program funds project initiatives to bootstrap activity, adoption and overall growth of the Moonbeam Network."
 authors: ["@MoonbeamNetwork"]
-tags: ['DeFi', 'NFT', 'Game', 'DevEx']
+tags: ['Interoperability', 'DevEx']
 url: "https://moonbeam.foundation/grants/"
 dateAdded: 2023-05-05
 ---
