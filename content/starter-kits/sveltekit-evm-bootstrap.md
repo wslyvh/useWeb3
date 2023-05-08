@@ -2,8 +2,8 @@
 title: "Sveltekit EVM Bootstrap"
 description: "A lightweight boilerplate project for building blockchain-based web applications, with support for Web3-Onboard, Viem, and more."
 authors: ["@chiuzon"]
-tags: ["Dapp", "Web3"]
-languages: ["JavaScript", "Typescript"]
+tags: ["Dapp"]
+languages: ["JavaScript", "Svelte"]
 url: "https://github.com/chiuzon/sveltekit-evm-bootstrap"
 dateAdded: 2023-05-08
 level: "All"

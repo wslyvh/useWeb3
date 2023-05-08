@@ -3,7 +3,7 @@ title: "Dapp Boilerplate"
 description: "The easiest entry point to the Web3. Decentralized Application Boilerplate using Next.js, RainbowKit, Wagmi and Chakra-ui"
 authors: ["@JalelTounsi"]
 tags: ["Dapp",]
-languages: ["TypeScript","JavaScript"]
+languages: ["JavaScript"]
 url: "https://github.com/JalelTounsi/DappBoilerplate"
 dateAdded: 2023-04-05
 level: "All"
