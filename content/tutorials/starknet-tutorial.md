@@ -2,7 +2,7 @@
 title: "Starknet Tutorial"
 description: "By the end of this tutorial you should be able to create an NFT collections on Starknet and connect it with ArgentX."
 authors: ["@cryptobenkei"]
-tags: ["Smart Contracts","Scalability", "L2"]
+tags: ["Smart Contracts","Scalability"]
 languages: ["Cairo"]
 url: "https://github.com/cryptobenkei/starknet-tutorial"
 dateAdded: 2022-04-08

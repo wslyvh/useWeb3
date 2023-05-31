@@ -2,7 +2,7 @@
 title: "Using a simple zk voting dapp"
 description: "Learn how does a zk voting work? How to create one using zkblock.app?"
 authors: ["@heypran"]
-tags: ["Cryptography","ZKP",'Privacy''Smart Contracts','EVM']
+tags: ["Cryptography","ZKP",'Privacy','Smart Contracts','EVM']
 languages: ["Solidity", 'Snarks']
 url: "https://youtu.be/uuw6GsDBzAk"
 dateAdded: 2023-04-01
