@@ -1,9 +1,9 @@
 ---
-title: "SKALE Grants Program"
-description: "The SKALE Grants Program aims to onboard the next generation of decentralized applications"
-authors: ["@SKALEnetwork"]
-tags: ['DAO', 'Dapp', 'DeFi', 'NFT', 'Interoperability', 'Data' ]
-url: "https://skale.space/developers#grants"
+title: 'SKALE Grants Program'
+description: 'The SKALE Grants Program aims to onboard the next generation of decentralized applications'
+authors: ['@SKALEnetwork']
+tags: ['Interoperability', 'Scalability']
+url: 'https://skale.space/developers#grants'
 dateAdded: 2023-06-28
 ---
 
