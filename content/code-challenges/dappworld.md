@@ -2,7 +2,7 @@
 title: "DApp World"
 description: "DApp World is a blockchain upskilling platform where developers learn by doing!"
 authors: ["@DApp World"]
-tags: ["Smart Contracts", "Solidity", "Challenges"]
+tags: ["Smart Contracts", "Solidity", "Web3"]
 languages: ["Solidity"]
 url: "https://dapp-world.com/"
 dateAdded: 2023-06-30
