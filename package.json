@@ -48,7 +48,7 @@
     "sass": "^1.41.1",
     "slugify": "^1.6.1",
     "snoowrap": "^1.23.0",
-    "twit": "^2.2.11",
+    "twitter-api-v2": "^1.15.0",
     "web3modal": "^1.9.5"
   },
   "devDependencies": {
