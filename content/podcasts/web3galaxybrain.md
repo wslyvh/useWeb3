@@ -9,15 +9,3 @@ alternateUrl: "https://open.spotify.com/show/5CHD9XnIA0kRsCIIQ2xnlO"
 dateAdded: "2023-07-06"
 level: "All"
 ---
-
-- **title**: string
-- **description**: string
-- **content**: string
-- **authors**: Array<string>
-- **date**?: Date
-- **level**: 'All' | 'Beginner' | 'Intermediate' | 'Advanced'
-- **tags**: Array<string>
-- **languages**: Array<string>
-- **url**: string
-- **alternateUrl**?: string
-- **dateAdded**: Date
