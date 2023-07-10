@@ -2,7 +2,7 @@
 title: "Geth vs Erigon: Deep dive into RPC methods on Ethereum clients"
 description: "In-depth tutorial on RPC methods for Geth and Erigon"
 authors: ["@Wuzhong_Zhu"]
-tags: ["Nodes"]
+tags: ["Ethereum"]
 languages: []
 url: "https://docs.chainstack.com/docs/geth-vs-erigon-deep-dive-into-rpc-methods-on-ethereum-clients"
 dateAdded: 2023-07-07
