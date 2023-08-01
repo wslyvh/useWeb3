@@ -4,7 +4,7 @@ description: "In this video, we will dive into the essential checklist that will
 authors: ["@ArtiChmaro"]
 tags: ["Smart Contracts","NFT"]
 languages: ["Solidity"]
-url: "https://youtu.be/Uy2cELEZoQc](https://www.youtube.com/watch?v=DQdvAuWcraE"
+url: "https://www.youtube.com/watch?v=DQdvAuWcraE"
 dateAdded: 2023-07-10
 level: "Beginner"
 date: 2023-07-10
