@@ -16,6 +16,7 @@ import { TopnavLayout } from 'components/layouts/topnav'
 import { Panel } from 'components/panel'
 import { useEtherPrice } from 'hooks/useEtherPrice'
 import { useGasPrice } from 'hooks/useGasPrice'
+import { GasNotifications } from 'components/gas-notifications'
 
 interface Props {
   categories: Array<Category>
@@ -30,7 +31,7 @@ export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={title} divider="⛽" description="Monitor and track the Ethereum gas price to reduce transaction fees save money." />
-      <TopnavLayout className={styles.container} title="Ethereum Gas tracker">
+      <TopnavLayout className={styles.container} title="Ethereum Gas tracker" action={{ href: '/gas/api', text: 'Get API Access' }}>
         <section>
           <p>
             <Panel fill>
@@ -38,6 +39,7 @@ export default function Index(props: Props) {
             </Panel>
           </p>
         </section>
+
         <article>
           <p>
             Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works is key to efficiently use and
@@ -46,6 +48,8 @@ export default function Index(props: Props) {
         </article>
 
         <GasData />
+
+        <GasNotifications />
 
         <article className="markdown">
           <h2>Average Ethereum Transaction costs</h2>
