@@ -20,7 +20,8 @@
     "twitter:top": "ts-node src/tools/twitter-top",
     "gas:fetch": "ts-node src/tools/gas-fetch",
     "newsletter": "ts-node src/tools/newsletter",
-    "reddit": "ts-node src/tools/reddit"
+    "reddit": "ts-node src/tools/reddit",
+    "awesome": "ts-node src/tools/awesome"
   },
   "dependencies": {
     "@ethersproject/providers": "^5.5.3",
