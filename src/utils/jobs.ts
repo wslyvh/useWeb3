@@ -1,6 +1,6 @@
 import { capitalize } from './helpers'
 
-export const NEWSLETTER_PRICE = 250
+export const NEWSLETTER_PRICE = 200
 export const FEATURED_PRICE = 99
 export const ACCEPTED_NETWORK_IDS = [1, 10, 42161]
 export const RECEIVER_ADDRESS = '0xA512C3cF9A63715CEd87DE5058c684cBFF9f4321'
