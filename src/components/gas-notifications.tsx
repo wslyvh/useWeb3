@@ -1,13 +1,14 @@
 import styles from './gas-notifications.module.scss'
 
 interface Props {
-  type?: 'newsletter' | 'api'
+  type?: 'newsletter' | 'api' | 'oss'
   description?: string
   className?: string
 }
 
 const NOTIFICATIONS_ACTION = 'https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4Mzk2NTA3LCJhZGRyZXNzX2Jvb2tfaWQiOjMwNzI2NCwibGFuZyI6ImVuIn0='
 const API_ACTION = 'https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4Mzk2NTA3LCJhZGRyZXNzX2Jvb2tfaWQiOjMwNzI4MSwibGFuZyI6ImVuIn0='
+const OSS_ACTION = 'https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4Mzk2NTA3LCJhZGRyZXNzX2Jvb2tfaWQiOjMyMTUxNiwibGFuZyI6ImVuIn0='
 const FROM_ADDRESS = 'notifications@useweb3.xyz'
 
 export function GasNotifications(props: Props) {
@@ -18,6 +19,9 @@ export function GasNotifications(props: Props) {
   if (props.className) className += ` ${props.className}`
   if (type === 'api') {
     action = API_ACTION
+  }
+  if (type === 'oss') {
+    action = OSS_ACTION
   }
 
   return (
