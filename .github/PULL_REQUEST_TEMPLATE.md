@@ -10,7 +10,7 @@
 ### Properties
 
 - **title**: string
-- **description**: string
+- **description**: string (max. 240 chars)
 - **content**: string
 - **authors**: Array<string>
 - **date**?: Date
