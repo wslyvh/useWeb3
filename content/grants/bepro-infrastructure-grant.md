@@ -1,6 +1,6 @@
 ---
 title: "Bepro Infrastructure Grant"
-description: "With the Infrastructure Grant, you gain access to a set of development features at Bepro Network, enabling you to launch multiple bounties, engage your community, and reward talented developers with your own $token.
+description: "With the Infrastructure Grant, you gain access to a set of development features at Bepro Network, enabling you to launch multiple bounties, engage your community, and reward talented developers with your own $token."
 authors: ["@bepronetwork"]
 tags: ['Infrastructure']
 url: "https://layerxlabs.notion.site/Introducing-the-Bepro-Network-Infrastructure-Grant-39e096cdabe34120b95acc0ac3ac6b31"

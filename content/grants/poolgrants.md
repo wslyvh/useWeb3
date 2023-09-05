@@ -1,5 +1,5 @@
 ---
-title: "PoolGrants"
+title: "PoolTogether Grants"
 description: 'The PoolTogether grants committee “Community Led, Community Focused.”'
 authors: ["@PoolGrants"]
 tags: ['DeFi']

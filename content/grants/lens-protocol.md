@@ -1,5 +1,5 @@
 ---
-title: "Lens Protocol"
+title: "Lens Protocol Grants"
 description: "We support projects that generate public goods for the community and give ecosystem participants the opportunity to learn from and build on each other."
 authors: ["@LensProtocol"]
 tags: ['Social', 'Identity']

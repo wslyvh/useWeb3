@@ -1,5 +1,5 @@
 ---
-title: "Lit Protocol"
+title: "Lit Protocol Grants"
 description: "The Lit grant program is looking to fund projects that improve developer experience and community development in the web3 ecosystem."
 authors: ["@litprotocol"]
 tags: ['Cryptography', 'Identity', 'Key Management']
