@@ -19,6 +19,7 @@
     "twitter:tip": "ts-node src/tools/twitter-tip",
     "twitter:top": "ts-node src/tools/twitter-top",
     "gas:fetch": "ts-node src/tools/gas-fetch",
+    "gas:index": "ts-node src/tools/gas-indexer",
     "newsletter": "ts-node src/tools/newsletter",
     "reddit": "ts-node src/tools/reddit",
     "awesome": "ts-node src/tools/awesome"
@@ -31,6 +32,7 @@
     "@walletconnect/web3-provider": "^1.7.1",
     "airtable": "^0.11.1",
     "bootstrap-icons": "^1.7.2",
+    "ethers": "^6.7.1",
     "googleapis": "^110.0.0",
     "gray-matter": "^4.0.3",
     "he": "^1.2.0",
