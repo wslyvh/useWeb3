@@ -59,6 +59,7 @@ export async function Index(network: NETWORKS = 'mainnet') {
     blockNr--
   }
 
+  console.log(`[${network}] Completed.`)
   return
 }
 

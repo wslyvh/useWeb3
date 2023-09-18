@@ -10,5 +10,5 @@ async function run() {
 
   await Promise.all([Index('mainnet'), Index('polygon'), Index('optimism'), Index('arbitrum')])
 
-  console.log('Done!')
+  console.log('All done!')
 }
