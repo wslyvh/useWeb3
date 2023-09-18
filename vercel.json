@@ -6,7 +6,7 @@
     },
     {
       "path": "/api/indexer",
-      "schedule": "*/5 * * * *"
+      "schedule": "*/1 * * * *"
     }
   ]
 }
