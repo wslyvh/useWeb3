@@ -52,7 +52,7 @@ export async function Index(network: NETWORKS = 'mainnet') {
     // console.log(`[${network}] Add to db`, record)
     const response = await db.from(network).upsert([record])
     if (response.error) {
-      console.log(`[${network}] Unable to save block # ${blockNr}`)
+      console.log(`[${network}] Unable to save block # ${blockNr}`, record)
       throw new Error(response.error.message)
     }
 

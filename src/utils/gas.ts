@@ -18,10 +18,14 @@ export function getMax(numbers: Array<number>) {
 }
 
 export function getAverage(numbers: Array<number>) {
+  if (numbers.length === 0) return 0
+
   return Math.round((numbers.reduce((a, b) => a + b) / numbers.length) * 100) / 100
 }
 
 export function getMedian(numbers: Array<number>) {
+  if (numbers.length === 0) return 0
+
   let middle = Math.floor(numbers.length / 2)
   numbers = [...numbers].sort((a, b) => a - b)
   return numbers.length % 2 !== 0 ? numbers[middle] : (numbers[middle - 1] + numbers[middle]) / 2
