@@ -16,6 +16,10 @@ if (!process.env.INFURA_KEY) {
   console.warn('INFURA_KEY env variable is not set.')
 }
 
+if (!process.env.NEXT_PUBLIC_ALCHEMY_API_KEY) {
+  console.warn('NEXT_PUBLIC_ALCHEMY_API_KEY env variable is not set.')
+}
+
 export async function Index(network: NETWORKS = 'mainnet') {
   console.log(`[${network}] Start indexing..`)
 
@@ -75,12 +79,16 @@ export function GetRpcProvider(network: NETWORKS = 'mainnet') {
   if (!process.env.INFURA_KEY) {
     throw new Error('INFURA_KEY env variable is not set.')
   }
+  if (!process.env.NEXT_PUBLIC_ALCHEMY_API_KEY) {
+    throw new Error('NEXT_PUBLIC_ALCHEMY_API_KEY env variable is not set.')
+  }
 
   if (network === 'arbitrum') {
-    return new StaticJsonRpcProvider(`https://arbitrum-mainnet.infura.io/v3/${process.env.INFURA_KEY}`)
+    return new StaticJsonRpcProvider(`https://arb-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`)
   }
   if (network === 'optimism') {
-    return new StaticJsonRpcProvider(`https://optimism-mainnet.infura.io/v3/${process.env.INFURA_KEY}`)
+    return new StaticJsonRpcProvider(`https://optimism.publicnode.com`)
+    // return new StaticJsonRpcProvider(`https://optimism-mainnet.infura.io/v3/${process.env.INFURA_KEY}`)
   }
   if (network === 'polygon') {
     return new StaticJsonRpcProvider(`https://polygon-mainnet.infura.io/v3/${process.env.INFURA_KEY}`)
