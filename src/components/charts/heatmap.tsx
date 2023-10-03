@@ -1,7 +1,8 @@
 import { GasFee } from 'types/gas'
 import moment from 'moment'
 import dynamic from 'next/dynamic'
-import { DEFAULT_CHART_OPTIONS } from './options'
+import { DEFAULT_CHART_OPTIONS, GetChartColors } from './options'
+import { NETWORKS } from 'services/indexer'
 
 const DynamicChart = dynamic(() => import('react-apexcharts'), {
   ssr: false,
@@ -9,6 +10,7 @@ const DynamicChart = dynamic(() => import('react-apexcharts'), {
 
 interface Props {
   data: GasFee[]
+  network?: NETWORKS
 }
 
 export function Heatmap(props: Props) {
@@ -16,6 +18,7 @@ export function Heatmap(props: Props) {
   const dayLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   const options = {
     ...DEFAULT_CHART_OPTIONS,
+    colors: GetChartColors(false, props.network),
     xaxis: {
       categories: dayLabels,
     },

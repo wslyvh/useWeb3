@@ -1,13 +1,13 @@
 import * as dotenv from 'dotenv'
 import { createClient } from '@supabase/supabase-js'
-import { StaticJsonRpcProvider } from '@ethersproject/providers'
 import { getMin, getMax, getAverage, getMedian, toRoundedGwei, getEthPrice } from 'utils/gas'
 import { GasFee } from 'types/gas'
+import { GetRpcProvider } from 'utils/providers'
 
 dotenv.config()
 
 const defaultBlockLimit = 10
-type NETWORKS = 'mainnet' | 'polygon' | 'optimism' | 'arbitrum'
+export type NETWORKS = 'mainnet' | 'polygon' | 'optimism' | 'arbitrum'
 
 if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
   console.warn('SUPABASE_URL or SUPABASE_KEY env variables are not set.')
@@ -69,6 +69,7 @@ export async function Index(network: NETWORKS = 'mainnet') {
 }
 
 export async function GetGasData(network: NETWORKS = 'mainnet') {
+  console.log('Get GasData', network)
   const daily = await GetAverage('day', 1, network)
   const hourly = await GetAverage('hour', 24, network)
 
@@ -111,26 +112,4 @@ export function CreateDbClient() {
   }
 
   return createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
-}
-
-export function GetRpcProvider(network: NETWORKS = 'mainnet') {
-  if (!process.env.INFURA_KEY) {
-    throw new Error('INFURA_KEY env variable is not set.')
-  }
-  if (!process.env.NEXT_PUBLIC_ALCHEMY_API_KEY) {
-    throw new Error('NEXT_PUBLIC_ALCHEMY_API_KEY env variable is not set.')
-  }
-
-  if (network === 'arbitrum') {
-    return new StaticJsonRpcProvider(`https://arb-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`)
-  }
-  if (network === 'optimism') {
-    return new StaticJsonRpcProvider(`https://optimism.publicnode.com`)
-    // return new StaticJsonRpcProvider(`https://optimism-mainnet.infura.io/v3/${process.env.INFURA_KEY}`)
-  }
-  if (network === 'polygon') {
-    return new StaticJsonRpcProvider(`https://polygon-mainnet.infura.io/v3/${process.env.INFURA_KEY}`)
-  }
-
-  return new StaticJsonRpcProvider(`https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`)
 }

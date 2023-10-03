@@ -1,7 +1,8 @@
 import { GasFee } from 'types/gas'
 import moment from 'moment'
 import dynamic from 'next/dynamic'
-import { COLOR_MULTIPLE, DEFAULT_CHART_OPTIONS } from './options'
+import { DEFAULT_CHART_OPTIONS, GetChartColors } from './options'
+import { NETWORKS } from 'services/indexer'
 
 const DynamicChart = dynamic(() => import('react-apexcharts'), {
   ssr: false,
@@ -9,12 +10,13 @@ const DynamicChart = dynamic(() => import('react-apexcharts'), {
 
 interface Props {
   data: GasFee[]
+  network?: NETWORKS
 }
 
 export function TrendChart(props: Props) {
   const options = {
     ...DEFAULT_CHART_OPTIONS,
-    colors: COLOR_MULTIPLE,
+    colors: GetChartColors(true, props.network),
     xaxis: {
       categories: props.data
         .sort((a, b) => {

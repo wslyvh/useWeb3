@@ -1,9 +1,10 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { Category } from 'types/category'
 import { NavigationProvider } from 'context/navigation'
 import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
-import styles from './pages.module.scss'
+import styles from '../pages.module.scss'
 import { SEO } from 'components/SEO'
 import { MarkdownContentService } from 'services/content'
 import { Heatmap } from 'components/charts/heatmap'
@@ -18,22 +19,30 @@ import { GasNotifications } from 'components/gas-notifications'
 import { GetAverage, GetGasData } from 'services/indexer'
 import { Featured } from 'components/featured'
 import { TrendChart } from 'components/charts/trend'
+import { capitalize } from 'utils/helpers'
 
 interface Props {
   categories: Array<Category>
+  network: string
   heatmap: GasFee[]
   gasData: GasDataType
 }
 
+interface Params extends ParsedUrlQuery {
+  network: string
+}
+
 export default function Index(props: Props) {
-  const { gasPrice, priorityFee } = useGasPrice(12000)
-  const etherPrice = useEtherPrice(15000)
-  const title = gasPrice > 0 ? `${gasPrice} Gwei` : 'Ethereum Gas tracker'
+  const { gasPrice, priorityFee } = useGasPrice(props.network)
+  const etherPrice = useEtherPrice(12000)
+  const networkName = capitalize(props.network)
+  const defaultTitle = `${networkName} Gas tracker`
+  const title = gasPrice > 0 ? `${gasPrice} Gwei` : defaultTitle
 
   return (
     <NavigationProvider categories={props.categories}>
-      <SEO title={title} divider="⛽" description="Monitor and track the Ethereum gas price to reduce transaction fees save money." />
-      <TopnavLayout className={styles.container} title="Ethereum Gas tracker" action={{ href: '/gas/api', text: 'Get API Access' }}>
+      <SEO title={title} divider="⛽" description={`Monitor and track the ${networkName} gas price to reduce transaction fees save money.`} />
+      <TopnavLayout className={styles.container} title={defaultTitle} action={{ href: '/gas/api', text: 'Get API Access' }}>
         <section>
           <Featured className={styles.featured}>
             <Panel type="primary" fill stretch>
@@ -68,25 +77,25 @@ export default function Index(props: Props) {
 
         <article>
           <p>
-            Gas is a fundamental element for any public blockchain network such as Ethereum. Understanding how it works is key to efficiently use and
-            develop on Ethereum and can greatly reduce the gas fees, required to deploy and transact with the network.
+            Gas is a fundamental element for any public blockchain network such as {networkName}. Understanding how it works is key to efficiently use
+            and develop on {networkName} and can greatly reduce the gas fees, required to deploy and transact with the network.
           </p>
         </article>
 
         <section>
           <h2>Median Gas prices</h2>
-          <TrendChart data={props.gasData.fees} />
+          <TrendChart data={props.gasData.fees} network={props.network as any} />
         </section>
 
         <section>
           <h2>Weekly Heatmap</h2>
-          <Heatmap data={props.heatmap} />
+          <Heatmap data={props.heatmap} network={props.network as any} />
         </section>
 
         <GasNotifications />
 
         <article className="markdown">
-          <h2>Average Ethereum Transaction costs</h2>
+          <h2>Average {networkName} Transaction costs</h2>
           <GasTable gasPrice={gasPrice} etherPrice={etherPrice} />
         </article>
 
@@ -109,7 +118,7 @@ export default function Index(props: Props) {
         </article>
 
         <article className="markdown">
-          <h3>Ethereum Gas explained</h3>
+          <h3>{networkName} Gas explained</h3>
           <p>
             Gas is an important concept within the Web3 world. It is the virtual fuel required to execute transactions on the network. Similar to how
             a car needs gasoline to drive. Most public blockchains denominate these transaction fees in their native currency.
@@ -153,16 +162,43 @@ export default function Index(props: Props) {
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      {
+        params: { network: 'polygon' },
+      },
+      {
+        params: { network: 'optimism' },
+      },
+      {
+        params: { network: 'arbitrum' },
+      },
+    ],
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
+  const network = context.params?.network ?? ''
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
 
-  const gasData = await GetGasData()
-  const hourlyAverages = await GetAverage('hour', 168)
+  if (!network || !['polygon', 'optimism', 'arbitrum'].includes(network)) {
+    return {
+      props: null,
+      notFound: true,
+      revalidate: DEFAULT_REVALIDATE_PERIOD,
+    }
+  }
+
+  const gasData = await GetGasData(network as any)
+  const hourlyAverages = await GetAverage('hour', 168, network as any)
 
   return {
     props: {
       categories,
+      network,
       gasData,
       heatmap: hourlyAverages ?? [],
     },
