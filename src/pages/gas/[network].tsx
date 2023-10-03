@@ -34,7 +34,7 @@ interface Params extends ParsedUrlQuery {
 
 export default function Index(props: Props) {
   const { gasPrice, priorityFee } = useGasPrice(props.network)
-  const etherPrice = useEtherPrice(12000)
+  const etherPrice = useEtherPrice()
   const networkName = capitalize(props.network)
   const defaultTitle = `${networkName} Gas tracker`
   const title = gasPrice > 0 ? `${gasPrice} Gwei` : defaultTitle

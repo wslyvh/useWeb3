@@ -6,7 +6,6 @@ import { DEFAULT_REVALIDATE_PERIOD, GITCOIN_GRANT, NEWSLETTER_URL } from 'utils/
 import styles from './pages.module.scss'
 import { SEO } from 'components/SEO'
 import { MarkdownContentService } from 'services/content'
-import { GasPriceService } from 'services/gas'
 import Link from 'next/link'
 import { TopnavLayout } from 'components/layouts/topnav'
 import { Pricing, PricingNewsletter } from 'components/form/pricing'
@@ -118,14 +117,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
 
-  const gasService = new GasPriceService()
-  const gasPrices = await gasService.GetPrices()
-  const heatmap = gasService.AsHeatmapData(gasPrices)
-
   return {
     props: {
       categories,
-      heatmap,
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }

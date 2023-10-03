@@ -26,8 +26,8 @@ interface Props {
 }
 
 export default function Index(props: Props) {
-  const { gasPrice, priorityFee } = useGasPrice(12000)
-  const etherPrice = useEtherPrice(15000)
+  const { gasPrice, priorityFee } = useGasPrice()
+  const etherPrice = useEtherPrice()
   const title = gasPrice > 0 ? `${gasPrice} Gwei` : 'Ethereum Gas tracker'
 
   return (

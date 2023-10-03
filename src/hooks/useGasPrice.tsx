@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useInterval } from './useInterval'
 import { GetRpcProvider } from 'utils/providers'
 
-export function useGasPrice(network: string = '', interval: number = 15000) {
+export function useGasPrice(network: string = '', interval: number = 12000) {
   const [gasPrice, setGasPrice] = useState<number>(0)
   const [priorityFee, setPriorityFee] = useState<number>(0)
 

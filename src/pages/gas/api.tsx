@@ -8,7 +8,6 @@ import { MarkdownContentService } from 'services/content'
 import { TopnavLayout } from 'components/layouts/topnav'
 import styles from '../pages.module.scss'
 import { Panel } from 'components/panel'
-import { useEtherPrice } from 'hooks/useEtherPrice'
 import { useGasPrice } from 'hooks/useGasPrice'
 import { GasNotifications } from 'components/gas-notifications'
 
@@ -17,7 +16,7 @@ interface Props {
 }
 
 export default function Index(props: Props) {
-  const { gasPrice, priorityFee } = useGasPrice(15000)
+  const { gasPrice, priorityFee } = useGasPrice()
   const title = 'Ethereum Gas Tracker API'
   const description = 'Get access to Ethereum gas price data through our Gas Tracker API.'
 
