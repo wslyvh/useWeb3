@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv'
 import { createClient } from '@supabase/supabase-js'
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
 import { getMin, getMax, getAverage, getMedian, toRoundedGwei, getEthPrice } from 'utils/gas'
+import { GasFee } from 'types/gas'
 
 dotenv.config()
 
@@ -65,6 +66,43 @@ export async function Index(network: NETWORKS = 'mainnet') {
 
   console.log(`[${network}] Completed.`)
   return
+}
+
+export async function GetGasData(network: NETWORKS = 'mainnet') {
+  const daily = await GetAverage('day', 1, network)
+  const hourly = await GetAverage('hour', 24, network)
+
+  if (!daily || daily.length === 0) {
+    throw new Error('Unable to fetch daily average')
+  }
+  if (!hourly || hourly.length === 0) {
+    throw new Error('Unable to fetch hourly average')
+  }
+
+  return {
+    lastDay: daily[0],
+    lastHour: hourly[0],
+    fees: hourly,
+  }
+}
+
+export async function GetAverage(period: 'hour' | 'day', limit: number = 24, network: NETWORKS = 'mainnet') {
+  console.log(`[${network}] Get average by ${period}`)
+
+  const db = CreateDbClient()
+
+  try {
+    const { data, error } = await db.from(`gasdata_${network}_${period}`).select('*').limit(limit)
+
+    if (error) {
+      console.error('Error:', error)
+      throw new Error(error.message)
+    }
+
+    return data as GasFee[]
+  } catch (error) {
+    console.error('Error:', error)
+  }
 }
 
 export function CreateDbClient() {
