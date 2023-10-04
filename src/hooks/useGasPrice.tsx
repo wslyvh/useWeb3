@@ -2,6 +2,7 @@ import { formatUnits } from '@ethersproject/units'
 import { useEffect, useState } from 'react'
 import { useInterval } from './useInterval'
 import { GetRpcProvider } from 'utils/providers'
+import { getDefaultProvider } from '@ethersproject/providers'
 
 export function useGasPrice(network: string = '', interval: number = 12000) {
   const [gasPrice, setGasPrice] = useState<number>(0)
@@ -21,7 +22,7 @@ export function useGasPrice(network: string = '', interval: number = 12000) {
 
   async function trySetPrice() {
     try {
-      const provider = GetRpcProvider(network as any)
+      const provider = !network ? getDefaultProvider() : GetRpcProvider(network as any)
       const feeData = await provider.getFeeData()
       console.log('FEE DATA', feeData)
 
