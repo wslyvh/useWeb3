@@ -68,6 +68,28 @@ export async function Index(network: NETWORKS = 'mainnet') {
   return
 }
 
+export async function Cleanup(network: NETWORKS = 'mainnet') {
+  console.log(`[${network}] Start cleanup..`)
+
+  const db = CreateDbClient()
+  try {
+    // delete all records where created_at is older than 30 days
+    const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()
+    console.log(`[${network}] Delete records older than ${since}`)
+    const { data, error } = await db.from(network).delete().lte('created_at', since)
+
+    if (error) {
+      console.error('Error:', error)
+      throw new Error(error.message)
+    }
+
+    console.log('Data deleted!')
+    return data
+  } catch (error) {
+    console.error('Error:', error)
+  }
+}
+
 export async function GetGasData(network: NETWORKS = 'mainnet') {
   console.log('Get GasData', network)
   const daily = await GetAverage('day', 1, network)
