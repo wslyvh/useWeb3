@@ -73,8 +73,8 @@ export async function Cleanup(network: NETWORKS = 'mainnet') {
 
   const db = CreateDbClient()
   try {
-    // delete all records where created_at is older than 30 days
-    const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()
+    // delete all records where created_at is older than 14 days
+    const since = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString()
     console.log(`[${network}] Delete records older than ${since}`)
     const { data, error } = await db.from(network).delete().lte('created_at', since)
 
