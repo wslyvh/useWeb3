@@ -37,7 +37,7 @@ export default function Support(props: Props) {
           <p>The requirements are that it should be ecudational, open, accessible (free) and aligned with the values of crypto and Web3.</p>
           <p>* No project/token/NFT shilling or promotions!</p>
         </section>
-{/* 
+        {/* 
         <section>
           <h3>Jobs</h3>
           <p>
