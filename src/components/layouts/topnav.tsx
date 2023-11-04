@@ -24,12 +24,12 @@ export function TopnavLayout(props: Props) {
 
   return (
     <div className={className}>
-      <Alert
+      {/* <Alert
         text="Test your Web3 knowledge and claim your ZK certifications @ the new useWeb3 Academy"
         url="https://academy.useweb3.xyz/"
         type="info"
         center
-      />
+      /> */}
 
       {/* <Alert text="🌱 If you like useWeb3 - considering donating in the current Gitcoin Grants round." url={GITCOIN_GRANT} type="success" center /> */}
 

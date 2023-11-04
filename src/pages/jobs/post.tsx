@@ -122,7 +122,8 @@ export default function Index(props: Props) {
       />
 
       <TopnavLayout className={styles.container} title={'Post Web3 Job'} hideNewsletter>
-        <form onSubmit={handleSubmit} role="form">
+        We are no longer accepting new job postings. Please check back later!
+        {/* <form onSubmit={handleSubmit} role="form">
           {step === 1 && <CompanyForm org={org} onChange={(i) => setOrg(i)} />}
           {step === 2 && <JobForm job={job} onChange={(i) => setJob(i)} />}
           {step === 3 && <OrderForm job={job} order={order} onChange={(i) => setOrder(i)} />}
@@ -138,7 +139,7 @@ export default function Index(props: Props) {
               Post another job
             </button>
           )}
-        </form>
+        </form> */}
       </TopnavLayout>
     </NavigationProvider>
   )

@@ -121,7 +121,7 @@ async function latestJobs() {
 
   console.log()
   console.log('Browse all open jobs at https://www.useweb3.xyz/jobs')
-  console.log('Have a job opening? Add your jobs at https://www.useweb3.xyz/jobs/post and reach hundreds of thousands of Web3 builders.')
+  // console.log('Have a job opening? Add your jobs at https://www.useweb3.xyz/jobs/post and reach hundreds of thousands of Web3 builders.')
   console.log()
 }
 
