@@ -2,7 +2,7 @@
 title: "How to Send Messages Cross-Chain with Axelar"
 description: "In this video, we cover the 3 functions you'll need to build your first interchain dApp. You'll learn how cross-chain transactions are structured, the information you need, and how to pay for these complex multiple-blockchain messages."
 authors: ["@StephenFluin"]
-tags: ["Smart Contract", "Cross-Chain", "Axelar"]
+tags: ["Smart Contracts", "Solidity"]
 languages: ["Solidity"]
 url: "https://www.youtube.com/watch?v=htMVIYzGA34"
 dateAdded: 2023-11-17
