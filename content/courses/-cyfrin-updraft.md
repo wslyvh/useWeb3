@@ -2,7 +2,7 @@
 title: "Cyfrin Updraft"
 description: "Level up your web3 career through industry leading comprehensive courses"
 authors: ["@cyfrinUpdraft"]
-tags: ["Smart Contracts","DeFi","Web3","Smart contracts security"]
+tags: ["Smart Contracts","DeFi","Web3","Security"]
 languages: ["Solidity", "JavaScript","Yul"]
 url: "https://updraft.cyfrin.io/"
 dateAdded: 2023-12-04
