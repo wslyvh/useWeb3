@@ -40,5 +40,5 @@ ${item.url}`,
     await new Promise((r) => setTimeout(r, 1000))
   }
 
-  writeTimeLog('good-first.txt', moment().toISOString())
+  if (issues.length > 0) writeTimeLog('good-first.txt', moment().toISOString())
 }
