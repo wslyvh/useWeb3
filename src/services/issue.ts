@@ -37,7 +37,6 @@ const orgs = [
   'smartcontractkit',
   'TrueBlocks',
   'OpenZeppelin',
-  'MetaMask',
   'tallyhowallet',
   'blockscout',
   // Libs & SDKs
@@ -169,7 +168,7 @@ export async function GetRepos(since: moment.Moment = defaultSince): Promise<Rep
 }
 
 export async function GetIssues(since: moment.Moment = defaultSince): Promise<Issue[]> {
-  const cacheKey = `issues.GetIssues-since:${since.format('YYYY-MM-DD')}`
+  const cacheKey = `issues.GetIssues-since:${since.toISOString()}`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -190,7 +189,7 @@ export async function GetIssues(since: moment.Moment = defaultSince): Promise<Is
           search(
             first: 100, 
             ${cursor}
-            query: "${orgString} is:open is:issue label:\\"good first issue\\",\\"help wanted\\" created:>${since.format('YYYY-MM-DD')} sort:created",
+            query: "${orgString} is:open is:issue label:\\"good first issue\\",\\"help wanted\\" created:>${since.toISOString()} sort:created",
             type: ISSUE
           ) {
             issueCount

@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv'
 import fetch from 'cross-fetch'
 import moment from 'moment'
 import { GetIssues } from '../services/issue'
+import { getTimeLog, writeTimeLog } from 'utils/log'
 
 dotenv.config()
 
@@ -9,9 +10,11 @@ console.log('Post latest issues to Discord')
 run()
 
 async function run() {
-  const since = moment.utc().subtract(1, 'hour')
+  const lastRun = getTimeLog('good-first.txt')
+  const since = moment(lastRun ?? moment())
+  const sinceIsoString = since.toISOString()
   const issues = await GetIssues(since)
-  console.log('Issues since', since.toISOString(), issues.length)
+  console.log('Issues since', sinceIsoString, issues.length)
   console.log('')
 
   const url = `https://discord.com/api/webhooks/${process.env.DISCORD_ID}/${process.env.DISCORD_TOKEN}`
@@ -36,4 +39,6 @@ ${item.url}`,
 
     await new Promise((r) => setTimeout(r, 1000))
   }
+
+  writeTimeLog('good-first.txt', moment().toISOString())
 }
