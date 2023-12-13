@@ -33,14 +33,6 @@ export function TopnavLayout(props: Props) {
 
       {/* <Alert text="🌱 If you like useWeb3 - considering donating in the current Gitcoin Grants round." url={GITCOIN_GRANT} type="success" center /> */}
 
-      <Alert
-        text="✨ I'm participating in Optimimsm's RPGF Round 3. 
-        Check out my submission to support my work"
-        url={'https://vote.optimism.io/retropgf/3/application/0x7a1947b73ddb3943d864d089f552222edca3de46a42cbebf8d873f139aeef609'}
-        type="success"
-        center
-      />
-
       <Header />
 
       <main className={styles.content}>
