@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Pagination } from 'components/pagination'
 import { Featured } from 'components/featured'
 import { Newsletter } from 'components/newsletter'

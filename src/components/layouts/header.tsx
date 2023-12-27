@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import styles from './header.module.scss'
 import { Link } from 'components/link'
 import Icon from 'assets/images/icon.svg'
@@ -21,11 +22,13 @@ export const MENU_ITEMS = [
   { url: `/courses`, icon: '🎓', text: 'Courses', category: 'learn' },
   { url: `/tutorials`, icon: '💻', text: 'Tutorials', category: 'learn' },
   { url: `/videos`, icon: '📺', text: 'Videos', category: 'learn' },
+  { url: `/hackathons`, icon: '🧑‍💻', text: 'Hackathons', category: 'build' },
   { url: `/contribute`, icon: '✨', text: 'Contribute', category: 'build' },
   { url: `/earn`, icon: '💸', text: 'Earn', category: 'build' },
   { url: `/grants`, icon: '💰', text: 'Grants', category: 'build' },
   { url: `/starter-kits`, icon: '🏗️', text: 'Templates', category: 'build' },
   { url: `/jobs`, icon: '💼', text: 'Jobs', category: 'build' },
+
 ]
 
 export function Header(props: Props) {

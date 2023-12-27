@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { ReactNode } from 'react'
 import Image from 'next/image'
 import { Job } from 'types/job'
@@ -8,6 +9,7 @@ import styles from './panel.module.scss'
 import moment from 'moment'
 import { Tags } from './tags'
 import { Issue } from 'types/issue'
+import { LinkButton } from './link-button'
 
 interface Props {
   children: ReactNode
@@ -220,6 +222,49 @@ export function IssuePanel(props: IssueProps) {
           <span className={styles.date + ' muted'}>
             {props.issue.commentsCount} <i className="bi bi-chat-text"></i>
           </span>
+        </div>
+      </div>
+    </Panel>
+  )
+}
+
+interface HackathonProps {
+  Event: string;
+  startDate: string;
+  endDate: string;
+  Geo: string;
+  Link: string;
+  Twitter: string;
+  Chat: string;
+  className?: string
+}
+
+export function HackathonPanel(props: HackathonProps) {
+  let className = `${styles.hackathon}`
+  if (props.className) className += ` ${props.className}`
+
+  return (
+    <Panel className={className} href={props.Link} fill stretch>
+      <div className={styles.inner}>
+        <h4 className={styles.title}>
+          {props.Event}
+        </h4>
+        <p className={`${styles.description} muted`}>{props.startDate} - {props.endDate}</p>
+        <div className={`${styles.cta}`}>
+          <div className={`${styles.locationContainer}`}>
+            <i className="bi bi-geo-alt-fill"></i>
+            <span className={`${styles.locationName}`}>
+              {props.Geo}
+            </span>
+          </div>
+          <div className={`${styles.media}`}>
+            <a href={`${props.Twitter}`}>
+              <i className="bi bi-twitter"></i>
+            </a>
+            <a href={`${props.Chat}`}>
+              <i className="bi bi-chat"></i>
+            </a>
+          </div>
         </div>
       </div>
     </Panel>
