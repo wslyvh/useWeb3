@@ -1,6 +1,6 @@
 ---
 title: "Next + ShadcnUI + MetaMask SDK Starter"
-description: "A simple starter with "connect wallet" button powered by Next.js, Tailwind CSS, ShadcnUI, and MetaMask SDK"
+description: "A simple starter with connect wallet button powered by Next.js, Tailwind CSS, ShadcnUI, and MetaMask SDK"
 authors: ["@me256ow"]
 tags: ["Dapp", "Web3"]
 languages: ["TypeScript"]
