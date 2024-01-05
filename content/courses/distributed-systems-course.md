@@ -1,5 +1,5 @@
 ---
-title: "http://www.distributedsystemscourse.com/"
+title: "Distributed Systems course"
 description: "Introductory course in Distributed Systems."
 authors: []
 tags: ["Web3"]
