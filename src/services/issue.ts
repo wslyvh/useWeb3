@@ -66,11 +66,17 @@ const orgs = [
   // L2/scalability:
   'l2beat',
   'ethereum-optimism',
+  'ArbitrumFoundation',
   'OffchainLabs',
   'matter-labs',
   'hermeznetwork',
   'maticnetwork',
   'AztecProtocol',
+  'base-org',
+  'scroll-tech',
+  'FuelLabs',
+  'starkware-libs',
+  '0xPolygonHermez',
 ]
 const orgString = `org:${orgs.join(' org:')}`
 
