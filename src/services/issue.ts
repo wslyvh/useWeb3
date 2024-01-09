@@ -51,6 +51,7 @@ const orgs = [
   'web3p',
   'web3j',
   'wagmi-dev',
+  'wevm',
   'trufflesuite',
   'ApeWorX',
   // CL
