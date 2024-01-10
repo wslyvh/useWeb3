@@ -63,6 +63,7 @@ const orgs = [
   // EL:
   'ledgerwatch',
   'NethermindEth',
+  'paradigmxyz',
   'hyperledger', // 'ethereum' (geth), Erigon, Nethermind, Besu
   // L2/scalability:
   'l2beat',
