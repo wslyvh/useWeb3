@@ -21,23 +21,27 @@ async function run() {
   for (let i = 0; i < issues.length; i++) {
     const item = issues[i]
 
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        content: `New 'good first'-issue at **${item.repository.nameWithOwner}** ✨
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          content: `New 'good first'-issue at **${item.repository.nameWithOwner}** ✨
 *${item.repository.description}*
 
-Main language: ${item.repository.primaryLanguage.name}
+${item.repository.primaryLanguage ? `Main language: ${item.repository.primaryLanguage.name}` : ''}
 ${item.url}`,
-      }),
-    })
-    if (res.status !== 200 && res.status !== 204) {
-      console.log('Unable to post Discord update..')
-      console.error(res)
-    }
+        }),
+      })
+      if (res.status !== 200 && res.status !== 204) {
+        console.log('Unable to post Discord update..')
+        console.error(res)
+      }
 
-    await new Promise((r) => setTimeout(r, 1000))
+      await new Promise((r) => setTimeout(r, 1000))
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   if (issues.length > 0) writeTimeLog('good-first.txt', moment().toISOString())
