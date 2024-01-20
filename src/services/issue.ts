@@ -41,6 +41,9 @@ const orgs = [
   'lambdaclass',
   'ethereum-attestation-service',
   'RevokeCash',
+  'ensdomains',
+  'wslyvh',
+  'gobitfly',
   // Libs & SDKs
   'eth-brownie',
   'dapphub',
@@ -56,6 +59,7 @@ const orgs = [
   'wevm',
   'trufflesuite',
   'ApeWorX',
+  'Nethereum',
   // CL
   'prysmaticlabs',
   'sigp',
