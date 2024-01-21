@@ -57,7 +57,6 @@ const orgs = [
   'web3j',
   'wagmi-dev',
   'wevm',
-  'trufflesuite',
   'ApeWorX',
   'Nethereum',
   // CL
@@ -82,6 +81,7 @@ const orgs = [
   'AztecProtocol',
   'base-org',
   'scroll-tech',
+  'coinbase',
   'FuelLabs',
   'starkware-libs',
   '0xPolygonHermez',
