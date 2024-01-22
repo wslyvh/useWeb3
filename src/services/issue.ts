@@ -44,6 +44,7 @@ const orgs = [
   'ensdomains',
   'wslyvh',
   'gobitfly',
+  'waku-org',
   // Libs & SDKs
   'eth-brownie',
   'dapphub',
