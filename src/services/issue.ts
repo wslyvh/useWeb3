@@ -45,6 +45,7 @@ const orgs = [
   'wslyvh',
   'gobitfly',
   'waku-org',
+  'ethereum-push-notification-service',
   // Libs & SDKs
   'eth-brownie',
   'dapphub',
