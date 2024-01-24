@@ -86,6 +86,7 @@ const orgs = [
   'coinbase',
   'FuelLabs',
   'starkware-libs',
+  '0xPolygon',
   '0xPolygonHermez',
 ]
 const orgString = `org:${orgs.join(' org:')}`
