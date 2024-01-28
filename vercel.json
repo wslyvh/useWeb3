@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/gas",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/indexer",
+      "schedule": "*/1 * * * *"
+    }
+  ]
+}

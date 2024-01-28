@@ -12,11 +12,14 @@ interface Props {
 }
 
 export function FilteredOverview(props: Props) {
+  const nonFeatured = props.items.filter((i: ContentItem) => !i.featured)
+  const featured = props.items.filter((i: ContentItem) => i.featured)
   const [items, setItems] = useState<Array<ContentItem>>([])
+
   useEffect(() => {
-    let sorted = [...props.items].sort((a, b) => (a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1)).reverse()
+    let sorted = [...nonFeatured].sort((a, b) => (a.dateAdded > b.dateAdded ? 1 : a.dateAdded === b.dateAdded ? 0 : -1)).reverse()
     setItems(sorted)
-  }, [props.items])
+  }, [nonFeatured])
 
   function onSort(value: string) {
     let sorted = [...items]
@@ -39,6 +42,27 @@ export function FilteredOverview(props: Props) {
         <article>
           <p dangerouslySetInnerHTML={{ __html: props.description }} />
         </article>
+      )}
+
+      {featured.length > 0 && (
+        <section>
+          <Featured className={styles.featured}>
+            {featured.map((i) => {
+              return (
+                <PanelCard
+                  key={i.id}
+                  title={i.title}
+                  icon={i.category.emoji}
+                  description={i.description}
+                  url={i.url}
+                  detailsUrl={`/${i.category.id}/${i.id}`}
+                  level={i.level}
+                  tags={i.tags}
+                />
+              )
+            })}
+          </Featured>
+        </section>
       )}
 
       <div className={styles.filter}>

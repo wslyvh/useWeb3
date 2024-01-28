@@ -2,10 +2,10 @@
 title: "Solidity 101"
 description: "101 key aspects of Solidity"
 authors: ["@0xRajeev"]
-tags: []
+tags: ["Smart Contracts","Security"]
 languages: ["Solidity"]
 url: "https://secureum.substack.com/p/solidity-101"
-dateAdded: 2023-04-12
+dateAdded: 2023-04-22
 level: "Beginner"
 date: 
 ---

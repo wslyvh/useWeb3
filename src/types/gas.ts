@@ -12,3 +12,20 @@ export interface Heatmap {
   y: string[]
   data: (number | null)[][]
 }
+
+export interface GasData {
+  lastDay: GasFee
+  lastHour: GasFee
+  fees: GasFee[]
+}
+
+export interface GasFee {
+  blockNr: number
+  period: string // timestamp
+  baseFee: number
+  gasLimit: number
+  gasUsed: number
+  min: number
+  median: number
+  ethPrice: number
+}

@@ -1,0 +1,28 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  width: 100%;
+  margin: $gap-16 0;
+  text-align: center;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    input {
+      padding: $gap-8;
+      margin-right: $gap-8;
+      width: 100%;
+      outline: none;
+    }
+
+    @media (max-width: $screen-480) {
+      flex-wrap: wrap;
+
+      input {
+        margin-right: 0;
+      }
+    }
+  }
+}

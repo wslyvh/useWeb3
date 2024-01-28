@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useInterval } from './useInterval'
 
-export function useEtherPrice(interval: number = 15000) {
+export function useEtherPrice(interval: number = 12000) {
   const [price, setPrice] = useState<number>(0)
 
   useEffect(() => {

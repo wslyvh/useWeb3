@@ -5,6 +5,7 @@ import { IssuePanel, PanelCard } from './panel'
 import { PagedResult } from 'types/paged'
 import { DEFAULT_MAX_ITEMS } from 'utils/constants'
 import { Issue } from 'types/issue'
+import { GasNotifications } from './gas-notifications'
 
 interface Props {
   results: PagedResult<Issue>
@@ -50,6 +51,10 @@ export function IssuesOverview(props: Props) {
           tags={['C++', 'Solidity', 'Smart Contracts']}
         />
       </Featured>
+
+      <article>
+        <GasNotifications type="oss" description='Sign up to receive the latest "Good First" issues in your mailbox.' />
+      </article>
 
       <Pagination
         className={styles.pagination}

@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import fetch from 'cross-fetch'
 import { MarkdownContentService } from '../services/content'
-const Twit = require('twit')
+import { SendTweet } from 'utils/twitter'
 
 dotenv.config()
 
@@ -27,7 +27,7 @@ async function run() {
   })
   const bodyPopular = await responsePopular.json()
   const pagesPopular = bodyPopular.results
-    .filter((i: any) => i.page !== '/' && !i.page.startsWith('/jobs/') && i.page.split('/').length > 2)
+    .filter((i: any) => i.page !== '/' && !i.page.startsWith('/jobs/') && !i.page.startsWith('/gas') && i.page.split('/').length > 2)
     .map((i: any) => {
       return {
         url: i.page,
@@ -50,27 +50,10 @@ async function run() {
     const resource = items.find((i) => i.url === combined[index] || i.url.endsWith(combined[index]) || i.id === combined[index].split('/').pop())
     if (resource) {
       text += `${index + 1}. ${resource.title} ${resource.authors.join(' ')} \n`
+    } else {
+      text += `${index + 1}. ${combined[index]} \n`
     }
   }
 
-  const twitterClient = new Twit({
-    consumer_key: process.env.TWITTER_CONSUMER_KEY,
-    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-    access_token: process.env.TWITTER_ACCESS_TOKEN,
-    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
-  })
-  try {
-    twitterClient.post('statuses/update', { status: text }, function (err: any, data: any, response: any) {
-      if (err) {
-        console.log('Unable to post Twitter update..')
-        console.error(err)
-      } else {
-        console.log('Update posted to Twitter..')
-        console.log(`https://twitter.com/useWeb3/status/${data.id_str}`)
-      }
-    })
-  } catch (e) {
-    console.log('Unable to post Twitter update..')
-    console.error(e)
-  }
+  await SendTweet(text)
 }

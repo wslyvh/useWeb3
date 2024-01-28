@@ -37,7 +37,7 @@ async function fetchAndSave(handle: string) {
     const arrayBuffer = await blob.arrayBuffer()
     const buffer = Buffer.from(arrayBuffer)
     const size = buffer.length
-    if (size > 1506) {
+    if (size > 1506 && size !== 7158 && size !== 7162) {
       fs.writeFileSync(filename, buffer)
       return true
     }

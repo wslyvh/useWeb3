@@ -32,14 +32,20 @@ const orgs = [
   'ChainAgnostic',
   'Web3Modal',
   'TrueFiEng',
-  'goerli',
   'WalletConnect',
   'smartcontractkit',
   'TrueBlocks',
   'OpenZeppelin',
-  'MetaMask',
-  'tallyhowallet',
   'blockscout',
+  'otterscan',
+  'lambdaclass',
+  'ethereum-attestation-service',
+  'RevokeCash',
+  'ensdomains',
+  'wslyvh',
+  'gobitfly',
+  'waku-org',
+  'ethereum-push-notification-service',
   // Libs & SDKs
   'eth-brownie',
   'dapphub',
@@ -52,8 +58,9 @@ const orgs = [
   'web3p',
   'web3j',
   'wagmi-dev',
-  'trufflesuite',
+  'wevm',
   'ApeWorX',
+  'Nethereum',
   // CL
   'prysmaticlabs',
   'sigp',
@@ -63,15 +70,24 @@ const orgs = [
   // EL:
   'ledgerwatch',
   'NethermindEth',
+  'paradigmxyz',
   'hyperledger', // 'ethereum' (geth), Erigon, Nethermind, Besu
   // L2/scalability:
   'l2beat',
   'ethereum-optimism',
+  'ArbitrumFoundation',
   'OffchainLabs',
   'matter-labs',
   'hermeznetwork',
   'maticnetwork',
   'AztecProtocol',
+  'base-org',
+  'scroll-tech',
+  'coinbase',
+  'FuelLabs',
+  'starkware-libs',
+  '0xPolygon',
+  '0xPolygonHermez',
 ]
 const orgString = `org:${orgs.join(' org:')}`
 
@@ -169,7 +185,7 @@ export async function GetRepos(since: moment.Moment = defaultSince): Promise<Rep
 }
 
 export async function GetIssues(since: moment.Moment = defaultSince): Promise<Issue[]> {
-  const cacheKey = `issues.GetIssues-since:${since.format('YYYY-MM-DD')}`
+  const cacheKey = `issues.GetIssues-since:${since.toISOString()}`
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey)
   }
@@ -190,7 +206,7 @@ export async function GetIssues(since: moment.Moment = defaultSince): Promise<Is
           search(
             first: 100, 
             ${cursor}
-            query: "${orgString} is:open is:issue label:\\"good first issue\\",\\"help wanted\\" created:>${since.format('YYYY-MM-DD')} sort:created",
+            query: "${orgString} is:open is:issue label:\\"good first issue\\",\\"help wanted\\" created:>${since.toISOString()} sort:created",
             type: ISSUE
           ) {
             issueCount

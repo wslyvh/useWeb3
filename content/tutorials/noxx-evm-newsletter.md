@@ -5,7 +5,7 @@ authors: []
 tags: ["Smart Contracts","MEV","EVM"]
 languages: ["Solidity"]
 url: "https://noxx.substack.com/"
-dateAdded: 2023-04-12
+dateAdded: 2023-04-22
 level: "Intermediate"
 date: 
 ---

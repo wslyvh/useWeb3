@@ -5,7 +5,7 @@ authors: ["@KERNEL0x"]
 tags: ["Smart Contracts","Public Goods"]
 languages: []
 url: "https://www.kernel.community/en/"
-dateAdded: 2023-04-12
+dateAdded: 2023-04-22
 level: "Beginner"
 ---
 

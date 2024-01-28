@@ -2,7 +2,7 @@
 title: "Unmarshal Grants Program"
 description: "The Unmarshal Growth Fund is aimed to support budding web3 projects that utilise Unmarshal’s backend data infrastructure to help build their dApps."
 authors: ["@unmarshal"]
-tags: ["DeFi", "dApp", "NFT", "Smart Contracts"]
+tags: ["Interoperability", "Data"]
 url: "https://unmarshal.io/grants/"
 dateAdded: 2023-02-02
 ---

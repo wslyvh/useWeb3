@@ -4,7 +4,7 @@ description: "Forkable Ethereum dev stack focused on fast product iterations"
 authors: ["@austingriffith"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
-url: "https://github.com/scaffold-eth/scaffold-eth"
+url: "https://github.com/scaffold-eth/scaffold-eth-2"
 featured: true
 dateAdded: 2021-09-16
 level: "All"

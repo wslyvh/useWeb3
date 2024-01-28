@@ -4,8 +4,8 @@ import { Alert } from 'components/alert'
 import { Header } from './header'
 import { Footer } from './footer'
 import { Newsletter } from 'components/newsletter'
-import { Panel } from 'components/panel'
 import { TitleWithAction } from './title-action'
+import { GITCOIN_GRANT } from 'utils/constants'
 
 type Props = {
   title?: string
@@ -24,12 +24,14 @@ export function TopnavLayout(props: Props) {
 
   return (
     <div className={className}>
-      <Alert
+      {/* <Alert
         text="Test your Web3 knowledge and claim your ZK certifications @ the new useWeb3 Academy"
         url="https://academy.useweb3.xyz/"
         type="info"
         center
-      />
+      /> */}
+
+      {/* <Alert text="🌱 If you like useWeb3 - considering donating in the current Gitcoin Grants round." url={GITCOIN_GRANT} type="success" center /> */}
 
       <Header />
 

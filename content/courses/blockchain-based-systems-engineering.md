@@ -5,7 +5,7 @@ authors: []
 tags: ["Smart Contracts"]
 languages: ["Solidity"]
 url: "https://github.com/sebischair/bbse"
-dateAdded: 2023-04-12
+dateAdded: 2023-04-22
 level: "Beginner"
 ---
 

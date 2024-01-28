@@ -37,9 +37,7 @@ async function run() {
 
   console.log(`### 🔥 Trending`)
   // https://github.com/trending/solidity?since=monthly
-  console.log(
-    '**useful-solidity-patterns** - This repo is an ongoing collection of useful, and occasionally clever, solidity/EVM patterns that actually get used in the wild. These bite-sized guides are written in approachable terms so engineers of all skill levels can understand them. Every guide comes with a concise, self-contained, working code example and tests to demonstrate the pattern. New patterns are added regularly.'
-  )
+  console.log('**github-repo** - This repo is...')
   console.log('<LINK>')
   console.log()
 
@@ -123,7 +121,7 @@ async function latestJobs() {
 
   console.log()
   console.log('Browse all open jobs at https://www.useweb3.xyz/jobs')
-  console.log('Have a job opening? Add your jobs at https://www.useweb3.xyz/jobs/post and reach hundreds of thousands of Web3 builders.')
+  // console.log('Have a job opening? Add your jobs at https://www.useweb3.xyz/jobs/post and reach hundreds of thousands of Web3 builders.')
   console.log()
 }
 
