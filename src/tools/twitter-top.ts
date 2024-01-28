@@ -27,7 +27,7 @@ async function run() {
   })
   const bodyPopular = await responsePopular.json()
   const pagesPopular = bodyPopular.results
-    .filter((i: any) => i.page !== '/' && !i.page.startsWith('/jobs/') && i.page.split('/').length > 2)
+    .filter((i: any) => i.page !== '/' && !i.page.startsWith('/jobs/') && !i.page.startsWith('/gas') && i.page.split('/').length > 2)
     .map((i: any) => {
       return {
         url: i.page,
