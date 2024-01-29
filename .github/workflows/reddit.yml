@@ -1,8 +1,6 @@
 name: Post on Reddit
 
 on:
-  schedule:
-    - cron: "0 0 26 * *"
   workflow_dispatch:
 
 jobs:
