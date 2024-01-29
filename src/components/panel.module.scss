@@ -284,6 +284,60 @@
   }
 }
 
+.hackathon {
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: $gap-16;
+    margin: $gap-16;
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .locationContainer {
+        display: flex;
+        align-items: center;
+
+        i {
+          width: 14px;
+          height: 14px;
+          font-size: 14px;
+          margin-bottom: 0rem;
+        }
+
+        .locationName {
+          font-size: 1rem;
+          padding-left: 5px;
+        }
+      }
+
+      .media {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+          color: #3c4a59;
+        }
+      
+        a:last-child {
+          padding-left: 10px;
+        }
+      }
+    }
+
+    @media (max-width: $screen-640) {
+      margin: $gap-8;
+      flex-wrap: wrap;
+    }
+  }
+}
+
 .featured {
   @extend .job;
 }
