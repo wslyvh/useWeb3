@@ -1,0 +1,18 @@
+---
+title: "Implementing ERC20 USDT Payments in React, wagmi and viem"
+description: "In this tutorial, we dive into the simple integration of ERC20 USDT payments into React.js. "
+authors: ["@ArtiChmaro"]
+tags: ["Smart Contracts", "Dapp"]
+languages: ["Javascript"]
+url: "https://www.youtube.com/watch?v=b8uYGc1rP7s"
+dateAdded: 2024-01-31
+level: "Beginner"
+---
+
+🛠️ Tools and Technologies:
+- React.js / Next.js: The backbone of our app.
+- Wagmi / Viem: For efficient wallet connections and smart contract talking
+
+👨‍💻 Who Should Watch?
+- Developers interested in crypto payments
+- Anyone curious about implementing ERC20 USDT in web applications.
