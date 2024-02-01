@@ -97,9 +97,6 @@ export default function Index(props: Props) {
               <Link href="/gas">Ethereum Gas Tracker</Link>
             </li>
             <li>
-              <Link href="/gas/arbitrum">Arbitrum Gas Tracker</Link>
-            </li>
-            <li>
               <Link href="/gas/optimism">Optimism Gas Tracker</Link>
             </li>
             <li>
