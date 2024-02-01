@@ -8,9 +8,9 @@ run()
 async function run() {
   console.log('Run Gas indexer')
 
-  await Promise.all([Index('mainnet'), Index('polygon'), Index('optimism'), Index('arbitrum')])
+  await Promise.all([Index('mainnet'), Index('polygon'), Index('optimism')])
 
-  await Promise.all([Cleanup('polygon'), Cleanup('optimism'), Cleanup('arbitrum')])
+  await Promise.all([Cleanup('mainnet'), Cleanup('polygon'), Cleanup('optimism'), Cleanup('arbitrum')])
 
   console.log('All done!')
 }
