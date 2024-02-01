@@ -38,19 +38,6 @@ export default function Index(props: Props) {
         </article>
 
         <article>
-          <TitleWithAction title="Web3 Jobs" />
-          {/* <TitleWithAction title="Web3 Jobs" action={{ href: '/jobs/post', text: 'Post a Job' }} /> */}
-          <p>Browse all jobs to find your Web3, Solidity or blockchain job at one of the leading companies in the space.</p>
-          <p className={styles.filters}>
-            <Tags
-              fill
-              asJobs
-              tags={toTags(['Engineering', 'Smart Contract', 'Full-stack', 'Back-end', 'Front-end', 'DevRel', 'Product', 'Design'])}
-            />
-          </p>
-        </article>
-
-        <article>
           <h2>Start learning</h2>
           <p>
             Explore the latest resources and get familiar with the core concepts and fundamentals. Learning from tutorials, courses, books, videos or

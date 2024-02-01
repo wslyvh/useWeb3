@@ -3,7 +3,6 @@ import moment from 'moment'
 import { GetIssues } from 'services/issue'
 import { MarkdownContentService } from '../services/content'
 import { Issue } from 'types/issue'
-import { GetJobsByOrganization } from 'services/jobs'
 import { google } from 'googleapis'
 
 dotenv.config()
@@ -109,20 +108,8 @@ async function latestIssues() {
 }
 
 async function latestJobs() {
-  const efJobs = await GetJobsByOrganization('ethereumfoundation')
-  // const featured = TODO: Get Featured Jobs
-
   console.log(`### 💼 Jobs`)
-  console.log()
-
-  efJobs.forEach((i) => {
-    console.log(`- ${i.title}, ${i.org.title} https://www.useweb3.xyz/org/${i.org.id}/${i.slug}`)
-  })
-
-  console.log()
-  console.log('Browse all open jobs at https://www.useweb3.xyz/jobs')
-  // console.log('Have a job opening? Add your jobs at https://www.useweb3.xyz/jobs/post and reach hundreds of thousands of Web3 builders.')
-  console.log()
+  console.log('...')
 }
 
 async function upcomingEvents() {

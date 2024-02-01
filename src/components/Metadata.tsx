@@ -1,5 +1,4 @@
 import React from 'react'
-import { Job } from 'types/job'
 import { ContentItem } from 'types/content-item'
 
 interface Props {
@@ -11,11 +10,6 @@ export function Metadata(props: Props) {
   // console.log('Generating JSON-LD', props.type, 'metadata..', props.data)
 
   function generateJsonLd() {
-    if (props.type === 'job') {
-      const job = props.data as Job
-      // JobPosting
-      // EstimatedSalary
-    }
     if (props.type === 'content') {
       const item = props.data as ContentItem
       if (item.category.id === 'books') {

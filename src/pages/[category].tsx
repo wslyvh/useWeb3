@@ -9,7 +9,6 @@ import { DEFAULT_REVALIDATE_PERIOD } from 'utils/constants'
 import styles from './pages.module.scss'
 import { MarkdownContentService } from 'services/content'
 import { FilteredOverview } from 'components/filtered-overview'
-import { Job } from 'types/job'
 import { TopnavLayout } from 'components/layouts/topnav'
 
 interface Props {
@@ -78,7 +77,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
       categories,
       category,
       items,
-      jobs: new Array<Job>(),
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }

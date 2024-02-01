@@ -1,7 +1,6 @@
 import styles from './footer.module.scss'
 import { Link } from 'components/link'
 import Image from 'next/image'
-import { DEPARTMENTS } from 'utils/jobs'
 import { defaultSlugify } from 'utils/helpers'
 import { MENU_ITEMS } from './header'
 
@@ -43,17 +42,6 @@ export function Footer(props: Props) {
               return (
                 <li key={i.url}>
                   <Link href={i.url}>{i.text}</Link>
-                </li>
-              )
-            })}
-          </ul>
-          <ul>
-            <li className={styles.header}>Jobs</li>
-            {DEPARTMENTS.map((i) => {
-              const id = defaultSlugify(i)
-              return (
-                <li key={i}>
-                  <Link href={`/jobs/t/${id}`}>{i}</Link>
                 </li>
               )
             })}

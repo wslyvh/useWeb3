@@ -1,8 +1,5 @@
 import { SITE_URL } from 'utils/constants'
-import slugify from 'slugify'
 import { MarkdownContentService } from 'services/content'
-import { DEPARTMENTS } from 'utils/jobs'
-import { GetJobs } from 'services/jobs'
 
 const Sitemap = () => {}
 
@@ -11,9 +8,6 @@ export const getServerSideProps = async ({ res }: any) => {
   const items = await service.GetItems()
   const categories = await service.GetCategories()
   const tags = (await service.GetTags()).map((i) => i.key.toLowerCase().replace(/ /g, '%20').replace(/&/g, '%26'))
-
-  const jobs = await GetJobs()
-  const companies = Array.from(new Set(jobs.map((i) => i.org.id)))
 
   const baseUrl = SITE_URL
   const currentDate = new Date().toISOString()
@@ -72,43 +66,6 @@ export const getServerSideProps = async ({ res }: any) => {
                 <changefreq>hourly</changefreq>
                 <priority>0.7</priority>
             </url>
-            <url>
-                <loc>${baseUrl}jobs</loc>
-                <lastmod>${currentDate}</lastmod>
-                <changefreq>daily</changefreq>
-                <priority>1.0</priority>
-            </url>
-            ${companies
-              .map((i) => {
-                return `
-                    <url>
-                        <loc>${baseUrl}jobs/${i}</loc>
-                        <lastmod>${currentDate}</lastmod>
-                        <changefreq>daily</changefreq>
-                        <priority>0.7</priority>
-                    </url>`
-              })
-              .join('')}
-            ${DEPARTMENTS.map((i) => {
-              return `
-                    <url>
-                        <loc>${baseUrl}${i.toLowerCase()}-jobs</loc>
-                        <lastmod>${currentDate}</lastmod>
-                        <changefreq>daily</changefreq>
-                        <priority>0.8</priority>
-                    </url>`
-            }).join('')}
-            ${jobs
-              .map((i) => {
-                return `
-                    <url>
-                        <loc>${baseUrl}jobs/${i.org.id}/${i.slug}</loc>
-                        <lastmod>${currentDate}</lastmod>
-                        <changefreq>weekly</changefreq>
-                        <priority>0.6</priority>
-                    </url>`
-              })
-              .join('')}
         </urlset>`
 
   res.setHeader('Content-Type', 'text/xml')

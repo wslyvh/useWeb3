@@ -25,7 +25,6 @@ export const MENU_ITEMS = [
   { url: `/earn`, icon: '💸', text: 'Earn', category: 'build' },
   { url: `/grants`, icon: '💰', text: 'Grants', category: 'build' },
   { url: `/starter-kits`, icon: '🏗️', text: 'Templates', category: 'build' },
-  { url: `/jobs`, icon: '💼', text: 'Jobs', category: 'build' },
 ]
 
 export function Header(props: Props) {

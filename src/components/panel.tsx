@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react'
 import Image from 'next/image'
-import { Job } from 'types/job'
 import { getLevelStyle, toTags } from 'utils/helpers'
-import { getApplicationUrl } from 'utils/jobs'
 import { Link } from './link'
 import styles from './panel.module.scss'
 import moment from 'moment'
@@ -95,63 +93,6 @@ export function PanelCard(props: CardProps) {
             <Link href={props.detailsUrl}>more details &raquo;</Link>
           </p>
         )}
-      </div>
-    </Panel>
-  )
-}
-
-interface JobProps {
-  job: Job
-  className?: string
-}
-
-export function JobPanel(props: JobProps) {
-  let className = `${styles.job}`
-  if (props.className) className += ` ${props.className}`
-  if (!props.job.featured) className += ` ${styles.normal}`
-  if (props.job.featured) className += ` ${styles.featured}`
-
-  const tags: string[] = [props.job.department]
-  if (props.job.remote) {
-    tags.push(`🌐 Remote`)
-  }
-  if (props.job.type && props.job.type !== 'Full-time') {
-    tags.push(props.job.type)
-  }
-  if (props.job.minSalary !== undefined && props.job.maxSalary !== undefined) {
-    tags.push(`💰 ${props.job.minSalary / 1000}K - ${props.job.maxSalary / 1000}K`)
-  }
-
-  const orgLink = `/org/${props.job.org.id}`
-  const jobLink = `/org/${props.job.org.id}/${props.job.slug}`
-
-  return (
-    <Panel className={className} fill={!props.job.featured} type={props.job.featured ? 'warning' : 'neutral'} stretch>
-      <div className={styles.inner}>
-        {props.job.featured && (
-          <Link className={styles.logo} href={orgLink}>
-            {props.job.org.logo && <Image src={props.job.org.logo} alt={`${props.job.org.title} logo`} height={64} width={64} />}
-            {!props.job.org.logo && <span className={styles.badge}>{props.job.org.title.toUpperCase().charAt(0)}</span>}
-          </Link>
-        )}
-        <div className={styles.body}>
-          <Link href={jobLink}>
-            <h4>
-              {props.job.title}
-              {props.job.featured && <span> 🔥</span>}
-            </h4>
-          </Link>
-          <div>
-            <Link href={orgLink}>{props.job.org.title}</Link> <span className="muted">{props.job.location}</span>
-          </div>
-          <Tags className={styles.tags} small withIcons noLinks tags={toTags(tags)} />
-        </div>
-        <div className={styles.actions}>
-          <Panel fill type="secondary" href={getApplicationUrl(props.job.url)}>
-            Apply
-          </Panel>
-          <span className={styles.date + ' muted'}>{moment(props.job.updated).fromNow(true)}</span>
-        </div>
       </div>
     </Panel>
   )

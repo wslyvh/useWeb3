@@ -8,7 +8,7 @@ import { SEO } from 'components/SEO'
 import { MarkdownContentService } from 'services/content'
 import Link from 'next/link'
 import { TopnavLayout } from 'components/layouts/topnav'
-import { Pricing, PricingNewsletter } from 'components/form/pricing'
+import { PricingNewsletter } from 'components/form/pricing'
 import { RECEIVER_ADDRESS, RECEIVER_ENS } from 'utils/jobs'
 
 interface Props {
@@ -37,17 +37,6 @@ export default function Support(props: Props) {
           <p>The requirements are that it should be ecudational, open, accessible (free) and aligned with the values of crypto and Web3.</p>
           <p>* No project/token/NFT shilling or promotions!</p>
         </section>
-        {/* 
-        <section>
-          <h3>Jobs</h3>
-          <p>
-            The job board has been one of the most popular sections of the site since it launched. You can submit jobs posting at{' '}
-            <Link href="https://www.useweb3.xyz/jobs/post">https://www.useweb3.xyz/jobs/post</Link>.
-          </p>
-          <p>
-            <Pricing />
-          </p>
-        </section> */}
 
         <section>
           <h3>Newsletter</h3>
