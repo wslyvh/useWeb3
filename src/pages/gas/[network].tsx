@@ -184,7 +184,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
 
-  if (!network || !['polygon', 'optimism'].includes(network)) { // , 'arbitrum'
+  if (!network || !['polygon', 'optimism'].includes(network)) {
     return {
       props: null,
       notFound: true,
