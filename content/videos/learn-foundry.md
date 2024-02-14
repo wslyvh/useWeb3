@@ -12,6 +12,6 @@ date: 2022-03-28
 
 We build a minimal foundry project using a staking application. Showing you how to work with foundry. 
 
-👩🏻‍💻 Code: https://github.com/PatrickAlphaC/foun...
+👩🏻‍💻 Code: https://github.com/PatrickAlphaC/foundry
 📚 Learn Foundry: https://onbjerg.github.io/foundry-book
 🌋 Foundry Repo: https://github.com/gakonst/foundry
