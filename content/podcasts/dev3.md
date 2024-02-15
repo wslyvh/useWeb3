@@ -4,7 +4,7 @@ description: "Learn about Ethereum, DeFi, and the newest tech from the web3 buil
 authors: ["@dawsonbotsford"]
 tags: ["Ethereum", "DevEx"]
 languages: []
-url: "https://dev3.fm/"
+url: "https://ivy.fm/podcast/dev3-1062011"
 dateAdded: 2022-07-05
 level: "All"
 ---

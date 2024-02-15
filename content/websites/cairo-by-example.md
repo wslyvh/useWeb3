@@ -4,7 +4,7 @@ description: "Cairo is a programming language that can be used to write blockcha
 authors: ["@eth_worm"]
 tags: ["Smart Contracts","Scalability"]
 languages: ["Cairo"]
-url: "https://cairo-by-example.org/"
+url: "https://cairo-by-example.com/"
 dateAdded: 2023-03-03
 level: "Beginner"
 ---
