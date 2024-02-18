@@ -1,7 +1,7 @@
 ---
 title: 'Intro to DeFi – How to navigate the Degen world'
 description: 'DeFi is one of the key areas in web3: the guide introduces the concept and provides resources for using and developing DeFi applications.'
-authors: ['@bitblondy']
+authors: ['@bitblondy', '@uttam_singhk']
 level: Beginner
 tags: ['Web3', 'DeFi']
 languages: ['Solidity']
@@ -71,9 +71,10 @@ You can find a lot of DeFi DApps tutorials on useweb3. Check them out [here](htt
 
 - [_DeFi Developer roadmap GitHub repo_](https://github.com/OffcierCia/DeFi-Developer-Road-Map)
 - [_Buildbear DeFi building tutorials_](https://www.buildbear.io/resources/guides-and-tutorials)
-- [_Uniswap V2 contract walkthrough_](https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code):
-  [ethereum.org](https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code)
+- [_Uniswap V2 contract walkthrough_](https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code)
 - [_DeFi Hack coding challenges_](https://www.defihack.xyz/)
+- [_Rareskills Uniswap V2 book_](https://www.rareskills.io/uniswap-v2-book)
+- [_Rareskills Compound V3 book_](https://www.rareskills.io/compound-v3-book)
 
 ## DeFi Security
 
