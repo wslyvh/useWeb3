@@ -9,4 +9,4 @@ dateAdded: 2021-09-16
 level: "All"
 ---
 
-A template to build a decentralised application using ethereum, buidler, svelte and thegraph
+A template to build a decentralised application using ethereum, builder, svelte and thegraph

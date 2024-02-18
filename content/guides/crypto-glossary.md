@@ -150,7 +150,7 @@ If you want to contribute to the glossary, [have a look on Github](https://githu
 - **OG**  
   Original Gangster, a person who was very early involved in crypto or a specific project
 
-- **Orcale**  
+- **Oracle**  
   Data bridge to bring real-world information onto the blockchain
 
 - **P2P**  
