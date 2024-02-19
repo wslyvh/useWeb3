@@ -37,7 +37,7 @@ https://soliditylang.org/
 
 
 ### 2. Solidity by Example
-The second one on the list is Solidity by Example. A great collection of more pratical examples, incl. source code and supporting videos.
+The second one on the list is Solidity by Example. A great collection of more practical examples, incl. source code and supporting videos.
 
 https://solidity-by-example.org/
 

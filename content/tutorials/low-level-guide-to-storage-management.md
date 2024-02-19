@@ -13,4 +13,4 @@ We'll walkthrough each encounter you will face by learning deal with them using 
 
 ### Storage
 
-Storage is a persistent mapping with 2^256 - 1 available 32 byte words for each contract. When you set a state variable’s value it stores it at the assigned slot where it will remain in the EVM unless overriden with another value of the same type.
+Storage is a persistent mapping with 2^256 - 1 available 32 byte words for each contract. When you set a state variable’s value it stores it at the assigned slot where it will remain in the EVM unless overridden with another value of the same type.
