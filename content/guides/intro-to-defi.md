@@ -34,11 +34,10 @@ Some intro pages and learning resources to start your DeFi journey:
 
 - [_Ethereum.org DeFi intro page_](https://ethereum.org/en/defi)
 - [_Rekt news_](https://rekt.news/de/)
-- [_Finematics Youtube channel_](https://www.useweb3.xyz/videos/finematics)
+- [_Finematics Youtube channel_](https://www.youtube.com/c/Finematics)
 - [_The Defiant news_](https://thedefiant.io/)
-- [_How to DeFi Advanced Book_](https://www.useweb3.xyz/books/how-to-defi-advanced)
-- [_Bankless Podcast_](https://www.useweb3.xyz/podcasts/bankless)
-- [_DeFi course by the University of Nicosia_](https://www.useweb3.xyz/courses/defi-mooc)
+- [_Bankless Podcast and newsletter_](https://www.bankless.com/)
+- [_DeFi course by the University of Nicosia_](https://www.unic.ac.cy/blockchain/free-mooc/)
 
 ## Areas of DeFi
 
@@ -87,8 +86,8 @@ Learn more about DeFi hacks and how to prevent them:
 - [_Rekt leaderboard_](https://rekt.news/leaderboard/)
 - [_DeFi Exploit timeline_](https://chainsec.io/defi-hacks/)
 - [_GitHub DeFi risk tools_](https://github.com/defi-defense-dao/defi-risk-tools-list)
-- [_Damn Vulnerable DeFi code challenges_](https://www.useweb3.xyz/code-challenges/damn-vulnerable-defi)
-- [_DeFi Risk Tools & Resources Guide_](https://www.useweb3.xyz/guides/defi-risk-tools-and-resources)
+- [_Damn Vulnerable DeFi code challenges_](https://www.damnvulnerabledefi.xyz/)
+- [_DeFi Risk Tools & Resources Guide_](https://github.com/defi-defense-dao/defi-risk-tools-list)
 - [_Blockchain Threat Intelligence Newsletter_](https://newsletter.blockthreat.io/archive)
 
 ## Degen Glossary
