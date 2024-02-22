@@ -88,6 +88,10 @@ const orgs = [
   'starkware-libs',
   '0xPolygon',
   '0xPolygonHermez',
+  // cryptography - mpc and fhe
+  'nillion-oss',
+  'Inco-fhevm',
+  'zama-ai',
 ]
 const orgString = `org:${orgs.join(' org:')}`
 
