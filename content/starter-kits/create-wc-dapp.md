@@ -2,7 +2,7 @@
 title: 'Create WalletConnect Dapp'
 description: 'Bootstrap a WalletConnect integrated dapp with in seconds 📲'
 authors: ['@WalletConnect', '@Boidushya']
-tags: ['Dapp', 'Web3', 'WalletConnect', 'Web3Modal']
+tags: ['Dapp', 'Web3']
 languages: ['JavaScript']
 url: 'https://github.com/walletconnect/create-wc-dapp'
 dateAdded: 2024-03-01
