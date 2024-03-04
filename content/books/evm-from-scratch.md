@@ -2,7 +2,7 @@
 title: "Build the EVM from scratch"
 description: "In this tutorial you are going to build the EVM from scratch."
 authors: ["@shafu0x"]
-tags: ["Smart Contracts", "DeFi", "Dapp"]
+tags: ["Smart Contracts", "EVM"]
 languages: ["Python"]
 url: "evm-from-scratch.xyz"
 dateAdded: 2024-4-4
