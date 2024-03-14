@@ -72,7 +72,7 @@ export default function Support(props: Props) {
 
         <section>
           <h3>Payments &amp; Donations</h3>
-          <p>All payments can be be made using ETH/DAI/UDSC on Mainnet/Arbitrum/Optimism</p>
+          <p>All payments can be made using ETH/DAI/UDSC on Mainnet/Arbitrum/Optimism</p>
           <p>If you want to support our mission and help on-board more people into Web3 & Crypto, any donations are also much appreciated.</p>
           <ul>
             <li>
