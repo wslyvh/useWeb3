@@ -21,6 +21,8 @@ const orgs = [
   'quadratic-funding',
   'web3well',
   'Zokrates',
+  'bandada-infra',
+  'anon-aadhaar',
   // Dev tooling & infra
   'NomicFoundation',
   'dethcrypto',
