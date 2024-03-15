@@ -10,7 +10,7 @@ level: "All"
 ---
 
 The easiest entry point to the Web3!
-feel free to fork and contrubute.
+feel free to fork and contribute.
 This Decentralized Application Boilerplate is built with React + RainbowKit + wagmi + Next.js + Chakra-ui.
 Including features like:
     - Fully functional Nextjs App
