@@ -1,12 +1,12 @@
 ---
 title: "Create Eth App"
 description: "Create Ethereum-powered apps with one command"
-authors: ["@PaulRBerg","@TomFrench_eth","@0xKaden"]
+authors: ["@WalletConnect"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","JavaScript"]
-url: "https://github.com/paulrberg/create-eth-app"
+url: "https://github.com/WalletConnect/create-eth-app"
 featured: true
-dateAdded: 2021-09-16
+dateAdded: 2024-03-24
 level: "All"
 ---
 
