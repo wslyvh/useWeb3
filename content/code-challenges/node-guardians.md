@@ -6,6 +6,7 @@ tags: ["Smart Contracts","Cryptography","Design Patterns"]
 languages: ["Solidity"]
 url: "https://nodeguardians.io"
 dateAdded: 2023-02-11
+featured: true
 level: "Beginner"
 ---
 

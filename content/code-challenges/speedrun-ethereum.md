@@ -6,6 +6,7 @@ tags: ["Smart Contracts","Solidity","Dapp"]
 languages: ["Solidity"]
 url: "https://speedrunethereum.com/"
 dateAdded: 2023-04-22
+featured: true
 level: "All"
 ---
 
