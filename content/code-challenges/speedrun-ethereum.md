@@ -5,7 +5,7 @@ authors: []
 tags: ["Smart Contracts","Solidity","Dapp"]
 languages: ["Solidity"]
 url: "https://speedrunethereum.com/"
-dateAdded: 2023-04-22
+dateAdded: 2024-04-07
 featured: true
 level: "All"
 ---
