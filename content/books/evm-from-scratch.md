@@ -4,7 +4,7 @@ description: "In this tutorial you are going to build the EVM from scratch."
 authors: ["@shafu0x"]
 tags: ["Smart Contracts", "EVM"]
 languages: ["Python"]
-url: "evm-from-scratch.xyz"
+url: "https://evm-from-scratch.xyz"
 dateAdded: 2024-4-4
 level: "Intermediate"
 ---
