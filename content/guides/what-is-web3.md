@@ -10,7 +10,7 @@ date: 2022-01-22
 dateAdded: 2022-01-15
 ---
 
-Web3 is about the next evolution of the web. A web that is more open, transparent and permissionless and runs on decentralized infrastructure such as blockchains. Global and decentralized applications (DApps) that anyone can interact with. They often have native assets integrated (such as Ether) to transact value, but are not just about money or payments. These decentralized applications offer a range of digitial services, such as storage, bandwidth and computation without any risk of downtime, censorship, fraud, or 3rd-party interference.
+Web3 is about the next evolution of the web. A web that is more open, transparent and permissionless and runs on decentralized infrastructure such as blockchains. Global and decentralized applications (DApps) that anyone can interact with. They often have native assets integrated (such as Ether) to transact value, but are not just about money or payments. These decentralized applications offer a range of digital services, such as storage, bandwidth and computation without any risk of downtime, censorship, fraud, or 3rd-party interference.
 
 ## Benefits
 
