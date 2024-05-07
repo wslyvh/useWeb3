@@ -9,4 +9,4 @@ dateAdded: 2022-10-29
 level: "Intermediate"
 ---
 
-I wrote an article [How To Build A MEV Bot](https://www.degatchi.com/articles/how-to-build-a-mev-bot) that explains the overall architecture you need to think of to build a bot - from getting a strategy and fetching data to general tips on design structure (that you most likely wont find anywhere else).
+I wrote an article [How To Build A MEV Bot](https://www.degatchi.com/articles/how-to-build-a-mev-bot) that explains the overall architecture you need to think of to build a bot - from getting a strategy and fetching data to general tips on design structure (that you most likely won't find anywhere else).

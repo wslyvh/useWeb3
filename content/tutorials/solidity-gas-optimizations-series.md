@@ -1,6 +1,6 @@
 ---
 title: "Solidity Gas Optimizations Series"
-description: "A serie of posts on Solidity gas optimizations geared for beginners"
+description: "A series of posts on Solidity gas optimizations geared for beginners"
 authors: ["@javier123454321"]
 tags: ["Smart Contracts"]
 languages: ["Solidity"]
@@ -10,4 +10,4 @@ level: "Intermediate"
 date: 2021-09-09
 ---
 
-A serie of posts on Solidity gas optimizations geared for beginners
+A series of posts on Solidity gas optimizations geared for beginners

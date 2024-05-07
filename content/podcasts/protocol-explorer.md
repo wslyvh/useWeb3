@@ -1,6 +1,6 @@
 ---
 title: "Protocol Explorer"
-description: "In-depth conversations with devrels from different protocls and projects to teach their tech and to pair through a small project."
+description: "In-depth conversations with devrels from different protocols and projects to teach their tech and to pair through a small project."
 authors: ["@Rahatcodes", "protocolxplorer"]
 tags: []
 languages: []
