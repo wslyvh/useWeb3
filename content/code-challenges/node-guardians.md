@@ -1,25 +1,25 @@
 ---
 title: "Node Guardians"
-description: "a platform for builders, thinkers, and stakers. Our mission is to bolster innovative and promising crypto ecosystems, and contribute to the future of a decentralized internet."
+description: "Node Guardians is a gamified educational platform that creates lore-rich programming challenges for experienced Solidity, Cairo, Huff and Noir developers."
 authors: ["@nodeguardians"]
-tags: ["Smart Contracts","Cryptography","Design Patterns"]
-languages: ["Solidity"]
+tags: ["Education", "Public Good", "Ethereum", "Blockchain", "Smart Contracts", "Cryptography", "Design Patterns", "ZKP", "Security"]
+languages: ["Solidity", "Cairo", "Huff", "Noir"] 
 url: "https://nodeguardians.io"
 dateAdded: 2024-04-07
 featured: true
 level: "Beginner"
 ---
 
-Node Guardians is a platform for builders, thinkers, and stakers. Our mission is to bolster innovative and promising crypto ecosystems, and contribute to the future of a decentralized internet. We do this through education and infrastructure.
+Node Guardians is a gamified educational platform that creates lore-rich programming challenges for experienced Solidity, Huff, Cairo and Noir developers. Think of it as a skill-based RPG where developers can become familiar with specific stack components and a place where they can showcase their abilities. 
 
-### Education
+### Skills Upgrade
 
-Ecosystems need talented builders. There is a need to onboard and upgrade more developers into industry-standard builders across different protocols. We design a catalog of coding challenges that aim to engage smart contract developers of all levels, and equip them with knowledge on how to build safer, better, and smarter.
+We have created a series of coding challenges called “quests” to engage smart contract developers, providing them with the knowledge to build safe and gas efficient applications. In addition to practical skills, we also provide theoretical knowledge about crypto history, technology and economics through building a library of articles that break down complex concepts of distributed systems & decentralized finance.
 
-Beyond practical skills, we also aim to empower the space with theoretical knowledge in an unbiased manner, through growing a library of literature on crypto history, technology, and economics, written by us and the community.
 
-### Infrastructure
+### Public Good
 
-Ecosystems need decentralized security. For proof-of-stake chains, this means more stakers and validators. We provide infrastructure for non-custodial staking that places an emphasis on availability and security. This enables users to stake their assets, act as validators in the ecosystem, and earn rewards.
+Node Guardians is a public good for developers and will always remain so. 
+In addition to supporting the growth of cool ecosystems, we plan to make the platform sustainable by managing [infrastructure)(https://infra.nodeguardians.io/) across various networks.
 
-On-chain governance is taken very seriously at Node Guardians. As validators, we aim to vote on proposals that push towards more decentralized & robust protocols, and proposals that are aligned with our community’s interests.  Expect full transparency on our governance choices through regular recaps.
+Rewarding non-contributing operators wastes funds, we prefer community-building and education.
