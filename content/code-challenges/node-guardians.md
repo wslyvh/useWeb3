@@ -20,6 +20,6 @@ We have created a series of coding challenges called “quests” to engage smar
 ### Public Good
 
 Node Guardians is a public good for developers and will always remain so. 
-In addition to supporting the growth of cool ecosystems, we plan to make the platform sustainable by managing [infrastructure)(https://infra.nodeguardians.io/) across various networks.
+In addition to supporting the growth of cool ecosystems, we plan to make the platform sustainable by managing [infrastructure](https://infra.nodeguardians.io/) across various networks.
 
 Rewarding non-contributing operators wastes funds, we prefer community-building and education.
