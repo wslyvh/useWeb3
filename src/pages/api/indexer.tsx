@@ -5,7 +5,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     await Promise.all([Index('mainnet'), Index('polygon'), Index('optimism')])
   
-    await Promise.all([Cleanup('mainnet'), Cleanup('polygon'), Cleanup('optimism'), Cleanup('arbitrum')])
+    await Promise.all([Cleanup('mainnet'), Cleanup('polygon'), Cleanup('optimism')])
     
     res.status(200).json({ data: 'Ok' })
   } catch (error) {
