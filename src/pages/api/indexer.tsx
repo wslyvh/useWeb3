@@ -1,10 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { Index } from 'services/indexer'
+import { Cleanup, Index } from 'services/indexer'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    await Promise.all([Index('mainnet'), Index('polygon'), Index('optimism'), Index('arbitrum')])
-
+    await Promise.all([Index('mainnet'), Index('polygon'), Index('optimism')])
+  
+    await Promise.all([Cleanup('mainnet'), Cleanup('polygon'), Cleanup('optimism'), Cleanup('arbitrum')])
+    
     res.status(200).json({ data: 'Ok' })
   } catch (error) {
     console.error(error)
