@@ -4,7 +4,7 @@ description: "Slang is Nomic Foundation’s modular set of compiler APIs empower
 authors: ["@NomicFoundation"]
 tags: ["Smart Contracts", "DevEx", "Dapp"]
 languages: ["Solidity"]
-url: "https://www.rareskills.io/post/erc-7201"
+url: "https://blog.nomic.foundation/how-to-write-your-own-solidity-linter-using-slang-356e7565ad1b"
 dateAdded: 2024-06-17
 level: "Intermediate"
 ---
