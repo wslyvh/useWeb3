@@ -4,7 +4,7 @@ description: "In this tutorial, you will learn how to build a full-stack interch
 authors: ["@olanetsoft"]
 tags: ["Smart Contracts", "Dapp"]
 languages: ["Solidity", "JavaScript", "React"]
-url: "https://axelar.network/blog/how-to-build-interchain-dapp-with-next.js-solidity-and-Axelar"
+url: "https://www.axelar.network/blog/how-to-build-interchain-dapp-with-next-js-solidity-and-axelar"
 dateAdded: 2023-11-17
 level: "Intermediate"
 ---
