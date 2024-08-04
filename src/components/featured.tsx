@@ -8,12 +8,14 @@ interface Props {
   type?: 'grid' | 'rows'
   className?: string
   children: ReactNode
+  double?: boolean
 }
 
 export function Featured(props: Props) {
   let className = `${styles.container}`
   if (props.className) className += ` ${props.className}`
   let type = styles.grid
+  if (props.double) type += ` ${styles.double}`
   if (props.type) type = styles[props.type]
 
   return (

@@ -14,8 +14,7 @@ export interface Heatmap {
 }
 
 export interface GasData {
-  lastDay: GasFee
-  lastHour: GasFee
+  lastHour: number
   fees: GasFee[]
 }
 

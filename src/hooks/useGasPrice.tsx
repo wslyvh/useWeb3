@@ -24,7 +24,6 @@ export function useGasPrice(network: string = '', interval: number = 12000) {
     try {
       const provider = !network ? getDefaultProvider() : GetRpcProvider(network as any)
       const feeData = await provider.getFeeData()
-      console.log('FEE DATA', feeData)
 
       if (feeData.gasPrice && feeData.maxPriorityFeePerGas) {
         const gasPrice = Math.round(Number(formatUnits(feeData.gasPrice, 'gwei')) * 100) / 100

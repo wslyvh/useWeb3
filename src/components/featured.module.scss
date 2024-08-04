@@ -30,6 +30,14 @@
     }
   }
 
+  .double {
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: $screen-640) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .rows {
     display: grid;
     gap: $gap-16;

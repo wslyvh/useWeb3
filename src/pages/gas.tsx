@@ -35,7 +35,7 @@ export default function Index(props: Props) {
       <SEO title={title} divider="⛽" description="Monitor and track the Ethereum gas price to reduce transaction fees save money." />
       <TopnavLayout className={styles.container} title="Ethereum Gas tracker" action={{ href: '/gas/api', text: 'Get API Access' }}>
         <section>
-          <Featured className={styles.featured}>
+          <Featured className={styles.featured} double>
             <Panel type="primary" fill stretch>
               <div style={{ padding: '8px' }}>
                 <h4>⛽ Current</h4>
@@ -49,18 +49,7 @@ export default function Index(props: Props) {
               <div style={{ padding: '8px' }}>
                 <h4>🕘 Avg/last hour</h4>
                 <br />
-                <span>baseFee: {Math.round(props.gasData.lastHour.baseFee * 100) / 100}</span>
-                <br />
-                <span>median: {Math.round(props.gasData.lastHour.median * 100) / 100}</span>
-              </div>
-            </Panel>
-            <Panel type="neutral" stretch>
-              <div style={{ padding: '8px' }}>
-                <h4>📅 Avg/24 hours</h4>
-                <br />
-                <span>baseFee: {Math.round(props.gasData.lastDay.baseFee * 100) / 100}</span>
-                <br />
-                <span>median: {Math.round(props.gasData.lastDay.median * 100) / 100}</span>
+                <span>baseFee: {props.gasData.lastHour}</span>
               </div>
             </Panel>
           </Featured>
@@ -97,10 +86,16 @@ export default function Index(props: Props) {
               <Link href="/gas">Ethereum Gas Tracker</Link>
             </li>
             <li>
+              <Link href="/gas/arbitrum">Arbitrum Gas Tracker</Link>
+            </li>
+            <li>
               <Link href="/gas/optimism">Optimism Gas Tracker</Link>
             </li>
             <li>
               <Link href="/gas/polygon">Polygon Gas Tracker</Link>
+            </li>
+            <li>
+              <Link href="/gas/base">Base Gas Tracker</Link>
             </li>
           </ul>
         </article>
@@ -155,13 +150,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const categories = await service.GetCategories()
 
   const gasData = await GetGasData()
-  const hourlyAverages = await GetAverage('hour', 168)
+  const averages = await GetAverage('hour', 168)
 
   return {
     props: {
       categories,
       gasData,
-      heatmap: hourlyAverages ?? [],
+      heatmap: averages ?? [],
     },
     revalidate: DEFAULT_REVALIDATE_PERIOD,
   }

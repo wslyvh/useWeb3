@@ -27,10 +27,6 @@ export function TrendChart(props: Props) {
   }
   const series = [
     {
-      name: 'median',
-      data: props.data.map((item) => Math.round(item.median * 100) / 100),
-    },
-    {
       name: 'baseFee',
       data: props.data.map((item) => Math.round(item.baseFee * 100) / 100),
     },
