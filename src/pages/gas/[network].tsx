@@ -101,9 +101,6 @@ export default function Index(props: Props) {
               <Link href="/gas/optimism">Optimism Gas Tracker</Link>
             </li>
             <li>
-              <Link href="/gas/polygon">Polygon Gas Tracker</Link>
-            </li>
-            <li>
               <Link href="/gas/base">Base Gas Tracker</Link>
             </li>
           </ul>
@@ -158,16 +155,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
       {
-        params: { network: 'polygon' },
-      },
-      {
-        params: { network: 'optimism' },
-      },
-      {
         params: { network: 'arbitrum' },
       },
       {
         params: { network: 'base' },
+      },
+      {
+        params: { network: 'optimism' },
       },
     ],
     fallback: false,
@@ -179,7 +173,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
   const service = new MarkdownContentService()
   const categories = await service.GetCategories()
 
-  if (!network || !['polygon', 'optimism', 'base', 'arbitrum'].includes(network)) {
+  if (!network || !['arbitrum', 'base', 'mainnet', 'optimism'].includes(network)) {
     return {
       props: null,
       notFound: true,
