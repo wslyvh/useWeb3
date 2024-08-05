@@ -1,7 +1,5 @@
 import { GasFee } from 'types/gas'
 
-const defaultBlockLimit = 10
-
 export type NETWORKS = 'mainnet' | 'polygon' | 'optimism' | 'arbitrum' | 'base'
 
 export async function GetGasData(network: NETWORKS = 'mainnet') {
@@ -17,8 +15,7 @@ export async function GetGasData(network: NETWORKS = 'mainnet') {
       lastHour: Math.round(average * 100) / 100,
       fees: body.data.blocks,
     }
-  }
-  catch (error) {
+  } catch (error) {
     console.error('Error:', error)
   }
 
@@ -35,8 +32,7 @@ export async function GetAverage(period: 'hour' | 'day', limit: number = 24, net
     const res = await fetch(`https://www.ethgastracker.com/api/gas/average/${network}`)
     const body = await res.json()
     return body.data.data
-  }
-  catch (error) {
+  } catch (error) {
     console.error('Error:', error)
   }
 }

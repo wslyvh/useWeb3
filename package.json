@@ -18,8 +18,6 @@
     "twitter:random": "ts-node src/tools/twitter-random",
     "twitter:tip": "ts-node src/tools/twitter-tip",
     "twitter:top": "ts-node src/tools/twitter-top",
-    "gas:fetch": "ts-node src/tools/gas-fetch",
-    "gas:index": "ts-node src/tools/gas-indexer",
     "newsletter": "ts-node src/tools/newsletter",
     "reddit": "ts-node src/tools/reddit",
     "awesome": "ts-node src/tools/awesome"
