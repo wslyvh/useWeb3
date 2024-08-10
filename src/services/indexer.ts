@@ -6,7 +6,7 @@ export async function GetGasData(network: NETWORKS = 'mainnet') {
   console.log('Get GasData', network)
 
   try {
-    const res = await fetch(`https://www.ethgastracker.com/api/gas/history/${network}`)
+    const res = await fetch(`https://www.ethgastracker.com/api/gas/history/${network}?apiKey=${process.env.ETHGAS_API_KEY}`)
     const body = await res.json()
     const blocks = body.data.blocks
     const average = blocks.map((i: GasFee) => i.baseFee).reduce((a: number, b: number) => a + b, 0) / blocks.length
@@ -29,7 +29,7 @@ export async function GetAverage(period: 'hour' | 'day', limit: number = 24, net
   console.log(`[${network}] Get average by ${period}`)
 
   try {
-    const res = await fetch(`https://www.ethgastracker.com/api/gas/average/${network}`)
+    const res = await fetch(`https://www.ethgastracker.com/api/gas/average/${network}?apiKey=${process.env.ETHGAS_API_KEY}`)
     const body = await res.json()
     return body.data.data
   } catch (error) {
