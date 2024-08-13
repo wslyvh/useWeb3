@@ -33,7 +33,10 @@ export default function Index(props: Props) {
   return (
     <NavigationProvider categories={props.categories}>
       <SEO title={title} divider="⛽" description="Monitor and track the Ethereum gas price to reduce transaction fees save money." />
-      <TopnavLayout className={styles.container} title="Ethereum Gas tracker" action={{ href: 'https://www.ethgastracker.com/docs', text: 'Get API Access' }}>
+      <TopnavLayout
+        className={styles.container}
+        title="Ethereum Gas tracker"
+        action={{ href: 'https://www.ethgastracker.com/docs', text: 'Get API Access' }}>
         <section>
           <Featured className={styles.featured} double>
             <Panel type="primary" fill stretch>
