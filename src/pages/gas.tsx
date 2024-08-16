@@ -136,7 +136,7 @@ export default function Index(props: Props) {
               <Link href="https://ethereum.org/en/developers/docs/gas/">https://ethereum.org/en/developers/docs/gas/</Link>
             </li>
             <li>
-              <Link href="https://www.blocknative.com/gas-platform">https://www.blocknative.com/gas-platform</Link>
+              <Link href="https://www.ethgastracker.com/">https://www.ethgastracker.com/</Link>
             </li>
           </ul>
         </article>
