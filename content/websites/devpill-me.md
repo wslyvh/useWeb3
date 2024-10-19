@@ -5,7 +5,6 @@ authors: ["@dcbuild3r"]
 tags: ["Smart Contracts", "Web3", "EVM", "Oracles", "Security"]
 languages: ["Solidity", "JavaScript"]
 url: "https://www.devpill.me/"
-featured: true
 dateAdded: 2022-04-08
 level: "Beginner"
 ---
