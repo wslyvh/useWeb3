@@ -5,6 +5,7 @@ authors: ["@gabitoesmiapodo", "@fernandomg", "@nicosampler", "@luchobonatti", "@
 tags: ["Dapp", "Web3", "Subgraphs"]
 languages: ["Typescript"]
 url: "https://github.com/BootNodeDev/dAppBooster"
+alternateUrl: "https://dappbooster.dev/"
 dateAdded: 2025-03-26
 level: "All"
 ---
