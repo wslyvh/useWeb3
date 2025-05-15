@@ -3,7 +3,7 @@ title: 'Swarm Grants'
 description: "The Swarm Association's Grant Program focuses on Swarm's decentralized storage."
 authors: ['@ethswarmhive']
 tags: ['Storage']
-url: 'https://my.ethswarm.org/grants'
+url: 'https://ethswarm.org/grants'
 dateAdded: 2023-11-04
 ---
 

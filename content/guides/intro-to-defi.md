@@ -5,7 +5,7 @@ authors: ['@bitblondy', '@uttam_singhk']
 level: Beginner
 tags: ['Web3', 'DeFi']
 languages: ['Solidity']
-url: 'https://www.useweb3.xyz/guides/defi-intro'
+url: 'https://www.useweb3.xyz/guides/intro-to-defi'
 date: 2024-02-15
 dateAdded: 2024-02-17
 ---

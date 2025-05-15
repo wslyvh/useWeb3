@@ -1,12 +1,12 @@
 ---
-title: "Build the EVM from scratch"
-description: "In this tutorial you are going to build the EVM from scratch."
-authors: ["@shafu0x"]
-tags: ["Smart Contracts", "EVM"]
-languages: ["Python"]
-url: "https://evm-from-scratch.xyz"
+title: 'Build the EVM from scratch'
+description: 'In this tutorial you are going to build the EVM from scratch.'
+authors: ['@shafu0x']
+tags: ['Smart Contracts', 'EVM']
+languages: ['Python']
+url: 'https://www.evm-from-scratch.app/'
 dateAdded: 2024-4-4
-level: "Intermediate"
+level: 'Intermediate'
 ---
 
 The EVM is a central part of Ethereum. It is Ethereum’s execution engine, responsible for executing Ethereum programs, also called Smart Contracts.
