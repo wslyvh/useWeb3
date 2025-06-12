@@ -3,7 +3,7 @@ title: "Gitcoin Grants"
 description: "Discover and fund extraordinary Public Goods with Quadratic Funding"
 authors: ["@gitcoin"]
 tags: ['Public Goods', 'DevEx']
-url: "https://gitcoin.co/grants/"
+url: "https://grants.gitcoin.co/"
 dateAdded: 2022-05-16
 ---
 
