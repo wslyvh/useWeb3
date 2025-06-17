@@ -21,5 +21,5 @@ And yes, that is me doing windmills.
 🐍 Python Video: https://www.youtube.com/watch?v=rD8AxZ_wBA4
 🎛 Openzeppelin Governance: https://docs.openzeppelin.com/contracts/4.x/api/governance
 📈 Compound Governance: https://compound.finance/governance
-🧙‍♀️ Contract Wizard: https://docs.openzeppelin.com/contracts/4.x/wizard
+🧙‍♀️ Contract Wizard: https://docs.openzeppelin.com/contracts/5.x/wizard
 🗳 CastVoteBySig: https://forum.openzeppelin.com/t/what-is-votecastbysig/17069/2

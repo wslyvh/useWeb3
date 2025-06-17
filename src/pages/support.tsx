@@ -34,7 +34,7 @@ export default function Support(props: Props) {
             All the content on useWeb3 is <Link href="https://github.com/wslyvh/useWeb3/tree/main/content">open and available on GitHub</Link>. If you
             have any resources, videos, guides or other content that you want to promote, feel free to submit a PR.
           </p>
-          <p>The requirements are that it should be ecudational, open, accessible (free) and aligned with the values of crypto and Web3.</p>
+          <p>The requirements are that it should be educational, open, accessible (free) and aligned with the values of crypto and Web3.</p>
           <p>* No project/token/NFT shilling or promotions!</p>
         </section>
 

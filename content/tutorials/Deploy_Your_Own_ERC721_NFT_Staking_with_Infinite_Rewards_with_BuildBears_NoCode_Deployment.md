@@ -4,7 +4,7 @@ description: "In this tutorial, you'll deploy ERC721 NFT Staking smart contract 
 authors: ["@_BuildBear"]
 tags: ["Smart Contracts", "DeFi", "Dapp"]
 languages: ["Solidity"]
-url: "https://www.buildbear.io/resources/guides-and-tutorials/ERC721_NFT_Staking"
+url: "https://www.cookbook.dev/contracts/nft-staking-with-infinite-rewards"
 dateAdded: 2023-08-18
 level: "Intermediate"
 ---
