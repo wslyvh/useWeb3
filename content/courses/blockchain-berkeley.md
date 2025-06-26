@@ -4,7 +4,7 @@ description: "Join over 150,000 students in earning our renowned BerkeleyX Block
 authors: ["@CalBlockchain"]
 tags: ["Smart Contracts","Dapp","EVM"]
 languages: ["Solidity","JavaScript"]
-url: "https://blockchain.berkeley.edu/courses/"
+url: "https://blockchain.studentorg.berkeley.edu/education"
 dateAdded: 2021-08-11
 level: "All"
 ---

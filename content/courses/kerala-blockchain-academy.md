@@ -4,7 +4,7 @@ description: "Kerala Blockchain Academy (KBA) offers training programs, consulta
 authors: ["@kbaiiitmk"]
 tags: ["EVM","Smart Contracts","Dapp"]
 languages: ["Solidity"]
-url: "https://elearning.kba.ai/"
+url: "https://kba.ai/"
 dateAdded: 2021-12-20
 level: "All"
 ---

@@ -4,7 +4,7 @@ description: "Become a certified Web3 developer!"
 authors: ["@encodeclub"]
 tags: ["Smart Contracts","Dapp"]
 languages: ["Solidity","Rust","Python","Vyper","Cairo"]
-url: "https://www.encode.club/encode-bootcamps"
+url: "https://bootcamps.encode.club/"
 dateAdded: 2022-02-18
 level: "Intermediate"
 ---

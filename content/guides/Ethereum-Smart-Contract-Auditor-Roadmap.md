@@ -36,7 +36,7 @@ PDF: [Smart Contract Auditor.pdf](https://github.com/razzorsec/AuditorsRoadmap/f
 
 * Smart Contract Testing
   * [Hardhat](https://hardhat.org/guides/waffle-testing.html)
-  * [Better Programming Hub](https://betterprogramming.pub/the-complete-hands-on-hardhat-tutorial-9e23728fc8a4)
+  * [Complete hands on Hardhat tutorial](https://dev.to/rodrigoherrerai/the-complete-hands-on-hardhat-tutorial-3kbd)
   * [Code Eater (Hindi)](https://www.youtube.com/watch?v=vuqhHOx6188&list=PLgPmWS2dQHW9mucRpDVe16j9Qn74ZXqcD&index=5)
   * [Foundry](https://github.com/foundry-rs/foundry)
   * [Tenderly](https://tenderly.co/)
@@ -108,7 +108,6 @@ PDF: [Smart Contract Auditor.pdf](https://github.com/razzorsec/AuditorsRoadmap/f
   * [Surya](https://github.com/ConsenSys/surya)
   * [Scribble](https://github.com/ConsenSys/scribble)
   * [BlockSec ETH/BSC Tx Analysis](https://versatile.blocksecteam.com/tx) 
-  * [ethtx ETH Tx Analysis](https://ethtx.info/)
   
 * Continue Learning
   * [Ethereum Yellow Paper](https://github.com/ethereum/yellowpaper)
