@@ -4,7 +4,7 @@ description: "Level up your web3 career through industry leading comprehensive c
 authors: ["@cyfrinUpdraft"]
 tags: ["Smart Contracts","DeFi","Web3","Security"]
 languages: ["Solidity", "JavaScript","Yul"]
-url: "https://updraft.cyfrin.io/"
+url: "https://updraft.cyfrin.io/courses"
 dateAdded: 2023-12-13
 featured: true
 level: "All"

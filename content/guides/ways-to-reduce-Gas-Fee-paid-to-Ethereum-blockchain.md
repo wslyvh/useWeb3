@@ -6,7 +6,7 @@ authors: ['@chandan1_']
 level: Beginner
 tags: ['Web3']
 languages: []
-url: "https://mirror.xyz/iamchandan.eth/vuslsqt95p1vlNdy5WeKBFq0PUctybycdfchFmkySos"
+url: "https://0chandan.medium.com/3-ways-to-reduce-%EF%B8%8Fgas-fee-paid-to-ethereum-blockchain-a9d03d0cb82f"
 date: 2023-11-17
 dateAdded: 2024-01-9
 ---
