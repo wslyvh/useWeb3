@@ -4,7 +4,7 @@ description: "Prototype and innovate on Cedra's Move-based blockchain - Win $150
 authors: "Cedra Network"
 date: "2025-11-04"
 level: "All"
-tags: ["Smart Contracts", "DeFi", "Blockchain", "Infrastructure", "DevEx", "NFTs"]
+tags: ["Public Goods", "Smart Contracts", "DeFi", "Blockchain", "Infrastructure", "DevEx", "NFTs"]
 languages: ["English"]
 url: "https://github.com/cedra-labs/docs/blob/main/BUILDERS_FORGE_RULES_S1.md"
 alternateUrl?: "https://docs.cedra.network/"
