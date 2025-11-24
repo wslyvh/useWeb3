@@ -1,14 +1,14 @@
 ---
 title: "Cedra Builders Forge"
 description: "Prototype and innovate on Cedra's Move-based blockchain - Win $1500, exclusive Discord roles, and merch by building original developer tools and content"
-author: "Cedra Network"
-authorUrl: "https://cedra.network"
+authors: "Cedra Network"
+date: "2025-11-04"
 level: "All"
-tags: ["Move", "Smart Contracts", "DeFi", "Blockchain", "Developer Tools", "Hackathon"]
+tags: ["Smart Contracts", "DeFi", "Blockchain", "Infrastructure", "DevEx", "NFTs"]
+languages: ["English"]
 url: "https://github.com/cedra-labs/docs/blob/main/BUILDERS_FORGE_RULES_S1.md"
-date: "2024-11-04"
-endDate: "2024-12-30"
-featured: true
+alternateUrl?: "https://docs.cedra.network/"
+dateAdded: "2025.11.24"
 ---
 
 ## 🔥 Forge Your Future in Move Development
@@ -25,9 +25,9 @@ Forging is tough, and Cedra prides itself on providing not only the tools but so
 
 ## ⏰ Campaign Timeline
 
-- **Start Date**: November 4, 2024
+- **Start Date**: November 4, 2025
 - **Duration**: 8 weeks
-- **End Date**: December 30, 2024
+- **End Date**: December 30, 2025
 - **Prize Distribution**: First week of January 2025
 
 ## 📋 Requirements & Rules
@@ -104,7 +104,7 @@ The Cedra Builders Forge is your opportunity to shape the future of Move develop
 - All code must be original and written in English
 - Submit your project via pull request to the official repository
 - Notify the team on Telegram after submission (this is mandatory!)
-- Campaign runs for 8 weeks, ending December 30, 2024
+- Campaign runs for 8 weeks, ending December 30, 2025
 - Prizes include $1500 for top contributions, exclusive Discord roles, and Cedra merchandise
 
 The Cedra team is committed to supporting builders throughout this journey. Don't hesitate to ask questions, seek feedback, and collaborate with other participants. The best projects often emerge from community collaboration and iterative improvement.
