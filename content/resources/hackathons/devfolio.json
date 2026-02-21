@@ -1,0 +1,9 @@
+{
+  "id": "devfolio",
+  "title": "Devfolio",
+  "description": "Devfolio is a platform that hosts hackathons for the Ethereum ecosystem, including some of the largest ETHIndia and ETHOnline events. It provides tools for teams to submit projects, for sponsors to set bounties, and for participants to discover upcoming hackathons.",
+  "category": "hackathons",
+  "url": "https://devfolio.co",
+  "tags": ["hackathon", "ethereum", "events", "platform"],
+  "featured": false
+}
