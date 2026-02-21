@@ -1,0 +1,9 @@
+{
+  "id": "gitcoin",
+  "title": "Gitcoin Hackathons",
+  "description": "Gitcoin hosts virtual hackathons where open-source developers collaborate and compete for prizes funded by leading Web3 protocols. Gitcoin hackathons cover a wide range of topics including DeFi, NFTs, DAOs, and infrastructure, making it a great entry point for both newcomers and experienced builders.",
+  "category": "hackathons",
+  "url": "https://gitcoin.co/hackathons",
+  "tags": ["hackathon", "open-source", "grants", "bounties"],
+  "featured": false
+}
