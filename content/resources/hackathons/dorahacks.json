@@ -1,0 +1,9 @@
+{
+  "id": "dorahacks",
+  "title": "DoraHacks",
+  "description": "DoraHacks is a global hackathon organizer and developer incentive platform. It supports multi-chain ecosystems including Ethereum, Solana, BNB Chain, and more, offering BUIDLs (project submissions), quadratic funding grants, and bounty programs to help Web3 builders get funded and recognized.",
+  "category": "hackathons",
+  "url": "https://dorahacks.io",
+  "tags": ["hackathon", "grants", "multi-chain", "bounties"],
+  "featured": false
+}
