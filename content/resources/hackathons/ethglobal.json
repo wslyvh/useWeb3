@@ -1,0 +1,9 @@
+{
+  "id": "ethglobal",
+  "title": "ETHGlobal",
+  "description": "ETHGlobal organizes world-class hackathons and summits for the Ethereum ecosystem. With events held globally and online, ETHGlobal has helped thousands of developers build and ship Web3 projects, offering substantial prize pools and direct access to leading protocol teams.",
+  "category": "hackathons",
+  "url": "https://ethglobal.com",
+  "tags": ["hackathon", "ethereum", "events", "competition"],
+  "featured": true
+}
