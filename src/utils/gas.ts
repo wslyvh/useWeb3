@@ -48,7 +48,7 @@ export async function getEthPrice() {
     const body = await response.json()
 
     if (body.USD) {
-      return body.usdPrice
+      return body.USD
     }
   } catch (e) {
     console.log('Unable to fetch price from cryptocompare..')
