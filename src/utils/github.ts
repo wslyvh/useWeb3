@@ -3,6 +3,10 @@ import fetch from 'cross-fetch'
 
 dotenv.config()
 
+function buildGithubContentUrl(filename: string, folder?: string) {
+  return `https://api.github.com/repos/useWeb3/awesome-web3/contents/${folder ?? ''}${filename}`
+}
+
 export async function AddToGithub(filename: string, data: string, folder?: string) {
   console.log('Add file to Github', filename, folder)
   if (!process.env.ISSUES_GITHUB_TOKEN) {
@@ -16,7 +20,7 @@ export async function AddToGithub(filename: string, data: string, folder?: strin
   }
 
   try {
-    const response = await fetch(`https://api.github.com/repos/useWeb3/awesome-web3/contents/${folder ?? ''}${filename}`, {
+    const response = await fetch(buildGithubContentUrl(filename, folder), {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${process.env.ISSUES_GITHUB_TOKEN}`,
@@ -43,7 +47,7 @@ export async function AddToGithub(filename: string, data: string, folder?: strin
 export async function GetFile(filename: string, folder?: string) {
   console.log('Get file from Github', filename, folder)
   try {
-    const response = await fetch(`https://api.github.com/repos/useWeb3/awesome-web3/contents/${folder ?? ''}${filename}`, {
+    const response = await fetch(buildGithubContentUrl(filename, folder), {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${process.env.ISSUES_GITHUB_TOKEN}`,
