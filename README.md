@@ -44,7 +44,7 @@ git clone with Github CLI     gh repo clone wslyvh/useWeb3
 
 - [Plausible API Key](https://plausible.io/activate)
 - [Twitter API Key](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
-- [Airtable API Key](https://support.airtable.com/hc/en-us/articles/219046777-How-do-I-get-my-API-key-)
+- [Airtable API Key](https://support.airtable.com/docs/creating-personal-access-tokens)
 
 ```sh
 # You'll need to create this file in the project's root folder
