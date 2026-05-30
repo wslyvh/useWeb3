@@ -5,6 +5,6 @@ authors: ["@zerion"]
 tags: ["DeFi", "Dapp"]
 languages: ["JavaScript", "Python"]
 url: "https://developers.zerion.io/recipes/multi-chain-portfolio"
-dateAdded: 2026-04-28
+dateAdded: 2026-05-30
 level: "Intermediate"
 ---
