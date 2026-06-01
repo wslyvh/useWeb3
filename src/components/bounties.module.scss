@@ -1,0 +1,7 @@
+@use 'assets/styles/variables.scss' as *;
+
+.container {
+  .featured {
+    margin-top: $gap-16;
+  }
+}
